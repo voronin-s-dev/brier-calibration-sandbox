@@ -244,6 +244,8 @@ class GrokCharterPaperTrader:
             hours_left = live_mkt.hours_to_close if live_mkt else 24.0
             exit_triggered = False
             exit_reason = ""
+            pf_now = self.db.get_portfolio()
+            prob_shift_limit = float(pf_now.get("prob_shift_exit_pp", self.PROB_SHIFT_EXIT_PP))
 
             # Exit Rule A: Edge closed (our target price reached in Bid book!)
             if vwap_sell >= latest_p - 0.01:
@@ -252,11 +254,11 @@ class GrokCharterPaperTrader:
                     f"TAKE PROFIT (Edge Closed): Live CLOB Bid VWAP ({vwap_sell*100:.1f}%) "
                     f"reached our estimated probability ({latest_p*100:.1f}%)"
                 )
-            # Exit Rule B: Our probability estimate shifted down by > 5 pp
-            elif (initial_p - latest_p) >= self.PROB_SHIFT_EXIT_PP:
+            # Exit Rule B: Our probability estimate shifted down by > prob_shift_limit
+            elif (initial_p - latest_p) >= prob_shift_limit:
                 exit_triggered = True
                 exit_reason = (
-                    f"THESIS INVALIDATED (Prob Shift > 5pp): Estimate dropped from "
+                    f"THESIS INVALIDATED (Prob Shift > {prob_shift_limit*100:.1f}pp): Estimate dropped from "
                     f"{initial_p*100:.1f}% to {latest_p*100:.1f}%"
                 )
             # Exit Rule C: < 1 hour before market close — ONLY sell if win probability < 75%;
@@ -358,6 +360,16 @@ class GrokCharterPaperTrader:
 
         filtered_markets.sort(key=_priority_key)
         candidates_to_evaluate = filtered_markets[:45]
+
+        # Auto-Governor Tier 3 Hotfix: discover and geocode any new Polymarket weather cities on the fly
+        try:
+            from auto_governor import AutoGovernor
+            gov = AutoGovernor(self.db)
+            added_cities = gov.scan_and_fix_unmapped_weather_cities(candidates_to_evaluate)
+            if added_cities:
+                self.weather_oracle._load_custom_stations()
+        except Exception:
+            pass
 
         # Record cycle placeholder to get cycle_id
         cycle_id = self.db.record_scan_cycle(
@@ -571,6 +583,13 @@ class GrokCharterPaperTrader:
             f"Cash=${pf_after['cash_usdc']:.2f} | Equity=${pf_after['total_equity']:.2f} "
             f"(DD={pf_after['current_drawdown_pct']*100:.2f}%)"
         )
+
+        # Run 3-tier Auto-Governor after every cycle (auto-fixes & semi-auto proposals)
+        try:
+            from auto_governor import AutoGovernor
+            AutoGovernor(self.db).evaluate_portfolio_and_rules()
+        except Exception:
+            pass
 
         return {
             "cycle_id": cycle_id,

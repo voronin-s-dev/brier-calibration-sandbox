@@ -270,6 +270,22 @@ class WeatherOracle:
 
     def __init__(self) -> None:
         self._cache: Dict[str, Dict[str, float]] = {}
+        self._load_custom_stations()
+
+    def _load_custom_stations(self) -> None:
+        import json
+        from pathlib import Path
+        custom_path = Path(__file__).resolve().parent / "data" / "custom_stations.json"
+        if custom_path.exists():
+            try:
+                raw = json.loads(custom_path.read_text(encoding="utf-8"))
+                for city_k, val in raw.items():
+                    if isinstance(val, list) and len(val) == 5:
+                        self.STATIONS[city_k.lower().strip()] = (
+                            float(val[0]), float(val[1]), str(val[2]), str(val[3]), str(val[4])
+                        )
+            except Exception:
+                pass
 
     def _get_daily_max_forecasts(self, city_key: str) -> Optional[Dict[str, float]]:
         if city_key in self._cache:

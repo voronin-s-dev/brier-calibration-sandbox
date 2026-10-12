@@ -131,8 +131,30 @@ class SimDatabase:
                     decision TEXT NOT NULL,        -- 'EXECUTED' or 'REJECTED: ...'
                     rationale TEXT NOT NULL
                 );
+
+                CREATE TABLE IF NOT EXISTS governance_events (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    rule_key TEXT NOT NULL UNIQUE,
+                    tier TEXT NOT NULL,            -- 'TIER_1_48H', 'TIER_2_CALIBRATION', 'TIER_3_HOTFIX'
+                    mode TEXT NOT NULL,            -- 'AUTO_FIX' or 'SEMI_AUTO'
+                    status TEXT NOT NULL,          -- 'APPLIED', 'PENDING_APPROVAL', 'APPROVED', 'DISMISSED'
+                    title TEXT NOT NULL,
+                    explanation TEXT NOT NULL,
+                    proposed_action_json TEXT NOT NULL,
+                    created_at TEXT NOT NULL,
+                    resolved_at TEXT DEFAULT ''
+                );
                 """
             )
+            # Safe schema migrations for dynamic tuning parameters
+            existing_cols = {
+                r["name"] for r in conn.execute("PRAGMA table_info(portfolio_state)").fetchall()
+            }
+            if "oracle_weight" not in existing_cols:
+                conn.execute("ALTER TABLE portfolio_state ADD COLUMN oracle_weight REAL NOT NULL DEFAULT 0.65")
+            if "prob_shift_exit_pp" not in existing_cols:
+                conn.execute("ALTER TABLE portfolio_state ADD COLUMN prob_shift_exit_pp REAL NOT NULL DEFAULT 0.05")
+
             row = conn.execute("SELECT * FROM portfolio_state WHERE id = 1").fetchone()
             if row is None:
                 now_str = datetime.now(timezone.utc).isoformat()
@@ -142,8 +164,8 @@ class SimDatabase:
                         id, initial_capital, cash_usdc, locked_usdc, total_equity,
                         peak_equity, max_drawdown_pct, current_drawdown_pct,
                         monthly_target_usdc, halted, halt_reason, active_category_filter,
-                        min_liquidity_filter, max_slippage_filter, updated_at
-                    ) VALUES (1, ?, ?, 0.0, ?, ?, 0.0, 0.0, 60.0, 0, '', 'ALL', 5000.0, 0.03, ?)
+                        min_liquidity_filter, max_slippage_filter, oracle_weight, prob_shift_exit_pp, updated_at
+                    ) VALUES (1, ?, ?, 0.0, ?, ?, 0.0, 0.0, 60.0, 0, '', 'ALL', 5000.0, 0.03, 0.65, 0.05, ?)
                     """,
                     (self.initial_capital, self.initial_capital, self.initial_capital, self.initial_capital, now_str),
                 )

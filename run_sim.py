@@ -82,9 +82,26 @@ def main() -> None:
     parser.add_argument("--set-category", type=str, help="Set category filter (ALL, Weather, Crypto, Sports, Macro)")
     parser.add_argument("--set-liquidity", type=float, help="Set minimum liquidity filter in USD (e.g. 5000 or 10000)")
     parser.add_argument("--set-slippage", type=float, help="Set max round-trip CLOB slippage (e.g. 0.03 or 0.02)")
+    parser.add_argument("--governor", action="store_true", help="Run 3-tier Auto-Governor audit and generate GOVERNANCE_REPORT.md")
+    parser.add_argument("--approve", type=int, help="Approve and apply a pending Semi-Auto proposal by ID")
+    parser.add_argument("--dismiss", type=int, help="Dismiss a pending Semi-Auto proposal by ID")
     args = parser.parse_args()
 
     db = SimDatabase(initial_capital=50.0)
+    from auto_governor import AutoGovernor
+    gov = AutoGovernor(db)
+
+    if args.approve is not None:
+        ok, msg = gov.approve_proposal(args.approve)
+        print(msg)
+        generate_reports(db)
+        return
+
+    if args.dismiss is not None:
+        ok, msg = gov.dismiss_proposal(args.dismiss)
+        print(msg)
+        generate_reports(db)
+        return
 
     if args.set_category or args.set_liquidity is not None or args.set_slippage is not None:
         with db._connect() as conn:
@@ -95,11 +112,20 @@ def main() -> None:
             if args.set_slippage is not None:
                 conn.execute("UPDATE portfolio_state SET max_slippage_filter = ? WHERE id = 1", (args.set_slippage,))
             conn.commit()
+        gov.generate_governance_report()
+
+    if args.governor and not args.once and not args.loop:
+        res_gov = gov.evaluate_portfolio_and_rules()
+        rep_path = gov.generate_governance_report()
+        print(f"🧠 Auto-Governor проверил портфель (новых событий: {len(res_gov['triggered_event_ids'])}).")
+        print(f"📄 Отчёт решений: {rep_path}")
+        return
 
     trader = GrokCharterPaperTrader(db=db)
 
     if args.status and not args.once and not args.loop:
         trader.monitor_and_manage_open_positions()
+        gov.evaluate_portfolio_and_rules()
         paths = generate_reports(db)
         print_console_summary(db)
         print(f"📊 Дашборд обновлён: {paths['html']}")
