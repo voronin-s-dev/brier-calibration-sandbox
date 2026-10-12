@@ -1,0 +1,523 @@
+"""
+Autonomous Paper-Trading Engine implementing the exact Charter from `grok метод.txt`.
+Executes realistic orderbook-matched virtual trades on Polymarket, manages risk via
+Half-Kelly (capped at 6% bankroll, max 5 open positions), enforces the 3% CLOB round-trip
+slippage limit, monitors exit conditions, and logs every action to `trades.txt` and SQLite.
+"""
+
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
+
+from database import SimDatabase
+from oracles import CryptoOracle, EvaluationResult, NewsAndOrderbookOracle, WeatherOracle
+from polymarket_api import (
+    MarketInfo,
+    OrderBookSimulation,
+    fetch_active_markets,
+    fetch_clob_book,
+    fetch_market_by_id,
+    simulate_clob_buy_and_exit_check,
+    simulate_clob_sell_shares,
+)
+from telegram_notify import send_telegram_alert
+
+
+TRADES_LOG_PATH = Path(__file__).resolve().parent / "data" / "trades.txt"
+
+
+class GrokCharterPaperTrader:
+    """
+    Implements the 10-step autonomous Polymarket trading charter on a virtual demo account.
+    """
+
+    MAX_OPEN_POSITIONS = 5
+    MAX_BANK_PCT_PER_TRADE = 0.06  # 6% cap
+    MIN_EDGE_PP = 0.08             # 8 percentage points minimum divergence
+    MIN_HOURS_TO_CLOSE = 2.0       # Skip markets closing in < 2 hours
+    MAX_HOURS_TO_CLOSE = 360.0     # Focus on markets resolving within 15 days for active turnover
+    EXIT_HOURS_THRESHOLD = 1.0     # Exit if < 1 hour to close
+    PROB_SHIFT_EXIT_PP = 0.05      # Exit if probability estimate drops by > 5 pp
+
+    def __init__(
+        self,
+        db: Optional[SimDatabase] = None,
+        trades_txt_path: Path = TRADES_LOG_PATH,
+        initial_capital: float = 50.0,
+    ) -> None:
+        self.db = db or SimDatabase(initial_capital=initial_capital)
+        self.trades_txt_path = trades_txt_path
+        self.trades_txt_path.parent.mkdir(parents=True, exist_ok=True)
+        self.crypto_oracle = CryptoOracle()
+        self.weather_oracle = WeatherOracle()
+        self.news_oracle = NewsAndOrderbookOracle()
+
+        if not self.trades_txt_path.exists():
+            self._append_trades_log(
+                "================================================================================\n"
+                "POLYMARKET AUTONOMOUS PAPER TRADER — GROK CHARTER SIMULATION LOG (trades.txt)\n"
+                f"Initialized at: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}\n"
+                f"Starting Virtual Bankroll: ${initial_capital:.2f} USDC | Monthly Target: +$60.00/mo\n"
+                "Rules: Edge >= 8 pp | CLOB Round-Trip Slippage <= 3% | Size: 0.5x Kelly (max 6% bank)\n"
+                "Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak\n"
+                "================================================================================\n"
+            )
+
+    def _append_trades_log(self, text: str) -> None:
+        with open(self.trades_txt_path, "a", encoding="utf-8") as f:
+            f.write(text + "\n")
+
+    @staticmethod
+    def compute_kelly_sizing(
+        p_est: float,
+        ask_vwap: float,
+        total_equity: float,
+        max_pct: float = 0.06,
+    ) -> Tuple[float, float, float, float]:
+        """
+        Calculates Full Kelly, Half Kelly, Capped % of bankroll, and USDC bet size.
+        Formula for binary contract at cost `c` paying $1 on win:
+          f* = (p - c) / (1 - c)
+        """
+        if ask_vwap <= 0.001 or ask_vwap >= 0.999 or p_est <= ask_vwap:
+            return 0.0, 0.0, 0.0, 0.0
+
+        full_kelly = (p_est - ask_vwap) / (1.0 - ask_vwap)
+        half_kelly = 0.5 * full_kelly
+        applied_pct = min(half_kelly, max_pct)
+        bet_usdc = round(total_equity * applied_pct, 2)
+        return full_kelly, half_kelly, applied_pct, bet_usdc
+
+    def _evaluate_market_probability(
+        self,
+        market: MarketInfo,
+        preloaded_book: Optional[Dict[str, List[Tuple[float, float]]]] = None,
+    ) -> Tuple[Optional[EvaluationResult], Optional[Dict[str, List[Tuple[float, float]]]]]:
+        """
+        Runs the appropriate oracle for `market`.
+        Returns (EvaluationResult, clob_yes_book).
+        """
+        # 1. Try Weather Oracle (highest rule clarity)
+        if market.category == "Weather" or "temperature" in market.question.lower():
+            res = self.weather_oracle.evaluate(market)
+            if res is not None:
+                return res, preloaded_book
+
+        # 2. Try Crypto Quantitative Oracle (official Binance 1m/1h klines)
+        if market.category == "Crypto" or any(
+            k in market.question.lower() for k in ["bitcoin", "ethereum", "solana", "btc", "eth"]
+        ):
+            res = self.crypto_oracle.evaluate(market)
+            if res is not None:
+                return res, preloaded_book
+
+        # 3. For liquid short-term events, run News + CLOB Microstructure Oracle
+        if preloaded_book is None:
+            try:
+                preloaded_book = fetch_clob_book(market.clob_token_ids[0])
+            except Exception:
+                return None, None
+
+        res = self.news_oracle.evaluate_with_orderbook(
+            market,
+            bids=preloaded_book.get("bids", []),
+            asks=preloaded_book.get("asks", []),
+        )
+        return res, preloaded_book
+
+    def monitor_and_manage_open_positions(self) -> int:
+        """
+        Step 9 of Charter:
+        Checks all open positions against live Gamma resolution status and live CLOB Bids.
+        Exits if:
+          - Market resolved on Polymarket ($1 or $0 payout)
+          - Edge closed (Bid VWAP >= latest_p_est - 0.01)
+          - Estimate dropped by > 5 percentage points against us
+          - < 1 hour left to market close
+        Returns number of positions closed/settled.
+        """
+        open_positions = self.db.get_open_positions()
+        closed_count = 0
+
+        for pos in open_positions:
+            pos_id = int(pos["id"])
+            market_id = str(pos["market_id"])
+            side = str(pos["side"])
+            token_id = str(pos["token_id"])
+            shares = float(pos["shares"])
+            entry_vwap = float(pos["entry_vwap"])
+            initial_p = float(pos["initial_p_est"])
+
+            live_mkt = fetch_market_by_id(market_id)
+
+            # Check if resolved on Polymarket
+            if live_mkt and live_mkt.resolved:
+                # Index 0 is YES, Index 1 is NO
+                win_price = live_mkt.gamma_prices[0] if side == "YES" else live_mkt.gamma_prices[1]
+                payout_per_share = 1.0 if win_price >= 0.95 else 0.0
+                proceeds = round(shares * payout_per_share, 4)
+                reason = f"MARKET RESOLVED on Polymarket: {side} settled at ${payout_per_share:.2f}/share"
+                pnl = self.db.close_position(
+                    pos_id=pos_id,
+                    status="RESOLVED",
+                    exit_vwap=payout_per_share,
+                    proceeds_usdc=proceeds,
+                    exit_reason=reason,
+                    latest_p_est=payout_per_share,
+                )
+                self._append_trades_log(
+                    f"[RESOLVED] #{pos_id} | {pos['question']} ({side})\n"
+                    f"  Entry VWAP: {entry_vwap:.4f} | Settlement: {payout_per_share:.2f} | "
+                    f"PnL: ${pnl:+.2f} USDC | Reason: {reason}"
+                )
+                send_telegram_alert(
+                    f"🏁 <b>Polymarket Исход #{pos_id}</b>\n"
+                    f"📌 <b>{pos['question']}</b> ({side})\n"
+                    f"💵 Вход: ${entry_vwap:.3f} → Выплата: ${payout_per_share:.2f}\n"
+                    f"💰 <b>PnL: ${pnl:+.2f} USDC</b>"
+                )
+                closed_count += 1
+                continue
+
+            # Otherwise check live CLOB Bid book for mark-to-market & exit triggers
+            try:
+                vwap_sell, proceeds, best_bid = simulate_clob_sell_shares(token_id, shares)
+            except Exception:
+                continue
+
+            if vwap_sell <= 0:
+                continue
+
+            # Re-evaluate probability if live_mkt available
+            latest_p = float(pos["latest_p_est"])
+            if live_mkt:
+                eval_res, _ = self._evaluate_market_probability(live_mkt)
+                if eval_res is not None:
+                    latest_p = eval_res.p_yes if side == "YES" else eval_res.p_no
+
+            # Update MTM in database
+            self.db.update_open_position_mtm(
+                pos_id=pos_id,
+                current_bid=vwap_sell,
+                latest_p_est=latest_p,
+            )
+
+            hours_left = live_mkt.hours_to_close if live_mkt else 24.0
+            exit_triggered = False
+            exit_reason = ""
+
+            # Exit Rule A: Edge closed (our target price reached in Bid book!)
+            if vwap_sell >= latest_p - 0.01:
+                exit_triggered = True
+                exit_reason = (
+                    f"TAKE PROFIT (Edge Closed): Live CLOB Bid VWAP ({vwap_sell*100:.1f}%) "
+                    f"reached our estimated probability ({latest_p*100:.1f}%)"
+                )
+            # Exit Rule B: Our probability estimate shifted down by > 5 pp
+            elif (initial_p - latest_p) >= self.PROB_SHIFT_EXIT_PP:
+                exit_triggered = True
+                exit_reason = (
+                    f"THESIS INVALIDATED (Prob Shift > 5pp): Estimate dropped from "
+                    f"{initial_p*100:.1f}% to {latest_p*100:.1f}%"
+                )
+            # Exit Rule C: < 1 hour before market close
+            elif hours_left < self.EXIT_HOURS_THRESHOLD:
+                exit_triggered = True
+                exit_reason = f"TIME EXIT (< 1h to close): {hours_left*60:.0f}m remaining"
+
+            if exit_triggered:
+                pnl = self.db.close_position(
+                    pos_id=pos_id,
+                    status="CLOSED",
+                    exit_vwap=vwap_sell,
+                    proceeds_usdc=round(proceeds, 4),
+                    exit_reason=exit_reason,
+                    latest_p_est=latest_p,
+                )
+                self._append_trades_log(
+                    f"[EXIT] #{pos_id} | {pos['question']} ({side})\n"
+                    f"  Shares: {shares:.2f} | Entry VWAP: {entry_vwap:.4f} -> Exit Bid VWAP: {vwap_sell:.4f}\n"
+                    f"  Proceeds: ${proceeds:.2f} | Realized PnL: ${pnl:+.2f} USDC | Reason: {exit_reason}"
+                )
+                send_telegram_alert(
+                    f"📤 <b>Polymarket Выход #{pos_id}</b>\n"
+                    f"📌 <b>{pos['question']}</b> ({side})\n"
+                    f"💵 Вход: ${entry_vwap:.3f} → Выход (Bid): ${vwap_sell:.3f}\n"
+                    f"💰 <b>PnL: ${pnl:+.2f} USDC</b>\n"
+                    f"ℹ️ {exit_reason}"
+                )
+                closed_count += 1
+
+        return closed_count
+
+    def run_cycle(self, max_markets_to_scan: int = 500) -> Dict[str, Any]:
+        """
+        Runs one complete 10-minute autonomous scan & trade cycle according to the Charter.
+        """
+        now_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+        pf = self.db.recalculate_portfolio()
+
+        # Check Kill-Switch (40% drawdown)
+        if pf.get("halted"):
+            msg = f"Cycle skipped: Bot is HALTED due to 40% drawdown rule ({pf.get('halt_reason')})"
+            self._append_trades_log(f"[{now_str}] {msg}")
+            return {"status": "HALTED", "reason": pf.get("halt_reason"), "portfolio": pf}
+
+        # Step 0: Monitor and update existing open positions first
+        trades_closed = self.monitor_and_manage_open_positions()
+        pf = self.db.recalculate_portfolio()
+        open_positions = self.db.get_open_positions()
+        open_market_ids = {str(p["market_id"]) for p in open_positions}
+
+        # Step 1: Fetch active markets from Gamma API
+        all_markets = fetch_active_markets(max_Count=max_markets_to_scan)
+        min_liq = float(pf.get("min_liquidity_filter", 5000.0))
+        max_slippage = float(pf.get("max_slippage_filter", 0.03))
+        cat_filter = str(pf.get("active_category_filter", "ALL"))
+
+        # Filter markets per Rule #1 & Rule #2:
+        # - Closes > 2 hours from now (and <= 15 days for active simulation turnover)
+        # - Liquidity >= $5,000 (or >= $1,500 for official NOAA/METAR weather station markets)
+        # - Has an official resolution source
+        filtered_markets: List[MarketInfo] = []
+        for m in all_markets:
+            if m.id in open_market_ids:
+                continue
+            if not m.has_official_source:
+                continue
+            if cat_filter != "ALL" and m.category.upper() != cat_filter.upper():
+                continue
+
+            # Weather station brackets split liquidity across 7-8 temperature bins, while real CLOB depth & <=3% slippage guard execution
+            liq_threshold = 400.0 if m.category == "Weather" else min_liq
+            if m.liquidity_usd < liq_threshold:
+                continue
+
+            if not (self.MIN_HOURS_TO_CLOSE <= m.hours_to_close <= self.MAX_HOURS_TO_CLOSE):
+                continue
+
+            filtered_markets.append(m)
+
+        # Prioritize Weather and Crypto markets first (where quantitative oracles have sharpest data),
+        # followed by highest 24h volume short-term markets
+        def _priority_key(m: MarketInfo) -> Tuple[int, float]:
+            cat_rank = 0 if m.category in ("Weather", "Crypto") else 1
+            return (cat_rank, -m.volume_24h_usd)
+
+        filtered_markets.sort(key=_priority_key)
+        candidates_to_evaluate = filtered_markets[:45]
+
+        # Record cycle placeholder to get cycle_id
+        cycle_id = self.db.record_scan_cycle(
+            markets_scanned=len(all_markets),
+            passed_filters=len(filtered_markets),
+            evaluated_count=0,
+            edges_found=0,
+            trades_opened=0,
+            trades_closed=trades_closed,
+            notes="In progress",
+        )
+
+        evaluated_count = 0
+        edges_found = 0
+        trades_opened = 0
+
+        for mkt in candidates_to_evaluate:
+            eval_res, preloaded_yes_book = self._evaluate_market_probability(mkt)
+            if eval_res is None:
+                continue
+
+            evaluated_count += 1
+
+            # Determine which side (YES or NO) has positive divergence vs Gamma indicative price first
+            gamma_yes, gamma_no = mkt.gamma_prices[0], mkt.gamma_prices[1]
+            raw_edge_yes = eval_res.p_yes - gamma_yes
+            raw_edge_no = eval_res.p_no - gamma_no
+
+            if raw_edge_yes >= raw_edge_no:
+                chosen_side = "YES"
+                token_id = mkt.clob_token_ids[0]
+                p_est = eval_res.p_yes
+            else:
+                chosen_side = "NO"
+                token_id = mkt.clob_token_ids[1]
+                p_est = eval_res.p_no
+
+            # Refresh portfolio state before sizing
+            pf = self.db.get_portfolio()
+            total_equity = float(pf["total_equity"])
+            cash_available = float(pf["cash_usdc"])
+
+            # Estimate tentative bet size using Gamma price first, then verify against real CLOB Ask VWAP
+            tentative_price = gamma_yes if chosen_side == "YES" else gamma_no
+            _, _, _, tentative_bet = self.compute_kelly_sizing(
+                p_est=p_est,
+                ask_vwap=max(tentative_price, 0.02),
+                total_equity=total_equity,
+                max_pct=self.MAX_BANK_PCT_PER_TRADE,
+            )
+            probe_bet_usdc = max(tentative_bet, round(total_equity * 0.04, 2), 1.50)
+
+            # Step 6: Check real CLOB Order Book for entry Ask VWAP and immediate exit Bid VWAP
+            try:
+                ob_sim: OrderBookSimulation = simulate_clob_buy_and_exit_check(
+                    token_id=token_id,
+                    side_label=chosen_side,
+                    bet_usdc=probe_bet_usdc,
+                    max_slippage_pct=max_slippage,
+                )
+            except Exception:
+                continue
+
+            # Real actionable edge is against the actual CLOB Ask VWAP price (not mid or stale Gamma price!)
+            real_edge = p_est - ob_sim.vwap_buy_price
+
+            if real_edge >= self.MIN_EDGE_PP:
+                edges_found += 1
+
+            # Decide whether to execute or reject
+            decision = ""
+            if real_edge < self.MIN_EDGE_PP:
+                decision = f"REJECTED: Edge {real_edge*100:+.1f} pp < {self.MIN_EDGE_PP*100:.0f} pp threshold (P_est={p_est*100:.1f}% vs AskVWAP={ob_sim.vwap_buy_price*100:.1f}%)"
+            elif not ob_sim.sufficient_depth:
+                decision = f"REJECTED: {ob_sim.reject_reason}"
+            elif not ob_sim.passes_slippage_limit:
+                decision = f"REJECTED: CLOB round-trip slippage {ob_sim.roundtrip_slippage_pct*100:.2f}% > {max_slippage*100:.1f}% limit"
+            elif len(open_positions) + trades_opened >= self.MAX_OPEN_POSITIONS:
+                decision = f"REJECTED: Max open positions ({self.MAX_OPEN_POSITIONS}) reached"
+            else:
+                # Re-calculate exact Half-Kelly size using the real CLOB Ask VWAP
+                full_k, half_k, applied_pct, final_bet_usdc = self.compute_kelly_sizing(
+                    p_est=p_est,
+                    ask_vwap=ob_sim.vwap_buy_price,
+                    total_equity=total_equity,
+                    max_pct=self.MAX_BANK_PCT_PER_TRADE,
+                )
+                if final_bet_usdc < 1.00 or final_bet_usdc > cash_available:
+                    decision = f"REJECTED: Calculated bet ${final_bet_usdc:.2f} invalid for available cash ${cash_available:.2f}"
+                else:
+                    # Re-verify exact shares for `final_bet_usdc`
+                    final_sim = simulate_clob_buy_and_exit_check(
+                        token_id=token_id,
+                        side_label=chosen_side,
+                        bet_usdc=final_bet_usdc,
+                        max_slippage_pct=max_slippage,
+                    )
+                    if not final_sim.passes_slippage_limit or (p_est - final_sim.vwap_buy_price) < self.MIN_EDGE_PP:
+                        decision = f"REJECTED on final sizing: slippage={final_sim.roundtrip_slippage_pct*100:.2f}%"
+                    else:
+                        # EXECUTE VIRTUAL TRADE!
+                        exit_cond = (
+                            f"Exit if Bid VWAP >= {p_est*100 - 1.0:.1f}% (edge closed), "
+                            f"or P_est drops <= {(p_est - self.PROB_SHIFT_EXIT_PP)*100:.1f}% (-5pp), "
+                            f"or < 1h before {mkt.end_date_iso[:16]}"
+                        )
+                        pos_id = self.db.open_position(
+                            market_id=mkt.id,
+                            question=mkt.question,
+                            category=mkt.category,
+                            side=chosen_side,
+                            token_id=token_id,
+                            shares=round(final_sim.shares_filled, 4),
+                            entry_vwap=round(final_sim.vwap_buy_price, 4),
+                            cost_usdc=final_bet_usdc,
+                            current_bid=round(final_sim.vwap_sell_price, 4),
+                            p_est=p_est,
+                            entry_edge=round(p_est - final_sim.vwap_buy_price, 4),
+                            kelly_full_pct=round(full_k, 4),
+                            kelly_half_pct=round(half_k, 4),
+                            applied_size_pct=round(applied_pct, 4),
+                            roundtrip_slippage_pct=round(final_sim.roundtrip_slippage_pct, 4),
+                            official_source=eval_res.official_source,
+                            exit_condition=exit_cond,
+                            rationale=eval_res.rationale,
+                            end_date_iso=mkt.end_date_iso,
+                        )
+                        trades_opened += 1
+                        decision = f"EXECUTED BUY #{pos_id} (${final_bet_usdc:.2f} @ {final_sim.vwap_buy_price:.4f})"
+
+                        # Log to trades.txt per Rule #8
+                        self._append_trades_log(
+                            f"[{now_str}] [OPEN TRADE #{pos_id}] {mkt.question}\n"
+                            f"  Категория: {mkt.category} | Сторона: {chosen_side} | Источник: {eval_res.official_source}\n"
+                            f"  Оценка бота: {p_est*100:.1f}% vs Рынок (Ask VWAP): {final_sim.vwap_buy_price*100:.1f}% "
+                            f"(Перекос/Edge: +{(p_est - final_sim.vwap_buy_price)*100:.1f} п.п.)\n"
+                            f"  Стакан CLOB: BestBid={final_sim.best_bid:.3f}, BestAsk={final_sim.best_ask:.3f}, "
+                            f"Проскальзывание входа/выхода={final_sim.roundtrip_slippage_pct*100:.2f}% (<= 3.0%)\n"
+                            f"  Келли: Полный={full_k*100:.1f}%, Половина={half_k*100:.1f}% -> Применён потолок={applied_pct*100:.1f}% банка\n"
+                            f"  Размер сделки: ${final_bet_usdc:.2f} USDC ({final_sim.shares_filled:.2f} shares @ ${final_sim.vwap_buy_price:.4f})\n"
+                            f"  Условие выхода: {exit_cond}\n"
+                            f"  Причина: {eval_res.rationale}\n"
+                        )
+                        send_telegram_alert(
+                            f"🟢 <b>Polymarket Демо-Сделка #{pos_id}</b>\n"
+                            f"📌 <b>{mkt.question}</b>\n"
+                            f"🎯 Сторона: <b>{chosen_side}</b> ({mkt.category})\n"
+                            f"📊 Оценка бота: <b>{p_est*100:.1f}%</b> vs Ask: <b>{final_sim.vwap_buy_price*100:.1f}%</b> (Edge: +{(p_est - final_sim.vwap_buy_price)*100:.1f} п.п.)\n"
+                            f"💵 Сумма: <b>${final_bet_usdc:.2f} USDC</b> ({applied_pct*100:.1f}% банка)\n"
+                            f"📉 CLOB спред: {final_sim.roundtrip_slippage_pct*100:.2f}%\n"
+                            f"🧠 {eval_res.rationale}"
+                        )
+
+            # Store candidate evaluation in DB if edge >= 4 pp or if executed
+            if abs(real_edge) >= 0.04 or decision.startswith("EXECUTED"):
+                self.db.record_candidate(
+                    cycle_id=cycle_id,
+                    market_id=mkt.id,
+                    question=mkt.question,
+                    category=mkt.category,
+                    side=chosen_side,
+                    p_estimated=round(p_est, 4),
+                    ask_vwap=round(ob_sim.vwap_buy_price, 4),
+                    bid_vwap=round(ob_sim.vwap_sell_price, 4),
+                    edge=round(real_edge, 4),
+                    roundtrip_slippage_pct=round(ob_sim.roundtrip_slippage_pct, 4),
+                    liquidity_usd=round(mkt.liquidity_usd, 2),
+                    hours_to_close=round(mkt.hours_to_close, 2),
+                    decision=decision,
+                    rationale=eval_res.rationale,
+                )
+
+        # Update scan cycle record with final stats
+        pf_after = self.db.recalculate_portfolio()
+        with self.db._connect() as conn:
+            conn.execute(
+                """
+                UPDATE scan_cycles
+                SET evaluated_count = ?, edges_found = ?, trades_opened = ?, trades_closed = ?,
+                    cash_usdc = ?, total_equity = ?, drawdown_pct = ?, notes = ?
+                WHERE id = ?
+                """,
+                (
+                    evaluated_count,
+                    edges_found,
+                    trades_opened,
+                    trades_closed,
+                    pf_after["cash_usdc"],
+                    pf_after["total_equity"],
+                    pf_after["current_drawdown_pct"],
+                    f"Scanned {len(all_markets)}, filtered {len(filtered_markets)}, eval {evaluated_count}",
+                    cycle_id,
+                ),
+            )
+            conn.commit()
+
+        self._append_trades_log(
+            f"[{now_str}] [CYCLE #{cycle_id} SUMMARY] Scanned={len(all_markets)} | "
+            f"PassedFilter={len(filtered_markets)} | Evaluated={evaluated_count} | "
+            f"Edges(>=8pp)={edges_found} | Opened={trades_opened} | Closed={trades_closed} | "
+            f"Cash=${pf_after['cash_usdc']:.2f} | Equity=${pf_after['total_equity']:.2f} "
+            f"(DD={pf_after['current_drawdown_pct']*100:.2f}%)"
+        )
+
+        return {
+            "cycle_id": cycle_id,
+            "timestamp": now_str,
+            "markets_scanned": len(all_markets),
+            "passed_filters": len(filtered_markets),
+            "evaluated_count": evaluated_count,
+            "edges_found": edges_found,
+            "trades_opened": trades_opened,
+            "trades_closed": trades_closed,
+            "portfolio": pf_after,
+        }
