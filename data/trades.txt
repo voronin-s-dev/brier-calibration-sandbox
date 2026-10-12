@@ -56,3 +56,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-10-12 20:52:31 UTC] [CYCLE #4 SUMMARY] Scanned=798 | PassedFilter=195 | Evaluated=43 | Edges(>=8pp)=2 | Opened=1 | Closed=0 | Cash=$35.03 | Equity=$49.64 (DD=0.72%)
 [2026-10-12 21:02:44 UTC] [CYCLE #5 SUMMARY] Scanned=779 | PassedFilter=187 | Evaluated=44 | Edges(>=8pp)=2 | Opened=0 | Closed=0 | Cash=$35.03 | Equity=$49.59 (DD=0.81%)
+[EXIT] #1 | Bitcoin Up or Down on October 13? (YES)
+  Shares: 4.84 | Entry VWAP: 0.6200 -> Exit Bid VWAP: 0.5800
+  Proceeds: $2.81 | Realized PnL: $-0.19 USDC | Reason: THESIS INVALIDATED (Prob Shift > 5pp): Estimate dropped from 71.5% to 64.5%
+[2026-10-12 21:05:15 UTC] [CYCLE #6 SUMMARY] Scanned=797 | PassedFilter=198 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 | Closed=1 | Cash=$37.84 | Equity=$49.35 (DD=1.30%)
