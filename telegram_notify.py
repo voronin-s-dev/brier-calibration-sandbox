@@ -1,21 +1,20 @@
 """
 Optional Telegram Notifier for Polymarket Paper-Trading Simulator.
-Reads TELEGRAM_BOT_TOKEN and ALLOWED_CHAT_ID from environment or `integrations/telegram/.env`
+Reads TELEGRAM_BOT_TOKEN and ALLOWED_CHAT_ID from environment or local `.env`
 and sends instant alerts when virtual positions are opened, closed, resolved, or halted.
 Uses pure Python standard library (`urllib.request`) — zero external dependencies required.
 """
 
 import json
 import os
-import urllib.parse
 import urllib.request
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Dict
 
 
 def _load_env_fallback() -> Dict[str, str]:
     env_vars: Dict[str, str] = {}
-    env_file = Path(__file__).resolve().parent.parent / "telegram" / ".env"
+    env_file = Path(__file__).resolve().parent / ".env"
     if env_file.exists():
         try:
             for line in env_file.read_text(encoding="utf-8").splitlines():

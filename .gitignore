@@ -1,7 +1,8 @@
-# Never commit secrets, env files, local batch scripts, or bytecode
+# Never commit secrets, env files, local notes, local batch scripts, or bytecode
 .env
 .env.*
 *.bat
+grok*.txt
 __pycache__/
 *.py[cod]
 *$py.class

@@ -24,6 +24,16 @@ def norm_cdf(x: float) -> float:
     return 0.5 * (1.0 + math.erf(x / math.sqrt(2.0)))
 
 
+def calibrate_probability(p_raw: float, p_market: float, oracle_weight: float = 0.65) -> float:
+    """
+    Applies Bayesian shrinkage toward the market prior to prevent LLM/model overconfidence.
+    P_cal = w * P_raw + (1 - w) * P_market, clamped to [0.02, 0.98].
+    """
+    p_market_clamped = min(max(p_market, 0.02), 0.98)
+    blended = oracle_weight * p_raw + (1.0 - oracle_weight) * p_market_clamped
+    return min(max(blended, 0.02), 0.98)
+
+
 @dataclass
 class EvaluationResult:
     market_id: str
@@ -199,6 +209,13 @@ class CryptoOracle:
         if p_yes is None:
             return None
 
+        # Apply Bayesian shrinkage toward market prior unless barrier already touched today
+        mkt_prior = market.gamma_prices[0] if market.gamma_prices else 0.5
+        if p_yes < 0.98:
+            p_raw = p_yes
+            p_yes = calibrate_probability(p_raw, mkt_prior, oracle_weight=0.65)
+            mode_desc += f" -> Calibrated(0.65x)={p_yes*100:.1f}%"
+
         return EvaluationResult(
             market_id=market.id,
             question=market.question,
@@ -207,7 +224,7 @@ class CryptoOracle:
             official_source=f"Binance {symbol} 1m/1h Spot Klines",
             p_yes=round(p_yes, 4),
             p_no=round(1.0 - p_yes, 4),
-            confidence=0.88,
+            confidence=0.82,
             rationale=mode_desc,
             supporting_data=stats,
         )
@@ -307,9 +324,12 @@ class WeatherOracle:
         _, _, _, unit, station_name = self.STATIONS[matched_city]
         unit_sym = "°F" if unit == "fahrenheit" else "°C"
 
-        # Forecast uncertainty standard deviation (in degrees) scales with lead time
-        base_sd = 1.6 if unit == "fahrenheit" else 0.9
-        lead_factor = min(max(market.hours_to_close / 24.0, 0.4), 2.2)
+        # Realistic meteorological uncertainty between gridded NWP model and airport METAR thermometer:
+        # Minimum ~1.5°C (2.7°F) for same-day, scaling up for longer lead times and complex terrain
+        base_sd = 3.1 if unit == "fahrenheit" else 1.75
+        if matched_city in ("mexico city", "ankara", "sao paulo"):
+            base_sd *= 1.15
+        lead_factor = min(max(market.hours_to_close / 24.0, 0.85), 1.8)
         sd = base_sd * lead_factor
 
         # Parse temperature bracket from question
@@ -325,28 +345,30 @@ class WeatherOracle:
         if range_m:
             low_b = float(range_m.group(1)) - 0.5
             high_b = float(range_m.group(2)) + 0.5
-            p_yes = norm_cdf((high_b - forecast_max) / sd) - norm_cdf((low_b - forecast_max) / sd)
+            p_raw = norm_cdf((high_b - forecast_max) / sd) - norm_cdf((low_b - forecast_max) / sd)
             bracket_str = f"[{range_m.group(1)}, {range_m.group(2)}]{unit_sym}"
         elif below_m:
             high_b = float(below_m.group(1)) + 0.5
-            p_yes = norm_cdf((high_b - forecast_max) / sd)
+            p_raw = norm_cdf((high_b - forecast_max) / sd)
             bracket_str = f"<={below_m.group(1)}{unit_sym}"
         elif above_m:
             low_b = float(above_m.group(1)) - 0.5
-            p_yes = 1.0 - norm_cdf((low_b - forecast_max) / sd)
+            p_raw = 1.0 - norm_cdf((low_b - forecast_max) / sd)
             bracket_str = f">={above_m.group(1)}{unit_sym}"
         elif exact_m:
             val = float(exact_m.group(1))
             low_b, high_b = val - 0.5, val + 0.5
-            p_yes = norm_cdf((high_b - forecast_max) / sd) - norm_cdf((low_b - forecast_max) / sd)
+            p_raw = norm_cdf((high_b - forecast_max) / sd) - norm_cdf((low_b - forecast_max) / sd)
             bracket_str = f"{val:.0f}{unit_sym} (±0.5)"
         else:
             return None
 
-        p_yes = min(max(p_yes, 0.005), 0.99)
+        p_raw = min(max(p_raw, 0.01), 0.99)
+        mkt_prior = market.gamma_prices[0] if market.gamma_prices else 0.5
+        p_yes = calibrate_probability(p_raw, mkt_prior, oracle_weight=0.65)
         rationale = (
             f"Station {station_name} ({target_date_str}): Model Max={forecast_max:.1f}{unit_sym} "
-            f"(±{sd:.1f}{unit_sym}), Target={bracket_str} => P(YES)={p_yes*100:.1f}%"
+            f"(±{sd:.1f}{unit_sym}), Target={bracket_str} => RawP={p_raw*100:.1f}%, Calibrated(0.65x)={p_yes*100:.1f}%"
         )
 
         return EvaluationResult(
@@ -357,13 +379,14 @@ class WeatherOracle:
             official_source=station_name,
             p_yes=round(p_yes, 4),
             p_no=round(1.0 - p_yes, 4),
-            confidence=0.90,
+            confidence=0.85,
             rationale=rationale,
             supporting_data={
                 "station": station_name,
                 "target_date": target_date_str,
                 "forecast_max": forecast_max,
-                "std_dev": sd,
+                "std_dev": round(sd, 2),
+                "raw_p_yes": round(p_raw, 4),
                 "bracket": bracket_str,
             },
         )

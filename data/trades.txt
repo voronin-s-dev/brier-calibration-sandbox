@@ -60,3 +60,22 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 4.84 | Entry VWAP: 0.6200 -> Exit Bid VWAP: 0.5800
   Proceeds: $2.81 | Realized PnL: $-0.19 USDC | Reason: THESIS INVALIDATED (Prob Shift > 5pp): Estimate dropped from 71.5% to 64.5%
 [2026-10-12 21:05:15 UTC] [CYCLE #6 SUMMARY] Scanned=797 | PassedFilter=198 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 | Closed=1 | Cash=$37.84 | Equity=$49.35 (DD=1.30%)
+[EXIT] #2 | Will the highest temperature in Shanghai be 26°C on October 13? (NO)
+  Shares: 4.62 | Entry VWAP: 0.6500 -> Exit Bid VWAP: 0.6200
+  Proceeds: $2.86 | Realized PnL: $-0.14 USDC | Reason: THESIS INVALIDATED (Prob Shift > 5pp): Estimate dropped from 89.0% to 74.5%
+[EXIT] #3 | Will the highest temperature in Sao Paulo be 26°C on October 13? (NO)
+  Shares: 3.69 | Entry VWAP: 0.8100 -> Exit Bid VWAP: 0.7600
+  Proceeds: $2.81 | Realized PnL: $-0.18 USDC | Reason: THESIS INVALIDATED (Prob Shift > 5pp): Estimate dropped from 98.2% to 83.0%
+[EXIT] #5 | Will the highest temperature in Mexico City be 26°C or higher on October 13? (NO)
+  Shares: 6.08 | Entry VWAP: 0.4918 -> Exit Bid VWAP: 0.4900
+  Proceeds: $2.98 | Realized PnL: $-0.01 USDC | Reason: THESIS INVALIDATED (Prob Shift > 5pp): Estimate dropped from 99.5% to 73.8%
+[2026-10-12 21:56:24 UTC] [OPEN TRADE #6] Will the highest temperature in Shanghai be 26°C on October 13?
+  Категория: Weather | Сторона: NO | Источник: METAR ZSPD (Shanghai Pudong)
+  Оценка бота: 74.5% vs Рынок (Ask VWAP): 65.0% (Перекос/Edge: +9.5 п.п.)
+  Стакан CLOB: BestBid=0.620, BestAsk=0.650, Проскальзывание входа/выхода=3.00% (<= 3.0%)
+  Келли: Полный=27.3%, Четверть(0.25x)=6.8% -> Применён=6.0% банка
+  Размер сделки: $2.95 USDC (4.54 shares @ $0.6500)
+  Условие выхода: Exit if Bid VWAP >= 73.5% (edge closed), or P_est drops <= 69.5% (-5pp), or < 1h before 2026-10-13T12:00 (unless P_est >= 75% -> Hold to $1.00)
+  Причина: Station METAR ZSPD (Shanghai Pudong) (2026-10-13): Model Max=27.2°C (±1.5°C), Target=26°C (±0.5) => RawP=19.2%, Calibrated(0.65x)=25.5%
+
+[2026-10-12 21:56:24 UTC] [CYCLE #7 SUMMARY] Scanned=799 | PassedFilter=222 | Evaluated=43 | Edges(>=8pp)=2 | Opened=1 | Closed=3 | Cash=$43.53 | Equity=$49.10 (DD=1.80%)

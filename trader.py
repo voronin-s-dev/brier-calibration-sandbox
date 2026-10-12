@@ -5,9 +5,10 @@ Half-Kelly (capped at 6% bankroll, max 5 open positions), enforces the 3% CLOB r
 slippage limit, monitors exit conditions, and logs every action to `trades.txt` and SQLite.
 """
 
+import re
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Set, Tuple
 
 from database import SimDatabase
 from oracles import CryptoOracle, EvaluationResult, NewsAndOrderbookOracle, WeatherOracle
@@ -26,18 +27,54 @@ from telegram_notify import send_telegram_alert
 TRADES_LOG_PATH = Path(__file__).resolve().parent / "data" / "trades.txt"
 
 
+def extract_event_key(question: str, category: str) -> str:
+    """
+    Extracts a canonical underlying event key so the bot never opens multiple positions
+    on the same thermometer/city, crypto asset on the same day, or sports match.
+    """
+    q_low = question.lower().strip()
+    date_m = re.search(
+        r"\b(january|february|march|april|may|june|july|august|september|october|november|december)\s+\d{1,2}\b|\b202\d-\d{2}-\d{2}\b",
+        q_low,
+    )
+    date_part = date_m.group(0) if date_m else "nodate"
+
+    if category == "Weather" or "temperature in" in q_low:
+        city_m = re.search(r"temperature\s+in\s+([a-z\s\(\)]+?)\s+be\b", q_low)
+        city = city_m.group(1).strip() if city_m else q_low[:25]
+        return f"weather:{city}:{date_part}"
+
+    if category == "Crypto":
+        for coin in ("bitcoin", "btc", "ethereum", "eth", "solana", "sol", "xrp", "doge", "bnb"):
+            if re.search(rf"\b{coin}\b", q_low):
+                norm_coin = "bitcoin" if coin == "btc" else ("ethereum" if coin == "eth" else ("solana" if coin == "sol" else coin))
+                return f"crypto:{norm_coin}:{date_part}"
+
+    if category == "Sports":
+        cleaned = re.sub(r"^(spread:\s*|will\s+)", "", q_low)
+        cleaned = re.sub(r":\s*o/u.*$|\s+win\s+on.*$|\(\-[0-9\.]+\)", "", cleaned).strip()
+        return f"sports:{cleaned[:35]}:{date_part}"
+
+    return f"{category.lower()}:{q_low[:40]}"
+
+
 class GrokCharterPaperTrader:
     """
-    Implements the 10-step autonomous Polymarket trading charter on a virtual demo account.
+    Implements the 10-step autonomous Polymarket trading charter on a virtual demo account
+    with Risk Management v2 (0.25x Kelly, Bayesian Calibration, Event Deduplication, Category Caps,
+    and Smart Hold-to-Resolution).
     """
 
     MAX_OPEN_POSITIONS = 5
-    MAX_BANK_PCT_PER_TRADE = 0.06  # 6% cap
-    MIN_EDGE_PP = 0.08             # 8 percentage points minimum divergence
-    MIN_HOURS_TO_CLOSE = 2.0       # Skip markets closing in < 2 hours
-    MAX_HOURS_TO_CLOSE = 360.0     # Focus on markets resolving within 15 days for active turnover
-    EXIT_HOURS_THRESHOLD = 1.0     # Exit if < 1 hour to close
-    PROB_SHIFT_EXIT_PP = 0.05      # Exit if probability estimate drops by > 5 pp
+    MAX_POSITIONS_PER_CATEGORY = 3  # Max 3 out of 5 positions in any single category
+    KELLY_FRACTION = 0.25           # Quarter-Kelly for smooth sizing between $1 and $3
+    MAX_BANK_PCT_PER_TRADE = 0.06   # 6% hard cap
+    MIN_EDGE_PP = 0.08              # 8 percentage points minimum divergence
+    MIN_HOURS_TO_CLOSE = 2.0        # Skip markets closing in < 2 hours
+    MAX_HOURS_TO_CLOSE = 360.0      # Focus on markets resolving within 15 days for active turnover
+    EXIT_HOURS_THRESHOLD = 1.0      # Check expiration exit when < 1 hour to close
+    HOLD_TO_RESOLUTION_PROB = 0.75  # Hold through final hour to $1.00 resolution if P_est >= 75%
+    PROB_SHIFT_EXIT_PP = 0.05       # Exit if fundamental probability estimate drops by > 5 pp
 
     def __init__(
         self,
@@ -58,8 +95,8 @@ class GrokCharterPaperTrader:
                 "POLYMARKET AUTONOMOUS PAPER TRADER — GROK CHARTER SIMULATION LOG (trades.txt)\n"
                 f"Initialized at: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}\n"
                 f"Starting Virtual Bankroll: ${initial_capital:.2f} USDC | Monthly Target: +$60.00/mo\n"
-                "Rules: Edge >= 8 pp | CLOB Round-Trip Slippage <= 3% | Size: 0.5x Kelly (max 6% bank)\n"
-                "Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak\n"
+                "Rules: Edge >= 8 pp | CLOB Round-Trip Slippage <= 3% | Size: 0.25x Kelly (max 6% bank)\n"
+                "Max Open Positions: 5 (max 3/category, 1/event) | Kill-Switch: 40% Drawdown\n"
                 "================================================================================\n"
             )
 
@@ -67,15 +104,17 @@ class GrokCharterPaperTrader:
         with open(self.trades_txt_path, "a", encoding="utf-8") as f:
             f.write(text + "\n")
 
-    @staticmethod
+    @classmethod
     def compute_kelly_sizing(
+        cls,
         p_est: float,
         ask_vwap: float,
         total_equity: float,
         max_pct: float = 0.06,
+        kelly_fraction: float = 0.25,
     ) -> Tuple[float, float, float, float]:
         """
-        Calculates Full Kelly, Half Kelly, Capped % of bankroll, and USDC bet size.
+        Calculates Full Kelly, Fractional (0.25x) Kelly, Capped % of bankroll, and USDC bet size.
         Formula for binary contract at cost `c` paying $1 on win:
           f* = (p - c) / (1 - c)
         """
@@ -83,10 +122,10 @@ class GrokCharterPaperTrader:
             return 0.0, 0.0, 0.0, 0.0
 
         full_kelly = (p_est - ask_vwap) / (1.0 - ask_vwap)
-        half_kelly = 0.5 * full_kelly
-        applied_pct = min(half_kelly, max_pct)
+        frac_kelly = kelly_fraction * full_kelly
+        applied_pct = min(frac_kelly, max_pct)
         bet_usdc = round(total_equity * applied_pct, 2)
-        return full_kelly, half_kelly, applied_pct, bet_usdc
+        return full_kelly, frac_kelly, applied_pct, bet_usdc
 
     def _evaluate_market_probability(
         self,
@@ -220,10 +259,14 @@ class GrokCharterPaperTrader:
                     f"THESIS INVALIDATED (Prob Shift > 5pp): Estimate dropped from "
                     f"{initial_p*100:.1f}% to {latest_p*100:.1f}%"
                 )
-            # Exit Rule C: < 1 hour before market close
-            elif hours_left < self.EXIT_HOURS_THRESHOLD:
+            # Exit Rule C: < 1 hour before market close — ONLY sell if win probability < 75%;
+            # if P_est >= 75%, HOLD TO RESOLUTION ($1.00 payout) to avoid giving up spread!
+            elif hours_left < self.EXIT_HOURS_THRESHOLD and latest_p < self.HOLD_TO_RESOLUTION_PROB:
                 exit_triggered = True
-                exit_reason = f"TIME EXIT (< 1h to close): {hours_left*60:.0f}m remaining"
+                exit_reason = (
+                    f"TIME EXIT (< 1h to close & uncertain P_est={latest_p*100:.1f}% < 75%): "
+                    f"{hours_left*60:.0f}m remaining"
+                )
 
             if exit_triggered:
                 pnl = self.db.close_position(
@@ -269,6 +312,15 @@ class GrokCharterPaperTrader:
         open_positions = self.db.get_open_positions()
         open_market_ids = {str(p["market_id"]) for p in open_positions}
 
+        # Track active underlying events (1 event = 1 trade) and category concentration (max 3 per category)
+        active_event_keys: Set[str] = {
+            extract_event_key(str(p["question"]), str(p["category"])) for p in open_positions
+        }
+        category_counts: Dict[str, int] = {}
+        for p in open_positions:
+            cat = str(p["category"])
+            category_counts[cat] = category_counts.get(cat, 0) + 1
+
         # Step 1: Fetch active markets from Gamma API
         all_markets = fetch_active_markets(max_Count=max_markets_to_scan)
         min_liq = float(pf.get("min_liquidity_filter", 5000.0))
@@ -277,7 +329,7 @@ class GrokCharterPaperTrader:
 
         # Filter markets per Rule #1 & Rule #2:
         # - Closes > 2 hours from now (and <= 15 days for active simulation turnover)
-        # - Liquidity >= $5,000 (or >= $1,500 for official NOAA/METAR weather station markets)
+        # - Liquidity >= $5,000 (or >= $400 per bracket for official NOAA/METAR weather station markets)
         # - Has an official resolution source
         filtered_markets: List[MarketInfo] = []
         for m in all_markets:
@@ -355,8 +407,9 @@ class GrokCharterPaperTrader:
                 ask_vwap=max(tentative_price, 0.02),
                 total_equity=total_equity,
                 max_pct=self.MAX_BANK_PCT_PER_TRADE,
+                kelly_fraction=self.KELLY_FRACTION,
             )
-            probe_bet_usdc = max(tentative_bet, round(total_equity * 0.04, 2), 1.50)
+            probe_bet_usdc = max(tentative_bet, round(total_equity * 0.03, 2), 1.25)
 
             # Step 6: Check real CLOB Order Book for entry Ask VWAP and immediate exit Bid VWAP
             try:
@@ -375,6 +428,8 @@ class GrokCharterPaperTrader:
             if real_edge >= self.MIN_EDGE_PP:
                 edges_found += 1
 
+            event_key = extract_event_key(mkt.question, mkt.category)
+
             # Decide whether to execute or reject
             decision = ""
             if real_edge < self.MIN_EDGE_PP:
@@ -383,18 +438,23 @@ class GrokCharterPaperTrader:
                 decision = f"REJECTED: {ob_sim.reject_reason}"
             elif not ob_sim.passes_slippage_limit:
                 decision = f"REJECTED: CLOB round-trip slippage {ob_sim.roundtrip_slippage_pct*100:.2f}% > {max_slippage*100:.1f}% limit"
+            elif event_key in active_event_keys:
+                decision = f"REJECTED: Duplicate underlying event ({event_key})"
+            elif category_counts.get(mkt.category, 0) >= self.MAX_POSITIONS_PER_CATEGORY:
+                decision = f"REJECTED: Category cap reached ({self.MAX_POSITIONS_PER_CATEGORY}/{self.MAX_POSITIONS_PER_CATEGORY} in {mkt.category})"
             elif len(open_positions) + trades_opened >= self.MAX_OPEN_POSITIONS:
                 decision = f"REJECTED: Max open positions ({self.MAX_OPEN_POSITIONS}) reached"
             else:
-                # Re-calculate exact Half-Kelly size using the real CLOB Ask VWAP
-                full_k, half_k, applied_pct, final_bet_usdc = self.compute_kelly_sizing(
+                # Re-calculate exact Quarter-Kelly size using the real CLOB Ask VWAP
+                full_k, frac_k, applied_pct, final_bet_usdc = self.compute_kelly_sizing(
                     p_est=p_est,
                     ask_vwap=ob_sim.vwap_buy_price,
                     total_equity=total_equity,
                     max_pct=self.MAX_BANK_PCT_PER_TRADE,
+                    kelly_fraction=self.KELLY_FRACTION,
                 )
                 if final_bet_usdc < 1.00 or final_bet_usdc > cash_available:
-                    decision = f"REJECTED: Calculated bet ${final_bet_usdc:.2f} invalid for available cash ${cash_available:.2f}"
+                    decision = f"REJECTED: Calculated 0.25x Kelly bet ${final_bet_usdc:.2f} below $1.00 min or > cash ${cash_available:.2f}"
                 else:
                     # Re-verify exact shares for `final_bet_usdc`
                     final_sim = simulate_clob_buy_and_exit_check(
@@ -410,7 +470,7 @@ class GrokCharterPaperTrader:
                         exit_cond = (
                             f"Exit if Bid VWAP >= {p_est*100 - 1.0:.1f}% (edge closed), "
                             f"or P_est drops <= {(p_est - self.PROB_SHIFT_EXIT_PP)*100:.1f}% (-5pp), "
-                            f"or < 1h before {mkt.end_date_iso[:16]}"
+                            f"or < 1h before {mkt.end_date_iso[:16]} (unless P_est >= 75% -> Hold to $1.00)"
                         )
                         pos_id = self.db.open_position(
                             market_id=mkt.id,
@@ -425,7 +485,7 @@ class GrokCharterPaperTrader:
                             p_est=p_est,
                             entry_edge=round(p_est - final_sim.vwap_buy_price, 4),
                             kelly_full_pct=round(full_k, 4),
-                            kelly_half_pct=round(half_k, 4),
+                            kelly_half_pct=round(frac_k, 4),
                             applied_size_pct=round(applied_pct, 4),
                             roundtrip_slippage_pct=round(final_sim.roundtrip_slippage_pct, 4),
                             official_source=eval_res.official_source,
@@ -434,6 +494,8 @@ class GrokCharterPaperTrader:
                             end_date_iso=mkt.end_date_iso,
                         )
                         trades_opened += 1
+                        active_event_keys.add(event_key)
+                        category_counts[mkt.category] = category_counts.get(mkt.category, 0) + 1
                         decision = f"EXECUTED BUY #{pos_id} (${final_bet_usdc:.2f} @ {final_sim.vwap_buy_price:.4f})"
 
                         # Log to trades.txt per Rule #8
@@ -444,7 +506,7 @@ class GrokCharterPaperTrader:
                             f"(Перекос/Edge: +{(p_est - final_sim.vwap_buy_price)*100:.1f} п.п.)\n"
                             f"  Стакан CLOB: BestBid={final_sim.best_bid:.3f}, BestAsk={final_sim.best_ask:.3f}, "
                             f"Проскальзывание входа/выхода={final_sim.roundtrip_slippage_pct*100:.2f}% (<= 3.0%)\n"
-                            f"  Келли: Полный={full_k*100:.1f}%, Половина={half_k*100:.1f}% -> Применён потолок={applied_pct*100:.1f}% банка\n"
+                            f"  Келли: Полный={full_k*100:.1f}%, Четверть(0.25x)={frac_k*100:.1f}% -> Применён={applied_pct*100:.1f}% банка\n"
                             f"  Размер сделки: ${final_bet_usdc:.2f} USDC ({final_sim.shares_filled:.2f} shares @ ${final_sim.vwap_buy_price:.4f})\n"
                             f"  Условие выхода: {exit_cond}\n"
                             f"  Причина: {eval_res.rationale}\n"
