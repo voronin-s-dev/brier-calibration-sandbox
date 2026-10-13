@@ -109,3 +109,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [EXIT] #8 | Will the price of Bitcoin be above $80,000 on October 14? (NO)
   Shares: 23.58 | Entry VWAP: 0.0670 -> Exit Bid VWAP: 0.0330
   Proceeds: $0.78 | Realized PnL: $-0.80 USDC | Reason: TAKE PROFIT (Edge Closed): Live CLOB Bid VWAP (3.3%) reached our estimated probability (4.1%)
+[2026-10-13 12:15:05 UTC] [OPEN TRADE #9] Will Bitcoin dip to $80,000 October 12-18?
+  Категория: Crypto | Сторона: YES | Источник: Binance BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 38.1% vs Рынок (Ask VWAP): 30.0% (Перекос/Edge: +8.1 п.п.)
+  Стакан CLOB: BestBid=0.290, BestAsk=0.300, Проскальзывание входа/выхода=1.51% (<= 3.0%)
+  Келли: Полный=11.6%, Четверть(0.25x)=5.8% -> Применён=5.8% банка
+  Размер сделки: $3.07 USDC (10.23 shares @ $0.3000)
+  Условие выхода: Exit if Bid VWAP >= 37.1% (edge closed), or P_est drops <= 33.1% (-5pp), or < 1h before 2026-10-19T04:00 (unless P_est >= 75% -> Hold to $1.00)
+  Причина: First-passage dip model: BTCUSDT=$83,270.01 -> barrier=$80,000 (-3.93%), vol_h=0.39%, tau=135.7h => P(touch)=43.0% -> Calibrated(0.65x)=38.1%
+
+[2026-10-13 12:15:05 UTC] [CYCLE #10 SUMMARY] Scanned=798 | PassedFilter=297 | Evaluated=44 | Edges(>=8pp)=1 | Opened=1 | Closed=0 | Cash=$46.78 | Equity=$52.82 (DD=1.74%)

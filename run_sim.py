@@ -50,7 +50,7 @@ def print_console_summary(db: SimDatabase) -> None:
         f"Slippage<={pf['max_slippage_filter']*100:.1f}%"
     )
     print("-" * 82)
-    print(f"📂 ОТКРЫТЫЕ ПОЗИЦИИ ({len(open_pos)} / 5):")
+    print(f"📂 ОТКРЫТЫЕ ПОЗИЦИИ ({len(open_pos)} / {GrokCharterPaperTrader.MAX_OPEN_POSITIONS}):")
     if not open_pos:
         print("   (пока нет открытых позиций)")
     else:
