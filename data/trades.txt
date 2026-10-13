@@ -138,3 +138,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: CLOB near-touch depth imbalance OBI=-0.96 (BidDepth=$45 vs AskDepth=$2,134) | News sentiment=-1.00 (12 articles; top: 'ETH price on Oct 13, 2026 at 9am EDT Crypto Prediction Market - Robinhood')
 
 [2026-10-13 12:20:29 UTC] [CYCLE #11 SUMMARY] Scanned=795 | PassedFilter=299 | Evaluated=8 | Edges(>=8pp)=2 | Opened=2 | Closed=0 | Cash=$38.86 | Equity=$52.75 (DD=1.86%)
+[2026-10-13 12:21:48 UTC] [CYCLE #12 SUMMARY] Scanned=793 | PassedFilter=293 | Evaluated=8 | Edges(>=8pp)=0 | Opened=0 | Closed=0 | Cash=$38.86 | Equity=$52.89 (DD=1.59%)
