@@ -8,6 +8,8 @@ Usage:
 """
 
 import argparse
+import os
+import subprocess
 import sys
 import time
 from pathlib import Path
@@ -24,6 +26,24 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from dashboard_gen import generate_reports
 from database import SimDatabase
 from trader import GrokCharterPaperTrader
+
+
+def git_sync_snapshot(commit_msg: str = "chore: update calibration snapshot [skip ci]") -> bool:
+    """Safely stages data/ files, commits, and pushes to origin/main."""
+    try:
+        subprocess.run(["git", "add", "data/"], check=True)
+        res = subprocess.run(["git", "diff", "--staged", "--quiet"])
+        if res.returncode != 0:
+            subprocess.run(["git", "commit", "-m", commit_msg], check=True)
+            subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)
+            subprocess.run(["git", "push", "origin", "main"], check=True)
+            print(f"🚀 [GIT SYNC] Snapshot successfully pushed: {commit_msg}")
+            return True
+        else:
+            print("ℹ️ [GIT SYNC] No new file modifications in data/ to push.")
+    except Exception as e:
+        print(f"⚠️ [GIT SYNC WARNING]: {e}", file=sys.stderr)
+    return False
 
 
 def print_console_summary(db: SimDatabase) -> None:
@@ -76,7 +96,9 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Polymarket Autonomous Paper-Trading Simulator")
     parser.add_argument("--once", action="store_true", help="Run a single scan & trade cycle")
     parser.add_argument("--loop", action="store_true", help="Run continuously in a loop")
+    parser.add_argument("--cycles", type=int, default=1, help="Number of cycles to run in this session (e.g. 3 or 4)")
     parser.add_argument("--interval", type=int, default=600, help="Loop interval in seconds (default 600s = 10m)")
+    parser.add_argument("--git-sync", action="store_true", help="Auto-commit and push data/ snapshot to GitHub after each cycle")
     parser.add_argument("--status", action="store_true", help="Show current status and regenerate dashboard")
     parser.add_argument("--scan-limit", type=int, default=800, help="Number of active Gamma markets to scan per cycle")
     parser.add_argument("--set-category", type=str, help="Set category filter (ALL, Weather, Crypto, Sports, Macro)")
@@ -131,6 +153,23 @@ def main() -> None:
         print(f"📊 Дашборд обновлён: {paths['html']}")
         return
 
+    if args.cycles > 1:
+        print(f"🚀 Запуск сессионного облачного цикла: {args.cycles} итераций с интервалом {args.interval} сек...")
+        for i in range(1, args.cycles + 1):
+            try:
+                print(f"\n--- [ОБЛАЧНАЯ СЕССИЯ: ИТЕРАЦИЯ {i}/{args.cycles}] ---")
+                res = trader.run_cycle(max_markets_to_scan=args.scan_limit)
+                paths = generate_reports(db)
+                print_console_summary(db)
+                print(f"✅ Цикл #{res.get('cycle_id')} завершён.")
+                if args.git_sync or os.getenv("GITHUB_ACTIONS") == "true":
+                    git_sync_snapshot(f"chore: calibration cycle #{res.get('cycle_id')} [skip ci]")
+            except Exception as e:
+                print(f"⚠️ Ошибка в итерации {i}: {e}", file=sys.stderr)
+            if i < args.cycles:
+                time.sleep(args.interval)
+        return
+
     if args.loop:
         print(f"🚀 Запуск автономного цикла симуляции (интервал: {args.interval} сек / {args.interval/60:.1f} мин)...")
         while True:
@@ -139,6 +178,8 @@ def main() -> None:
                 paths = generate_reports(db)
                 print_console_summary(db)
                 print(f"✅ Цикл #{res.get('cycle_id')} завершён. Дашборд: {paths['html']}")
+                if args.git_sync or os.getenv("GITHUB_ACTIONS") == "true":
+                    git_sync_snapshot(f"chore: calibration cycle #{res.get('cycle_id')} [skip ci]")
             except Exception as e:
                 print(f"⚠️ Ошибка в цикле: {e}", file=sys.stderr)
             time.sleep(args.interval)
@@ -151,6 +192,8 @@ def main() -> None:
         print(f"📄 Лог сделок: {paths['trades_txt']}")
         print(f"📊 Отчёт (MD): {paths['markdown']}")
         print(f"🌐 Интерактивный дашборд: {paths['html']}")
+        if args.git_sync or os.getenv("GITHUB_ACTIONS") == "true":
+            git_sync_snapshot(f"chore: calibration cycle #{res.get('cycle_id')} [skip ci]")
 
 
 if __name__ == "__main__":

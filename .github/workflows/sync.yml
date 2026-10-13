@@ -2,40 +2,60 @@ name: Calibration Sync
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    # Trigger twice an hour at off-peak minutes (07 and 37)
+    - cron: '7,37 * * * *'
   workflow_dispatch:
+    inputs:
+      cycles:
+        description: 'Number of cycles in this session'
+        required: false
+        default: '3'
+      interval:
+        description: 'Interval between cycles in seconds'
+        required: false
+        default: '540'
 
 permissions:
   contents: write
 
+concurrency:
+  group: calibration-sync
+  cancel-in-progress: false
+
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 35
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Run Calibration Cycle
+      - name: Configure Git Identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Run Cloud Session
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           ALLOWED_CHAT_ID: ${{ secrets.ALLOWED_CHAT_ID }}
         run: |
-          python run_sim.py --once --scan-limit 800
+          python run_sim.py --cycles ${{ github.event.inputs.cycles || '3' }} --interval ${{ github.event.inputs.interval || '540' }} --scan-limit 800 --git-sync
 
-      - name: Persist Snapshot
+      - name: Final Safety Snapshot
+        if: always()
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
           if ! git diff --staged --quiet; then
-            git commit -m "chore: update calibration snapshot [skip ci]"
+            git commit -m "chore: final session sync [skip ci]" || true
             git pull --rebase origin main || true
-            git push
+            git push origin main || true
           fi
