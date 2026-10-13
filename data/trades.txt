@@ -101,3 +101,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: CLOB near-touch depth imbalance OBI=-0.81 (BidDepth=$886 vs AskDepth=$8,379) | News sentiment=-1.00 (12 articles; top: 'Inflation Intrigue and the Defense of $80,000: a Trader Assesses Bitcoin and Ethereum Price Scenarios - Incryp')
 
 [2026-10-13 02:33:23 UTC] [CYCLE #8 SUMMARY] Scanned=791 | PassedFilter=223 | Evaluated=14 | Edges(>=8pp)=3 | Opened=2 | Closed=1 | Cash=$44.86 | Equity=$51.03 (DD=0.07%)
+[2026-10-13T09:38:54.991425+00:00] [GOVERNOR APPROVED] ✅ Одобрено предложение #2 (Чек-ап 48ч: Расширить порог досрочного выхода с 5.0 до 7.5 п.п.): prob_shift_exit_pp -> 7.5 п.п.
