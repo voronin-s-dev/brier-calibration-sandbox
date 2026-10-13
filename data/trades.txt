@@ -139,3 +139,28 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-10-13 12:20:29 UTC] [CYCLE #11 SUMMARY] Scanned=795 | PassedFilter=299 | Evaluated=8 | Edges(>=8pp)=2 | Opened=2 | Closed=0 | Cash=$38.86 | Equity=$52.75 (DD=1.86%)
 [2026-10-13 12:21:48 UTC] [CYCLE #12 SUMMARY] Scanned=793 | PassedFilter=293 | Evaluated=8 | Edges(>=8pp)=0 | Opened=0 | Closed=0 | Cash=$38.86 | Equity=$52.89 (DD=1.59%)
+[RESOLVED] #4 | Will the highest temperature in Seoul (Incheon) be 21°C on October 13? (NO)
+  Entry VWAP: 0.3800 | Settlement: 0.00 | PnL: $-2.99 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $0.00/share
+[RESOLVED] #10 | Will the price of Bitcoin be above $84,000 on October 13? (YES)
+  Entry VWAP: 0.1300 | Settlement: 0.00 | PnL: $-3.68 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $0.00/share
+[RESOLVED] #11 | Will the price of Ethereum be above $2,500 on October 13? (NO)
+  Entry VWAP: 0.5684 | Settlement: 0.00 | PnL: $-4.24 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $0.00/share
+[2026-10-13 18:20:04 UTC] [OPEN TRADE #12] Will Bitcoin dip to $82,000 on October 13?
+  Категория: Crypto | Сторона: YES | Источник: Binance BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 21.7% vs Рынок (Ask VWAP): 13.0% (Перекос/Edge: +8.7 п.п.)
+  Стакан CLOB: BestBid=0.120, BestAsk=0.130, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=10.0%, Четверть(0.25x)=5.0% -> Применён=5.0% банка
+  Размер сделки: $2.10 USDC (16.15 shares @ $0.1300)
+  Условие выхода: Exit if Bid VWAP >= 20.7% (edge closed), or P_est drops <= 16.7% (-5pp), or < 1h before 2026-10-14T04:00 (unless P_est >= 75% -> Hold to $1.00)
+  Причина: First-passage dip model: BTCUSDT=$83,188.00 -> barrier=$82,000 (-1.43%), vol_h=0.37%, tau=9.7h => P(touch)=26.4% -> Calibrated(0.65x)=21.7%
+
+[2026-10-13 18:20:04 UTC] [OPEN TRADE #13] Will Ethereum reach $2,700 October 12-18?
+  Категория: Crypto | Сторона: YES | Источник: Binance ETHUSDT 1m/1h Spot Klines
+  Оценка бота: 22.7% vs Рынок (Ask VWAP): 13.0% (Перекос/Edge: +9.7 п.п.)
+  Стакан CLOB: BestBid=0.120, BestAsk=0.130, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=11.2%, Четверть(0.25x)=5.6% -> Применён=5.6% банка
+  Размер сделки: $2.33 USDC (17.92 shares @ $0.1300)
+  Условие выхода: Exit if Bid VWAP >= 21.7% (edge closed), or P_est drops <= 17.7% (-5pp), or < 1h before 2026-10-19T04:00 (unless P_est >= 75% -> Hold to $1.00)
+  Причина: First-passage reach model: ETHUSDT=$2,506.18 -> barrier=$2,700 (+7.73%), vol_h=0.54%, tau=129.7h => P(touch)=28.2% -> Calibrated(0.65x)=22.7%
+
+[2026-10-13 18:20:04 UTC] [CYCLE #13 SUMMARY] Scanned=789 | PassedFilter=185 | Evaluated=44 | Edges(>=8pp)=3 | Opened=2 | Closed=0 | Cash=$34.43 | Equity=$41.59 (DD=22.62%)

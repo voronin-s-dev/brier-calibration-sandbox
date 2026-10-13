@@ -19,5 +19,12 @@
     "Asia/Seoul",
     "celsius",
     "Auto-Meteo Busan (KR)"
+  ],
+  "manila": [
+    14.6042,
+    120.9822,
+    "Asia/Manila",
+    "celsius",
+    "Auto-Meteo Manila (PH)"
   ]
 }
