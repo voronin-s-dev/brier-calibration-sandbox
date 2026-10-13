@@ -65,10 +65,10 @@ class GrokCharterPaperTrader:
     and Smart Hold-to-Resolution).
     """
 
-    MAX_OPEN_POSITIONS = 5
-    MAX_POSITIONS_PER_CATEGORY = 3  # Max 3 out of 5 positions in any single category
-    KELLY_FRACTION = 0.25           # Quarter-Kelly for smooth sizing between $1 and $3
-    MAX_BANK_PCT_PER_TRADE = 0.06   # 6% hard cap
+    MAX_OPEN_POSITIONS = 8
+    MAX_POSITIONS_PER_CATEGORY = 4  # Max 4 out of 8 positions in any single category
+    KELLY_FRACTION = 0.50           # Half-Kelly sizing as requested in original Grok charter
+    MAX_BANK_PCT_PER_TRADE = 0.08   # 8% hard cap per trade
     MIN_EDGE_PP = 0.08              # 8 percentage points minimum divergence
     MIN_HOURS_TO_CLOSE = 2.0        # Skip markets closing in < 2 hours
     MAX_HOURS_TO_CLOSE = 360.0      # Focus on markets resolving within 15 days for active turnover
@@ -110,11 +110,11 @@ class GrokCharterPaperTrader:
         p_est: float,
         ask_vwap: float,
         total_equity: float,
-        max_pct: float = 0.06,
-        kelly_fraction: float = 0.25,
+        max_pct: float = 0.08,
+        kelly_fraction: float = 0.50,
     ) -> Tuple[float, float, float, float]:
         """
-        Calculates Full Kelly, Fractional (0.25x) Kelly, Capped % of bankroll, and USDC bet size.
+        Calculates Full Kelly, Fractional (0.50x) Kelly, Capped % of bankroll, and USDC bet size.
         Formula for binary contract at cost `c` paying $1 on win:
           f* = (p - c) / (1 - c)
         """

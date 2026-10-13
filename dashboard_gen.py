@@ -72,12 +72,12 @@ def generate_reports(
         "| :--- | :--- | :--- |",
         f"| **Стартовый капитал** | `${initial_cap:.2f} USDC` | Не добавлять деньги |",
         f"| **Текущий баланс (Equity)** | **`${total_eq:.2f} USDC`** (`{net_pnl:+.2f}$` / `{roi_pct:+.2f}%`) | Cash + Mark-to-Market по CLOB Bid |",
-        f"| **Свободный кэш / В сделках** | `${cash:.2f}` / `${locked:.2f} USDC` | До 5 открытых позиций, макс 6% банка |",
+        f"| **Свободный кэш / В сделках** | `${cash:.2f}` / `${locked:.2f} USDC` | До 8 открытых позиций, макс 8% банка |",
         f"| **Цель окупаемости подписки** | `${net_pnl:+.2f} / ${target_mo:.2f}` (`{sub_progress_pct:.1f}%`) | Цель: +$60.00 в месяц |",
         f"| **Просадка от пика (Текущая / Макс)** | `{curr_dd:.2f}%` / `{max_dd:.2f}%` (Пик: `${peak_eq:.2f}`) | Стоп-кран при просадке 40% |",
         f"| **Закрытых сделок / Win Rate** | `{len(closed_pos)}` / `{win_rate:.1f}%` | Brier Score: `{brier_score_str}` |",
         "",
-        f"## 📂 Открытые позиции ({len(open_pos)} / 5)",
+        f"## 📂 Открытые позиции ({len(open_pos)} / 8)",
     ]
 
     if not open_pos:
@@ -248,7 +248,7 @@ def generate_reports(
     <div class="card">
       <div class="metric-label">Свободный кэш / В позициях</div>
       <div class="metric-val">${cash:.2f} <span class="muted" style="font-size:16px">/ ${locked:.2f}</span></div>
-      <div class="metric-sub">Открыто позиций: {len(open_pos)} из 5 (макс 6% банка)</div>
+      <div class="metric-sub">Открыто позиций: {len(open_pos)} из 8 (макс 8% банка)</div>
     </div>
     <div class="card">
       <div class="metric-label">Цель подписки ($60 / мес)</div>
@@ -267,7 +267,7 @@ def generate_reports(
     </div>
   </div>
 
-  <h2>📂 Открытые виртуальные позиции ({len(open_pos)} / 5)</h2>
+  <h2>📂 Открытые виртуальные позиции ({len(open_pos)} / 8)</h2>
   <table>
     <thead>
       <tr>
