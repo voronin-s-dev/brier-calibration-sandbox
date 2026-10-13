@@ -1,12 +1,20 @@
 """
-Unit tests for Risk Management v2:
+Unit tests for Risk Management & Budget Protection v2:
 - Bayesian probability calibration (shrinkage toward market prior)
 - Quarter-Kelly (0.25x) position sizing ($1.00..$3.00 dynamic scaling)
 - Event deduplication (`1 underlying event = max 1 open position`)
-- Category concentration limit (`max 3 positions per category`)
+- Category concentration limit (`max 3-4 positions per category`)
+- Kill-Switch (40% drawdown hard stop: halts all execution immediately)
+- Mid-Drawdown Shield (15% drawdown auto-tightens liquidity and slippage)
+- Minimum bet ($1.00) & cash constraint enforcement
 """
 
+import tempfile
 import unittest
+from pathlib import Path
+
+from auto_governor import AutoGovernor
+from database import SimDatabase
 from oracles import calibrate_probability
 from trader import GrokCharterPaperTrader, extract_event_key
 
@@ -56,6 +64,62 @@ class TestRiskManagementV2(unittest.TestCase):
         c2 = extract_event_key("Bitcoin Up or Down on October 13?", "Crypto")
         self.assertEqual(c1, c2)
         self.assertEqual(c1, "crypto:bitcoin:october 13")
+
+    def test_kill_switch_at_40_percent_drawdown(self) -> None:
+        """Verify that a 40% drawdown halts the portfolio and prevents any further trading."""
+        import gc
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            db_path = Path(tmp_dir) / "test_sim.db"
+            db = SimDatabase(db_path=db_path, initial_capital=50.0)
+
+            # Peak equity is $50.00. Drop cash to $29.00 (42% drawdown)
+            with db._connect() as conn:
+                conn.execute("UPDATE portfolio_state SET cash_usdc = 29.00, peak_equity = 50.00 WHERE id = 1")
+                conn.commit()
+
+            pf = db.recalculate_portfolio()
+            self.assertEqual(pf["halted"], 1)
+            self.assertIn("KILL-SWITCH TRIGGERED", pf["halt_reason"])
+
+            # Verify GrokCharterPaperTrader stops execution immediately
+            trades_log = Path(tmp_dir) / "trades.txt"
+            trader = GrokCharterPaperTrader(db=db, trades_txt_path=trades_log)
+            res = trader.run_cycle()
+            self.assertEqual(res["status"], "HALTED")
+            del db, trader
+            gc.collect()
+
+    def test_mid_drawdown_shield_tightens_filters(self) -> None:
+        """Verify that a 15% drawdown automatically engages the TIER 3 safety shield."""
+        import gc
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            db_path = Path(tmp_dir) / "test_sim.db"
+            db = SimDatabase(db_path=db_path, initial_capital=50.0)
+
+            # Drop cash to $40.00 (20% drawdown, above 15% shield threshold)
+            with db._connect() as conn:
+                conn.execute("UPDATE portfolio_state SET cash_usdc = 40.00, peak_equity = 50.00 WHERE id = 1")
+                conn.commit()
+
+            gov = AutoGovernor(db)
+            res = gov.evaluate_portfolio_and_rules()
+            self.assertTrue(len(res["triggered_event_ids"]) > 0)
+
+            # Filters must be automatically tightened
+            pf = db.get_portfolio()
+            self.assertGreaterEqual(float(pf["min_liquidity_filter"]), 10000.0)
+            self.assertLessEqual(float(pf["max_slippage_filter"]), 0.02)
+            del db, gov
+            gc.collect()
+
+    def test_zero_or_negative_edge_sizing_is_zero(self) -> None:
+        """Verify that negative or non-existent edge results in zero bet size."""
+        # p_est <= ask_vwap
+        f_k, half_k, app_pct, bet = GrokCharterPaperTrader.compute_kelly_sizing(
+            p_est=0.45, ask_vwap=0.50, total_equity=50.0
+        )
+        self.assertEqual(bet, 0.0)
+        self.assertEqual(app_pct, 0.0)
 
 
 if __name__ == "__main__":
