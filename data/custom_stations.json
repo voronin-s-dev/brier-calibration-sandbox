@@ -26,5 +26,12 @@
     "Asia/Manila",
     "celsius",
     "Auto-Meteo Manila (PH)"
+  ],
+  "cape town": [
+    -33.92584,
+    18.42322,
+    "Africa/Johannesburg",
+    "celsius",
+    "Auto-Meteo Cape Town (ZA)"
   ]
 }
