@@ -181,3 +181,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [EXIT] #14 | Will Bitcoin dip to $82,000 on October 13? (NO)
   Shares: 3.93 | Entry VWAP: 0.8500 -> Exit Bid VWAP: 0.8800
   Proceeds: $3.46 | Realized PnL: $+0.12 USDC | Reason: TAKE PROFIT (Edge Closed): Live CLOB Bid VWAP (88.0%) reached our estimated probability (81.8%)
+[2026-10-13 19:29:24 UTC] [CYCLE #16 SUMMARY] Scanned=799 | PassedFilter=181 | Evaluated=10 | Edges(>=8pp)=1 | Opened=0 | Closed=0 | Cash=$36.81 | Equity=$41.88 (DD=22.09%)
