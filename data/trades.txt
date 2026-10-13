@@ -177,3 +177,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: CLOB near-touch depth imbalance OBI=-0.89 (BidDepth=$51 vs AskDepth=$850) | News sentiment=-1.00 (12 articles; top: 'Why Is Crypto Down Today? Bitcoin Sell-Off Deepens as $771M in Leveraged Bets Get Wiped Out - Bitcoin Foundati')
 
 [2026-10-13 18:22:54 UTC] [CYCLE #14 SUMMARY] Scanned=782 | PassedFilter=182 | Evaluated=8 | Edges(>=8pp)=2 | Opened=1 | Closed=1 | Cash=$33.35 | Equity=$41.69 (DD=22.43%)
+[2026-10-13 18:24:15 UTC] [CYCLE #15 SUMMARY] Scanned=769 | PassedFilter=179 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 | Closed=0 | Cash=$33.35 | Equity=$41.69 (DD=22.43%)
