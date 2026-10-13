@@ -119,3 +119,22 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: First-passage dip model: BTCUSDT=$83,270.01 -> barrier=$80,000 (-3.93%), vol_h=0.39%, tau=135.7h => P(touch)=43.0% -> Calibrated(0.65x)=38.1%
 
 [2026-10-13 12:15:05 UTC] [CYCLE #10 SUMMARY] Scanned=798 | PassedFilter=297 | Evaluated=44 | Edges(>=8pp)=1 | Opened=1 | Closed=0 | Cash=$46.78 | Equity=$52.82 (DD=1.74%)
+[2026-10-13 12:20:29 UTC] [OPEN TRADE #10] Will the price of Bitcoin be above $84,000 on October 13?
+  Категория: Crypto | Сторона: YES | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 25.1% vs Рынок (Ask VWAP): 13.0% (Перекос/Edge: +12.1 п.п.)
+  Стакан CLOB: BestBid=0.128, BestAsk=0.130, Проскальзывание входа/выхода=0.20% (<= 3.0%)
+  Келли: Полный=13.9%, Четверть(0.25x)=6.9% -> Применён=6.9% банка
+  Размер сделки: $3.68 USDC (28.31 shares @ $0.1300)
+  Условие выхода: Exit if Bid VWAP >= 24.1% (edge closed), or P_est drops <= 20.1% (-5pp), or < 1h before 2026-10-13T16:00 (unless P_est >= 75% -> Hold to $1.00)
+  Причина: CLOB near-touch depth imbalance OBI=+0.90 (BidDepth=$901 vs AskDepth=$48) | News sentiment=+1.00 (12 articles; top: 'Bitcoin Briefly Tops $84,000 Amid Asian Stock Market Bloodbath: What’s Next? - Yahoo Finance')
+
+[2026-10-13 12:20:29 UTC] [OPEN TRADE #11] Will the price of Ethereum be above $2,500 on October 13?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/ETH_USDT
+  Оценка бота: 67.2% vs Рынок (Ask VWAP): 56.8% (Перекос/Edge: +10.3 п.п.)
+  Стакан CLOB: BestBid=0.540, BestAsk=0.550, Проскальзывание входа/выхода=2.84% (<= 3.0%)
+  Келли: Полный=24.0%, Четверть(0.25x)=12.0% -> Применён=8.0% банка
+  Размер сделки: $4.24 USDC (7.46 shares @ $0.5684)
+  Условие выхода: Exit if Bid VWAP >= 66.2% (edge closed), or P_est drops <= 62.2% (-5pp), or < 1h before 2026-10-13T16:00 (unless P_est >= 75% -> Hold to $1.00)
+  Причина: CLOB near-touch depth imbalance OBI=-0.96 (BidDepth=$45 vs AskDepth=$2,134) | News sentiment=-1.00 (12 articles; top: 'ETH price on Oct 13, 2026 at 9am EDT Crypto Prediction Market - Robinhood')
+
+[2026-10-13 12:20:29 UTC] [CYCLE #11 SUMMARY] Scanned=795 | PassedFilter=299 | Evaluated=8 | Edges(>=8pp)=2 | Opened=2 | Closed=0 | Cash=$38.86 | Equity=$52.75 (DD=1.86%)
