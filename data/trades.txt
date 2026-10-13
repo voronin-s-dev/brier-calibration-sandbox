@@ -102,3 +102,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-10-13 02:33:23 UTC] [CYCLE #8 SUMMARY] Scanned=791 | PassedFilter=223 | Evaluated=14 | Edges(>=8pp)=3 | Opened=2 | Closed=1 | Cash=$44.86 | Equity=$51.03 (DD=0.07%)
 [2026-10-13T09:38:54.991425+00:00] [GOVERNOR APPROVED] ✅ Одобрено предложение #2 (Чек-ап 48ч: Расширить порог досрочного выхода с 5.0 до 7.5 п.п.): prob_shift_exit_pp -> 7.5 п.п.
+[EXIT] #7 | Will the price of Bitcoin be above $84,000 on October 13? (YES)
+  Shares: 13.73 | Entry VWAP: 0.1100 -> Exit Bid VWAP: 0.3070
+  Proceeds: $4.21 | Realized PnL: $+2.70 USDC | Reason: TAKE PROFIT (Edge Closed): Live CLOB Bid VWAP (30.7%) reached our estimated probability (21.5%)
+[2026-10-13 09:43:58 UTC] [CYCLE #9 SUMMARY] Scanned=799 | PassedFilter=336 | Evaluated=15 | Edges(>=8pp)=3 | Opened=0 | Closed=1 | Cash=$49.07 | Equity=$52.64 (DD=2.06%)

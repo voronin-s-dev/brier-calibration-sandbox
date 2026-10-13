@@ -5,5 +5,19 @@
     "Asia/Shanghai",
     "celsius",
     "Auto-Meteo Beijing (CN)"
+  ],
+  "chengdu": [
+    30.66667,
+    104.06667,
+    "Asia/Shanghai",
+    "celsius",
+    "Auto-Meteo Chengdu (CN)"
+  ],
+  "busan": [
+    35.10168,
+    129.03004,
+    "Asia/Seoul",
+    "celsius",
+    "Auto-Meteo Busan (KR)"
   ]
 }
