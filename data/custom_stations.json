@@ -40,5 +40,12 @@
     "America/Chicago",
     "fahrenheit",
     "Auto-Meteo Houston (US)"
+  ],
+  "wuhan": [
+    30.58333,
+    114.26667,
+    "Asia/Shanghai",
+    "celsius",
+    "Auto-Meteo Wuhan (CN)"
   ]
 }
