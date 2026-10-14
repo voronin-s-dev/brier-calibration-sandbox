@@ -77,29 +77,29 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-10-14 18:18:53 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-10-14 18:27:58 UTC</div>
     </div>
   </div>
 
   <div class="grid">
     <div class="card">
       <div class="metric-label">Текущий капитал (Equity)</div>
-      <div class="metric-val">$38.87 <span style="font-size:15px" class="neg">(-11.13$ / -22.27%)</span></div>
+      <div class="metric-val">$38.79 <span style="font-size:15px" class="neg">(-11.21$ / -22.41%)</span></div>
       <div class="metric-sub">Старт: $50.00 USDC (Оценка по Bid стакана!)</div>
     </div>
     <div class="card">
       <div class="metric-label">Свободный кэш / В позициях</div>
-      <div class="metric-val">$37.30 <span class="muted" style="font-size:16px">/ $1.57</span></div>
+      <div class="metric-val">$37.30 <span class="muted" style="font-size:16px">/ $1.49</span></div>
       <div class="metric-sub">Открыто позиций: 2 из 8 (макс 8% банка)</div>
     </div>
     <div class="card">
       <div class="metric-label">Цель подписки ($60 / мес)</div>
-      <div class="metric-val">$-11.13 <span class="muted" style="font-size:16px">/ $60.00</span></div>
+      <div class="metric-val">$-11.21 <span class="muted" style="font-size:16px">/ $60.00</span></div>
       <div class="metric-sub">Прогресс окупаемости: 0.0%</div>
     </div>
     <div class="card">
       <div class="metric-label">Просадка от пика (Drawdown)</div>
-      <div class="metric-val neg">27.69% <span class="muted" style="font-size:15px">(Макс: 27.79%)</span></div>
+      <div class="metric-val neg">27.82% <span class="muted" style="font-size:15px">(Макс: 27.82%)</span></div>
       <div class="metric-sub">Пик: $53.75 | Лимит остановки: 40.0%</div>
     </div>
     <div class="card">
@@ -127,10 +127,10 @@
             <td><span class="side-yes">YES</span></td>
             <td>17.92</td>
             <td>$0.1300</td>
-            <td>$0.0280</td>
+            <td>$0.0240</td>
             <td><strong>18.7%</strong> <small>(+9.7pp)</small></td>
             <td>$2.33 <small>(5.6%)</small></td>
-            <td class="neg">$-1.83</td>
+            <td class="neg">$-1.90</td>
             <td><small>Exit if Bid VWAP &gt;= 21.7% (edge closed), or P_est drops &lt;= 17.7% (-5pp), or &lt; 1h before 2026-10-19T04:00 (unless P_est &gt;= 75% -&gt; Hold to $1.00)</small></td>
         </tr>
         
@@ -162,6 +162,58 @@
     </thead>
     <tbody>
       
+        <tr class="">
+            <td>Will the highest temperature in Wuhan be 20°C on October 15?<br><small class="muted">Station Auto-Meteo Wuhan (CN) (2026-10-15): Model Max=22.0°C (±1.5°C), Target=20°C (±0.5) =&gt; RawP=11.0%, Calibrated(0.65x)=7.9%</small></td>
+            <td><span class="badge cat-weather">Weather</span></td>
+            <td>YES</td>
+            <td>7.9%</td>
+            <td>100.0%</td>
+            <td class="muted">-92.1 п.п.</td>
+            <td class="neg">100.00%</td>
+            <td>$12,070</td>
+            <td>17.5h</td>
+            <td><strong>REJECTED: Edge -92.1 pp &lt; 8 pp threshold (P_est=7.9% vs AskVWAP=100.0%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the highest temperature in Wuhan be 22°C on October 15?<br><small class="muted">Station Auto-Meteo Wuhan (CN) (2026-10-15): Model Max=22.0°C (±1.5°C), Target=22°C (±0.5) =&gt; RawP=26.3%, Calibrated(0.65x)=17.8%</small></td>
+            <td><span class="badge cat-weather">Weather</span></td>
+            <td>YES</td>
+            <td>17.8%</td>
+            <td>100.0%</td>
+            <td class="muted">-82.2 п.п.</td>
+            <td class="neg">100.00%</td>
+            <td>$10,501</td>
+            <td>17.5h</td>
+            <td><strong>REJECTED: Edge -82.2 pp &lt; 8 pp threshold (P_est=17.8% vs AskVWAP=100.0%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the highest temperature in Wuhan be 21°C on October 15?<br><small class="muted">Station Auto-Meteo Wuhan (CN) (2026-10-15): Model Max=22.0°C (±1.5°C), Target=21°C (±0.5) =&gt; RawP=21.2%, Calibrated(0.65x)=14.5%</small></td>
+            <td><span class="badge cat-weather">Weather</span></td>
+            <td>YES</td>
+            <td>14.5%</td>
+            <td>100.0%</td>
+            <td class="muted">-85.5 п.п.</td>
+            <td class="neg">100.00%</td>
+            <td>$9,924</td>
+            <td>17.5h</td>
+            <td><strong>REJECTED: Edge -85.5 pp &lt; 8 pp threshold (P_est=14.5% vs AskVWAP=100.0%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the highest temperature in Wellington be 15°C on October 15?<br><small class="muted">Station METAR NZWN (Wellington Intl) (2026-10-15): Model Max=16.0°C (±1.5°C), Target=15°C (±0.5) =&gt; RawP=21.2%, Calibrated(0.65x)=14.5%</small></td>
+            <td><span class="badge cat-weather">Weather</span></td>
+            <td>YES</td>
+            <td>14.5%</td>
+            <td>100.0%</td>
+            <td class="muted">-85.5 п.п.</td>
+            <td class="neg">100.00%</td>
+            <td>$4,261</td>
+            <td>17.5h</td>
+            <td><strong>REJECTED: Edge -85.5 pp &lt; 8 pp threshold (P_est=14.5% vs AskVWAP=100.0%)</strong></td>
+        </tr>
+        
         <tr class="">
             <td>Will the highest temperature in Wuhan be 20°C on October 15?<br><small class="muted">Station Auto-Meteo Wuhan (CN) (2026-10-15): Model Max=22.0°C (±1.5°C), Target=20°C (±0.5) =&gt; RawP=11.0%, Calibrated(0.65x)=7.9%</small></td>
             <td><span class="badge cat-weather">Weather</span></td>
@@ -435,65 +487,11 @@
             <td><strong>REJECTED: CLOB round-trip slippage 2.06% &gt; 2.0% limit</strong></td>
         </tr>
         
-        <tr class="">
-            <td>Will the price of Ethereum be above $2,400 on October 16?<br><small class="muted">News sentiment=+1.00 (12 articles; top: &#x27;Ethereum Price Prediction: ETH Targets 10% Rally Despite AI Jitters - FXEmpire&#x27;)</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>91.0%</td>
-            <td>87.0%</td>
-            <td class="muted">+4.0 п.п.</td>
-            <td class="pos">3.00%</td>
-            <td>$32,544</td>
-            <td>64.6h</td>
-            <td><strong>REJECTED: Edge +4.0 pp &lt; 8 pp threshold (P_est=91.0% vs AskVWAP=87.0%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the price of Ethereum be above $2,600 on October 16?<br><small class="muted">News sentiment=-1.00 (12 articles; top: &#x27;Ethereum price at risk as Tom Lee warns of selloff - Crypto News&#x27;)</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>NO</td>
-            <td>91.0%</td>
-            <td>87.0%</td>
-            <td class="muted">+4.0 п.п.</td>
-            <td class="pos">3.00%</td>
-            <td>$31,544</td>
-            <td>64.6h</td>
-            <td><strong>REJECTED: Edge +4.0 pp &lt; 8 pp threshold (P_est=91.0% vs AskVWAP=87.0%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the price of Bitcoin be above $84,000 on October 15?<br><small class="muted">News sentiment=+1.00 (12 articles; top: &#x27;Bitcoin Briefly Tops $84,000 Amid Asian Stock Market Bloodbath: What’s Next? - Yahoo Finance&#x27;)</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>40.0%</td>
-            <td>35.0%</td>
-            <td class="muted">+5.0 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$45,990</td>
-            <td>40.6h</td>
-            <td><strong>REJECTED: Edge +5.0 pp &lt; 8 pp threshold (P_est=40.0% vs AskVWAP=35.0%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the highest temperature in Cape Town be 19°C on October 14?<br><small class="muted">Station Auto-Meteo Cape Town (ZA) (2026-10-14): Model Max=17.6°C (±1.5°C), Target=19°C (±0.5) =&gt; RawP=17.2%, Calibrated(0.65x)=22.2%</small></td>
-            <td><span class="badge cat-weather">Weather</span></td>
-            <td>NO</td>
-            <td>77.8%</td>
-            <td>70.0%</td>
-            <td class="muted">+7.8 п.п.</td>
-            <td class="neg">4.00%</td>
-            <td>$2,159</td>
-            <td>16.2h</td>
-            <td><strong>REJECTED: Edge +7.8 pp &lt; 8 pp threshold (P_est=77.8% vs AskVWAP=70.0%)</strong></td>
-        </tr>
-        
     </tbody>
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">rob Shift &gt; 5pp): Estimate dropped from 99.5% to 73.8%
-[2026-10-12 21:56:24 UTC] [OPEN TRADE #6] Will the highest temperature in Shanghai be 26°C on October 13?
-  Категория: Weather | Сторона: NO | Источник: METAR ZSPD (Shanghai Pudong)
+  <pre class="log-box">: Weather | Сторона: NO | Источник: METAR ZSPD (Shanghai Pudong)
   Оценка бота: 74.5% vs Рынок (Ask VWAP): 65.0% (Перекос/Edge: +9.5 п.п.)
   Стакан CLOB: BestBid=0.620, BestAsk=0.650, Проскальзывание входа/выхода=3.00% (&lt;= 3.0%)
   Келли: Полный=27.3%, Четверть(0.25x)=6.8% -&gt; Применён=6.0% банка
@@ -632,6 +630,7 @@
 [2026-10-14 13:53:42 UTC] [CYCLE #29 SUMMARY] Scanned=789 | PassedFilter=126 | Evaluated=1 | Edges(&gt;=8pp)=0 | Opened=0 | Closed=0 | Cash=$37.30 | Equity=$39.29 (DD=26.89%)
 [2026-10-14 18:09:44 UTC] [CYCLE #30 SUMMARY] Scanned=774 | PassedFilter=111 | Evaluated=3 | Edges(&gt;=8pp)=0 | Opened=0 | Closed=0 | Cash=$37.30 | Equity=$38.81 (DD=27.79%)
 [2026-10-14 18:18:50 UTC] [CYCLE #31 SUMMARY] Scanned=800 | PassedFilter=113 | Evaluated=4 | Edges(&gt;=8pp)=0 | Opened=0 | Closed=0 | Cash=$37.30 | Equity=$38.87 (DD=27.69%)
+[2026-10-14 18:27:56 UTC] [CYCLE #32 SUMMARY] Scanned=800 | PassedFilter=116 | Evaluated=4 | Edges(&gt;=8pp)=0 | Opened=0 | Closed=0 | Cash=$37.30 | Equity=$38.79 (DD=27.82%)
 </pre>
 </body>
 </html>
