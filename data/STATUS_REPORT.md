@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-10-14 21:53:49 UTC`
+**Обновлено:** `2026-10-14 22:02:56 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -21,6 +21,11 @@
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | Will the highest temperature in Wuhan be 20°C on O | Weather | YES | `7.2%` | `100.0%` | `-92.8 п.п.` | `100.00%` | REJECTED: Edge -92.8 pp < 8 pp threshold (P_est=7.2% vs AskVWAP=100.0%) |
+| Will the highest temperature in Istanbul be 14°C o | Weather | YES | `4.6%` | `0.4%` | `+4.2 п.п.` | `0.28%` | REJECTED: Edge +4.2 pp < 8 pp threshold (P_est=4.6% vs AskVWAP=0.4%) |
+| Will the highest temperature in Wuhan be 21°C on O | Weather | YES | `13.9%` | `100.0%` | `-86.2 п.п.` | `100.00%` | REJECTED: Edge -86.1 pp < 8 pp threshold (P_est=13.9% vs AskVWAP=100.0%) |
+| Will the highest temperature in Wuhan be 22°C on O | Weather | YES | `17.8%` | `100.0%` | `-82.2 п.п.` | `100.00%` | REJECTED: Edge -82.2 pp < 8 pp threshold (P_est=17.8% vs AskVWAP=100.0%) |
+| Will the highest temperature in Wellington be 15°C | Weather | YES | `17.8%` | `100.0%` | `-82.2 п.п.` | `100.00%` | REJECTED: Edge -82.2 pp < 8 pp threshold (P_est=17.8% vs AskVWAP=100.0%) |
+| Will the highest temperature in Wuhan be 20°C on O | Weather | YES | `7.2%` | `100.0%` | `-92.8 п.п.` | `100.00%` | REJECTED: Edge -92.8 pp < 8 pp threshold (P_est=7.2% vs AskVWAP=100.0%) |
 | Will the highest temperature in Istanbul be 14°C o | Weather | YES | `4.6%` | `0.4%` | `+4.3 п.п.` | `0.26%` | REJECTED: Edge +4.3 pp < 8 pp threshold (P_est=4.6% vs AskVWAP=0.4%) |
 | Will the highest temperature in Wuhan be 21°C on O | Weather | YES | `13.9%` | `100.0%` | `-86.2 п.п.` | `100.00%` | REJECTED: Edge -86.1 pp < 8 pp threshold (P_est=13.9% vs AskVWAP=100.0%) |
 | Will the highest temperature in Wuhan be 22°C on O | Weather | YES | `17.8%` | `100.0%` | `-82.2 п.п.` | `100.00%` | REJECTED: Edge -82.2 pp < 8 pp threshold (P_est=17.8% vs AskVWAP=100.0%) |
@@ -33,8 +38,3 @@
 | Will the highest temperature in Wuhan be 22°C on O | Weather | YES | `17.8%` | `100.0%` | `-82.2 п.п.` | `100.00%` | REJECTED: Edge -82.2 pp < 8 pp threshold (P_est=17.8% vs AskVWAP=100.0%) |
 | Will the highest temperature in Wuhan be 21°C on O | Weather | YES | `14.5%` | `100.0%` | `-85.5 п.п.` | `100.00%` | REJECTED: Edge -85.5 pp < 8 pp threshold (P_est=14.5% vs AskVWAP=100.0%) |
 | Will the highest temperature in Wellington be 15°C | Weather | YES | `14.5%` | `100.0%` | `-85.5 п.п.` | `100.00%` | REJECTED: Edge -85.5 pp < 8 pp threshold (P_est=14.5% vs AskVWAP=100.0%) |
-| Will the highest temperature in Wuhan be 20°C on O | Weather | YES | `7.9%` | `100.0%` | `-92.1 п.п.` | `100.00%` | REJECTED: Edge -92.1 pp < 8 pp threshold (P_est=7.9% vs AskVWAP=100.0%) |
-| Will the highest temperature in Wuhan be 22°C on O | Weather | YES | `17.8%` | `100.0%` | `-82.2 п.п.` | `100.00%` | REJECTED: Edge -82.2 pp < 8 pp threshold (P_est=17.8% vs AskVWAP=100.0%) |
-| Will the highest temperature in Wuhan be 21°C on O | Weather | YES | `14.5%` | `100.0%` | `-85.5 п.п.` | `100.00%` | REJECTED: Edge -85.5 pp < 8 pp threshold (P_est=14.5% vs AskVWAP=100.0%) |
-| Will the highest temperature in Wellington be 15°C | Weather | YES | `13.8%` | `100.0%` | `-86.2 п.п.` | `100.00%` | REJECTED: Edge -86.2 pp < 8 pp threshold (P_est=13.8% vs AskVWAP=100.0%) |
-| Will the highest temperature in Wellington be 15°C | Weather | YES | `13.8%` | `100.0%` | `-86.2 п.п.` | `100.00%` | REJECTED: Edge -86.2 pp < 8 pp threshold (P_est=13.8% vs AskVWAP=100.0%) |
