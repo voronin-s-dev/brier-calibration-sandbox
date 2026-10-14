@@ -77,29 +77,29 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-10-14 10:55:52 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-10-14 13:35:36 UTC</div>
     </div>
   </div>
 
   <div class="grid">
     <div class="card">
       <div class="metric-label">Текущий капитал (Equity)</div>
-      <div class="metric-val">$40.15 <span style="font-size:15px" class="neg">(-9.85$ / -19.71%)</span></div>
+      <div class="metric-val">$39.52 <span style="font-size:15px" class="neg">(-10.48$ / -20.95%)</span></div>
       <div class="metric-sub">Старт: $50.00 USDC (Оценка по Bid стакана!)</div>
     </div>
     <div class="card">
       <div class="metric-label">Свободный кэш / В позициях</div>
-      <div class="metric-val">$37.30 <span class="muted" style="font-size:16px">/ $2.85</span></div>
+      <div class="metric-val">$37.30 <span class="muted" style="font-size:16px">/ $2.22</span></div>
       <div class="metric-sub">Открыто позиций: 2 из 8 (макс 8% банка)</div>
     </div>
     <div class="card">
       <div class="metric-label">Цель подписки ($60 / мес)</div>
-      <div class="metric-val">$-9.85 <span class="muted" style="font-size:16px">/ $60.00</span></div>
+      <div class="metric-val">$-10.48 <span class="muted" style="font-size:16px">/ $60.00</span></div>
       <div class="metric-sub">Прогресс окупаемости: 0.0%</div>
     </div>
     <div class="card">
       <div class="metric-label">Просадка от пика (Drawdown)</div>
-      <div class="metric-val neg">25.31% <span class="muted" style="font-size:15px">(Макс: 25.31%)</span></div>
+      <div class="metric-val neg">26.46% <span class="muted" style="font-size:15px">(Макс: 26.46%)</span></div>
       <div class="metric-sub">Пик: $53.75 | Лимит остановки: 40.0%</div>
     </div>
     <div class="card">
@@ -127,10 +127,10 @@
             <td><span class="side-yes">YES</span></td>
             <td>17.92</td>
             <td>$0.1300</td>
-            <td>$0.0900</td>
+            <td>$0.0600</td>
             <td><strong>18.7%</strong> <small>(+9.7pp)</small></td>
             <td>$2.33 <small>(5.6%)</small></td>
-            <td class="neg">$-0.72</td>
+            <td class="neg">$-1.25</td>
             <td><small>Exit if Bid VWAP &gt;= 21.7% (edge closed), or P_est drops &lt;= 17.7% (-5pp), or &lt; 1h before 2026-10-19T04:00 (unless P_est &gt;= 75% -&gt; Hold to $1.00)</small></td>
         </tr>
         
@@ -141,10 +141,10 @@
             <td><span class="side-no">NO</span></td>
             <td>4.26</td>
             <td>$0.3900</td>
-            <td>$0.2900</td>
-            <td><strong>64.4%</strong> <small>(+23.5pp)</small></td>
+            <td>$0.2700</td>
+            <td><strong>66.9%</strong> <small>(+23.5pp)</small></td>
             <td>$1.66 <small>(4.0%)</small></td>
-            <td class="neg">$-0.43</td>
+            <td class="neg">$-0.51</td>
             <td><small>Exit if Bid VWAP &gt;= 61.5% (edge closed), or P_est drops &lt;= 57.5% (-5pp), or &lt; 1.5h before 2026-10-15T12:00 (Strict Time Exit, no hold to settlement)</small></td>
         </tr>
         
@@ -162,6 +162,19 @@
     </thead>
     <tbody>
       
+        <tr class="">
+            <td>Will the highest temperature in Wellington be 15°C on October 15?<br><small class="muted">Station METAR NZWN (Wellington Intl) (2026-10-15): Model Max=16.0°C (±1.6°C), Target=15°C (±0.5) =&gt; RawP=20.1%, Calibrated(0.65x)=13.7%</small></td>
+            <td><span class="badge cat-weather">Weather</span></td>
+            <td>YES</td>
+            <td>13.7%</td>
+            <td>100.0%</td>
+            <td class="muted">-86.3 п.п.</td>
+            <td class="neg">100.00%</td>
+            <td>$5,412</td>
+            <td>22.4h</td>
+            <td><strong>REJECTED: Edge -86.3 pp &lt; 8 pp threshold (P_est=13.7% vs AskVWAP=100.0%)</strong></td>
+        </tr>
+        
         <tr class="">
             <td>Will the highest temperature in Houston be between 90-91°F on October 15?<br><small class="muted">Station Auto-Meteo Houston (US) (2026-10-15): Model Max=89.0°F (±3.6°F), Target=[90, 91]°F =&gt; RawP=20.2%, Calibrated(0.65x)=27.3%</small></td>
             <td><span class="badge cat-weather">Weather</span></td>
@@ -474,26 +487,11 @@
             <td><strong>REJECTED: Edge +8.0 pp &lt; 8 pp threshold (P_est=78.0% vs AskVWAP=70.0%)</strong></td>
         </tr>
         
-        <tr class="">
-            <td>Will the price of Ethereum be above $2,600 on October 16?<br><small class="muted">News sentiment=-1.00 (12 articles; top: &#x27;Ethereum price at risk as Tom Lee warns of selloff - Crypto News&#x27;)</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>NO</td>
-            <td>89.5%</td>
-            <td>85.0%</td>
-            <td class="muted">+4.5 п.п.</td>
-            <td class="pos">2.00%</td>
-            <td>$31,927</td>
-            <td>68.3h</td>
-            <td><strong>REJECTED: Edge +4.5 pp &lt; 8 pp threshold (P_est=89.5% vs AskVWAP=85.0%)</strong></td>
-        </tr>
-        
     </tbody>
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box"> Edges(&gt;=8pp)=1 | Opened=0 | Closed=1 | Cash=$37.84 | Equity=$49.35 (DD=1.30%)
-[EXIT] #2 | Will the highest temperature in Shanghai be 26°C on October 13? (NO)
-  Shares: 4.62 | Entry VWAP: 0.6500 -&gt; Exit Bid VWAP: 0.6200
+  <pre class="log-box">62 | Entry VWAP: 0.6500 -&gt; Exit Bid VWAP: 0.6200
   Proceeds: $2.86 | Realized PnL: $-0.14 USDC | Reason: THESIS INVALIDATED (Prob Shift &gt; 5pp): Estimate dropped from 89.0% to 74.5%
 [EXIT] #3 | Will the highest temperature in Sao Paulo be 26°C on October 13? (NO)
   Shares: 3.69 | Entry VWAP: 0.8100 -&gt; Exit Bid VWAP: 0.7600
@@ -636,6 +634,7 @@
 [EXIT] #9 | Will Bitcoin dip to $80,000 October 12-18? (YES)
   Shares: 10.23 | Entry VWAP: 0.3000 -&gt; Exit Bid VWAP: 0.2100
   Proceeds: $2.15 | Realized PnL: $-0.92 USDC | Reason: THESIS INVALIDATED (Prob Shift &gt; 7.5pp): Estimate dropped from 38.1% to 28.5%
+[2026-10-14 13:35:31 UTC] [CYCLE #27 SUMMARY] Scanned=799 | PassedFilter=131 | Evaluated=1 | Edges(&gt;=8pp)=0 | Opened=0 | Closed=0 | Cash=$37.30 | Equity=$39.52 (DD=26.46%)
 </pre>
 </body>
 </html>
