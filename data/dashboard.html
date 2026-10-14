@@ -77,29 +77,29 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-10-14 00:09:05 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-10-14 02:07:14 UTC</div>
     </div>
   </div>
 
   <div class="grid">
     <div class="card">
       <div class="metric-label">Текущий капитал (Equity)</div>
-      <div class="metric-val">$41.43 <span style="font-size:15px" class="neg">(-8.57$ / -17.15%)</span></div>
+      <div class="metric-val">$41.58 <span style="font-size:15px" class="neg">(-8.42$ / -16.84%)</span></div>
       <div class="metric-sub">Старт: $50.00 USDC (Оценка по Bid стакана!)</div>
     </div>
     <div class="card">
       <div class="metric-label">Свободный кэш / В позициях</div>
-      <div class="metric-val">$35.15 <span class="muted" style="font-size:16px">/ $6.28</span></div>
+      <div class="metric-val">$35.15 <span class="muted" style="font-size:16px">/ $6.43</span></div>
       <div class="metric-sub">Открыто позиций: 3 из 8 (макс 8% банка)</div>
     </div>
     <div class="card">
       <div class="metric-label">Цель подписки ($60 / мес)</div>
-      <div class="metric-val">$-8.57 <span class="muted" style="font-size:16px">/ $60.00</span></div>
+      <div class="metric-val">$-8.42 <span class="muted" style="font-size:16px">/ $60.00</span></div>
       <div class="metric-sub">Прогресс окупаемости: 0.0%</div>
     </div>
     <div class="card">
       <div class="metric-label">Просадка от пика (Drawdown)</div>
-      <div class="metric-val neg">22.93% <span class="muted" style="font-size:15px">(Макс: 22.93%)</span></div>
+      <div class="metric-val neg">22.64% <span class="muted" style="font-size:15px">(Макс: 23.31%)</span></div>
       <div class="metric-sub">Пик: $53.75 | Лимит остановки: 40.0%</div>
     </div>
     <div class="card">
@@ -127,10 +127,10 @@
             <td><span class="side-yes">YES</span></td>
             <td>10.23</td>
             <td>$0.3000</td>
-            <td>$0.2800</td>
+            <td>$0.2600</td>
             <td><strong>35.4%</strong> <small>(+8.1pp)</small></td>
             <td>$3.07 <small>(5.8%)</small></td>
-            <td class="neg">$-0.20</td>
+            <td class="neg">$-0.41</td>
             <td><small>Exit if Bid VWAP &gt;= 37.1% (edge closed), or P_est drops &lt;= 33.1% (-5pp), or &lt; 1h before 2026-10-19T04:00 (unless P_est &gt;= 75% -&gt; Hold to $1.00)</small></td>
         </tr>
         
@@ -141,10 +141,10 @@
             <td><span class="side-yes">YES</span></td>
             <td>17.92</td>
             <td>$0.1300</td>
-            <td>$0.1000</td>
+            <td>$0.1200</td>
             <td><strong>20.8%</strong> <small>(+9.7pp)</small></td>
             <td>$2.33 <small>(5.6%)</small></td>
-            <td class="neg">$-0.54</td>
+            <td class="neg">$-0.18</td>
             <td><small>Exit if Bid VWAP &gt;= 21.7% (edge closed), or P_est drops &lt;= 17.7% (-5pp), or &lt; 1h before 2026-10-19T04:00 (unless P_est &gt;= 75% -&gt; Hold to $1.00)</small></td>
         </tr>
         
@@ -156,7 +156,7 @@
             <td>4.26</td>
             <td>$0.3900</td>
             <td>$0.3800</td>
-            <td><strong>62.5%</strong> <small>(+23.5pp)</small></td>
+            <td><strong>64.9%</strong> <small>(+23.5pp)</small></td>
             <td>$1.66 <small>(4.0%)</small></td>
             <td class="neg">$-0.04</td>
             <td><small>Exit if Bid VWAP &gt;= 61.5% (edge closed), or P_est drops &lt;= 57.5% (-5pp), or &lt; 1.5h before 2026-10-15T12:00 (Strict Time Exit, no hold to settlement)</small></td>
@@ -505,10 +505,7 @@
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box"> 13?
-  Категория: Weather | Сторона: NO | Источник: METAR MMMX (Mexico City Intl)
-  Оценка бота: 99.5% vs Рынок (Ask VWAP): 49.2% (Перекос/Edge: +50.3 п.п.)
-  Стакан CLOB: BestBid=0.470, BestAsk=0.490, Проскальзывание входа/выхода=2.18% (&lt;= 3.0%)
+  <pre class="log-box">BestBid=0.470, BestAsk=0.490, Проскальзывание входа/выхода=2.18% (&lt;= 3.0%)
   Келли: Полный=99.0%, Половина=49.5% -&gt; Применён потолок=6.0% банка
   Размер сделки: $2.99 USDC (6.08 shares @ $0.4918)
   Условие выхода: Exit if Bid VWAP &gt;= 98.5% (edge closed), or P_est drops &lt;= 94.5% (-5pp), or &lt; 1h before 2026-10-13T12:00
@@ -655,6 +652,7 @@
   Причина: Station METAR EDDM (Munich Airport) (2026-10-15): Model Max=15.7°C (±2.6°C), Target=&gt;=18°C =&gt; RawP=24.6%, Calibrated(0.65x)=37.5%
 
 [2026-10-14 00:08:53 UTC] [CYCLE #20 SUMMARY] Scanned=781 | PassedFilter=165 | Evaluated=44 | Edges(&gt;=8pp)=1 | Opened=1 | Closed=0 | Cash=$35.15 | Equity=$41.43 (DD=22.93%)
+[2026-10-14 02:07:12 UTC] [CYCLE #21 SUMMARY] Scanned=796 | PassedFilter=159 | Evaluated=0 | Edges(&gt;=8pp)=0 | Opened=0 | Closed=0 | Cash=$35.15 | Equity=$41.58 (DD=22.64%)
 </pre>
 </body>
 </html>
