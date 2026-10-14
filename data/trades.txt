@@ -201,3 +201,6 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-14 07:58:09 UTC] [CYCLE #24 SUMMARY] Scanned=800 | PassedFilter=127 | Evaluated=1 | Edges(>=8pp)=1 | Opened=0 | Closed=0 | Cash=$35.15 | Equity=$41.03 (DD=23.66%)
 [2026-10-14 08:07:15 UTC] [CYCLE #25 SUMMARY] Scanned=800 | PassedFilter=123 | Evaluated=1 | Edges(>=8pp)=1 | Opened=0 | Closed=0 | Cash=$35.15 | Equity=$40.67 (DD=24.34%)
 [2026-10-14 08:16:19 UTC] [CYCLE #26 SUMMARY] Scanned=797 | PassedFilter=125 | Evaluated=1 | Edges(>=8pp)=1 | Opened=0 | Closed=0 | Cash=$35.15 | Equity=$40.36 (DD=24.91%)
+[EXIT] #9 | Will Bitcoin dip to $80,000 October 12-18? (YES)
+  Shares: 10.23 | Entry VWAP: 0.3000 -> Exit Bid VWAP: 0.2100
+  Proceeds: $2.15 | Realized PnL: $-0.92 USDC | Reason: THESIS INVALIDATED (Prob Shift > 7.5pp): Estimate dropped from 38.1% to 28.5%
