@@ -121,6 +121,21 @@ class TestRiskManagementV2(unittest.TestCase):
         self.assertEqual(bet, 0.0)
         self.assertEqual(app_pct, 0.0)
 
+    def test_conservative_v3_defaults_and_horizon(self) -> None:
+        """Verify that Risk Management v3 enforces 0.25x Kelly and 4% max cap by default."""
+        # Strong edge (+30 pp: p_est=0.80, ask=0.50) on $50 bankroll:
+        # Full Kelly = 0.60, Quarter Kelly = 0.15
+        # Default cap is 4% (0.04) -> max $2.00 USDC
+        full_k, frac_k, applied_pct, bet = GrokCharterPaperTrader.compute_kelly_sizing(
+            p_est=0.80, ask_vwap=0.50, total_equity=50.0
+        )
+        self.assertAlmostEqual(full_k, 0.60, places=4)
+        self.assertAlmostEqual(frac_k, 0.15, places=4)
+        self.assertEqual(applied_pct, 0.04)
+        self.assertEqual(bet, 2.00)
+        self.assertEqual(GrokCharterPaperTrader.MIN_HOURS_TO_CLOSE, 12.0)
+        self.assertEqual(GrokCharterPaperTrader.EXIT_HOURS_THRESHOLD, 1.5)
+
 
 if __name__ == "__main__":
     unittest.main()

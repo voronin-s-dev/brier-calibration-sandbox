@@ -61,19 +61,18 @@ def extract_event_key(question: str, category: str) -> str:
 class GrokCharterPaperTrader:
     """
     Implements the 10-step autonomous Polymarket trading charter on a virtual demo account
-    with Risk Management v2 (0.25x Kelly, Bayesian Calibration, Event Deduplication, Category Caps,
-    and Smart Hold-to-Resolution).
+    with Conservative Risk Management v3 (0.25x Quarter-Kelly, 4% trade cap, min 12h horizon,
+    Strict Time Exit < 1.5h without holding to binary resolution cliff, and Mathematical Oracles only).
     """
 
     MAX_OPEN_POSITIONS = 8
-    MAX_POSITIONS_PER_CATEGORY = 4  # Max 4 out of 8 positions in any single category
-    KELLY_FRACTION = 0.50           # Half-Kelly sizing as requested in original Grok charter
-    MAX_BANK_PCT_PER_TRADE = 0.08   # 8% hard cap per trade
+    MAX_POSITIONS_PER_CATEGORY = 3  # Max 3 positions in any single category
+    KELLY_FRACTION = 0.25           # Quarter-Kelly sizing for strict capital preservation
+    MAX_BANK_PCT_PER_TRADE = 0.04   # 4% hard cap per trade ($1.60-$2.00 on $40-$50 bankroll)
     MIN_EDGE_PP = 0.08              # 8 percentage points minimum divergence
-    MIN_HOURS_TO_CLOSE = 2.0        # Skip markets closing in < 2 hours
+    MIN_HOURS_TO_CLOSE = 12.0       # Skip intraday noise: only enter markets closing >= 12 hours out
     MAX_HOURS_TO_CLOSE = 360.0      # Focus on markets resolving within 15 days for active turnover
-    EXIT_HOURS_THRESHOLD = 1.0      # Check expiration exit when < 1 hour to close
-    HOLD_TO_RESOLUTION_PROB = 0.75  # Hold through final hour to $1.00 resolution if P_est >= 75%
+    EXIT_HOURS_THRESHOLD = 1.5      # Strict Time Exit: always close positions < 1.5h before expiry
     PROB_SHIFT_EXIT_PP = 0.05       # Exit if fundamental probability estimate drops by > 5 pp
 
     def __init__(
@@ -95,8 +94,8 @@ class GrokCharterPaperTrader:
                 "POLYMARKET AUTONOMOUS PAPER TRADER — GROK CHARTER SIMULATION LOG (trades.txt)\n"
                 f"Initialized at: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}\n"
                 f"Starting Virtual Bankroll: ${initial_capital:.2f} USDC | Monthly Target: +$60.00/mo\n"
-                "Rules: Edge >= 8 pp | CLOB Round-Trip Slippage <= 3% | Size: 0.25x Kelly (max 6% bank)\n"
-                "Max Open Positions: 5 (max 3/category, 1/event) | Kill-Switch: 40% Drawdown\n"
+                "Rules: Edge >= 8 pp | CLOB Round-Trip Slippage <= 2% | Size: 0.25x Kelly (max 4% bank)\n"
+                "Max Open Positions: 8 (max 3/category, 1/event) | Kill-Switch: 40% Drawdown\n"
                 "================================================================================\n"
             )
 
@@ -110,11 +109,11 @@ class GrokCharterPaperTrader:
         p_est: float,
         ask_vwap: float,
         total_equity: float,
-        max_pct: float = 0.08,
-        kelly_fraction: float = 0.50,
+        max_pct: float = 0.04,
+        kelly_fraction: float = 0.25,
     ) -> Tuple[float, float, float, float]:
         """
-        Calculates Full Kelly, Fractional (0.50x) Kelly, Capped % of bankroll, and USDC bet size.
+        Calculates Full Kelly, Fractional (0.25x) Kelly, Capped % of bankroll, and USDC bet size.
         Formula for binary contract at cost `c` paying $1 on win:
           f* = (p - c) / (1 - c)
         """
@@ -150,19 +149,8 @@ class GrokCharterPaperTrader:
             if res is not None:
                 return res, preloaded_book
 
-        # 3. For liquid short-term events, run News + CLOB Microstructure Oracle
-        if preloaded_book is None:
-            try:
-                preloaded_book = fetch_clob_book(market.clob_token_ids[0])
-            except Exception:
-                return None, None
-
-        res = self.news_oracle.evaluate_with_orderbook(
-            market,
-            bids=preloaded_book.get("bids", []),
-            asks=preloaded_book.get("asks", []),
-        )
-        return res, preloaded_book
+        # 3. Disallow noisy News/OBI heuristic for opening new trades (only high-conviction quantitative models)
+        return None, None
 
     def monitor_and_manage_open_positions(self) -> int:
         """
@@ -222,10 +210,9 @@ class GrokCharterPaperTrader:
             try:
                 vwap_sell, proceeds, best_bid = simulate_clob_sell_shares(token_id, shares)
             except Exception:
-                continue
+                vwap_sell, proceeds, best_bid = 0.0, 0.0, 0.0
 
-            if vwap_sell <= 0:
-                continue
+            hours_left = live_mkt.hours_to_close if live_mkt else 24.0
 
             # Re-evaluate probability if live_mkt available
             latest_p = float(pos["latest_p_est"])
@@ -234,40 +221,43 @@ class GrokCharterPaperTrader:
                 if eval_res is not None:
                     latest_p = eval_res.p_yes if side == "YES" else eval_res.p_no
 
-            # Update MTM in database
-            self.db.update_open_position_mtm(
-                pos_id=pos_id,
-                current_bid=vwap_sell,
-                latest_p_est=latest_p,
-            )
+            # Update MTM in database if valid bid exists
+            if vwap_sell > 0:
+                self.db.update_open_position_mtm(
+                    pos_id=pos_id,
+                    current_bid=vwap_sell,
+                    latest_p_est=latest_p,
+                )
 
-            hours_left = live_mkt.hours_to_close if live_mkt else 24.0
-            exit_triggered = False
-            exit_reason = ""
             pf_now = self.db.get_portfolio()
             prob_shift_limit = float(pf_now.get("prob_shift_exit_pp", self.PROB_SHIFT_EXIT_PP))
+            exit_triggered = False
+            exit_reason = ""
 
-            # Exit Rule A: Edge closed (our target price reached in Bid book!)
-            if vwap_sell >= latest_p - 0.01:
+            # Exit Rule A: STRICT TIME EXIT (< EXIT_HOURS_THRESHOLD before market close)
+            # NEVER hold through binary expiration ($0.00 / $1.00) cliff!
+            if hours_left < self.EXIT_HOURS_THRESHOLD:
+                exit_triggered = True
+                exit_reason = (
+                    f"STRICT TIME EXIT (< {self.EXIT_HOURS_THRESHOLD:.1f}h to close): "
+                    f"{hours_left*60:.0f}m remaining (liquidating before binary expiration)"
+                )
+            elif vwap_sell <= 0:
+                # Outside time exit window: wait for orderbook bids to appear
+                continue
+            # Exit Rule B: Edge closed (our target price reached in Bid book!)
+            elif vwap_sell >= latest_p - 0.01:
                 exit_triggered = True
                 exit_reason = (
                     f"TAKE PROFIT (Edge Closed): Live CLOB Bid VWAP ({vwap_sell*100:.1f}%) "
                     f"reached our estimated probability ({latest_p*100:.1f}%)"
                 )
-            # Exit Rule B: Our probability estimate shifted down by > prob_shift_limit
+            # Exit Rule C: Our probability estimate shifted down by > prob_shift_limit
             elif (initial_p - latest_p) >= prob_shift_limit:
                 exit_triggered = True
                 exit_reason = (
                     f"THESIS INVALIDATED (Prob Shift > {prob_shift_limit*100:.1f}pp): Estimate dropped from "
                     f"{initial_p*100:.1f}% to {latest_p*100:.1f}%"
-                )
-            # Exit Rule C: < 1 hour before market close — ONLY sell if win probability < 75%;
-            # if P_est >= 75%, HOLD TO RESOLUTION ($1.00 payout) to avoid giving up spread!
-            elif hours_left < self.EXIT_HOURS_THRESHOLD and latest_p < self.HOLD_TO_RESOLUTION_PROB:
-                exit_triggered = True
-                exit_reason = (
-                    f"TIME EXIT (< 1h to close & uncertain P_est={latest_p*100:.1f}% < 75%): "
-                    f"{hours_left*60:.0f}m remaining"
                 )
 
             if exit_triggered:
@@ -482,7 +472,7 @@ class GrokCharterPaperTrader:
                         exit_cond = (
                             f"Exit if Bid VWAP >= {p_est*100 - 1.0:.1f}% (edge closed), "
                             f"or P_est drops <= {(p_est - self.PROB_SHIFT_EXIT_PP)*100:.1f}% (-5pp), "
-                            f"or < 1h before {mkt.end_date_iso[:16]} (unless P_est >= 75% -> Hold to $1.00)"
+                            f"or < {self.EXIT_HOURS_THRESHOLD:.1f}h before {mkt.end_date_iso[:16]} (Strict Time Exit, no hold to settlement)"
                         )
                         pos_id = self.db.open_position(
                             market_id=mkt.id,

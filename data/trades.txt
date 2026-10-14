@@ -185,5 +185,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-13 19:38:47 UTC] [CYCLE #17 SUMMARY] Scanned=764 | PassedFilter=172 | Evaluated=10 | Edges(>=8pp)=1 | Opened=0 | Closed=0 | Cash=$36.81 | Equity=$41.83 (DD=22.18%)
 [2026-10-13 19:48:08 UTC] [CYCLE #18 SUMMARY] Scanned=800 | PassedFilter=176 | Evaluated=9 | Edges(>=8pp)=0 | Opened=0 | Closed=0 | Cash=$36.81 | Equity=$41.75 (DD=22.32%)
 [2026-10-13 23:24:06 UTC] [CYCLE #19 SUMMARY] Scanned=792 | PassedFilter=200 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 | Closed=0 | Cash=$36.81 | Equity=$41.75 (DD=22.32%)
-[2026-10-13 23:33:25 UTC] [CYCLE #20 SUMMARY] Scanned=800 | PassedFilter=205 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 | Closed=0 | Cash=$36.81 | Equity=$41.75 (DD=22.32%)
-[2026-10-13 23:42:39 UTC] [CYCLE #21 SUMMARY] Scanned=800 | PassedFilter=203 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 | Closed=0 | Cash=$36.81 | Equity=$41.65 (DD=22.51%)
+[2026-10-14 00:08:53 UTC] [OPEN TRADE #15] Will the highest temperature in Munich be 18°C or higher on October 15?
+  Категория: Weather | Сторона: NO | Источник: METAR EDDM (Munich Airport)
+  Оценка бота: 62.5% vs Рынок (Ask VWAP): 39.0% (Перекос/Edge: +23.5 п.п.)
+  Стакан CLOB: BestBid=0.380, BestAsk=0.390, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=38.5%, Четверть(0.25x)=9.6% -> Применён=4.0% банка
+  Размер сделки: $1.66 USDC (4.26 shares @ $0.3900)
+  Условие выхода: Exit if Bid VWAP >= 61.5% (edge closed), or P_est drops <= 57.5% (-5pp), or < 1.5h before 2026-10-15T12:00 (Strict Time Exit, no hold to settlement)
+  Причина: Station METAR EDDM (Munich Airport) (2026-10-15): Model Max=15.7°C (±2.6°C), Target=>=18°C => RawP=24.6%, Calibrated(0.65x)=37.5%
+
+[2026-10-14 00:08:53 UTC] [CYCLE #20 SUMMARY] Scanned=781 | PassedFilter=165 | Evaluated=44 | Edges(>=8pp)=1 | Opened=1 | Closed=0 | Cash=$35.15 | Equity=$41.43 (DD=22.93%)
