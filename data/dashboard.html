@@ -77,29 +77,29 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-10-14 13:44:40 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-10-14 13:53:45 UTC</div>
     </div>
   </div>
 
   <div class="grid">
     <div class="card">
       <div class="metric-label">Текущий капитал (Equity)</div>
-      <div class="metric-val">$39.48 <span style="font-size:15px" class="neg">(-10.52$ / -21.04%)</span></div>
+      <div class="metric-val">$39.29 <span style="font-size:15px" class="neg">(-10.71$ / -21.41%)</span></div>
       <div class="metric-sub">Старт: $50.00 USDC (Оценка по Bid стакана!)</div>
     </div>
     <div class="card">
       <div class="metric-label">Свободный кэш / В позициях</div>
-      <div class="metric-val">$37.30 <span class="muted" style="font-size:16px">/ $2.18</span></div>
+      <div class="metric-val">$37.30 <span class="muted" style="font-size:16px">/ $1.99</span></div>
       <div class="metric-sub">Открыто позиций: 2 из 8 (макс 8% банка)</div>
     </div>
     <div class="card">
       <div class="metric-label">Цель подписки ($60 / мес)</div>
-      <div class="metric-val">$-10.52 <span class="muted" style="font-size:16px">/ $60.00</span></div>
+      <div class="metric-val">$-10.71 <span class="muted" style="font-size:16px">/ $60.00</span></div>
       <div class="metric-sub">Прогресс окупаемости: 0.0%</div>
     </div>
     <div class="card">
       <div class="metric-label">Просадка от пика (Drawdown)</div>
-      <div class="metric-val neg">26.54% <span class="muted" style="font-size:15px">(Макс: 26.54%)</span></div>
+      <div class="metric-val neg">26.89% <span class="muted" style="font-size:15px">(Макс: 27.21%)</span></div>
       <div class="metric-sub">Пик: $53.75 | Лимит остановки: 40.0%</div>
     </div>
     <div class="card">
@@ -127,10 +127,10 @@
             <td><span class="side-yes">YES</span></td>
             <td>17.92</td>
             <td>$0.1300</td>
-            <td>$0.0600</td>
+            <td>$0.0400</td>
             <td><strong>18.7%</strong> <small>(+9.7pp)</small></td>
             <td>$2.33 <small>(5.6%)</small></td>
-            <td class="neg">$-1.25</td>
+            <td class="neg">$-1.61</td>
             <td><small>Exit if Bid VWAP &gt;= 21.7% (edge closed), or P_est drops &lt;= 17.7% (-5pp), or &lt; 1h before 2026-10-19T04:00 (unless P_est &gt;= 75% -&gt; Hold to $1.00)</small></td>
         </tr>
         
@@ -141,10 +141,10 @@
             <td><span class="side-no">NO</span></td>
             <td>4.26</td>
             <td>$0.3900</td>
-            <td>$0.2600</td>
-            <td><strong>65.6%</strong> <small>(+23.5pp)</small></td>
+            <td>$0.3000</td>
+            <td><strong>67.6%</strong> <small>(+23.5pp)</small></td>
             <td>$1.66 <small>(4.0%)</small></td>
-            <td class="neg">$-0.55</td>
+            <td class="neg">$-0.38</td>
             <td><small>Exit if Bid VWAP &gt;= 61.5% (edge closed), or P_est drops &lt;= 57.5% (-5pp), or &lt; 1.5h before 2026-10-15T12:00 (Strict Time Exit, no hold to settlement)</small></td>
         </tr>
         
@@ -162,6 +162,19 @@
     </thead>
     <tbody>
       
+        <tr class="">
+            <td>Will the highest temperature in Wellington be 15°C on October 15?<br><small class="muted">Station METAR NZWN (Wellington Intl) (2026-10-15): Model Max=16.0°C (±1.6°C), Target=15°C (±0.5) =&gt; RawP=20.2%, Calibrated(0.65x)=13.8%</small></td>
+            <td><span class="badge cat-weather">Weather</span></td>
+            <td>YES</td>
+            <td>13.8%</td>
+            <td>100.0%</td>
+            <td class="muted">-86.2 п.п.</td>
+            <td class="neg">100.00%</td>
+            <td>$3,646</td>
+            <td>22.1h</td>
+            <td><strong>REJECTED: Edge -86.2 pp &lt; 8 pp threshold (P_est=13.8% vs AskVWAP=100.0%)</strong></td>
+        </tr>
+        
         <tr class="">
             <td>Will the highest temperature in Wellington be 15°C on October 15?<br><small class="muted">Station METAR NZWN (Wellington Intl) (2026-10-15): Model Max=16.0°C (±1.6°C), Target=15°C (±0.5) =&gt; RawP=20.1%, Calibrated(0.65x)=13.8%</small></td>
             <td><span class="badge cat-weather">Weather</span></td>
@@ -474,27 +487,11 @@
             <td><strong>REJECTED: Edge +8.0 pp &lt; 8 pp threshold (P_est=98.0% vs AskVWAP=90.0%)</strong></td>
         </tr>
         
-        <tr class="">
-            <td>Bitcoin Up or Down on October 14?<br><small class="muted">News sentiment=+1.00 (12 articles; top: &#x27;Bitcoin Price: Stronger Than the Market, Altcoins Fall - CryptoTicker&#x27;)</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>47.0%</td>
-            <td>42.0%</td>
-            <td class="muted">+5.0 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$38,990</td>
-            <td>20.4h</td>
-            <td><strong>REJECTED: Edge +5.0 pp &lt; 8 pp threshold (P_est=47.0% vs AskVWAP=42.0%)</strong></td>
-        </tr>
-        
     </tbody>
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">to 74.5%
-[EXIT] #3 | Will the highest temperature in Sao Paulo be 26°C on October 13? (NO)
-  Shares: 3.69 | Entry VWAP: 0.8100 -&gt; Exit Bid VWAP: 0.7600
-  Proceeds: $2.81 | Realized PnL: $-0.18 USDC | Reason: THESIS INVALIDATED (Prob Shift &gt; 5pp): Estimate dropped from 98.2% to 83.0%
+  <pre class="log-box">Realized PnL: $-0.18 USDC | Reason: THESIS INVALIDATED (Prob Shift &gt; 5pp): Estimate dropped from 98.2% to 83.0%
 [EXIT] #5 | Will the highest temperature in Mexico City be 26°C or higher on October 13? (NO)
   Shares: 6.08 | Entry VWAP: 0.4918 -&gt; Exit Bid VWAP: 0.4900
   Proceeds: $2.98 | Realized PnL: $-0.01 USDC | Reason: THESIS INVALIDATED (Prob Shift &gt; 5pp): Estimate dropped from 99.5% to 73.8%
@@ -635,6 +632,7 @@
   Proceeds: $2.15 | Realized PnL: $-0.92 USDC | Reason: THESIS INVALIDATED (Prob Shift &gt; 7.5pp): Estimate dropped from 38.1% to 28.5%
 [2026-10-14 13:35:31 UTC] [CYCLE #27 SUMMARY] Scanned=799 | PassedFilter=131 | Evaluated=1 | Edges(&gt;=8pp)=0 | Opened=0 | Closed=0 | Cash=$37.30 | Equity=$39.52 (DD=26.46%)
 [2026-10-14 13:44:37 UTC] [CYCLE #28 SUMMARY] Scanned=800 | PassedFilter=127 | Evaluated=1 | Edges(&gt;=8pp)=0 | Opened=0 | Closed=0 | Cash=$37.30 | Equity=$39.48 (DD=26.54%)
+[2026-10-14 13:53:42 UTC] [CYCLE #29 SUMMARY] Scanned=789 | PassedFilter=126 | Evaluated=1 | Edges(&gt;=8pp)=0 | Opened=0 | Closed=0 | Cash=$37.30 | Equity=$39.29 (DD=26.89%)
 </pre>
 </body>
 </html>
