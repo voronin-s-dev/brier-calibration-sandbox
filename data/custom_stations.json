@@ -47,5 +47,12 @@
     "Asia/Shanghai",
     "celsius",
     "Auto-Meteo Wuhan (CN)"
+  ],
+  "istanbul": [
+    41.01384,
+    28.94966,
+    "Europe/Istanbul",
+    "celsius",
+    "Auto-Meteo Istanbul (TR)"
   ]
 }
