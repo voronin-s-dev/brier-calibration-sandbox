@@ -77,29 +77,29 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-10-14 02:16:19 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-10-14 02:25:23 UTC</div>
     </div>
   </div>
 
   <div class="grid">
     <div class="card">
       <div class="metric-label">Текущий капитал (Equity)</div>
-      <div class="metric-val">$41.40 <span style="font-size:15px" class="neg">(-8.60$ / -17.20%)</span></div>
+      <div class="metric-val">$41.58 <span style="font-size:15px" class="neg">(-8.42$ / -16.84%)</span></div>
       <div class="metric-sub">Старт: $50.00 USDC (Оценка по Bid стакана!)</div>
     </div>
     <div class="card">
       <div class="metric-label">Свободный кэш / В позициях</div>
-      <div class="metric-val">$35.15 <span class="muted" style="font-size:16px">/ $6.25</span></div>
+      <div class="metric-val">$35.15 <span class="muted" style="font-size:16px">/ $6.43</span></div>
       <div class="metric-sub">Открыто позиций: 3 из 8 (макс 8% банка)</div>
     </div>
     <div class="card">
       <div class="metric-label">Цель подписки ($60 / мес)</div>
-      <div class="metric-val">$-8.60 <span class="muted" style="font-size:16px">/ $60.00</span></div>
+      <div class="metric-val">$-8.42 <span class="muted" style="font-size:16px">/ $60.00</span></div>
       <div class="metric-sub">Прогресс окупаемости: 0.0%</div>
     </div>
     <div class="card">
       <div class="metric-label">Просадка от пика (Drawdown)</div>
-      <div class="metric-val neg">22.97% <span class="muted" style="font-size:15px">(Макс: 23.31%)</span></div>
+      <div class="metric-val neg">22.64% <span class="muted" style="font-size:15px">(Макс: 23.31%)</span></div>
       <div class="metric-sub">Пик: $53.75 | Лимит остановки: 40.0%</div>
     </div>
     <div class="card">
@@ -141,10 +141,10 @@
             <td><span class="side-yes">YES</span></td>
             <td>17.92</td>
             <td>$0.1300</td>
-            <td>$0.1100</td>
+            <td>$0.1200</td>
             <td><strong>20.8%</strong> <small>(+9.7pp)</small></td>
             <td>$2.33 <small>(5.6%)</small></td>
-            <td class="neg">$-0.36</td>
+            <td class="neg">$-0.18</td>
             <td><small>Exit if Bid VWAP &gt;= 21.7% (edge closed), or P_est drops &lt;= 17.7% (-5pp), or &lt; 1h before 2026-10-19T04:00 (unless P_est &gt;= 75% -&gt; Hold to $1.00)</small></td>
         </tr>
         
@@ -176,6 +176,19 @@
     </thead>
     <tbody>
       
+        <tr class="">
+            <td>Will the highest temperature in Houston be between 90-91°F on October 15?<br><small class="muted">Station Auto-Meteo Houston (US) (2026-10-15): Model Max=88.7°F (±4.3°F), Target=[90, 91]°F =&gt; RawP=16.8%, Calibrated(0.65x)=22.4%</small></td>
+            <td><span class="badge cat-weather">Weather</span></td>
+            <td>NO</td>
+            <td>77.6%</td>
+            <td>69.0%</td>
+            <td class="pos">+8.6 п.п.</td>
+            <td class="neg">4.00%</td>
+            <td>$3,070</td>
+            <td>33.6h</td>
+            <td><strong>REJECTED: CLOB round-trip slippage 4.00% &gt; 2.0% limit</strong></td>
+        </tr>
+        
         <tr class="">
             <td>Will the highest temperature in Houston be between 90-91°F on October 15?<br><small class="muted">Station Auto-Meteo Houston (US) (2026-10-15): Model Max=88.7°F (±4.4°F), Target=[90, 91]°F =&gt; RawP=16.7%, Calibrated(0.65x)=22.6%</small></td>
             <td><span class="badge cat-weather">Weather</span></td>
@@ -488,26 +501,11 @@
             <td><strong>REJECTED: Edge +4.5 pp &lt; 8 pp threshold (P_est=11.5% vs AskVWAP=7.0%)</strong></td>
         </tr>
         
-        <tr class="">
-            <td>Will the price of Ethereum be above $2,400 on October 16?<br><small class="muted">News sentiment=+1.00 (12 articles; top: &#x27;ETH price on Oct 12, 2026 at 9pm EDT Crypto Prediction Market - Robinhood&#x27;)</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>93.5%</td>
-            <td>89.0%</td>
-            <td class="muted">+4.5 п.п.</td>
-            <td class="pos">2.00%</td>
-            <td>$32,404</td>
-            <td>68.3h</td>
-            <td><strong>REJECTED: Edge +4.5 pp &lt; 8 pp threshold (P_est=93.5% vs AskVWAP=89.0%)</strong></td>
-        </tr>
-        
     </tbody>
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">(6.08 shares @ $0.4918)
-  Условие выхода: Exit if Bid VWAP &gt;= 98.5% (edge closed), or P_est drops &lt;= 94.5% (-5pp), or &lt; 1h before 2026-10-13T12:00
-  Причина: Station METAR MMMX (Mexico City Intl) (2026-10-13): Model Max=23.6°C (±0.6°C), Target=&gt;=26°C =&gt; P(YES)=0.5%
+  <pre class="log-box">MMMX (Mexico City Intl) (2026-10-13): Model Max=23.6°C (±0.6°C), Target=&gt;=26°C =&gt; P(YES)=0.5%
 
 [2026-10-12 20:52:31 UTC] [CYCLE #4 SUMMARY] Scanned=798 | PassedFilter=195 | Evaluated=43 | Edges(&gt;=8pp)=2 | Opened=1 | Closed=0 | Cash=$35.03 | Equity=$49.64 (DD=0.72%)
 [2026-10-12 21:02:44 UTC] [CYCLE #5 SUMMARY] Scanned=779 | PassedFilter=187 | Evaluated=44 | Edges(&gt;=8pp)=2 | Opened=0 | Closed=0 | Cash=$35.03 | Equity=$49.59 (DD=0.81%)
@@ -652,6 +650,7 @@
 [2026-10-14 00:08:53 UTC] [CYCLE #20 SUMMARY] Scanned=781 | PassedFilter=165 | Evaluated=44 | Edges(&gt;=8pp)=1 | Opened=1 | Closed=0 | Cash=$35.15 | Equity=$41.43 (DD=22.93%)
 [2026-10-14 02:07:12 UTC] [CYCLE #21 SUMMARY] Scanned=796 | PassedFilter=159 | Evaluated=0 | Edges(&gt;=8pp)=0 | Opened=0 | Closed=0 | Cash=$35.15 | Equity=$41.58 (DD=22.64%)
 [2026-10-14 02:16:16 UTC] [CYCLE #22 SUMMARY] Scanned=798 | PassedFilter=162 | Evaluated=1 | Edges(&gt;=8pp)=1 | Opened=0 | Closed=0 | Cash=$35.15 | Equity=$41.40 (DD=22.97%)
+[2026-10-14 02:25:20 UTC] [CYCLE #23 SUMMARY] Scanned=781 | PassedFilter=159 | Evaluated=1 | Edges(&gt;=8pp)=1 | Opened=0 | Closed=0 | Cash=$35.15 | Equity=$41.58 (DD=22.64%)
 </pre>
 </body>
 </html>
