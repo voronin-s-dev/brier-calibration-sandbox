@@ -33,5 +33,12 @@
     "Africa/Johannesburg",
     "celsius",
     "Auto-Meteo Cape Town (ZA)"
+  ],
+  "houston": [
+    29.76328,
+    -95.36327,
+    "America/Chicago",
+    "fahrenheit",
+    "Auto-Meteo Houston (US)"
   ]
 }

@@ -1,26 +1,27 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-10-14 02:07:14 UTC`
+**Обновлено:** `2026-10-14 02:16:19 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$41.58 USDC`** (`-8.42$` / `-16.84%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$35.15` / `$6.43 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-8.42 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `22.64%` / `23.31%` (Пик: `$53.75`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$41.40 USDC`** (`-8.60$` / `-17.20%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$35.15` / `$6.25 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-8.60 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `22.97%` / `23.31%` (Пик: `$53.75`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `12` / `33.3%` | Brier Score: `0.3143` |
 
 ## 📂 Открытые позиции (3 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #9 | Will Bitcoin dip to $80,000 October 12-18? | Crypto | **YES** | `0.300` | `0.260` | `35.4%` | `$3.07` | `$-0.41` | Binance BTCUSDT 1m/1h Spot Kli |
-| #13 | Will Ethereum reach $2,700 October 12-18? | Crypto | **YES** | `0.130` | `0.120` | `20.8%` | `$2.33` | `$-0.18` | Binance ETHUSDT 1m/1h Spot Kli |
-| #15 | Will the highest temperature in Munich be 18°C or highe | Weather | **NO** | `0.390` | `0.380` | `64.9%` | `$1.66` | `$-0.04` | METAR EDDM (Munich Airport) |
+| #13 | Will Ethereum reach $2,700 October 12-18? | Crypto | **YES** | `0.130` | `0.110` | `20.8%` | `$2.33` | `$-0.36` | Binance ETHUSDT 1m/1h Spot Kli |
+| #15 | Will the highest temperature in Munich be 18°C or highe | Weather | **NO** | `0.390` | `0.380` | `65.0%` | `$1.66` | `$-0.04` | METAR EDDM (Munich Airport) |
 
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will the highest temperature in Houston be between | Weather | NO | `77.4%` | `69.0%` | `+8.4 п.п.` | `5.00%` | REJECTED: CLOB round-trip slippage 5.00% > 2.0% limit |
 | Will the highest temperature in Munich be 18°C or  | Weather | NO | `62.5%` | `39.0%` | `+23.5 п.п.` | `1.00%` | EXECUTED BUY #15 ($1.66 @ 0.3900) |
 | Will Ethereum reach $2,800 October 12-18? | Crypto | YES | `7.2%` | `3.2%` | `+4.0 п.п.` | `0.90%` | REJECTED: Edge +4.0 pp < 8 pp threshold (P_est=7.2% vs AskVWAP=3.2%) |
 | Will the price of Bitcoin be above $92,000 on Octo | Crypto | YES | `2.0%` | `100.0%` | `-98.0 п.п.` | `100.00%` | REJECTED: Edge -98.0 pp < 8 pp threshold (P_est=2.0% vs AskVWAP=100.0%) |
@@ -38,4 +39,3 @@
 | Will the price of Ethereum be above $2,400 on Octo | Crypto | YES | `92.5%` | `88.0%` | `+4.5 п.п.` | `2.00%` | REJECTED: Edge +4.5 pp < 8 pp threshold (P_est=92.5% vs AskVWAP=88.0%) |
 | Will the price of Bitcoin be above $84,000 on Octo | Crypto | YES | `39.0%` | `34.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Edge +5.0 pp < 8 pp threshold (P_est=39.0% vs AskVWAP=34.0%) |
 | Will Bitcoin dip to $82,000 on October 13? | Crypto | NO | `98.0%` | `90.0%` | `+8.0 п.п.` | `2.00%` | REJECTED: Edge +8.0 pp < 8 pp threshold (P_est=98.0% vs AskVWAP=90.0%) |
-| Bitcoin Up or Down on October 14? | Crypto | YES | `47.0%` | `42.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Edge +5.0 pp < 8 pp threshold (P_est=47.0% vs AskVWAP=42.0%) |
