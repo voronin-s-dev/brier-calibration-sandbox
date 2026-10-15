@@ -254,3 +254,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 2.34 | Entry VWAP: 0.6400 -> Exit Bid VWAP: 0.3500
   Proceeds: $0.82 | Realized PnL: $-0.68 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.350 (-45.3% from entry $0.640)
 [2026-10-15 14:51:11 UTC] [CYCLE #46 SUMMARY] Scanned=797 | PassedFilter=169 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 | Closed=2 | Cash=$36.24 | Equity=$36.24 (DD=32.58%)
+[2026-10-15 15:00:31 UTC] [OPEN TRADE #18] Will Bitcoin reach $84,000 on October 15?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 94.5% vs Рынок (Ask VWAP): 89.1% (Перекос/Edge: +5.4 п.п.)
+  Стакан CLOB: BestBid=0.886, BestAsk=0.891, Проскальзывание входа/выхода=0.50% (<= 3.0%)
+  Келли: Полный=49.9%, Четверть(0.25x)=12.5% -> Применён=4.0% банка
+  Размер сделки: $1.45 USDC (1.63 shares @ $0.8910)
+  Условие выхода: Exit if Bid VWAP >= 93.5% (edge closed), or Stop-Loss <= 0.579 (-35%), or P_est drops <= 84.5% (-10pp & <= entry), or < 1.5h before 2026-10-16T04:00 (Strict Time Exit, no hold to settlement)
+  Причина: CLOB near-touch depth imbalance OBI=-0.75 (BidDepth=$97 vs AskDepth=$690)
+
+[2026-10-15 15:00:31 UTC] [CYCLE #47 SUMMARY] Scanned=800 | PassedFilter=170 | Evaluated=9 | Edges(>=8pp)=2 | Opened=1 | Closed=0 | Cash=$34.79 | Equity=$36.23 (DD=32.59%)
