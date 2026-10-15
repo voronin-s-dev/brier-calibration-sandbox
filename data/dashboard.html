@@ -77,29 +77,29 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-10-15 00:34:47 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-10-15 00:43:50 UTC</div>
     </div>
   </div>
 
   <div class="grid">
     <div class="card">
       <div class="metric-label">Текущий капитал (Equity)</div>
-      <div class="metric-val">$38.93 <span style="font-size:15px" class="neg">(-11.07$ / -22.13%)</span></div>
+      <div class="metric-val">$38.86 <span style="font-size:15px" class="neg">(-11.14$ / -22.28%)</span></div>
       <div class="metric-sub">Старт: $50.00 USDC (Оценка по Bid стакана!)</div>
     </div>
     <div class="card">
       <div class="metric-label">Свободный кэш / В позициях</div>
-      <div class="metric-val">$37.30 <span class="muted" style="font-size:16px">/ $1.63</span></div>
+      <div class="metric-val">$37.30 <span class="muted" style="font-size:16px">/ $1.56</span></div>
       <div class="metric-sub">Открыто позиций: 2 из 8 (макс 8% банка)</div>
     </div>
     <div class="card">
       <div class="metric-label">Цель подписки ($60 / мес)</div>
-      <div class="metric-val">$-11.07 <span class="muted" style="font-size:16px">/ $60.00</span></div>
+      <div class="metric-val">$-11.14 <span class="muted" style="font-size:16px">/ $60.00</span></div>
       <div class="metric-sub">Прогресс окупаемости: 0.0%</div>
     </div>
     <div class="card">
       <div class="metric-label">Просадка от пика (Drawdown)</div>
-      <div class="metric-val neg">27.56% <span class="muted" style="font-size:15px">(Макс: 28.60%)</span></div>
+      <div class="metric-val neg">27.70% <span class="muted" style="font-size:15px">(Макс: 28.60%)</span></div>
       <div class="metric-sub">Пик: $53.75 | Лимит остановки: 40.0%</div>
     </div>
     <div class="card">
@@ -127,10 +127,10 @@
             <td><span class="side-yes">YES</span></td>
             <td>17.92</td>
             <td>$0.1300</td>
-            <td>$0.0270</td>
+            <td>$0.0230</td>
             <td><strong>18.7%</strong> <small>(+9.7pp)</small></td>
             <td>$2.33 <small>(5.6%)</small></td>
-            <td class="neg">$-1.85</td>
+            <td class="neg">$-1.92</td>
             <td><small>Exit if Bid VWAP &gt;= 21.7% (edge closed), or P_est drops &lt;= 17.7% (-5pp), or &lt; 1h before 2026-10-19T04:00 (unless P_est &gt;= 75% -&gt; Hold to $1.00)</small></td>
         </tr>
         
@@ -142,7 +142,7 @@
             <td>4.26</td>
             <td>$0.3900</td>
             <td>$0.2700</td>
-            <td><strong>55.6%</strong> <small>(+23.5pp)</small></td>
+            <td><strong>55.8%</strong> <small>(+23.5pp)</small></td>
             <td>$1.66 <small>(4.0%)</small></td>
             <td class="neg">$-0.51</td>
             <td><small>Exit if Bid VWAP &gt;= 61.5% (edge closed), or P_est drops &lt;= 57.5% (-5pp), or &lt; 1.5h before 2026-10-15T12:00 (Strict Time Exit, no hold to settlement)</small></td>
@@ -491,9 +491,7 @@
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">mperature in Shanghai be 26°C on October 13? (NO)
-  Shares: 4.54 | Entry VWAP: 0.6500 -&gt; Exit Bid VWAP: 0.9730
-  Proceeds: $4.42 | Realized PnL: $+1.47 USDC | Reason: TAKE PROFIT (Edge Closed): Live CLOB Bid VWAP (97.3%) reached our estimated probability (84.4%)
+  <pre class="log-box">PROFIT (Edge Closed): Live CLOB Bid VWAP (97.3%) reached our estimated probability (84.4%)
 [2026-10-13 02:33:23 UTC] [OPEN TRADE #7] Will the price of Bitcoin be above $84,000 on October 13?
   Категория: Crypto | Сторона: YES | Источник: https://www.binance.com/en/trade/BTC_USDT
   Оценка бота: 21.5% vs Рынок (Ask VWAP): 11.0% (Перекос/Edge: +10.5 п.п.)
@@ -627,6 +625,7 @@
 [2026-10-14 22:11:57 UTC] [CYCLE #35 SUMMARY] Scanned=799 | PassedFilter=153 | Evaluated=5 | Edges(&gt;=8pp)=0 | Opened=0 | Closed=0 | Cash=$37.30 | Equity=$38.37 (DD=28.60%)
 [2026-10-15 00:25:40 UTC] [CYCLE #36 SUMMARY] Scanned=775 | PassedFilter=138 | Evaluated=0 | Edges(&gt;=8pp)=0 | Opened=0 | Closed=0 | Cash=$37.30 | Equity=$38.93 (DD=27.56%)
 [2026-10-15 00:34:45 UTC] [CYCLE #37 SUMMARY] Scanned=800 | PassedFilter=146 | Evaluated=0 | Edges(&gt;=8pp)=0 | Opened=0 | Closed=0 | Cash=$37.30 | Equity=$38.93 (DD=27.56%)
+[2026-10-15 00:43:48 UTC] [CYCLE #38 SUMMARY] Scanned=795 | PassedFilter=149 | Evaluated=0 | Edges(&gt;=8pp)=0 | Opened=0 | Closed=0 | Cash=$37.30 | Equity=$38.86 (DD=27.70%)
 </pre>
 </body>
 </html>
