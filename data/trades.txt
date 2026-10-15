@@ -264,3 +264,22 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: CLOB near-touch depth imbalance OBI=-0.75 (BidDepth=$97 vs AskDepth=$690)
 
 [2026-10-15 15:00:31 UTC] [CYCLE #47 SUMMARY] Scanned=800 | PassedFilter=170 | Evaluated=9 | Edges(>=8pp)=2 | Opened=1 | Closed=0 | Cash=$34.79 | Equity=$36.23 (DD=32.59%)
+[2026-10-15 15:09:50 UTC] [OPEN TRADE #19] Will the price of Ethereum be above $2,500 on October 16?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/ETH_USDT
+  Оценка бота: 95.8% vs Рынок (Ask VWAP): 90.4% (Перекос/Edge: +5.4 п.п.)
+  Стакан CLOB: BestBid=0.901, BestAsk=0.904, Проскальзывание входа/выхода=0.30% (<= 3.0%)
+  Келли: Полный=56.2%, Четверть(0.25x)=14.1% -> Применён=4.0% банка
+  Размер сделки: $1.45 USDC (1.60 shares @ $0.9040)
+  Условие выхода: Exit if Bid VWAP >= 94.8% (edge closed), or Stop-Loss <= 0.588 (-35%), or P_est drops <= 85.8% (-10pp & <= entry), or < 1.5h before 2026-10-16T16:00 (Strict Time Exit, no hold to settlement)
+  Причина: News sentiment=-1.00 (12 articles; top: 'Ethereum Price Forecast: ETH falls below $2,500 as hot CPI raises Fed hike odds - FXStreet')
+
+[2026-10-15 15:09:50 UTC] [OPEN TRADE #20] Will the highest temperature in Houston be between 78-79°F on October 16?
+  Категория: Weather | Сторона: NO | Источник: Auto-Meteo Houston (US)
+  Оценка бота: 82.6% vs Рынок (Ask VWAP): 68.0% (Перекос/Edge: +14.6 п.п.)
+  Стакан CLOB: BestBid=0.660, BestAsk=0.680, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=45.6%, Четверть(0.25x)=11.4% -> Применён=4.0% банка
+  Размер сделки: $1.45 USDC (2.13 shares @ $0.6800)
+  Условие выхода: Exit if Bid VWAP >= 81.6% (edge closed), or Stop-Loss <= 0.442 (-35%), or P_est drops <= 72.6% (-10pp & <= entry), or < 1.5h before 2026-10-16T12:00 (Strict Time Exit, no hold to settlement)
+  Причина: Station Auto-Meteo Houston (US) (2026-10-16): Model Max=75.1°F (±2.7°F), Target=[78, 79]°F => RawP=13.5%, Calibrated(0.80x)=17.4%
+
+[2026-10-15 15:09:50 UTC] [CYCLE #48 SUMMARY] Scanned=766 | PassedFilter=155 | Evaluated=8 | Edges(>=8pp)=3 | Opened=2 | Closed=0 | Cash=$31.89 | Equity=$36.15 (DD=32.74%)
