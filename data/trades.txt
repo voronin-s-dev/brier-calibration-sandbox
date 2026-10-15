@@ -293,3 +293,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: CLOB near-touch depth imbalance OBI=+0.96 (BidDepth=$1,057 vs AskDepth=$24) | News sentiment=+1.00 (12 articles; top: 'Bitcoin Price Forecast: Why September's US inflation figure could shape the near-term outlook for BTC - FXStre')
 
 [2026-10-15 19:01:58 UTC] [CYCLE #49 SUMMARY] Scanned=800 | PassedFilter=151 | Evaluated=6 | Edges(>=8pp)=3 | Opened=1 | Closed=0 | Cash=$30.59 | Equity=$35.89 (DD=33.22%)
+[2026-10-15 19:11:20 UTC] [CYCLE #50 SUMMARY] Scanned=763 | PassedFilter=142 | Evaluated=6 | Edges(>=8pp)=3 | Opened=0 | Closed=0 | Cash=$30.59 | Equity=$35.93 (DD=33.16%)

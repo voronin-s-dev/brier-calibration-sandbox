@@ -1,27 +1,32 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-10-15 19:02:19 UTC`
+**Обновлено:** `2026-10-15 19:11:38 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$35.89 USDC`** (`-14.11$` / `-28.22%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$30.59` / `$5.30 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-14.11 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `33.22%` / `33.22%` (Пик: `$53.75`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$35.93 USDC`** (`-14.07$` / `-28.15%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$30.59` / `$5.34 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-14.07 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `33.16%` / `33.22%` (Пик: `$53.75`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `17` / `23.5%` | Brier Score: `0.3143` |
 
 ## 📂 Открытые позиции (4 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #18 | Will Bitcoin reach $84,000 on October 15? | Crypto | **NO** | `0.891` | `0.927` | `94.5%` | `$1.45` | `$+0.06` | https://www.binance.com/en/tra |
-| #19 | Will the price of Ethereum be above $2,500 on October 1 | Crypto | **NO** | `0.904` | `0.814` | `88.8%` | `$1.45` | `$-0.14` | https://www.binance.com/en/tra |
-| #20 | Will the highest temperature in Houston be between 78-7 | Weather | **NO** | `0.680` | `0.580` | `81.8%` | `$1.45` | `$-0.21` | Auto-Meteo Houston (US) |
-| #21 | Will the price of Bitcoin be above $84,000 on October 1 | Crypto | **YES** | `0.138` | `0.133` | `26.3%` | `$1.30` | `$-0.05` | https://www.binance.com/en/tra |
+| #18 | Will Bitcoin reach $84,000 on October 15? | Crypto | **NO** | `0.891` | `0.926` | `94.5%` | `$1.45` | `$+0.06` | https://www.binance.com/en/tra |
+| #19 | Will the price of Ethereum be above $2,500 on October 1 | Crypto | **NO** | `0.904` | `0.824` | `88.7%` | `$1.45` | `$-0.13` | https://www.binance.com/en/tra |
+| #20 | Will the highest temperature in Houston be between 78-7 | Weather | **NO** | `0.680` | `0.580` | `81.7%` | `$1.45` | `$-0.21` | Auto-Meteo Houston (US) |
+| #21 | Will the price of Bitcoin be above $84,000 on October 1 | Crypto | **YES** | `0.138` | `0.135` | `26.3%` | `$1.30` | `$-0.03` | https://www.binance.com/en/tra |
 
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will the price of Ethereum be above $2,400 on Octo | Crypto | NO | `21.0%` | `16.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Edge +5.0 pp < 5 pp threshold (P_est=21.0% vs AskVWAP=16.0%) |
+| Will the price of Bitcoin be above $80,000 on Octo | Crypto | NO | `29.0%` | `24.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Calculated 0.25x Kelly bet $0.59 below $1.00 min or > cash $30.59 |
+| Will the price of Bitcoin be above $80,000 on Octo | Crypto | NO | `14.0%` | `9.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Calculated 0.25x Kelly bet $0.49 below $1.00 min or > cash $30.59 |
+| Will the price of Bitcoin be above $82,000 on Octo | Crypto | NO | `40.0%` | `35.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:october 16) |
+| Will the price of Bitcoin be above $80,000 on Octo | Crypto | NO | `12.0%` | `7.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Edge +5.0 pp < 5 pp threshold (P_est=12.0% vs AskVWAP=7.0%) |
 | Will the price of Bitcoin be above $80,000 on Octo | Crypto | NO | `29.5%` | `25.0%` | `+4.5 п.п.` | `2.00%` | REJECTED: Edge +4.5 pp < 5 pp threshold (P_est=29.5% vs AskVWAP=25.0%) |
 | Will the price of Bitcoin be above $80,000 on Octo | Crypto | NO | `14.5%` | `10.0%` | `+4.5 п.п.` | `2.00%` | REJECTED: Edge +4.5 pp < 5 pp threshold (P_est=14.5% vs AskVWAP=10.0%) |
 | Will Ethereum dip to $2,300 October 12-18? | Crypto | YES | `14.6%` | `9.6%` | `+5.0 п.п.` | `1.62%` | REJECTED: Calculated 0.25x Kelly bet $0.50 below $1.00 min or > cash $30.59 |
@@ -35,8 +40,3 @@
 | Will Bitcoin reach $83,000 on October 15? | Crypto | YES | `45.5%` | `53.0%` | `-7.5 п.п.` | `2.00%` | REJECTED: Edge -7.5 pp < 5 pp threshold (P_est=45.5% vs AskVWAP=53.0%) |
 | Will the price of Bitcoin be above $80,000 on Octo | Crypto | NO | `15.0%` | `10.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Edge +5.0 pp < 5 pp threshold (P_est=15.0% vs AskVWAP=10.0%) |
 | Will the price of Ethereum be above $2,500 on Octo | Crypto | NO | `95.8%` | `90.4%` | `+5.4 п.п.` | `0.30%` | EXECUTED BUY #19 ($1.45 @ 0.9040) |
-| Will the highest temperature in Wellington be 10°C | Weather | NO | `71.7%` | `62.0%` | `+9.7 п.п.` | `3.00%` | REJECTED: CLOB round-trip slippage 3.00% > 2.5% limit |
-| Will Bitcoin reach $84,000 on October 15? | Crypto | NO | `94.5%` | `89.1%` | `+5.4 п.п.` | `0.50%` | EXECUTED BUY #18 ($1.45 @ 0.8910) |
-| Will the highest temperature in Wellington be 9°C  | Weather | YES | `15.6%` | `100.0%` | `-84.4 п.п.` | `100.00%` | REJECTED: Edge -84.4 pp < 5 pp threshold (P_est=15.6% vs AskVWAP=100.0%) |
-| Will the price of Bitcoin be above $80,000 on Octo | Crypto | NO | `22.0%` | `17.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Edge +5.0 pp < 5 pp threshold (P_est=22.0% vs AskVWAP=17.0%) |
-| Will the price of Bitcoin be above $80,000 on Octo | Crypto | NO | `19.0%` | `14.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Edge +5.0 pp < 5 pp threshold (P_est=19.0% vs AskVWAP=14.0%) |
