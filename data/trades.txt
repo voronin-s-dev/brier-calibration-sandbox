@@ -247,3 +247,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: First-passage dip model: ETHUSDT=$2,347.02 -> barrier=$2,300 (-2.00%), vol_h=0.60%, tau=86.6h => P(touch)=74.6% -> Calibrated(0.80x)=72.0%
 
 [2026-10-15 13:23:30 UTC] [CYCLE #45 SUMMARY] Scanned=787 | PassedFilter=178 | Evaluated=45 | Edges(>=8pp)=9 | Opened=2 | Closed=0 | Cash=$34.60 | Equity=$37.56 (DD=30.12%)
+[EXIT] #16 | Will Bitcoin dip to $76,000 October 12-18? (YES)
+  Shares: 15.00 | Entry VWAP: 0.1000 -> Exit Bid VWAP: 0.0545
+  Proceeds: $0.82 | Realized PnL: $-0.68 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.055 (-45.5% from entry $0.100)
+[EXIT] #17 | Will Ethereum dip to $2,300 October 12-18? (YES)
+  Shares: 2.34 | Entry VWAP: 0.6400 -> Exit Bid VWAP: 0.3500
+  Proceeds: $0.82 | Realized PnL: $-0.68 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.350 (-45.3% from entry $0.640)
+[2026-10-15 14:51:11 UTC] [CYCLE #46 SUMMARY] Scanned=797 | PassedFilter=169 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 | Closed=2 | Cash=$36.24 | Equity=$36.24 (DD=32.58%)
