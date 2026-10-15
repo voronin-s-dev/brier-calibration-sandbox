@@ -1,25 +1,26 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-10-15 00:43:50 UTC`
+**Обновлено:** `2026-10-15 05:04:56 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$38.86 USDC`** (`-11.14$` / `-22.28%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$37.30` / `$1.56 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-11.14 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `27.70%` / `28.60%` (Пик: `$53.75`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$38.80 USDC`** (`-11.20$` / `-22.41%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$37.30` / `$1.50 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-11.20 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `27.82%` / `28.60%` (Пик: `$53.75`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `13` / `30.8%` | Brier Score: `0.3143` |
 
 ## 📂 Открытые позиции (2 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #13 | Will Ethereum reach $2,700 October 12-18? | Crypto | **YES** | `0.130` | `0.023` | `18.7%` | `$2.33` | `$-1.92` | Binance ETHUSDT 1m/1h Spot Kli |
-| #15 | Will the highest temperature in Munich be 18°C or highe | Weather | **NO** | `0.390` | `0.270` | `55.8%` | `$1.66` | `$-0.51` | METAR EDDM (Munich Airport) |
+| #13 | Will Ethereum reach $2,700 October 12-18? | Crypto | **YES** | `0.130` | `0.017` | `18.7%` | `$2.33` | `$-2.03` | Binance ETHUSDT 1m/1h Spot Kli |
+| #15 | Will the highest temperature in Munich be 18°C or highe | Weather | **NO** | `0.390` | `0.280` | `60.1%` | `$1.66` | `$-0.47` | METAR EDDM (Munich Airport) |
 
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will the highest temperature in Toronto be 16°C or | Weather | YES | `84.6%` | `77.0%` | `+7.6 п.п.` | `2.00%` | REJECTED: Edge +7.6 pp < 8 pp threshold (P_est=84.6% vs AskVWAP=77.0%) |
 | Will the highest temperature in Wuhan be 20°C on O | Weather | YES | `7.2%` | `100.0%` | `-92.8 п.п.` | `100.00%` | REJECTED: Edge -92.8 pp < 8 pp threshold (P_est=7.2% vs AskVWAP=100.0%) |
 | Will the highest temperature in Wuhan be 21°C on O | Weather | YES | `13.9%` | `100.0%` | `-86.2 п.п.` | `100.00%` | REJECTED: Edge -86.1 pp < 8 pp threshold (P_est=13.9% vs AskVWAP=100.0%) |
 | Will the highest temperature in Wuhan be 22°C on O | Weather | YES | `17.8%` | `100.0%` | `-82.2 п.п.` | `100.00%` | REJECTED: Edge -82.2 pp < 8 pp threshold (P_est=17.8% vs AskVWAP=100.0%) |
@@ -37,4 +38,3 @@
 | Will the highest temperature in Wellington be 15°C | Weather | YES | `17.8%` | `100.0%` | `-82.2 п.п.` | `100.00%` | REJECTED: Edge -82.2 pp < 8 pp threshold (P_est=17.8% vs AskVWAP=100.0%) |
 | Will the highest temperature in Wuhan be 20°C on O | Weather | YES | `7.9%` | `100.0%` | `-92.1 п.п.` | `100.00%` | REJECTED: Edge -92.1 pp < 8 pp threshold (P_est=7.9% vs AskVWAP=100.0%) |
 | Will the highest temperature in Wuhan be 22°C on O | Weather | YES | `17.8%` | `100.0%` | `-82.2 п.п.` | `100.00%` | REJECTED: Edge -82.2 pp < 8 pp threshold (P_est=17.8% vs AskVWAP=100.0%) |
-| Will the highest temperature in Wuhan be 21°C on O | Weather | YES | `14.5%` | `100.0%` | `-85.5 п.п.` | `100.00%` | REJECTED: Edge -85.5 pp < 8 pp threshold (P_est=14.5% vs AskVWAP=100.0%) |
