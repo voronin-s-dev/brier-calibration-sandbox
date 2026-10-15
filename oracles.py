@@ -24,9 +24,10 @@ def norm_cdf(x: float) -> float:
     return 0.5 * (1.0 + math.erf(x / math.sqrt(2.0)))
 
 
-def calibrate_probability(p_raw: float, p_market: float, oracle_weight: float = 0.65) -> float:
+def calibrate_probability(p_raw: float, p_market: float, oracle_weight: float = 0.80) -> float:
     """
-    Applies Bayesian shrinkage toward the market prior to prevent LLM/model overconfidence.
+    Applies Bayesian shrinkage toward the market prior to prevent model overconfidence,
+    while preserving genuine quantitative edge without over-dampening signals.
     P_cal = w * P_raw + (1 - w) * P_market, clamped to [0.02, 0.98].
     """
     p_market_clamped = min(max(p_market, 0.02), 0.98)
@@ -51,7 +52,8 @@ class EvaluationResult:
 class CryptoOracle:
     """
     Quantitative Crypto Oracle using official Binance USDT spot klines.
-    Calculates exact barrier-touching ("dip to" / "reach") and terminal ("above") probabilities.
+    Calculates exact barrier-touching ("dip to" / "reach") and terminal ("above") probabilities
+    using a multi-timeframe Parkinson + Close-to-Close volatility estimator with realistic asset floors.
     """
 
     SYMBOLS = {
@@ -67,6 +69,17 @@ class CryptoOracle:
         "bnb": "BNBUSDT",
     }
 
+    # Realistic implied volatility floors (annualized -> hourly equivalent)
+    # Prevents false "barrier impossible" outputs during 24-48h consolidation periods
+    VOLATILITY_FLOORS = {
+        "BTCUSDT": 0.0050,  # ~47% annualized floor
+        "ETHUSDT": 0.0060,  # ~56% annualized floor
+        "SOLUSDT": 0.0075,  # ~70% annualized floor
+        "XRPUSDT": 0.0070,  # ~65% annualized floor
+        "DOGEUSDT": 0.0085, # ~80% annualized floor
+        "BNBUSDT": 0.0055,  # ~51% annualized floor
+    }
+
     def __init__(self) -> None:
         self._cache: Dict[str, Dict[str, Any]] = {}
 
@@ -74,26 +87,43 @@ class CryptoOracle:
         if symbol in self._cache:
             return self._cache[symbol]
         try:
-            # Fetch last 48 hourly candles to compute realized hourly volatility and intraday range
-            url = f"https://api.binance.com/api/v3/klines?symbol={symbol}&interval=1h&limit=48"
+            # Fetch up to 168 hourly candles (7 days) for robust multi-day volatility & range
+            url = f"https://api.binance.com/api/v3/klines?symbol={symbol}&interval=1h&limit=168"
             klines = fetch_standard_url(url, timeout=8.0)
             if not klines or len(klines) < 10:
-                return None
+                # Fallback to 48 candles if 168 fails
+                url_short = f"https://api.binance.com/api/v3/klines?symbol={symbol}&interval=1h&limit=48"
+                klines = fetch_standard_url(url_short, timeout=8.0)
+                if not klines or len(klines) < 10:
+                    return None
 
             closes = [float(k[4]) for k in klines]
             highs = [float(k[2]) for k in klines]
             lows = [float(k[3]) for k in klines]
             current_price = closes[-1]
 
-            # Log returns for hourly volatility
+            # 1. Close-to-close log returns variance
             log_returns = [
                 math.log(closes[i] / closes[i - 1])
                 for i in range(1, len(closes))
                 if closes[i - 1] > 0
             ]
             mean_ret = sum(log_returns) / len(log_returns)
-            var_ret = sum((r - mean_ret) ** 2 for r in log_returns) / max(1, len(log_returns) - 1)
-            hourly_vol = max(math.sqrt(var_ret), 0.003)  # Floor at 0.3% per hour
+            var_close = sum((r - mean_ret) ** 2 for r in log_returns) / max(1, len(log_returns) - 1)
+
+            # 2. Parkinson range-based variance: (ln(H/L))^2 / (4 * ln(2))
+            # Captures true intraday price excursions beyond close prices
+            park_terms = [
+                (math.log(max(h, l * 1.0001) / max(l, 1e-6)) ** 2) / (4.0 * math.log(2.0))
+                for h, l in zip(highs, lows)
+                if h > 0 and l > 0
+            ]
+            var_park = sum(park_terms) / max(1, len(park_terms))
+
+            # 3. Blended realized variance + asset-class floor
+            blended_var = 0.40 * var_close + 0.60 * var_park
+            floor_vol = self.VOLATILITY_FLOORS.get(symbol, 0.0055)
+            hourly_vol = max(math.sqrt(max(blended_var, 1e-6)), floor_vol)
 
             # Also get today's high/low since 04:00 UTC (00:00 ET)
             now_utc = datetime.now(timezone.utc)
@@ -213,8 +243,8 @@ class CryptoOracle:
         mkt_prior = market.gamma_prices[0] if market.gamma_prices else 0.5
         if p_yes < 0.98:
             p_raw = p_yes
-            p_yes = calibrate_probability(p_raw, mkt_prior, oracle_weight=0.65)
-            mode_desc += f" -> Calibrated(0.65x)={p_yes*100:.1f}%"
+            p_yes = calibrate_probability(p_raw, mkt_prior, oracle_weight=0.80)
+            mode_desc += f" -> Calibrated(0.80x)={p_yes*100:.1f}%"
 
         return EvaluationResult(
             market_id=market.id,
@@ -381,10 +411,10 @@ class WeatherOracle:
 
         p_raw = min(max(p_raw, 0.01), 0.99)
         mkt_prior = market.gamma_prices[0] if market.gamma_prices else 0.5
-        p_yes = calibrate_probability(p_raw, mkt_prior, oracle_weight=0.65)
+        p_yes = calibrate_probability(p_raw, mkt_prior, oracle_weight=0.80)
         rationale = (
             f"Station {station_name} ({target_date_str}): Model Max={forecast_max:.1f}{unit_sym} "
-            f"(±{sd:.1f}{unit_sym}), Target={bracket_str} => RawP={p_raw*100:.1f}%, Calibrated(0.65x)={p_yes*100:.1f}%"
+            f"(±{sd:.1f}{unit_sym}), Target={bracket_str} => RawP={p_raw*100:.1f}%, Calibrated(0.80x)={p_yes*100:.1f}%"
         )
 
         return EvaluationResult(

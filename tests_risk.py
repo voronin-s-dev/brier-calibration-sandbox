@@ -135,6 +135,125 @@ class TestRiskManagementV2(unittest.TestCase):
         self.assertEqual(bet, 2.00)
         self.assertEqual(GrokCharterPaperTrader.MIN_HOURS_TO_CLOSE, 12.0)
         self.assertEqual(GrokCharterPaperTrader.EXIT_HOURS_THRESHOLD, 1.5)
+        self.assertEqual(GrokCharterPaperTrader.STOP_LOSS_PCT, 0.35)
+        self.assertEqual(GrokCharterPaperTrader.MIN_EDGE_PP, 0.05)
+
+    def test_stop_loss_triggers_on_steep_price_drop(self) -> None:
+        """Verify that a position is liquidated when Bid falls > 35% below entry."""
+        import gc
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            db_path = Path(tmp_dir) / "test_sim.db"
+            db = SimDatabase(db_path=db_path, initial_capital=50.0)
+            trades_log = Path(tmp_dir) / "trades.txt"
+            trader = GrokCharterPaperTrader(db=db, trades_txt_path=trades_log)
+
+            # Open a virtual position with entry 0.50
+            pos_id = db.open_position(
+                market_id="test_mkt_1",
+                question="Will Test Event Happen?",
+                category="Crypto",
+                side="YES",
+                token_id="tok_123",
+                shares=10.0,
+                entry_vwap=0.50,
+                cost_usdc=5.00,
+                current_bid=0.50,
+                p_est=0.65,
+                entry_edge=0.15,
+                kelly_full_pct=0.30,
+                kelly_half_pct=0.075,
+                applied_size_pct=0.04,
+                roundtrip_slippage_pct=0.01,
+                official_source="Test Source",
+                exit_condition="Test Condition",
+                rationale="Test Rationale",
+                end_date_iso="2026-10-25T12:00:00Z",
+            )
+
+            # Mock simulate_clob_sell_shares to return 0.28 (44% drop from 0.50, exceeds 35% stop)
+            import trader as trader_mod
+            orig_sim = trader_mod.simulate_clob_sell_shares
+            try:
+                trader_mod.simulate_clob_sell_shares = lambda tok, sh: (0.28, 2.80, 0.28)
+                closed = trader.monitor_and_manage_open_positions()
+                self.assertEqual(closed, 1)
+
+                closed_pos = db.get_all_positions()[0]
+                self.assertEqual(closed_pos["status"], "CLOSED")
+                self.assertIn("STOP-LOSS TRIGGERED", closed_pos["exit_reason"])
+                self.assertEqual(closed_pos["exit_vwap"], 0.28)
+            finally:
+                trader_mod.simulate_clob_sell_shares = orig_sim
+                del db, trader
+                gc.collect()
+
+    def test_whipsaw_prevented_when_edge_still_above_entry(self) -> None:
+        """Verify that a drop in P_est does NOT exit if P_est remains above entry price."""
+        import gc
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            db_path = Path(tmp_dir) / "test_sim.db"
+            db = SimDatabase(db_path=db_path, initial_capital=50.0)
+            trades_log = Path(tmp_dir) / "trades.txt"
+            trader = GrokCharterPaperTrader(db=db, trades_txt_path=trades_log)
+
+            # Open position: entry 0.50, initial_p=0.85
+            pos_id = db.open_position(
+                market_id="test_mkt_2",
+                question="Will Test Event Happen?",
+                category="Weather",
+                side="NO",
+                token_id="tok_456",
+                shares=10.0,
+                entry_vwap=0.50,
+                cost_usdc=5.00,
+                current_bid=0.52,
+                p_est=0.85,
+                entry_edge=0.35,
+                kelly_full_pct=0.40,
+                kelly_half_pct=0.10,
+                applied_size_pct=0.04,
+                roundtrip_slippage_pct=0.01,
+                official_source="Test Source",
+                exit_condition="Test Condition",
+                rationale="Test Rationale",
+                end_date_iso="2026-10-25T12:00:00Z",
+            )
+
+            # P_est drops from 0.85 to 0.72 (-13 pp shift, exceeds prob_shift_limit of 10 pp),
+            # BUT 0.72 is still above entry 0.50 (edge is still positive!). Must NOT exit!
+            import trader as trader_mod
+            orig_sim = trader_mod.simulate_clob_sell_shares
+            orig_fetch = trader_mod.fetch_market_by_id
+            try:
+                trader_mod.simulate_clob_sell_shares = lambda tok, sh: (0.52, 5.20, 0.52)
+                # Mock live_mkt evaluation to return 0.72
+                from polymarket_api import MarketInfo
+                mock_mkt = MarketInfo(
+                    id="test_mkt_2", question="Test", slug="test", description="", resolution_source="test",
+                    has_official_source=True, end_date_iso="2026-10-25T12:00:00Z", hours_to_close=100.0,
+                    liquidity_usd=5000.0, volume_24h_usd=1000.0, outcomes=["YES", "NO"],
+                    gamma_prices=[0.28, 0.72], clob_token_ids=["tok_yes", "tok_456"], order_min_size=1.0,
+                    tick_size=0.01, category="Weather"
+                )
+                trader_mod.fetch_market_by_id = lambda m_id: mock_mkt
+                from oracles import EvaluationResult
+                trader._evaluate_market_probability = lambda mkt: (
+                    EvaluationResult(
+                        market_id="test_mkt_2", question="Test", category="Weather", oracle_used="Mock",
+                        official_source="Mock", p_yes=0.28, p_no=0.72, confidence=0.8, rationale="Mock"
+                    ), None
+                )
+
+                closed = trader.monitor_and_manage_open_positions()
+                self.assertEqual(closed, 0)  # Must remain open!
+
+                pos = db.get_open_positions()[0]
+                self.assertEqual(pos["status"], "OPEN")
+            finally:
+                trader_mod.simulate_clob_sell_shares = orig_sim
+                trader_mod.fetch_market_by_id = orig_fetch
+                del db, trader
+                gc.collect()
 
 
 if __name__ == "__main__":

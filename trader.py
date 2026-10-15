@@ -66,14 +66,15 @@ class GrokCharterPaperTrader:
     """
 
     MAX_OPEN_POSITIONS = 8
-    MAX_POSITIONS_PER_CATEGORY = 3  # Max 3 positions in any single category
+    MAX_POSITIONS_PER_CATEGORY = 4  # Max 4 positions in any single category (diversified across Crypto, Weather, Macro, Geopolitics)
     KELLY_FRACTION = 0.25           # Quarter-Kelly sizing for strict capital preservation
     MAX_BANK_PCT_PER_TRADE = 0.04   # 4% hard cap per trade ($1.60-$2.00 on $40-$50 bankroll)
-    MIN_EDGE_PP = 0.08              # 8 percentage points minimum divergence
+    MIN_EDGE_PP = 0.05              # 5 percentage points minimum divergence (realistic & actionable)
     MIN_HOURS_TO_CLOSE = 12.0       # Skip intraday noise: only enter markets closing >= 12 hours out
     MAX_HOURS_TO_CLOSE = 360.0      # Focus on markets resolving within 15 days for active turnover
     EXIT_HOURS_THRESHOLD = 1.5      # Strict Time Exit: always close positions < 1.5h before expiry
-    PROB_SHIFT_EXIT_PP = 0.05       # Exit if fundamental probability estimate drops by > 5 pp
+    PROB_SHIFT_EXIT_PP = 0.10       # Exit only if probability estimate drops by > 10 pp and falls below entry
+    STOP_LOSS_PCT = 0.35            # Hard Stop-Loss: cut positions losing > 35% of entry price to prevent zero wipeouts
 
     def __init__(
         self,
@@ -149,7 +150,19 @@ class GrokCharterPaperTrader:
             if res is not None:
                 return res, preloaded_book
 
-        # 3. Disallow noisy News/OBI heuristic for opening new trades (only high-conviction quantitative models)
+        # 3. For Macro, Geopolitics, Sports, Other: evaluate using News Consensus & CLOB Microstructure Imbalance
+        if market.clob_token_ids:
+            try:
+                book = preloaded_book or fetch_clob_book(market.clob_token_ids[0])
+                bids = book.get("bids", [])
+                asks = book.get("asks", [])
+                if bids and asks:
+                    res = self.news_oracle.evaluate_with_orderbook(market, bids, asks)
+                    if res is not None:
+                        return res, book
+            except Exception:
+                pass
+
         return None, None
 
     def monitor_and_manage_open_positions(self) -> int:
@@ -242,22 +255,33 @@ class GrokCharterPaperTrader:
                     f"STRICT TIME EXIT (< {self.EXIT_HOURS_THRESHOLD:.1f}h to close): "
                     f"{hours_left*60:.0f}m remaining (liquidating before binary expiration)"
                 )
+            # Exit Rule B: HARD STOP-LOSS (Protect capital from 100% binary wipeouts)
+            elif vwap_sell > 0 and (
+                vwap_sell <= entry_vwap * (1.0 - self.STOP_LOSS_PCT)
+                or (entry_vwap >= 0.10 and vwap_sell <= 0.03)
+            ):
+                exit_triggered = True
+                loss_pct = (entry_vwap - vwap_sell) / entry_vwap * 100.0
+                exit_reason = (
+                    f"STOP-LOSS TRIGGERED: Price dropped to ${vwap_sell:.3f} "
+                    f"(-{loss_pct:.1f}% from entry ${entry_vwap:.3f})"
+                )
             elif vwap_sell <= 0:
                 # Outside time exit window: wait for orderbook bids to appear
                 continue
-            # Exit Rule B: Edge closed (our target price reached in Bid book!)
+            # Exit Rule C: Edge closed (our target price reached in Bid book!)
             elif vwap_sell >= latest_p - 0.01:
                 exit_triggered = True
                 exit_reason = (
                     f"TAKE PROFIT (Edge Closed): Live CLOB Bid VWAP ({vwap_sell*100:.1f}%) "
                     f"reached our estimated probability ({latest_p*100:.1f}%)"
                 )
-            # Exit Rule C: Our probability estimate shifted down by > prob_shift_limit
-            elif (initial_p - latest_p) >= prob_shift_limit:
+            # Exit Rule D: Prob estimate shifted down AND no longer above entry price (positive edge lost)
+            elif (initial_p - latest_p) >= prob_shift_limit and latest_p <= entry_vwap:
                 exit_triggered = True
                 exit_reason = (
-                    f"THESIS INVALIDATED (Prob Shift > {prob_shift_limit*100:.1f}pp): Estimate dropped from "
-                    f"{initial_p*100:.1f}% to {latest_p*100:.1f}%"
+                    f"THESIS INVALIDATED (Prob Shift > {prob_shift_limit*100:.1f}pp & below entry): "
+                    f"Estimate dropped from {initial_p*100:.1f}% to {latest_p*100:.1f}% (entry={entry_vwap*100:.1f}%)"
                 )
 
             if exit_triggered:
@@ -455,6 +479,11 @@ class GrokCharterPaperTrader:
                     max_pct=self.MAX_BANK_PCT_PER_TRADE,
                     kelly_fraction=self.KELLY_FRACTION,
                 )
+                # If fractional Kelly bet is near minimum order ($0.70..$1.00) and within 4% bank risk, floor at $1.00
+                if 0.70 <= final_bet_usdc < 1.00 and cash_available >= 1.00 and 1.00 <= total_equity * 0.045:
+                    final_bet_usdc = 1.00
+                    applied_pct = round(1.00 / total_equity, 4)
+
                 if final_bet_usdc < 1.00 or final_bet_usdc > cash_available:
                     decision = f"REJECTED: Calculated 0.25x Kelly bet ${final_bet_usdc:.2f} below $1.00 min or > cash ${cash_available:.2f}"
                 else:
@@ -471,7 +500,8 @@ class GrokCharterPaperTrader:
                         # EXECUTE VIRTUAL TRADE!
                         exit_cond = (
                             f"Exit if Bid VWAP >= {p_est*100 - 1.0:.1f}% (edge closed), "
-                            f"or P_est drops <= {(p_est - self.PROB_SHIFT_EXIT_PP)*100:.1f}% (-5pp), "
+                            f"or Stop-Loss <= {final_sim.vwap_buy_price * (1.0 - self.STOP_LOSS_PCT):.3f} (-{self.STOP_LOSS_PCT*100:.0f}%), "
+                            f"or P_est drops <= {(p_est - self.PROB_SHIFT_EXIT_PP)*100:.1f}% (-{self.PROB_SHIFT_EXIT_PP*100:.0f}pp & <= entry), "
                             f"or < {self.EXIT_HOURS_THRESHOLD:.1f}h before {mkt.end_date_iso[:16]} (Strict Time Exit, no hold to settlement)"
                         )
                         pos_id = self.db.open_position(

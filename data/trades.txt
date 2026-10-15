@@ -222,3 +222,28 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-15 09:47:43 UTC] [CYCLE #42 SUMMARY] Scanned=799 | PassedFilter=170 | Evaluated=0 | Edges(>=8pp)=0 | Opened=0 | Closed=0 | Cash=$37.30 | Equity=$38.41 (DD=28.54%)
 [2026-10-15 09:56:50 UTC] [CYCLE #43 SUMMARY] Scanned=792 | PassedFilter=168 | Evaluated=0 | Edges(>=8pp)=0 | Opened=0 | Closed=0 | Cash=$37.30 | Equity=$38.47 (DD=28.42%)
 [2026-10-15 10:05:56 UTC] [CYCLE #44 SUMMARY] Scanned=800 | PassedFilter=167 | Evaluated=0 | Edges(>=8pp)=0 | Opened=0 | Closed=0 | Cash=$37.30 | Equity=$38.51 (DD=28.34%)
+[EXIT] #13 | Will Ethereum reach $2,700 October 12-18? (YES)
+  Shares: 17.92 | Entry VWAP: 0.1300 -> Exit Bid VWAP: 0.0163
+  Proceeds: $0.29 | Realized PnL: $-2.04 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.016 (-87.5% from entry $0.130)
+[EXIT] #15 | Will the highest temperature in Munich be 18°C or higher on October 15? (NO)
+  Shares: 4.26 | Entry VWAP: 0.3900 -> Exit Bid VWAP: 0.0020
+  Proceeds: $0.01 | Realized PnL: $-1.65 USDC | Reason: STRICT TIME EXIT (< 1.5h to close): -83m remaining (liquidating before binary expiration)
+[2026-10-15 13:23:30 UTC] [OPEN TRADE #16] Will Bitcoin dip to $76,000 October 12-18?
+  Категория: Crypto | Сторона: YES | Источник: Binance BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 24.4% vs Рынок (Ask VWAP): 10.0% (Перекос/Edge: +14.4 п.п.)
+  Стакан CLOB: BestBid=0.099, BestAsk=0.100, Проскальзывание входа/выхода=0.10% (<= 3.0%)
+  Келли: Полный=16.0%, Четверть(0.25x)=4.0% -> Применён=4.0% банка
+  Размер сделки: $1.50 USDC (15.00 shares @ $0.1000)
+  Условие выхода: Exit if Bid VWAP >= 23.4% (edge closed), or Stop-Loss <= 0.065 (-35%), or P_est drops <= 14.4% (-10pp & <= entry), or < 1.5h before 2026-10-19T04:00 (Strict Time Exit, no hold to settlement)
+  Причина: First-passage dip model: BTCUSDT=$80,400.00 -> barrier=$76,000 (-5.47%), vol_h=0.50%, tau=86.6h => P(touch)=28.0% -> Calibrated(0.80x)=24.4%
+
+[2026-10-15 13:23:30 UTC] [OPEN TRADE #17] Will Ethereum dip to $2,300 October 12-18?
+  Категория: Crypto | Сторона: YES | Источник: Binance ETHUSDT 1m/1h Spot Klines
+  Оценка бота: 72.0% vs Рынок (Ask VWAP): 64.0% (Перекос/Edge: +8.0 п.п.)
+  Стакан CLOB: BestBid=0.630, BestAsk=0.640, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=22.2%, Четверть(0.25x)=5.6% -> Применён=4.0% банка
+  Размер сделки: $1.50 USDC (2.34 shares @ $0.6400)
+  Условие выхода: Exit if Bid VWAP >= 71.0% (edge closed), or Stop-Loss <= 0.416 (-35%), or P_est drops <= 62.0% (-10pp & <= entry), or < 1.5h before 2026-10-19T04:00 (Strict Time Exit, no hold to settlement)
+  Причина: First-passage dip model: ETHUSDT=$2,347.02 -> barrier=$2,300 (-2.00%), vol_h=0.60%, tau=86.6h => P(touch)=74.6% -> Calibrated(0.80x)=72.0%
+
+[2026-10-15 13:23:30 UTC] [CYCLE #45 SUMMARY] Scanned=787 | PassedFilter=178 | Evaluated=45 | Edges(>=8pp)=9 | Opened=2 | Closed=0 | Cash=$34.60 | Equity=$37.56 (DD=30.12%)

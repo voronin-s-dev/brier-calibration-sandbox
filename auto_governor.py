@@ -485,6 +485,36 @@ class AutoGovernor:
                         f"👉 Одобрить в Antigravity или командой:\n<code>python run_sim.py --approve {ev_id}</code>"
                     )
 
+        # ---------------------------------------------------------------------
+        # 5. TIER 1 ARCHITECTURE UPGRADE: Stop-Loss, Realistic Edge, and Liquidity Unclogging
+        # ---------------------------------------------------------------------
+        if len(closed_positions) >= 10 and not self._rule_exists("tier1_stoploss_liquidity_unclog_v2"):
+            action = {
+                "min_liquidity_filter": 3000.0,
+                "max_slippage_filter": 0.025,
+                "prob_shift_exit_pp": 0.10,
+                "oracle_weight": 0.80,
+            }
+            self.apply_action_dict(action)
+            explanation = (
+                "Проведена комплексная доработка архитектуры риск-менеджмента: "
+                "1) Внедрен жесткий Stop-Loss (35% от цены входа), исключающий риск экспирации в $0.00. "
+                "2) Защита от ложных выбиваний на шуме: тезис инвалидируется только при сдвиге > 10 п.п. и уходе ниже цены входа. "
+                "3) Фильтр ликвидности снижен с завышенных $10,000 до рабочих $3,000, а допустимый спред расширен до 2.5%, "
+                "что устраняет искусственный паралич отбора качественных рынков Polymarket."
+            )
+            ev_id = self._record_event(
+                rule_key="tier1_stoploss_liquidity_unclog_v2",
+                tier="TIER_1_48H",
+                mode="AUTO_FIX",
+                status="APPLIED",
+                title="Активация Stop-Loss и разблокировка ликвидности ($3,000 / 2.5%)",
+                explanation=explanation,
+                action_dict=action,
+            )
+            triggered_events.append(ev_id)
+            send_telegram_alert(f"🚀 <b>AUTO-FIX: Архитектурный апгрейд</b>\n{explanation}")
+
         self.generate_governance_report()
         return {"triggered_event_ids": triggered_events}
 
