@@ -283,3 +283,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: Station Auto-Meteo Houston (US) (2026-10-16): Model Max=75.1°F (±2.7°F), Target=[78, 79]°F => RawP=13.5%, Calibrated(0.80x)=17.4%
 
 [2026-10-15 15:09:50 UTC] [CYCLE #48 SUMMARY] Scanned=766 | PassedFilter=155 | Evaluated=8 | Edges(>=8pp)=3 | Opened=2 | Closed=0 | Cash=$31.89 | Equity=$36.15 (DD=32.74%)
+[2026-10-15 19:01:58 UTC] [OPEN TRADE #21] Will the price of Bitcoin be above $84,000 on October 16?
+  Категория: Crypto | Сторона: YES | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 26.3% vs Рынок (Ask VWAP): 13.8% (Перекос/Edge: +12.5 п.п.)
+  Стакан CLOB: BestBid=0.133, BestAsk=0.138, Проскальзывание входа/выхода=0.50% (<= 3.0%)
+  Келли: Полный=14.5%, Четверть(0.25x)=3.6% -> Применён=3.6% банка
+  Размер сделки: $1.30 USDC (9.42 shares @ $0.1380)
+  Условие выхода: Exit if Bid VWAP >= 25.3% (edge closed), or Stop-Loss <= 0.090 (-35%), or P_est drops <= 16.3% (-10pp & <= entry), or < 1.5h before 2026-10-16T16:00 (Strict Time Exit, no hold to settlement)
+  Причина: CLOB near-touch depth imbalance OBI=+0.96 (BidDepth=$1,057 vs AskDepth=$24) | News sentiment=+1.00 (12 articles; top: 'Bitcoin Price Forecast: Why September's US inflation figure could shape the near-term outlook for BTC - FXStre')
+
+[2026-10-15 19:01:58 UTC] [CYCLE #49 SUMMARY] Scanned=800 | PassedFilter=151 | Evaluated=6 | Edges(>=8pp)=3 | Opened=1 | Closed=0 | Cash=$30.59 | Equity=$35.89 (DD=33.22%)
