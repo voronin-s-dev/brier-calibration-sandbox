@@ -431,3 +431,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: .21 | Realized PnL: $-0.09 USDC | Reason: CAPITAL PRESERVATION EXIT: Cut 9-cent noise loss to secure 40% Kill-Switch buffer
 [2026-10-16 16:36:44 UTC] [CYCLE #68 SUMMARY] Scanned=800 | PassedFilter=176 | Evaluated=36 | Edges(>=8pp)=16 | Opened=0 | Closed=0 | Cash=$31.24 | Equity=$32.55 (DD=39.44%)
 [2026-10-16 18:57:42 UTC] [CYCLE #69 SUMMARY] Scanned=798 | PassedFilter=177 | Evaluated=39 | Edges(>=8pp)=13 | Opened=0 | Closed=0 | Cash=$31.24 | Equity=$32.62 (DD=39.31%)
+[2026-10-16 19:07:02 UTC] [OPEN TRADE #31] Will Bitcoin dip to $80,000 October 12-18?
+  Категория: Crypto | Сторона: YES | Источник: Kraken BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 68.4% vs Рынок (Ask VWAP): 48.0% (Перекос/Edge: +20.4 п.п.)
+  Стакан CLOB: BestBid=0.470, BestAsk=0.480, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=39.2%, Четверть(0.25x)=9.8% -> Применён=4.0% банка
+  Размер сделки: $1.30 USDC (2.71 shares @ $0.4800)
+  Условие выхода: Exit if Bid VWAP >= 67.4% (edge closed), or Stop-Loss <= 0.336 (-30%), or P_est drops <= 60.4% (-8pp & <= entry), or < 1.5h before 2026-10-19T04:00 (Strict Time Exit, no hold to settlement)
+  Причина: First-passage dip model: BTCUSDT=$80,942.10 -> barrier=$80,000 (-1.16%), vol_h=0.50%, tau=56.9h => P(touch)=78.2% -> Calibrated(0.70x)=68.4%
+
+[2026-10-16 19:07:02 UTC] [CYCLE #70 SUMMARY] Scanned=800 | PassedFilter=174 | Evaluated=40 | Edges(>=8pp)=15 | Opened=1 | Closed=0 | Cash=$29.94 | Equity=$32.60 (DD=39.36%)
