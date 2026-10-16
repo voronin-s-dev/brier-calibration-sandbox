@@ -512,8 +512,39 @@ class AutoGovernor:
                 explanation=explanation,
                 action_dict=action,
             )
+        # ---------------------------------------------------------------------
+        # 6. TIER 1 RESCUE UPGRADE: Profitability Engine v3 (Multi-Exchange Failover & Real Take-Profit)
+        # ---------------------------------------------------------------------
+        if len(closed_positions) >= 20 and not self._rule_exists("tier1_profit_recovery_v3"):
+            action = {
+                "min_liquidity_filter": 5000.0,
+                "max_slippage_filter": 0.020,
+                "prob_shift_exit_pp": 0.08,
+                "oracle_weight": 0.65,
+            }
+            self.apply_action_dict(action)
+            explanation = (
+                "Экстренное купирование просадки и перестройка торгового движка на стабильную прибыльность:\n"
+                "1) Внедрен трехсторонний оракул (Binance -> Kraken -> Coinbase failover) "
+                "для устранения HTTP 451 блокировки Binance в облачных воркерах GitHub Actions (Azure US).\n"
+                "2) Полностью запрещена оценка вероятностей крипты по локальному дисбалансу стакана Polymarket (OBI). "
+                "Крипта торгуется только при наличии подтвержденного спотового перекоса волатильности.\n"
+                "3) Починен критический баг Take Profit: досрочный выход разрешен ТОЛЬКО при реальной чистой прибыли >= +12%.\n"
+                "4) Запрещена покупка грошовых контрактов (< $0.15) и экстремально дорогих (> $0.85). "
+                "Рабочий диапазон цен сфокусирован на $0.15–$0.85, исключая ловушку спреда.\n"
+                "5) Параметры ужесточены по уставу Grok: Edge >= 8 п.п., мин. ликвидность $5,000, макс. проскальзывание 2.0%."
+            )
+            ev_id = self._record_event(
+                rule_key="tier1_profit_recovery_v3",
+                tier="TIER_1_48H",
+                mode="AUTO_FIX",
+                status="APPLIED",
+                title="Активация движка прибыльности v3 (Multi-Exchange & Real Take-Profit)",
+                explanation=explanation,
+                action_dict=action,
+            )
             triggered_events.append(ev_id)
-            send_telegram_alert(f"🚀 <b>AUTO-FIX: Архитектурный апгрейд</b>\n{explanation}")
+            send_telegram_alert(f"💎 <b>AUTO-FIX: Движок прибыльности v3</b>\n{explanation}")
 
         self.generate_governance_report()
         return {"triggered_event_ids": triggered_events}

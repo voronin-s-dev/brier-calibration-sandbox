@@ -135,8 +135,8 @@ class TestRiskManagementV2(unittest.TestCase):
         self.assertEqual(bet, 2.00)
         self.assertEqual(GrokCharterPaperTrader.MIN_HOURS_TO_CLOSE, 12.0)
         self.assertEqual(GrokCharterPaperTrader.EXIT_HOURS_THRESHOLD, 1.5)
-        self.assertEqual(GrokCharterPaperTrader.STOP_LOSS_PCT, 0.35)
-        self.assertEqual(GrokCharterPaperTrader.MIN_EDGE_PP, 0.05)
+        self.assertEqual(GrokCharterPaperTrader.STOP_LOSS_PCT, 0.30)
+        self.assertEqual(GrokCharterPaperTrader.MIN_EDGE_PP, 0.08)
 
     def test_stop_loss_triggers_on_steep_price_drop(self) -> None:
         """Verify that a position is liquidated when Bid falls > 35% below entry."""

@@ -65,16 +65,19 @@ class GrokCharterPaperTrader:
     Strict Time Exit < 1.5h without holding to binary resolution cliff, and Mathematical Oracles only).
     """
 
-    MAX_OPEN_POSITIONS = 8
-    MAX_POSITIONS_PER_CATEGORY = 4  # Max 4 positions in any single category (diversified across Crypto, Weather, Macro, Geopolitics)
+    MAX_OPEN_POSITIONS = 4          # Max 4 open positions for tight risk focus
+    MAX_POSITIONS_PER_CATEGORY = 2  # Max 2 per category (disciplined diversification)
     KELLY_FRACTION = 0.25           # Quarter-Kelly sizing for strict capital preservation
-    MAX_BANK_PCT_PER_TRADE = 0.04   # 4% hard cap per trade ($1.60-$2.00 on $40-$50 bankroll)
-    MIN_EDGE_PP = 0.05              # 5 percentage points minimum divergence (realistic & actionable)
+    MAX_BANK_PCT_PER_TRADE = 0.04   # 4% hard cap per trade ($1.20-$1.30 on current bankroll)
+    MIN_EDGE_PP = 0.08              # 8 percentage points minimum divergence (Strict Charter Rule #5)
+    MIN_ESTIMATED_PROB = 0.55       # Minimum estimated probability: never bet on underdogs (< 55% win likelihood)
+    MIN_CONTRACT_PRICE = 0.15       # NEVER buy penny lottery contracts under 15 cents (kills spread churn)
+    MAX_CONTRACT_PRICE = 0.85       # NEVER buy extreme contracts over 85 cents
     MIN_HOURS_TO_CLOSE = 12.0       # Skip intraday noise: only enter markets closing >= 12 hours out
     MAX_HOURS_TO_CLOSE = 360.0      # Focus on markets resolving within 15 days for active turnover
     EXIT_HOURS_THRESHOLD = 1.5      # Strict Time Exit: always close positions < 1.5h before expiry
-    PROB_SHIFT_EXIT_PP = 0.10       # Exit only if probability estimate drops by > 10 pp and falls below entry
-    STOP_LOSS_PCT = 0.35            # Hard Stop-Loss: cut positions losing > 35% of entry price to prevent zero wipeouts
+    PROB_SHIFT_EXIT_PP = 0.08       # Exit only if probability estimate drops by > 8 pp and falls below entry
+    STOP_LOSS_PCT = 0.30            # Hard Stop-Loss: cut positions losing > 30% of entry price
 
     def __init__(
         self,
@@ -142,16 +145,18 @@ class GrokCharterPaperTrader:
             if res is not None:
                 return res, preloaded_book
 
-        # 2. Try Crypto Quantitative Oracle (official Binance 1m/1h klines)
+        # 2. Try Crypto Quantitative Oracle (Binance / Kraken / Coinbase 1m/1h klines)
         if market.category == "Crypto" or any(
             k in market.question.lower() for k in ["bitcoin", "ethereum", "solana", "btc", "eth"]
         ):
             res = self.crypto_oracle.evaluate(market)
             if res is not None:
                 return res, preloaded_book
+            # CRITICAL: Never fall back to Orderbook Imbalance guessing for Crypto!
+            return None, None
 
         # 3. For Macro, Geopolitics, Sports, Other: evaluate using News Consensus & CLOB Microstructure Imbalance
-        if market.clob_token_ids:
+        if market.category not in ("Crypto", "Weather") and market.clob_token_ids:
             try:
                 book = preloaded_book or fetch_clob_book(market.clob_token_ids[0])
                 bids = book.get("bids", [])
@@ -248,17 +253,18 @@ class GrokCharterPaperTrader:
             exit_reason = ""
 
             # Exit Rule A: STRICT TIME EXIT (< EXIT_HOURS_THRESHOLD before market close)
-            # NEVER hold through binary expiration ($0.00 / $1.00) cliff!
+            # Liquidate before binary cliff ($0.00 / $1.00) unless we have a dominant lead (bid >= 88%)
             if hours_left < self.EXIT_HOURS_THRESHOLD:
-                exit_triggered = True
-                exit_reason = (
-                    f"STRICT TIME EXIT (< {self.EXIT_HOURS_THRESHOLD:.1f}h to close): "
-                    f"{hours_left*60:.0f}m remaining (liquidating before binary expiration)"
-                )
-            # Exit Rule B: HARD STOP-LOSS (Protect capital from 100% binary wipeouts)
+                if vwap_sell < 0.88:
+                    exit_triggered = True
+                    exit_reason = (
+                        f"STRICT TIME EXIT (< {self.EXIT_HOURS_THRESHOLD:.1f}h to close): "
+                        f"{hours_left*60:.0f}m remaining (liquidating before binary expiration)"
+                    )
+            # Exit Rule B: HARD STOP-LOSS (Protect capital from catastrophic drawdown)
             elif vwap_sell > 0 and (
                 vwap_sell <= entry_vwap * (1.0 - self.STOP_LOSS_PCT)
-                or (entry_vwap >= 0.10 and vwap_sell <= 0.03)
+                or (entry_vwap >= 0.15 and vwap_sell <= 0.05)
             ):
                 exit_triggered = True
                 loss_pct = (entry_vwap - vwap_sell) / entry_vwap * 100.0
@@ -269,15 +275,16 @@ class GrokCharterPaperTrader:
             elif vwap_sell <= 0:
                 # Outside time exit window: wait for orderbook bids to appear
                 continue
-            # Exit Rule C: Edge closed (our target price reached in Bid book!)
-            elif vwap_sell >= latest_p - 0.01:
+            # Exit Rule C: GENUINE TAKE PROFIT (Must have realized gain >= +12% AND reached target price)
+            elif vwap_sell >= entry_vwap * 1.12 and vwap_sell >= latest_p - 0.02:
                 exit_triggered = True
+                gain_pct = (vwap_sell - entry_vwap) / entry_vwap * 100.0
                 exit_reason = (
-                    f"TAKE PROFIT (Edge Closed): Live CLOB Bid VWAP ({vwap_sell*100:.1f}%) "
-                    f"reached our estimated probability ({latest_p*100:.1f}%)"
+                    f"TAKE PROFIT (Edge Closed & Profitable): Live CLOB Bid VWAP ({vwap_sell*100:.1f}%) "
+                    f"reached target ({latest_p*100:.1f}%) with +{gain_pct:.1f}% gain"
                 )
             # Exit Rule D: Prob estimate shifted down AND no longer above entry price (positive edge lost)
-            elif (initial_p - latest_p) >= prob_shift_limit and latest_p <= entry_vwap:
+            elif (initial_p - latest_p) >= prob_shift_limit and latest_p <= entry_vwap - 0.03:
                 exit_triggered = True
                 exit_reason = (
                     f"THESIS INVALIDATED (Prob Shift > {prob_shift_limit*100:.1f}pp & below entry): "
@@ -460,6 +467,10 @@ class GrokCharterPaperTrader:
             decision = ""
             if real_edge < self.MIN_EDGE_PP:
                 decision = f"REJECTED: Edge {real_edge*100:+.1f} pp < {self.MIN_EDGE_PP*100:.0f} pp threshold (P_est={p_est*100:.1f}% vs AskVWAP={ob_sim.vwap_buy_price*100:.1f}%)"
+            elif p_est < self.MIN_ESTIMATED_PROB:
+                decision = f"REJECTED: Win probability {p_est*100:.1f}% < {self.MIN_ESTIMATED_PROB*100:.0f}% minimum (no underdog lottery bets)"
+            elif ob_sim.vwap_buy_price < self.MIN_CONTRACT_PRICE or ob_sim.vwap_buy_price > self.MAX_CONTRACT_PRICE:
+                decision = f"REJECTED: Contract price ${ob_sim.vwap_buy_price:.3f} outside sweet spot [${self.MIN_CONTRACT_PRICE:.2f}, ${self.MAX_CONTRACT_PRICE:.2f}]"
             elif not ob_sim.sufficient_depth:
                 decision = f"REJECTED: {ob_sim.reject_reason}"
             elif not ob_sim.passes_slippage_limit:

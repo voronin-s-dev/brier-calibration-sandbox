@@ -24,7 +24,7 @@ def norm_cdf(x: float) -> float:
     return 0.5 * (1.0 + math.erf(x / math.sqrt(2.0)))
 
 
-def calibrate_probability(p_raw: float, p_market: float, oracle_weight: float = 0.80) -> float:
+def calibrate_probability(p_raw: float, p_market: float, oracle_weight: float = 0.65) -> float:
     """
     Applies Bayesian shrinkage toward the market prior to prevent model overconfidence,
     while preserving genuine quantitative edge without over-dampening signals.
@@ -83,19 +83,58 @@ class CryptoOracle:
     def __init__(self) -> None:
         self._cache: Dict[str, Dict[str, Any]] = {}
 
+    def _fetch_klines_multisource(self, symbol: str) -> Tuple[Optional[str], Optional[List[List[Any]]]]:
+        """
+        Fetches hourly candles across 3 redundant sources:
+        1. Binance API (preferred if available)
+        2. Kraken Public API (global, fully accessible in US & GitHub Actions)
+        3. Coinbase Public API (native US institutional exchange)
+        """
+        # 1. Binance
+        try:
+            url = f"https://api.binance.com/api/v3/klines?symbol={symbol}&interval=1h&limit=168"
+            kl = fetch_standard_url(url, timeout=5.0)
+            if kl and len(kl) >= 10:
+                return "Binance", [[int(k[0]), float(k[1]), float(k[2]), float(k[3]), float(k[4])] for k in kl]
+        except Exception:
+            pass
+
+        # 2. Kraken (failsafe for US cloud environments)
+        try:
+            km = {"BTCUSDT": "XBTUSD", "ETHUSDT": "ETHUSD", "SOLUSDT": "SOLUSD", "XRPUSDT": "XRPUSD", "DOGEUSDT": "XDGUSD"}
+            pair = km.get(symbol)
+            if pair:
+                url = f"https://api.kraken.com/0/public/OHLC?pair={pair}&interval=60"
+                d = fetch_standard_url(url, timeout=5.0)
+                if d and isinstance(d, dict) and "result" in d:
+                    pk = [k for k in d["result"].keys() if k != "last"][0]
+                    candles = d["result"][pk]
+                    if candles and len(candles) >= 10:
+                        return "Kraken", [[int(c[0]) * 1000, float(c[1]), float(c[2]), float(c[3]), float(c[4])] for c in candles[-168:]]
+        except Exception:
+            pass
+
+        # 3. Coinbase
+        try:
+            cm = {"BTCUSDT": "BTC", "ETHUSDT": "ETH", "SOLUSDT": "SOL", "XRPUSDT": "XRP", "DOGEUSDT": "DOGE"}
+            coin = cm.get(symbol)
+            if coin:
+                url = f"https://api.exchange.coinbase.com/products/{coin}-USD/candles?granularity=3600"
+                raw = fetch_standard_url(url, timeout=5.0)
+                if raw and isinstance(raw, list) and len(raw) >= 10:
+                    return "Coinbase", [[int(c[0]) * 1000, float(c[3]), float(c[2]), float(c[1]), float(c[4])] for c in reversed(raw[:168])]
+        except Exception:
+            pass
+
+        return None, None
+
     def _get_symbol_stats(self, symbol: str) -> Optional[Dict[str, Any]]:
         if symbol in self._cache:
             return self._cache[symbol]
         try:
-            # Fetch up to 168 hourly candles (7 days) for robust multi-day volatility & range
-            url = f"https://api.binance.com/api/v3/klines?symbol={symbol}&interval=1h&limit=168"
-            klines = fetch_standard_url(url, timeout=8.0)
+            source, klines = self._fetch_klines_multisource(symbol)
             if not klines or len(klines) < 10:
-                # Fallback to 48 candles if 168 fails
-                url_short = f"https://api.binance.com/api/v3/klines?symbol={symbol}&interval=1h&limit=48"
-                klines = fetch_standard_url(url_short, timeout=8.0)
-                if not klines or len(klines) < 10:
-                    return None
+                return None
 
             closes = [float(k[4]) for k in klines]
             highs = [float(k[2]) for k in klines]
@@ -112,7 +151,6 @@ class CryptoOracle:
             var_close = sum((r - mean_ret) ** 2 for r in log_returns) / max(1, len(log_returns) - 1)
 
             # 2. Parkinson range-based variance: (ln(H/L))^2 / (4 * ln(2))
-            # Captures true intraday price excursions beyond close prices
             park_terms = [
                 (math.log(max(h, l * 1.0001) / max(l, 1e-6)) ** 2) / (4.0 * math.log(2.0))
                 for h, l in zip(highs, lows)
@@ -138,6 +176,7 @@ class CryptoOracle:
 
             stats = {
                 "symbol": symbol,
+                "source": source,
                 "current_price": current_price,
                 "hourly_vol": hourly_vol,
                 "annual_vol": hourly_vol * math.sqrt(24 * 365),
@@ -243,15 +282,16 @@ class CryptoOracle:
         mkt_prior = market.gamma_prices[0] if market.gamma_prices else 0.5
         if p_yes < 0.98:
             p_raw = p_yes
-            p_yes = calibrate_probability(p_raw, mkt_prior, oracle_weight=0.80)
-            mode_desc += f" -> Calibrated(0.80x)={p_yes*100:.1f}%"
+            p_yes = calibrate_probability(p_raw, mkt_prior, oracle_weight=0.70)
+            mode_desc += f" -> Calibrated(0.70x)={p_yes*100:.1f}%"
 
+        src_label = stats.get("source", "Binance")
         return EvaluationResult(
             market_id=market.id,
             question=market.question,
             category="Crypto",
-            oracle_used="BinanceQuantitativeGBM",
-            official_source=f"Binance {symbol} 1m/1h Spot Klines",
+            oracle_used=f"CryptoQuantitativeGBM_{src_label}",
+            official_source=f"{src_label} {symbol} 1m/1h Spot Klines",
             p_yes=round(p_yes, 4),
             p_no=round(1.0 - p_yes, 4),
             confidence=0.82,

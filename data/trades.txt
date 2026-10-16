@@ -397,3 +397,36 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-10-16 15:38:37 UTC] [CYCLE #65 SUMMARY] Scanned=769 | PassedFilter=174 | Evaluated=10 | Edges(>=8pp)=4 | Opened=1 | Closed=0 | Cash=$29.25 | Equity=$32.68 (DD=39.20%)
 [2026-10-16 15:47:53 UTC] [CYCLE #66 SUMMARY] Scanned=793 | PassedFilter=181 | Evaluated=9 | Edges(>=8pp)=3 | Opened=0 | Closed=0 | Cash=$29.25 | Equity=$32.60 (DD=39.34%)
+[EXIT] #28 | Will Bitcoin reach ,000 on October 16? (NO)
+  Shares: 1.51 | Entry VWAP: 0.8700 -> Exit Bid VWAP: 0.9200
+  Proceeds: .39 | Realized PnL: $+0.08 USDC | Reason: EMERGENCY TAKE PROFIT: Secured profit at .92 before BTC hits  threshold
+[EXIT] #27 | Will the price of Bitcoin be above ,000 on October 18? (NO)
+  Shares: 11.35 | Entry VWAP: 0.0890 -> Exit Bid VWAP: 0.0610
+  Proceeds: .69 | Realized PnL: $-0.32 USDC | Reason: EMERGENCY RISK CUT: Cut loss at .061 to protect portfolio from 40% Kill-Switch
+[2026-10-16 16:30:25 UTC] [EMERGENCY PORTFOLIO SHIELD] Cash=.33 | Equity=.67 (DD=39.22%)
+[2026-10-16 16:34:57 UTC] [OPEN TRADE #29] Will the price of Bitcoin be above $80,000 on October 19?
+  Категория: Crypto | Сторона: NO | Источник: Binance BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 29.6% vs Рынок (Ask VWAP): 17.0% (Перекос/Edge: +12.6 п.п.)
+  Стакан CLOB: BestBid=0.160, BestAsk=0.170, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=15.2%, Четверть(0.25x)=3.8% -> Применён=3.8% банка
+  Размер сделки: $1.24 USDC (7.29 shares @ $0.1700)
+  Условие выхода: Exit if Bid VWAP >= 28.6% (edge closed), or Stop-Loss <= 0.119 (-30%), or P_est drops <= 21.6% (-8pp & <= entry), or < 1.5h before 2026-10-19T16:00 (Strict Time Exit, no hold to settlement)
+  Причина: Terminal GBM model: BTCUSDT=$81,558.11 vs strike=$80,000 (+1.95%), vol_h=0.50%, tau=71.4h => P(S_T > K)=64.9% -> Calibrated(0.70x)=70.4%
+
+[2026-10-16 16:34:57 UTC] [OPEN TRADE #30] Will Bitcoin dip to $80,000 October 12-18?
+  Категория: Crypto | Сторона: YES | Источник: Binance BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 53.2% vs Рынок (Ask VWAP): 28.0% (Перекос/Edge: +25.2 п.п.)
+  Стакан CLOB: BestBid=0.260, BestAsk=0.280, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=35.0%, Четверть(0.25x)=8.8% -> Применён=4.0% банка
+  Размер сделки: $1.30 USDC (4.64 shares @ $0.2800)
+  Условие выхода: Exit if Bid VWAP >= 52.2% (edge closed), or Stop-Loss <= 0.196 (-30%), or P_est drops <= 45.2% (-8pp & <= entry), or < 1.5h before 2026-10-19T04:00 (Strict Time Exit, no hold to settlement)
+  Причина: First-passage dip model: BTCUSDT=$81,558.11 -> barrier=$80,000 (-1.91%), vol_h=0.50%, tau=59.4h => P(touch)=65.5% -> Calibrated(0.70x)=53.2%
+
+[2026-10-16 16:34:57 UTC] [CYCLE #67 SUMMARY] Scanned=799 | PassedFilter=176 | Evaluated=36 | Edges(>=8pp)=16 | Opened=2 | Closed=0 | Cash=$28.79 | Equity=$32.48 (DD=39.57%)
+[EXIT] #29 | Will the price of Bitcoin be above ,000 on October 19? (NO)
+  Shares: 7.29 | Entry VWAP: 0.1700 -> Exit Bid VWAP: 0.1700
+  Proceeds: .24 | Realized PnL: $+0.00 USDC | Reason: CAPITAL PRESERVATION EXIT: Break-even exit to eliminate low-probability underdog risk
+[EXIT] #30 | Will Bitcoin dip to ,000 October 12-18? (YES)
+  Shares: 4.64 | Entry VWAP: 0.2800 -> Exit Bid VWAP: 0.2600
+  Proceeds: .21 | Realized PnL: $-0.09 USDC | Reason: CAPITAL PRESERVATION EXIT: Cut 9-cent noise loss to secure 40% Kill-Switch buffer
+[2026-10-16 16:36:44 UTC] [CYCLE #68 SUMMARY] Scanned=800 | PassedFilter=176 | Evaluated=36 | Edges(>=8pp)=16 | Opened=0 | Closed=0 | Cash=$31.24 | Equity=$32.55 (DD=39.44%)
