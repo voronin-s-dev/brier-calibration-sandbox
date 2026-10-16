@@ -321,3 +321,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $0.43 | Realized PnL: $-0.87 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.046 (-67.0% from entry $0.138)
 [2026-10-16 05:44:15 UTC] [CYCLE #58 SUMMARY] Scanned=800 | PassedFilter=195 | Evaluated=9 | Edges(>=8pp)=4 | Opened=0 | Closed=1 | Cash=$33.08 | Equity=$34.83 (DD=35.20%)
 [2026-10-16 05:53:31 UTC] [CYCLE #59 SUMMARY] Scanned=785 | PassedFilter=188 | Evaluated=10 | Edges(>=8pp)=2 | Opened=0 | Closed=0 | Cash=$33.08 | Equity=$34.81 (DD=35.24%)
+[EXIT] #20 | Will the highest temperature in Houston be between 78-79°F on October 16? (NO)
+  Shares: 2.13 | Entry VWAP: 0.6800 -> Exit Bid VWAP: 0.3800
+  Proceeds: $0.81 | Realized PnL: $-0.64 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.380 (-44.1% from entry $0.680)
+[2026-10-16 06:02:47 UTC] [OPEN TRADE #23] Will the price of Ethereum be above $2,300 on October 20?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/ETH_USDT
+  Оценка бота: 16.3% vs Рынок (Ask VWAP): 8.0% (Перекос/Edge: +8.3 п.п.)
+  Стакан CLOB: BestBid=0.070, BestAsk=0.080, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=9.1%, Четверть(0.25x)=2.3% -> Применён=2.9% банка
+  Размер сделки: $1.00 USDC (12.50 shares @ $0.0800)
+  Условие выхода: Exit if Bid VWAP >= 15.3% (edge closed), or Stop-Loss <= 0.052 (-35%), or P_est drops <= 6.3% (-10pp & <= entry), or < 1.5h before 2026-10-20T16:00 (Strict Time Exit, no hold to settlement)
+  Причина: CLOB near-touch depth imbalance OBI=-0.44 (BidDepth=$3,867 vs AskDepth=$10,027) | News sentiment=-1.00 (12 articles; top: 'Ethereum (ETH-USD) Price Prediction: Can $2,300 Stop Another Liquidation Cascade? - Seeking Alpha')
+
+[2026-10-16 06:02:47 UTC] [CYCLE #60 SUMMARY] Scanned=800 | PassedFilter=192 | Evaluated=10 | Edges(>=8pp)=4 | Opened=1 | Closed=1 | Cash=$32.89 | Equity=$34.51 (DD=35.79%)
