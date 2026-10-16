@@ -54,5 +54,12 @@
     "Europe/Istanbul",
     "celsius",
     "Auto-Meteo Istanbul (TR)"
+  ],
+  "amsterdam": [
+    52.37403,
+    4.88969,
+    "Europe/Amsterdam",
+    "celsius",
+    "Auto-Meteo Amsterdam (NL)"
   ]
 }
