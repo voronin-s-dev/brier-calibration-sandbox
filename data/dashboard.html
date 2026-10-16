@@ -77,29 +77,29 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-10-16 05:44:30 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-10-16 05:53:45 UTC</div>
     </div>
   </div>
 
   <div class="grid">
     <div class="card">
       <div class="metric-label">Текущий капитал (Equity)</div>
-      <div class="metric-val">$34.83 <span style="font-size:15px" class="neg">(-15.17$ / -30.34%)</span></div>
+      <div class="metric-val">$34.81 <span style="font-size:15px" class="neg">(-15.19$ / -30.38%)</span></div>
       <div class="metric-sub">Старт: $50.00 USDC (Оценка по Bid стакана!)</div>
     </div>
     <div class="card">
       <div class="metric-label">Свободный кэш / В позициях</div>
-      <div class="metric-val">$33.08 <span class="muted" style="font-size:16px">/ $1.75</span></div>
+      <div class="metric-val">$33.08 <span class="muted" style="font-size:16px">/ $1.73</span></div>
       <div class="metric-sub">Открыто позиций: 2 из 8 (макс 8% банка)</div>
     </div>
     <div class="card">
       <div class="metric-label">Цель подписки ($60 / мес)</div>
-      <div class="metric-val">$-15.17 <span class="muted" style="font-size:16px">/ $60.00</span></div>
+      <div class="metric-val">$-15.19 <span class="muted" style="font-size:16px">/ $60.00</span></div>
       <div class="metric-sub">Прогресс окупаемости: 0.0%</div>
     </div>
     <div class="card">
       <div class="metric-label">Просадка от пика (Drawdown)</div>
-      <div class="metric-val neg">35.20% <span class="muted" style="font-size:15px">(Макс: 35.20%)</span></div>
+      <div class="metric-val neg">35.24% <span class="muted" style="font-size:15px">(Макс: 35.24%)</span></div>
       <div class="metric-sub">Пик: $53.75 | Лимит остановки: 40.0%</div>
     </div>
     <div class="card">
@@ -127,10 +127,10 @@
             <td><span class="side-no">NO</span></td>
             <td>2.13</td>
             <td>$0.6800</td>
-            <td>$0.4700</td>
+            <td>$0.4600</td>
             <td><strong>74.2%</strong> <small>(+14.6pp)</small></td>
             <td>$1.45 <small>(4.0%)</small></td>
-            <td class="neg">$-0.45</td>
+            <td class="neg">$-0.47</td>
             <td><small>Exit if Bid VWAP &gt;= 81.6% (edge closed), or Stop-Loss &lt;= 0.442 (-35%), or P_est drops &lt;= 72.6% (-10pp &amp; &lt;= entry), or &lt; 1.5h before 2026-10-16T12:00 (Strict Time Exit, no hold to settlement)</small></td>
         </tr>
         
@@ -162,6 +162,97 @@
     </thead>
     <tbody>
       
+        <tr class="">
+            <td>Wuhan Tennis Open: Elina Svitolina vs Sonay Kartal<br><small class="muted">News sentiment=+1.00 (12 articles; top: &#x27;LIVE/FREE:Elina Svitolina vs Sonay Kartal LIVE STREA.Ms 16. 10. 2026 - Universidad de Córdoba (UCO)&#x27;)</small></td>
+            <td><span class="badge cat-sports">Sports</span></td>
+            <td>YES</td>
+            <td>31.0%</td>
+            <td>26.0%</td>
+            <td class="muted">+5.0 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$65,270</td>
+            <td>166.6h</td>
+            <td><strong>REJECTED: Edge +5.0 pp &lt; 5 pp threshold (P_est=31.0% vs AskVWAP=26.0%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the highest temperature in Seoul (Incheon) be 25°C on October 17?<br><small class="muted">Station METAR RKSI (Seoul Incheon) (2026-10-17): Model Max=23.0°C (±2.2°C), Target=25°C (±0.5) =&gt; RawP=12.0%, Calibrated(0.80x)=18.5%</small></td>
+            <td><span class="badge cat-weather">Weather</span></td>
+            <td>NO</td>
+            <td>81.5%</td>
+            <td>57.0%</td>
+            <td class="pos">+24.5 п.п.</td>
+            <td class="pos">3.00%</td>
+            <td>$2,623</td>
+            <td>30.1h</td>
+            <td><strong>REJECTED: CLOB round-trip slippage 3.00% &gt; 2.5% limit</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the price of Bitcoin be above $82,000 on October 17?<br><small class="muted">News sentiment=-1.00 (12 articles; top: &#x27;On the Chain: Bitcoin rebounds above US$82,000 after briefly breaking below US$80,000 - Yahoo Finance Australi&#x27;)</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>NO</td>
+            <td>49.0%</td>
+            <td>44.0%</td>
+            <td class="muted">+5.0 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$33,295</td>
+            <td>34.1h</td>
+            <td><strong>REJECTED: Edge +5.0 pp &lt; 5 pp threshold (P_est=49.0% vs AskVWAP=44.0%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the price of Bitcoin be above $80,000 on October 18?<br><small class="muted">News sentiment=-1.00 (12 articles; top: &#x27;On the Chain: Bitcoin rebounds above US$82,000 after briefly breaking below US$80,000 - Yahoo Finance Australi&#x27;)</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>NO</td>
+            <td>13.0%</td>
+            <td>8.0%</td>
+            <td class="muted">+5.0 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$29,309</td>
+            <td>58.1h</td>
+            <td><strong>REJECTED: Calculated 0.25x Kelly bet $0.47 below $1.00 min or &gt; cash $33.08</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the price of Ethereum be above $2,300 on October 19?<br><small class="muted">News sentiment=-1.00 (12 articles; top: &#x27;Ethereum (ETH-USD) Price Prediction: Can $2,300 Stop Another Liquidation Cascade? - Seeking Alpha&#x27;)</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>NO</td>
+            <td>10.0%</td>
+            <td>6.0%</td>
+            <td class="muted">+4.0 п.п.</td>
+            <td class="pos">3.00%</td>
+            <td>$23,088</td>
+            <td>82.1h</td>
+            <td><strong>REJECTED: Edge +4.0 pp &lt; 5 pp threshold (P_est=10.0% vs AskVWAP=6.0%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the price of Bitcoin be above $80,000 on October 21?<br><small class="muted">News sentiment=-1.00 (12 articles; top: &#x27;On the Chain: Bitcoin rebounds above US$82,000 after briefly breaking below US$80,000 - Yahoo Finance Australi&#x27;)</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>NO</td>
+            <td>28.0%</td>
+            <td>24.0%</td>
+            <td class="muted">+4.0 п.п.</td>
+            <td class="neg">3.04%</td>
+            <td>$26,500</td>
+            <td>130.1h</td>
+            <td><strong>REJECTED: Edge +4.0 pp &lt; 5 pp threshold (P_est=28.0% vs AskVWAP=24.0%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the price of Bitcoin be above $84,000 on October 21?<br><small class="muted">News sentiment=+1.00 (12 articles; top: &#x27;Altcoins slip as bitcoin (BTC) price steadies before U.S. CPI report: Crypto Markets Today - CoinDesk&#x27;)</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>34.5%</td>
+            <td>30.0%</td>
+            <td class="muted">+4.5 п.п.</td>
+            <td class="pos">2.00%</td>
+            <td>$29,221</td>
+            <td>130.1h</td>
+            <td><strong>REJECTED: Edge +4.5 pp &lt; 5 pp threshold (P_est=34.5% vs AskVWAP=30.0%)</strong></td>
+        </tr>
+        
         <tr class="">
             <td>Wuhan Tennis Open: Elina Svitolina vs Sonay Kartal<br><small class="muted">News sentiment=+1.00 (12 articles; top: &#x27;LIVE/FREE:Elina Svitolina vs Sonay Kartal LIVE STREA.Ms 16. 10. 2026 - Universidad de Córdoba (UCO)&#x27;)</small></td>
             <td><span class="badge cat-sports">Sports</span></td>
@@ -396,103 +487,11 @@
             <td><strong>REJECTED: Edge +4.5 pp &lt; 5 pp threshold (P_est=57.5% vs AskVWAP=53.0%)</strong></td>
         </tr>
         
-        <tr class="">
-            <td>Will the price of Bitcoin be above $80,000 on October 16?<br><small class="muted">News sentiment=-1.00 (12 articles; top: &#x27;Bitcoin rebounds from near $80,000 as Kospi plunges 8%, with altcoins falling harder - CoinDesk&#x27;)</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>NO</td>
-            <td>10.0%</td>
-            <td>5.0%</td>
-            <td class="muted">+5.0 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$43,939</td>
-            <td>15.3h</td>
-            <td><strong>REJECTED: Duplicate underlying event (crypto:bitcoin:october 16)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the price of Ethereum be above $2,300 on October 20?<br><small class="muted">News sentiment=-1.00 (11 articles; top: &#x27;Ethereum (ETH-USD) Price Prediction: Can $2,300 Stop Another Liquidation Cascade? - Seeking Alpha&#x27;)</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>NO</td>
-            <td>13.0%</td>
-            <td>9.0%</td>
-            <td class="muted">+4.0 п.п.</td>
-            <td class="pos">3.00%</td>
-            <td>$29,861</td>
-            <td>113.6h</td>
-            <td><strong>REJECTED: Edge +4.0 pp &lt; 5 pp threshold (P_est=13.0% vs AskVWAP=9.0%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the price of Bitcoin be above $80,000 on October 17?<br><small class="muted">News sentiment=-1.00 (12 articles; top: &#x27;Bitcoin Briefly Slides Below $80,000 On More Hot Inflation Data - Bitcoin Magazine&#x27;)</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>NO</td>
-            <td>12.0%</td>
-            <td>7.0%</td>
-            <td class="muted">+5.0 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$38,962</td>
-            <td>41.6h</td>
-            <td><strong>REJECTED: Edge +5.0 pp &lt; 5 pp threshold (P_est=12.0% vs AskVWAP=7.0%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the price of Bitcoin be above $82,000 on October 16?<br><small class="muted">News sentiment=-1.00 (12 articles; top: &#x27;Bitcoin Bounces Above $82,000 as XRP, Solana Flash Buy Signals - Benzinga&#x27;)</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>NO</td>
-            <td>36.0%</td>
-            <td>31.0%</td>
-            <td class="muted">+5.0 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$41,678</td>
-            <td>17.6h</td>
-            <td><strong>REJECTED: Edge +5.0 pp &lt; 5 pp threshold (P_est=36.0% vs AskVWAP=31.0%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the price of Ethereum be above $2,400 on October 16?<br><small class="muted">News sentiment=-1.00 (12 articles; top: &#x27;Ethereum Price Forecast: ETH recovers $2,400 after hot PPI - FXStreet&#x27;)</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>NO</td>
-            <td>17.0%</td>
-            <td>12.5%</td>
-            <td class="muted">+4.5 п.п.</td>
-            <td class="pos">1.50%</td>
-            <td>$33,928</td>
-            <td>17.6h</td>
-            <td><strong>REJECTED: Edge +4.5 pp &lt; 5 pp threshold (P_est=17.0% vs AskVWAP=12.5%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Ethereum Up or Down on October 16?<br><small class="muted">News sentiment=+1.00 (12 articles; top: &#x27;Bitcoin options expiry October 16: max pain at $83,000 - CryptoTicker&#x27;)</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>71.0%</td>
-            <td>66.0%</td>
-            <td class="muted">+5.0 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$40,899</td>
-            <td>17.6h</td>
-            <td><strong>REJECTED: Edge +5.0 pp &lt; 5 pp threshold (P_est=71.0% vs AskVWAP=66.0%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the price of Bitcoin be above $80,000 on October 16?<br><small class="muted">News sentiment=-1.00 (12 articles; top: &#x27;Bitcoin Briefly Slides Below $80,000 On More Hot Inflation Data - Bitcoin Magazine&#x27;)</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>NO</td>
-            <td>10.0%</td>
-            <td>5.0%</td>
-            <td class="muted">+5.0 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$44,965</td>
-            <td>17.6h</td>
-            <td><strong>REJECTED: Duplicate underlying event (crypto:bitcoin:october 16)</strong></td>
-        </tr>
-        
     </tbody>
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">t if Bid VWAP &gt;= 61.5% (edge closed), or P_est drops &lt;= 57.5% (-5pp), or &lt; 1.5h before 2026-10-15T12:00 (Strict Time Exit, no hold to settlement)
-  Причина: Station METAR EDDM (Munich Airport) (2026-10-15): Model Max=15.7°C (±2.6°C), Target=&gt;=18°C =&gt; RawP=24.6%, Calibrated(0.65x)=37.5%
+  <pre class="log-box">DM (Munich Airport) (2026-10-15): Model Max=15.7°C (±2.6°C), Target=&gt;=18°C =&gt; RawP=24.6%, Calibrated(0.65x)=37.5%
 
 [2026-10-14 00:08:53 UTC] [CYCLE #20 SUMMARY] Scanned=781 | PassedFilter=165 | Evaluated=44 | Edges(&gt;=8pp)=1 | Opened=1 | Closed=0 | Cash=$35.15 | Equity=$41.43 (DD=22.93%)
 [2026-10-14 02:07:12 UTC] [CYCLE #21 SUMMARY] Scanned=796 | PassedFilter=159 | Evaluated=0 | Edges(&gt;=8pp)=0 | Opened=0 | Closed=0 | Cash=$35.15 | Equity=$41.58 (DD=22.64%)
@@ -620,6 +619,7 @@
   Shares: 9.42 | Entry VWAP: 0.1380 -&gt; Exit Bid VWAP: 0.0456
   Proceeds: $0.43 | Realized PnL: $-0.87 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.046 (-67.0% from entry $0.138)
 [2026-10-16 05:44:15 UTC] [CYCLE #58 SUMMARY] Scanned=800 | PassedFilter=195 | Evaluated=9 | Edges(&gt;=8pp)=4 | Opened=0 | Closed=1 | Cash=$33.08 | Equity=$34.83 (DD=35.20%)
+[2026-10-16 05:53:31 UTC] [CYCLE #59 SUMMARY] Scanned=785 | PassedFilter=188 | Evaluated=10 | Edges(&gt;=8pp)=2 | Opened=0 | Closed=0 | Cash=$33.08 | Equity=$34.81 (DD=35.24%)
 </pre>
 </body>
 </html>
