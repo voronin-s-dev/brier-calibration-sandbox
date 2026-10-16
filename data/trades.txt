@@ -334,3 +334,28 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: CLOB near-touch depth imbalance OBI=-0.44 (BidDepth=$3,867 vs AskDepth=$10,027) | News sentiment=-1.00 (12 articles; top: 'Ethereum (ETH-USD) Price Prediction: Can $2,300 Stop Another Liquidation Cascade? - Seeking Alpha')
 
 [2026-10-16 06:02:47 UTC] [CYCLE #60 SUMMARY] Scanned=800 | PassedFilter=192 | Evaluated=10 | Edges(>=8pp)=4 | Opened=1 | Closed=1 | Cash=$32.89 | Equity=$34.51 (DD=35.79%)
+[EXIT] #22 | Will the price of Bitcoin be above $80,000 on October 17? (NO)
+  Shares: 12.50 | Entry VWAP: 0.0800 -> Exit Bid VWAP: 0.0230
+  Proceeds: $0.29 | Realized PnL: $-0.71 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.023 (-71.2% from entry $0.080)
+[EXIT] #23 | Will the price of Ethereum be above $2,300 on October 20? (NO)
+  Shares: 12.50 | Entry VWAP: 0.0800 -> Exit Bid VWAP: 0.0200
+  Proceeds: $0.25 | Realized PnL: $-0.75 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.020 (-75.0% from entry $0.080)
+[2026-10-16 11:12:52 UTC] [OPEN TRADE #24] Will the price of Bitcoin be above $82,000 on October 21?
+  Категория: Crypto | Сторона: YES | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 64.2% vs Рынок (Ask VWAP): 58.0% (Перекос/Edge: +6.2 п.п.)
+  Стакан CLOB: BestBid=0.570, BestAsk=0.580, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=14.7%, Четверть(0.25x)=3.7% -> Применён=3.7% банка
+  Размер сделки: $1.23 USDC (2.12 shares @ $0.5800)
+  Условие выхода: Exit if Bid VWAP >= 63.2% (edge closed), or Stop-Loss <= 0.377 (-35%), or P_est drops <= 54.2% (-10pp & <= entry), or < 1.5h before 2026-10-21T16:00 (Strict Time Exit, no hold to settlement)
+  Причина: CLOB near-touch depth imbalance OBI=+0.89 (BidDepth=$4,098 vs AskDepth=$243)
+
+[2026-10-16 11:12:52 UTC] [OPEN TRADE #25] Will Bitcoin dip to $81,000 on October 16?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 92.6% vs Рынок (Ask VWAP): 87.0% (Перекос/Edge: +5.6 п.п.)
+  Стакан CLOB: BestBid=0.860, BestAsk=0.870, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=43.0%, Четверть(0.25x)=10.7% -> Применён=4.0% банка
+  Размер сделки: $1.34 USDC (1.54 shares @ $0.8700)
+  Условие выхода: Exit if Bid VWAP >= 91.6% (edge closed), or Stop-Loss <= 0.566 (-35%), or P_est drops <= 82.6% (-10pp & <= entry), or < 1.5h before 2026-10-17T04:00 (Strict Time Exit, no hold to settlement)
+  Причина: CLOB near-touch depth imbalance OBI=-0.81 (BidDepth=$82 vs AskDepth=$794)
+
+[2026-10-16 11:12:52 UTC] [CYCLE #61 SUMMARY] Scanned=798 | PassedFilter=217 | Evaluated=6 | Edges(>=8pp)=2 | Opened=2 | Closed=2 | Cash=$30.86 | Equity=$33.39 (DD=37.88%)
