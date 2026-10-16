@@ -316,3 +316,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 1.60 | Entry VWAP: 0.9040 -> Exit Bid VWAP: 0.9060
   Proceeds: $1.45 | Realized PnL: $+0.00 USDC | Reason: TAKE PROFIT (Edge Closed): Live CLOB Bid VWAP (90.6%) reached our estimated probability (90.9%)
 [2026-10-16 00:58:45 UTC] [CYCLE #57 SUMMARY] Scanned=799 | PassedFilter=208 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 | Closed=1 | Cash=$32.65 | Equity=$35.62 (DD=33.72%)
+[EXIT] #21 | Will the price of Bitcoin be above $84,000 on October 16? (YES)
+  Shares: 9.42 | Entry VWAP: 0.1380 -> Exit Bid VWAP: 0.0456
+  Proceeds: $0.43 | Realized PnL: $-0.87 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.046 (-67.0% from entry $0.138)
+[2026-10-16 05:44:15 UTC] [CYCLE #58 SUMMARY] Scanned=800 | PassedFilter=195 | Evaluated=9 | Edges(>=8pp)=4 | Opened=0 | Closed=1 | Cash=$33.08 | Equity=$34.83 (DD=35.20%)
