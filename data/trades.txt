@@ -302,3 +302,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 1.63 | Entry VWAP: 0.8910 -> Exit Bid VWAP: 0.9880
   Proceeds: $1.61 | Realized PnL: $+0.16 USDC | Reason: TAKE PROFIT (Edge Closed): Live CLOB Bid VWAP (98.8%) reached our estimated probability (97.8%)
 [2026-10-16 00:40:06 UTC] [CYCLE #55 SUMMARY] Scanned=780 | PassedFilter=212 | Evaluated=6 | Edges(>=8pp)=2 | Opened=0 | Closed=1 | Cash=$32.20 | Equity=$35.87 (DD=33.26%)
+[2026-10-16 00:49:25 UTC] [OPEN TRADE #22] Will the price of Bitcoin be above $80,000 on October 17?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 16.9% vs Рынок (Ask VWAP): 8.0% (Перекос/Edge: +8.9 п.п.)
+  Стакан CLOB: BestBid=0.070, BestAsk=0.080, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=9.7%, Четверть(0.25x)=2.4% -> Применён=2.8% банка
+  Размер сделки: $1.00 USDC (12.50 shares @ $0.0800)
+  Условие выхода: Exit if Bid VWAP >= 15.9% (edge closed), or Stop-Loss <= 0.052 (-35%), or P_est drops <= 6.9% (-10pp & <= entry), or < 1.5h before 2026-10-17T16:00 (Strict Time Exit, no hold to settlement)
+  Причина: CLOB near-touch depth imbalance OBI=-0.52 (BidDepth=$2,660 vs AskDepth=$8,431) | News sentiment=-1.00 (12 articles; top: 'Bitcoin rebounds from near $80,000 as Kospi plunges 8%, with altcoins falling harder - CoinDesk')
+
+[2026-10-16 00:49:25 UTC] [CYCLE #56 SUMMARY] Scanned=799 | PassedFilter=209 | Evaluated=6 | Edges(>=8pp)=2 | Opened=1 | Closed=0 | Cash=$31.20 | Equity=$35.61 (DD=33.74%)
