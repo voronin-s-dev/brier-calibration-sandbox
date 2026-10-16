@@ -386,3 +386,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: CLOB near-touch depth imbalance OBI=-0.81 (BidDepth=$746 vs AskDepth=$7,303) | News sentiment=-1.00 (12 articles; top: 'Has Bitcoin Bottomed? We Asked Claude AI After Its Dip Below $80,000 - 24/7 Wall St.')
 
 [2026-10-16 15:29:18 UTC] [CYCLE #64 SUMMARY] Scanned=799 | PassedFilter=184 | Evaluated=10 | Edges(>=8pp)=3 | Opened=1 | Closed=1 | Cash=$30.56 | Equity=$32.82 (DD=38.94%)
+[2026-10-16 15:38:37 UTC] [OPEN TRADE #28] Will Bitcoin reach $83,000 on October 16?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 93.2% vs Рынок (Ask VWAP): 87.0% (Перекос/Edge: +6.2 п.п.)
+  Стакан CLOB: BestBid=0.860, BestAsk=0.870, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=47.7%, Четверть(0.25x)=11.9% -> Применён=4.0% банка
+  Размер сделки: $1.31 USDC (1.51 shares @ $0.8700)
+  Условие выхода: Exit if Bid VWAP >= 92.2% (edge closed), or Stop-Loss <= 0.566 (-35%), or P_est drops <= 83.2% (-10pp & <= entry), or < 1.5h before 2026-10-17T04:00 (Strict Time Exit, no hold to settlement)
+  Причина: CLOB near-touch depth imbalance OBI=-0.89 (BidDepth=$46 vs AskDepth=$825)
+
+[2026-10-16 15:38:37 UTC] [CYCLE #65 SUMMARY] Scanned=769 | PassedFilter=174 | Evaluated=10 | Edges(>=8pp)=4 | Opened=1 | Closed=0 | Cash=$29.25 | Equity=$32.68 (DD=39.20%)
