@@ -359,3 +359,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: CLOB near-touch depth imbalance OBI=-0.81 (BidDepth=$82 vs AskDepth=$794)
 
 [2026-10-16 11:12:52 UTC] [CYCLE #61 SUMMARY] Scanned=798 | PassedFilter=217 | Evaluated=6 | Edges(>=8pp)=2 | Opened=2 | Closed=2 | Cash=$30.86 | Equity=$33.39 (DD=37.88%)
+[2026-10-16 11:22:14 UTC] [CYCLE #62 SUMMARY] Scanned=764 | PassedFilter=204 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 | Closed=0 | Cash=$30.86 | Equity=$33.56 (DD=37.55%)
