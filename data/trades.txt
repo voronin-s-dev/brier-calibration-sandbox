@@ -464,3 +464,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: Station Auto-Meteo Amsterdam (NL) (2026-10-17): Model Max=14.9°C (±1.5°C), Target=14°C (±0.5) => RawP=22.1%, Calibrated(0.80x)=27.6%
 
 [2026-10-16 21:59:22 UTC] [CYCLE #72 SUMMARY] Scanned=800 | PassedFilter=203 | Evaluated=42 | Edges(>=8pp)=15 | Opened=2 | Closed=1 | Cash=$28.03 | Equity=$31.87 (DD=40.70%)
+[2026-10-16 22:08:37 UTC] Cycle skipped: Bot is HALTED due to 40% drawdown rule (KILL-SWITCH TRIGGERED: Drawdown reached 40.6% from peak ($53.75 -> $31.95))
