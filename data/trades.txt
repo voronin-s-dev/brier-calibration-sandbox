@@ -360,3 +360,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-10-16 11:12:52 UTC] [CYCLE #61 SUMMARY] Scanned=798 | PassedFilter=217 | Evaluated=6 | Edges(>=8pp)=2 | Opened=2 | Closed=2 | Cash=$30.86 | Equity=$33.39 (DD=37.88%)
 [2026-10-16 11:22:14 UTC] [CYCLE #62 SUMMARY] Scanned=764 | PassedFilter=204 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 | Closed=0 | Cash=$30.86 | Equity=$33.56 (DD=37.55%)
+[EXIT] #24 | Will the price of Bitcoin be above $82,000 on October 21? (YES)
+  Shares: 2.12 | Entry VWAP: 0.5800 -> Exit Bid VWAP: 0.6200
+  Proceeds: $1.31 | Realized PnL: $+0.08 USDC | Reason: TAKE PROFIT (Edge Closed): Live CLOB Bid VWAP (62.0%) reached our estimated probability (58.0%)
+[2026-10-16 11:31:33 UTC] [OPEN TRADE #26] Will the highest temperature in Seoul (Incheon) be 25°C on October 17?
+  Категория: Weather | Сторона: NO | Источник: METAR RKSI (Seoul Incheon)
+  Оценка бота: 82.2% vs Рынок (Ask VWAP): 57.0% (Перекос/Edge: +25.2 п.п.)
+  Стакан CLOB: BestBid=0.550, BestAsk=0.570, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=58.6%, Четверть(0.25x)=14.7% -> Применён=4.0% банка
+  Размер сделки: $1.34 USDC (2.35 shares @ $0.5700)
+  Условие выхода: Exit if Bid VWAP >= 81.2% (edge closed), or Stop-Loss <= 0.370 (-35%), or P_est drops <= 72.2% (-10pp & <= entry), or < 1.5h before 2026-10-17T12:00 (Strict Time Exit, no hold to settlement)
+  Причина: Station METAR RKSI (Seoul Incheon) (2026-10-17): Model Max=22.9°C (±1.8°C), Target=25°C (±0.5) => RawP=11.2%, Calibrated(0.80x)=17.8%
+
+[2026-10-16 11:31:33 UTC] [CYCLE #63 SUMMARY] Scanned=796 | PassedFilter=212 | Evaluated=5 | Edges(>=8pp)=1 | Opened=1 | Closed=1 | Cash=$30.83 | Equity=$33.51 (DD=37.65%)
