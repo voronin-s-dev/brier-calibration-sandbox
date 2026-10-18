@@ -494,3 +494,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-18 01:36:33 UTC] Cycle skipped: Bot is HALTED due to 40% drawdown rule (KILL-SWITCH TRIGGERED: Drawdown reached 40.6% from peak ($53.75 -> $31.95))
 [2026-10-18 01:45:35 UTC] Cycle skipped: Bot is HALTED due to 40% drawdown rule (KILL-SWITCH TRIGGERED: Drawdown reached 40.6% from peak ($53.75 -> $31.95))
 [2026-10-18 06:30:49 UTC] Cycle skipped: Bot is HALTED due to 40% drawdown rule (KILL-SWITCH TRIGGERED: Drawdown reached 40.6% from peak ($53.75 -> $31.95))
+[2026-10-18 06:39:51 UTC] Cycle skipped: Bot is HALTED due to 40% drawdown rule (KILL-SWITCH TRIGGERED: Drawdown reached 40.6% from peak ($53.75 -> $31.95))
