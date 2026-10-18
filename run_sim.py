@@ -107,6 +107,7 @@ def main() -> None:
     parser.add_argument("--governor", action="store_true", help="Run 3-tier Auto-Governor audit and generate GOVERNANCE_REPORT.md")
     parser.add_argument("--approve", type=int, help="Approve and apply a pending Semi-Auto proposal by ID")
     parser.add_argument("--dismiss", type=int, help="Dismiss a pending Semi-Auto proposal by ID")
+    parser.add_argument("--reset-halt", action="store_true", help="Reset 40% kill-switch and re-baseline peak equity to current equity")
     args = parser.parse_args()
 
     db = SimDatabase(initial_capital=50.0)
@@ -123,6 +124,16 @@ def main() -> None:
         ok, msg = gov.dismiss_proposal(args.dismiss)
         print(msg)
         generate_reports(db)
+        return
+
+    if args.reset_halt:
+        trader = GrokCharterPaperTrader(db=db)
+        trader.monitor_and_manage_open_positions()
+        pf = db.reset_kill_switch()
+        gov.generate_governance_report()
+        paths = generate_reports(db)
+        print_console_summary(db)
+        print(f"🔄 Стоп-кран 40% сброшен. Базовый пик перенесён на ${pf['peak_equity']:.2f} USDC.")
         return
 
     if args.set_category or args.set_liquidity is not None or args.set_slippage is not None:

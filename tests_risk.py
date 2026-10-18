@@ -255,6 +255,60 @@ class TestRiskManagementV2(unittest.TestCase):
                 del db, trader
                 gc.collect()
 
+    def test_kill_switch_resets_and_rebaselines(self) -> None:
+        """Verify that reset_kill_switch re-baselines peak equity and clears halted status."""
+        import gc
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            db_path = Path(tmp_dir) / "test_sim.db"
+            db = SimDatabase(db_path=db_path, initial_capital=50.0)
+
+            # Drop cash to $28.00 (44% drawdown from $50 peak) -> triggers halt
+            with db._connect() as conn:
+                conn.execute("UPDATE portfolio_state SET cash_usdc = 28.00, peak_equity = 50.00 WHERE id = 1")
+                conn.commit()
+
+            pf = db.recalculate_portfolio()
+            self.assertEqual(pf["halted"], 1)
+
+            # Reset kill switch
+            pf_reset = db.reset_kill_switch()
+            self.assertEqual(pf_reset["halted"], 0)
+            self.assertEqual(pf_reset["halt_reason"], "")
+            self.assertEqual(pf_reset["peak_equity"], 28.00)
+            self.assertEqual(pf_reset["current_drawdown_pct"], 0.0)
+            del db
+            gc.collect()
+
+    def test_open_positions_monitored_even_when_halted(self) -> None:
+        """Verify that run_cycle calls monitor_and_manage_open_positions even if portfolio is halted."""
+        import gc
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            db_path = Path(tmp_dir) / "test_sim.db"
+            trades_log = Path(tmp_dir) / "trades.txt"
+            db = SimDatabase(db_path=db_path, initial_capital=50.0)
+
+            # Drop cash to trigger halt
+            with db._connect() as conn:
+                conn.execute("UPDATE portfolio_state SET cash_usdc = 28.00, peak_equity = 50.00 WHERE id = 1")
+                conn.commit()
+
+            db.recalculate_portfolio()
+            trader = GrokCharterPaperTrader(db=db, trades_txt_path=trades_log)
+
+            monitored = False
+            def mock_monitor():
+                nonlocal monitored
+                monitored = True
+                return 0
+
+            trader.monitor_and_manage_open_positions = mock_monitor
+            res = trader.run_cycle()
+            self.assertTrue(monitored)
+            self.assertEqual(res["status"], "HALTED")
+            del db, trader
+            gc.collect()
+
 
 if __name__ == "__main__":
     unittest.main()
+

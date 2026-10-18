@@ -321,17 +321,18 @@ class GrokCharterPaperTrader:
         Runs one complete 10-minute autonomous scan & trade cycle according to the Charter.
         """
         now_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
-        pf = self.db.recalculate_portfolio()
-
-        # Check Kill-Switch (40% drawdown)
-        if pf.get("halted"):
-            msg = f"Cycle skipped: Bot is HALTED due to 40% drawdown rule ({pf.get('halt_reason')})"
-            self._append_trades_log(f"[{now_str}] {msg}")
-            return {"status": "HALTED", "reason": pf.get("halt_reason"), "portfolio": pf}
-
-        # Step 0: Monitor and update existing open positions first
+        # Step 0: ALWAYS monitor and update existing open positions first!
+        # Even during a halt or kill-switch, existing positions must be actively protected:
+        # Stop-Loss, Strict Time-Exit, and Resolution settlement MUST execute so capital is not abandoned.
         trades_closed = self.monitor_and_manage_open_positions()
         pf = self.db.recalculate_portfolio()
+
+        # Check Kill-Switch (40% drawdown): Halt NEW entries, but positions were managed above
+        if pf.get("halted"):
+            msg = f"Cycle skipped (entries halted): Bot is HALTED due to 40% drawdown rule ({pf.get('halt_reason')})"
+            self._append_trades_log(f"[{now_str}] {msg}")
+            return {"status": "HALTED", "reason": pf.get("halt_reason"), "portfolio": pf, "trades_closed": trades_closed}
+
         open_positions = self.db.get_open_positions()
         open_market_ids = {str(p["market_id"]) for p in open_positions}
 
@@ -471,6 +472,13 @@ class GrokCharterPaperTrader:
                 decision = f"REJECTED: Win probability {p_est*100:.1f}% < {self.MIN_ESTIMATED_PROB*100:.0f}% minimum (no underdog lottery bets)"
             elif ob_sim.vwap_buy_price < self.MIN_CONTRACT_PRICE or ob_sim.vwap_buy_price > self.MAX_CONTRACT_PRICE:
                 decision = f"REJECTED: Contract price ${ob_sim.vwap_buy_price:.3f} outside sweet spot [${self.MIN_CONTRACT_PRICE:.2f}, ${self.MAX_CONTRACT_PRICE:.2f}]"
+            elif (
+                mkt.category == "Weather"
+                and chosen_side == "NO"
+                and any(w in mkt.question.lower() for w in [" be ", "between"])
+                and not any(w in mkt.question.lower() for w in ["above", "below", "or higher", "or lower", "or more", "or less"])
+            ):
+                decision = "REJECTED: Narrow weather bracket NO bet prohibited (airport METAR microclimate tail risk)"
             elif not ob_sim.sufficient_depth:
                 decision = f"REJECTED: {ob_sim.reject_reason}"
             elif not ob_sim.passes_slippage_limit:

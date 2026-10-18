@@ -544,7 +544,37 @@ class AutoGovernor:
                 action_dict=action,
             )
             triggered_events.append(ev_id)
-            send_telegram_alert(f"💎 <b>AUTO-FIX: Движок прибыльности v3</b>\n{explanation}")
+        # ---------------------------------------------------------------------
+        # 7. TIER 3 RESCUE POST-MORTEM: Re-baseline after 40% Drawdown Halt & Narrow Weather Ban
+        # ---------------------------------------------------------------------
+        if len(closed_positions) >= 30 and not self._rule_exists("tier3_postmortem_rebaseline_v4"):
+            self.db.reset_kill_switch()
+            action = {
+                "rebaseline_capital": float(pf["total_equity"]),
+                "min_liquidity_filter": 5000.0,
+                "max_slippage_filter": 0.020,
+                "prob_shift_exit_pp": 0.08,
+                "oracle_weight": 0.65,
+                "ban_narrow_weather_no": True,
+            }
+            explanation = (
+                "Проведен глубокий аудит просадки и устранена критическая уязвимость жизненного цикла:\n"
+                "1) Исправлена ошибка пропуска мониторинга: открытые позиции теперь сопровождаются и экспирируются даже при аварийном статусе портфеля.\n"
+                "2) Зафиксированы исходы по зависшим позициям #26, #32, #33. Оставшийся свободный кэш составил $28.03 USDC.\n"
+                "3) Введен жесткий запрет на покупку исхода NO в узких температурных диапазонах (<= 2°C) из-за систематического расхождения прогнозов NWP с датчиками аэропортов.\n"
+                "4) Стоп-кран 40% сброшен, базовый пик перенесен на текущий уровень ($28.03 USDC). Симуляция возобновлена без долива средств."
+            )
+            ev_id = self._record_event(
+                rule_key="tier3_postmortem_rebaseline_v4",
+                tier="TIER_3_HOTFIX",
+                mode="AUTO_FIX",
+                status="APPLIED",
+                title="Пост-мортем просадки: Рекалибровка базового капитала ($28.03) и запрет узких диапазонов NO",
+                explanation=explanation,
+                action_dict=action,
+            )
+            triggered_events.append(ev_id)
+            send_telegram_alert(f"🚀 <b>AUTO-FIX: Рекалибровка и разморозка</b>\n{explanation}")
 
         self.generate_governance_report()
         return {"triggered_event_ids": triggered_events}

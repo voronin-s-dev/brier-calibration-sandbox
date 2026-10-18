@@ -502,3 +502,19 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-18 14:47:29 UTC] Cycle skipped: Bot is HALTED due to 40% drawdown rule (KILL-SWITCH TRIGGERED: Drawdown reached 40.6% from peak ($53.75 -> $31.95))
 [2026-10-18 14:56:31 UTC] Cycle skipped: Bot is HALTED due to 40% drawdown rule (KILL-SWITCH TRIGGERED: Drawdown reached 40.6% from peak ($53.75 -> $31.95))
 [2026-10-18 15:05:32 UTC] Cycle skipped: Bot is HALTED due to 40% drawdown rule (KILL-SWITCH TRIGGERED: Drawdown reached 40.6% from peak ($53.75 -> $31.95))
+[RESOLVED] #26 | Will the highest temperature in Seoul (Incheon) be 25°C on October 17? (NO)
+  Entry VWAP: 0.5700 | Settlement: 0.00 | PnL: $-1.34 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $0.00/share
+[RESOLVED] #32 | Will the price of Bitcoin be between $80,000 and $82,000 on October 18? (NO)
+  Entry VWAP: 0.4600 | Settlement: 0.00 | PnL: $-1.28 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $0.00/share
+[RESOLVED] #33 | Will the highest temperature in Amsterdam be 14°C on October 17? (NO)
+  Entry VWAP: 0.5200 | Settlement: 0.00 | PnL: $-1.28 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $0.00/share
+[2026-10-18 16:27:09 UTC] [OPEN TRADE #34] Will Bitcoin dip to $77,500 in October?
+  Категория: Crypto | Сторона: YES | Источник: Binance BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 59.3% vs Рынок (Ask VWAP): 48.0% (Перекос/Edge: +11.3 п.п.)
+  Стакан CLOB: BestBid=0.470, BestAsk=0.480, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=21.8%, Четверть(0.25x)=5.4% -> Применён=4.0% банка
+  Размер сделки: $1.12 USDC (2.33 shares @ $0.4800)
+  Условие выхода: Exit if Bid VWAP >= 58.3% (edge closed), or Stop-Loss <= 0.336 (-30%), or P_est drops <= 51.3% (-8pp & <= entry), or < 1.5h before 2026-11-01T04:00 (Strict Time Exit, no hold to settlement)
+  Причина: First-passage dip model: BTCUSDT=$81,241.64 -> barrier=$77,500 (-4.61%), vol_h=0.50%, tau=323.5h => P(touch)=64.0% -> Calibrated(0.70x)=59.3%
+
+[2026-10-18 16:27:09 UTC] [CYCLE #73 SUMMARY] Scanned=776 | PassedFilter=184 | Evaluated=40 | Edges(>=8pp)=8 | Opened=1 | Closed=0 | Cash=$26.91 | Equity=$28.00 (DD=0.08%)

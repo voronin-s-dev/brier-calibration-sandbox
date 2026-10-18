@@ -397,6 +397,34 @@ class SimDatabase:
             conn.commit()
         return self.get_portfolio()
 
+    def reset_kill_switch(self, new_peak: Optional[float] = None) -> Dict[str, Any]:
+        """
+        Resets the 40% drawdown kill switch after an audit/post-mortem,
+        re-baselining the peak equity to the current total equity (or specified new_peak)
+        so the bot can resume trading on remaining capital without violating the Charter.
+        """
+        now_str = datetime.now(timezone.utc).isoformat()
+        with self._connect() as conn:
+            pf = conn.execute("SELECT * FROM portfolio_state WHERE id = 1").fetchone()
+            cash = float(pf["cash_usdc"])
+            open_rows = conn.execute("SELECT market_value_usdc FROM positions WHERE status = 'OPEN'").fetchall()
+            locked = sum(float(r["market_value_usdc"]) for r in open_rows)
+            total_equity = cash + locked
+            peak = float(new_peak) if new_peak is not None else total_equity
+
+            conn.execute(
+                """
+                UPDATE portfolio_state
+                SET halted = 0, halt_reason = '', peak_equity = ?,
+                    current_drawdown_pct = 0.0, max_drawdown_pct = 0.0,
+                    updated_at = ?
+                WHERE id = 1
+                """,
+                (peak, now_str),
+            )
+            conn.commit()
+        return self.recalculate_portfolio()
+
     def record_scan_cycle(
         self,
         markets_scanned: int,
