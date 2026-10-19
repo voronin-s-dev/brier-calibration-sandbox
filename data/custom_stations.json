@@ -61,5 +61,12 @@
     "Europe/Amsterdam",
     "celsius",
     "Auto-Meteo Amsterdam (NL)"
+  ],
+  "kuala lumpur": [
+    3.1412,
+    101.68653,
+    "Asia/Kuala_Lumpur",
+    "celsius",
+    "Auto-Meteo Kuala Lumpur (MY)"
   ]
 }
