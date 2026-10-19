@@ -530,3 +530,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-19 00:25:50 UTC] [CYCLE #83 SUMMARY] Scanned=795 | PassedFilter=259 | Evaluated=42 | Edges(>=8pp)=5 | Opened=0 | Closed=0 | Cash=$26.91 | Equity=$27.77 (DD=1.00%)
 [2026-10-19 00:34:59 UTC] [CYCLE #84 SUMMARY] Scanned=798 | PassedFilter=263 | Evaluated=42 | Edges(>=8pp)=5 | Opened=0 | Closed=0 | Cash=$26.91 | Equity=$27.77 (DD=1.00%)
 [2026-10-19 00:44:07 UTC] [CYCLE #85 SUMMARY] Scanned=800 | PassedFilter=265 | Evaluated=42 | Edges(>=8pp)=5 | Opened=0 | Closed=0 | Cash=$26.91 | Equity=$27.72 (DD=1.16%)
+[EXIT] #34 | Will Bitcoin dip to $77,500 in October? (YES)
+  Shares: 2.33 | Entry VWAP: 0.4800 -> Exit Bid VWAP: 0.3200
+  Proceeds: $0.75 | Realized PnL: $-0.37 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.320 (-33.3% from entry $0.480)
+[2026-10-19 05:11:24 UTC] [OPEN TRADE #35] Will Bitcoin dip to $80,000 in October?
+  Категория: Crypto | Сторона: YES | Источник: Kraken BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 70.7% vs Рынок (Ask VWAP): 61.0% (Перекос/Edge: +9.7 п.п.)
+  Стакан CLOB: BestBid=0.600, BestAsk=0.610, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=24.7%, Четверть(0.25x)=6.2% -> Применён=4.0% банка
+  Размер сделки: $1.11 USDC (1.82 shares @ $0.6100)
+  Условие выхода: Exit if Bid VWAP >= 69.7% (edge closed), or Stop-Loss <= 0.427 (-30%), or P_est drops <= 62.7% (-8pp & <= entry), or < 1.5h before 2026-11-01T04:00 (Strict Time Exit, no hold to settlement)
+  Причина: First-passage dip model: BTCUSDT=$82,556.20 -> barrier=$80,000 (-3.10%), vol_h=0.50%, tau=310.8h => P(touch)=75.0% -> Calibrated(0.70x)=70.7%
+
+[2026-10-19 05:11:24 UTC] [CYCLE #86 SUMMARY] Scanned=788 | PassedFilter=299 | Evaluated=45 | Edges(>=8pp)=8 | Opened=1 | Closed=1 | Cash=$26.54 | Equity=$27.63 (DD=1.48%)
