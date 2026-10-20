@@ -68,5 +68,12 @@
     "Asia/Kuala_Lumpur",
     "celsius",
     "Auto-Meteo Kuala Lumpur (MY)"
+  ],
+  "guangzhou": [
+    23.11667,
+    113.25,
+    "Asia/Shanghai",
+    "celsius",
+    "Auto-Meteo Guangzhou (CN)"
   ]
 }
