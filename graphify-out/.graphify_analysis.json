@@ -1,0 +1,351 @@
+{
+  "communities": {
+    "0": [
+      "oracles_calibrate_probability",
+      "oracles_cryptooracle",
+      "oracles_cryptooracle_evaluate",
+      "oracles_cryptooracle_fetch_klines_multisource",
+      "oracles_cryptooracle_get_symbol_stats",
+      "oracles_cryptooracle_init",
+      "oracles_evaluationresult",
+      "oracles_newsandorderbookoracle",
+      "oracles_newsandorderbookoracle_evaluate_with_orderbook",
+      "oracles_newsandorderbookoracle_extract_search_query",
+      "oracles_newsandorderbookoracle_fetch_news_sentiment",
+      "oracles_py_any",
+      "oracles_rationale_28",
+      "oracles_rationale_482",
+      "oracles_rationale_513",
+      "oracles_rationale_53",
+      "oracles_rationale_87",
+      "oracles_weatheroracle_evaluate",
+      "polymarket_api_marketinfo",
+      "tempfile",
+      "tests_risk",
+      "tests_risk_rationale_1",
+      "tests_risk_rationale_116",
+      "tests_risk_rationale_125",
+      "tests_risk_rationale_191",
+      "tests_risk_testriskmanagementv2",
+      "tests_risk_testriskmanagementv2_test_bayesian_shrinkage_prevents_overconfidence",
+      "tests_risk_testriskmanagementv2_test_conservative_v3_defaults_and_horizon",
+      "tests_risk_testriskmanagementv2_test_quarter_kelly_dynamic_sizing",
+      "tests_risk_testriskmanagementv2_test_whipsaw_prevented_when_edge_still_above_entry",
+      "tests_risk_testriskmanagementv2_test_zero_or_negative_edge_sizing_is_zero",
+      "trader_grokcharterpapertrader",
+      "trader_grokcharterpapertrader_append_trades_log",
+      "trader_grokcharterpapertrader_compute_kelly_sizing",
+      "trader_grokcharterpapertrader_evaluate_market_probability",
+      "trader_grokcharterpapertrader_init",
+      "trader_grokcharterpapertrader_monitor_and_manage_open_positions",
+      "trader_py_path",
+      "trader_rationale_119",
+      "trader_rationale_138",
+      "trader_rationale_174",
+      "trader_rationale_62",
+      "unittest"
+    ],
+    "1": [
+      "connection",
+      "dashboard_gen_generate_reports",
+      "dashboard_gen_py_path",
+      "database_py_any",
+      "database_py_path",
+      "database_rationale_401",
+      "database_simdatabase",
+      "database_simdatabase_close_position",
+      "database_simdatabase_connect",
+      "database_simdatabase_get_all_positions",
+      "database_simdatabase_get_open_positions",
+      "database_simdatabase_get_portfolio",
+      "database_simdatabase_get_recent_candidates",
+      "database_simdatabase_get_recent_trades",
+      "database_simdatabase_get_scan_cycles",
+      "database_simdatabase_init",
+      "database_simdatabase_init_schema",
+      "database_simdatabase_open_position",
+      "database_simdatabase_recalculate_portfolio",
+      "database_simdatabase_record_candidate",
+      "database_simdatabase_record_scan_cycle",
+      "database_simdatabase_reset_kill_switch",
+      "database_simdatabase_update_open_position_mtm",
+      "run_sim_print_console_summary",
+      "tests_risk_rationale_142",
+      "tests_risk_rationale_259",
+      "tests_risk_rationale_283",
+      "tests_risk_rationale_69",
+      "tests_risk_rationale_93",
+      "tests_risk_testriskmanagementv2_test_kill_switch_at_40_percent_drawdown",
+      "tests_risk_testriskmanagementv2_test_kill_switch_resets_and_rebaselines",
+      "tests_risk_testriskmanagementv2_test_mid_drawdown_shield_tightens_filters",
+      "tests_risk_testriskmanagementv2_test_open_positions_monitored_even_when_halted",
+      "tests_risk_testriskmanagementv2_test_open_positions_monitored_even_when_halted_mock_monitor",
+      "tests_risk_testriskmanagementv2_test_stop_loss_triggers_on_steep_price_drop"
+    ],
+    "2": [
+      "argparse",
+      "auto_governor",
+      "auto_governor_rationale_1",
+      "dashboard_gen",
+      "dashboard_gen_rationale_1",
+      "database",
+      "database_rationale_1",
+      "datetime",
+      "html",
+      "json",
+      "os",
+      "pathlib",
+      "run_sim",
+      "run_sim_git_sync_snapshot",
+      "run_sim_rationale_1",
+      "run_sim_rationale_32",
+      "sqlite3",
+      "subprocess",
+      "sys",
+      "telegram_notify",
+      "telegram_notify_load_env_fallback",
+      "telegram_notify_rationale_1",
+      "telegram_notify_rationale_32",
+      "telegram_notify_send_telegram_alert",
+      "trigger_cloud",
+      "trigger_cloud_load_token_from_env",
+      "trigger_cloud_rationale_1",
+      "trigger_cloud_trigger_workflow",
+      "typing",
+      "urllib_error",
+      "urllib_request"
+    ],
+    "3": [
+      "polymarket_api",
+      "polymarket_api_classify_market_category",
+      "polymarket_api_extract_resolution_source",
+      "polymarket_api_fetch_active_markets",
+      "polymarket_api_fetch_clob_book",
+      "polymarket_api_fetch_market_by_id",
+      "polymarket_api_orderbooksimulation",
+      "polymarket_api_parse_market_dict",
+      "polymarket_api_py_any",
+      "polymarket_api_rationale_1",
+      "polymarket_api_rationale_101",
+      "polymarket_api_rationale_120",
+      "polymarket_api_rationale_195",
+      "polymarket_api_rationale_232",
+      "polymarket_api_rationale_243",
+      "polymarket_api_rationale_288",
+      "polymarket_api_rationale_431",
+      "polymarket_api_rationale_64",
+      "polymarket_api_simulate_clob_buy_and_exit_check",
+      "polymarket_api_simulate_clob_sell_shares",
+      "re",
+      "tests_risk_testriskmanagementv2_test_event_key_deduplication",
+      "trader",
+      "trader_extract_event_key",
+      "trader_rationale_1",
+      "trader_rationale_31"
+    ],
+    "4": [
+      "auto_governor_autogovernor",
+      "auto_governor_autogovernor_append_trades_log",
+      "auto_governor_autogovernor_apply_action_dict",
+      "auto_governor_autogovernor_approve_proposal",
+      "auto_governor_autogovernor_dismiss_proposal",
+      "auto_governor_autogovernor_evaluate_portfolio_and_rules",
+      "auto_governor_autogovernor_generate_governance_report",
+      "auto_governor_autogovernor_get_governance_events",
+      "auto_governor_autogovernor_init",
+      "auto_governor_autogovernor_record_event",
+      "auto_governor_autogovernor_rule_exists",
+      "auto_governor_autogovernor_scan_and_fix_unmapped_weather_cities",
+      "auto_governor_py_any",
+      "auto_governor_py_path",
+      "auto_governor_rationale_129",
+      "auto_governor_rationale_86",
+      "oracles_rationale_304",
+      "oracles_weatheroracle",
+      "oracles_weatheroracle_init",
+      "oracles_weatheroracle_load_custom_stations",
+      "run_sim_main",
+      "trader_grokcharterpapertrader_run_cycle",
+      "trader_grokcharterpapertrader_run_cycle_priority_key",
+      "trader_py_any",
+      "trader_rationale_320"
+    ],
+    "5": [
+      "dataclasses",
+      "gzip",
+      "http_tls",
+      "http_tls_fetch_polymarket_json",
+      "http_tls_fetch_standard_url",
+      "http_tls_py_any",
+      "http_tls_rationale_1",
+      "http_tls_rationale_166",
+      "http_tls_rationale_24",
+      "math",
+      "oracles",
+      "oracles_norm_cdf",
+      "oracles_rationale_1",
+      "oracles_rationale_23",
+      "oracles_weatheroracle_get_daily_max_forecasts",
+      "socket",
+      "ssl",
+      "time",
+      "urllib_parse",
+      "xml_etree_elementtree",
+      "zlib"
+    ]
+  },
+  "cohesion": {
+    "0": 0.08637873754152824,
+    "1": 0.1361344537815126,
+    "2": 0.11612903225806452,
+    "3": 0.12923076923076923,
+    "4": 0.15666666666666668,
+    "5": 0.14285714285714285
+  },
+  "gods": [
+    {
+      "id": "database_simdatabase",
+      "label": "SimDatabase",
+      "degree": 36
+    },
+    {
+      "id": "trader_grokcharterpapertrader",
+      "label": "GrokCharterPaperTrader",
+      "degree": 25
+    },
+    {
+      "id": "auto_governor_autogovernor",
+      "label": "AutoGovernor",
+      "degree": 23
+    },
+    {
+      "id": "polymarket_api_marketinfo",
+      "label": "MarketInfo",
+      "degree": 20
+    },
+    {
+      "id": "run_sim_main",
+      "label": "main()",
+      "degree": 18
+    },
+    {
+      "id": "tests_risk_testriskmanagementv2",
+      "label": "TestRiskManagementV2",
+      "degree": 17
+    },
+    {
+      "id": "oracles_weatheroracle",
+      "label": "WeatherOracle",
+      "degree": 13
+    },
+    {
+      "id": "http_tls_fetch_polymarket_json",
+      "label": "fetch_polymarket_json()",
+      "degree": 13
+    },
+    {
+      "id": "telegram_notify_send_telegram_alert",
+      "label": "send_telegram_alert()",
+      "degree": 12
+    },
+    {
+      "id": "dashboard_gen_generate_reports",
+      "label": "generate_reports()",
+      "degree": 11
+    }
+  ],
+  "surprises": [
+    {
+      "source": "AutoGovernor",
+      "target": "MarketInfo",
+      "source_files": [
+        "auto_governor.py",
+        "polymarket_api.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "WeatherOracle",
+      "target": "MarketInfo",
+      "source_files": [
+        "oracles.py",
+        "polymarket_api.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "TestRiskManagementV2",
+      "target": "AutoGovernor",
+      "source_files": [
+        "tests_risk.py",
+        "auto_governor.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "TestRiskManagementV2",
+      "target": "SimDatabase",
+      "source_files": [
+        "tests_risk.py",
+        "database.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "print_console_summary()",
+      "target": "GrokCharterPaperTrader",
+      "source_files": [
+        "run_sim.py",
+        "trader.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `SimDatabase` connect `Community 1` to `Community 0`, `Community 2`, `Community 3`, `Community 4`?",
+      "why": "High betweenness centrality (0.220) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 5 inferred relationships involving `SimDatabase` (e.g. with `AutoGovernor` and `generate_reports()`) actually correct?",
+      "why": "`SimDatabase` has 5 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 0` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.08637873754152824 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `AutoGovernor` connect `Community 4` to `Community 0`, `Community 1`, `Community 2`, `Community 3`?",
+      "why": "High betweenness centrality (0.118) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 10 inferred relationships involving `GrokCharterPaperTrader` (e.g. with `print_console_summary()` and `TestRiskManagementV2`) actually correct?",
+      "why": "`GrokCharterPaperTrader` has 10 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 1` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.1361344537815126 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `GrokCharterPaperTrader` connect `Community 0` to `Community 1`, `Community 2`, `Community 3`, `Community 4`?",
+      "why": "High betweenness centrality (0.114) - this node is a cross-community bridge."
+    }
+  ]
+}

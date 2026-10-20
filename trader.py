@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Set, Tuple
 
 from database import SimDatabase
-from oracles import CryptoOracle, EvaluationResult, NewsAndOrderbookOracle, WeatherOracle
+from oracles import CryptoOracle, EvaluationResult, HighConvictionFactOracle, NewsAndOrderbookOracle, WeatherOracle
 from polymarket_api import (
     MarketInfo,
     OrderBookSimulation,
@@ -67,17 +67,17 @@ class GrokCharterPaperTrader:
 
     MAX_OPEN_POSITIONS = 4          # Max 4 open positions for tight risk focus
     MAX_POSITIONS_PER_CATEGORY = 2  # Max 2 per category (disciplined diversification)
-    KELLY_FRACTION = 0.25           # Quarter-Kelly sizing for strict capital preservation
-    MAX_BANK_PCT_PER_TRADE = 0.04   # 4% hard cap per trade ($1.20-$1.30 on current bankroll)
-    MIN_EDGE_PP = 0.08              # 8 percentage points minimum divergence (Strict Charter Rule #5)
-    MIN_ESTIMATED_PROB = 0.55       # Minimum estimated probability: never bet on underdogs (< 55% win likelihood)
-    MIN_CONTRACT_PRICE = 0.15       # NEVER buy penny lottery contracts under 15 cents (kills spread churn)
-    MAX_CONTRACT_PRICE = 0.85       # NEVER buy extreme contracts over 85 cents
-    MIN_HOURS_TO_CLOSE = 12.0       # Skip intraday noise: only enter markets closing >= 12 hours out
-    MAX_HOURS_TO_CLOSE = 360.0      # Focus on markets resolving within 15 days for active turnover
-    EXIT_HOURS_THRESHOLD = 1.5      # Strict Time Exit: always close positions < 1.5h before expiry
-    PROB_SHIFT_EXIT_PP = 0.08       # Exit only if probability estimate drops by > 8 pp and falls below entry
-    STOP_LOSS_PCT = 0.30            # Hard Stop-Loss: cut positions losing > 30% of entry price
+    KELLY_FRACTION = 0.35           # Fractional Kelly sizing for high-winrate strategy
+    MAX_BANK_PCT_PER_TRADE = 0.12   # Up to 12% bankroll per trade ($3.00-$3.50 on current bankroll)
+    MIN_EDGE_PP = 0.015             # 1.5 percentage points minimum divergence against Ask VWAP
+    MIN_ESTIMATED_PROB = 0.92       # Minimum estimated probability: strictly high-conviction events (92%+ likelihood)
+    MIN_CONTRACT_PRICE = 0.84       # Buy only discount mature contracts [0.84, 0.965]
+    MAX_CONTRACT_PRICE = 0.965      # Yield: +3.6% to +19.0% upon resolution
+    MIN_HOURS_TO_CLOSE = 0.8        # Focus on near-term resolutions (1h to 5 days)
+    MAX_HOURS_TO_CLOSE = 120.0      # Fast capital turnover
+    EXIT_HOURS_THRESHOLD = 0.0      # NEVER dump prematurely before expiry: hold into resolution ($1.00 payout)
+    PROB_SHIFT_EXIT_PP = 0.10       # Exit only if probability estimate drops by > 10 pp and falls below entry
+    STOP_LOSS_PCT = 0.40            # Hard Stop-Loss: cut positions losing > 40% if thesis severely deteriorates
 
     def __init__(
         self,
@@ -91,6 +91,7 @@ class GrokCharterPaperTrader:
         self.crypto_oracle = CryptoOracle()
         self.weather_oracle = WeatherOracle()
         self.news_oracle = NewsAndOrderbookOracle()
+        self.fact_oracle = HighConvictionFactOracle()
 
         if not self.trades_txt_path.exists():
             self._append_trades_log(
@@ -139,24 +140,28 @@ class GrokCharterPaperTrader:
         Runs the appropriate oracle for `market`.
         Returns (EvaluationResult, clob_yes_book).
         """
-        # 1. Try Weather Oracle (highest rule clarity)
-        if market.category == "Weather" or "temperature" in market.question.lower():
-            res = self.weather_oracle.evaluate(market)
-            if res is not None:
-                return res, preloaded_book
+        # 1. Try High-Conviction Fact Oracle first (Sports exact scores, ceasefires, macro consensus)
+        res = self.fact_oracle.evaluate(market)
+        if res is not None:
+            return res, preloaded_book
 
-        # 2. Try Crypto Quantitative Oracle (Binance / Kraken / Coinbase 1m/1h klines)
+        # 2. Try Crypto Quantitative Oracle (Binance / Kraken / Coinbase spot klines & barriers)
         if market.category == "Crypto" or any(
             k in market.question.lower() for k in ["bitcoin", "ethereum", "solana", "btc", "eth"]
         ):
             res = self.crypto_oracle.evaluate(market)
             if res is not None:
                 return res, preloaded_book
-            # CRITICAL: Never fall back to Orderbook Imbalance guessing for Crypto!
             return None, None
 
-        # 3. For Macro, Geopolitics, Sports, Other: evaluate using News Consensus & CLOB Microstructure Imbalance
-        if market.category not in ("Crypto", "Weather") and market.clob_token_ids:
+        # 3. Try Weather Oracle (strict microclimate-safe brackets only)
+        if market.category == "Weather" or "temperature" in market.question.lower():
+            res = self.weather_oracle.evaluate(market)
+            if res is not None:
+                return res, preloaded_book
+
+        # 4. Fallback for Macro, Geopolitics, Sports, Other: News Consensus & CLOB Imbalance
+        if market.clob_token_ids:
             try:
                 book = preloaded_book or fetch_clob_book(market.clob_token_ids[0])
                 bids = book.get("bids", [])
@@ -252,43 +257,32 @@ class GrokCharterPaperTrader:
             exit_triggered = False
             exit_reason = ""
 
-            # Exit Rule A: STRICT TIME EXIT (< EXIT_HOURS_THRESHOLD before market close)
-            # Liquidate before binary cliff ($0.00 / $1.00) unless we have a dominant lead (bid >= 88%)
-            if hours_left < self.EXIT_HOURS_THRESHOLD:
-                if vwap_sell < 0.88:
-                    exit_triggered = True
-                    exit_reason = (
-                        f"STRICT TIME EXIT (< {self.EXIT_HOURS_THRESHOLD:.1f}h to close): "
-                        f"{hours_left*60:.0f}m remaining (liquidating before binary expiration)"
-                    )
-            # Exit Rule B: HARD STOP-LOSS (Protect capital from catastrophic drawdown)
+            # Exit Rule A: GENUINE TAKE PROFIT (Lock in 98.5%+ bid early to free up capital)
+            if vwap_sell >= 0.985:
+                exit_triggered = True
+                gain_pct = (vwap_sell - entry_vwap) / entry_vwap * 100.0
+                exit_reason = (
+                    f"TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP ({vwap_sell*100:.1f}%) "
+                    f"secured early with +{gain_pct:.1f}% gain"
+                )
+            # Exit Rule B: HARD STOP-LOSS (Protect capital only if price drops AND thesis deteriorated)
             elif vwap_sell > 0 and (
-                vwap_sell <= entry_vwap * (1.0 - self.STOP_LOSS_PCT)
-                or (entry_vwap >= 0.15 and vwap_sell <= 0.05)
+                vwap_sell <= entry_vwap * (1.0 - self.STOP_LOSS_PCT) and latest_p <= 0.75
             ):
                 exit_triggered = True
                 loss_pct = (entry_vwap - vwap_sell) / entry_vwap * 100.0
                 exit_reason = (
                     f"STOP-LOSS TRIGGERED: Price dropped to ${vwap_sell:.3f} "
-                    f"(-{loss_pct:.1f}% from entry ${entry_vwap:.3f})"
+                    f"(-{loss_pct:.1f}% from entry ${entry_vwap:.3f}, P_est={latest_p*100:.1f}%)"
                 )
             elif vwap_sell <= 0:
-                # Outside time exit window: wait for orderbook bids to appear
                 continue
-            # Exit Rule C: GENUINE TAKE PROFIT (Must have realized gain >= +12% AND reached target price)
-            elif vwap_sell >= entry_vwap * 1.12 and vwap_sell >= latest_p - 0.02:
-                exit_triggered = True
-                gain_pct = (vwap_sell - entry_vwap) / entry_vwap * 100.0
-                exit_reason = (
-                    f"TAKE PROFIT (Edge Closed & Profitable): Live CLOB Bid VWAP ({vwap_sell*100:.1f}%) "
-                    f"reached target ({latest_p*100:.1f}%) with +{gain_pct:.1f}% gain"
-                )
-            # Exit Rule D: Prob estimate shifted down AND no longer above entry price (positive edge lost)
-            elif (initial_p - latest_p) >= prob_shift_limit and latest_p <= entry_vwap - 0.03:
+            # Exit Rule C: Prob estimate shifted down AND no longer high-conviction
+            elif (initial_p - latest_p) >= prob_shift_limit and latest_p <= 0.70:
                 exit_triggered = True
                 exit_reason = (
-                    f"THESIS INVALIDATED (Prob Shift > {prob_shift_limit*100:.1f}pp & below entry): "
-                    f"Estimate dropped from {initial_p*100:.1f}% to {latest_p*100:.1f}% (entry={entry_vwap*100:.1f}%)"
+                    f"THESIS INVALIDATED (Prob Shift > {prob_shift_limit*100:.1f}pp & P_est <= 70%): "
+                    f"Estimate dropped from {initial_p*100:.1f}% to {latest_p*100:.1f}%"
                 )
 
             if exit_triggered:
@@ -374,14 +368,13 @@ class GrokCharterPaperTrader:
 
             filtered_markets.append(m)
 
-        # Prioritize Weather and Crypto markets first (where quantitative oracles have sharpest data),
-        # followed by highest 24h volume short-term markets
+        # Prioritize markets with high probability candidates first (where gamma prices are in [0.84, 0.98])
         def _priority_key(m: MarketInfo) -> Tuple[int, float]:
-            cat_rank = 0 if m.category in ("Weather", "Crypto") else 1
-            return (cat_rank, -m.volume_24h_usd)
+            has_high_prob = 0 if (m.gamma_prices and (0.84 <= m.gamma_prices[0] <= 0.98 or 0.84 <= m.gamma_prices[1] <= 0.98)) else 1
+            return (has_high_prob, -m.volume_24h_usd)
 
         filtered_markets.sort(key=_priority_key)
-        candidates_to_evaluate = filtered_markets[:45]
+        candidates_to_evaluate = filtered_markets[:50]
 
         # Auto-Governor Tier 3 Hotfix: discover and geocode any new Polymarket weather cities on the fly
         try:
@@ -443,7 +436,7 @@ class GrokCharterPaperTrader:
                 max_pct=self.MAX_BANK_PCT_PER_TRADE,
                 kelly_fraction=self.KELLY_FRACTION,
             )
-            probe_bet_usdc = max(tentative_bet, round(total_equity * 0.03, 2), 1.25)
+            probe_bet_usdc = max(tentative_bet, round(total_equity * 0.10, 2), 2.50)
 
             # Step 6: Check real CLOB Order Book for entry Ask VWAP and immediate exit Bid VWAP
             try:
@@ -518,10 +511,9 @@ class GrokCharterPaperTrader:
                     else:
                         # EXECUTE VIRTUAL TRADE!
                         exit_cond = (
-                            f"Exit if Bid VWAP >= {p_est*100 - 1.0:.1f}% (edge closed), "
-                            f"or Stop-Loss <= {final_sim.vwap_buy_price * (1.0 - self.STOP_LOSS_PCT):.3f} (-{self.STOP_LOSS_PCT*100:.0f}%), "
-                            f"or P_est drops <= {(p_est - self.PROB_SHIFT_EXIT_PP)*100:.1f}% (-{self.PROB_SHIFT_EXIT_PP*100:.0f}pp & <= entry), "
-                            f"or < {self.EXIT_HOURS_THRESHOLD:.1f}h before {mkt.end_date_iso[:16]} (Strict Time Exit, no hold to settlement)"
+                            f"Hold to binary resolution ($1.00 payout), "
+                            f"or early Take Profit if Bid VWAP >= 0.985, "
+                            f"or Stop-Loss <= {final_sim.vwap_buy_price * (1.0 - self.STOP_LOSS_PCT):.3f} if P_est <= 70%"
                         )
                         pos_id = self.db.open_position(
                             market_id=mkt.id,

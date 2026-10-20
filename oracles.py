@@ -92,7 +92,7 @@ class CryptoOracle:
         """
         # 1. Binance
         try:
-            url = f"https://api.binance.com/api/v3/klines?symbol={symbol}&interval=1h&limit=168"
+            url = f"https://api.binance.com/api/v3/klines?symbol={symbol}&interval=1h&limit=720"
             kl = fetch_standard_url(url, timeout=5.0)
             if kl and len(kl) >= 10:
                 return "Binance", [[int(k[0]), float(k[1]), float(k[2]), float(k[3]), float(k[4])] for k in kl]
@@ -110,7 +110,7 @@ class CryptoOracle:
                     pk = [k for k in d["result"].keys() if k != "last"][0]
                     candles = d["result"][pk]
                     if candles and len(candles) >= 10:
-                        return "Kraken", [[int(c[0]) * 1000, float(c[1]), float(c[2]), float(c[3]), float(c[4])] for c in candles[-168:]]
+                        return "Kraken", [[int(c[0]) * 1000, float(c[1]), float(c[2]), float(c[3]), float(c[4])] for c in candles[-720:]]
         except Exception:
             pass
 
@@ -122,7 +122,7 @@ class CryptoOracle:
                 url = f"https://api.exchange.coinbase.com/products/{coin}-USD/candles?granularity=3600"
                 raw = fetch_standard_url(url, timeout=5.0)
                 if raw and isinstance(raw, list) and len(raw) >= 10:
-                    return "Coinbase", [[int(c[0]) * 1000, float(c[3]), float(c[2]), float(c[1]), float(c[4])] for c in reversed(raw[:168])]
+                    return "Coinbase", [[int(c[0]) * 1000, float(c[3]), float(c[2]), float(c[1]), float(c[4])] for c in reversed(raw[:300])]
         except Exception:
             pass
 
@@ -163,7 +163,7 @@ class CryptoOracle:
             floor_vol = self.VOLATILITY_FLOORS.get(symbol, 0.0055)
             hourly_vol = max(math.sqrt(max(blended_var, 1e-6)), floor_vol)
 
-            # Also get today's high/low since 04:00 UTC (00:00 ET)
+            # Also get today's high/low since 04:00 UTC (00:00 ET) and Month-to-date high/low
             now_utc = datetime.now(timezone.utc)
             et_midnight_utc = now_utc.replace(hour=4, minute=0, second=0, microsecond=0)
             if now_utc.hour < 4:
@@ -171,8 +171,14 @@ class CryptoOracle:
             else:
                 et_midnight_ms = int(et_midnight_utc.timestamp() * 1000)
 
+            month_start_utc = now_utc.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+            month_start_ms = int(month_start_utc.timestamp() * 1000)
+
             today_highs = [float(k[2]) for k in klines if int(k[0]) >= et_midnight_ms]
             today_lows = [float(k[3]) for k in klines if int(k[0]) >= et_midnight_ms]
+
+            month_highs = [float(k[2]) for k in klines if int(k[0]) >= month_start_ms]
+            month_lows = [float(k[3]) for k in klines if int(k[0]) >= month_start_ms]
 
             stats = {
                 "symbol": symbol,
@@ -182,6 +188,8 @@ class CryptoOracle:
                 "annual_vol": hourly_vol * math.sqrt(24 * 365),
                 "today_high": max(today_highs) if today_highs else highs[-1],
                 "today_low": min(today_lows) if today_lows else lows[-1],
+                "month_high": max(month_highs) if month_highs else max(highs),
+                "month_low": min(month_lows) if month_lows else min(lows),
                 "high_24h": max(highs[-24:]),
                 "low_24h": min(lows[-24:]),
             }
@@ -226,11 +234,15 @@ class CryptoOracle:
         p_yes: Optional[float] = None
         mode_desc = ""
 
+        is_month_event = any(m in q_lower for m in ["in october", "in november", "in december", "in january", "in february", "in march", "in april", "in may", "in june", "in july", "in august", "in september", "month"])
+        ref_low = stats.get("month_low", stats["today_low"]) if is_month_event else stats["today_low"]
+        ref_high = stats.get("month_high", stats["today_high"]) if is_month_event else stats["today_high"]
+
         # Case 1: "dip to $X"
         if "dip to" in q_lower or "fall to" in q_lower or "drop to" in q_lower:
-            if s0 <= target or (tau <= 24 and stats["today_low"] <= target):
-                p_yes = 0.985
-                mode_desc = f"{symbol} already touched/below ${target:,.0f} (Current=${s0:,.2f}, TodayLow=${stats['today_low']:,.2f})"
+            if s0 <= target or (tau <= 720 and ref_low <= target):
+                p_yes = 0.995
+                mode_desc = f"{symbol} already touched/below ${target:,.0f} (Current=${s0:,.2f}, RefLow=${ref_low:,.2f})"
             else:
                 # Reflection principle for first-passage time of GBM (zero-drift intraday)
                 dist = abs(math.log(s0 / target))
@@ -243,9 +255,9 @@ class CryptoOracle:
 
         # Case 2: "reach $X" or "hit $X"
         elif "reach" in q_lower or "hit" in q_lower or "touch" in q_lower:
-            if (target >= s0 and tau <= 24 and stats["today_high"] >= target) or (target <= s0 and tau <= 24 and stats["today_low"] <= target):
-                p_yes = 0.985
-                mode_desc = f"{symbol} already reached ${target:,.0f} today"
+            if (target >= s0 and ref_high >= target) or (target <= s0 and ref_low <= target):
+                p_yes = 0.995
+                mode_desc = f"{symbol} already reached ${target:,.0f} (Current=${s0:,.2f}, RefHigh=${ref_high:,.2f})"
             else:
                 dist = abs(math.log(s0 / target))
                 p_touch = math.erfc(dist / (sigma_total * math.sqrt(2.0)))
@@ -278,12 +290,12 @@ class CryptoOracle:
         if p_yes is None:
             return None
 
-        # Apply Bayesian shrinkage toward market prior unless barrier already touched today
+        # Apply Bayesian shrinkage toward market prior unless barrier already touched or extreme conviction
         mkt_prior = market.gamma_prices[0] if market.gamma_prices else 0.5
-        if p_yes < 0.98:
+        if p_yes < 0.98 and p_yes > 0.02:
             p_raw = p_yes
-            p_yes = calibrate_probability(p_raw, mkt_prior, oracle_weight=0.70)
-            mode_desc += f" -> Calibrated(0.70x)={p_yes*100:.1f}%"
+            p_yes = calibrate_probability(p_raw, mkt_prior, oracle_weight=0.75)
+            mode_desc += f" -> Calibrated(0.75x)={p_yes*100:.1f}%"
 
         src_label = stats.get("source", "Binance")
         return EvaluationResult(
@@ -433,6 +445,9 @@ class WeatherOracle:
             high_b = float(range_m.group(2)) + 0.5
             p_raw = norm_cdf((high_b - forecast_max) / sd) - norm_cdf((low_b - forecast_max) / sd)
             bracket_str = f"[{range_m.group(1)}, {range_m.group(2)}]{unit_sym}"
+            # Safety Filter: skip narrow range near the forecast mean
+            if abs(forecast_max - 0.5 * (low_b + high_b)) < 4.0:
+                return None
         elif below_m:
             high_b = float(below_m.group(1)) + 0.5
             p_raw = norm_cdf((high_b - forecast_max) / sd)
@@ -446,6 +461,9 @@ class WeatherOracle:
             low_b, high_b = val - 0.5, val + 0.5
             p_raw = norm_cdf((high_b - forecast_max) / sd) - norm_cdf((low_b - forecast_max) / sd)
             bracket_str = f"{val:.0f}{unit_sym} (±0.5)"
+            # Safety Filter: skip narrow single degree near the forecast mean
+            if abs(forecast_max - val) < 4.0:
+                return None
         else:
             return None
 
@@ -636,3 +654,147 @@ class NewsAndOrderbookOracle:
                 "headlines": headlines,
             },
         )
+
+
+class HighConvictionFactOracle:
+    """
+    Strategy 2: High-Conviction Fact & Resolution Harvester.
+    Identifies high-probability events (>= 92%) trading at an attractive discount in the CLOB book:
+    1. Sports exact scores (empirical frequency < 1.5% -> NO >= 98.5%)
+    2. Sports heavy handicap spreads (-3.5+ -> NO >= 97.5%)
+    3. Sports lopsided no-draw in dominant matchups (NO >= 96.5%)
+    4. Geopolitics: Active ceasefires holding with short horizons (<= 72h -> YES >= 97.5%)
+    5. Macro: Federal Reserve funds rate hold consensus and Central Bank hike cycles (NO on cut >= 97%)
+    6. High market consensus: Mature markets with <= 48h to close, deep liquidity and p >= 90% (>= 96.5%)
+    """
+
+    def evaluate(self, market: MarketInfo) -> Optional[EvaluationResult]:
+        q_lower = market.question.lower()
+        if not market.gamma_prices or len(market.gamma_prices) < 2:
+            return None
+
+        p_yes_mkt, p_no_mkt = market.gamma_prices[0], market.gamma_prices[1]
+
+        # 1. Sports: Improbable exact scores
+        if "exact score" in q_lower:
+            score_m = re.search(r"(\d+)\s*-\s*(\d+)", q_lower)
+            if score_m:
+                g1, g2 = int(score_m.group(1)), int(score_m.group(2))
+                if (g1 + g2 >= 4) or (g1 >= 3 or g2 >= 3):
+                    p_no = 0.985
+                    return EvaluationResult(
+                        market_id=market.id,
+                        question=market.question,
+                        category=market.category,
+                        oracle_used="SportsExactScoreBaseRateOracle",
+                        official_source=market.resolution_source or "Official Match Scoreboard",
+                        p_yes=round(1.0 - p_no, 4),
+                        p_no=round(p_no, 4),
+                        confidence=0.95,
+                        rationale=f"Base Rate: Improbable exact score {g1}-{g2} (< 1.5% frequency)",
+                    )
+
+        # 2. Sports: Heavy underdog / draw
+        if market.category == "Sports":
+            if "spread:" in q_lower and ("-3.5" in q_lower or "-4.5" in q_lower):
+                p_no = 0.975
+                return EvaluationResult(
+                    market_id=market.id,
+                    question=market.question,
+                    category="Sports",
+                    oracle_used="SportsHeavyHandicapOracle",
+                    official_source=market.resolution_source or "Official Match Result",
+                    p_yes=round(1.0 - p_no, 4),
+                    p_no=round(p_no, 4),
+                    confidence=0.92,
+                    rationale="Heavy handicap spread (-3.5+) is historically improbable",
+                )
+            if (" vs. " in q_lower or " vs " in q_lower) and "draw" in q_lower and p_no_mkt >= 0.88 and market.hours_to_close <= 24.0:
+                p_no = 0.965
+                return EvaluationResult(
+                    market_id=market.id,
+                    question=market.question,
+                    category="Sports",
+                    oracle_used="SportsLopsidedNoDrawOracle",
+                    official_source=market.resolution_source or "Official Match Result",
+                    p_yes=round(1.0 - p_no, 4),
+                    p_no=round(p_no, 4),
+                    confidence=0.92,
+                    rationale=f"Lopsided match no-draw consensus with {market.hours_to_close:.1f}h left",
+                )
+
+        # 3. Geopolitics: Ceasefire continuation
+        if "ceasefire continues through" in q_lower and market.hours_to_close <= 72.0:
+            if p_yes_mkt >= 0.88:
+                p_yes = min(p_yes_mkt + 0.035, 0.98)
+                return EvaluationResult(
+                    market_id=market.id,
+                    question=market.question,
+                    category="Geopolitics",
+                    oracle_used="GeopoliticsStatusQuoOracle",
+                    official_source=market.resolution_source or "Official International Monitoring",
+                    p_yes=round(p_yes, 4),
+                    p_no=round(1.0 - p_yes, 4),
+                    confidence=0.93,
+                    rationale=f"Ceasefire holding within {market.hours_to_close:.1f}h deadline",
+                )
+
+        # 4. Macro: Interest rates
+        if "interest rate" in q_lower and "no change" in q_lower and market.hours_to_close <= 240.0:
+            if p_yes_mkt >= 0.85:
+                p_yes = min(p_yes_mkt + 0.045, 0.965)
+                return EvaluationResult(
+                    market_id=market.id,
+                    question=market.question,
+                    category="Macro",
+                    oracle_used="MacroInterestRateConsensusOracle",
+                    official_source=market.resolution_source or "Federal Reserve FOMC Statement",
+                    p_yes=round(p_yes, 4),
+                    p_no=round(1.0 - p_yes, 4),
+                    confidence=0.91,
+                    rationale=f"Fed rate freeze consensus ({p_yes_mkt*100:.1f}%) with {market.hours_to_close:.1f}h to close",
+                )
+        if "bank of russia decrease the key rate" in q_lower:
+            p_no = 0.970
+            return EvaluationResult(
+                market_id=market.id,
+                question=market.question,
+                category="Macro",
+                oracle_used="MacroInterestRateConsensusOracle",
+                official_source=market.resolution_source or "Bank of Russia Official Release",
+                p_yes=round(1.0 - p_no, 4),
+                p_no=round(p_no, 4),
+                confidence=0.94,
+                rationale="Russian CB rate cut impossible in current inflation & rate-hike environment",
+            )
+
+        # 5. General High-Consensus Events (p >= 0.90, short horizon <= 48h, liq >= $8k, vol >= $15k)
+        if market.hours_to_close <= 48.0 and market.liquidity_usd >= 8000.0 and market.volume_24h_usd >= 15000.0:
+            if p_yes_mkt >= 0.90:
+                p_yes = min(p_yes_mkt + 0.035, 0.985)
+                return EvaluationResult(
+                    market_id=market.id,
+                    question=market.question,
+                    category=market.category,
+                    oracle_used="MatureMarketConsensusOracle",
+                    official_source=market.resolution_source or "Polymarket UMA Oracle",
+                    p_yes=round(p_yes, 4),
+                    p_no=round(1.0 - p_yes, 4),
+                    confidence=0.92,
+                    rationale=f"High market consensus YES ({p_yes_mkt*100:.1f}%) within {market.hours_to_close:.1f}h of expiry",
+                )
+            elif p_no_mkt >= 0.90:
+                p_no = min(p_no_mkt + 0.035, 0.985)
+                return EvaluationResult(
+                    market_id=market.id,
+                    question=market.question,
+                    category=market.category,
+                    oracle_used="MatureMarketConsensusOracle",
+                    official_source=market.resolution_source or "Polymarket UMA Oracle",
+                    p_yes=round(1.0 - p_no, 4),
+                    p_no=round(p_no, 4),
+                    confidence=0.92,
+                    rationale=f"High market consensus NO ({p_no_mkt*100:.1f}%) within {market.hours_to_close:.1f}h of expiry",
+                )
+
+        return None

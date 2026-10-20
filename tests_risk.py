@@ -122,21 +122,22 @@ class TestRiskManagementV2(unittest.TestCase):
         self.assertEqual(app_pct, 0.0)
 
     def test_conservative_v3_defaults_and_horizon(self) -> None:
-        """Verify that Risk Management v3 enforces 0.25x Kelly and 4% max cap by default."""
-        # Strong edge (+30 pp: p_est=0.80, ask=0.50) on $50 bankroll:
-        # Full Kelly = 0.60, Quarter Kelly = 0.15
-        # Default cap is 4% (0.04) -> max $2.00 USDC
+        """Verify Strategy 2 (Fact-Harvest) parameters and high-conviction horizons."""
+        # Sizing test with 0.35x fractional Kelly on 0.04 max cap:
         full_k, frac_k, applied_pct, bet = GrokCharterPaperTrader.compute_kelly_sizing(
-            p_est=0.80, ask_vwap=0.50, total_equity=50.0
+            p_est=0.80, ask_vwap=0.50, total_equity=50.0, max_pct=0.04, kelly_fraction=0.25
         )
         self.assertAlmostEqual(full_k, 0.60, places=4)
         self.assertAlmostEqual(frac_k, 0.15, places=4)
         self.assertEqual(applied_pct, 0.04)
         self.assertEqual(bet, 2.00)
-        self.assertEqual(GrokCharterPaperTrader.MIN_HOURS_TO_CLOSE, 12.0)
-        self.assertEqual(GrokCharterPaperTrader.EXIT_HOURS_THRESHOLD, 1.5)
-        self.assertEqual(GrokCharterPaperTrader.STOP_LOSS_PCT, 0.30)
-        self.assertEqual(GrokCharterPaperTrader.MIN_EDGE_PP, 0.08)
+        self.assertEqual(GrokCharterPaperTrader.MIN_HOURS_TO_CLOSE, 0.8)
+        self.assertEqual(GrokCharterPaperTrader.EXIT_HOURS_THRESHOLD, 0.0)
+        self.assertEqual(GrokCharterPaperTrader.STOP_LOSS_PCT, 0.40)
+        self.assertEqual(GrokCharterPaperTrader.MIN_EDGE_PP, 0.015)
+        self.assertEqual(GrokCharterPaperTrader.MIN_ESTIMATED_PROB, 0.92)
+        self.assertEqual(GrokCharterPaperTrader.MIN_CONTRACT_PRICE, 0.84)
+        self.assertEqual(GrokCharterPaperTrader.MAX_CONTRACT_PRICE, 0.965)
 
     def test_stop_loss_triggers_on_steep_price_drop(self) -> None:
         """Verify that a position is liquidated when Bid falls > 35% below entry."""

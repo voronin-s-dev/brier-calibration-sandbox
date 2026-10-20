@@ -566,3 +566,31 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-20 16:47:55 UTC] [CYCLE #107 SUMMARY] Scanned=798 | PassedFilter=252 | Evaluated=44 | Edges(>=8pp)=13 | Opened=0 | Closed=0 | Cash=$26.54 | Equity=$27.52 (DD=1.87%)
 [2026-10-20 16:57:06 UTC] [CYCLE #108 SUMMARY] Scanned=796 | PassedFilter=250 | Evaluated=44 | Edges(>=8pp)=14 | Opened=0 | Closed=0 | Cash=$26.54 | Equity=$27.51 (DD=1.93%)
 [2026-10-20 17:06:15 UTC] [CYCLE #109 SUMMARY] Scanned=798 | PassedFilter=253 | Evaluated=45 | Edges(>=8pp)=14 | Opened=0 | Closed=0 | Cash=$26.54 | Equity=$27.52 (DD=1.87%)
+[2026-10-20 18:27:28 UTC] [OPEN TRADE #36] US x Iran ceasefire continues through October 22?
+  Категория: Geopolitics | Сторона: YES | Источник: Official NFL data feed
+  Оценка бота: 98.0% vs Рынок (Ask VWAP): 95.3% (Перекос/Edge: +2.7 п.п.)
+  Стакан CLOB: BestBid=0.952, BestAsk=0.953, Проскальзывание входа/выхода=0.10% (<= 3.0%)
+  Келли: Полный=57.4%, Четверть(0.25x)=20.1% -> Применён=12.0% банка
+  Размер сделки: $3.30 USDC (3.46 shares @ $0.9530)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.572 if P_est <= 70%
+  Причина: Ceasefire holding within 57.5h deadline
+
+[2026-10-20 18:27:28 UTC] [OPEN TRADE #37] Will Bitcoin dip to $81,000 on October 20?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 98.0% vs Рынок (Ask VWAP): 94.0% (Перекос/Edge: +4.0 п.п.)
+  Стакан CLOB: BestBid=0.930, BestAsk=0.940, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=66.7%, Четверть(0.25x)=23.3% -> Применён=12.0% банка
+  Размер сделки: $3.30 USDC (3.51 shares @ $0.9400)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.564 if P_est <= 70%
+  Причина: High market consensus NO (94.5%) within 9.5h of expiry
+
+[2026-10-20 18:27:28 UTC] [OPEN TRADE #38] Will the Bank of Russia decrease the key rate after the October Meeting?
+  Категория: Other | Сторона: NO | Источник: https://www.cbr.ru/eng/dkp/cal_mp/#t13
+  Оценка бота: 97.0% vs Рынок (Ask VWAP): 90.0% (Перекос/Edge: +7.0 п.п.)
+  Стакан CLOB: BestBid=0.890, BestAsk=0.900, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=70.0%, Четверть(0.25x)=24.5% -> Применён=12.0% банка
+  Размер сделки: $3.30 USDC (3.67 shares @ $0.9000)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.540 if P_est <= 70%
+  Причина: Russian CB rate cut impossible in current inflation & rate-hike environment
+
+[2026-10-20 18:27:28 UTC] [CYCLE #110 SUMMARY] Scanned=798 | PassedFilter=144 | Evaluated=28 | Edges(>=8pp)=17 | Opened=3 | Closed=0 | Cash=$16.64 | Equity=$27.45 (DD=2.14%)
