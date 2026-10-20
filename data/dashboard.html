@@ -77,29 +77,29 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-10-20 06:39:28 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-10-20 06:48:41 UTC</div>
     </div>
   </div>
 
   <div class="grid">
     <div class="card">
       <div class="metric-label">Текущий капитал (Equity)</div>
-      <div class="metric-val">$27.82 <span style="font-size:15px" class="neg">(-22.18$ / -44.37%)</span></div>
+      <div class="metric-val">$27.80 <span style="font-size:15px" class="neg">(-22.20$ / -44.40%)</span></div>
       <div class="metric-sub">Старт: $50.00 USDC (Оценка по Bid стакана!)</div>
     </div>
     <div class="card">
       <div class="metric-label">Свободный кэш / В позициях</div>
-      <div class="metric-val">$26.54 <span class="muted" style="font-size:16px">/ $1.27</span></div>
+      <div class="metric-val">$26.54 <span class="muted" style="font-size:16px">/ $1.26</span></div>
       <div class="metric-sub">Открыто позиций: 1 из 8 (макс 8% банка)</div>
     </div>
     <div class="card">
       <div class="metric-label">Цель подписки ($60 / мес)</div>
-      <div class="metric-val">$-22.18 <span class="muted" style="font-size:16px">/ $60.00</span></div>
+      <div class="metric-val">$-22.20 <span class="muted" style="font-size:16px">/ $60.00</span></div>
       <div class="metric-sub">Прогресс окупаемости: 0.0%</div>
     </div>
     <div class="card">
       <div class="metric-label">Просадка от пика (Drawdown)</div>
-      <div class="metric-val ">0.83% <span class="muted" style="font-size:15px">(Макс: 1.48%)</span></div>
+      <div class="metric-val ">0.89% <span class="muted" style="font-size:15px">(Макс: 1.48%)</span></div>
       <div class="metric-sub">Пик: $28.05 | Лимит остановки: 40.0%</div>
     </div>
     <div class="card">
@@ -127,10 +127,10 @@
             <td><span class="side-yes">YES</span></td>
             <td>1.82</td>
             <td>$0.6100</td>
-            <td>$0.7000</td>
-            <td><strong>78.9%</strong> <small>(+9.7pp)</small></td>
+            <td>$0.6900</td>
+            <td><strong>78.3%</strong> <small>(+9.7pp)</small></td>
             <td>$1.11 <small>(4.0%)</small></td>
-            <td class="pos">$+0.16</td>
+            <td class="pos">$+0.15</td>
             <td><small>Exit if Bid VWAP &gt;= 69.7% (edge closed), or Stop-Loss &lt;= 0.427 (-30%), or P_est drops &lt;= 62.7% (-8pp &amp; &lt;= entry), or &lt; 1.5h before 2026-11-01T04:00 (Strict Time Exit, no hold to settlement)</small></td>
         </tr>
         
@@ -148,6 +148,266 @@
     </thead>
     <tbody>
       
+        <tr class="">
+            <td>US x Iran ceasefire continues through October 22?<br><small class="muted">CLOB near-touch depth imbalance OBI=-0.56 (BidDepth=$4,102 vs AskDepth=$14,750) | News sentiment=-1.00 (12 articles; top: &#x27;Iran says Strait of Hormuz reopening, seven-day ceasefire conditions still on the table - CBS News&#x27;)</small></td>
+            <td><span class="badge cat-geopolitics">Geopolitics</span></td>
+            <td>NO</td>
+            <td>17.6%</td>
+            <td>8.3%</td>
+            <td class="pos">+9.3 п.п.</td>
+            <td class="pos">0.80%</td>
+            <td>$152,564</td>
+            <td>69.2h</td>
+            <td><strong>REJECTED: Win probability 17.6% &lt; 55% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the highest temperature in New York City be between 60-61°F on October 21?<br><small class="muted">Station NOAA KLGA (NYC LaGuardia) (2026-10-21): Model Max=57.5°F (±3.8°F), Target=[60, 61]°F =&gt; RawP=15.4%, Calibrated(0.80x)=20.7%</small></td>
+            <td><span class="badge cat-weather">Weather</span></td>
+            <td>NO</td>
+            <td>79.3%</td>
+            <td>59.0%</td>
+            <td class="pos">+20.3 п.п.</td>
+            <td class="pos">2.00%</td>
+            <td>$3,144</td>
+            <td>29.2h</td>
+            <td><strong>REJECTED: Narrow weather bracket NO bet prohibited (airport METAR microclimate tail risk)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the price of Bitcoin be above $78,000 on October 23?<br><small class="muted">Terminal GBM model: BTCUSDT=$81,691.50 vs strike=$78,000 (+4.73%), vol_h=0.50%, tau=81.2h =&gt; P(S_T &gt; K)=81.4% -&gt; Calibrated(0.70x)=85.0%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>NO</td>
+            <td>15.0%</td>
+            <td>8.0%</td>
+            <td class="muted">+7.0 п.п.</td>
+            <td class="pos">3.00%</td>
+            <td>$37,006</td>
+            <td>81.2h</td>
+            <td><strong>REJECTED: Edge +7.0 pp &lt; 8 pp threshold (P_est=15.0% vs AskVWAP=8.0%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Bitcoin dip to $76,000 October 19-25?<br><small class="muted">First-passage dip model: BTCUSDT=$81,691.50 -&gt; barrier=$76,000 (-6.97%), vol_h=0.50%, tau=141.2h =&gt; P(touch)=27.8% -&gt; Calibrated(0.70x)=22.6%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>22.6%</td>
+            <td>11.0%</td>
+            <td class="pos">+11.6 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$45,284</td>
+            <td>141.2h</td>
+            <td><strong>REJECTED: Win probability 22.6% &lt; 55% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the price of Bitcoin be above $78,000 on October 22?<br><small class="muted">Terminal GBM model: BTCUSDT=$81,691.50 vs strike=$78,000 (+4.73%), vol_h=0.50%, tau=57.2h =&gt; P(S_T &gt; K)=85.8% -&gt; Calibrated(0.70x)=88.7%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>NO</td>
+            <td>11.3%</td>
+            <td>5.0%</td>
+            <td class="muted">+6.3 п.п.</td>
+            <td class="pos">0.40%</td>
+            <td>$39,800</td>
+            <td>57.2h</td>
+            <td><strong>REJECTED: Edge +6.3 pp &lt; 8 pp threshold (P_est=11.3% vs AskVWAP=5.0%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Bitcoin reach $85,000 in October?<br><small class="muted">First-passage reach model: BTCUSDT=$81,691.50 -&gt; barrier=$85,000 (+4.05%), vol_h=0.50%, tau=285.2h =&gt; P(touch)=67.5% -&gt; Calibrated(0.70x)=63.0%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>63.0%</td>
+            <td>53.0%</td>
+            <td class="pos">+10.0 п.п.</td>
+            <td class="pos">2.00%</td>
+            <td>$57,255</td>
+            <td>285.2h</td>
+            <td><strong>REJECTED: Duplicate underlying event (crypto:bitcoin:nodate)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the price of Bitcoin be above $76,000 on October 25?<br><small class="muted">Terminal GBM model: BTCUSDT=$81,691.50 vs strike=$76,000 (+7.49%), vol_h=0.50%, tau=129.2h =&gt; P(S_T &gt; K)=86.5% -&gt; Calibrated(0.70x)=89.4%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>NO</td>
+            <td>10.6%</td>
+            <td>5.2%</td>
+            <td class="muted">+5.4 п.п.</td>
+            <td class="pos">2.40%</td>
+            <td>$41,269</td>
+            <td>129.2h</td>
+            <td><strong>REJECTED: Edge +5.4 pp &lt; 8 pp threshold (P_est=10.6% vs AskVWAP=5.2%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Bitcoin dip to $75,000 in October?<br><small class="muted">First-passage dip model: BTCUSDT=$81,691.50 -&gt; barrier=$75,000 (-8.19%), vol_h=0.50%, tau=285.2h =&gt; P(touch)=36.6% -&gt; Calibrated(0.70x)=31.5%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>31.5%</td>
+            <td>20.0%</td>
+            <td class="pos">+11.5 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$90,704</td>
+            <td>285.2h</td>
+            <td><strong>REJECTED: Win probability 31.5% &lt; 55% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Bitcoin reach $95,000 in October?<br><small class="muted">First-passage reach model: BTCUSDT=$81,691.50 -&gt; barrier=$95,000 (+16.29%), vol_h=0.50%, tau=285.2h =&gt; P(touch)=11.1% -&gt; Calibrated(0.70x)=8.5%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>8.5%</td>
+            <td>2.5%</td>
+            <td class="muted">+6.0 п.п.</td>
+            <td class="pos">0.30%</td>
+            <td>$110,062</td>
+            <td>285.2h</td>
+            <td><strong>REJECTED: Edge +6.0 pp &lt; 8 pp threshold (P_est=8.5% vs AskVWAP=2.5%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Bitcoin reach $92,500 in October?<br><small class="muted">First-passage reach model: BTCUSDT=$81,691.50 -&gt; barrier=$92,500 (+13.23%), vol_h=0.50%, tau=285.2h =&gt; P(touch)=18.9% -&gt; Calibrated(0.70x)=15.2%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>15.2%</td>
+            <td>7.0%</td>
+            <td class="pos">+8.2 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$98,118</td>
+            <td>285.2h</td>
+            <td><strong>REJECTED: Win probability 15.2% &lt; 55% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the price of Bitcoin be above $84,000 on October 21?<br><small class="muted">Terminal GBM model: BTCUSDT=$81,691.50 vs strike=$84,000 (-2.75%), vol_h=0.50%, tau=33.2h =&gt; P(S_T &gt; K)=18.9% -&gt; Calibrated(0.70x)=16.1%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>16.1%</td>
+            <td>10.0%</td>
+            <td class="muted">+6.1 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$41,693</td>
+            <td>33.2h</td>
+            <td><strong>REJECTED: Edge +6.1 pp &lt; 8 pp threshold (P_est=16.1% vs AskVWAP=10.0%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Bitcoin dip to $77,500 in October?<br><small class="muted">First-passage dip model: BTCUSDT=$81,691.50 -&gt; barrier=$77,500 (-5.13%), vol_h=0.50%, tau=285.2h =&gt; P(touch)=57.8% -&gt; Calibrated(0.70x)=51.7%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>51.7%</td>
+            <td>38.0%</td>
+            <td class="pos">+13.7 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$76,896</td>
+            <td>285.2h</td>
+            <td><strong>REJECTED: Win probability 51.7% &lt; 55% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Bitcoin dip to $79,000 on October 20?<br><small class="muted">First-passage dip model: BTCUSDT=$81,691.50 -&gt; barrier=$79,000 (-3.29%), vol_h=0.50%, tau=21.2h =&gt; P(touch)=19.4% -&gt; Calibrated(0.70x)=14.8%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>14.8%</td>
+            <td>4.3%</td>
+            <td class="pos">+10.5 п.п.</td>
+            <td class="pos">0.70%</td>
+            <td>$25,364</td>
+            <td>21.2h</td>
+            <td><strong>REJECTED: Win probability 14.8% &lt; 55% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the price of Bitcoin be above $80,000 on October 21?<br><small class="muted">Terminal GBM model: BTCUSDT=$81,691.50 vs strike=$80,000 (+2.11%), vol_h=0.50%, tau=33.2h =&gt; P(S_T &gt; K)=73.6% -&gt; Calibrated(0.70x)=78.0%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>NO</td>
+            <td>22.1%</td>
+            <td>12.0%</td>
+            <td class="pos">+10.1 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$41,922</td>
+            <td>33.2h</td>
+            <td><strong>REJECTED: Win probability 22.1% &lt; 55% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Bitcoin dip to $74,000 October 19-25?<br><small class="muted">First-passage dip model: BTCUSDT=$81,691.50 -&gt; barrier=$74,000 (-9.42%), vol_h=0.50%, tau=141.2h =&gt; P(touch)=13.7% -&gt; Calibrated(0.70x)=10.7%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>10.7%</td>
+            <td>4.2%</td>
+            <td class="muted">+6.5 п.п.</td>
+            <td class="pos">0.88%</td>
+            <td>$47,775</td>
+            <td>141.2h</td>
+            <td><strong>REJECTED: Edge +6.5 pp &lt; 8 pp threshold (P_est=10.7% vs AskVWAP=4.2%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the price of Bitcoin be above $78,000 on October 21?<br><small class="muted">Terminal GBM model: BTCUSDT=$81,691.50 vs strike=$78,000 (+4.73%), vol_h=0.50%, tau=33.2h =&gt; P(S_T &gt; K)=92.2% -&gt; Calibrated(0.70x)=93.9%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>NO</td>
+            <td>6.1%</td>
+            <td>1.6%</td>
+            <td class="muted">+4.5 п.п.</td>
+            <td class="pos">0.50%</td>
+            <td>$42,665</td>
+            <td>33.2h</td>
+            <td><strong>REJECTED: Edge +4.5 pp &lt; 8 pp threshold (P_est=6.1% vs AskVWAP=1.6%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Bitcoin reach $85,000 on October 20?<br><small class="muted">First-passage reach model: BTCUSDT=$81,691.50 -&gt; barrier=$85,000 (+4.05%), vol_h=0.50%, tau=21.2h =&gt; P(touch)=12.4% -&gt; Calibrated(0.70x)=9.7%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>9.7%</td>
+            <td>3.4%</td>
+            <td class="muted">+6.2 п.п.</td>
+            <td class="pos">0.40%</td>
+            <td>$27,124</td>
+            <td>21.2h</td>
+            <td><strong>REJECTED: Edge +6.2 pp &lt; 8 pp threshold (P_est=9.7% vs AskVWAP=3.4%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Bitcoin reach $90,000 October 19-25?<br><small class="muted">First-passage reach model: BTCUSDT=$81,691.50 -&gt; barrier=$90,000 (+10.17%), vol_h=0.50%, tau=141.2h =&gt; P(touch)=14.5% -&gt; Calibrated(0.70x)=11.2%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>11.2%</td>
+            <td>3.9%</td>
+            <td class="muted">+7.3 п.п.</td>
+            <td class="pos">1.28%</td>
+            <td>$54,029</td>
+            <td>141.2h</td>
+            <td><strong>REJECTED: Edge +7.3 pp &lt; 8 pp threshold (P_est=11.2% vs AskVWAP=3.9%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Bitcoin reach $90,000 in October?<br><small class="muted">First-passage reach model: BTCUSDT=$81,691.50 -&gt; barrier=$90,000 (+10.17%), vol_h=0.50%, tau=285.2h =&gt; P(touch)=30.6% -&gt; Calibrated(0.70x)=25.5%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>25.4%</td>
+            <td>14.0%</td>
+            <td class="pos">+11.5 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$88,757</td>
+            <td>285.2h</td>
+            <td><strong>REJECTED: Win probability 25.4% &lt; 55% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Bitcoin reach $87,500 in October?<br><small class="muted">First-passage reach model: BTCUSDT=$81,691.50 -&gt; barrier=$87,500 (+7.11%), vol_h=0.50%, tau=285.2h =&gt; P(touch)=46.8% -&gt; Calibrated(0.70x)=40.7%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>40.7%</td>
+            <td>28.0%</td>
+            <td class="pos">+12.7 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$84,452</td>
+            <td>285.2h</td>
+            <td><strong>REJECTED: Win probability 40.7% &lt; 55% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
         <tr class="">
             <td>Will the price of Ethereum be above $2,300 on October 21?<br><small class="muted">Terminal GBM model: ETHUSDT=$2,394.91 vs strike=$2,300 (+4.13%), vol_h=0.60%, tau=33.3h =&gt; P(S_T &gt; K)=84.7% -&gt; Calibrated(0.70x)=87.0%</small></td>
             <td><span class="badge cat-crypto">Crypto</span></td>
@@ -213,272 +473,11 @@
             <td><strong>REJECTED: Edge +6.4 pp &lt; 8 pp threshold (P_est=11.4% vs AskVWAP=5.0%)</strong></td>
         </tr>
         
-        <tr class="">
-            <td>Will Bitcoin reach $85,000 in October?<br><small class="muted">First-passage reach model: BTCUSDT=$81,691.50 -&gt; barrier=$85,000 (+4.05%), vol_h=0.50%, tau=285.3h =&gt; P(touch)=67.5% -&gt; Calibrated(0.70x)=63.0%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>63.0%</td>
-            <td>53.0%</td>
-            <td class="pos">+10.0 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$56,188</td>
-            <td>285.4h</td>
-            <td><strong>REJECTED: Duplicate underlying event (crypto:bitcoin:nodate)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the price of Bitcoin be above $76,000 on October 25?<br><small class="muted">Terminal GBM model: BTCUSDT=$81,691.50 vs strike=$76,000 (+7.49%), vol_h=0.50%, tau=129.3h =&gt; P(S_T &gt; K)=86.5% -&gt; Calibrated(0.70x)=89.3%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>NO</td>
-            <td>10.7%</td>
-            <td>5.2%</td>
-            <td class="muted">+5.5 п.п.</td>
-            <td class="pos">2.30%</td>
-            <td>$41,729</td>
-            <td>129.3h</td>
-            <td><strong>REJECTED: Edge +5.5 pp &lt; 8 pp threshold (P_est=10.7% vs AskVWAP=5.2%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Bitcoin dip to $75,000 in October?<br><small class="muted">First-passage dip model: BTCUSDT=$81,691.50 -&gt; barrier=$75,000 (-8.19%), vol_h=0.50%, tau=285.3h =&gt; P(touch)=36.6% -&gt; Calibrated(0.70x)=31.5%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>31.5%</td>
-            <td>20.0%</td>
-            <td class="pos">+11.5 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$88,638</td>
-            <td>285.4h</td>
-            <td><strong>REJECTED: Win probability 31.5% &lt; 55% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Bitcoin reach $95,000 in October?<br><small class="muted">First-passage reach model: BTCUSDT=$81,691.50 -&gt; barrier=$95,000 (+16.29%), vol_h=0.50%, tau=285.3h =&gt; P(touch)=11.1% -&gt; Calibrated(0.70x)=8.4%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>8.5%</td>
-            <td>2.6%</td>
-            <td class="muted">+5.9 п.п.</td>
-            <td class="pos">0.59%</td>
-            <td>$95,584</td>
-            <td>285.4h</td>
-            <td><strong>REJECTED: Edge +5.9 pp &lt; 8 pp threshold (P_est=8.5% vs AskVWAP=2.6%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Bitcoin reach $92,500 in October?<br><small class="muted">First-passage reach model: BTCUSDT=$81,691.50 -&gt; barrier=$92,500 (+13.23%), vol_h=0.50%, tau=285.3h =&gt; P(touch)=18.9% -&gt; Calibrated(0.70x)=15.2%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>15.2%</td>
-            <td>7.0%</td>
-            <td class="pos">+8.2 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$95,283</td>
-            <td>285.4h</td>
-            <td><strong>REJECTED: Win probability 15.2% &lt; 55% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the price of Bitcoin be above $84,000 on October 21?<br><small class="muted">Terminal GBM model: BTCUSDT=$81,691.50 vs strike=$84,000 (-2.75%), vol_h=0.50%, tau=33.3h =&gt; P(S_T &gt; K)=19.0% -&gt; Calibrated(0.70x)=16.1%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>16.2%</td>
-            <td>10.0%</td>
-            <td class="muted">+6.2 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$41,667</td>
-            <td>33.4h</td>
-            <td><strong>REJECTED: Edge +6.2 pp &lt; 8 pp threshold (P_est=16.2% vs AskVWAP=10.0%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Bitcoin dip to $77,500 in October?<br><small class="muted">First-passage dip model: BTCUSDT=$81,691.50 -&gt; barrier=$77,500 (-5.13%), vol_h=0.50%, tau=285.3h =&gt; P(touch)=57.8% -&gt; Calibrated(0.70x)=51.7%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>51.7%</td>
-            <td>38.0%</td>
-            <td class="pos">+13.7 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$72,506</td>
-            <td>285.4h</td>
-            <td><strong>REJECTED: Win probability 51.7% &lt; 55% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Bitcoin dip to $79,000 on October 20?<br><small class="muted">First-passage dip model: BTCUSDT=$81,691.50 -&gt; barrier=$79,000 (-3.29%), vol_h=0.50%, tau=21.3h =&gt; P(touch)=19.5% -&gt; Calibrated(0.70x)=14.9%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>14.9%</td>
-            <td>4.8%</td>
-            <td class="pos">+10.1 п.п.</td>
-            <td class="pos">0.80%</td>
-            <td>$23,415</td>
-            <td>21.4h</td>
-            <td><strong>REJECTED: Win probability 14.9% &lt; 55% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the price of Bitcoin be above $80,000 on October 21?<br><small class="muted">Terminal GBM model: BTCUSDT=$81,691.50 vs strike=$80,000 (+2.11%), vol_h=0.50%, tau=33.3h =&gt; P(S_T &gt; K)=73.6% -&gt; Calibrated(0.70x)=78.1%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>NO</td>
-            <td>21.9%</td>
-            <td>13.0%</td>
-            <td class="pos">+8.9 п.п.</td>
-            <td class="pos">1.48%</td>
-            <td>$41,359</td>
-            <td>33.4h</td>
-            <td><strong>REJECTED: Win probability 21.9% &lt; 55% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the price of Bitcoin be above $78,000 on October 21?<br><small class="muted">Terminal GBM model: BTCUSDT=$81,691.50 vs strike=$78,000 (+4.73%), vol_h=0.50%, tau=33.3h =&gt; P(S_T &gt; K)=92.1% -&gt; Calibrated(0.70x)=93.9%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>NO</td>
-            <td>6.1%</td>
-            <td>1.6%</td>
-            <td class="muted">+4.5 п.п.</td>
-            <td class="pos">0.50%</td>
-            <td>$41,484</td>
-            <td>33.4h</td>
-            <td><strong>REJECTED: Edge +4.5 pp &lt; 8 pp threshold (P_est=6.1% vs AskVWAP=1.6%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Bitcoin dip to $74,000 October 19-25?<br><small class="muted">First-passage dip model: BTCUSDT=$81,691.50 -&gt; barrier=$74,000 (-9.42%), vol_h=0.50%, tau=141.3h =&gt; P(touch)=13.7% -&gt; Calibrated(0.70x)=10.7%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>10.7%</td>
-            <td>4.2%</td>
-            <td class="muted">+6.5 п.п.</td>
-            <td class="pos">0.98%</td>
-            <td>$49,130</td>
-            <td>141.3h</td>
-            <td><strong>REJECTED: Edge +6.5 pp &lt; 8 pp threshold (P_est=10.7% vs AskVWAP=4.2%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Bitcoin reach $85,000 on October 20?<br><small class="muted">First-passage reach model: BTCUSDT=$81,691.50 -&gt; barrier=$85,000 (+4.05%), vol_h=0.50%, tau=21.3h =&gt; P(touch)=12.5% -&gt; Calibrated(0.70x)=9.7%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>9.7%</td>
-            <td>3.4%</td>
-            <td class="muted">+6.3 п.п.</td>
-            <td class="pos">0.60%</td>
-            <td>$23,413</td>
-            <td>21.4h</td>
-            <td><strong>REJECTED: Edge +6.3 pp &lt; 8 pp threshold (P_est=9.7% vs AskVWAP=3.4%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Bitcoin reach $90,000 October 19-25?<br><small class="muted">First-passage reach model: BTCUSDT=$81,691.50 -&gt; barrier=$90,000 (+10.17%), vol_h=0.50%, tau=141.3h =&gt; P(touch)=14.6% -&gt; Calibrated(0.70x)=11.2%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>11.2%</td>
-            <td>3.9%</td>
-            <td class="muted">+7.3 п.п.</td>
-            <td class="pos">1.48%</td>
-            <td>$54,053</td>
-            <td>141.3h</td>
-            <td><strong>REJECTED: Edge +7.3 pp &lt; 8 pp threshold (P_est=11.2% vs AskVWAP=3.9%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Bitcoin reach $90,000 in October?<br><small class="muted">First-passage reach model: BTCUSDT=$81,691.50 -&gt; barrier=$90,000 (+10.17%), vol_h=0.50%, tau=285.3h =&gt; P(touch)=30.6% -&gt; Calibrated(0.70x)=25.5%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>25.5%</td>
-            <td>14.0%</td>
-            <td class="pos">+11.5 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$82,901</td>
-            <td>285.4h</td>
-            <td><strong>REJECTED: Win probability 25.5% &lt; 55% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Bitcoin reach $87,500 in October?<br><small class="muted">First-passage reach model: BTCUSDT=$81,691.50 -&gt; barrier=$87,500 (+7.11%), vol_h=0.50%, tau=285.3h =&gt; P(touch)=46.8% -&gt; Calibrated(0.70x)=40.7%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>40.7%</td>
-            <td>27.0%</td>
-            <td class="pos">+13.7 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$66,266</td>
-            <td>285.4h</td>
-            <td><strong>REJECTED: Win probability 40.7% &lt; 55% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>US x Iran ceasefire continues through October 22?<br><small class="muted">CLOB near-touch depth imbalance OBI=-0.70 (BidDepth=$2,055 vs AskDepth=$11,538) | News sentiment=-1.00 (12 articles; top: &#x27;Iran says Strait of Hormuz reopening, seven-day ceasefire conditions still on the table - CBS News&#x27;)</small></td>
-            <td><span class="badge cat-geopolitics">Geopolitics</span></td>
-            <td>NO</td>
-            <td>18.4%</td>
-            <td>8.1%</td>
-            <td class="pos">+10.3 п.п.</td>
-            <td class="pos">0.59%</td>
-            <td>$141,772</td>
-            <td>69.5h</td>
-            <td><strong>REJECTED: Win probability 18.4% &lt; 55% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the price of Ethereum be above $2,300 on October 21?<br><small class="muted">Terminal GBM model: ETHUSDT=$2,394.91 vs strike=$2,300 (+4.13%), vol_h=0.60%, tau=33.5h =&gt; P(S_T &gt; K)=84.6% -&gt; Calibrated(0.70x)=86.7%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>NO</td>
-            <td>13.3%</td>
-            <td>9.0%</td>
-            <td class="muted">+4.3 п.п.</td>
-            <td class="pos">2.00%</td>
-            <td>$32,916</td>
-            <td>33.5h</td>
-            <td><strong>REJECTED: Edge +4.3 pp &lt; 8 pp threshold (P_est=13.3% vs AskVWAP=9.0%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the highest temperature in New York City be between 60-61°F on October 21?<br><small class="muted">Station NOAA KLGA (NYC LaGuardia) (2026-10-21): Model Max=57.5°F (±3.8°F), Target=[60, 61]°F =&gt; RawP=15.3%, Calibrated(0.80x)=20.5%</small></td>
-            <td><span class="badge cat-weather">Weather</span></td>
-            <td>NO</td>
-            <td>79.5%</td>
-            <td>59.0%</td>
-            <td class="pos">+20.5 п.п.</td>
-            <td class="pos">2.00%</td>
-            <td>$2,950</td>
-            <td>29.5h</td>
-            <td><strong>REJECTED: Narrow weather bracket NO bet prohibited (airport METAR microclimate tail risk)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the price of Bitcoin be above $78,000 on October 23?<br><small class="muted">Terminal GBM model: BTCUSDT=$81,691.50 vs strike=$78,000 (+4.73%), vol_h=0.50%, tau=81.5h =&gt; P(S_T &gt; K)=81.3% -&gt; Calibrated(0.70x)=84.7%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>NO</td>
-            <td>15.3%</td>
-            <td>8.0%</td>
-            <td class="muted">+7.3 п.п.</td>
-            <td class="pos">2.00%</td>
-            <td>$37,314</td>
-            <td>81.5h</td>
-            <td><strong>REJECTED: Edge +7.3 pp &lt; 8 pp threshold (P_est=15.3% vs AskVWAP=8.0%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Bitcoin dip to $76,000 October 19-25?<br><small class="muted">First-passage dip model: BTCUSDT=$81,691.50 -&gt; barrier=$76,000 (-6.97%), vol_h=0.50%, tau=141.5h =&gt; P(touch)=27.8% -&gt; Calibrated(0.70x)=22.6%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>22.6%</td>
-            <td>11.0%</td>
-            <td class="pos">+11.6 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$45,354</td>
-            <td>141.5h</td>
-            <td><strong>REJECTED: Win probability 22.6% &lt; 55% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
     </tbody>
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">@ $0.4600)
-  Условие выхода: Exit if Bid VWAP &gt;= 64.2% (edge closed), or Stop-Loss &lt;= 0.322 (-30%), or P_est drops &lt;= 57.2% (-8pp &amp; &lt;= entry), or &lt; 1.5h before 2026-10-18T16:00 (Strict Time Exit, no hold to settlement)
+  <pre class="log-box">00 (Strict Time Exit, no hold to settlement)
   Причина: Terminal range model: BTCUSDT=$81,585.30 in [$80,000, $82,000], vol_h=0.50%, tau=42.0h =&gt; P=26.2% -&gt; Calibrated(0.70x)=34.8%
 
 [2026-10-16 21:59:22 UTC] [OPEN TRADE #33] Will the highest temperature in Amsterdam be 14°C on October 17?
@@ -586,6 +585,7 @@
 [2026-10-20 01:30:23 UTC] [CYCLE #100 SUMMARY] Scanned=800 | PassedFilter=266 | Evaluated=43 | Edges(&gt;=8pp)=9 | Opened=0 | Closed=0 | Cash=$26.54 | Equity=$27.87 (DD=0.64%)
 [2026-10-20 06:30:02 UTC] [CYCLE #101 SUMMARY] Scanned=800 | PassedFilter=336 | Evaluated=43 | Edges(&gt;=8pp)=11 | Opened=0 | Closed=0 | Cash=$26.54 | Equity=$27.82 (DD=0.83%)
 [2026-10-20 06:39:17 UTC] [CYCLE #102 SUMMARY] Scanned=787 | PassedFilter=326 | Evaluated=42 | Edges(&gt;=8pp)=10 | Opened=0 | Closed=0 | Cash=$26.54 | Equity=$27.82 (DD=0.83%)
+[2026-10-20 06:48:30 UTC] [CYCLE #103 SUMMARY] Scanned=800 | PassedFilter=329 | Evaluated=43 | Edges(&gt;=8pp)=11 | Opened=0 | Closed=0 | Cash=$26.54 | Equity=$27.80 (DD=0.89%)
 </pre>
 </body>
 </html>
