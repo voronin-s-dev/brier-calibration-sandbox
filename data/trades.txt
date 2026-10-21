@@ -600,3 +600,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-20 23:19:45 UTC] [CYCLE #114 SUMMARY] Scanned=799 | PassedFilter=148 | Evaluated=33 | Edges(>=8pp)=20 | Opened=0 | Closed=0 | Cash=$16.64 | Equity=$27.47 (DD=2.07%)
 [2026-10-20 23:29:04 UTC] [CYCLE #115 SUMMARY] Scanned=800 | PassedFilter=150 | Evaluated=31 | Edges(>=8pp)=19 | Opened=0 | Closed=0 | Cash=$16.64 | Equity=$27.49 (DD=1.98%)
 [2026-10-20 23:38:20 UTC] [CYCLE #116 SUMMARY] Scanned=784 | PassedFilter=149 | Evaluated=29 | Edges(>=8pp)=17 | Opened=0 | Closed=0 | Cash=$16.64 | Equity=$27.50 (DD=1.96%)
+[EXIT] #37 | Will Bitcoin dip to $81,000 on October 20? (NO)
+  Shares: 3.51 | Entry VWAP: 0.9400 -> Exit Bid VWAP: 0.9850
+  Proceeds: $3.46 | Realized PnL: $+0.16 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.5%) secured early with +4.8% gain
+[2026-10-21 01:56:14 UTC] [OPEN TRADE #39] Spread: Arsenal FC (-2.5)
+  Категория: Sports | Сторона: NO | Источник: https://www.uefa.com/
+  Оценка бота: 98.5% vs Рынок (Ask VWAP): 96.4% (Перекос/Edge: +2.1 п.п.)
+  Стакан CLOB: BestBid=0.958, BestAsk=0.964, Проскальзывание входа/выхода=0.60% (<= 3.0%)
+  Келли: Полный=58.3%, Четверть(0.25x)=20.4% -> Применён=12.0% банка
+  Размер сделки: $3.30 USDC (3.42 shares @ $0.9640)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.578 if P_est <= 70%
+  Причина: High market consensus NO (96.1%) within 17.1h of expiry
+
+[2026-10-21 01:56:14 UTC] [CYCLE #117 SUMMARY] Scanned=791 | PassedFilter=144 | Evaluated=30 | Edges(>=8pp)=18 | Opened=1 | Closed=1 | Cash=$16.80 | Equity=$27.44 (DD=2.16%)
