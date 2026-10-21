@@ -624,3 +624,15 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-21 18:13:05 UTC] [CYCLE #126 SUMMARY] Scanned=800 | PassedFilter=219 | Evaluated=26 | Edges(>=8pp)=20 | Opened=0 | Closed=0 | Cash=$16.80 | Equity=$26.89 (DD=4.12%)
 [2026-10-21 18:22:28 UTC] [CYCLE #127 SUMMARY] Scanned=800 | PassedFilter=220 | Evaluated=29 | Edges(>=8pp)=21 | Opened=0 | Closed=0 | Cash=$16.80 | Equity=$26.69 (DD=4.85%)
 [2026-10-21 18:31:48 UTC] [CYCLE #128 SUMMARY] Scanned=799 | PassedFilter=219 | Evaluated=27 | Edges(>=8pp)=19 | Opened=0 | Closed=0 | Cash=$16.80 | Equity=$26.71 (DD=4.76%)
+[RESOLVED] #39 | Spread: Arsenal FC (-2.5) (NO)
+  Entry VWAP: 0.9640 | Settlement: 1.00 | PnL: $+0.12 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $1.00/share
+[2026-10-21 21:56:09 UTC] [OPEN TRADE #40] Will Bitcoin reach $86,000 on October 21?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 96.9% vs Рынок (Ask VWAP): 94.1% (Перекос/Edge: +2.8 п.п.)
+  Стакан CLOB: BestBid=0.933, BestAsk=0.941, Проскальзывание входа/выхода=0.80% (<= 3.0%)
+  Келли: Полный=46.6%, Четверть(0.25x)=16.3% -> Применён=12.0% банка
+  Размер сделки: $3.19 USDC (3.39 shares @ $0.9410)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.565 if P_est <= 70%
+  Причина: High market consensus NO (93.3%) within 6.1h of expiry
+
+[2026-10-21 21:56:09 UTC] [CYCLE #129 SUMMARY] Scanned=800 | PassedFilter=260 | Evaluated=31 | Edges(>=8pp)=20 | Opened=1 | Closed=1 | Cash=$17.03 | Equity=$26.58 (DD=5.23%)
