@@ -670,3 +670,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-22 10:32:17 UTC] [CYCLE #138 SUMMARY] Scanned=796 | PassedFilter=235 | Evaluated=35 | Edges(>=8pp)=29 | Opened=0 | Closed=0 | Cash=$17.34 | Equity=$28.17 (DD=0.32%)
 [2026-10-22 10:41:37 UTC] [CYCLE #139 SUMMARY] Scanned=789 | PassedFilter=230 | Evaluated=37 | Edges(>=8pp)=29 | Opened=0 | Closed=0 | Cash=$17.34 | Equity=$28.09 (DD=0.59%)
 [2026-10-22 10:50:55 UTC] [CYCLE #140 SUMMARY] Scanned=799 | PassedFilter=232 | Evaluated=34 | Edges(>=8pp)=28 | Opened=0 | Closed=0 | Cash=$17.34 | Equity=$28.10 (DD=0.55%)
+[EXIT] #42 | Bitcoin Up or Down on October 22? (NO)
+  Shares: 3.57 | Entry VWAP: 0.9400 -> Exit Bid VWAP: 0.9990
+  Proceeds: $3.57 | Realized PnL: $+0.21 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +6.3% gain
+[2026-10-22 15:32:41 UTC] [OPEN TRADE #43] AFC Bournemouth vs. AC Milan: O/U 0.5
+  Категория: Sports | Сторона: YES | Источник: https://www.uefa.com/
+  Оценка бота: 98.0% vs Рынок (Ask VWAP): 95.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.940, BestAsk=0.950, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=60.0%, Четверть(0.25x)=21.0% -> Применён=12.0% банка
+  Размер сделки: $3.39 USDC (3.57 shares @ $0.9500)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.570 if P_est <= 70%
+  Причина: High market consensus YES (94.5%) within 3.5h of expiry
+
+[2026-10-22 15:32:41 UTC] [CYCLE #141 SUMMARY] Scanned=800 | PassedFilter=243 | Evaluated=32 | Edges(>=8pp)=25 | Opened=1 | Closed=1 | Cash=$17.52 | Equity=$28.21 (DD=0.16%)
