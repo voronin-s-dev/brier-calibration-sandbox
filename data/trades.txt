@@ -698,3 +698,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus NO (91.1%) within 8.6h of expiry
 
 [2026-10-22 19:24:13 UTC] [CYCLE #144 SUMMARY] Scanned=783 | PassedFilter=173 | Evaluated=30 | Edges(>=8pp)=24 | Opened=1 | Closed=1 | Cash=$17.69 | Equity=$28.44 (DD=0.08%)
+[EXIT] #36 | US x Iran ceasefire continues through October 22? (YES)
+  Shares: 3.46 | Entry VWAP: 0.9530 -> Exit Bid VWAP: 0.9870
+  Proceeds: $3.42 | Realized PnL: $+0.12 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.7%) secured early with +3.6% gain
+[2026-10-22 19:33:34 UTC] [OPEN TRADE #45] US x Iran ceasefire continues through October 24?
+  Категория: Geopolitics | Сторона: YES | Источник: Official NFL data feed
+  Оценка бота: 95.0% vs Рынок (Ask VWAP): 92.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.910, BestAsk=0.920, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=37.5%, Четверть(0.25x)=13.1% -> Применён=12.0% банка
+  Размер сделки: $3.41 USDC (3.71 shares @ $0.9200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.552 if P_est <= 70%
+  Причина: Ceasefire holding within 56.4h deadline
+
+[2026-10-22 19:33:34 UTC] [CYCLE #145 SUMMARY] Scanned=800 | PassedFilter=175 | Evaluated=31 | Edges(>=8pp)=26 | Opened=1 | Closed=1 | Cash=$17.69 | Equity=$28.40 (DD=0.31%)
