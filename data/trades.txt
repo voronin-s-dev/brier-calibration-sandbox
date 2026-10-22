@@ -653,3 +653,15 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-22 00:34:48 UTC] [CYCLE #132 SUMMARY] Scanned=799 | PassedFilter=152 | Evaluated=26 | Edges(>=8pp)=20 | Opened=1 | Closed=1 | Cash=$17.14 | Equity=$26.98 (DD=3.80%)
 [2026-10-22 00:44:14 UTC] [CYCLE #133 SUMMARY] Scanned=800 | PassedFilter=147 | Evaluated=28 | Edges(>=8pp)=22 | Opened=0 | Closed=0 | Cash=$17.14 | Equity=$26.93 (DD=3.98%)
 [2026-10-22 00:53:44 UTC] [CYCLE #134 SUMMARY] Scanned=800 | PassedFilter=148 | Evaluated=27 | Edges(>=8pp)=20 | Opened=0 | Closed=0 | Cash=$17.14 | Equity=$26.98 (DD=3.82%)
+[RESOLVED] #41 | Will Bitcoin reach $85,000 on October 21? (NO)
+  Entry VWAP: 0.9100 | Settlement: 1.00 | PnL: $+0.32 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $1.00/share
+[2026-10-22 05:17:50 UTC] [OPEN TRADE #42] Bitcoin Up or Down on October 22?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 97.0% vs Рынок (Ask VWAP): 94.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.930, BestAsk=0.940, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=50.0%, Четверть(0.25x)=17.5% -> Применён=12.0% банка
+  Размер сделки: $3.36 USDC (3.57 shares @ $0.9400)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.564 if P_est <= 70%
+  Причина: High market consensus NO (93.5%) within 10.7h of expiry
+
+[2026-10-22 05:17:50 UTC] [CYCLE #135 SUMMARY] Scanned=799 | PassedFilter=172 | Evaluated=31 | Edges(>=8pp)=27 | Opened=1 | Closed=1 | Cash=$17.34 | Equity=$27.98 (DD=0.24%)
