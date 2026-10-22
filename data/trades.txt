@@ -685,3 +685,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-22 15:32:41 UTC] [CYCLE #141 SUMMARY] Scanned=800 | PassedFilter=243 | Evaluated=32 | Edges(>=8pp)=25 | Opened=1 | Closed=1 | Cash=$17.52 | Equity=$28.21 (DD=0.16%)
 [2026-10-22 15:42:03 UTC] [CYCLE #142 SUMMARY] Scanned=786 | PassedFilter=244 | Evaluated=31 | Edges(>=8pp)=26 | Opened=0 | Closed=0 | Cash=$17.52 | Equity=$28.28 (DD=0.00%)
 [2026-10-22 15:51:24 UTC] [CYCLE #143 SUMMARY] Scanned=800 | PassedFilter=247 | Evaluated=30 | Edges(>=8pp)=23 | Opened=0 | Closed=0 | Cash=$17.52 | Equity=$28.29 (DD=0.13%)
+[EXIT] #43 | AFC Bournemouth vs. AC Milan: O/U 0.5 (YES)
+  Shares: 3.57 | Entry VWAP: 0.9500 -> Exit Bid VWAP: 0.9990
+  Proceeds: $3.56 | Realized PnL: $+0.17 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +5.2% gain
+[2026-10-22 19:24:13 UTC] [OPEN TRADE #44] Will Bitcoin dip to $80,000 on October 22?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 94.6% vs Рынок (Ask VWAP): 91.7% (Перекос/Edge: +2.9 п.п.)
+  Стакан CLOB: BestBid=0.911, BestAsk=0.917, Проскальзывание входа/выхода=0.60% (<= 3.0%)
+  Келли: Полный=34.1%, Четверть(0.25x)=12.0% -> Применён=12.0% банка
+  Размер сделки: $3.40 USDC (3.71 shares @ $0.9170)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.550 if P_est <= 70%
+  Причина: High market consensus NO (91.1%) within 8.6h of expiry
+
+[2026-10-22 19:24:13 UTC] [CYCLE #144 SUMMARY] Scanned=783 | PassedFilter=173 | Evaluated=30 | Edges(>=8pp)=24 | Opened=1 | Closed=1 | Cash=$17.69 | Equity=$28.44 (DD=0.08%)
