@@ -759,3 +759,15 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-10-23 12:07:47 UTC] [CYCLE #157 SUMMARY] Scanned=799 | PassedFilter=286 | Evaluated=27 | Edges(>=8pp)=25 | Opened=1 | Closed=1 | Cash=$18.04 | Equity=$29.74 (DD=0.24%)
 [2026-10-23 12:17:09 UTC] [CYCLE #158 SUMMARY] Scanned=800 | PassedFilter=290 | Evaluated=29 | Edges(>=8pp)=24 | Opened=0 | Closed=0 | Cash=$18.04 | Equity=$29.70 (DD=0.37%)
+[RESOLVED] #48 | Will the price of Bitcoin be above $80,000 on October 23? (YES)
+  Entry VWAP: 0.9490 | Settlement: 1.00 | PnL: $+0.19 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $1.00/share
+[2026-10-23 16:56:01 UTC] [OPEN TRADE #49] Will Bitcoin dip to $80,000 on October 23?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 98.0% vs Рынок (Ask VWAP): 96.0% (Перекос/Edge: +2.0 п.п.)
+  Стакан CLOB: BestBid=0.940, BestAsk=0.960, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=50.0%, Четверть(0.25x)=17.5% -> Применён=12.0% банка
+  Размер сделки: $3.56 USDC (3.71 shares @ $0.9600)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.576 if P_est <= 70%
+  Причина: High market consensus NO (94.5%) within 11.1h of expiry
+
+[2026-10-23 16:56:01 UTC] [CYCLE #159 SUMMARY] Scanned=773 | PassedFilter=296 | Evaluated=21 | Edges(>=8pp)=19 | Opened=1 | Closed=1 | Cash=$18.24 | Equity=$29.59 (DD=0.72%)
