@@ -776,3 +776,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-23 20:18:05 UTC] [CYCLE #162 SUMMARY] Scanned=800 | PassedFilter=277 | Evaluated=31 | Edges(>=8pp)=24 | Opened=0 | Closed=0 | Cash=$18.24 | Equity=$29.87 (DD=0.17%)
 [2026-10-23 20:27:33 UTC] [CYCLE #163 SUMMARY] Scanned=800 | PassedFilter=279 | Evaluated=27 | Edges(>=8pp)=22 | Opened=0 | Closed=0 | Cash=$18.24 | Equity=$29.85 (DD=0.25%)
 [2026-10-23 20:36:58 UTC] [CYCLE #164 SUMMARY] Scanned=800 | PassedFilter=283 | Evaluated=26 | Edges(>=8pp)=22 | Opened=0 | Closed=0 | Cash=$18.24 | Equity=$29.90 (DD=0.09%)
+[EXIT] #49 | Will Bitcoin dip to $80,000 on October 23? (NO)
+  Shares: 3.71 | Entry VWAP: 0.9600 -> Exit Bid VWAP: 0.9140
+  Proceeds: $3.39 | Realized PnL: $-0.17 USDC | Reason: THESIS INVALIDATED (Prob Shift > 8.0pp & P_est <= 70%): Estimate dropped from 98.0% to 68.1%
+[2026-10-23 23:24:10 UTC] [OPEN TRADE #50] Spread: Manchester City FC (-3.5)
+  Категория: Sports | Сторона: NO | Источник: https://www.premierleague.com/
+  Оценка бота: 97.5% vs Рынок (Ask VWAP): 94.0% (Перекос/Edge: +3.5 п.п.)
+  Стакан CLOB: BestBid=0.930, BestAsk=0.940, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=58.3%, Четверть(0.25x)=20.4% -> Применён=12.0% банка
+  Размер сделки: $3.59 USDC (3.82 shares @ $0.9400)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.564 if P_est <= 70%
+  Причина: Heavy handicap spread (-3.5+) is historically improbable
+
+[2026-10-23 23:24:10 UTC] [CYCLE #165 SUMMARY] Scanned=784 | PassedFilter=266 | Evaluated=29 | Edges(>=8pp)=26 | Opened=1 | Closed=1 | Cash=$18.04 | Equity=$29.90 (DD=0.79%)
