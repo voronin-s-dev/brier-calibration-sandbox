@@ -75,5 +75,12 @@
     "Asia/Shanghai",
     "celsius",
     "Auto-Meteo Guangzhou (CN)"
+  ],
+  "taipei": [
+    25.05306,
+    121.52639,
+    "Asia/Taipei",
+    "celsius",
+    "Auto-Meteo Taipei (TW)"
   ]
 }
