@@ -732,3 +732,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-23 06:26:01 UTC] [CYCLE #153 SUMMARY] Scanned=794 | PassedFilter=272 | Evaluated=31 | Edges(>=8pp)=28 | Opened=1 | Closed=1 | Cash=$17.96 | Equity=$28.68 (DD=0.73%)
 [2026-10-23 06:35:36 UTC] [CYCLE #154 SUMMARY] Scanned=799 | PassedFilter=275 | Evaluated=29 | Edges(>=8pp)=27 | Opened=0 | Closed=0 | Cash=$17.96 | Equity=$28.78 (DD=0.39%)
 [2026-10-23 06:44:57 UTC] [CYCLE #155 SUMMARY] Scanned=800 | PassedFilter=282 | Evaluated=25 | Edges(>=8pp)=23 | Opened=0 | Closed=0 | Cash=$17.96 | Equity=$28.71 (DD=0.64%)
+[EXIT] #38 | Will the Bank of Russia decrease the key rate after the October Meeting? (NO)
+  Shares: 3.67 | Entry VWAP: 0.9000 -> Exit Bid VWAP: 0.9990
+  Proceeds: $3.66 | Realized PnL: $+0.36 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +11.0% gain
+[2026-10-23 11:58:24 UTC] [OPEN TRADE #47] Israel x Iran ceasefire continues through October 24?
+  Категория: Geopolitics | Сторона: YES | Источник: the totality of information available from the resolution sources at that time
+  Оценка бота: 98.0% vs Рынок (Ask VWAP): 95.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.940, BestAsk=0.950, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=60.0%, Четверть(0.25x)=21.0% -> Применён=12.0% банка
+  Размер сделки: $3.57 USDC (3.76 shares @ $0.9500)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.570 if P_est <= 70%
+  Причина: Ceasefire holding within 40.0h deadline
+
+[2026-10-23 11:58:24 UTC] [CYCLE #156 SUMMARY] Scanned=800 | PassedFilter=287 | Evaluated=29 | Edges(>=8pp)=27 | Opened=1 | Closed=1 | Cash=$18.05 | Equity=$29.71 (DD=0.13%)
