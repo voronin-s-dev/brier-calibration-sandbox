@@ -745,3 +745,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: Ceasefire holding within 40.0h deadline
 
 [2026-10-23 11:58:24 UTC] [CYCLE #156 SUMMARY] Scanned=800 | PassedFilter=287 | Evaluated=29 | Edges(>=8pp)=27 | Opened=1 | Closed=1 | Cash=$18.05 | Equity=$29.71 (DD=0.13%)
+[EXIT] #46 | Will the price of Bitcoin be above $84,000 on October 23? (NO)
+  Shares: 3.59 | Entry VWAP: 0.9590 -> Exit Bid VWAP: 0.9910
+  Proceeds: $3.55 | Realized PnL: $+0.11 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.1%) secured early with +3.3% gain
+[2026-10-23 12:07:47 UTC] [OPEN TRADE #48] Will the price of Bitcoin be above $80,000 on October 23?
+  Категория: Crypto | Сторона: YES | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 98.3% vs Рынок (Ask VWAP): 94.9% (Перекос/Edge: +3.4 п.п.)
+  Стакан CLOB: BestBid=0.940, BestAsk=0.949, Проскальзывание входа/выхода=0.90% (<= 3.0%)
+  Келли: Полный=66.7%, Четверть(0.25x)=23.3% -> Применён=12.0% банка
+  Размер сделки: $3.57 USDC (3.76 shares @ $0.9490)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.569 if P_est <= 70%
+  Причина: High market consensus YES (94.8%) within 3.9h of expiry
+
+[2026-10-23 12:07:47 UTC] [CYCLE #157 SUMMARY] Scanned=799 | PassedFilter=286 | Evaluated=27 | Edges(>=8pp)=25 | Opened=1 | Closed=1 | Cash=$18.04 | Equity=$29.74 (DD=0.24%)
