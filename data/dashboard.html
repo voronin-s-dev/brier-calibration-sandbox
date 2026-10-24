@@ -77,30 +77,30 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-10-24 02:13:28 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-10-24 07:10:12 UTC</div>
     </div>
   </div>
 
   <div class="grid">
     <div class="card">
       <div class="metric-label">Текущий капитал (Equity)</div>
-      <div class="metric-val">$30.06 <span style="font-size:15px" class="neg">(-19.94$ / -39.88%)</span></div>
+      <div class="metric-val">$30.27 <span style="font-size:15px" class="neg">(-19.73$ / -39.47%)</span></div>
       <div class="metric-sub">Старт: $50.00 USDC (Оценка по Bid стакана!)</div>
     </div>
     <div class="card">
       <div class="metric-label">Свободный кэш / В позициях</div>
-      <div class="metric-val">$18.04 <span class="muted" style="font-size:16px">/ $12.02</span></div>
+      <div class="metric-val">$18.04 <span class="muted" style="font-size:16px">/ $12.23</span></div>
       <div class="metric-sub">Открыто позиций: 4 из 8 (макс 8% банка)</div>
     </div>
     <div class="card">
       <div class="metric-label">Цель подписки ($60 / мес)</div>
-      <div class="metric-val">$-19.94 <span class="muted" style="font-size:16px">/ $60.00</span></div>
+      <div class="metric-val">$-19.73 <span class="muted" style="font-size:16px">/ $60.00</span></div>
       <div class="metric-sub">Прогресс окупаемости: 0.0%</div>
     </div>
     <div class="card">
       <div class="metric-label">Просадка от пика (Drawdown)</div>
-      <div class="metric-val ">0.25% <span class="muted" style="font-size:15px">(Макс: 6.31%)</span></div>
-      <div class="metric-sub">Пик: $30.14 | Лимит остановки: 40.0%</div>
+      <div class="metric-val ">0.00% <span class="muted" style="font-size:15px">(Макс: 6.31%)</span></div>
+      <div class="metric-sub">Пик: $30.27 | Лимит остановки: 40.0%</div>
     </div>
     <div class="card">
       <div class="metric-label">Закрытые сделки / Win Rate</div>
@@ -127,10 +127,10 @@
             <td><span class="side-yes">YES</span></td>
             <td>1.82</td>
             <td>$0.6100</td>
-            <td>$0.7600</td>
+            <td>$0.7900</td>
             <td><strong>99.5%</strong> <small>(+9.7pp)</small></td>
             <td>$1.11 <small>(4.0%)</small></td>
-            <td class="pos">$+0.27</td>
+            <td class="pos">$+0.33</td>
             <td><small>Exit if Bid VWAP &gt;= 69.7% (edge closed), or Stop-Loss &lt;= 0.427 (-30%), or P_est drops &lt;= 62.7% (-8pp &amp; &lt;= entry), or &lt; 1.5h before 2026-11-01T04:00 (Strict Time Exit, no hold to settlement)</small></td>
         </tr>
         
@@ -141,10 +141,10 @@
             <td><span class="side-yes">YES</span></td>
             <td>3.71</td>
             <td>$0.9200</td>
-            <td>$0.9300</td>
-            <td><strong>96.5%</strong> <small>(+3.0pp)</small></td>
+            <td>$0.9690</td>
+            <td><strong>98.0%</strong> <small>(+3.0pp)</small></td>
             <td>$3.41 <small>(12.0%)</small></td>
-            <td class="pos">$+0.04</td>
+            <td class="pos">$+0.18</td>
             <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.552 if P_est &lt;= 70%</small></td>
         </tr>
         
@@ -155,7 +155,7 @@
             <td><span class="side-yes">YES</span></td>
             <td>3.76</td>
             <td>$0.9500</td>
-            <td>$0.9790</td>
+            <td>$0.9800</td>
             <td><strong>98.0%</strong> <small>(+3.0pp)</small></td>
             <td>$3.57 <small>(12.0%)</small></td>
             <td class="pos">$+0.11</td>
@@ -190,6 +190,279 @@
     </thead>
     <tbody>
       
+        <tr class="">
+            <td>Will the price of Ethereum be above $2,300 on October 25?<br><small class="muted">Terminal GBM model: ETHUSDT=$2,375.28 vs strike=$2,300 (+3.27%), vol_h=0.60%, tau=32.8h =&gt; P(S_T &gt; K)=79.3% -&gt; Calibrated(0.75x)=83.5%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>NO</td>
+            <td>16.5%</td>
+            <td>5.6%</td>
+            <td class="pos">+11.0 п.п.</td>
+            <td class="pos">1.98%</td>
+            <td>$31,888</td>
+            <td>32.8h</td>
+            <td><strong>REJECTED: Win probability 16.5% &lt; 92% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Exact Score: Chelsea FC 0 - 0 Tottenham Hotspur FC?<br><small class="muted">CLOB near-touch depth imbalance OBI=+0.93 (BidDepth=$3,513 vs AskDepth=$129)</small></td>
+            <td><span class="badge cat-other">Other</span></td>
+            <td>YES</td>
+            <td>11.0%</td>
+            <td>4.2%</td>
+            <td class="muted">+6.8 п.п.</td>
+            <td class="pos">0.30%</td>
+            <td>$93,593</td>
+            <td>9.3h</td>
+            <td><strong>REJECTED: Win probability 11.0% &lt; 92% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Coventry City FC vs. Fulham FC: O/U 4.5<br><small class="muted">News sentiment=-1.00 (12 articles; top: &#x27;Coventry - Fulham - Flashscore.com&#x27;)</small></td>
+            <td><span class="badge cat-sports">Sports</span></td>
+            <td>NO</td>
+            <td>90.0%</td>
+            <td>85.0%</td>
+            <td class="muted">+5.0 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$36,498</td>
+            <td>6.8h</td>
+            <td><strong>REJECTED: Win probability 90.0% &lt; 92% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the price of Ethereum be above $2,400 on October 24?<br><small class="muted">Terminal GBM model: ETHUSDT=$2,375.28 vs strike=$2,400 (-1.03%), vol_h=0.60%, tau=8.8h =&gt; P(S_T &gt; K)=29.9% -&gt; Calibrated(0.75x)=26.4%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>26.4%</td>
+            <td>13.0%</td>
+            <td class="pos">+13.4 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$32,961</td>
+            <td>8.8h</td>
+            <td><strong>REJECTED: Win probability 26.4% &lt; 92% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Bitcoin reach $84,000 October 19-25?<br><small class="muted">First-passage reach model: BTCUSDT=$80,690.90 -&gt; barrier=$84,000 (+4.10%), vol_h=0.50%, tau=44.8h =&gt; P(touch)=28.4% -&gt; Calibrated(0.75x)=22.0%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>22.0%</td>
+            <td>3.1%</td>
+            <td class="pos">+18.9 п.п.</td>
+            <td class="pos">0.70%</td>
+            <td>$46,034</td>
+            <td>44.8h</td>
+            <td><strong>REJECTED: Win probability 22.0% &lt; 92% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Flávio Bolsonaro win the second round of the 2026 Brazilian presidential election by less than 2%?<br><small class="muted">CLOB near-touch depth imbalance OBI=+0.58 (BidDepth=$561 vs AskDepth=$148) | News sentiment=+0.57 (12 articles; top: &#x27;What to know as Brazil prepares for tense presidential run-off - Al Jazeera&#x27;)</small></td>
+            <td><span class="badge cat-geopolitics">Geopolitics</span></td>
+            <td>YES</td>
+            <td>22.0%</td>
+            <td>15.0%</td>
+            <td class="muted">+7.0 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$22,962</td>
+            <td>44.8h</td>
+            <td><strong>REJECTED: Win probability 22.0% &lt; 92% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Parma Calcio 1913 win on 2026-10-24?<br><small class="muted">News sentiment=+1.00 (10 articles; top: &#x27;Lazio - Parma - Flashscore.co.za&#x27;)</small></td>
+            <td><span class="badge cat-sports">Sports</span></td>
+            <td>YES</td>
+            <td>17.0%</td>
+            <td>12.0%</td>
+            <td class="muted">+5.0 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$228,925</td>
+            <td>11.6h</td>
+            <td><strong>REJECTED: Win probability 17.0% &lt; 92% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Bitcoin dip to $79,000 on October 24?<br><small class="muted">First-passage dip model: BTCUSDT=$80,690.90 -&gt; barrier=$79,000 (-2.10%), vol_h=0.50%, tau=20.8h =&gt; P(touch)=40.7% -&gt; Calibrated(0.75x)=31.1%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>31.1%</td>
+            <td>4.0%</td>
+            <td class="pos">+27.1 п.п.</td>
+            <td class="pos">0.72%</td>
+            <td>$22,118</td>
+            <td>20.8h</td>
+            <td><strong>REJECTED: Win probability 31.1% &lt; 92% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the price of Bitcoin be above $80,000 on October 25?<br><small class="muted">Terminal GBM model: BTCUSDT=$80,690.90 vs strike=$80,000 (+0.86%), vol_h=0.50%, tau=32.8h =&gt; P(S_T &gt; K)=59.9% -&gt; Calibrated(0.75x)=66.0%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>NO</td>
+            <td>34.0%</td>
+            <td>18.7%</td>
+            <td class="pos">+15.3 п.п.</td>
+            <td class="pos">1.11%</td>
+            <td>$37,048</td>
+            <td>32.8h</td>
+            <td><strong>REJECTED: Win probability 34.0% &lt; 92% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the price of Bitcoin be between $80,000 and $82,000 on October 24?<br><small class="muted">High market consensus YES (94.5%) within 8.8h of expiry</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>98.0%</td>
+            <td>93.0%</td>
+            <td class="muted">+5.0 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$21,492</td>
+            <td>8.8h</td>
+            <td><strong>REJECTED: Max open positions (4) reached</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Iliana Iotova win the 2026 Bulgarian presidential first round by 20%-30%?<br><small class="muted">News sentiment=+1.00 (5 articles; top: &#x27;Bulgaria will vote for president as Ukraine and Black Sea drone attacks dominate campaign - The Washington Pos&#x27;)</small></td>
+            <td><span class="badge cat-geopolitics">Geopolitics</span></td>
+            <td>YES</td>
+            <td>20.0%</td>
+            <td>16.0%</td>
+            <td class="muted">+4.0 п.п.</td>
+            <td class="pos">3.00%</td>
+            <td>$41,933</td>
+            <td>40.8h</td>
+            <td><strong>REJECTED: Win probability 20.0% &lt; 92% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Ethereum dip to $2,300 October 19-25?<br><small class="muted">First-passage dip model: ETHUSDT=$2,375.28 -&gt; barrier=$2,300 (-3.17%), vol_h=0.60%, tau=44.8h =&gt; P(touch)=47.4% -&gt; Calibrated(0.75x)=39.4%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>39.4%</td>
+            <td>17.0%</td>
+            <td class="pos">+22.4 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$46,382</td>
+            <td>44.8h</td>
+            <td><strong>REJECTED: Win probability 39.4% &lt; 92% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will FC Barcelona vs. Real Madrid CF end in a draw?<br><small class="muted">CLOB near-touch depth imbalance OBI=-0.82 (BidDepth=$14,514 vs AskDepth=$151,108) | News sentiment=-1.00 (12 articles; top: &#x27;Home grown versus high end: Clasico tale of two talent-spotting strategies - The Times&#x27;)</small></td>
+            <td><span class="badge cat-sports">Sports</span></td>
+            <td>NO</td>
+            <td>96.2%</td>
+            <td>85.0%</td>
+            <td class="pos">+11.2 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$791,575</td>
+            <td>36.8h</td>
+            <td><strong>REJECTED: Max open positions (4) reached</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Ilija Srdanović be the next prime minister of Serbia?<br><small class="muted">News sentiment=-1.00 (6 articles; top: &#x27;Student movement takes Serbia&#x27;s Vučić to the wire in neck-and-neck election - BBC&#x27;)</small></td>
+            <td><span class="badge cat-geopolitics">Geopolitics</span></td>
+            <td>NO</td>
+            <td>93.0%</td>
+            <td>88.0%</td>
+            <td class="muted">+5.0 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$103,856</td>
+            <td>40.8h</td>
+            <td><strong>REJECTED: Category cap reached (2/2 in Geopolitics)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Israel x Iran ceasefire continues through October 27?<br><small class="muted">CLOB near-touch depth imbalance OBI=-0.73 (BidDepth=$2,575 vs AskDepth=$16,158)</small></td>
+            <td><span class="badge cat-geopolitics">Geopolitics</span></td>
+            <td>NO</td>
+            <td>16.4%</td>
+            <td>12.0%</td>
+            <td class="muted">+4.4 п.п.</td>
+            <td class="pos">2.00%</td>
+            <td>$30,255</td>
+            <td>92.8h</td>
+            <td><strong>REJECTED: Win probability 16.4% &lt; 92% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Аndrey Gyurov win the next Bulgarian presidential election?<br><small class="muted">CLOB near-touch depth imbalance OBI=+0.94 (BidDepth=$270,600 vs AskDepth=$8,391)</small></td>
+            <td><span class="badge cat-geopolitics">Geopolitics</span></td>
+            <td>YES</td>
+            <td>19.6%</td>
+            <td>13.0%</td>
+            <td class="muted">+6.6 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$412,301</td>
+            <td>44.8h</td>
+            <td><strong>REJECTED: Win probability 19.6% &lt; 92% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the price of Bitcoin be above $80,000 on October 24?<br><small class="muted">High market consensus YES (96.0%) within 8.8h of expiry</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>98.5%</td>
+            <td>93.6%</td>
+            <td class="muted">+4.9 п.п.</td>
+            <td class="pos">0.70%</td>
+            <td>$49,159</td>
+            <td>8.8h</td>
+            <td><strong>REJECTED: Max open positions (4) reached</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Lamine Yamal win the 2026 Ballon d&#x27;Or?<br><small class="muted">News sentiment=+1.00 (12 articles; top: &#x27;Ballon d’Or 2026 power rankings: Who leads race after Harry Kane’s statement performance vs Arsenal? - Yahoo S&#x27;)</small></td>
+            <td><span class="badge cat-other">Other</span></td>
+            <td>YES</td>
+            <td>19.9%</td>
+            <td>14.5%</td>
+            <td class="muted">+5.3 п.п.</td>
+            <td class="pos">0.30%</td>
+            <td>$268,636</td>
+            <td>68.8h</td>
+            <td><strong>REJECTED: Win probability 19.9% &lt; 92% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will Kylian Mbappé win the 2026 Ballon d&#x27;Or?<br><small class="muted">CLOB near-touch depth imbalance OBI=+0.64 (BidDepth=$740 vs AskDepth=$165) | News sentiment=+1.00 (12 articles; top: &#x27;Ballon d’Or 2026 power rankings: Who leads race after Harry Kane’s statement performance vs Arsenal? - Yahoo S&#x27;)</small></td>
+            <td><span class="badge cat-other">Other</span></td>
+            <td>YES</td>
+            <td>16.9%</td>
+            <td>6.8%</td>
+            <td class="pos">+10.1 п.п.</td>
+            <td class="pos">0.30%</td>
+            <td>$140,314</td>
+            <td>68.8h</td>
+            <td><strong>REJECTED: Win probability 16.9% &lt; 92% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>US x Iran ceasefire continues through October 28?<br><small class="muted">CLOB near-touch depth imbalance OBI=-0.91 (BidDepth=$48,160 vs AskDepth=$977,209) | News sentiment=-0.33 (12 articles; top: &#x27;Polymarket Odds Today: Brazil Runoff, LA Mayor, World Series - RG.org&#x27;)</small></td>
+            <td><span class="badge cat-geopolitics">Geopolitics</span></td>
+            <td>NO</td>
+            <td>23.1%</td>
+            <td>15.0%</td>
+            <td class="pos">+8.1 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$208,251</td>
+            <td>116.8h</td>
+            <td><strong>REJECTED: Win probability 23.1% &lt; 92% minimum (no underdog lottery bets)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the Fed increase interest rates by 25 bps after the October 2026 meeting?<br><small class="muted">News sentiment=-1.00 (12 articles; top: &#x27;Economic headwinds prevail, but so far so good - Vermont Business Magazine&#x27;)</small></td>
+            <td><span class="badge cat-macro">Macro</span></td>
+            <td>NO</td>
+            <td>98.0%</td>
+            <td>94.0%</td>
+            <td class="muted">+4.0 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$945,316</td>
+            <td>116.8h</td>
+            <td><strong>REJECTED: Max open positions (4) reached</strong></td>
+        </tr>
+        
         <tr class="">
             <td>Will Manchester City FC win on 2026-10-24?<br><small class="muted">News sentiment=+1.00 (12 articles; top: &#x27;Aston Villa vs. Man City: Preview, Predictions and Lineups - Sports Illustrated&#x27;)</small></td>
             <td><span class="badge cat-sports">Sports</span></td>
@@ -242,285 +515,11 @@
             <td><strong>REJECTED: Win probability 58.0% &lt; 92% minimum (no underdog lottery bets)</strong></td>
         </tr>
         
-        <tr class="">
-            <td>Will the price of Bitcoin be above $78,000 on October 26?<br><small class="muted">Terminal GBM model: BTCUSDT=$80,843.40 vs strike=$78,000 (+3.65%), vol_h=0.50%, tau=61.8h =&gt; P(S_T &gt; K)=78.6% -&gt; Calibrated(0.75x)=82.1%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>NO</td>
-            <td>17.9%</td>
-            <td>8.8%</td>
-            <td class="pos">+9.1 п.п.</td>
-            <td class="pos">2.40%</td>
-            <td>$37,771</td>
-            <td>61.8h</td>
-            <td><strong>REJECTED: Win probability 17.9% &lt; 92% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the price of Ethereum be above $2,300 on October 24?<br><small class="muted">Terminal GBM model: ETHUSDT=$2,379.92 vs strike=$2,300 (+3.47%), vol_h=0.60%, tau=13.8h =&gt; P(S_T &gt; K)=91.3% -&gt; Calibrated(0.75x)=92.9%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>NO</td>
-            <td>7.1%</td>
-            <td>2.9%</td>
-            <td class="muted">+4.3 п.п.</td>
-            <td class="pos">1.81%</td>
-            <td>$32,575</td>
-            <td>13.8h</td>
-            <td><strong>REJECTED: Win probability 7.1% &lt; 92% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the price of Ethereum be above $2,300 on October 25?<br><small class="muted">Terminal GBM model: ETHUSDT=$2,379.92 vs strike=$2,300 (+3.47%), vol_h=0.60%, tau=37.8h =&gt; P(S_T &gt; K)=79.0% -&gt; Calibrated(0.75x)=83.1%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>NO</td>
-            <td>16.9%</td>
-            <td>5.7%</td>
-            <td class="pos">+11.2 п.п.</td>
-            <td class="pos">1.28%</td>
-            <td>$28,308</td>
-            <td>37.8h</td>
-            <td><strong>REJECTED: Win probability 16.9% &lt; 92% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Naftali Bennett be the next Prime Minister of Israel?<br><small class="muted">CLOB near-touch depth imbalance OBI=+0.69 (BidDepth=$16,571 vs AskDepth=$3,062)</small></td>
-            <td><span class="badge cat-geopolitics">Geopolitics</span></td>
-            <td>YES</td>
-            <td>20.7%</td>
-            <td>16.0%</td>
-            <td class="muted">+4.7 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$135,641</td>
-            <td>97.8h</td>
-            <td><strong>REJECTED: Win probability 20.7% &lt; 92% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Bitcoin reach $84,000 October 19-25?<br><small class="muted">First-passage reach model: BTCUSDT=$80,843.40 -&gt; barrier=$84,000 (+3.90%), vol_h=0.50%, tau=49.8h =&gt; P(touch)=33.2% -&gt; Calibrated(0.75x)=25.8%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>25.8%</td>
-            <td>3.7%</td>
-            <td class="pos">+22.1 п.п.</td>
-            <td class="pos">0.70%</td>
-            <td>$34,204</td>
-            <td>49.8h</td>
-            <td><strong>REJECTED: Win probability 25.8% &lt; 92% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the price of Bitcoin be between $80,000 and $82,000 on October 24?<br><small class="muted">Terminal range model: BTCUSDT=$80,843.40 in [$80,000, $82,000], vol_h=0.50%, tau=13.8h =&gt; P=44.5% -&gt; Calibrated(0.75x)=55.8%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>NO</td>
-            <td>44.2%</td>
-            <td>11.0%</td>
-            <td class="pos">+33.2 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$21,521</td>
-            <td>13.8h</td>
-            <td><strong>REJECTED: Win probability 44.2% &lt; 92% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the price of Bitcoin be between $78,000 and $80,000 on October 24?<br><small class="muted">Terminal range model: BTCUSDT=$80,843.40 in [$78,000, $80,000], vol_h=0.50%, tau=13.8h =&gt; P=26.7% -&gt; Calibrated(0.75x)=21.6%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>21.6%</td>
-            <td>8.6%</td>
-            <td class="pos">+13.0 п.п.</td>
-            <td class="neg">3.34%</td>
-            <td>$21,944</td>
-            <td>13.8h</td>
-            <td><strong>REJECTED: Win probability 21.6% &lt; 92% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Ethereum reach $2,500 October 19-25?<br><small class="muted">First-passage reach model: ETHUSDT=$2,379.92 -&gt; barrier=$2,500 (+5.05%), vol_h=0.60%, tau=49.8h =&gt; P(touch)=29.9% -&gt; Calibrated(0.75x)=23.8%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>23.8%</td>
-            <td>6.5%</td>
-            <td class="pos">+17.3 п.п.</td>
-            <td class="pos">2.49%</td>
-            <td>$50,495</td>
-            <td>49.8h</td>
-            <td><strong>REJECTED: Win probability 23.8% &lt; 92% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Ethereum dip to $2,200 October 19-25?<br><small class="muted">First-passage dip model: ETHUSDT=$2,379.92 -&gt; barrier=$2,200 (-7.56%), vol_h=0.60%, tau=49.8h =&gt; P(touch)=9.7% -&gt; Calibrated(0.75x)=8.4%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>8.4%</td>
-            <td>4.1%</td>
-            <td class="muted">+4.3 п.п.</td>
-            <td class="pos">0.39%</td>
-            <td>$56,625</td>
-            <td>49.8h</td>
-            <td><strong>REJECTED: Win probability 8.4% &lt; 92% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Iliana Iotova win the 2026 Bulgarian presidential first round by 20%-30%?<br><small class="muted">CLOB near-touch depth imbalance OBI=+0.72 (BidDepth=$719 vs AskDepth=$117) | News sentiment=+1.00 (5 articles; top: &#x27;Bulgaria will vote for president as Ukraine and Black Sea drone attacks dominate campaign - The Washington Pos&#x27;)</small></td>
-            <td><span class="badge cat-geopolitics">Geopolitics</span></td>
-            <td>YES</td>
-            <td>23.9%</td>
-            <td>14.0%</td>
-            <td class="pos">+9.9 п.п.</td>
-            <td class="pos">2.00%</td>
-            <td>$44,954</td>
-            <td>45.8h</td>
-            <td><strong>REJECTED: Win probability 23.9% &lt; 92% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Elon Musk post 90-114 tweets from October 22 to October 24, 2026?<br><small class="muted">CLOB near-touch depth imbalance OBI=+0.90 (BidDepth=$1,368 vs AskDepth=$75)</small></td>
-            <td><span class="badge cat-geopolitics">Geopolitics</span></td>
-            <td>YES</td>
-            <td>23.2%</td>
-            <td>17.7%</td>
-            <td class="muted">+5.5 п.п.</td>
-            <td class="pos">1.71%</td>
-            <td>$10,108</td>
-            <td>13.8h</td>
-            <td><strong>REJECTED: Win probability 23.2% &lt; 92% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will FC Barcelona vs. Real Madrid CF end in a draw?<br><small class="muted">CLOB near-touch depth imbalance OBI=-0.82 (BidDepth=$14,662 vs AskDepth=$151,497) | News sentiment=-1.00 (12 articles; top: &#x27;Home grown versus high end: Clasico tale of two talent-spotting strategies - The Times&#x27;)</small></td>
-            <td><span class="badge cat-sports">Sports</span></td>
-            <td>NO</td>
-            <td>96.2%</td>
-            <td>85.0%</td>
-            <td class="pos">+11.2 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$812,882</td>
-            <td>41.8h</td>
-            <td><strong>REJECTED: Max open positions (4) reached</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Bitcoin dip to $76,000 October 19-25?<br><small class="muted">First-passage dip model: BTCUSDT=$80,843.40 -&gt; barrier=$76,000 (-5.99%), vol_h=0.50%, tau=49.8h =&gt; P(touch)=11.8% -&gt; Calibrated(0.75x)=9.5%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>9.5%</td>
-            <td>2.9%</td>
-            <td class="muted">+6.6 п.п.</td>
-            <td class="pos">0.25%</td>
-            <td>$58,937</td>
-            <td>49.8h</td>
-            <td><strong>REJECTED: Win probability 9.5% &lt; 92% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Аndrey Gyurov win the next Bulgarian presidential election?<br><small class="muted">CLOB near-touch depth imbalance OBI=+0.96 (BidDepth=$248,960 vs AskDepth=$4,897)</small></td>
-            <td><span class="badge cat-geopolitics">Geopolitics</span></td>
-            <td>YES</td>
-            <td>19.7%</td>
-            <td>13.0%</td>
-            <td class="muted">+6.7 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$412,723</td>
-            <td>49.8h</td>
-            <td><strong>REJECTED: Win probability 19.7% &lt; 92% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Bitcoin dip to $78,000 October 19-25?<br><small class="muted">First-passage dip model: BTCUSDT=$80,843.40 -&gt; barrier=$78,000 (-3.52%), vol_h=0.50%, tau=49.8h =&gt; P(touch)=36.5% -&gt; Calibrated(0.75x)=29.1%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>29.1%</td>
-            <td>7.2%</td>
-            <td class="pos">+21.9 п.п.</td>
-            <td class="pos">0.19%</td>
-            <td>$49,082</td>
-            <td>49.8h</td>
-            <td><strong>REJECTED: Win probability 29.1% &lt; 92% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Lamine Yamal win the 2026 Ballon d&#x27;Or?<br><small class="muted">News sentiment=+1.00 (12 articles; top: &#x27;Ballon d’Or 2026 power rankings: Who leads race after Harry Kane’s statement performance vs Arsenal? - Yahoo S&#x27;)</small></td>
-            <td><span class="badge cat-other">Other</span></td>
-            <td>YES</td>
-            <td>20.6%</td>
-            <td>15.2%</td>
-            <td class="muted">+5.4 п.п.</td>
-            <td class="pos">0.20%</td>
-            <td>$281,927</td>
-            <td>73.8h</td>
-            <td><strong>REJECTED: Win probability 20.6% &lt; 92% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Kylian Mbappé win the 2026 Ballon d&#x27;Or?<br><small class="muted">CLOB near-touch depth imbalance OBI=+0.55 (BidDepth=$1,043 vs AskDepth=$301) | News sentiment=+1.00 (12 articles; top: &#x27;Who should win the men’s Ballon d’Or? The Athletic asked 100 people from elite football to vote - The New York&#x27;)</small></td>
-            <td><span class="badge cat-other">Other</span></td>
-            <td>YES</td>
-            <td>16.5%</td>
-            <td>7.0%</td>
-            <td class="pos">+9.5 п.п.</td>
-            <td class="pos">0.30%</td>
-            <td>$149,208</td>
-            <td>73.8h</td>
-            <td><strong>REJECTED: Win probability 16.5% &lt; 92% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Harry Kane win the 2026 Ballon d&#x27;Or?<br><small class="muted">CLOB near-touch depth imbalance OBI=+0.70 (BidDepth=$22,572 vs AskDepth=$4,028) | News sentiment=+1.00 (12 articles; top: &#x27;Who should win the men’s Ballon d’Or? The Athletic asked 100 people from elite football to vote - The New York&#x27;)</small></td>
-            <td><span class="badge cat-other">Other</span></td>
-            <td>YES</td>
-            <td>87.4%</td>
-            <td>76.7%</td>
-            <td class="pos">+10.7 п.п.</td>
-            <td class="pos">0.10%</td>
-            <td>$256,568</td>
-            <td>73.9h</td>
-            <td><strong>REJECTED: Win probability 87.4% &lt; 92% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Spread: Club Atlético de Madrid (-3.5)<br><small class="muted">Heavy handicap spread (-3.5+) is historically improbable</small></td>
-            <td><span class="badge cat-sports">Sports</span></td>
-            <td>NO</td>
-            <td>97.5%</td>
-            <td>83.0%</td>
-            <td class="pos">+14.5 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$329,286</td>
-            <td>16.9h</td>
-            <td><strong>REJECTED: Contract price $0.830 outside sweet spot [$0.84, $0.96]</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Chelsea FC win on 2026-10-24?<br><small class="muted">News sentiment=+1.00 (12 articles; top: &#x27;Xabi Alonso confirms Chelsea team news for Tottenham | News | Official Site - Chelsea Football Club&#x27;)</small></td>
-            <td><span class="badge cat-sports">Sports</span></td>
-            <td>YES</td>
-            <td>58.0%</td>
-            <td>53.0%</td>
-            <td class="muted">+5.0 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$427,638</td>
-            <td>14.4h</td>
-            <td><strong>REJECTED: Win probability 58.0% &lt; 92% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will the price of Bitcoin be above $78,000 on October 26?<br><small class="muted">Terminal GBM model: BTCUSDT=$80,843.40 vs strike=$78,000 (+3.65%), vol_h=0.50%, tau=61.9h =&gt; P(S_T &gt; K)=78.5% -&gt; Calibrated(0.75x)=82.0%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>NO</td>
-            <td>18.0%</td>
-            <td>8.1%</td>
-            <td class="pos">+9.9 п.п.</td>
-            <td class="pos">1.50%</td>
-            <td>$44,719</td>
-            <td>61.9h</td>
-            <td><strong>REJECTED: Win probability 18.0% &lt; 92% minimum (no underdog lottery bets)</strong></td>
-        </tr>
-        
     </tbody>
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box"> SUMMARY] Scanned=799 | PassedFilter=152 | Evaluated=26 | Edges(&gt;=8pp)=20 | Opened=1 | Closed=1 | Cash=$17.14 | Equity=$26.98 (DD=3.80%)
-[2026-10-22 00:44:14 UTC] [CYCLE #133 SUMMARY] Scanned=800 | PassedFilter=147 | Evaluated=28 | Edges(&gt;=8pp)=22 | Opened=0 | Closed=0 | Cash=$17.14 | Equity=$26.93 (DD=3.98%)
+  <pre class="log-box"> SUMMARY] Scanned=800 | PassedFilter=147 | Evaluated=28 | Edges(&gt;=8pp)=22 | Opened=0 | Closed=0 | Cash=$17.14 | Equity=$26.93 (DD=3.98%)
 [2026-10-22 00:53:44 UTC] [CYCLE #134 SUMMARY] Scanned=800 | PassedFilter=148 | Evaluated=27 | Edges(&gt;=8pp)=20 | Opened=0 | Closed=0 | Cash=$17.14 | Equity=$26.98 (DD=3.82%)
 [RESOLVED] #41 | Will Bitcoin reach $85,000 on October 21? (NO)
   Entry VWAP: 0.9100 | Settlement: 1.00 | PnL: $+0.32 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $1.00/share
@@ -663,6 +662,7 @@
 [2026-10-24 01:54:39 UTC] [CYCLE #168 SUMMARY] Scanned=780 | PassedFilter=195 | Evaluated=28 | Edges(&gt;=8pp)=24 | Opened=0 | Closed=0 | Cash=$18.04 | Equity=$30.06 (DD=0.25%)
 [2026-10-24 02:03:56 UTC] [CYCLE #169 SUMMARY] Scanned=799 | PassedFilter=205 | Evaluated=28 | Edges(&gt;=8pp)=25 | Opened=0 | Closed=0 | Cash=$18.04 | Equity=$30.06 (DD=0.25%)
 [2026-10-24 02:13:12 UTC] [CYCLE #170 SUMMARY] Scanned=800 | PassedFilter=215 | Evaluated=29 | Edges(&gt;=8pp)=26 | Opened=0 | Closed=0 | Cash=$18.04 | Equity=$30.06 (DD=0.25%)
+[2026-10-24 07:09:53 UTC] [CYCLE #171 SUMMARY] Scanned=783 | PassedFilter=285 | Evaluated=34 | Edges(&gt;=8pp)=29 | Opened=0 | Closed=0 | Cash=$18.04 | Equity=$30.27 (DD=0.00%)
 </pre>
 </body>
 </html>
