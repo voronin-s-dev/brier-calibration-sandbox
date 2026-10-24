@@ -856,3 +856,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-24 21:29:16 UTC] [CYCLE #183 SUMMARY] Scanned=800 | PassedFilter=252 | Evaluated=24 | Edges(>=8pp)=15 | Opened=0 | Closed=0 | Cash=$16.32 | Equity=$30.98 (DD=0.00%)
 [2026-10-24 21:38:36 UTC] [CYCLE #184 SUMMARY] Scanned=779 | PassedFilter=256 | Evaluated=25 | Edges(>=8pp)=14 | Opened=0 | Closed=0 | Cash=$16.32 | Equity=$31.04 (DD=0.09%)
 [2026-10-24 21:47:55 UTC] [CYCLE #185 SUMMARY] Scanned=798 | PassedFilter=261 | Evaluated=24 | Edges(>=8pp)=13 | Opened=0 | Closed=0 | Cash=$16.32 | Equity=$31.03 (DD=0.11%)
+[EXIT] #54 | Will Bitcoin dip to $79,000 on October 24? (NO)
+  Shares: 3.85 | Entry VWAP: 0.9340 -> Exit Bid VWAP: 0.9920
+  Proceeds: $3.82 | Realized PnL: $+0.22 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.2%) secured early with +6.2% gain
+[2026-10-24 23:35:35 UTC] [OPEN TRADE #55] Will Bitcoin dip to $78,000 October 19-25?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 97.5% vs Рынок (Ask VWAP): 94.8% (Перекос/Edge: +2.7 п.п.)
+  Стакан CLOB: BestBid=0.945, BestAsk=0.948, Проскальзывание входа/выхода=0.30% (<= 3.0%)
+  Келли: Полный=51.0%, Четверть(0.25x)=17.8% -> Применён=12.0% банка
+  Размер сделки: $3.75 USDC (3.96 shares @ $0.9480)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.569 if P_est <= 70%
+  Причина: High market consensus NO (94.0%) within 28.4h of expiry
+
+[2026-10-24 23:35:35 UTC] [CYCLE #186 SUMMARY] Scanned=790 | PassedFilter=204 | Evaluated=22 | Edges(>=8pp)=19 | Opened=1 | Closed=1 | Cash=$16.39 | Equity=$31.22 (DD=0.04%)
