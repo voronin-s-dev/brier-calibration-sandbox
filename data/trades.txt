@@ -826,3 +826,28 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-24 16:11:51 UTC] [CYCLE #177 SUMMARY] Scanned=799 | PassedFilter=274 | Evaluated=29 | Edges(>=8pp)=20 | Opened=1 | Closed=1 | Cash=$16.25 | Equity=$30.83 (DD=0.18%)
 [2026-10-24 16:21:16 UTC] [CYCLE #178 SUMMARY] Scanned=798 | PassedFilter=264 | Evaluated=33 | Edges(>=8pp)=24 | Opened=0 | Closed=0 | Cash=$16.25 | Equity=$30.84 (DD=0.15%)
 [2026-10-24 16:30:40 UTC] [CYCLE #179 SUMMARY] Scanned=800 | PassedFilter=261 | Evaluated=29 | Edges(>=8pp)=17 | Opened=0 | Closed=0 | Cash=$16.25 | Equity=$30.85 (DD=0.14%)
+[EXIT] #45 | US x Iran ceasefire continues through October 24? (YES)
+  Shares: 3.71 | Entry VWAP: 0.9200 -> Exit Bid VWAP: 0.9850
+  Proceeds: $3.65 | Realized PnL: $+0.24 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.5%) secured early with +7.1% gain
+[EXIT] #47 | Israel x Iran ceasefire continues through October 24? (YES)
+  Shares: 3.76 | Entry VWAP: 0.9500 -> Exit Bid VWAP: 0.9900
+  Proceeds: $3.72 | Realized PnL: $+0.15 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.0%) secured early with +4.2% gain
+[2026-10-24 18:56:32 UTC] [OPEN TRADE #53] Will Flávio Bolsonaro win the second round of the 2026 Brazilian presidential election by 8–12%?
+  Категория: Geopolitics | Сторона: NO | Источник: the margin of victory between the top two candidates in the second round of the next Brazil Presidential Election
+  Оценка бота: 97.1% vs Рынок (Ask VWAP): 93.9% (Перекос/Edge: +3.2 п.п.)
+  Стакан CLOB: BestBid=0.932, BestAsk=0.939, Проскальзывание входа/выхода=0.70% (<= 3.0%)
+  Келли: Полный=52.5%, Четверть(0.25x)=18.4% -> Применён=12.0% банка
+  Размер сделки: $3.71 USDC (3.95 shares @ $0.9390)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.563 if P_est <= 70%
+  Причина: High market consensus NO (93.6%) within 33.0h of expiry
+
+[2026-10-24 18:56:32 UTC] [OPEN TRADE #54] Will Bitcoin dip to $79,000 on October 24?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 95.6% vs Рынок (Ask VWAP): 93.4% (Перекос/Edge: +2.2 п.п.)
+  Стакан CLOB: BestBid=0.931, BestAsk=0.934, Проскальзывание входа/выхода=0.30% (<= 3.0%)
+  Келли: Полный=33.3%, Четверть(0.25x)=11.7% -> Применён=11.7% банка
+  Размер сделки: $3.60 USDC (3.85 shares @ $0.9340)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.560 if P_est <= 70%
+  Причина: High market consensus NO (92.1%) within 9.1h of expiry
+
+[2026-10-24 18:56:32 UTC] [CYCLE #180 SUMMARY] Scanned=783 | PassedFilter=254 | Evaluated=26 | Edges(>=8pp)=17 | Opened=2 | Closed=2 | Cash=$16.32 | Equity=$30.88 (DD=0.25%)
