@@ -798,3 +798,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-24 07:19:13 UTC] [CYCLE #172 SUMMARY] Scanned=795 | PassedFilter=285 | Evaluated=33 | Edges(>=8pp)=25 | Opened=0 | Closed=0 | Cash=$18.04 | Equity=$30.25 (DD=0.06%)
 [2026-10-24 07:28:32 UTC] [CYCLE #173 SUMMARY] Scanned=800 | PassedFilter=290 | Evaluated=31 | Edges(>=8pp)=26 | Opened=0 | Closed=0 | Cash=$18.04 | Equity=$30.25 (DD=0.16%)
 [2026-10-24 12:11:06 UTC] [CYCLE #174 SUMMARY] Scanned=791 | PassedFilter=301 | Evaluated=33 | Edges(>=8pp)=30 | Opened=0 | Closed=0 | Cash=$18.04 | Equity=$30.61 (DD=0.00%)
+[EXIT] #50 | Spread: Manchester City FC (-3.5) (NO)
+  Shares: 3.82 | Entry VWAP: 0.9400 -> Exit Bid VWAP: 0.9860
+  Proceeds: $3.77 | Realized PnL: $+0.18 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.6%) secured early with +4.9% gain
+[2026-10-24 12:20:24 UTC] [OPEN TRADE #51] Will there be no change in Fed interest rates after the October 2026 meeting?
+  Категория: Macro | Сторона: YES | Источник: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+  Оценка бота: 96.5% vs Рынок (Ask VWAP): 94.0% (Перекос/Edge: +2.5 п.п.)
+  Стакан CLOB: BestBid=0.930, BestAsk=0.940, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=41.7%, Четверть(0.25x)=14.6% -> Применён=12.0% банка
+  Размер сделки: $3.67 USDC (3.90 shares @ $0.9400)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.564 if P_est <= 70%
+  Причина: Fed rate freeze consensus (93.5%) with 111.6h to close
+
+[2026-10-24 12:20:24 UTC] [CYCLE #175 SUMMARY] Scanned=800 | PassedFilter=299 | Evaluated=32 | Edges(>=8pp)=30 | Opened=1 | Closed=1 | Cash=$18.14 | Equity=$30.56 (DD=0.17%)
