@@ -811,3 +811,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: Fed rate freeze consensus (93.5%) with 111.6h to close
 
 [2026-10-24 12:20:24 UTC] [CYCLE #175 SUMMARY] Scanned=800 | PassedFilter=299 | Evaluated=32 | Edges(>=8pp)=30 | Opened=1 | Closed=1 | Cash=$18.14 | Equity=$30.56 (DD=0.17%)
+[2026-10-24 12:29:41 UTC] [CYCLE #176 SUMMARY] Scanned=798 | PassedFilter=295 | Evaluated=30 | Edges(>=8pp)=24 | Opened=0 | Closed=0 | Cash=$18.14 | Equity=$30.54 (DD=0.23%)
