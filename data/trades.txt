@@ -824,3 +824,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: CLOB near-touch depth imbalance OBI=-0.46 (BidDepth=$32,552 vs AskDepth=$88,891) | News sentiment=-1.00 (12 articles; top: 'Trending mortgage rates - firsttuesday Journal')
 
 [2026-10-24 16:11:51 UTC] [CYCLE #177 SUMMARY] Scanned=799 | PassedFilter=274 | Evaluated=29 | Edges(>=8pp)=20 | Opened=1 | Closed=1 | Cash=$16.25 | Equity=$30.83 (DD=0.18%)
+[2026-10-24 16:21:16 UTC] [CYCLE #178 SUMMARY] Scanned=798 | PassedFilter=264 | Evaluated=33 | Edges(>=8pp)=24 | Opened=0 | Closed=0 | Cash=$16.25 | Equity=$30.84 (DD=0.15%)
