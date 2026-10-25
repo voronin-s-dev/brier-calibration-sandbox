@@ -21,7 +21,7 @@ from polymarket_api import (
     simulate_clob_buy_and_exit_check,
     simulate_clob_sell_shares,
 )
-from telegram_notify import send_telegram_alert
+from telegram_notify import check_and_send_daily_digest, notify_position_closed, send_telegram_alert
 
 
 TRADES_LOG_PATH = Path(__file__).resolve().parent / "data" / "trades.txt"
@@ -221,11 +221,12 @@ class GrokCharterPaperTrader:
                     f"  Entry VWAP: {entry_vwap:.4f} | Settlement: {payout_per_share:.2f} | "
                     f"PnL: ${pnl:+.2f} USDC | Reason: {reason}"
                 )
-                send_telegram_alert(
-                    f"🏁 <b>Polymarket Исход #{pos_id}</b>\n"
-                    f"📌 <b>{pos['question']}</b> ({side})\n"
-                    f"💵 Вход: ${entry_vwap:.3f} → Выплата: ${payout_per_share:.2f}\n"
-                    f"💰 <b>PnL: ${pnl:+.2f} USDC</b>"
+                notify_position_closed(
+                    pos=pos,
+                    pnl=pnl,
+                    exit_vwap=payout_per_share,
+                    exit_reason=reason,
+                    total_equity=float(self.db.get_portfolio()["total_equity"]),
                 )
                 closed_count += 1
                 continue
@@ -300,12 +301,12 @@ class GrokCharterPaperTrader:
                     f"  Shares: {shares:.2f} | Entry VWAP: {entry_vwap:.4f} -> Exit Bid VWAP: {vwap_sell:.4f}\n"
                     f"  Proceeds: ${proceeds:.2f} | Realized PnL: ${pnl:+.2f} USDC | Reason: {exit_reason}"
                 )
-                send_telegram_alert(
-                    f"📤 <b>Polymarket Выход #{pos_id}</b>\n"
-                    f"📌 <b>{pos['question']}</b> ({side})\n"
-                    f"💵 Вход: ${entry_vwap:.3f} → Выход (Bid): ${vwap_sell:.3f}\n"
-                    f"💰 <b>PnL: ${pnl:+.2f} USDC</b>\n"
-                    f"ℹ️ {exit_reason}"
+                notify_position_closed(
+                    pos=pos,
+                    pnl=pnl,
+                    exit_vwap=vwap_sell,
+                    exit_reason=exit_reason,
+                    total_equity=float(self.db.get_portfolio()["total_equity"]),
                 )
                 closed_count += 1
 
@@ -565,15 +566,7 @@ class GrokCharterPaperTrader:
                             f"  Условие выхода: {exit_cond}\n"
                             f"  Причина: {eval_res.rationale}\n"
                         )
-                        send_telegram_alert(
-                            f"🟢 <b>Polymarket Демо-Сделка #{pos_id}</b>\n"
-                            f"📌 <b>{mkt.question}</b>\n"
-                            f"🎯 Сторона: <b>{chosen_side}</b> ({mkt.category})\n"
-                            f"📊 Оценка бота: <b>{p_est*100:.1f}%</b> vs Ask: <b>{final_sim.vwap_buy_price*100:.1f}%</b> (Edge: +{(p_est - final_sim.vwap_buy_price)*100:.1f} п.п.)\n"
-                            f"💵 Сумма: <b>${final_bet_usdc:.2f} USDC</b> ({applied_pct*100:.1f}% банка)\n"
-                            f"📉 CLOB спред: {final_sim.roundtrip_slippage_pct*100:.2f}%\n"
-                            f"🧠 {eval_res.rationale}"
-                        )
+
 
             # Store candidate evaluation in DB if edge >= 4 pp or if executed
             if abs(real_edge) >= 0.04 or decision.startswith("EXECUTED"):
@@ -630,6 +623,12 @@ class GrokCharterPaperTrader:
         try:
             from auto_governor import AutoGovernor
             AutoGovernor(self.db).evaluate_portfolio_and_rules()
+        except Exception:
+            pass
+
+        # Send consolidated daily digest once per 24 hours
+        try:
+            check_and_send_daily_digest(self.db)
         except Exception:
             pass
 

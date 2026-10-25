@@ -4,8 +4,10 @@
   "2": "send_telegram_alert",
   "3": "trader.py",
   "4": "AutoGovernor",
-  "5": "GrokCharterPaperTrader",
+  "5": ".compute_kelly_sizing",
   "6": "🧠 Реестр авто-доработок и полуавтоматических решений (Auto-Governor)",
   "7": "📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)",
-  "8": "README.md"
+  "8": "README.md",
+  "9": "http_tls.py",
+  "10": "extract_event_key"
 }

@@ -243,11 +243,7 @@ class AutoGovernor:
                     explanation=explanation,
                     action_dict={"added_weather_city": clean_city, "station": station_label},
                 )
-                send_telegram_alert(
-                    f"🌍 <b>AUTO-FIX (Хотфикс словаря погоды)</b>\n"
-                    f"Добавлен новый город: <b>{clean_city.title()}</b> ({station_label})\n"
-                    f"Рынок: {m.question[:70]}"
-                )
+
             except Exception:
                 continue
 
