@@ -949,3 +949,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-10-25 21:59:55 UTC] [CYCLE #205 SUMMARY] Scanned=798 | PassedFilter=238 | Evaluated=29 | Edges(>=8pp)=17 | Opened=3 | Closed=2 | Cash=$0.00 | Equity=$30.53 (DD=4.22%)
 [2026-10-25 22:09:17 UTC] [CYCLE #206 SUMMARY] Scanned=793 | PassedFilter=227 | Evaluated=28 | Edges(>=8pp)=15 | Opened=0 | Closed=0 | Cash=$0.00 | Equity=$31.10 (DD=2.43%)
+[2026-10-25T22:18:07.599377+00:00] [GOVERNOR APPROVED] ✅ Одобрено предложение #18 (Ротация категорий: переключить фокус на Sports): active_category_filter -> Sports
