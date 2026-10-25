@@ -1,7 +1,7 @@
-# Graph Report - Polymarket-Sim  (2026-10-20)
+# Graph Report - Polymarket-Sim  (2026-10-25)
 
 ## Corpus Check
-- 15 files · ~31,833 words
+- 15 files · ~35,585 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 3 file(s) not represented in the graph (top: (none) 2, .db 1)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4e248f85`
+- Built from commit: `cd42b26f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -81,11 +81,11 @@ Nodes (4): HighConvictionFactOracle, WeatherOracle, extract_event_key(), GrokCha
 
 ### Community 6 - "🧠 Реестр авто-доработок и полуавтоматических решений (Auto-Governor)"
 Cohesion: 0.40
-Nodes (4): 🛠️ История применённых авто-фиксов и одобренных правок (16), 🟡 Ожидают твоего решения (Полуавтоматический режим: 0), 🧠 Реестр авто-доработок и полуавтоматических решений (Auto-Governor), ⚙️ Текущие активные параметры риск-менеджмента
+Nodes (4): 🛠️ История применённых авто-фиксов и одобренных правок (1), 🟡 Ожидают твоего решения (Полуавтоматический режим: 0), 🧠 Реестр авто-доработок и полуавтоматических решений (Auto-Governor), ⚙️ Текущие активные параметры риск-менеджмента
 
 ### Community 7 - "📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)"
 Cohesion: 0.40
-Nodes (4): 📂 Открытые позиции (4 / 8), 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт), 🔍 Последние проверенные кандидаты и фильтр стакана CLOB, 💰 Состояние виртуального портфеля
+Nodes (4): 📂 Открытые позиции (7 / 8), 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт), 🔍 Последние проверенные кандидаты и фильтр стакана CLOB, 💰 Состояние виртуального портфеля
 
 ## Knowledge Gaps
 - **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.

@@ -883,3 +883,31 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-25 16:43:50 UTC] [CYCLE #198 SUMMARY] Scanned=795 | PassedFilter=249 | Evaluated=32 | Edges(>=8pp)=27 | Opened=0 | Closed=0 | Cash=$16.39 | Equity=$31.38 (DD=0.00%)
 [2026-10-25 16:53:07 UTC] [CYCLE #199 SUMMARY] Scanned=797 | PassedFilter=249 | Evaluated=29 | Edges(>=8pp)=25 | Opened=0 | Closed=0 | Cash=$16.39 | Equity=$31.35 (DD=0.08%)
 [2026-10-25 17:02:22 UTC] [CYCLE #200 SUMMARY] Scanned=793 | PassedFilter=259 | Evaluated=30 | Edges(>=8pp)=25 | Opened=0 | Closed=0 | Cash=$16.39 | Equity=$31.34 (DD=0.10%)
+[2026-10-25 18:43:55 UTC] [OPEN TRADE #56] Spread: FC Barcelona (-3.5)
+  Категория: Sports | Сторона: NO | Источник: https://www.laliga.com/
+  Оценка бота: 97.5% vs Рынок (Ask VWAP): 88.0% (Перекос/Edge: +9.5 п.п.)
+  Стакан CLOB: BestBid=0.870, BestAsk=0.880, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=79.2%, Четверть(0.25x)=31.7% -> Применён=15.0% банка
+  Размер сделки: $4.70 USDC (5.34 shares @ $0.8800)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.528 if P_est <= 70%
+  Причина: Heavy handicap spread (-3.5+) is historically improbable
+
+[2026-10-25 18:43:55 UTC] [OPEN TRADE #58] LoL: Gen.G vs LYON (BO3) - Worlds Group Stage
+  Категория: Sports | Сторона: YES | Источник: https://gol.gg/esports/home
+  Оценка бота: 95.0% vs Рынок (Ask VWAP): 92.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.910, BestAsk=0.920, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=37.5%, Четверть(0.25x)=15.0% -> Применён=15.0% банка
+  Размер сделки: $4.69 USDC (5.10 shares @ $0.9200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.552 if P_est <= 70%
+  Причина: High market consensus YES (91.5%) within 9.3h of expiry
+
+[2026-10-25 18:43:55 UTC] [OPEN TRADE #59] Israel x Iran ceasefire continues through October 27?
+  Категория: Geopolitics | Сторона: YES | Источник: the totality of information available from the resolution sources at that time
+  Оценка бота: 96.5% vs Рынок (Ask VWAP): 94.0% (Перекос/Edge: +2.5 п.п.)
+  Стакан CLOB: BestBid=0.920, BestAsk=0.940, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=41.7%, Четверть(0.25x)=16.7% -> Применён=15.0% банка
+  Размер сделки: $4.69 USDC (4.99 shares @ $0.9400)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.564 if P_est <= 70%
+  Причина: Ceasefire holding within 57.3h deadline
+
+[2026-10-25 18:43:55 UTC] [CYCLE #201 SUMMARY] Scanned=799 | PassedFilter=278 | Evaluated=36 | Edges(>=8pp)=29 | Opened=4 | Closed=0 | Cash=$1.31 | Equity=$31.13 (DD=0.77%)

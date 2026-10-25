@@ -65,10 +65,11 @@ class GrokCharterPaperTrader:
     Strict Time Exit < 1.5h without holding to binary resolution cliff, and Mathematical Oracles only).
     """
 
-    MAX_OPEN_POSITIONS = 4          # Max 4 open positions for tight risk focus
-    MAX_POSITIONS_PER_CATEGORY = 2  # Max 2 per category (disciplined diversification)
-    KELLY_FRACTION = 0.35           # Fractional Kelly sizing for high-winrate strategy
-    MAX_BANK_PCT_PER_TRADE = 0.12   # Up to 12% bankroll per trade ($3.00-$3.50 on current bankroll)
+    MAX_OPEN_POSITIONS = 8          # Expanded to 8 open positions for wider high-conviction coverage
+    MAX_POSITIONS_PER_CATEGORY = 3  # Max 3 per general category (disciplined diversification)
+    MAX_CRYPTO_POSITIONS = 4        # Max 4 for high-liquidity Crypto (fast turnover ~6.7h)
+    KELLY_FRACTION = 0.40           # Fractional Kelly sizing for high-winrate strategy (up from 0.35)
+    MAX_BANK_PCT_PER_TRADE = 0.15   # Up to 15% bankroll per trade (~$4.50-$4.70 on current bankroll)
     MIN_EDGE_PP = 0.015             # 1.5 percentage points minimum divergence against Ask VWAP
     MIN_ESTIMATED_PROB = 0.92       # Minimum estimated probability: strictly high-conviction events (92%+ likelihood)
     MIN_CONTRACT_PRICE = 0.84       # Buy only discount mature contracts [0.84, 0.965]
@@ -436,7 +437,10 @@ class GrokCharterPaperTrader:
                 max_pct=self.MAX_BANK_PCT_PER_TRADE,
                 kelly_fraction=self.KELLY_FRACTION,
             )
-            probe_bet_usdc = max(tentative_bet, round(total_equity * 0.10, 2), 2.50)
+            probe_bet_usdc = min(
+                max(tentative_bet, round(total_equity * 0.12, 2), 2.50),
+                max(cash_available, 1.00),
+            )
 
             # Step 6: Check real CLOB Order Book for entry Ask VWAP and immediate exit Bid VWAP
             try:
@@ -456,6 +460,7 @@ class GrokCharterPaperTrader:
                 edges_found += 1
 
             event_key = extract_event_key(mkt.question, mkt.category)
+            cat_cap = self.MAX_CRYPTO_POSITIONS if mkt.category == "Crypto" else self.MAX_POSITIONS_PER_CATEGORY
 
             # Decide whether to execute or reject
             decision = ""
@@ -478,8 +483,8 @@ class GrokCharterPaperTrader:
                 decision = f"REJECTED: CLOB round-trip slippage {ob_sim.roundtrip_slippage_pct*100:.2f}% > {max_slippage*100:.1f}% limit"
             elif event_key in active_event_keys:
                 decision = f"REJECTED: Duplicate underlying event ({event_key})"
-            elif category_counts.get(mkt.category, 0) >= self.MAX_POSITIONS_PER_CATEGORY:
-                decision = f"REJECTED: Category cap reached ({self.MAX_POSITIONS_PER_CATEGORY}/{self.MAX_POSITIONS_PER_CATEGORY} in {mkt.category})"
+            elif category_counts.get(mkt.category, 0) >= cat_cap:
+                decision = f"REJECTED: Category cap reached ({cat_cap}/{cat_cap} in {mkt.category})"
             elif len(open_positions) + trades_opened >= self.MAX_OPEN_POSITIONS:
                 decision = f"REJECTED: Max open positions ({self.MAX_OPEN_POSITIONS}) reached"
             else:
@@ -491,13 +496,19 @@ class GrokCharterPaperTrader:
                     max_pct=self.MAX_BANK_PCT_PER_TRADE,
                     kelly_fraction=self.KELLY_FRACTION,
                 )
-                # If fractional Kelly bet is near minimum order ($0.70..$1.00) and within 4% bank risk, floor at $1.00
-                if 0.70 <= final_bet_usdc < 1.00 and cash_available >= 1.00 and 1.00 <= total_equity * 0.045:
+                # If calculated Kelly bet exceeds currently available cash, but cash is sufficient for minimum order,
+                # utilize remaining available cash to prevent capital from sitting idle
+                if final_bet_usdc > cash_available and cash_available >= 1.00:
+                    final_bet_usdc = round(cash_available, 2)
+                    applied_pct = round(final_bet_usdc / total_equity, 4)
+
+                # If fractional Kelly bet is near minimum order ($0.70..$1.00) and within bank risk, floor at $1.00
+                if 0.70 <= final_bet_usdc < 1.00 and cash_available >= 1.00 and 1.00 <= total_equity * 0.05:
                     final_bet_usdc = 1.00
                     applied_pct = round(1.00 / total_equity, 4)
 
                 if final_bet_usdc < 1.00 or final_bet_usdc > cash_available:
-                    decision = f"REJECTED: Calculated 0.25x Kelly bet ${final_bet_usdc:.2f} below $1.00 min or > cash ${cash_available:.2f}"
+                    decision = f"REJECTED: Available cash ${cash_available:.2f} below $1.00 minimum bet"
                 else:
                     # Re-verify exact shares for `final_bet_usdc`
                     final_sim = simulate_clob_buy_and_exit_check(
