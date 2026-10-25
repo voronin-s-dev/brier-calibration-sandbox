@@ -911,3 +911,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: Ceasefire holding within 57.3h deadline
 
 [2026-10-25 18:43:55 UTC] [CYCLE #201 SUMMARY] Scanned=799 | PassedFilter=278 | Evaluated=36 | Edges(>=8pp)=29 | Opened=4 | Closed=0 | Cash=$1.31 | Equity=$31.13 (DD=0.77%)
+[2026-10-25 19:30:17 UTC] [CYCLE #202 SUMMARY] Scanned=798 | PassedFilter=241 | Evaluated=31 | Edges(>=8pp)=19 | Opened=0 | Closed=0 | Cash=$2.31 | Equity=$31.16 (DD=0.68%)
