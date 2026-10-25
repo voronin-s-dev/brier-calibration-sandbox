@@ -914,3 +914,37 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-25 19:30:17 UTC] [CYCLE #202 SUMMARY] Scanned=798 | PassedFilter=241 | Evaluated=31 | Edges(>=8pp)=19 | Opened=0 | Closed=0 | Cash=$2.31 | Equity=$31.16 (DD=0.68%)
 [2026-10-25 19:39:36 UTC] [CYCLE #203 SUMMARY] Scanned=778 | PassedFilter=231 | Evaluated=32 | Edges(>=8pp)=21 | Opened=0 | Closed=0 | Cash=$2.31 | Equity=$31.16 (DD=0.69%)
 [2026-10-25 19:48:54 UTC] [CYCLE #204 SUMMARY] Scanned=796 | PassedFilter=235 | Evaluated=31 | Edges(>=8pp)=22 | Opened=0 | Closed=0 | Cash=$2.31 | Equity=$31.13 (DD=0.78%)
+[EXIT] #53 | Will Flávio Bolsonaro win the second round of the 2026 Brazilian presidential election by 8–12%? (NO)
+  Shares: 3.95 | Entry VWAP: 0.9390 -> Exit Bid VWAP: 0.9890
+  Proceeds: $3.91 | Realized PnL: $+0.20 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.9%) secured early with +5.3% gain
+[EXIT] #56 | Spread: FC Barcelona (-3.5) (NO)
+  Shares: 5.34 | Entry VWAP: 0.8800 -> Exit Bid VWAP: 0.9990
+  Proceeds: $5.34 | Realized PnL: $+0.64 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +13.5% gain
+[2026-10-25 21:59:55 UTC] [OPEN TRADE #60] Clippers vs. Thunder
+  Категория: Sports | Сторона: NO | Источник: https://www.nba.com/
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=33.3%, Четверть(0.25x)=13.3% -> Применён=13.3% банка
+  Размер сделки: $4.08 USDC (4.48 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: High market consensus NO (90.5%) within 1.0h of expiry
+
+[2026-10-25 21:59:55 UTC] [OPEN TRADE #61] Will the price of Bitcoin be above $78,000 on October 26?
+  Категория: Crypto | Сторона: YES | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 97.9% vs Рынок (Ask VWAP): 94.0% (Перекос/Edge: +3.9 п.п.)
+  Стакан CLOB: BestBid=0.939, BestAsk=0.940, Проскальзывание входа/выхода=0.10% (<= 3.0%)
+  Келли: Полный=65.0%, Четверть(0.25x)=26.0% -> Применён=15.0% банка
+  Размер сделки: $4.58 USDC (4.87 shares @ $0.9400)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.564 if P_est <= 70%
+  Причина: High market consensus YES (94.4%) within 18.0h of expiry
+
+[2026-10-25 21:59:55 UTC] [OPEN TRADE #62] Will Elon Musk post 115-139 tweets from October 24 to October 26, 2026?
+  Категория: Geopolitics | Сторона: NO | Источник: https://x.com/elonmusk
+  Оценка бота: 96.0% vs Рынок (Ask VWAP): 92.9% (Перекос/Edge: +3.1 п.п.)
+  Стакан CLOB: BestBid=0.922, BestAsk=0.929, Проскальзывание входа/выхода=0.70% (<= 3.0%)
+  Келли: Полный=43.7%, Четверть(0.25x)=17.5% -> Применён=9.5% банка
+  Размер сделки: $2.89 USDC (3.11 shares @ $0.9290)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.557 if P_est <= 70%
+  Причина: High market consensus NO (92.5%) within 18.0h of expiry
+
+[2026-10-25 21:59:55 UTC] [CYCLE #205 SUMMARY] Scanned=798 | PassedFilter=238 | Evaluated=29 | Edges(>=8pp)=17 | Opened=3 | Closed=2 | Cash=$0.00 | Equity=$30.53 (DD=4.22%)
