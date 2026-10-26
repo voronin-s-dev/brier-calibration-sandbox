@@ -983,3 +983,25 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-26 04:35:24 UTC] [CYCLE #210 SUMMARY] Scanned=800 | PassedFilter=52 | Evaluated=22 | Edges(>=8pp)=19 | Opened=1 | Closed=2 | Cash=$8.72 | Equity=$33.42 (DD=0.05%)
 [2026-10-26 04:44:57 UTC] [CYCLE #211 SUMMARY] Scanned=800 | PassedFilter=51 | Evaluated=23 | Edges(>=8pp)=20 | Opened=0 | Closed=0 | Cash=$8.72 | Equity=$33.47 (DD=0.00%)
 [2026-10-26 04:54:27 UTC] [CYCLE #212 SUMMARY] Scanned=798 | PassedFilter=53 | Evaluated=22 | Edges(>=8pp)=19 | Opened=0 | Closed=0 | Cash=$8.72 | Equity=$33.44 (DD=0.09%)
+[EXIT] #62 | Will Elon Musk post 115-139 tweets from October 24 to October 26, 2026? (NO)
+  Shares: 3.11 | Entry VWAP: 0.9290 -> Exit Bid VWAP: 0.9920
+  Proceeds: $3.09 | Realized PnL: $+0.20 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.2%) secured early with +6.8% gain
+[2026-10-26 10:27:38 UTC] [OPEN TRADE #65] Counter-Strike: Nemiga vs Aurora Gaming (BO3) - PGL Masters Bucharest Group Stage
+  Категория: Sports | Сторона: NO | Источник: https://hltv.org
+  Оценка бота: 98.5% vs Рынок (Ask VWAP): 95.4% (Перекос/Edge: +3.1 п.п.)
+  Стакан CLOB: BestBid=0.950, BestAsk=0.954, Проскальзывание входа/выхода=0.40% (<= 3.0%)
+  Келли: Полный=67.4%, Четверть(0.25x)=27.0% -> Применён=15.0% банка
+  Размер сделки: $5.06 USDC (5.30 shares @ $0.9540)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.572 if P_est <= 70%
+  Причина: High market consensus NO (96.5%) within 3.5h of expiry
+
+[2026-10-26 10:27:38 UTC] [OPEN TRADE #66] Pacers vs. Bucks: O/U 212.5
+  Категория: Sports | Сторона: YES | Источник: https://www.nba.com/
+  Оценка бота: 98.5% vs Рынок (Ask VWAP): 96.0% (Перекос/Edge: +2.5 п.п.)
+  Стакан CLOB: BestBid=0.940, BestAsk=0.960, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=62.5%, Четверть(0.25x)=25.0% -> Применён=15.0% банка
+  Размер сделки: $5.06 USDC (5.27 shares @ $0.9600)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.576 if P_est <= 70%
+  Причина: High market consensus YES (95.0%) within 13.5h of expiry
+
+[2026-10-26 10:27:38 UTC] [CYCLE #213 SUMMARY] Scanned=799 | PassedFilter=89 | Evaluated=23 | Edges(>=8pp)=19 | Opened=2 | Closed=1 | Cash=$1.69 | Equity=$33.61 (DD=0.38%)
