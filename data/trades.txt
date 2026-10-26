@@ -953,3 +953,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [RESOLVED] #58 | LoL: Gen.G vs LYON (BO3) - Worlds Group Stage (YES)
   Entry VWAP: 0.9200 | Settlement: 1.00 | PnL: $+0.41 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $1.00/share
 [2026-10-26 00:05:30 UTC] [CYCLE #207 SUMMARY] Scanned=800 | PassedFilter=46 | Evaluated=24 | Edges(>=8pp)=22 | Opened=0 | Closed=1 | Cash=$5.10 | Equity=$31.83 (DD=1.57%)
+[2026-10-26 00:15:00 UTC] [OPEN TRADE #63] Counter-Strike: Imperial vs paiN (BO3) - Circuit X Curitiba Playoffs
+  Категория: Sports | Сторона: YES | Источник: https://hltv.org
+  Оценка бота: 98.5% vs Рынок (Ask VWAP): 96.0% (Перекос/Edge: +2.5 п.п.)
+  Стакан CLOB: BestBid=0.952, BestAsk=0.960, Проскальзывание входа/выхода=0.80% (<= 3.0%)
+  Келли: Полный=62.5%, Четверть(0.25x)=25.0% -> Применён=15.0% банка
+  Размер сделки: $4.80 USDC (5.00 shares @ $0.9600)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.576 if P_est <= 70%
+  Причина: High market consensus YES (96.9%) within 4.2h of expiry
+
+[2026-10-26 00:15:00 UTC] [CYCLE #208 SUMMARY] Scanned=800 | PassedFilter=36 | Evaluated=21 | Edges(>=8pp)=21 | Opened=1 | Closed=0 | Cash=$0.30 | Equity=$31.93 (DD=1.27%)
