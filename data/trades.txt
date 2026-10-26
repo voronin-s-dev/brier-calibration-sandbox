@@ -967,3 +967,17 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 5.00 | Entry VWAP: 0.9600 -> Exit Bid VWAP: 0.9990
   Proceeds: $5.00 | Realized PnL: $+0.20 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +4.1% gain
 [2026-10-26 00:24:26 UTC] [CYCLE #209 SUMMARY] Scanned=793 | PassedFilter=34 | Evaluated=19 | Edges(>=8pp)=17 | Opened=0 | Closed=1 | Cash=$5.30 | Equity=$32.33 (DD=0.03%)
+[RESOLVED] #55 | Will Bitcoin dip to $78,000 October 19-25? (NO)
+  Entry VWAP: 0.9480 | Settlement: 1.00 | PnL: $+0.21 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $1.00/share
+[RESOLVED] #60 | Clippers vs. Thunder (NO)
+  Entry VWAP: 0.9100 | Settlement: 1.00 | PnL: $+0.40 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $1.00/share
+[2026-10-26 04:35:24 UTC] [OPEN TRADE #64] Spread: Olympique Lyonnais (-1.5)
+  Категория: Sports | Сторона: NO | Источник: https://www.ligue1.com/
+  Оценка бота: 98.5% vs Рынок (Ask VWAP): 96.5% (Перекос/Edge: +2.0 п.п.)
+  Стакан CLOB: BestBid=0.962, BestAsk=0.965, Проскальзывание входа/выхода=0.30% (<= 3.0%)
+  Келли: Полный=57.1%, Четверть(0.25x)=22.9% -> Применён=15.0% банка
+  Размер сделки: $5.01 USDC (5.19 shares @ $0.9650)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.579 if P_est <= 70%
+  Причина: High market consensus NO (96.4%) within 14.9h of expiry
+
+[2026-10-26 04:35:24 UTC] [CYCLE #210 SUMMARY] Scanned=800 | PassedFilter=52 | Evaluated=22 | Edges(>=8pp)=19 | Opened=1 | Closed=2 | Cash=$8.72 | Equity=$33.42 (DD=0.05%)
