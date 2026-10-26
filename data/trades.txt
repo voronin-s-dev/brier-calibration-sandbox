@@ -963,3 +963,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus YES (96.9%) within 4.2h of expiry
 
 [2026-10-26 00:15:00 UTC] [CYCLE #208 SUMMARY] Scanned=800 | PassedFilter=36 | Evaluated=21 | Edges(>=8pp)=21 | Opened=1 | Closed=0 | Cash=$0.30 | Equity=$31.93 (DD=1.27%)
+[EXIT] #63 | Counter-Strike: Imperial vs paiN (BO3) - Circuit X Curitiba Playoffs (YES)
+  Shares: 5.00 | Entry VWAP: 0.9600 -> Exit Bid VWAP: 0.9990
+  Proceeds: $5.00 | Realized PnL: $+0.20 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +4.1% gain
+[2026-10-26 00:24:26 UTC] [CYCLE #209 SUMMARY] Scanned=793 | PassedFilter=34 | Evaluated=19 | Edges(>=8pp)=17 | Opened=0 | Closed=1 | Cash=$5.30 | Equity=$32.33 (DD=0.03%)
