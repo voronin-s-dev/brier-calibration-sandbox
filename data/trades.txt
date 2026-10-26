@@ -1040,3 +1040,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus YES (92.5%) within 4.8h of expiry
 
 [2026-10-26 21:33:00 UTC] [CYCLE #219 SUMMARY] Scanned=799 | PassedFilter=110 | Evaluated=21 | Edges(>=8pp)=15 | Opened=1 | Closed=2 | Cash=$12.89 | Equity=$34.31 (DD=0.14%)
+[2026-10-26 21:42:28 UTC] [OPEN TRADE #69] Valorant: G2 Gozen vs Team Liquid Brazil (BO3) - VCT Game Changers Championship Playoffs
+  Категория: Sports | Сторона: NO | Источник: https://vlr.gg
+  Оценка бота: 98.0% vs Рынок (Ask VWAP): 94.0% (Перекос/Edge: +4.0 п.п.)
+  Стакан CLOB: BestBid=0.920, BestAsk=0.940, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=66.7%, Четверть(0.25x)=26.7% -> Применён=15.0% банка
+  Размер сделки: $5.18 USDC (5.51 shares @ $0.9400)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.564 if P_est <= 70%
+  Причина: CLOB near-touch depth imbalance OBI=-0.90 (BidDepth=$69 vs AskDepth=$1,265)
+
+[2026-10-26 21:42:28 UTC] [CYCLE #220 SUMMARY] Scanned=785 | PassedFilter=106 | Evaluated=25 | Edges(>=8pp)=20 | Opened=1 | Closed=0 | Cash=$7.71 | Equity=$34.42 (DD=0.32%)
