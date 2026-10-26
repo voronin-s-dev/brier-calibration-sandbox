@@ -1024,3 +1024,19 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-26 16:55:24 UTC] [CYCLE #216 SUMMARY] Scanned=787 | PassedFilter=123 | Evaluated=24 | Edges(>=8pp)=20 | Opened=1 | Closed=1 | Cash=$7.35 | Equity=$33.69 (DD=0.51%)
 [2026-10-26 17:04:48 UTC] [CYCLE #217 SUMMARY] Scanned=800 | PassedFilter=123 | Evaluated=23 | Edges(>=8pp)=18 | Opened=0 | Closed=0 | Cash=$7.35 | Equity=$33.68 (DD=0.54%)
 [2026-10-26 17:14:14 UTC] [CYCLE #218 SUMMARY] Scanned=799 | PassedFilter=126 | Evaluated=21 | Edges(>=8pp)=17 | Opened=0 | Closed=0 | Cash=$7.35 | Equity=$33.63 (DD=0.69%)
+[EXIT] #64 | Spread: Olympique Lyonnais (-1.5) (NO)
+  Shares: 5.19 | Entry VWAP: 0.9650 -> Exit Bid VWAP: 0.9990
+  Proceeds: $5.19 | Realized PnL: $+0.18 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +3.5% gain
+[EXIT] #67 | Will CD Santa Clara win on 2026-10-26? (NO)
+  Shares: 4.95 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9990
+  Proceeds: $4.94 | Realized PnL: $+0.44 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +9.8% gain
+[2026-10-26 21:33:00 UTC] [OPEN TRADE #68] Dota 2: BetBoom Team vs LEGION (BO3) - PARI Universe Group B
+  Категория: Sports | Сторона: YES | Источник: https://www.dotabuff.com
+  Оценка бота: 96.0% vs Рынок (Ask VWAP): 94.0% (Перекос/Edge: +2.0 п.п.)
+  Стакан CLOB: BestBid=0.930, BestAsk=0.940, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=33.3%, Четверть(0.25x)=13.3% -> Применён=13.3% банка
+  Размер сделки: $4.58 USDC (4.87 shares @ $0.9400)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.564 if P_est <= 70%
+  Причина: High market consensus YES (92.5%) within 4.8h of expiry
+
+[2026-10-26 21:33:00 UTC] [CYCLE #219 SUMMARY] Scanned=799 | PassedFilter=110 | Evaluated=21 | Edges(>=8pp)=15 | Opened=1 | Closed=2 | Cash=$12.89 | Equity=$34.31 (DD=0.14%)
