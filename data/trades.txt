@@ -950,3 +950,6 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-25 21:59:55 UTC] [CYCLE #205 SUMMARY] Scanned=798 | PassedFilter=238 | Evaluated=29 | Edges(>=8pp)=17 | Opened=3 | Closed=2 | Cash=$0.00 | Equity=$30.53 (DD=4.22%)
 [2026-10-25 22:09:17 UTC] [CYCLE #206 SUMMARY] Scanned=793 | PassedFilter=227 | Evaluated=28 | Edges(>=8pp)=15 | Opened=0 | Closed=0 | Cash=$0.00 | Equity=$31.10 (DD=2.43%)
 [2026-10-25T22:18:07.599377+00:00] [GOVERNOR APPROVED] ✅ Одобрено предложение #18 (Ротация категорий: переключить фокус на Sports): active_category_filter -> Sports
+[RESOLVED] #58 | LoL: Gen.G vs LYON (BO3) - Worlds Group Stage (YES)
+  Entry VWAP: 0.9200 | Settlement: 1.00 | PnL: $+0.41 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $1.00/share
+[2026-10-26 00:05:30 UTC] [CYCLE #207 SUMMARY] Scanned=800 | PassedFilter=46 | Evaluated=24 | Edges(>=8pp)=22 | Opened=0 | Closed=1 | Cash=$5.10 | Equity=$31.83 (DD=1.57%)
