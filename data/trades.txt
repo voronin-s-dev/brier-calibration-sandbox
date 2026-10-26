@@ -1005,3 +1005,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus YES (95.0%) within 13.5h of expiry
 
 [2026-10-26 10:27:38 UTC] [CYCLE #213 SUMMARY] Scanned=799 | PassedFilter=89 | Evaluated=23 | Edges(>=8pp)=19 | Opened=2 | Closed=1 | Cash=$1.69 | Equity=$33.61 (DD=0.38%)
+[EXIT] #65 | Counter-Strike: Nemiga vs Aurora Gaming (BO3) - PGL Masters Bucharest Group Stage (NO)
+  Shares: 5.30 | Entry VWAP: 0.9540 -> Exit Bid VWAP: 0.9960
+  Proceeds: $5.28 | Realized PnL: $+0.22 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.6%) secured early with +4.4% gain
+[2026-10-26 10:37:08 UTC] [CYCLE #214 SUMMARY] Scanned=795 | PassedFilter=88 | Evaluated=20 | Edges(>=8pp)=12 | Opened=0 | Closed=1 | Cash=$6.97 | Equity=$33.86 (DD=0.00%)
