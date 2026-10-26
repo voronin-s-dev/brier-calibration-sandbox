@@ -1050,3 +1050,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: CLOB near-touch depth imbalance OBI=-0.90 (BidDepth=$69 vs AskDepth=$1,265)
 
 [2026-10-26 21:42:28 UTC] [CYCLE #220 SUMMARY] Scanned=785 | PassedFilter=106 | Evaluated=25 | Edges(>=8pp)=20 | Opened=1 | Closed=0 | Cash=$7.71 | Equity=$34.42 (DD=0.32%)
+[EXIT] #68 | Dota 2: BetBoom Team vs LEGION (BO3) - PARI Universe Group B (YES)
+  Shares: 4.87 | Entry VWAP: 0.9400 -> Exit Bid VWAP: 0.9990
+  Proceeds: $4.87 | Realized PnL: $+0.29 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +6.3% gain
+[EXIT] #69 | Valorant: G2 Gozen vs Team Liquid Brazil (BO3) - VCT Game Changers Championship Playoffs (NO)
+  Shares: 5.51 | Entry VWAP: 0.9400 -> Exit Bid VWAP: 0.9990
+  Proceeds: $5.51 | Realized PnL: $+0.33 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +6.3% gain
+[2026-10-26 21:51:57 UTC] [CYCLE #221 SUMMARY] Scanned=800 | PassedFilter=108 | Evaluated=27 | Edges(>=8pp)=20 | Opened=0 | Closed=2 | Cash=$18.09 | Equity=$34.99 (DD=0.00%)
