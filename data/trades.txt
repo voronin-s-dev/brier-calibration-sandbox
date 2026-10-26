@@ -1010,3 +1010,15 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $5.28 | Realized PnL: $+0.22 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.6%) secured early with +4.4% gain
 [2026-10-26 10:37:08 UTC] [CYCLE #214 SUMMARY] Scanned=795 | PassedFilter=88 | Evaluated=20 | Edges(>=8pp)=12 | Opened=0 | Closed=1 | Cash=$6.97 | Equity=$33.86 (DD=0.00%)
 [2026-10-26 10:46:40 UTC] [CYCLE #215 SUMMARY] Scanned=800 | PassedFilter=90 | Evaluated=24 | Edges(>=8pp)=19 | Opened=0 | Closed=0 | Cash=$6.97 | Equity=$33.86 (DD=0.00%)
+[RESOLVED] #61 | Will the price of Bitcoin be above $78,000 on October 26? (YES)
+  Entry VWAP: 0.9400 | Settlement: 1.00 | PnL: $+0.29 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $1.00/share
+[2026-10-26 16:55:24 UTC] [OPEN TRADE #67] Will CD Santa Clara win on 2026-10-26?
+  Категория: Sports | Сторона: NO | Источник: https://www.ligaportugal.pt/
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=33.3%, Четверть(0.25x)=13.3% -> Применён=13.3% банка
+  Размер сделки: $4.50 USDC (4.95 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: High market consensus NO (90.5%) within 1.8h of expiry
+
+[2026-10-26 16:55:24 UTC] [CYCLE #216 SUMMARY] Scanned=787 | PassedFilter=123 | Evaluated=24 | Edges(>=8pp)=20 | Opened=1 | Closed=1 | Cash=$7.35 | Equity=$33.69 (DD=0.51%)
