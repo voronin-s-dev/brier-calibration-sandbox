@@ -1116,3 +1116,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [RESOLVED] #73 | Will Cagliari Calcio win on 2026-10-27? (NO)
   Entry VWAP: 0.9200 | Settlement: 1.00 | PnL: $+0.40 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $1.00/share
 [2026-10-27 22:32:59 UTC] [CYCLE #234 SUMMARY] Scanned=800 | PassedFilter=92 | Evaluated=17 | Edges(>=8pp)=15 | Opened=0 | Closed=1 | Cash=$14.73 | Equity=$31.27 (DD=11.45%)
+[2026-10-27 22:42:32 UTC] [CYCLE #235 SUMMARY] Scanned=800 | PassedFilter=86 | Evaluated=16 | Edges(>=8pp)=16 | Opened=0 | Closed=0 | Cash=$14.73 | Equity=$31.30 (DD=11.37%)
