@@ -1085,3 +1085,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-10-27 06:09:36 UTC] [CYCLE #225 SUMMARY] Scanned=787 | PassedFilter=57 | Evaluated=26 | Edges(>=8pp)=26 | Opened=2 | Closed=1 | Cash=$13.93 | Equity=$30.18 (DD=14.54%)
 [2026-10-27 06:19:11 UTC] [CYCLE #226 SUMMARY] Scanned=800 | PassedFilter=57 | Evaluated=18 | Edges(>=8pp)=18 | Opened=0 | Closed=0 | Cash=$13.93 | Equity=$30.13 (DD=14.68%)
+[2026-10-27 06:28:40 UTC] [OPEN TRADE #72] Counter-Strike: FURIA vs TYLOO (BO3) - PGL Masters Bucharest Group Stage
+  Категория: Sports | Сторона: YES | Источник: https://hltv.org
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=33.3%, Четверть(0.25x)=13.3% -> Применён=13.3% банка
+  Размер сделки: $4.02 USDC (4.42 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: High market consensus YES (90.5%) within 16.5h of expiry
+
+[2026-10-27 06:28:40 UTC] [CYCLE #227 SUMMARY] Scanned=800 | PassedFilter=58 | Evaluated=17 | Edges(>=8pp)=17 | Opened=1 | Closed=0 | Cash=$9.91 | Equity=$30.09 (DD=14.79%)
