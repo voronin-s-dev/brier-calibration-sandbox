@@ -1098,3 +1098,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-27 12:36:40 UTC] [CYCLE #228 SUMMARY] Scanned=791 | PassedFilter=81 | Evaluated=20 | Edges(>=8pp)=10 | Opened=0 | Closed=0 | Cash=$9.91 | Equity=$30.09 (DD=14.80%)
 [2026-10-27 12:46:08 UTC] [CYCLE #229 SUMMARY] Scanned=800 | PassedFilter=80 | Evaluated=22 | Edges(>=8pp)=12 | Opened=0 | Closed=0 | Cash=$9.91 | Equity=$30.10 (DD=14.77%)
 [2026-10-27 12:55:35 UTC] [CYCLE #230 SUMMARY] Scanned=761 | PassedFilter=77 | Evaluated=18 | Edges(>=8pp)=11 | Opened=0 | Closed=0 | Cash=$9.91 | Equity=$30.15 (DD=14.64%)
+[EXIT] #72 | Counter-Strike: FURIA vs TYLOO (BO3) - PGL Masters Bucharest Group Stage (YES)
+  Shares: 4.42 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9990
+  Proceeds: $4.41 | Realized PnL: $+0.39 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +9.8% gain
+[2026-10-27 18:13:49 UTC] [OPEN TRADE #73] Will Cagliari Calcio win on 2026-10-27?
+  Категория: Sports | Сторона: NO | Источник: https://www.legaseriea.it/
+  Оценка бота: 95.0% vs Рынок (Ask VWAP): 92.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.910, BestAsk=0.920, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=37.5%, Четверть(0.25x)=15.0% -> Применён=15.0% банка
+  Размер сделки: $4.60 USDC (5.00 shares @ $0.9200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.552 if P_est <= 70%
+  Причина: High market consensus NO (91.5%) within 1.5h of expiry
+
+[2026-10-27 18:13:49 UTC] [CYCLE #231 SUMMARY] Scanned=797 | PassedFilter=115 | Evaluated=22 | Edges(>=8pp)=12 | Opened=1 | Closed=1 | Cash=$9.73 | Equity=$30.62 (DD=13.30%)
