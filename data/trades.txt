@@ -1084,3 +1084,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: News sentiment=+1.00 (12 articles; top: 'Our 2026 Ballon d’Or results in full - Arsenal.com')
 
 [2026-10-27 06:09:36 UTC] [CYCLE #225 SUMMARY] Scanned=787 | PassedFilter=57 | Evaluated=26 | Edges(>=8pp)=26 | Opened=2 | Closed=1 | Cash=$13.93 | Equity=$30.18 (DD=14.54%)
+[2026-10-27 06:19:11 UTC] [CYCLE #226 SUMMARY] Scanned=800 | PassedFilter=57 | Evaluated=18 | Edges(>=8pp)=18 | Opened=0 | Closed=0 | Cash=$13.93 | Equity=$30.13 (DD=14.68%)
