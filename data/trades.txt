@@ -1063,3 +1063,24 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 4.99 | Entry VWAP: 0.9400 -> Exit Bid VWAP: 0.9860
   Proceeds: $4.92 | Realized PnL: $+0.23 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.6%) secured early with +4.9% gain
 [2026-10-27 01:02:38 UTC] [CYCLE #224 SUMMARY] Scanned=778 | PassedFilter=29 | Evaluated=16 | Edges(>=8pp)=16 | Opened=0 | Closed=1 | Cash=$23.00 | Equity=$35.25 (DD=0.19%)
+[RESOLVED] #66 | Pacers vs. Bucks: O/U 212.5 (YES)
+  Entry VWAP: 0.9600 | Settlement: 0.00 | PnL: $-5.06 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $0.00/share
+[2026-10-27 06:09:36 UTC] [OPEN TRADE #70] Kings vs. Spurs
+  Категория: Sports | Сторона: NO | Источник: https://www.nba.com/
+  Оценка бота: 96.0% vs Рынок (Ask VWAP): 93.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.920, BestAsk=0.930, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=42.9%, Четверть(0.25x)=17.1% -> Применён=15.0% банка
+  Размер сделки: $4.54 USDC (4.88 shares @ $0.9300)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.558 if P_est <= 70%
+  Причина: High market consensus NO (92.5%) within 17.8h of expiry
+
+[2026-10-27 06:09:36 UTC] [OPEN TRADE #71] Will Arsenal FC win on 2026-10-27?
+  Категория: Sports | Сторона: YES | Источник: https://www.efl.com/
+  Оценка бота: 95.0% vs Рынок (Ask VWAP): 90.0% (Перекос/Edge: +5.0 п.п.)
+  Стакан CLOB: BestBid=0.890, BestAsk=0.900, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=50.0%, Четверть(0.25x)=20.0% -> Применён=15.0% банка
+  Размер сделки: $4.53 USDC (5.03 shares @ $0.9000)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.540 if P_est <= 70%
+  Причина: News sentiment=+1.00 (12 articles; top: 'Our 2026 Ballon d’Or results in full - Arsenal.com')
+
+[2026-10-27 06:09:36 UTC] [CYCLE #225 SUMMARY] Scanned=787 | PassedFilter=57 | Evaluated=26 | Edges(>=8pp)=26 | Opened=2 | Closed=1 | Cash=$13.93 | Equity=$30.18 (DD=14.54%)
