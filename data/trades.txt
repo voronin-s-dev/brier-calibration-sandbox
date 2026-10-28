@@ -1124,3 +1124,22 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [RESOLVED] #71 | Will Arsenal FC win on 2026-10-27? (YES)
   Entry VWAP: 0.9000 | Settlement: 0.00 | PnL: $-4.53 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $0.00/share
 [2026-10-28 01:36:57 UTC] [CYCLE #237 SUMMARY] Scanned=777 | PassedFilter=59 | Evaluated=19 | Edges(>=8pp)=19 | Opened=0 | Closed=2 | Cash=$19.59 | Equity=$27.05 (DD=23.40%)
+[2026-10-28 01:46:29 UTC] [OPEN TRADE #74] Will the Milwaukee Brewers win the 2026 World Series?
+  Категория: Sports | Сторона: YES | Источник: https://www.mlb.com/
+  Оценка бота: 98.0% vs Рынок (Ask VWAP): 95.3% (Перекос/Edge: +2.7 п.п.)
+  Стакан CLOB: BestBid=0.948, BestAsk=0.953, Проскальзывание входа/выхода=0.50% (<= 3.0%)
+  Келли: Полный=57.4%, Четверть(0.25x)=23.0% -> Применён=15.0% банка
+  Размер сделки: $4.06 USDC (4.26 shares @ $0.9530)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.572 if P_est <= 70%
+  Причина: CLOB near-touch depth imbalance OBI=+0.77 (BidDepth=$772 vs AskDepth=$100) | News sentiment=+0.60 (12 articles; top: 'An 8-run inning, a roaring road crowd and 1 win to go: The Brewers are almost there - The New York Times')
+
+[2026-10-28 01:46:29 UTC] [OPEN TRADE #75] Will FC Barcelona win on 2026-10-31?
+  Категория: Sports | Сторона: YES | Источник: https://www.laliga.com/
+  Оценка бота: 92.8% vs Рынок (Ask VWAP): 89.0% (Перекос/Edge: +3.9 п.п.)
+  Стакан CLOB: BestBid=0.880, BestAsk=0.890, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=35.0%, Четверть(0.25x)=14.0% -> Применён=14.0% банка
+  Размер сделки: $3.78 USDC (4.25 shares @ $0.8900)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.534 if P_est <= 70%
+  Причина: News sentiment=+0.79 (12 articles; top: 'Yamal excited despite Ballon d'Or miss: 'Good things take time' - ESPN')
+
+[2026-10-28 01:46:29 UTC] [CYCLE #238 SUMMARY] Scanned=800 | PassedFilter=59 | Evaluated=22 | Edges(>=8pp)=22 | Opened=2 | Closed=0 | Cash=$11.75 | Equity=$26.98 (DD=23.59%)
