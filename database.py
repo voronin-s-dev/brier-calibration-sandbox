@@ -144,6 +144,53 @@ class SimDatabase:
                     created_at TEXT NOT NULL,
                     resolved_at TEXT DEFAULT ''
                 );
+
+                CREATE TABLE IF NOT EXISTS shadow_portfolio_state (
+                    id INTEGER PRIMARY KEY CHECK (id = 1),
+                    initial_capital REAL NOT NULL,
+                    cash_usdc REAL NOT NULL,
+                    locked_usdc REAL NOT NULL,
+                    total_equity REAL NOT NULL,
+                    peak_equity REAL NOT NULL,
+                    max_drawdown_pct REAL NOT NULL,
+                    current_drawdown_pct REAL NOT NULL,
+                    halted INTEGER NOT NULL DEFAULT 0,
+                    halt_reason TEXT DEFAULT '',
+                    updated_at TEXT NOT NULL
+                );
+
+                CREATE TABLE IF NOT EXISTS shadow_positions (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    market_id TEXT NOT NULL,
+                    question TEXT NOT NULL,
+                    category TEXT NOT NULL,
+                    side TEXT NOT NULL,
+                    token_id TEXT NOT NULL,
+                    status TEXT NOT NULL,               -- 'OPEN', 'CLOSED', 'RESOLVED'
+                    shares REAL NOT NULL,
+                    entry_vwap REAL NOT NULL,
+                    cost_usdc REAL NOT NULL,
+                    current_bid REAL NOT NULL,
+                    market_value_usdc REAL NOT NULL,
+                    unrealized_pnl REAL NOT NULL,
+                    exit_vwap REAL DEFAULT 0.0,
+                    proceeds_usdc REAL DEFAULT 0.0,
+                    realized_pnl REAL DEFAULT 0.0,
+                    initial_p_est REAL NOT NULL,
+                    latest_p_est REAL NOT NULL,
+                    entry_edge REAL NOT NULL,
+                    kelly_full_pct REAL NOT NULL,
+                    kelly_half_pct REAL NOT NULL,
+                    applied_size_pct REAL NOT NULL,
+                    roundtrip_slippage_pct REAL NOT NULL,
+                    official_source TEXT NOT NULL,
+                    exit_condition TEXT NOT NULL,
+                    rationale TEXT NOT NULL,
+                    exit_reason TEXT DEFAULT '',
+                    end_date_iso TEXT NOT NULL,
+                    opened_at TEXT NOT NULL,
+                    closed_at TEXT DEFAULT ''
+                );
                 """
             )
             # Safe schema migrations for dynamic tuning parameters
@@ -155,9 +202,9 @@ class SimDatabase:
             if "prob_shift_exit_pp" not in existing_cols:
                 conn.execute("ALTER TABLE portfolio_state ADD COLUMN prob_shift_exit_pp REAL NOT NULL DEFAULT 0.05")
 
+            now_str = datetime.now(timezone.utc).isoformat()
             row = conn.execute("SELECT * FROM portfolio_state WHERE id = 1").fetchone()
             if row is None:
-                now_str = datetime.now(timezone.utc).isoformat()
                 conn.execute(
                     """
                     INSERT INTO portfolio_state (
@@ -166,6 +213,19 @@ class SimDatabase:
                         monthly_target_usdc, halted, halt_reason, active_category_filter,
                         min_liquidity_filter, max_slippage_filter, oracle_weight, prob_shift_exit_pp, updated_at
                     ) VALUES (1, ?, ?, 0.0, ?, ?, 0.0, 0.0, 60.0, 0, '', 'ALL', 5000.0, 0.03, 0.65, 0.05, ?)
+                    """,
+                    (self.initial_capital, self.initial_capital, self.initial_capital, self.initial_capital, now_str),
+                )
+
+            s_row = conn.execute("SELECT * FROM shadow_portfolio_state WHERE id = 1").fetchone()
+            if s_row is None:
+                conn.execute(
+                    """
+                    INSERT INTO shadow_portfolio_state (
+                        id, initial_capital, cash_usdc, locked_usdc, total_equity,
+                        peak_equity, max_drawdown_pct, current_drawdown_pct,
+                        halted, halt_reason, updated_at
+                    ) VALUES (1, ?, ?, 0.0, ?, ?, 0.0, 0.0, 0, '', ?)
                     """,
                     (self.initial_capital, self.initial_capital, self.initial_capital, self.initial_capital, now_str),
                 )
@@ -489,3 +549,210 @@ class SimDatabase:
                 ),
             )
             conn.commit()
+
+    # -------------------------------------------------------------------------
+    # Shadow Portfolio (Sandbox) Methods
+    # -------------------------------------------------------------------------
+    def get_shadow_portfolio(self) -> Dict[str, Any]:
+        with self._connect() as conn:
+            row = conn.execute("SELECT * FROM shadow_portfolio_state WHERE id = 1").fetchone()
+            return dict(row) if row else {}
+
+    def get_open_shadow_positions(self) -> List[Dict[str, Any]]:
+        with self._connect() as conn:
+            rows = conn.execute("SELECT * FROM shadow_positions WHERE status = 'OPEN' ORDER BY id ASC").fetchall()
+            return [dict(r) for r in rows]
+
+    def get_all_shadow_positions(self, limit: int = 100) -> List[Dict[str, Any]]:
+        with self._connect() as conn:
+            rows = conn.execute("SELECT * FROM shadow_positions ORDER BY id DESC LIMIT ?", (limit,)).fetchall()
+            return [dict(r) for r in rows]
+
+    def open_shadow_position(
+        self,
+        market_id: str,
+        question: str,
+        category: str,
+        side: str,
+        token_id: str,
+        shares: float,
+        entry_vwap: float,
+        cost_usdc: float,
+        initial_p_est: float,
+        entry_edge: float,
+        kelly_full_pct: float,
+        kelly_half_pct: float,
+        applied_size_pct: float,
+        roundtrip_slippage_pct: float,
+        official_source: str,
+        exit_condition: str,
+        rationale: str,
+        end_date_iso: str,
+    ) -> int:
+        now_str = datetime.now(timezone.utc).isoformat()
+        current_bid = entry_vwap
+        mkt_val = shares * current_bid
+        unrealized = mkt_val - cost_usdc
+        p_est = initial_p_est
+
+        with self._connect() as conn:
+            cur = conn.execute(
+                """
+                INSERT INTO shadow_positions (
+                    market_id, question, category, side, token_id, status,
+                    shares, entry_vwap, cost_usdc, current_bid, market_value_usdc,
+                    unrealized_pnl, initial_p_est, latest_p_est, entry_edge,
+                    kelly_full_pct, kelly_half_pct, applied_size_pct,
+                    roundtrip_slippage_pct, official_source, exit_condition,
+                    rationale, end_date_iso, opened_at
+                ) VALUES (?, ?, ?, ?, ?, 'OPEN', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    market_id, question, category, side, token_id,
+                    shares, entry_vwap, cost_usdc, current_bid, mkt_val,
+                    unrealized, p_est, p_est, entry_edge,
+                    kelly_full_pct, kelly_half_pct, applied_size_pct,
+                    roundtrip_slippage_pct, official_source, exit_condition,
+                    rationale, end_date_iso, now_str,
+                ),
+            )
+            pos_id = int(cur.lastrowid)
+
+            # Deduct virtual cash from shadow portfolio only
+            conn.execute(
+                "UPDATE shadow_portfolio_state SET cash_usdc = cash_usdc - ?, updated_at = ? WHERE id = 1",
+                (cost_usdc, now_str),
+            )
+            conn.commit()
+
+        self.recalculate_shadow_portfolio()
+        return pos_id
+
+    def update_open_shadow_position_mtm(
+        self,
+        pos_id: int,
+        current_bid: float,
+        latest_p_est: float,
+    ) -> None:
+        with self._connect() as conn:
+            row = conn.execute("SELECT shares, cost_usdc FROM shadow_positions WHERE id = ?", (pos_id,)).fetchone()
+            if not row:
+                return
+            shares = float(row["shares"])
+            cost = float(row["cost_usdc"])
+            mkt_val = shares * current_bid
+            unrealized = mkt_val - cost
+            conn.execute(
+                """
+                UPDATE shadow_positions
+                SET current_bid = ?, market_value_usdc = ?, unrealized_pnl = ?, latest_p_est = ?
+                WHERE id = ?
+                """,
+                (current_bid, mkt_val, unrealized, latest_p_est, pos_id),
+            )
+            conn.commit()
+        self.recalculate_shadow_portfolio()
+
+    def close_shadow_position(
+        self,
+        pos_id: int,
+        status: str,  # 'CLOSED' or 'RESOLVED'
+        exit_vwap: float,
+        proceeds_usdc: float,
+        exit_reason: str,
+        latest_p_est: float,
+    ) -> float:
+        now_str = datetime.now(timezone.utc).isoformat()
+        with self._connect() as conn:
+            row = conn.execute("SELECT * FROM shadow_positions WHERE id = ?", (pos_id,)).fetchone()
+            if not row:
+                return 0.0
+            cost = float(row["cost_usdc"])
+            realized_pnl = proceeds_usdc - cost
+
+            conn.execute(
+                """
+                UPDATE shadow_positions
+                SET status = ?, current_bid = ?, market_value_usdc = 0.0,
+                    unrealized_pnl = 0.0, exit_vwap = ?, proceeds_usdc = ?,
+                    realized_pnl = ?, latest_p_est = ?, exit_reason = ?, closed_at = ?
+                WHERE id = ?
+                """,
+                (
+                    status, exit_vwap, exit_vwap, proceeds_usdc,
+                    realized_pnl, latest_p_est, exit_reason, now_str, pos_id,
+                ),
+            )
+
+            # Return proceeds to shadow virtual cash only
+            conn.execute(
+                "UPDATE shadow_portfolio_state SET cash_usdc = cash_usdc + ?, updated_at = ? WHERE id = 1",
+                (proceeds_usdc, now_str),
+            )
+            conn.commit()
+
+        self.recalculate_shadow_portfolio()
+        return realized_pnl
+
+    def recalculate_shadow_portfolio(self) -> Dict[str, Any]:
+        now_str = datetime.now(timezone.utc).isoformat()
+        with self._connect() as conn:
+            pf = conn.execute("SELECT * FROM shadow_portfolio_state WHERE id = 1").fetchone()
+            if not pf:
+                return {}
+            cash = float(pf["cash_usdc"])
+            peak = float(pf["peak_equity"])
+            max_dd = float(pf["max_drawdown_pct"])
+
+            open_rows = conn.execute("SELECT market_value_usdc FROM shadow_positions WHERE status = 'OPEN'").fetchall()
+            locked = sum(float(r["market_value_usdc"]) for r in open_rows)
+            total_equity = cash + locked
+
+            if total_equity > peak:
+                peak = total_equity
+
+            curr_dd = (peak - total_equity) / peak if peak > 0 else 0.0
+            if curr_dd > max_dd:
+                max_dd = curr_dd
+
+            halted = int(pf["halted"])
+            halt_reason = str(pf["halt_reason"])
+            if curr_dd >= 0.40 and not halted:
+                halted = 1
+                halt_reason = f"SHADOW KILL-SWITCH: Drawdown {curr_dd*100:.1f}% from peak (${peak:.2f} -> ${total_equity:.2f})"
+
+            conn.execute(
+                """
+                UPDATE shadow_portfolio_state
+                SET locked_usdc = ?, total_equity = ?, peak_equity = ?,
+                    max_drawdown_pct = ?, current_drawdown_pct = ?,
+                    halted = ?, halt_reason = ?, updated_at = ?
+                WHERE id = 1
+                """,
+                (locked, total_equity, peak, max_dd, curr_dd, halted, halt_reason, now_str),
+            )
+            conn.commit()
+        return self.get_shadow_portfolio()
+
+    def get_shadow_category_stats(self) -> Dict[str, Dict[str, float]]:
+        with self._connect() as conn:
+            rows = conn.execute(
+                """
+                SELECT category,
+                       COUNT(*) as count,
+                       SUM(realized_pnl) as pnl,
+                       SUM(CASE WHEN realized_pnl > 0 THEN 1 ELSE 0 END) as wins
+                FROM shadow_positions
+                WHERE status IN ('CLOSED', 'RESOLVED')
+                GROUP BY category
+                """
+            ).fetchall()
+            stats: Dict[str, Dict[str, float]] = {}
+            for r in rows:
+                c = str(r["category"])
+                stats[c] = {
+                    "count": float(r["count"]),
+                    "pnl": float(r["pnl"] or 0.0),
+                    "wins": float(r["wins"] or 0.0),
+                }
+            return stats
