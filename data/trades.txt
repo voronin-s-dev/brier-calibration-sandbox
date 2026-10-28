@@ -1143,3 +1143,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: News sentiment=+0.79 (12 articles; top: 'Yamal excited despite Ballon d'Or miss: 'Good things take time' - ESPN')
 
 [2026-10-28 01:46:29 UTC] [CYCLE #238 SUMMARY] Scanned=800 | PassedFilter=59 | Evaluated=22 | Edges(>=8pp)=22 | Opened=2 | Closed=0 | Cash=$11.75 | Equity=$26.98 (DD=23.59%)
+[2026-10-28 01:55:59 UTC] [CYCLE #239 SUMMARY] Scanned=780 | PassedFilter=57 | Evaluated=19 | Edges(>=8pp)=19 | Opened=0 | Closed=0 | Cash=$11.75 | Equity=$27.00 (DD=23.56%)
