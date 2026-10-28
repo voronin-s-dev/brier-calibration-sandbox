@@ -871,7 +871,7 @@ class GrokCharterPaperTrader:
             "cycle_id": cycle_id,
             "timestamp": now_str,
             "markets_scanned": len(all_markets),
-            "passed_filters": len(filtered_markets),
+            "passed_filters": len(candidates_to_evaluate),
             "evaluated_count": evaluated_count,
             "edges_found": edges_found,
             "trades_opened": trades_opened,

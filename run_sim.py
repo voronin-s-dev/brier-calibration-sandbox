@@ -82,6 +82,19 @@ def print_console_summary(db: SimDatabase) -> None:
                 f"Сумма: ${p['cost_usdc']:.2f} | MTM PnL: ${p['unrealized_pnl']:+.2f}"
             )
     print("-" * 82)
+    if pf.get("active_category_filter") != "ALL":
+        spf = db.get_shadow_portfolio()
+        s_open = db.get_open_shadow_positions()
+        s_stats = db.get_shadow_category_stats()
+        print(f"🧪 ТЕНЕВАЯ ПЕСОЧНИЦА (Shadow Sandbox):")
+        print(
+            f"   Эквити: ${float(spf.get('total_equity', 50)):.2f} USDC | "
+            f"Кэш: ${float(spf.get('cash_usdc', 50)):.2f} | Открыто: {len(s_open)}/5"
+        )
+        if s_stats:
+            stats_str = ", ".join(f"{c}: {int(s['count'])} сд. (${s['pnl']:+.2f})" for c, s in s_stats.items())
+            print(f"   Результаты по замороженным категориям: {stats_str}")
+        print("-" * 82)
     print("🔍 ПОСЛЕДНИЕ ОЦЕНЕННЫЕ РЫНКИ И ПРОВЕРКА СТАКАНА CLOB:")
     for c in candidates[:8]:
         print(
