@@ -312,6 +312,251 @@ class GrokCharterPaperTrader:
 
         return closed_count
 
+    def monitor_and_manage_shadow_positions(self) -> int:
+        """
+        Monitors open shadow (sandbox) positions against Polymarket resolution and CLOB bids.
+        Applies identical TP (+12%), Stop-Loss (-35%), and probability shift exits,
+        logging actions with [SHADOW] prefix without sending public Telegram alerts.
+        """
+        open_positions = self.db.get_open_shadow_positions()
+        closed_count = 0
+        prob_shift_exit_pp = 0.08
+
+        for pos in open_positions:
+            pos_id = int(pos["id"])
+            market_id = str(pos["market_id"])
+            side = str(pos["side"])
+            token_id = str(pos["token_id"])
+            shares = float(pos["shares"])
+            entry_vwap = float(pos["entry_vwap"])
+            initial_p = float(pos["initial_p_est"])
+
+            live_mkt = fetch_market_by_id(market_id)
+
+            # Check if resolved on Polymarket
+            if live_mkt and live_mkt.resolved:
+                win_price = live_mkt.gamma_prices[0] if side == "YES" else live_mkt.gamma_prices[1]
+                payout_per_share = 1.0 if win_price >= 0.95 else 0.0
+                proceeds = round(shares * payout_per_share, 4)
+                reason = f"SHADOW MARKET RESOLVED on Polymarket: {side} settled at ${payout_per_share:.2f}/share"
+                pnl = self.db.close_shadow_position(
+                    pos_id=pos_id,
+                    status="RESOLVED",
+                    exit_vwap=payout_per_share,
+                    proceeds_usdc=proceeds,
+                    exit_reason=reason,
+                    latest_p_est=payout_per_share,
+                )
+                self._append_trades_log(
+                    f"[SHADOW RESOLVED] #{pos_id} | {pos['question']} ({side})\n"
+                    f"  Entry VWAP: {entry_vwap:.4f} | Settlement: {payout_per_share:.2f} | "
+                    f"PnL: ${pnl:+.2f} USDC | Reason: {reason}"
+                )
+                closed_count += 1
+                continue
+
+            try:
+                vwap_sell, proceeds, best_bid = simulate_clob_sell_shares(token_id, shares)
+            except Exception:
+                vwap_sell, proceeds, best_bid = 0.0, 0.0, 0.0
+
+            hours_left = live_mkt.hours_to_close if live_mkt else 24.0
+
+            latest_p = float(pos["latest_p_est"])
+            if live_mkt:
+                eval_res, _ = self._evaluate_market_probability(live_mkt)
+                if eval_res is not None:
+                    latest_p = eval_res.p_yes if side == "YES" else eval_res.p_no
+
+            if vwap_sell > 0:
+                self.db.update_open_shadow_position_mtm(pos_id=pos_id, current_bid=best_bid, latest_p_est=latest_p)
+
+            should_exit = False
+            exit_reason = ""
+
+            if vwap_sell > 0:
+                cost = float(pos["cost_usdc"])
+                gross_return_pct = (proceeds - cost) / cost if cost > 0 else 0.0
+                if gross_return_pct >= 0.12:
+                    should_exit = True
+                    exit_reason = f"TAKE-PROFIT TRIGGERED: Net return +{gross_return_pct*100:.1f}% >= +12% (Bid VWAP: {vwap_sell:.4f} vs Entry: {entry_vwap:.4f})"
+                elif vwap_sell <= entry_vwap * 0.65:
+                    should_exit = True
+                    exit_reason = f"STOP-LOSS TRIGGERED: Price dropped by {(1 - vwap_sell/entry_vwap)*100:.1f}% from entry ({entry_vwap:.4f} -> {vwap_sell:.4f})"
+
+            if not should_exit and hours_left <= self.MIN_HOURS_TO_CLOSE_EXIT:
+                should_exit = True
+                exit_reason = f"TIME EXIT: {hours_left:.1f}h left to close (under {self.MIN_HOURS_TO_CLOSE_EXIT:.1f}h threshold)"
+
+            if not should_exit and (initial_p - latest_p) >= prob_shift_exit_pp and vwap_sell < entry_vwap:
+                should_exit = True
+                exit_reason = f"PROBABILITY SHIFT: Model confidence dropped by {(initial_p - latest_p)*100:.1f} pp ({initial_p:.3f} -> {latest_p:.3f})"
+
+            if should_exit:
+                pnl = self.db.close_shadow_position(
+                    pos_id=pos_id,
+                    status="CLOSED",
+                    exit_vwap=vwap_sell,
+                    proceeds_usdc=proceeds,
+                    exit_reason=exit_reason,
+                    latest_p_est=latest_p,
+                )
+                self._append_trades_log(
+                    f"[SHADOW EXIT] #{pos_id} | {pos['question']} ({side})\n"
+                    f"  Shares: {shares:.2f} | Entry VWAP: {entry_vwap:.4f} -> Exit Bid VWAP: {vwap_sell:.4f}\n"
+                    f"  Proceeds: ${proceeds:.2f} | Realized PnL: ${pnl:+.2f} USDC | Reason: {exit_reason}"
+                )
+                closed_count += 1
+
+        return closed_count
+
+    def partition_markets(
+        self,
+        all_markets: List[MarketInfo],
+        open_real_market_ids: Set[str],
+        open_shadow_market_ids: Set[str],
+        cat_filter: str,
+        min_liq: float,
+    ) -> Tuple[List[MarketInfo], List[MarketInfo]]:
+        """
+        Partitions active markets into candidates for real execution vs. candidates for shadow evaluation.
+        """
+        active_candidates: List[MarketInfo] = []
+        shadow_candidates: List[MarketInfo] = []
+
+        for m in all_markets:
+            if not m.has_official_source:
+                continue
+            if not (self.MIN_HOURS_TO_CLOSE <= m.hours_to_close <= self.MAX_HOURS_TO_CLOSE):
+                continue
+            liq_threshold = 400.0 if m.category == "Weather" else min_liq
+            if m.liquidity_usd < liq_threshold:
+                continue
+
+            if cat_filter == "ALL" or m.category.upper() == cat_filter.upper():
+                if m.id not in open_real_market_ids:
+                    active_candidates.append(m)
+            else:
+                if m.id not in open_shadow_market_ids:
+                    shadow_candidates.append(m)
+
+        def _priority_key(m: MarketInfo) -> Tuple[int, float]:
+            has_high_prob = 0 if (m.gamma_prices and (0.84 <= m.gamma_prices[0] <= 0.98 or 0.84 <= m.gamma_prices[1] <= 0.98)) else 1
+            return (has_high_prob, -m.volume_24h_usd)
+
+        active_candidates.sort(key=_priority_key)
+        shadow_candidates.sort(key=_priority_key)
+
+        return active_candidates[:50], shadow_candidates[:10]
+
+    def evaluate_and_execute_shadow_candidates(
+        self,
+        shadow_markets: List[MarketInfo],
+        open_shadow_market_ids: Set[str],
+    ) -> int:
+        """
+        Evaluates up to 10 shadow candidates, checks Edge >= 8% and CLOB slippage,
+        and opens virtual shadow positions with shadow cash.
+        """
+        open_shadow = self.db.get_open_shadow_positions()
+        if len(open_shadow) >= 5:
+            return 0
+
+        shadow_pf = self.db.get_shadow_portfolio()
+        if shadow_pf.get("halted"):
+            return 0
+
+        shadow_equity = float(shadow_pf.get("total_equity", 50.0))
+        shadow_cash = float(shadow_pf.get("cash_usdc", 50.0))
+        max_slippage = float(self.db.get_portfolio().get("max_slippage_filter", 0.02))
+
+        opened_count = 0
+        for mkt in shadow_markets:
+            if len(open_shadow) + opened_count >= 5:
+                break
+            if mkt.id in open_shadow_market_ids:
+                continue
+
+            eval_res, preloaded_yes_book = self._evaluate_market_probability(mkt)
+            if eval_res is None:
+                continue
+
+            gamma_yes, gamma_no = mkt.gamma_prices[0], mkt.gamma_prices[1]
+            raw_edge_yes = eval_res.p_yes - gamma_yes
+            raw_edge_no = eval_res.p_no - gamma_no
+
+            if raw_edge_yes >= raw_edge_no:
+                chosen_side = "YES"
+                token_id = mkt.clob_token_ids[0]
+                p_est = eval_res.p_yes
+                indicative_price = gamma_yes
+            else:
+                chosen_side = "NO"
+                token_id = mkt.clob_token_ids[1]
+                p_est = eval_res.p_no
+                indicative_price = gamma_no
+
+            if not (0.15 <= p_est <= 0.85):
+                continue
+
+            full_k, half_k, applied_size_pct, tentative_bet = self.compute_kelly_sizing(
+                p_est=p_est,
+                ask_vwap=indicative_price,
+                total_equity=shadow_equity,
+                max_pct=0.06,
+                kelly_fraction=0.25,
+            )
+            bet_usdc = min(tentative_bet, shadow_cash)
+            if bet_usdc < 1.00:
+                continue
+
+            try:
+                ob_sim: OrderBookSimulation = simulate_clob_buy_and_exit_check(
+                    token_id=token_id,
+                    side_label=chosen_side,
+                    bet_usdc=bet_usdc,
+                    max_slippage_pct=max_slippage,
+                    preloaded_book=preloaded_yes_book if chosen_side == "YES" else None,
+                )
+            except Exception:
+                continue
+
+            real_edge = p_est - ob_sim.vwap_buy_price
+            if real_edge < self.MIN_EDGE_PP:
+                continue
+            if not (ob_sim.sufficient_depth and ob_sim.passes_slippage_limit):
+                continue
+
+            pos_id = self.db.open_shadow_position(
+                market_id=mkt.id,
+                question=mkt.question,
+                category=mkt.category,
+                side=chosen_side,
+                token_id=token_id,
+                shares=ob_sim.shares_filled,
+                entry_vwap=ob_sim.vwap_buy_price,
+                cost_usdc=ob_sim.bet_usdc,
+                initial_p_est=p_est,
+                entry_edge=real_edge,
+                kelly_full_pct=full_k,
+                kelly_half_pct=half_k,
+                applied_size_pct=applied_size_pct,
+                roundtrip_slippage_pct=ob_sim.roundtrip_slippage_pct,
+                official_source=mkt.resolution_source,
+                exit_condition="Take-Profit (+12%), Stop-Loss (-35%), or Settlement",
+                rationale=eval_res.rationale,
+                end_date_iso=mkt.end_date_iso,
+            )
+            self._append_trades_log(
+                f"[SHADOW EXEC] #{pos_id} | {mkt.question} ({chosen_side})\n"
+                f"  Category: {mkt.category} | Shares: {ob_sim.shares_filled:.2f} @ {ob_sim.vwap_buy_price:.4f}\n"
+                f"  Bet: ${ob_sim.bet_usdc:.2f} USDC | P_est: {p_est*100:.1f}% | Edge: {real_edge*100:+.1f} pp"
+            )
+            opened_count += 1
+            shadow_cash -= ob_sim.bet_usdc
+
+        return opened_count
+
     def run_cycle(self, max_markets_to_scan: int = 500) -> Dict[str, Any]:
         """
         Runs one complete 10-minute autonomous scan & trade cycle according to the Charter.
@@ -321,6 +566,7 @@ class GrokCharterPaperTrader:
         # Even during a halt or kill-switch, existing positions must be actively protected:
         # Stop-Loss, Strict Time-Exit, and Resolution settlement MUST execute so capital is not abandoned.
         trades_closed = self.monitor_and_manage_open_positions()
+        shadow_closed = self.monitor_and_manage_shadow_positions()
         pf = self.db.recalculate_portfolio()
 
         # Check Kill-Switch (40% drawdown): Halt NEW entries, but positions were managed above
@@ -331,6 +577,8 @@ class GrokCharterPaperTrader:
 
         open_positions = self.db.get_open_positions()
         open_market_ids = {str(p["market_id"]) for p in open_positions}
+        open_shadow_positions = self.db.get_open_shadow_positions()
+        open_shadow_market_ids = {str(p["market_id"]) for p in open_shadow_positions}
 
         # Track active underlying events (1 event = 1 trade) and category concentration (max 3 per category)
         active_event_keys: Set[str] = {
@@ -347,36 +595,13 @@ class GrokCharterPaperTrader:
         max_slippage = float(pf.get("max_slippage_filter", 0.03))
         cat_filter = str(pf.get("active_category_filter", "ALL"))
 
-        # Filter markets per Rule #1 & Rule #2:
-        # - Closes > 2 hours from now (and <= 15 days for active simulation turnover)
-        # - Liquidity >= $5,000 (or >= $400 per bracket for official NOAA/METAR weather station markets)
-        # - Has an official resolution source
-        filtered_markets: List[MarketInfo] = []
-        for m in all_markets:
-            if m.id in open_market_ids:
-                continue
-            if not m.has_official_source:
-                continue
-            if cat_filter != "ALL" and m.category.upper() != cat_filter.upper():
-                continue
-
-            # Weather station brackets split liquidity across 7-8 temperature bins, while real CLOB depth & <=3% slippage guard execution
-            liq_threshold = 400.0 if m.category == "Weather" else min_liq
-            if m.liquidity_usd < liq_threshold:
-                continue
-
-            if not (self.MIN_HOURS_TO_CLOSE <= m.hours_to_close <= self.MAX_HOURS_TO_CLOSE):
-                continue
-
-            filtered_markets.append(m)
-
-        # Prioritize markets with high probability candidates first (where gamma prices are in [0.84, 0.98])
-        def _priority_key(m: MarketInfo) -> Tuple[int, float]:
-            has_high_prob = 0 if (m.gamma_prices and (0.84 <= m.gamma_prices[0] <= 0.98 or 0.84 <= m.gamma_prices[1] <= 0.98)) else 1
-            return (has_high_prob, -m.volume_24h_usd)
-
-        filtered_markets.sort(key=_priority_key)
-        candidates_to_evaluate = filtered_markets[:50]
+        candidates_to_evaluate, shadow_candidates = self.partition_markets(
+            all_markets,
+            open_real_market_ids=open_market_ids,
+            open_shadow_market_ids=open_shadow_market_ids,
+            cat_filter=cat_filter,
+            min_liq=min_liq,
+        )
 
         # Auto-Governor Tier 3 Hotfix: discover and geocode any new Polymarket weather cities on the fly
         try:
@@ -391,7 +616,7 @@ class GrokCharterPaperTrader:
         # Record cycle placeholder to get cycle_id
         cycle_id = self.db.record_scan_cycle(
             markets_scanned=len(all_markets),
-            passed_filters=len(filtered_markets),
+            passed_filters=len(candidates_to_evaluate),
             evaluated_count=0,
             edges_found=0,
             trades_opened=0,
@@ -587,6 +812,16 @@ class GrokCharterPaperTrader:
                     rationale=eval_res.rationale,
                 )
 
+        # Step 7 (Sandbox): Evaluate and execute shadow candidates on disabled categories
+        shadow_opened = 0
+        if shadow_candidates:
+            try:
+                shadow_opened = self.evaluate_and_execute_shadow_candidates(
+                    shadow_candidates, open_shadow_market_ids
+                )
+            except Exception:
+                pass
+
         # Update scan cycle record with final stats
         pf_after = self.db.recalculate_portfolio()
         with self.db._connect() as conn:
@@ -605,7 +840,7 @@ class GrokCharterPaperTrader:
                     pf_after["cash_usdc"],
                     pf_after["total_equity"],
                     pf_after["current_drawdown_pct"],
-                    f"Scanned {len(all_markets)}, filtered {len(filtered_markets)}, eval {evaluated_count}",
+                    f"Scanned {len(all_markets)}, filtered {len(candidates_to_evaluate)}, eval {evaluated_count}, shadow_opened {shadow_opened}",
                     cycle_id,
                 ),
             )
@@ -613,8 +848,8 @@ class GrokCharterPaperTrader:
 
         self._append_trades_log(
             f"[{now_str}] [CYCLE #{cycle_id} SUMMARY] Scanned={len(all_markets)} | "
-            f"PassedFilter={len(filtered_markets)} | Evaluated={evaluated_count} | "
-            f"Edges(>=8pp)={edges_found} | Opened={trades_opened} | Closed={trades_closed} | "
+            f"PassedFilter={len(candidates_to_evaluate)} | Evaluated={evaluated_count} | "
+            f"Edges(>=8pp)={edges_found} | Opened={trades_opened} (Shadow={shadow_opened}) | Closed={trades_closed} | "
             f"Cash=${pf_after['cash_usdc']:.2f} | Equity=${pf_after['total_equity']:.2f} "
             f"(DD={pf_after['current_drawdown_pct']*100:.2f}%)"
         )
