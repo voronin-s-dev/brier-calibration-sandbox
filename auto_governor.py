@@ -444,6 +444,45 @@ class AutoGovernor:
                     )
 
         # ---------------------------------------------------------------------
+        # 5b. TIER 2 (Calibration): Shadow Category Recovery & Unfreeze (SEMI-AUTO)
+        # ---------------------------------------------------------------------
+        if active_cat != "ALL":
+            shadow_stats = self.db.get_shadow_category_stats()
+            for cat, st in shadow_stats.items():
+                if cat.upper() == active_cat.upper():
+                    continue
+                cnt = int(st["count"])
+                pnl = float(st["pnl"])
+                wins = float(st["wins"])
+                wr = (wins / cnt) if cnt > 0 else 0.0
+
+                # Require >= 5 closed shadow trades, PnL >= +$1.50, and WR >= 60%
+                if cnt >= 5 and pnl >= 1.50 and wr >= 0.60:
+                    rule_key = f"tier2_shadow_unfreeze_{cat.lower()}_{cnt // 5}"
+                    if not self._rule_exists(rule_key):
+                        explanation = (
+                            f"В теневой песочнице (Shadow Sandbox) категория «{cat}» показала уверенное восстановление:\n"
+                            f"📊 Закрыто сделок: {cnt}, PnL: ${pnl:+.2f} USDC, Win Rate: {wr*100:.0f}% ({int(wins)}/{cnt}).\n"
+                            f"Модели оракулов подтвердили свою прибыльность на реальном стакане CLOB без риска для боевого баланса.\n"
+                            f"⚖️ Предложение: разморозить категорию и вернуть фильтр на 'ALL', чтобы расширить воронку качественных рынков."
+                        )
+                        ev_id = self._record_event(
+                            rule_key=rule_key,
+                            tier="TIER_2_CALIBRATION",
+                            mode="SEMI_AUTO",
+                            status="PENDING_APPROVAL",
+                            title=f"Разморозка категории {cat}: стабильный плюс в песочнице (${pnl:+.2f})",
+                            explanation=explanation,
+                            action_dict={"active_category_filter": "ALL"},
+                        )
+                        triggered_events.append(ev_id)
+                        send_telegram_alert(
+                            f"🟡 <b>ТРЕБУЕТСЯ РЕШЕНИЕ #{ev_id} (Разморозка категории {cat})</b>\n"
+                            f"{explanation}\n\n"
+                            f"👉 Одобрить в Antigravity или командой:\n<code>python run_sim.py --approve {ev_id}</code>"
+                        )
+
+        # ---------------------------------------------------------------------
         # 5. TIER 2 (Calibration): Brier Score Overconfidence Check (SEMI-AUTO)
         # ---------------------------------------------------------------------
         res_batch = len(resolved_positions) // 15
@@ -604,8 +643,21 @@ class AutoGovernor:
             f"- **Вес оракула в Байесе (`oracle_weight`)**: `{float(pf.get('oracle_weight', 0.65)):.2f}`",
             f"- **Порог досрочного выхода (`prob_shift_exit_pp`)**: `{float(pf.get('prob_shift_exit_pp', 0.05))*100:.1f} п.п.`",
             "",
-            f"## 🟡 Ожидают твоего решения (Полуавтоматический режим: {len(pending)})",
         ]
+
+        if pf.get("active_category_filter") != "ALL":
+            s_stats = self.db.get_shadow_category_stats()
+            if s_stats:
+                lines.append("## 🧪 Результаты теневой песочницы (Shadow Sandbox)")
+                for cat, st in s_stats.items():
+                    cnt = int(st["count"])
+                    pnl = float(st["pnl"])
+                    wins = int(st["wins"])
+                    wr = (wins / cnt * 100.0) if cnt > 0 else 0.0
+                    lines.append(f"- **{cat}**: {cnt} сделок | PnL ${pnl:+.2f} | Win Rate {wr:.0f}%")
+                lines.append("")
+
+        lines.append(f"## 🟡 Ожидают твоего решения (Полуавтоматический режим: {len(pending)})")
 
         if not pending:
             lines.append("_Сейчас нет спорных моментов, требующих ручного подтверждения._")
