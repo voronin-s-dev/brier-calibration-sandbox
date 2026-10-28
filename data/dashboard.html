@@ -77,39 +77,56 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-10-25 22:18:07 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-10-28 02:23:15 UTC</div>
     </div>
   </div>
 
   <div class="grid">
     <div class="card">
       <div class="metric-label">Текущий капитал (Equity)</div>
-      <div class="metric-val">$31.10 <span style="font-size:15px" class="neg">(-18.90$ / -37.79%)</span></div>
+      <div class="metric-val">$33.94 <span style="font-size:15px" class="neg">(-16.06$ / -32.13%)</span></div>
       <div class="metric-sub">Старт: $50.00 USDC (Оценка по Bid стакана!)</div>
     </div>
     <div class="card">
       <div class="metric-label">Свободный кэш / В позициях</div>
-      <div class="metric-val">$0.00 <span class="muted" style="font-size:16px">/ $31.10</span></div>
-      <div class="metric-sub">Открыто позиций: 8 из 8 (макс 8% банка)</div>
+      <div class="metric-val">$26.48 <span class="muted" style="font-size:16px">/ $7.46</span></div>
+      <div class="metric-sub">Открыто позиций: 2 из 8 (макс 8% банка)</div>
     </div>
     <div class="card">
       <div class="metric-label">Цель подписки ($60 / мес)</div>
-      <div class="metric-val">$-18.90 <span class="muted" style="font-size:16px">/ $60.00</span></div>
+      <div class="metric-val">$-16.06 <span class="muted" style="font-size:16px">/ $60.00</span></div>
       <div class="metric-sub">Прогресс окупаемости: 0.0%</div>
     </div>
     <div class="card">
       <div class="metric-label">Просадка от пика (Drawdown)</div>
-      <div class="metric-val ">2.43% <span class="muted" style="font-size:15px">(Макс: 6.31%)</span></div>
-      <div class="metric-sub">Пик: $31.88 | Лимит остановки: 40.0%</div>
+      <div class="metric-val ">0.00% <span class="muted" style="font-size:15px">(Макс: 6.31%)</span></div>
+      <div class="metric-sub">Пик: $33.94 | Лимит остановки: 40.0%</div>
     </div>
     <div class="card">
       <div class="metric-label">Закрытые сделки / Win Rate</div>
-      <div class="metric-val">53 <span class="muted" style="font-size:16px">(49.1%)</span></div>
-      <div class="metric-sub">Brier Score: 0.2418</div>
+      <div class="metric-val">59 <span class="muted" style="font-size:16px">(54.2%)</span></div>
+      <div class="metric-sub">Brier Score: 0.1668</div>
+    </div>
+    <div class="card" style="border-left: 3px solid #8b5cf6;">
+      <div class="metric-label">🧪 Shadow Sandbox (Песочница)</div>
+      <div class="metric-val">$50.00 <span class="muted" style="font-size:15px">(Старт: $50)</span></div>
+      <div class="metric-sub">Кэш: $50.00 | В сделках: $0.00 | Открыто: 0/5</div>
     </div>
   </div>
 
-  <h2>📂 Открытые виртуальные позиции (8 / 8)</h2>
+  <h2>🧪 Теневая песочница (Shadow Sandbox) — Отключённые рынки</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Категория</th><th>Сделок в песочнице</th><th>PnL (виртуальный)</th><th>Win Rate</th><th>Статус восстановления</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td colspan="5" class="empty">Теневые сделки пока не закрыты (накапливается история)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>📂 Открытые виртуальные позиции (2 / 8)</h2>
   <table>
     <thead>
       <tr>
@@ -127,10 +144,10 @@
             <td><span class="side-yes">YES</span></td>
             <td>3.90</td>
             <td>$0.9400</td>
-            <td>$0.9300</td>
+            <td>$0.9600</td>
             <td><strong>96.5%</strong> <small>(+2.5pp)</small></td>
             <td>$3.67 <small>(12.0%)</small></td>
-            <td class="neg">$-0.04</td>
+            <td class="pos">$+0.08</td>
             <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.564 if P_est &lt;= 70%</small></td>
         </tr>
         
@@ -141,95 +158,11 @@
             <td><span class="side-no">NO</span></td>
             <td>3.85</td>
             <td>$0.9600</td>
-            <td>$0.9300</td>
-            <td><strong>98.0%</strong> <small>(+2.0pp)</small></td>
+            <td>$0.9630</td>
+            <td><strong>98.5%</strong> <small>(+2.0pp)</small></td>
             <td>$3.70 <small>(12.0%)</small></td>
-            <td class="neg">$-0.12</td>
+            <td class="pos">$+0.01</td>
             <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.576 if P_est &lt;= 70%</small></td>
-        </tr>
-        
-        <tr>
-            <td>#55</td>
-            <td><strong>Will Bitcoin dip to $78,000 October 19-25?</strong><br><small class="muted">High market consensus NO (94.0%) within 28.4h of expiry</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td><span class="side-no">NO</span></td>
-            <td>3.96</td>
-            <td>$0.9480</td>
-            <td>$0.9840</td>
-            <td><strong>98.5%</strong> <small>(+2.6pp)</small></td>
-            <td>$3.75 <small>(12.0%)</small></td>
-            <td class="pos">$+0.14</td>
-            <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.569 if P_est &lt;= 70%</small></td>
-        </tr>
-        
-        <tr>
-            <td>#58</td>
-            <td><strong>LoL: Gen.G vs LYON (BO3) - Worlds Group Stage</strong><br><small class="muted">High market consensus YES (91.5%) within 9.3h of expiry</small></td>
-            <td><span class="badge cat-sports">Sports</span></td>
-            <td><span class="side-yes">YES</span></td>
-            <td>5.10</td>
-            <td>$0.9200</td>
-            <td>$0.7700</td>
-            <td><strong>71.2%</strong> <small>(+3.0pp)</small></td>
-            <td>$4.69 <small>(15.0%)</small></td>
-            <td class="neg">$-0.76</td>
-            <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.552 if P_est &lt;= 70%</small></td>
-        </tr>
-        
-        <tr>
-            <td>#59</td>
-            <td><strong>Israel x Iran ceasefire continues through October 27?</strong><br><small class="muted">Ceasefire holding within 57.3h deadline</small></td>
-            <td><span class="badge cat-geopolitics">Geopolitics</span></td>
-            <td><span class="side-yes">YES</span></td>
-            <td>4.99</td>
-            <td>$0.9400</td>
-            <td>$0.9000</td>
-            <td><strong>94.0%</strong> <small>(+2.5pp)</small></td>
-            <td>$4.69 <small>(15.0%)</small></td>
-            <td class="neg">$-0.20</td>
-            <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.564 if P_est &lt;= 70%</small></td>
-        </tr>
-        
-        <tr>
-            <td>#60</td>
-            <td><strong>Clippers vs. Thunder</strong><br><small class="muted">High market consensus NO (90.5%) within 1.0h of expiry</small></td>
-            <td><span class="badge cat-sports">Sports</span></td>
-            <td><span class="side-no">NO</span></td>
-            <td>4.48</td>
-            <td>$0.9100</td>
-            <td>$0.9000</td>
-            <td><strong>94.0%</strong> <small>(+3.0pp)</small></td>
-            <td>$4.08 <small>(13.3%)</small></td>
-            <td class="neg">$-0.04</td>
-            <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.546 if P_est &lt;= 70%</small></td>
-        </tr>
-        
-        <tr>
-            <td>#61</td>
-            <td><strong>Will the price of Bitcoin be above $78,000 on October 26?</strong><br><small class="muted">High market consensus YES (94.4%) within 18.0h of expiry</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td><span class="side-yes">YES</span></td>
-            <td>4.87</td>
-            <td>$0.9400</td>
-            <td>$0.9580</td>
-            <td><strong>98.5%</strong> <small>(+3.9pp)</small></td>
-            <td>$4.58 <small>(15.0%)</small></td>
-            <td class="pos">$+0.09</td>
-            <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.564 if P_est &lt;= 70%</small></td>
-        </tr>
-        
-        <tr>
-            <td>#62</td>
-            <td><strong>Will Elon Musk post 115-139 tweets from October 24 to October 26, 2026?</strong><br><small class="muted">High market consensus NO (92.5%) within 18.0h of expiry</small></td>
-            <td><span class="badge cat-geopolitics">Geopolitics</span></td>
-            <td><span class="side-no">NO</span></td>
-            <td>3.11</td>
-            <td>$0.9290</td>
-            <td>$0.9240</td>
-            <td><strong>96.0%</strong> <small>(+3.1pp)</small></td>
-            <td>$2.89 <small>(9.5%)</small></td>
-            <td class="neg">$-0.02</td>
-            <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.557 if P_est &lt;= 70%</small></td>
         </tr>
         
     </tbody>
@@ -575,20 +508,7 @@
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">2:20:24 UTC] [OPEN TRADE #51] Will there be no change in Fed interest rates after the October 2026 meeting?
-  Категория: Macro | Сторона: YES | Источник: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
-  Оценка бота: 96.5% vs Рынок (Ask VWAP): 94.0% (Перекос/Edge: +2.5 п.п.)
-  Стакан CLOB: BestBid=0.930, BestAsk=0.940, Проскальзывание входа/выхода=1.00% (&lt;= 3.0%)
-  Келли: Полный=41.7%, Четверть(0.25x)=14.6% -&gt; Применён=12.0% банка
-  Размер сделки: $3.67 USDC (3.90 shares @ $0.9400)
-  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.564 if P_est &lt;= 70%
-  Причина: Fed rate freeze consensus (93.5%) with 111.6h to close
-
-[2026-10-24 12:20:24 UTC] [CYCLE #175 SUMMARY] Scanned=800 | PassedFilter=299 | Evaluated=32 | Edges(&gt;=8pp)=30 | Opened=1 | Closed=1 | Cash=$18.14 | Equity=$30.56 (DD=0.17%)
-[2026-10-24 12:29:41 UTC] [CYCLE #176 SUMMARY] Scanned=798 | PassedFilter=295 | Evaluated=30 | Edges(&gt;=8pp)=24 | Opened=0 | Closed=0 | Cash=$18.14 | Equity=$30.54 (DD=0.23%)
-[RESOLVED] #35 | Will Bitcoin dip to $80,000 in October? (YES)
-  Entry VWAP: 0.6100 | Settlement: 1.00 | PnL: $+0.71 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $1.00/share
-[2026-10-24 16:11:51 UTC] [OPEN TRADE #52] Will the Fed increase interest rates by 25 bps after the October 2026 meeting?
+  <pre class="log-box">1:51 UTC] [OPEN TRADE #52] Will the Fed increase interest rates by 25 bps after the October 2026 meeting?
   Категория: Macro | Сторона: NO | Источник: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
   Оценка бота: 98.0% vs Рынок (Ask VWAP): 96.0% (Перекос/Edge: +2.0 п.п.)
   Стакан CLOB: BestBid=0.950, BestAsk=0.960, Проскальзывание входа/выхода=1.00% (&lt;= 3.0%)
@@ -724,6 +644,19 @@
 [2026-10-25 21:59:55 UTC] [CYCLE #205 SUMMARY] Scanned=798 | PassedFilter=238 | Evaluated=29 | Edges(&gt;=8pp)=17 | Opened=3 | Closed=2 | Cash=$0.00 | Equity=$30.53 (DD=4.22%)
 [2026-10-25 22:09:17 UTC] [CYCLE #206 SUMMARY] Scanned=793 | PassedFilter=227 | Evaluated=28 | Edges(&gt;=8pp)=15 | Opened=0 | Closed=0 | Cash=$0.00 | Equity=$31.10 (DD=2.43%)
 [2026-10-25T22:18:07.599377+00:00] [GOVERNOR APPROVED] ✅ Одобрено предложение #18 (Ротация категорий: переключить фокус на Sports): active_category_filter -&gt; Sports
+[RESOLVED] #55 | Will Bitcoin dip to $78,000 October 19-25? (NO)
+  Entry VWAP: 0.9480 | Settlement: 1.00 | PnL: $+0.21 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $1.00/share
+[RESOLVED] #58 | LoL: Gen.G vs LYON (BO3) - Worlds Group Stage (YES)
+  Entry VWAP: 0.9200 | Settlement: 1.00 | PnL: $+0.41 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $1.00/share
+[EXIT] #59 | Israel x Iran ceasefire continues through October 27? (YES)
+  Shares: 4.99 | Entry VWAP: 0.9400 -&gt; Exit Bid VWAP: 0.9930
+  Proceeds: $4.95 | Realized PnL: $+0.26 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.3%) secured early with +5.6% gain
+[RESOLVED] #60 | Clippers vs. Thunder (NO)
+  Entry VWAP: 0.9100 | Settlement: 1.00 | PnL: $+0.40 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $1.00/share
+[RESOLVED] #61 | Will the price of Bitcoin be above $78,000 on October 26? (YES)
+  Entry VWAP: 0.9400 | Settlement: 1.00 | PnL: $+0.29 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $1.00/share
+[RESOLVED] #62 | Will Elon Musk post 115-139 tweets from October 24 to October 26, 2026? (NO)
+  Entry VWAP: 0.9290 | Settlement: 1.00 | PnL: $+0.22 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $1.00/share
 </pre>
 </body>
 </html>

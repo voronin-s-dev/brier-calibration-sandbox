@@ -950,3 +950,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-25 21:59:55 UTC] [CYCLE #205 SUMMARY] Scanned=798 | PassedFilter=238 | Evaluated=29 | Edges(>=8pp)=17 | Opened=3 | Closed=2 | Cash=$0.00 | Equity=$30.53 (DD=4.22%)
 [2026-10-25 22:09:17 UTC] [CYCLE #206 SUMMARY] Scanned=793 | PassedFilter=227 | Evaluated=28 | Edges(>=8pp)=15 | Opened=0 | Closed=0 | Cash=$0.00 | Equity=$31.10 (DD=2.43%)
 [2026-10-25T22:18:07.599377+00:00] [GOVERNOR APPROVED] ✅ Одобрено предложение #18 (Ротация категорий: переключить фокус на Sports): active_category_filter -> Sports
+[RESOLVED] #55 | Will Bitcoin dip to $78,000 October 19-25? (NO)
+  Entry VWAP: 0.9480 | Settlement: 1.00 | PnL: $+0.21 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $1.00/share
+[RESOLVED] #58 | LoL: Gen.G vs LYON (BO3) - Worlds Group Stage (YES)
+  Entry VWAP: 0.9200 | Settlement: 1.00 | PnL: $+0.41 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $1.00/share
+[EXIT] #59 | Israel x Iran ceasefire continues through October 27? (YES)
+  Shares: 4.99 | Entry VWAP: 0.9400 -> Exit Bid VWAP: 0.9930
+  Proceeds: $4.95 | Realized PnL: $+0.26 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.3%) secured early with +5.6% gain
+[RESOLVED] #60 | Clippers vs. Thunder (NO)
+  Entry VWAP: 0.9100 | Settlement: 1.00 | PnL: $+0.40 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $1.00/share
+[RESOLVED] #61 | Will the price of Bitcoin be above $78,000 on October 26? (YES)
+  Entry VWAP: 0.9400 | Settlement: 1.00 | PnL: $+0.29 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $1.00/share
+[RESOLVED] #62 | Will Elon Musk post 115-139 tweets from October 24 to October 26, 2026? (NO)
+  Entry VWAP: 0.9290 | Settlement: 1.00 | PnL: $+0.22 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $1.00/share
