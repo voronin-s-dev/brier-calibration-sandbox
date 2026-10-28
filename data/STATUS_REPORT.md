@@ -1,20 +1,20 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-10-28 14:23:57 UTC`
+**Обновлено:** `2026-10-28 14:33:07 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$26.69 USDC`** (`-23.31$` / `-46.62%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$9.61` / `$17.08 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Текущий баланс (Equity)** | **`$26.69 USDC`** (`-23.31$` / `-46.61%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$9.61` / `$17.09 USDC` | До 8 открытых позиций, макс 8% банка |
 | **Цель окупаемости подписки** | `$-23.31 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `24.43%` / `24.45%` (Пик: `$35.32`) | Стоп-кран при просадке 40% |
+| **Просадка от пика (Текущая / Макс)** | `24.42%` / `24.45%` (Пик: `$35.32`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `70` / `58.6%` | Brier Score: `0.2524` |
 
 ## 📂 Открытые позиции (5 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #51 | Will there be no change in Fed interest rates after the | Macro | **YES** | `0.940` | `0.947` | `96.5%` | `$3.67` | `$+0.03` | https://www.federalreserve.gov |
+| #51 | Will there be no change in Fed interest rates after the | Macro | **YES** | `0.940` | `0.948` | `96.5%` | `$3.67` | `$+0.03` | https://www.federalreserve.gov |
 | #52 | Will the Fed increase interest rates by 25 bps after th | Macro | **NO** | `0.960` | `0.951` | `98.5%` | `$3.70` | `$-0.03` | https://www.federalreserve.gov |
 | #74 | Will the Milwaukee Brewers win the 2026 World Series? | Sports | **YES** | `0.953` | `0.908` | `98.0%` | `$4.06` | `$-0.19` | https://www.mlb.com/ |
 | #75 | Will FC Barcelona win on 2026-10-31? | Sports | **YES** | `0.890` | `0.880` | `92.8%` | `$3.78` | `$-0.04` | https://www.laliga.com/ |
@@ -34,6 +34,11 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Counter-Strike: DNK vs Dark Moon (BO3) - Exort Fie | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
+| Spread: Hawks (-3.5) | Sports | NO | `97.5%` | `56.0%` | `+41.5 п.п.` | `1.00%` | REJECTED: Contract price $0.560 outside sweet spot [$0.76, $0.89] |
+| Spread: Jacksonville State (-3.5) | Sports | NO | `97.5%` | `55.0%` | `+42.5 п.п.` | `1.00%` | REJECTED: Contract price $0.550 outside sweet spot [$0.76, $0.89] |
+| Counter-Strike: Team Nemesis vs Eternal Fire (BO3) | Sports | NO | `83.0%` | `87.0%` | `-4.0 п.п.` | `2.00%` | REJECTED: Edge -4.0 pp < 2 pp threshold (P_est=83.0% vs AskVWAP=87.0%) |
+| Counter-Strike: K27 vs B8 (BO3) - Tesla Cup Group  | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
 | Spread: Steelers (-3.5) | Sports | NO | `97.5%` | `52.0%` | `+45.5 п.п.` | `1.00%` | REJECTED: Contract price $0.520 outside sweet spot [$0.76, $0.89] |
 | Counter-Strike: DNK vs Dark Moon (BO3) - Exort Fie | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
 | Spread: Hawks (-3.5) | Sports | NO | `97.5%` | `55.0%` | `+42.5 п.п.` | `1.00%` | REJECTED: Contract price $0.550 outside sweet spot [$0.76, $0.89] |
@@ -47,8 +52,3 @@
 | LoL: Movistar KOI vs T1 (BO3) - Worlds Group Stage | Sports | NO | `89.0%` | `86.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #76 ($2.14 @ 0.8600) |
 | Counter-Strike: Liquid vs FURIA (BO3) - PGL Master | Sports | YES | `33.0%` | `28.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Win probability 33.0% < 92% minimum (no underdog lottery bets) |
 | Will Elche CF win on 2026-11-01? | Sports | YES | `46.0%` | `41.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Win probability 46.0% < 92% minimum (no underdog lottery bets) |
-| Spread: Lakers (-4.5) | Sports | NO | `97.5%` | `60.0%` | `+37.5 п.п.` | `1.00%` | REJECTED: Contract price $0.600 outside sweet spot [$0.84, $0.96] |
-| Magic vs. Raptors | Sports | NO | `70.0%` | `65.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Win probability 70.0% < 92% minimum (no underdog lottery bets) |
-| Heat vs. Hawks | Sports | YES | `48.0%` | `43.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Win probability 48.0% < 92% minimum (no underdog lottery bets) |
-| Will FC Internazionale Milano win on 2026-10-28? | Sports | YES | `78.0%` | `73.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Win probability 78.0% < 92% minimum (no underdog lottery bets) |
-| Will Manchester City FC win on 2026-10-28? | Sports | YES | `63.0%` | `58.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Win probability 63.0% < 92% minimum (no underdog lottery bets) |
