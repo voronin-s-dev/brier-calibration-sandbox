@@ -138,9 +138,23 @@ class TestRiskManagementV2(unittest.TestCase):
         self.assertEqual(GrokCharterPaperTrader.EXIT_HOURS_THRESHOLD, 0.0)
         self.assertEqual(GrokCharterPaperTrader.STOP_LOSS_PCT, 0.40)
         self.assertEqual(GrokCharterPaperTrader.MIN_EDGE_PP, 0.015)
-        self.assertEqual(GrokCharterPaperTrader.MIN_ESTIMATED_PROB, 0.92)
-        self.assertEqual(GrokCharterPaperTrader.MIN_CONTRACT_PRICE, 0.84)
-        self.assertEqual(GrokCharterPaperTrader.MAX_CONTRACT_PRICE, 0.965)
+        self.assertEqual(GrokCharterPaperTrader.MIN_ESTIMATED_PROB, 0.80)
+        self.assertEqual(GrokCharterPaperTrader.MIN_CONTRACT_PRICE, 0.76)
+        self.assertEqual(GrokCharterPaperTrader.MAX_CONTRACT_PRICE, 0.89)
+        self.assertEqual(GrokCharterPaperTrader.MAX_BANK_PCT_PER_TRADE, 0.08)
+
+    def test_soccer_draw_guard(self) -> None:
+        """Verify that 3-way soccer win markets are flagged to prevent draw loss traps."""
+        self.assertTrue(GrokCharterPaperTrader.is_soccer_draw_trap("Will Arsenal FC win on 2026-10-27?"))
+        self.assertTrue(GrokCharterPaperTrader.is_soccer_draw_trap("Will FC Barcelona win on 2026-10-31?"))
+        self.assertTrue(GrokCharterPaperTrader.is_soccer_draw_trap("Will CD Santa Clara win on 2026-10-26?"))
+        self.assertTrue(GrokCharterPaperTrader.is_soccer_draw_trap("Premier League: Chelsea vs Liverpool win"))
+
+        # Spreads, totals, and non-soccer sports must NOT be flagged
+        self.assertFalse(GrokCharterPaperTrader.is_soccer_draw_trap("Spread: FC Barcelona (-3.5)"))
+        self.assertFalse(GrokCharterPaperTrader.is_soccer_draw_trap("Pacers vs. Bucks: O/U 212.5"))
+        self.assertFalse(GrokCharterPaperTrader.is_soccer_draw_trap("Counter-Strike: FURIA vs TYLOO (BO3)"))
+        self.assertFalse(GrokCharterPaperTrader.is_soccer_draw_trap("Will the Milwaukee Brewers win the 2026 World Series?"))
 
     def test_stop_loss_triggers_on_steep_price_drop(self) -> None:
         """Verify that a position is liquidated when Bid falls > 35% below entry."""

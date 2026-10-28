@@ -65,13 +65,13 @@ class TestE2EShadowPortfolio(unittest.TestCase):
     @patch("trader.simulate_clob_buy_and_exit_check")
     def test_e2e_dual_track_execution(self, mock_buy: MagicMock, mock_markets: MagicMock) -> None:
         """Simulate a complete cycle with 1 Sports market and 1 Crypto market."""
-        m_sports = make_market("m_sp_100", "Lakers vs Warriors", "Sports", [0.90, 0.10])
+        m_sports = make_market("m_sp_100", "Lakers vs Warriors", "Sports", [0.84, 0.16])
         m_crypto = make_market("m_cr_100", "Bitcoin > 82k", "Crypto", [0.40, 0.60])
         mock_markets.return_value = [m_sports, m_crypto]
 
         # Mock CLOB buy simulation
         def side_effect_buy(token_id, side_label, bet_usdc, max_slippage_pct, preloaded_book=None):
-            price = 0.90 if "sp_100" in token_id else 0.40
+            price = 0.84 if "sp_100" in token_id else 0.40
             return OrderBookSimulation(
                 token_id=token_id,
                 side_label=side_label,

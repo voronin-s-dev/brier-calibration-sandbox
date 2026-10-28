@@ -768,9 +768,9 @@ class HighConvictionFactOracle:
                 rationale="Russian CB rate cut impossible in current inflation & rate-hike environment",
             )
 
-        # 5. General High-Consensus Events (p >= 0.90, short horizon <= 48h, liq >= $8k, vol >= $15k)
+        # 5. General High-Consensus Events (p >= 0.78, short horizon <= 48h, liq >= $8k, vol >= $15k)
         if market.hours_to_close <= 48.0 and market.liquidity_usd >= 8000.0 and market.volume_24h_usd >= 15000.0:
-            if p_yes_mkt >= 0.90:
+            if p_yes_mkt >= 0.78:
                 p_yes = min(p_yes_mkt + 0.035, 0.985)
                 return EvaluationResult(
                     market_id=market.id,
@@ -783,7 +783,7 @@ class HighConvictionFactOracle:
                     confidence=0.92,
                     rationale=f"High market consensus YES ({p_yes_mkt*100:.1f}%) within {market.hours_to_close:.1f}h of expiry",
                 )
-            elif p_no_mkt >= 0.90:
+            elif p_no_mkt >= 0.78:
                 p_no = min(p_no_mkt + 0.035, 0.985)
                 return EvaluationResult(
                     market_id=market.id,

@@ -69,11 +69,11 @@ class GrokCharterPaperTrader:
     MAX_POSITIONS_PER_CATEGORY = 3  # Max 3 per general category (disciplined diversification)
     MAX_CRYPTO_POSITIONS = 4        # Max 4 for high-liquidity Crypto (fast turnover ~6.7h)
     KELLY_FRACTION = 0.40           # Fractional Kelly sizing for high-winrate strategy (up from 0.35)
-    MAX_BANK_PCT_PER_TRADE = 0.15   # Up to 15% bankroll per trade (~$4.50-$4.70 on current bankroll)
+    MAX_BANK_PCT_PER_TRADE = 0.08   # Up to 8% bankroll per trade (~$2.15-$2.40 on current bankroll)
     MIN_EDGE_PP = 0.015             # 1.5 percentage points minimum divergence against Ask VWAP
-    MIN_ESTIMATED_PROB = 0.92       # Minimum estimated probability: strictly high-conviction events (92%+ likelihood)
-    MIN_CONTRACT_PRICE = 0.84       # Buy only discount mature contracts [0.84, 0.965]
-    MAX_CONTRACT_PRICE = 0.965      # Yield: +3.6% to +19.0% upon resolution
+    MIN_ESTIMATED_PROB = 0.80       # Minimum estimated probability: strictly high-conviction events (80%+ likelihood)
+    MIN_CONTRACT_PRICE = 0.76       # High-velocity sweet spot [0.76, 0.89]: yield +12.4% to +31.6%
+    MAX_CONTRACT_PRICE = 0.89       # Strict cap: eliminates asymmetric -100% downside on 95c+ contracts
     MIN_HOURS_TO_CLOSE = 0.8        # Focus on near-term resolutions (1h to 5 days)
     MAX_HOURS_TO_CLOSE = 120.0      # Fast capital turnover
     EXIT_HOURS_THRESHOLD = 0.0      # NEVER dump prematurely before expiry: hold into resolution ($1.00 payout)
@@ -132,6 +132,32 @@ class GrokCharterPaperTrader:
         bet_usdc = round(total_equity * applied_pct, 2)
         return full_kelly, frac_kelly, applied_pct, bet_usdc
 
+    @classmethod
+    def is_soccer_draw_trap(cls, question: str) -> bool:
+        """
+        Detects whether a sports market is a 3-way soccer/football match winner bet.
+        In soccer, draws occur in ~25% of matches. A binary YES bet on a team winning
+        resolves to $0.00 if the match ends in a draw.
+        """
+        q = question.lower()
+        if any(ns in q for ns in ["nba", "nfl", "mlb", "nhl", "counter-strike", "dota", "valorant", "lol:", "bo3", "bo5"]):
+            return False
+
+        is_match_winner = bool(re.search(r"will\s+.+\s+win\b", q) or ((" vs. " in q or " vs " in q) and "win" in q))
+        if not is_match_winner:
+            return False
+
+        soccer_keywords = [
+            " fc", " cf", "real madrid", "barcelona", "bayern",
+            "juventus", "inter milan", "ac milan", "milan", "arsenal", "chelsea", "liverpool",
+            "tottenham", "newcastle", "dortmund", "psg", "paris saint-germain",
+            "atletico", "roma", "napoli", "benfica", "sporting", "porto", "ajax",
+            "cagliari", "santa clara", "premier league", "la liga", "serie a",
+            "bundesliga", "ligue 1", "champions league", "europa league", "mls",
+            "soccer", "football club"
+        ]
+        return any(k in q for k in soccer_keywords)
+
     def _evaluate_market_probability(
         self,
         market: MarketInfo,
@@ -161,8 +187,8 @@ class GrokCharterPaperTrader:
             if res is not None:
                 return res, preloaded_book
 
-        # 4. Fallback for Macro, Geopolitics, Sports, Other: News Consensus & CLOB Imbalance
-        if market.clob_token_ids:
+        # 4. Fallback for Macro, Geopolitics, Other: News Consensus & CLOB Imbalance (NEVER Sports!)
+        if market.category != "Sports" and market.clob_token_ids:
             try:
                 book = preloaded_book or fetch_clob_book(market.clob_token_ids[0])
                 bids = book.get("bids", [])
@@ -664,7 +690,7 @@ class GrokCharterPaperTrader:
                 kelly_fraction=self.KELLY_FRACTION,
             )
             probe_bet_usdc = min(
-                max(tentative_bet, round(total_equity * 0.12, 2), 2.50),
+                max(tentative_bet, 1.50),
                 max(cash_available, 1.00),
             )
 
@@ -703,6 +729,8 @@ class GrokCharterPaperTrader:
                 and not any(w in mkt.question.lower() for w in ["above", "below", "or higher", "or lower", "or more", "or less"])
             ):
                 decision = "REJECTED: Narrow weather bracket NO bet prohibited (airport METAR microclimate tail risk)"
+            elif mkt.category == "Sports" and chosen_side == "YES" and self.is_soccer_draw_trap(mkt.question):
+                decision = "REJECTED: Soccer Draw Guard: Binary YES on 3-way soccer match winner prohibited (draw resolves to $0.00)"
             elif not ob_sim.sufficient_depth:
                 decision = f"REJECTED: {ob_sim.reject_reason}"
             elif not ob_sim.passes_slippage_limit:
