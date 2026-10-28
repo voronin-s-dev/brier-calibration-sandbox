@@ -1168,3 +1168,15 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-28 19:48:22 UTC] [CYCLE #246 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=7 | Opened=0 (Shadow=0) | Closed=2 | Cash=$17.36 | Equity=$27.08 (DD=23.33%)
 [2026-10-28 19:57:29 UTC] [CYCLE #247 SUMMARY] Scanned=782 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=7 | Opened=0 (Shadow=0) | Closed=0 | Cash=$17.36 | Equity=$27.08 (DD=23.33%)
 [2026-10-28 20:06:36 UTC] [CYCLE #248 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=7 | Opened=0 (Shadow=0) | Closed=0 | Cash=$17.36 | Equity=$27.08 (DD=23.33%)
+[RESOLVED] #76 | LoL: Movistar KOI vs T1 (BO3) - Worlds Group Stage (NO)
+  Entry VWAP: 0.8600 | Settlement: 1.00 | PnL: $+0.35 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $1.00/share
+[2026-10-28 23:58:25 UTC] [OPEN TRADE #77] Spurs vs. Jazz
+  Категория: Sports | Сторона: YES | Источник: https://www.nba.com/
+  Оценка бота: 89.0% vs Рынок (Ask VWAP): 86.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.850, BestAsk=0.860, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=21.4%, Четверть(0.25x)=8.6% -> Применён=8.0% банка
+  Размер сделки: $2.20 USDC (2.56 shares @ $0.8600)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.516 if P_est <= 70%
+  Причина: High market consensus YES (85.5%) within 1.0h of expiry
+
+[2026-10-28 23:58:25 UTC] [CYCLE #249 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=7 | Opened=1 (Shadow=0) | Closed=1 | Cash=$17.64 | Equity=$27.43 (DD=22.34%)
