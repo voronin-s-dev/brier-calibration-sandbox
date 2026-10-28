@@ -1118,3 +1118,9 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-27 22:32:59 UTC] [CYCLE #234 SUMMARY] Scanned=800 | PassedFilter=92 | Evaluated=17 | Edges(>=8pp)=15 | Opened=0 | Closed=1 | Cash=$14.73 | Equity=$31.27 (DD=11.45%)
 [2026-10-27 22:42:32 UTC] [CYCLE #235 SUMMARY] Scanned=800 | PassedFilter=86 | Evaluated=16 | Edges(>=8pp)=16 | Opened=0 | Closed=0 | Cash=$14.73 | Equity=$31.30 (DD=11.37%)
 [2026-10-27 22:52:04 UTC] [CYCLE #236 SUMMARY] Scanned=798 | PassedFilter=87 | Evaluated=17 | Edges(>=8pp)=17 | Opened=0 | Closed=0 | Cash=$14.73 | Equity=$31.30 (DD=11.37%)
+[EXIT] #70 | Kings vs. Spurs (NO)
+  Shares: 4.88 | Entry VWAP: 0.9300 -> Exit Bid VWAP: 0.9950
+  Proceeds: $4.86 | Realized PnL: $+0.32 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.5%) secured early with +7.0% gain
+[RESOLVED] #71 | Will Arsenal FC win on 2026-10-27? (YES)
+  Entry VWAP: 0.9000 | Settlement: 0.00 | PnL: $-4.53 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $0.00/share
+[2026-10-28 01:36:57 UTC] [CYCLE #237 SUMMARY] Scanned=777 | PassedFilter=59 | Evaluated=19 | Edges(>=8pp)=19 | Opened=0 | Closed=2 | Cash=$19.59 | Equity=$27.05 (DD=23.40%)
