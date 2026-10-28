@@ -18,6 +18,10 @@ from database import SimDatabase
 from polymarket_api import MarketInfo, OrderBookSimulation
 from oracles import EvaluationResult
 from trader import GrokCharterPaperTrader
+import telegram_notify
+
+# Silence live Telegram alerts during unit test execution
+telegram_notify.send_telegram_alert = lambda text: False
 
 
 def make_market(id: str, question: str, category: str, gamma_prices: list) -> MarketInfo:
