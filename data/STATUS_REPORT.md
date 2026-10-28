@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-10-28 07:21:24 UTC`
+**Обновлено:** `2026-10-28 07:30:31 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -34,6 +34,8 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Counter-Strike: Abyssal vs Rooster - Map 1 Winner | Sports | NO | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
+| Spread: Steelers (-3.5) | Sports | NO | `97.5%` | `53.0%` | `+44.5 п.п.` | `1.00%` | REJECTED: Contract price $0.530 outside sweet spot [$0.76, $0.89] |
 | Spread: Steelers (-3.5) | Sports | NO | `97.5%` | `53.0%` | `+44.5 п.п.` | `1.00%` | REJECTED: Contract price $0.530 outside sweet spot [$0.76, $0.89] |
 | LoL: Movistar KOI vs T1 (BO3) - Worlds Group Stage | Sports | NO | `89.0%` | `86.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #76 ($2.14 @ 0.8600) |
 | Counter-Strike: Liquid vs FURIA (BO3) - PGL Master | Sports | YES | `33.0%` | `28.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Win probability 33.0% < 92% minimum (no underdog lottery bets) |
@@ -50,5 +52,3 @@
 | Raiders vs. Jets | Sports | YES | `52.0%` | `47.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Win probability 52.0% < 92% minimum (no underdog lottery bets) |
 | 76ers vs. Pacers | Sports | NO | `53.7%` | `42.0%` | `+11.7 п.п.` | `1.00%` | REJECTED: Win probability 53.7% < 92% minimum (no underdog lottery bets) |
 | Browns vs. Steelers | Sports | YES | `41.0%` | `36.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Win probability 41.0% < 92% minimum (no underdog lottery bets) |
-| Spread: Lakers (-3.5) | Sports | NO | `97.5%` | `57.0%` | `+40.5 п.п.` | `1.00%` | REJECTED: Contract price $0.570 outside sweet spot [$0.84, $0.96] |
-| Counter-Strike: TheMongolz vs Nemiga (BO3) - PGL M | Sports | YES | `63.0%` | `58.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Win probability 63.0% < 92% minimum (no underdog lottery bets) |
