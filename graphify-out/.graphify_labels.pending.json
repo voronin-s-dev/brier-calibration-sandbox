@@ -1,7 +1,7 @@
 {
-  "0": "oracles.py",
+  "0": "GrokCharterPaperTrader",
   "1": "SimDatabase",
-  "2": "send_telegram_alert",
+  "2": "Task 1: Shadow Portfolio Database Schema & Access Layer",
   "3": "trader.py",
   "4": "AutoGovernor",
   "5": ".compute_kelly_sizing",
@@ -9,5 +9,9 @@
   "7": "📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)",
   "8": "README.md",
   "9": "http_tls.py",
-  "10": "extract_event_key"
+  "10": "generate_reports",
+  "11": ".get_portfolio",
+  "12": ".test_e2e_dual_track_execution",
+  "13": "._init_schema",
+  "14": "progress.md"
 }

@@ -29,6 +29,17 @@ def generate_reports(
     candidates = db.get_recent_candidates(limit=35)
     cycles = db.get_scan_cycles(limit=25)
 
+    shadow_pf = db.get_shadow_portfolio()
+    shadow_open = db.get_open_shadow_positions()
+    shadow_all = db.get_all_shadow_positions(limit=50)
+    shadow_closed = [p for p in shadow_all if p["status"] in ("CLOSED", "RESOLVED")]
+    shadow_stats = db.get_shadow_category_stats()
+
+    shadow_total_eq = float(shadow_pf.get("total_equity", 50.0))
+    shadow_cash = float(shadow_pf.get("cash_usdc", 50.0))
+    shadow_locked = float(shadow_pf.get("locked_usdc", 0.0))
+    shadow_dd = float(shadow_pf.get("current_drawdown_pct", 0.0)) * 100.0
+
     initial_cap = float(pf.get("initial_capital", 50.0))
     total_eq = float(pf.get("total_equity", 50.0))
     cash = float(pf.get("cash_usdc", 50.0))
@@ -98,6 +109,33 @@ def generate_reports(
 
     md_lines.extend([
         "",
+        "## 🧪 Теневая песочница (Shadow Sandbox)",
+        "| Показатель | Значение |",
+        "| :--- | :--- |",
+        f"| **Виртуальный баланс (Equity)** | **`${shadow_total_eq:.2f} USDC`** |",
+        f"| **Свободный кэш / В сделках** | `${shadow_cash:.2f}` / `${shadow_locked:.2f} USDC` |",
+        f"| **Открытых позиций** | `{len(shadow_open)} / 5` |",
+        f"| **Текущая просадка** | `{shadow_dd:.2f}%` |",
+        "",
+        "### Доходность по замороженным категориям (Песочница)",
+    ])
+    if shadow_stats:
+        md_lines.extend([
+            "| Категория | Сделок | PnL | Win Rate |",
+            "| :--- | :--- | :--- | :--- |",
+        ])
+        for cat, st in shadow_stats.items():
+            cnt = int(st["count"])
+            pnl = float(st["pnl"])
+            wins = int(st["wins"])
+            wr = (wins / cnt * 100.0) if cnt > 0 else 0.0
+            pnl_str = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
+            md_lines.append(f"| **{cat}** | `{cnt}` | `{pnl_str}` | `{wr:.0f}%` |")
+    else:
+        md_lines.append("*Теневые сделки пока не закрыты (накапливается история).*")
+
+    md_lines.extend([
+        "",
         "## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB",
         "| Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |",
         "| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |",
@@ -134,6 +172,26 @@ def generate_reports(
         """
     if not open_rows_html:
         open_rows_html = '<tr><td colspan="11" class="empty">Нет открытых позиций</td></tr>'
+
+    shadow_rows_html = ""
+    for cat, st in shadow_stats.items():
+        cnt = int(st["count"])
+        pnl = float(st["pnl"])
+        wins = int(st["wins"])
+        wr = (wins / cnt * 100.0) if cnt > 0 else 0.0
+        pnl_cls = "pos" if pnl >= 0 else "neg"
+        ready_label = "✅ Готова к разморозке" if (cnt >= 5 and pnl >= 1.50 and wr >= 60.0) else "⏳ Накапливает статистику"
+        shadow_rows_html += f"""
+        <tr>
+            <td><span class="badge cat-{cat.lower()}">{html.escape(cat)}</span></td>
+            <td>{cnt}</td>
+            <td class="{pnl_cls}">${pnl:+.2f}</td>
+            <td>{wr:.0f}% ({wins}/{cnt})</td>
+            <td>{ready_label}</td>
+        </tr>
+        """
+    if not shadow_rows_html:
+        shadow_rows_html = '<tr><td colspan="5" class="empty">Теневые сделки пока не закрыты (накапливается история)</td></tr>'
 
     cand_rows_html = ""
     for c in candidates[:25]:
@@ -265,7 +323,24 @@ def generate_reports(
       <div class="metric-val">{len(closed_pos)} <span class="muted" style="font-size:16px">({win_rate:.1f}%)</span></div>
       <div class="metric-sub">Brier Score: {brier_score_str}</div>
     </div>
+    <div class="card" style="border-left: 3px solid #8b5cf6;">
+      <div class="metric-label">🧪 Shadow Sandbox (Песочница)</div>
+      <div class="metric-val">${shadow_total_eq:.2f} <span class="muted" style="font-size:15px">(Старт: $50)</span></div>
+      <div class="metric-sub">Кэш: ${shadow_cash:.2f} | В сделках: ${shadow_locked:.2f} | Открыто: {len(shadow_open)}/5</div>
+    </div>
   </div>
+
+  <h2>🧪 Теневая песочница (Shadow Sandbox) — Отключённые рынки</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Категория</th><th>Сделок в песочнице</th><th>PnL (виртуальный)</th><th>Win Rate</th><th>Статус восстановления</th>
+      </tr>
+    </thead>
+    <tbody>
+      {shadow_rows_html}
+    </tbody>
+  </table>
 
   <h2>📂 Открытые виртуальные позиции ({len(open_pos)} / 8)</h2>
   <table>
