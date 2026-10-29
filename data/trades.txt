@@ -1182,3 +1182,18 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-28 23:58:25 UTC] [CYCLE #249 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=7 | Opened=1 (Shadow=0) | Closed=1 | Cash=$17.64 | Equity=$27.43 (DD=22.34%)
 [2026-10-29 00:07:33 UTC] [CYCLE #250 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=6 | Opened=0 (Shadow=0) | Closed=0 | Cash=$17.64 | Equity=$27.40 (DD=22.42%)
 [2026-10-29 00:16:39 UTC] [CYCLE #251 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=6 | Opened=0 (Shadow=0) | Closed=0 | Cash=$17.64 | Equity=$27.41 (DD=22.38%)
+[EXIT] #74 | Will the Milwaukee Brewers win the 2026 World Series? (YES)
+  Shares: 4.26 | Entry VWAP: 0.9530 -> Exit Bid VWAP: 0.9990
+  Proceeds: $4.26 | Realized PnL: $+0.20 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +4.8% gain
+[RESOLVED] #77 | Spurs vs. Jazz (YES)
+  Entry VWAP: 0.8600 | Settlement: 1.00 | PnL: $+0.36 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $1.00/share
+[2026-10-29 05:33:13 UTC] [OPEN TRADE #78] LoL: Karmine Corp vs CTBC Flying Oyster (BO3) - Worlds Group Stage
+  Категория: Sports | Сторона: YES | Источник: https://gol.gg/esports/home
+  Оценка бота: 83.0% vs Рынок (Ask VWAP): 80.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.790, BestAsk=0.800, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=15.0%, Четверть(0.25x)=6.0% -> Применён=6.0% банка
+  Размер сделки: $1.69 USDC (2.11 shares @ $0.8000)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.480 if P_est <= 70%
+  Причина: High market consensus YES (79.5%) within 20.4h of expiry
+
+[2026-10-29 05:33:13 UTC] [CYCLE #252 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=6 | Opened=1 (Shadow=0) | Closed=2 | Cash=$22.77 | Equity=$28.17 (DD=20.22%)
