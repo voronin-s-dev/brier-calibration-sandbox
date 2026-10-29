@@ -1202,3 +1202,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-29 11:42:33 UTC] [CYCLE #255 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=5 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.77 | Equity=$28.26 (DD=19.98%)
 [2026-10-29 11:51:39 UTC] [CYCLE #256 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=5 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.77 | Equity=$28.26 (DD=19.98%)
 [2026-10-29 12:00:44 UTC] [CYCLE #257 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.77 | Equity=$28.26 (DD=19.98%)
+[2026-10-29 18:23:41 UTC] [OPEN TRADE #79] LoL: Hanwha Life Esports vs G2 Esports (BO3) - Worlds Group Stage
+  Категория: Sports | Сторона: YES | Источник: https://gol.gg/esports/home
+  Оценка бота: 82.0% vs Рынок (Ask VWAP): 79.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.780, BestAsk=0.790, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=14.3%, Четверть(0.25x)=5.7% -> Применён=5.7% банка
+  Размер сделки: $1.61 USDC (2.04 shares @ $0.7900)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.474 if P_est <= 70%
+  Причина: High market consensus YES (78.5%) within 34.6h of expiry
+
+[2026-10-29 18:23:41 UTC] [CYCLE #258 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=3 | Opened=1 (Shadow=0) | Closed=0 | Cash=$21.16 | Equity=$28.15 (DD=20.28%)
