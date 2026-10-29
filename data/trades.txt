@@ -1214,3 +1214,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-29 18:23:41 UTC] [CYCLE #258 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=3 | Opened=1 (Shadow=0) | Closed=0 | Cash=$21.16 | Equity=$28.15 (DD=20.28%)
 [2026-10-29 18:32:48 UTC] [CYCLE #259 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.16 | Equity=$28.15 (DD=20.28%)
 [2026-10-29 18:41:53 UTC] [CYCLE #260 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.16 | Equity=$28.15 (DD=20.28%)
+[EXIT] #78 | LoL: Karmine Corp vs CTBC Flying Oyster (BO3) - Worlds Group Stage (YES)
+  Shares: 2.11 | Entry VWAP: 0.8000 -> Exit Bid VWAP: 0.9990
+  Proceeds: $2.11 | Realized PnL: $+0.42 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +24.9% gain
+[2026-10-29 22:55:40 UTC] [OPEN TRADE #80] Counter-Strike: Nemiga vs Vitality (BO3) - PGL Masters Bucharest Playoffs
+  Категория: Sports | Сторона: NO | Источник: https://hltv.org
+  Оценка бота: 87.0% vs Рынок (Ask VWAP): 84.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.830, BestAsk=0.840, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=18.7%, Четверть(0.25x)=7.5% -> Применён=7.5% банка
+  Размер сделки: $2.14 USDC (2.55 shares @ $0.8400)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.504 if P_est <= 70%
+  Причина: High market consensus NO (83.5%) within 19.1h of expiry
+
+[2026-10-29 22:55:40 UTC] [CYCLE #261 SUMMARY] Scanned=776 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=4 | Opened=1 (Shadow=0) | Closed=1 | Cash=$21.13 | Equity=$28.53 (DD=19.22%)
