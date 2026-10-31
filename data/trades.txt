@@ -1260,3 +1260,15 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-31 13:33:16 UTC] [CYCLE #270 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=6 | Opened=0 (Shadow=0) | Closed=0 | Cash=$18.87 | Equity=$26.95 (DD=23.69%)
 [2026-10-31 13:42:27 UTC] [CYCLE #271 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=7 | Opened=0 (Shadow=0) | Closed=0 | Cash=$18.87 | Equity=$26.90 (DD=23.83%)
 [2026-10-31 13:51:39 UTC] [CYCLE #272 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=5 | Opened=0 (Shadow=0) | Closed=0 | Cash=$18.87 | Equity=$26.90 (DD=23.83%)
+[RESOLVED] #82 | Dota 2: Team Yandex vs GamerLegion (BO3) - PARI Universe Playoffs (YES)
+  Entry VWAP: 0.8700 | Settlement: 1.00 | PnL: $+0.32 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $1.00/share
+[2026-10-31 17:53:33 UTC] [OPEN TRADE #83] FC Porto vs. Estoril Praia: O/U 5.5
+  Категория: Sports | Сторона: NO | Источник: https://www.ligaportugal.pt/
+  Оценка бота: 91.0% vs Рынок (Ask VWAP): 88.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.870, BestAsk=0.880, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=25.0%, Четверть(0.25x)=10.0% -> Применён=8.0% банка
+  Размер сделки: $2.17 USDC (2.47 shares @ $0.8800)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.528 if P_est <= 70%
+  Причина: High market consensus NO (87.5%) within 2.6h of expiry
+
+[2026-10-31 17:53:33 UTC] [CYCLE #273 SUMMARY] Scanned=767 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=6 | Opened=1 (Shadow=0) | Closed=1 | Cash=$19.17 | Equity=$27.12 (DD=23.20%)
