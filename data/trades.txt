@@ -1274,3 +1274,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-31 17:53:33 UTC] [CYCLE #273 SUMMARY] Scanned=767 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=6 | Opened=1 (Shadow=0) | Closed=1 | Cash=$19.17 | Equity=$27.12 (DD=23.20%)
 [2026-10-31 18:02:43 UTC] [CYCLE #274 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=6 | Opened=0 (Shadow=0) | Closed=0 | Cash=$19.17 | Equity=$27.15 (DD=23.12%)
 [2026-10-31 18:11:51 UTC] [CYCLE #275 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=7 | Opened=0 (Shadow=0) | Closed=0 | Cash=$19.17 | Equity=$27.15 (DD=23.12%)
+[EXIT] #75 | Will FC Barcelona win on 2026-10-31? (YES)
+  Shares: 4.25 | Entry VWAP: 0.8900 -> Exit Bid VWAP: 0.9990
+  Proceeds: $4.24 | Realized PnL: $+0.46 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +12.2% gain
+[2026-10-31 21:23:33 UTC] [OPEN TRADE #84] Spread: Jets (-9.5)
+  Категория: Sports | Сторона: NO | Источник: https://www.nfl.com/scores
+  Оценка бота: 82.0% vs Рынок (Ask VWAP): 79.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.780, BestAsk=0.790, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=14.3%, Четверть(0.25x)=5.7% -> Применён=5.7% банка
+  Размер сделки: $1.59 USDC (2.01 shares @ $0.7900)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.474 if P_est <= 70%
+  Причина: High market consensus NO (78.5%) within 20.6h of expiry
+
+[2026-10-31 21:23:33 UTC] [CYCLE #276 SUMMARY] Scanned=781 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=8 | Opened=1 (Shadow=0) | Closed=1 | Cash=$21.82 | Equity=$27.81 (DD=21.26%)
