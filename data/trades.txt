@@ -1232,3 +1232,26 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-10-30 02:30:54 UTC] [CYCLE #264 SUMMARY] Scanned=800 | PassedFilter=36 | Evaluated=7 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.13 | Equity=$28.50 (DD=19.30%)
 [2026-10-30 02:40:01 UTC] [CYCLE #265 SUMMARY] Scanned=795 | PassedFilter=36 | Evaluated=6 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.13 | Equity=$28.50 (DD=19.30%)
 [2026-10-30 02:49:05 UTC] [CYCLE #266 SUMMARY] Scanned=775 | PassedFilter=35 | Evaluated=5 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.13 | Equity=$28.50 (DD=19.30%)
+[RESOLVED] #79 | LoL: Hanwha Life Esports vs G2 Esports (BO3) - Worlds Group Stage (YES)
+  Entry VWAP: 0.7900 | Settlement: 1.00 | PnL: $+0.43 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $1.00/share
+[RESOLVED] #80 | Counter-Strike: Nemiga vs Vitality (BO3) - PGL Masters Bucharest Playoffs (NO)
+  Entry VWAP: 0.8400 | Settlement: 0.00 | PnL: $-2.14 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $0.00/share
+[2026-10-31 07:45:15 UTC] [OPEN TRADE #81] Timberwolves vs. Spurs
+  Категория: Sports | Сторона: NO | Источник: https://www.nba.com/
+  Оценка бота: 88.0% vs Рынок (Ask VWAP): 85.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.840, BestAsk=0.850, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=20.0%, Четверть(0.25x)=8.0% -> Применён=8.0% банка
+  Размер сделки: $2.15 USDC (2.53 shares @ $0.8500)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.510 if P_est <= 70%
+  Причина: High market consensus NO (84.5%) within 16.2h of expiry
+
+[2026-10-31 07:45:15 UTC] [OPEN TRADE #82] Dota 2: Team Yandex vs GamerLegion (BO3) - PARI Universe Playoffs
+  Категория: Sports | Сторона: YES | Источник: https://www.dotabuff.com
+  Оценка бота: 90.0% vs Рынок (Ask VWAP): 87.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.860, BestAsk=0.870, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=23.1%, Четверть(0.25x)=9.2% -> Применён=8.0% банка
+  Размер сделки: $2.15 USDC (2.47 shares @ $0.8700)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.522 if P_est <= 70%
+  Причина: High market consensus YES (86.5%) within 11.2h of expiry
+
+[2026-10-31 07:45:15 UTC] [CYCLE #267 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=8 | Opened=2 (Shadow=0) | Closed=2 | Cash=$18.87 | Equity=$26.85 (DD=23.96%)
