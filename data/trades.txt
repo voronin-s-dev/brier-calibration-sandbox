@@ -1304,3 +1304,15 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-01 00:22:47 UTC] [CYCLE #279 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=17 | Edges(>=8pp)=9 | Opened=1 (Shadow=0) | Closed=1 | Cash=$22.51 | Equity=$27.98 (DD=20.77%)
 [2026-11-01 00:31:56 UTC] [CYCLE #280 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=8 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.51 | Equity=$27.96 (DD=20.84%)
 [2026-11-01 00:41:05 UTC] [CYCLE #281 SUMMARY] Scanned=791 | PassedFilter=50 | Evaluated=15 | Edges(>=8pp)=8 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.51 | Equity=$27.98 (DD=20.77%)
+[RESOLVED] #81 | Timberwolves vs. Spurs (NO)
+  Entry VWAP: 0.8500 | Settlement: 1.00 | PnL: $+0.38 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $1.00/share
+[2026-11-01 06:43:33 UTC] [OPEN TRADE #86] Spread: Commanders (-17.5)
+  Категория: Sports | Сторона: NO | Источник: https://www.nfl.com/scores
+  Оценка бота: 86.0% vs Рынок (Ask VWAP): 83.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.820, BestAsk=0.830, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=17.6%, Четверть(0.25x)=7.1% -> Применён=7.1% банка
+  Размер сделки: $2.00 USDC (2.41 shares @ $0.8300)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.498 if P_est <= 70%
+  Причина: High market consensus NO (82.5%) within 18.6h of expiry
+
+[2026-11-01 06:43:33 UTC] [CYCLE #282 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=10 | Opened=1 (Shadow=0) | Closed=1 | Cash=$23.04 | Equity=$28.34 (DD=19.76%)
