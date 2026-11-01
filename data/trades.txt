@@ -1324,3 +1324,8 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-01 19:06:17 UTC] [CYCLE #288 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=5 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.04 | Equity=$27.97 (DD=20.80%)
 [2026-11-01 19:15:26 UTC] [CYCLE #289 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=5 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.04 | Equity=$27.51 (DD=22.09%)
 [2026-11-01 19:24:35 UTC] [CYCLE #290 SUMMARY] Scanned=788 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.04 | Equity=$27.53 (DD=22.05%)
+[RESOLVED] #84 | Spread: Jets (-9.5) (NO)
+  Entry VWAP: 0.7900 | Settlement: 1.00 | PnL: $+0.42 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $1.00/share
+[RESOLVED] #85 | Spread: Bills (-13.5) (NO)
+  Entry VWAP: 0.8100 | Settlement: 0.00 | PnL: $-1.77 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $0.00/share
+[2026-11-01 22:43:54 UTC] [CYCLE #291 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=2 | Cash=$25.06 | Equity=$27.03 (DD=23.46%)
