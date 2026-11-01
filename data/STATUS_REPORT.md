@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-01 14:22:49 UTC`
+**Обновлено:** `2026-11-01 14:31:57 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -32,6 +32,11 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Spread: Browns (-3.5) | Sports | NO | `97.5%` | `77.0%` | `+20.5 п.п.` | `1.00%` | REJECTED: Category cap reached (3/3 in Sports) |
+| Dota 2: Xipto Esports vs potn9ki - Game 2 Winner | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
+| Spread: Lions (-3.5) | Sports | NO | `97.5%` | `53.0%` | `+44.5 п.п.` | `1.00%` | REJECTED: Contract price $0.530 outside sweet spot [$0.76, $0.89] |
+| Counter-Strike: Betclic Apogee Esports vs Phantom  | Sports | NO | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
+| Games Total: O/U 3.5 | Sports | YES | `89.0%` | `97.0%` | `-8.0 п.п.` | `12.00%` | REJECTED: Edge -8.0 pp < 2 pp threshold (P_est=89.0% vs AskVWAP=97.0%) |
 | Spread: Lions (-3.5) | Sports | NO | `97.5%` | `53.0%` | `+44.5 п.п.` | `1.00%` | REJECTED: Contract price $0.530 outside sweet spot [$0.76, $0.89] |
 | Counter-Strike: Betclic Apogee Esports vs Phantom  | Sports | NO | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
 | Will Real Racing Club vs. Real Madrid CF end in a  | Sports | NO | `96.5%` | `89.0%` | `+7.5 п.п.` | `1.00%` | REJECTED: Contract price $0.890 outside sweet spot [$0.76, $0.89] |
@@ -45,8 +50,3 @@
 | Counter-Strike: FlyQuest vs Alter Ego - Map 3 Winn | Sports | NO | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
 | Spread: Browns (-3.5) | Sports | NO | `97.5%` | `76.0%` | `+21.5 п.п.` | `1.00%` | REJECTED: Category cap reached (3/3 in Sports) |
 | Spread: Lions (-3.5) | Sports | NO | `97.5%` | `53.0%` | `+44.5 п.п.` | `1.00%` | REJECTED: Contract price $0.530 outside sweet spot [$0.76, $0.89] |
-| Will Real Racing Club vs. Real Madrid CF end in a  | Sports | NO | `96.5%` | `89.0%` | `+7.5 п.п.` | `1.00%` | REJECTED: Contract price $0.890 outside sweet spot [$0.76, $0.89] |
-| Spread: Broncos (-3.5) | Sports | NO | `97.5%` | `66.0%` | `+31.5 п.п.` | `1.00%` | REJECTED: Contract price $0.660 outside sweet spot [$0.76, $0.89] |
-| Counter-Strike: FlyQuest vs Alter Ego (BO5) - DFRA | Sports | NO | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
-| Counter-Strike: FlyQuest vs Alter Ego - Map 3 Winn | Sports | NO | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
-| Spread: Browns (-3.5) | Sports | NO | `97.5%` | `76.0%` | `+21.5 п.п.` | `1.00%` | REJECTED: Category cap reached (3/3 in Sports) |
