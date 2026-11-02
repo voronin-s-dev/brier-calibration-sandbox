@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-02 20:13:30 UTC`
+**Обновлено:** `2026-11-02 20:22:36 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -35,6 +35,12 @@
 | Spread: Hawks (-3.5) | Sports | NO | `97.5%` | `33.0%` | `+64.5 п.п.` | `1.00%` | REJECTED: Contract price $0.330 outside sweet spot [$0.76, $0.89] |
 | Spread: Cavaliers (-4.5) | Sports | NO | `97.5%` | `52.0%` | `+45.5 п.п.` | `1.00%` | REJECTED: Contract price $0.520 outside sweet spot [$0.76, $0.89] |
 | Spread: Hawks (-4.5) | Sports | NO | `97.5%` | `37.0%` | `+60.5 п.п.` | `1.00%` | REJECTED: Contract price $0.370 outside sweet spot [$0.76, $0.89] |
+| Dota 2: GamerLegion vs CyberHero - Game 1 Winner | Sports | NO | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
+| Spread: Rockets (-4.5) | Sports | NO | `97.5%` | `48.0%` | `+49.5 п.п.` | `1.00%` | REJECTED: Contract price $0.480 outside sweet spot [$0.76, $0.89] |
+| Dota 2: GamerLegion vs CyberHero (BO3) - EPL Maste | Sports | YES | `97.5%` | `93.0%` | `+4.5 п.п.` | `1.00%` | REJECTED: Contract price $0.930 outside sweet spot [$0.76, $0.89] |
+| Spread: Hawks (-3.5) | Sports | NO | `97.5%` | `33.0%` | `+64.5 п.п.` | `1.00%` | REJECTED: Contract price $0.330 outside sweet spot [$0.76, $0.89] |
+| Spread: Cavaliers (-4.5) | Sports | NO | `97.5%` | `52.0%` | `+45.5 п.п.` | `1.00%` | REJECTED: Contract price $0.520 outside sweet spot [$0.76, $0.89] |
+| Spread: Hawks (-4.5) | Sports | NO | `97.5%` | `37.0%` | `+60.5 п.п.` | `1.00%` | REJECTED: Contract price $0.370 outside sweet spot [$0.76, $0.89] |
 | Spread: Rockets (-4.5) | Sports | NO | `97.5%` | `48.0%` | `+49.5 п.п.` | `1.00%` | REJECTED: Contract price $0.480 outside sweet spot [$0.76, $0.89] |
 | Spread: Bears (-3.5) | Sports | NO | `97.5%` | `74.0%` | `+23.5 п.п.` | `1.00%` | REJECTED: Contract price $0.740 outside sweet spot [$0.76, $0.89] |
 | Spread: Seahawks (-3.5) | Sports | NO | `97.5%` | `53.0%` | `+44.5 п.п.` | `1.00%` | REJECTED: Contract price $0.530 outside sweet spot [$0.76, $0.89] |
@@ -44,9 +50,3 @@
 | Spread: Cavaliers (-4.5) | Sports | NO | `97.5%` | `52.0%` | `+45.5 п.п.` | `1.00%` | REJECTED: Contract price $0.520 outside sweet spot [$0.76, $0.89] |
 | Spread: Bears (-3.5) | Sports | NO | `97.5%` | `74.0%` | `+23.5 п.п.` | `1.00%` | REJECTED: Contract price $0.740 outside sweet spot [$0.76, $0.89] |
 | Spread: Seahawks (-3.5) | Sports | NO | `97.5%` | `53.0%` | `+44.5 п.п.` | `1.00%` | REJECTED: Contract price $0.530 outside sweet spot [$0.76, $0.89] |
-| Map Handicap: FURIA (-1.5) vs FaZe (+1.5) | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
-| Counter-Strike: 9z vs BetBoom Team (BO3) - IEM Bei | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
-| Spread: Bears (-3.5) | Sports | NO | `97.5%` | `74.0%` | `+23.5 п.п.` | `1.00%` | REJECTED: Contract price $0.740 outside sweet spot [$0.76, $0.89] |
-| Bulls vs. 76ers | Sports | NO | `86.0%` | `83.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #90 ($1.96 @ 0.8300) |
-| Spread: Seahawks (-3.5) | Sports | NO | `97.5%` | `53.0%` | `+44.5 п.п.` | `1.00%` | REJECTED: Contract price $0.530 outside sweet spot [$0.76, $0.89] |
-| Counter-Strike: FURIA vs FaZe - Map 1 Winner | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
