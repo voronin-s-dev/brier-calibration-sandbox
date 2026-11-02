@@ -77,7 +77,7 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-11-02 02:28:46 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-11-02 02:37:53 UTC</div>
     </div>
   </div>
 
@@ -145,7 +145,7 @@
             <td>2.41</td>
             <td>$0.8300</td>
             <td>$0.9270</td>
-            <td><strong>98.4%</strong> <small>(+3.0pp)</small></td>
+            <td><strong>97.7%</strong> <small>(+3.0pp)</small></td>
             <td>$2.00 <small>(7.1%)</small></td>
             <td class="pos">$+0.23</td>
             <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.498 if P_est &lt;= 70%</small></td>
@@ -193,6 +193,32 @@
     </thead>
     <tbody>
       
+        <tr class="">
+            <td>Spread: Bears (-3.5)<br><small class="muted">Heavy handicap spread (-3.5+) is historically improbable</small></td>
+            <td><span class="badge cat-sports">Sports</span></td>
+            <td>NO</td>
+            <td>97.5%</td>
+            <td>74.0%</td>
+            <td class="pos">+23.5 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$122,373</td>
+            <td>22.6h</td>
+            <td><strong>REJECTED: Contract price $0.740 outside sweet spot [$0.76, $0.89]</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Spread: Seahawks (-3.5)<br><small class="muted">Heavy handicap spread (-3.5+) is historically improbable</small></td>
+            <td><span class="badge cat-sports">Sports</span></td>
+            <td>NO</td>
+            <td>97.5%</td>
+            <td>54.0%</td>
+            <td class="pos">+43.5 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$775,993</td>
+            <td>22.6h</td>
+            <td><strong>REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.89]</strong></td>
+        </tr>
+        
         <tr class="">
             <td>Spread: Bears (-3.5)<br><small class="muted">Heavy handicap spread (-3.5+) is historically improbable</small></td>
             <td><span class="badge cat-sports">Sports</span></td>
@@ -492,39 +518,11 @@
             <td><strong>REJECTED: Edge -98.5 pp &lt; 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%)</strong></td>
         </tr>
         
-        <tr class="">
-            <td>Spread: Commanders (-4.5)<br><small class="muted">Heavy handicap spread (-3.5+) is historically improbable</small></td>
-            <td><span class="badge cat-sports">Sports</span></td>
-            <td>NO</td>
-            <td>97.5%</td>
-            <td>47.0%</td>
-            <td class="pos">+50.5 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$658,828</td>
-            <td>2.5h</td>
-            <td><strong>REJECTED: Contract price $0.470 outside sweet spot [$0.76, $0.89]</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Valorant: Gentle Mates GC vs KRÜ Blaze (BO5) - VCT Game Changers Championship Playoffs<br><small class="muted">High market consensus NO (100.0%) within 1.1h of expiry</small></td>
-            <td><span class="badge cat-sports">Sports</span></td>
-            <td>YES</td>
-            <td>1.5%</td>
-            <td>100.0%</td>
-            <td class="muted">-98.5 п.п.</td>
-            <td class="neg">100.00%</td>
-            <td>$159,936</td>
-            <td>1.1h</td>
-            <td><strong>REJECTED: Edge -98.5 pp &lt; 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%)</strong></td>
-        </tr>
-        
     </tbody>
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box"> CTBC Flying Oyster (BO3) - Worlds Group Stage (YES)
-  Shares: 2.11 | Entry VWAP: 0.8000 -&gt; Exit Bid VWAP: 0.9990
-  Proceeds: $2.11 | Realized PnL: $+0.42 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +24.9% gain
+  <pre class="log-box">98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +24.9% gain
 [2026-10-29 22:55:40 UTC] [OPEN TRADE #80] Counter-Strike: Nemiga vs Vitality (BO3) - PGL Masters Bucharest Playoffs
   Категория: Sports | Сторона: NO | Источник: https://hltv.org
   Оценка бота: 87.0% vs Рынок (Ask VWAP): 84.0% (Перекос/Edge: +3.0 п.п.)
@@ -670,6 +668,7 @@
 
 [2026-11-02 02:19:35 UTC] [CYCLE #294 SUMMARY] Scanned=800 | PassedFilter=43 | Evaluated=6 | Edges(&gt;=8pp)=5 | Opened=1 (Shadow=0) | Closed=1 | Cash=$22.05 | Equity=$27.62 (DD=21.80%)
 [2026-11-02 02:28:41 UTC] [CYCLE #295 SUMMARY] Scanned=800 | PassedFilter=42 | Evaluated=8 | Edges(&gt;=8pp)=6 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.05 | Equity=$27.53 (DD=22.04%)
+[2026-11-02 02:37:48 UTC] [CYCLE #296 SUMMARY] Scanned=780 | PassedFilter=40 | Evaluated=7 | Edges(&gt;=8pp)=5 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.05 | Equity=$27.53 (DD=22.04%)
 </pre>
 </body>
 </html>

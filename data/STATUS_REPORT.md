@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-02 02:28:46 UTC`
+**Обновлено:** `2026-11-02 02:37:53 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -14,7 +14,7 @@
 ## 📂 Открытые позиции (3 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #86 | Spread: Commanders (-17.5) | Sports | **NO** | `0.830` | `0.927` | `98.4%` | `$2.00` | `$+0.23` | https://www.nfl.com/scores |
+| #86 | Spread: Commanders (-17.5) | Sports | **NO** | `0.830` | `0.927` | `97.7%` | `$2.00` | `$+0.23` | https://www.nfl.com/scores |
 | #88 | Kings vs. Mavericks | Sports | **NO** | `0.800` | `0.780` | `82.0%` | `$1.09` | `$-0.03` | https://www.nba.com/ |
 | #89 | Nets vs. Knicks | Sports | **NO** | `0.890` | `0.880` | `92.0%` | `$2.21` | `$-0.02` | https://www.nba.com/ |
 
@@ -36,6 +36,8 @@
 | Spread: Seahawks (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.89] |
 | Spread: Bears (-3.5) | Sports | NO | `97.5%` | `74.0%` | `+23.5 п.п.` | `1.00%` | REJECTED: Contract price $0.740 outside sweet spot [$0.76, $0.89] |
 | Spread: Seahawks (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.89] |
+| Spread: Bears (-3.5) | Sports | NO | `97.5%` | `74.0%` | `+23.5 п.п.` | `1.00%` | REJECTED: Contract price $0.740 outside sweet spot [$0.76, $0.89] |
+| Spread: Seahawks (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.89] |
 | Nets vs. Knicks | Sports | NO | `92.0%` | `89.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #89 ($2.21 @ 0.8900) |
 | Spread: Lakers (-4.5) | Sports | NO | `97.5%` | `56.0%` | `+41.5 п.п.` | `1.00%` | REJECTED: Contract price $0.560 outside sweet spot [$0.76, $0.89] |
 | Spread: Seahawks (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.89] |
@@ -48,5 +50,3 @@
 | Spread: Commanders (-4.5) | Sports | NO | `97.5%` | `47.0%` | `+50.5 п.п.` | `1.00%` | REJECTED: Contract price $0.470 outside sweet spot [$0.76, $0.89] |
 | Valorant: Gentle Mates GC vs KRÜ Blaze (BO5) - VCT | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
 | Spread: Lakers (-4.5) | Sports | NO | `97.5%` | `56.0%` | `+41.5 п.п.` | `1.00%` | REJECTED: Contract price $0.560 outside sweet spot [$0.76, $0.89] |
-| Spread: Seahawks (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.89] |
-| Counter-Strike: 100 Thieves vs Wildcard - Map 2 Wi | Sports | NO | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
