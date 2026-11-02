@@ -1349,3 +1349,15 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus NO (78.5%) within 26.0h of expiry
 
 [2026-11-01 23:02:14 UTC] [CYCLE #293 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=5 | Opened=1 (Shadow=0) | Closed=0 | Cash=$21.81 | Equity=$27.23 (DD=22.90%)
+[RESOLVED] #87 | Counter-Strike: DENDELE CS vs Imperial - Map 3 Winner (YES)
+  Entry VWAP: 0.8800 | Settlement: 1.00 | PnL: $+0.29 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $1.00/share
+[2026-11-02 02:19:35 UTC] [OPEN TRADE #89] Nets vs. Knicks
+  Категория: Sports | Сторона: NO | Источник: https://www.nba.com/
+  Оценка бота: 92.0% vs Рынок (Ask VWAP): 89.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.880, BestAsk=0.890, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=27.3%, Четверть(0.25x)=10.9% -> Применён=8.0% банка
+  Размер сделки: $2.21 USDC (2.48 shares @ $0.8900)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.534 if P_est <= 70%
+  Причина: High market consensus NO (88.5%) within 22.2h of expiry
+
+[2026-11-02 02:19:35 UTC] [CYCLE #294 SUMMARY] Scanned=800 | PassedFilter=43 | Evaluated=6 | Edges(>=8pp)=5 | Opened=1 (Shadow=0) | Closed=1 | Cash=$22.05 | Equity=$27.62 (DD=21.80%)
