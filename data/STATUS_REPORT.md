@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-02 10:01:46 UTC`
+**Обновлено:** `2026-11-02 10:10:52 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -32,6 +32,11 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Spread: Bears (-3.5) | Sports | NO | `97.5%` | `74.0%` | `+23.5 п.п.` | `1.00%` | REJECTED: Contract price $0.740 outside sweet spot [$0.76, $0.89] |
+| Spread: Seahawks (-3.5) | Sports | NO | `97.5%` | `53.0%` | `+44.5 п.п.` | `1.00%` | REJECTED: Contract price $0.530 outside sweet spot [$0.76, $0.89] |
+| Map Handicap: FURIA (-1.5) vs FaZe (+1.5) | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
+| Counter-Strike: 9z vs BetBoom Team (BO3) - IEM Bei | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
+| Counter-Strike: MOUZ vs TYLOO - Map 1 Winner | Sports | YES | `88.0%` | `84.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Category cap reached (3/3 in Sports) |
 | Spread: Cavaliers (-4.5) | Sports | NO | `97.5%` | `52.0%` | `+45.5 п.п.` | `1.00%` | REJECTED: Contract price $0.520 outside sweet spot [$0.76, $0.89] |
 | Spread: Bears (-3.5) | Sports | NO | `97.5%` | `74.0%` | `+23.5 п.п.` | `1.00%` | REJECTED: Contract price $0.740 outside sweet spot [$0.76, $0.89] |
 | Spread: Seahawks (-3.5) | Sports | NO | `97.5%` | `53.0%` | `+44.5 п.п.` | `1.00%` | REJECTED: Contract price $0.530 outside sweet spot [$0.76, $0.89] |
@@ -45,8 +50,3 @@
 | Counter-Strike: 9z vs BetBoom Team (BO3) - IEM Bei | Sports | YES | `1.5%` | `7.0%` | `-5.5 п.п.` | `1.00%` | REJECTED: Edge -5.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=7.0%) |
 | Spread: Bears (-3.5) | Sports | NO | `97.5%` | `74.0%` | `+23.5 п.п.` | `1.00%` | REJECTED: Contract price $0.740 outside sweet spot [$0.76, $0.89] |
 | Spread: Seahawks (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.89] |
-| Spread: Bears (-3.5) | Sports | NO | `97.5%` | `74.0%` | `+23.5 п.п.` | `1.00%` | REJECTED: Contract price $0.740 outside sweet spot [$0.76, $0.89] |
-| Spread: Seahawks (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.89] |
-| Spread: Bears (-3.5) | Sports | NO | `97.5%` | `74.0%` | `+23.5 п.п.` | `1.00%` | REJECTED: Contract price $0.740 outside sweet spot [$0.76, $0.89] |
-| Spread: Seahawks (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.89] |
-| Nets vs. Knicks | Sports | NO | `92.0%` | `89.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #89 ($2.21 @ 0.8900) |
