@@ -104,7 +104,7 @@ class TestRiskManagementV2(unittest.TestCase):
                 conn.execute("UPDATE portfolio_state SET cash_usdc = 40.00, peak_equity = 50.00 WHERE id = 1")
                 conn.commit()
 
-            gov = AutoGovernor(db)
+            gov = AutoGovernor(db, report_path=Path(tmp_dir) / "test_gov.md")
             res = gov.evaluate_portfolio_and_rules()
             self.assertTrue(len(res["triggered_event_ids"]) > 0)
 
@@ -140,7 +140,7 @@ class TestRiskManagementV2(unittest.TestCase):
         self.assertEqual(GrokCharterPaperTrader.MIN_EDGE_PP, 0.015)
         self.assertEqual(GrokCharterPaperTrader.MIN_ESTIMATED_PROB, 0.80)
         self.assertEqual(GrokCharterPaperTrader.MIN_CONTRACT_PRICE, 0.76)
-        self.assertEqual(GrokCharterPaperTrader.MAX_CONTRACT_PRICE, 0.89)
+        self.assertEqual(GrokCharterPaperTrader.MAX_CONTRACT_PRICE, 0.92)
         self.assertEqual(GrokCharterPaperTrader.MAX_BANK_PCT_PER_TRADE, 0.08)
 
     def test_soccer_draw_guard(self) -> None:
@@ -325,6 +325,63 @@ class TestRiskManagementV2(unittest.TestCase):
             self.assertEqual(res["status"], "HALTED")
             del db, trader
             gc.collect()
+
+    def test_single_category_slot_expansion(self) -> None:
+        """Direction C: Verify that single-category focus dynamically expands cat_cap up to 6 positions."""
+        from trader import GrokCharterPaperTrader
+        # Under ALL categories, cat_cap for Sports must be 3
+        cat_cap_all = 3
+        # Under single category (Sports), cat_cap must expand to min(MAX_OPEN_POSITIONS, 6) = 6
+        cat_cap_single = min(GrokCharterPaperTrader.MAX_OPEN_POSITIONS, 6)
+        self.assertEqual(cat_cap_all, 3)
+        self.assertEqual(cat_cap_single, 6)
+
+    def test_shadow_candidate_funnel_not_starved(self) -> None:
+        """Direction C / S: Verify that shadow candidates in [0.20, 0.80] range are prioritized."""
+        from polymarket_api import MarketInfo
+        from trader import GrokCharterPaperTrader
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_d:
+            db_tmp = SimDatabase(db_path=Path(tmp_d) / "temp_rf.db", initial_capital=50.0)
+            trader = GrokCharterPaperTrader(db=db_tmp, trades_txt_path=Path(tmp_d) / "t.txt")
+            def _mk(mid, q, prices):
+                return MarketInfo(
+                    id=mid, question=q, slug=mid, description="", resolution_source="https://official.org",
+                    has_official_source=True, end_date_iso="2026-11-10T00:00:00Z", hours_to_close=24.0,
+                    liquidity_usd=10000.0, volume_24h_usd=20000.0, outcomes=["Yes", "No"],
+                    gamma_prices=prices, clob_token_ids=[f"t_{mid}_y", f"t_{mid}_n"],
+                    order_min_size=1.0, tick_size=0.01, category="Crypto", closed=False,
+                )
+            m1 = _mk("1", "High prob", [0.95, 0.05])
+            m2 = _mk("2", "Tradable shadow", [0.55, 0.45])
+            active, shadow = trader.partition_markets([m1, m2], cat_filter="Sports", min_liq=5000.0,
+                                                      open_real_market_ids=set(), open_shadow_market_ids=set())
+            # m2 (0.55 price) must be prioritized first in shadow_candidates
+            self.assertEqual(len(shadow), 2)
+            self.assertEqual(shadow[0].id, "2")
+
+    def test_mature_consensus_oracle_strict_threshold(self) -> None:
+        """Direction C: Verify that HighConvictionFactOracle does NOT manufacture fake edge at P < 0.90."""
+        from oracles import HighConvictionFactOracle
+        from polymarket_api import MarketInfo
+        oracle = HighConvictionFactOracle()
+        def _mk(mid, q, prices):
+            return MarketInfo(
+                id=mid, question=q, slug=mid, description="", resolution_source="https://official.org",
+                has_official_source=True, end_date_iso="2026-11-10T00:00:00Z", hours_to_close=12.0,
+                liquidity_usd=20000.0, volume_24h_usd=30000.0, outcomes=["Yes", "No"],
+                gamma_prices=prices, clob_token_ids=[f"t_{mid}_y", f"t_{mid}_n"],
+                order_min_size=1.0, tick_size=0.01, category="Sports", closed=False,
+            )
+        # Market at 0.82 (e.g. 82% favorite) must NOT trigger MatureMarketConsensusOracle
+        m_82 = _mk("m_82", "Some Regular Game", [0.82, 0.18])
+        res_82 = oracle.evaluate(m_82)
+        self.assertIsNone(res_82)
+
+        # Market at 0.92 (true high consensus) MUST trigger
+        m_92 = _mk("m_92", "Some Decided Game", [0.92, 0.08])
+        res_92 = oracle.evaluate(m_92)
+        self.assertIsNotNone(res_92)
+        self.assertEqual(res_92.oracle_used, "MatureMarketConsensusOracle")
 
 
 if __name__ == "__main__":

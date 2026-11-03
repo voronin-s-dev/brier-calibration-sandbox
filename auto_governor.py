@@ -31,9 +31,10 @@ TRADES_LOG_PATH = DATA_DIR / "trades.txt"
 
 
 class AutoGovernor:
-    def __init__(self, db: SimDatabase) -> None:
+    def __init__(self, db: SimDatabase, report_path: Path = GOVERNANCE_REPORT_PATH) -> None:
         self.db = db
-        DATA_DIR.mkdir(parents=True, exist_ok=True)
+        self.report_path = report_path
+        self.report_path.parent.mkdir(parents=True, exist_ok=True)
 
     def _rule_exists(self, rule_key: str) -> bool:
         with self.db._connect() as conn:
@@ -682,5 +683,5 @@ class AutoGovernor:
                     f"  - {e['explanation']}",
                 ])
 
-        GOVERNANCE_REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
-        return GOVERNANCE_REPORT_PATH
+        self.report_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        return self.report_path

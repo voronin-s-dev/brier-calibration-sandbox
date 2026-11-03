@@ -72,8 +72,8 @@ class GrokCharterPaperTrader:
     MAX_BANK_PCT_PER_TRADE = 0.08   # Up to 8% bankroll per trade (~$2.15-$2.40 on current bankroll)
     MIN_EDGE_PP = 0.015             # 1.5 percentage points minimum divergence against Ask VWAP
     MIN_ESTIMATED_PROB = 0.80       # Minimum estimated probability: strictly high-conviction events (80%+ likelihood)
-    MIN_CONTRACT_PRICE = 0.76       # High-velocity sweet spot [0.76, 0.89]: yield +12.4% to +31.6%
-    MAX_CONTRACT_PRICE = 0.89       # Strict cap: eliminates asymmetric -100% downside on 95c+ contracts
+    MIN_CONTRACT_PRICE = 0.76       # High-velocity sweet spot [0.76, 0.92]: yield +8.7% to +31.6%
+    MAX_CONTRACT_PRICE = 0.92       # Strict cap: eliminates asymmetric -100% downside on 95c+ contracts
     MIN_HOURS_TO_CLOSE = 0.8        # Focus on near-term resolutions (1h to 5 days)
     MAX_HOURS_TO_CLOSE = 120.0      # Fast capital turnover
     EXIT_HOURS_THRESHOLD = 0.0      # NEVER dump prematurely before expiry: hold into resolution ($1.00 payout)
@@ -467,11 +467,15 @@ class GrokCharterPaperTrader:
                     shadow_candidates.append(m)
 
         def _priority_key(m: MarketInfo) -> Tuple[int, float]:
-            has_high_prob = 0 if (m.gamma_prices and (0.84 <= m.gamma_prices[0] <= 0.98 or 0.84 <= m.gamma_prices[1] <= 0.98)) else 1
+            has_high_prob = 0 if (m.gamma_prices and (0.76 <= m.gamma_prices[0] <= 0.92 or 0.76 <= m.gamma_prices[1] <= 0.92)) else 1
             return (has_high_prob, -m.volume_24h_usd)
 
+        def _shadow_priority_key(m: MarketInfo) -> Tuple[int, float]:
+            in_range = 0 if (m.gamma_prices and (0.20 <= m.gamma_prices[0] <= 0.80 or 0.20 <= m.gamma_prices[1] <= 0.80)) else 1
+            return (in_range, -m.volume_24h_usd)
+
         active_candidates.sort(key=_priority_key)
-        shadow_candidates.sort(key=_priority_key)
+        shadow_candidates.sort(key=_shadow_priority_key)
 
         return active_candidates[:50], shadow_candidates[:10]
 
@@ -712,7 +716,10 @@ class GrokCharterPaperTrader:
                 edges_found += 1
 
             event_key = extract_event_key(mkt.question, mkt.category)
-            cat_cap = self.MAX_CRYPTO_POSITIONS if mkt.category == "Crypto" else self.MAX_POSITIONS_PER_CATEGORY
+            if cat_filter != "ALL" and mkt.category.upper() == cat_filter.upper():
+                cat_cap = min(self.MAX_OPEN_POSITIONS, 6)
+            else:
+                cat_cap = self.MAX_CRYPTO_POSITIONS if mkt.category == "Crypto" else self.MAX_POSITIONS_PER_CATEGORY
 
             # Decide whether to execute or reject
             decision = ""
@@ -847,8 +854,8 @@ class GrokCharterPaperTrader:
                 shadow_opened = self.evaluate_and_execute_shadow_candidates(
                     shadow_candidates, open_shadow_market_ids
                 )
-            except Exception:
-                pass
+            except Exception as e:
+                self._append_trades_log(f"[{now_str}] [SHADOW EXEC ERROR] {e}")
 
         # Update scan cycle record with final stats
         pf_after = self.db.recalculate_portfolio()
