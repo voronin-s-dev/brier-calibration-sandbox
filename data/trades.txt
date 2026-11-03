@@ -1394,3 +1394,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus NO (79.5%) within 17.3h of expiry
 
 [2026-11-03 02:44:37 UTC] [CYCLE #304 SUMMARY] Scanned=798 | PassedFilter=34 | Evaluated=6 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=1 | Cash=$23.18 | Equity=$27.57 (DD=21.94%)
+[EXIT] #89 | Nets vs. Knicks (NO)
+  Shares: 2.48 | Entry VWAP: 0.8900 -> Exit Bid VWAP: 0.9910
+  Proceeds: $2.46 | Realized PnL: $+0.25 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.1%) secured early with +11.3% gain
+[2026-11-03 02:53:43 UTC] [CYCLE #305 SUMMARY] Scanned=792 | PassedFilter=33 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$25.64 | Equity=$27.92 (DD=20.94%)
