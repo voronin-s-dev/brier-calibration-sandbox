@@ -1445,3 +1445,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-03 13:51:06 UTC] [CYCLE #310 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$19.49 | Equity=$27.70 (DD=21.57%)
 [2026-11-03 14:00:26 UTC] [CYCLE #311 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$19.49 | Equity=$27.70 (DD=21.57%)
 [2026-11-03 17:42:25 UTC] [CYCLE #312 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$19.49 | Equity=$27.69 (DD=21.58%)
+[2026-11-03 17:51:48 UTC] [OPEN TRADE #96] Spread: FC Barcelona (-3.5)
+  Категория: Sports | Сторона: NO | Источник: https://www.uefa.com/
+  Оценка бота: 97.5% vs Рынок (Ask VWAP): 80.0% (Перекос/Edge: +17.5 п.п.)
+  Стакан CLOB: BestBid=0.790, BestAsk=0.800, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=87.5%, Четверть(0.25x)=35.0% -> Применён=8.0% банка
+  Размер сделки: $2.22 USDC (2.77 shares @ $0.8000)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.480 if P_est <= 70%
+  Причина: Heavy handicap spread (-3.5+) is historically improbable
+
+[2026-11-03 17:51:48 UTC] [CYCLE #313 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$17.27 | Equity=$27.67 (DD=21.66%)
