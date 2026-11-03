@@ -1401,3 +1401,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [RESOLVED] #88 | Kings vs. Mavericks (NO)
   Entry VWAP: 0.8000 | Settlement: 0.00 | PnL: $-1.09 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $0.00/share
 [2026-11-03 09:58:45 UTC] [CYCLE #306 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=1 | Cash=$25.64 | Equity=$27.24 (DD=22.87%)
+[2026-11-03 10:07:51 UTC] [OPEN TRADE #92] Counter-Strike: TheMongolz vs Heroic (BO3) - IEM Beijing Group A
+  Категория: Sports | Сторона: YES | Источник: https://hltv.org
+  Оценка бота: 93.0% vs Рынок (Ask VWAP): 81.0% (Перекос/Edge: +12.0 п.п.)
+  Стакан CLOB: BestBid=0.800, BestAsk=0.810, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=63.2%, Четверть(0.25x)=25.3% -> Применён=8.0% банка
+  Размер сделки: $2.18 USDC (2.69 shares @ $0.8100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.486 if P_est <= 70%
+  Причина: High market consensus YES (89.5%) within 3.9h of expiry
+
+[2026-11-03 10:07:51 UTC] [CYCLE #307 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=5 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.46 | Equity=$27.21 (DD=22.95%)
