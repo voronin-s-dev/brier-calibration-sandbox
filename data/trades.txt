@@ -1398,3 +1398,6 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 2.48 | Entry VWAP: 0.8900 -> Exit Bid VWAP: 0.9910
   Proceeds: $2.46 | Realized PnL: $+0.25 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.1%) secured early with +11.3% gain
 [2026-11-03 02:53:43 UTC] [CYCLE #305 SUMMARY] Scanned=792 | PassedFilter=33 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$25.64 | Equity=$27.92 (DD=20.94%)
+[RESOLVED] #88 | Kings vs. Mavericks (NO)
+  Entry VWAP: 0.8000 | Settlement: 0.00 | PnL: $-1.09 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $0.00/share
+[2026-11-03 09:58:45 UTC] [CYCLE #306 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=1 | Cash=$25.64 | Equity=$27.24 (DD=22.87%)
