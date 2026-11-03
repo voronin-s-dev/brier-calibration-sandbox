@@ -455,15 +455,13 @@ class GrokCharterPaperTrader:
                 continue
             if not (self.MIN_HOURS_TO_CLOSE <= m.hours_to_close <= self.MAX_HOURS_TO_CLOSE):
                 continue
-            liq_threshold = 400.0 if m.category == "Weather" else min_liq
-            if m.liquidity_usd < liq_threshold:
-                continue
-
             if cat_filter == "ALL" or m.category.upper() == cat_filter.upper():
-                if m.id not in open_real_market_ids:
+                liq_threshold = 400.0 if m.category == "Weather" else min_liq
+                if m.liquidity_usd >= liq_threshold and m.id not in open_real_market_ids:
                     active_candidates.append(m)
             else:
-                if m.id not in open_shadow_market_ids:
+                shadow_liq = 400.0 if m.category == "Weather" else 1500.0
+                if m.liquidity_usd >= shadow_liq and m.id not in open_shadow_market_ids:
                     shadow_candidates.append(m)
 
         def _priority_key(m: MarketInfo) -> Tuple[int, float]:
@@ -477,7 +475,7 @@ class GrokCharterPaperTrader:
         active_candidates.sort(key=_priority_key)
         shadow_candidates.sort(key=_shadow_priority_key)
 
-        return active_candidates[:50], shadow_candidates[:10]
+        return active_candidates[:50], shadow_candidates[:25]
 
     def evaluate_and_execute_shadow_candidates(
         self,
