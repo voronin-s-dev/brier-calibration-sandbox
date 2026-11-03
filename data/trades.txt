@@ -1456,3 +1456,12 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-11-03 17:51:48 UTC] [CYCLE #313 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$17.27 | Equity=$27.67 (DD=21.66%)
 [2026-11-03 18:01:18 UTC] [CYCLE #314 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$17.27 | Equity=$27.67 (DD=21.66%)
+[RESOLVED] #91 | Will Villarreal CF win on 2026-11-03? (NO)
+  Entry VWAP: 0.8000 | Settlement: 1.00 | PnL: $+0.42 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $1.00/share
+[RESOLVED] #93 | Will Aston Villa FC win on 2026-11-03? (NO)
+  Entry VWAP: 0.9100 | Settlement: 1.00 | PnL: $+0.22 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $1.00/share
+[RESOLVED] #94 | Spread: Villarreal CF (-1.5) (NO)
+  Entry VWAP: 0.9200 | Settlement: 1.00 | PnL: $+0.19 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $1.00/share
+[RESOLVED] #96 | Spread: FC Barcelona (-3.5) (NO)
+  Entry VWAP: 0.8000 | Settlement: 1.00 | PnL: $+0.55 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $1.00/share
+[2026-11-03 23:12:01 UTC] [CYCLE #315 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=4 | Cash=$26.98 | Equity=$29.15 (DD=17.47%)
