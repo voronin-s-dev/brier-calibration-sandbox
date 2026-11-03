@@ -1381,3 +1381,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-02 20:22:33 UTC] [CYCLE #301 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=10 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.50 | Equity=$27.67 (DD=21.66%)
 [2026-11-02 20:31:38 UTC] [CYCLE #302 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=10 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.50 | Equity=$27.67 (DD=21.66%)
 [2026-11-03 02:35:33 UTC] [CYCLE #303 SUMMARY] Scanned=799 | PassedFilter=35 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.50 | Equity=$27.52 (DD=22.08%)
+[EXIT] #90 | Bulls vs. 76ers (NO)
+  Shares: 2.36 | Entry VWAP: 0.8300 -> Exit Bid VWAP: 0.9910
+  Proceeds: $2.34 | Realized PnL: $+0.38 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.1%) secured early with +19.4% gain
+[2026-11-03 02:44:37 UTC] [OPEN TRADE #91] Will Villarreal CF win on 2026-11-03?
+  Категория: Sports | Сторона: NO | Источник: https://www.uefa.com/
+  Оценка бота: 83.0% vs Рынок (Ask VWAP): 80.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.790, BestAsk=0.800, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=15.0%, Четверть(0.25x)=6.0% -> Применён=6.0% банка
+  Размер сделки: $1.66 USDC (2.07 shares @ $0.8000)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.480 if P_est <= 70%
+  Причина: High market consensus NO (79.5%) within 17.3h of expiry
+
+[2026-11-03 02:44:37 UTC] [CYCLE #304 SUMMARY] Scanned=798 | PassedFilter=34 | Evaluated=6 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=1 | Cash=$23.18 | Equity=$27.57 (DD=21.94%)
