@@ -1412,3 +1412,33 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-11-03 10:07:51 UTC] [CYCLE #307 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=5 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.46 | Equity=$27.21 (DD=22.95%)
 [2026-11-03 10:16:57 UTC] [CYCLE #308 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=5 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.46 | Equity=$26.84 (DD=24.01%)
+[RESOLVED] #92 | Counter-Strike: TheMongolz vs Heroic (BO3) - IEM Beijing Group A (YES)
+  Entry VWAP: 0.8100 | Settlement: 1.00 | PnL: $+0.51 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $1.00/share
+[2026-11-03 13:41:41 UTC] [OPEN TRADE #93] Will Aston Villa FC win on 2026-11-03?
+  Категория: Sports | Сторона: NO | Источник: https://www.uefa.com/
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=33.3%, Четверть(0.25x)=13.3% -> Применён=8.0% банка
+  Размер сделки: $2.22 USDC (2.44 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: High market consensus NO (90.5%) within 6.3h of expiry
+
+[2026-11-03 13:41:41 UTC] [OPEN TRADE #94] Spread: Villarreal CF (-1.5)
+  Категория: Sports | Сторона: NO | Источник: https://www.uefa.com/
+  Оценка бота: 95.0% vs Рынок (Ask VWAP): 92.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.910, BestAsk=0.920, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=37.5%, Четверть(0.25x)=15.0% -> Применён=8.0% банка
+  Размер сделки: $2.22 USDC (2.41 shares @ $0.9200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.552 if P_est <= 70%
+  Причина: High market consensus NO (91.5%) within 6.3h of expiry
+
+[2026-11-03 13:41:41 UTC] [OPEN TRADE #95] LoL: Gen.G vs LYON (BO5) - Worlds Playoffs
+  Категория: Sports | Сторона: YES | Источник: https://gol.gg/esports/home
+  Оценка бота: 95.0% vs Рынок (Ask VWAP): 92.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.910, BestAsk=0.920, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=37.5%, Четверть(0.25x)=15.0% -> Применён=8.0% банка
+  Размер сделки: $2.22 USDC (2.41 shares @ $0.9200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.552 if P_est <= 70%
+  Причина: High market consensus YES (91.5%) within 38.3h of expiry
+
+[2026-11-03 13:41:41 UTC] [CYCLE #309 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=5 | Opened=3 (Shadow=0) | Closed=1 | Cash=$19.49 | Equity=$27.70 (DD=21.57%)
