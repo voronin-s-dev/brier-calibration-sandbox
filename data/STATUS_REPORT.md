@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-03 13:42:04 UTC`
+**Обновлено:** `2026-11-03 13:51:24 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -37,6 +37,10 @@
 | Dota 2: rostikfacekid TEAM vs LenS Team - Game 2 W | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
 | Dota 2: LEGION vs OG (BO3) - EPL Masters Playoffs | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
 | Counter-Strike: FURIA vs Natus Vincere (BO3) - IEM | Sports | NO | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
+| Counter-Strike: Falcons Force vs maybe - Map 1 Win | Sports | NO | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
+| Dota 2: rostikfacekid TEAM vs LenS Team - Game 2 W | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
+| Dota 2: LEGION vs OG (BO3) - EPL Masters Playoffs | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
+| Counter-Strike: FURIA vs Natus Vincere (BO3) - IEM | Sports | NO | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
 | LoL: Gen.G vs LYON (BO5) - Worlds Playoffs | Sports | YES | `95.0%` | `92.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #95 ($2.22 @ 0.9200) |
 | Spread: Villarreal CF (-1.5) | Sports | NO | `95.0%` | `92.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #94 ($2.22 @ 0.9200) |
 | Will Aston Villa FC win on 2026-11-03? | Sports | NO | `94.0%` | `91.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #93 ($2.22 @ 0.9100) |
@@ -47,7 +51,3 @@
 | Map Handicap: FAL (-1.5) vs FaZe (+1.5) | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
 | Counter-Strike: TheMongolz vs Heroic (BO3) - IEM B | Sports | YES | `82.0%` | `65.0%` | `+17.0 п.п.` | `1.00%` | REJECTED: Contract price $0.650 outside sweet spot [$0.76, $0.89] |
 | Counter-Strike: FaZe vs Team Falcons (BO3) - IEM B | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
-| Counter-Strike: Liquid vs PARIVISION - Map 1 Winne | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
-| Will Villarreal CF win on 2026-11-03? | Sports | NO | `83.0%` | `80.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #91 ($1.66 @ 0.8000) |
-| Counter-Strike: Aurora Gaming vs G2 - Map 1 Winner | Sports | YES | `94.0%` | `87.0%` | `+7.0 п.п.` | `1.00%` | REJECTED: Category cap reached (3/3 in Sports) |
-| Spread: Hawks (-3.5) | Sports | NO | `97.5%` | `33.0%` | `+64.5 п.п.` | `1.00%` | REJECTED: Contract price $0.330 outside sweet spot [$0.76, $0.89] |
