@@ -1476,3 +1476,15 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-11-03 23:21:25 UTC] [CYCLE #316 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=5 | Opened=1 (Shadow=0) | Closed=0 | Cash=$24.65 | Equity=$29.09 (DD=17.63%)
 [2026-11-03 23:30:46 UTC] [CYCLE #317 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.65 | Equity=$29.45 (DD=16.60%)
+[RESOLVED] #97 | Dota 2: Natus Vincere vs GamerLegion (BO3) - EPL Masters Playoffs (YES)
+  Entry VWAP: 0.8400 | Settlement: 1.00 | PnL: $+0.44 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $1.00/share
+[2026-11-04 03:09:22 UTC] [OPEN TRADE #98] Counter-Strike: Liquid vs TYLOO - Map 2 Winner
+  Категория: Sports | Сторона: YES | Источник: https://hltv.org
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=33.3%, Четверть(0.25x)=13.3% -> Применён=8.0% банка
+  Размер сделки: $2.37 USDC (2.60 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: High market consensus YES (90.5%) within 4.8h of expiry
+
+[2026-11-04 03:09:22 UTC] [CYCLE #318 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=20 | Edges(>=8pp)=7 | Opened=1 (Shadow=0) | Closed=1 | Cash=$25.05 | Equity=$29.56 (DD=16.29%)
