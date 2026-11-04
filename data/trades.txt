@@ -1489,3 +1489,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-11-04 03:09:22 UTC] [CYCLE #318 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=20 | Edges(>=8pp)=7 | Opened=1 (Shadow=0) | Closed=1 | Cash=$25.05 | Equity=$29.56 (DD=16.29%)
 [2026-11-04 03:18:36 UTC] [CYCLE #319 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=19 | Edges(>=8pp)=5 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.05 | Equity=$29.75 (DD=15.75%)
+[EXIT] #98 | Counter-Strike: Liquid vs TYLOO - Map 2 Winner (YES)
+  Shares: 2.60 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9910
+  Proceeds: $2.58 | Realized PnL: $+0.21 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.1%) secured early with +8.9% gain
+[2026-11-04 03:27:49 UTC] [CYCLE #320 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=5 | Opened=0 (Shadow=0) | Closed=1 | Cash=$27.63 | Equity=$29.80 (DD=15.62%)
