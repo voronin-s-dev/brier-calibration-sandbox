@@ -1493,3 +1493,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 2.60 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9910
   Proceeds: $2.58 | Realized PnL: $+0.21 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.1%) secured early with +8.9% gain
 [2026-11-04 03:27:49 UTC] [CYCLE #320 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=5 | Opened=0 (Shadow=0) | Closed=1 | Cash=$27.63 | Equity=$29.80 (DD=15.62%)
+[2026-11-04 11:28:41 UTC] [OPEN TRADE #99] AEK vs. Real Madrid CF: O/U 1.5
+  Категория: Sports | Сторона: YES | Источник: https://www.uefa.com/
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=33.3%, Четверть(0.25x)=13.3% -> Применён=8.0% банка
+  Размер сделки: $2.38 USDC (2.62 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: High market consensus YES (90.5%) within 6.3h of expiry
+
+[2026-11-04 11:28:41 UTC] [CYCLE #321 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=4 | Opened=1 (Shadow=0) | Closed=0 | Cash=$25.25 | Equity=$29.78 (DD=15.69%)
