@@ -77,7 +77,7 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-11-05 00:36:27 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-11-05 07:16:57 UTC</div>
     </div>
   </div>
 
@@ -151,6 +151,19 @@
     </thead>
     <tbody>
       
+        <tr class="">
+            <td>Spread: Texans (-4.5)<br><small class="muted">Heavy handicap spread (-3.5+) is historically improbable</small></td>
+            <td><span class="badge cat-sports">Sports</span></td>
+            <td>NO</td>
+            <td>97.5%</td>
+            <td>48.0%</td>
+            <td class="pos">+49.5 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$52,993</td>
+            <td>85.8h</td>
+            <td><strong>REJECTED: Contract price $0.480 outside sweet spot [$0.76, $0.92]</strong></td>
+        </tr>
+        
         <tr class="">
             <td>Counter-Strike: BRUTE SQ vs B.LINE (BO1) - MČR Group B<br><small class="muted">High market consensus YES (100.0%) within 2.4h of expiry</small></td>
             <td><span class="badge cat-sports">Sports</span></td>
@@ -463,26 +476,11 @@
             <td><strong>REJECTED: Edge -98.5 pp &lt; 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%)</strong></td>
         </tr>
         
-        <tr class="">
-            <td>Spread: Nuggets (-4.5)<br><small class="muted">Heavy handicap spread (-3.5+) is historically improbable</small></td>
-            <td><span class="badge cat-sports">Sports</span></td>
-            <td>NO</td>
-            <td>97.5%</td>
-            <td>49.0%</td>
-            <td class="pos">+48.5 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$122,865</td>
-            <td>1.7h</td>
-            <td><strong>REJECTED: Contract price $0.490 outside sweet spot [$0.76, $0.92]</strong></td>
-        </tr>
-        
     </tbody>
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">ценка бота: 86.0% vs Рынок (Ask VWAP): 83.0% (Перекос/Edge: +3.0 п.п.)
-  Стакан CLOB: BestBid=0.820, BestAsk=0.830, Проскальзывание входа/выхода=1.00% (&lt;= 3.0%)
-  Келли: Полный=17.6%, Четверть(0.25x)=7.1% -&gt; Применён=7.1% банка
+  <pre class="log-box">Четверть(0.25x)=7.1% -&gt; Применён=7.1% банка
   Размер сделки: $1.96 USDC (2.36 shares @ $0.8300)
   Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.498 if P_est &lt;= 70%
   Причина: High market consensus NO (82.5%) within 14.6h of expiry
@@ -630,6 +628,7 @@
   Proceeds: $2.38 | Realized PnL: $+0.16 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.8%) secured early with +7.4% gain
 [2026-11-05 00:27:09 UTC] [CYCLE #328 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=18 | Edges(&gt;=8pp)=3 | Opened=0 (Shadow=0) | Closed=1 | Cash=$30.25 | Equity=$30.25 (DD=14.36%)
 [2026-11-05 00:36:19 UTC] [CYCLE #329 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=21 | Edges(&gt;=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.25 | Equity=$30.25 (DD=14.36%)
+[2026-11-05 07:16:48 UTC] [CYCLE #330 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.25 | Equity=$30.25 (DD=14.36%)
 </pre>
 </body>
 </html>
