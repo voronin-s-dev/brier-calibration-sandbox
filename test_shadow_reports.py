@@ -70,6 +70,36 @@ class TestShadowReports(unittest.TestCase):
         self.assertIn("+$3.00", md_content)
         self.assertIn("Crypto", html_content)
 
+    def test_reports_cadence_stale_warning(self) -> None:
+        """Verify that an outdated cycle timestamp triggers the Cadence Stale warning."""
+        cycle_id = self.db.record_scan_cycle(
+            markets_scanned=800,
+            passed_filters=50,
+            evaluated_count=5,
+            edges_found=1,
+            trades_opened=0,
+            trades_closed=0,
+            notes="stale test cycle"
+        )
+        # Update timestamp to 5 hours ago
+        stale_time = "2026-11-06T22:00:00+00:00"
+        with self.db._connect() as conn:
+            conn.execute("UPDATE scan_cycles SET timestamp = ? WHERE id = ?", (stale_time, cycle_id))
+            conn.commit()
+
+        generate_reports(
+            db=self.db,
+            html_path=self.html_path,
+            md_path=self.md_path,
+            trades_txt_path=self.trades_txt,
+        )
+
+        md_content = self.md_path.read_text(encoding="utf-8")
+        html_content = self.html_path.read_text(encoding="utf-8")
+
+        self.assertIn("Срыв регламента частоты циклов", md_content)
+        self.assertIn("Срыв регламента частоты циклов", html_content)
+
 
 if __name__ == "__main__":
     unittest.main()

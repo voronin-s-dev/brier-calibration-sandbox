@@ -73,11 +73,44 @@ def generate_reports(
 
     now_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
 
+    # Cadence check: Grok Charter requires 10-minute scan cycle. Warn if gap > 30 minutes.
+    last_cycle = cycles[0] if cycles else None
+    cadence_warning_md = ""
+    cadence_warning_html = ""
+    if last_cycle and last_cycle.get("timestamp"):
+        try:
+            last_ts = datetime.fromisoformat(last_cycle["timestamp"])
+            if last_ts.tzinfo is None:
+                last_ts = last_ts.replace(tzinfo=timezone.utc)
+            diff_min = (datetime.now(timezone.utc) - last_ts).total_seconds() / 60.0
+            if diff_min > 30.0:
+                hours_ago = diff_min / 60.0
+                cadence_warning_md = (
+                    f"> ⚠️ **ВНИМАНИЕ: Срыв регламента частоты циклов!**\n"
+                    f"> Последний цикл сканирования завершился {hours_ago:.1f} ч назад (`{last_cycle['timestamp']}`).\n"
+                    f"> Устав требует автономного мониторинга каждые 10 минут (планировщик задерживается)."
+                )
+                cadence_warning_html = (
+                    f'<div style="background:rgba(239,68,68,0.15);border:1px solid #ef4444;border-radius:8px;'
+                    f'padding:12px 16px;margin-bottom:16px;color:#fca5a5;font-size:13px;">'
+                    f'⚠️ <b>ВНИМАНИЕ: Срыв регламента частоты циклов!</b> '
+                    f'Последний цикл был {hours_ago:.1f} ч назад ({last_cycle["timestamp"]}). '
+                    f'Устав требует проверки каждые 10 минут.'
+                    f'</div>'
+                )
+        except Exception:
+            pass
+
     # 1. Generate Markdown Status Report
     md_lines = [
         "# 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)",
         f"**Обновлено:** `{now_str}`",
         "",
+    ]
+    if cadence_warning_md:
+        md_lines.extend([cadence_warning_md, ""])
+
+    md_lines.extend([
         "## 💰 Состояние виртуального портфеля",
         "| Показатель | Значение | Правило устава |",
         "| :--- | :--- | :--- |",
@@ -89,7 +122,7 @@ def generate_reports(
         f"| **Закрытых сделок / Win Rate** | `{len(closed_pos)}` / `{win_rate:.1f}%` | Brier Score: `{brier_score_str}` |",
         "",
         f"## 📂 Открытые позиции ({len(open_pos)} / 8)",
-    ]
+    ])
 
     if not open_pos:
         md_lines.append("*Нет активных позиций.*")
@@ -296,6 +329,8 @@ def generate_reports(
       <div class="metric-sub">Обновлено: {now_str}</div>
     </div>
   </div>
+
+  {cadence_warning_html}
 
   <div class="grid">
     <div class="card">

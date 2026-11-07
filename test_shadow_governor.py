@@ -7,12 +7,14 @@ import tempfile
 import unittest
 from pathlib import Path
 
+import auto_governor
 from auto_governor import AutoGovernor
 from database import SimDatabase
 import telegram_notify
 
 # Silence live Telegram alerts during unit test execution
 telegram_notify.send_telegram_alert = lambda text: False
+auto_governor.send_telegram_alert = lambda text: False
 
 
 class TestShadowGovernor(unittest.TestCase):

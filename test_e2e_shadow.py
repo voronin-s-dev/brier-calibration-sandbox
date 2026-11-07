@@ -12,16 +12,20 @@ import unittest
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
+import auto_governor
 from auto_governor import AutoGovernor
 from dashboard_gen import generate_reports
 from database import SimDatabase
 from polymarket_api import MarketInfo, OrderBookSimulation
 from oracles import EvaluationResult
+import trader
 from trader import GrokCharterPaperTrader
 import telegram_notify
 
 # Silence live Telegram alerts during unit test execution
 telegram_notify.send_telegram_alert = lambda text: False
+auto_governor.send_telegram_alert = lambda text: False
+trader.send_telegram_alert = lambda text: False
 
 
 def make_market(id: str, question: str, category: str, gamma_prices: list) -> MarketInfo:
