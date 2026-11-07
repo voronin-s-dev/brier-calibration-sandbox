@@ -1633,3 +1633,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-07 19:19:26 UTC] [CYCLE #401 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.04 | Equity=$30.75 (DD=12.93%)
 [2026-11-07 19:30:54 UTC] [CYCLE #402 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.04 | Equity=$30.73 (DD=13.00%)
 [2026-11-07 19:40:02 UTC] [CYCLE #403 SUMMARY] Scanned=793 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.04 | Equity=$30.73 (DD=13.00%)
+[2026-11-07 19:49:10 UTC] [OPEN TRADE #104] Dota 2: InterActive Philippines vs PuckChamp (BO3) - DreamLeague Division 2 Group B
+  Категория: Sports | Сторона: NO | Источник: https://www.dotabuff.com
+  Оценка бота: 96.0% vs Рынок (Ask VWAP): 77.0% (Перекос/Edge: +19.0 п.п.)
+  Стакан CLOB: BestBid=0.760, BestAsk=0.770, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=82.6%, Четверть(0.25x)=33.0% -> Применён=8.0% банка
+  Размер сделки: $2.46 USDC (3.19 shares @ $0.7700)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.462 if P_est <= 70%
+  Причина: High market consensus NO (92.5%) within 3.2h of expiry
+
+[2026-11-07 19:49:10 UTC] [CYCLE #404 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.58 | Equity=$30.69 (DD=13.09%)
