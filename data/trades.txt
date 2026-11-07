@@ -1610,3 +1610,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-07 16:30:51 UTC] [CYCLE #384 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$20.61 | Equity=$28.23 (DD=20.07%)
 [2026-11-07 16:39:59 UTC] [CYCLE #385 SUMMARY] Scanned=770 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$20.61 | Equity=$29.07 (DD=17.69%)
 [2026-11-07 16:49:07 UTC] [CYCLE #386 SUMMARY] Scanned=791 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$20.61 | Equity=$30.00 (DD=15.07%)
+[EXIT] #102 | Will Arsenal FC vs. Hull City AFC end in a draw? (NO)
+  Shares: 2.71 | Entry VWAP: 0.8900 -> Exit Bid VWAP: 0.9990
+  Proceeds: $2.71 | Realized PnL: $+0.30 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +12.2% gain
+[2026-11-07 17:01:09 UTC] [CYCLE #387 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=1 | Cash=$23.31 | Equity=$28.85 (DD=18.32%)
