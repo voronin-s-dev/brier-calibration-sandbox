@@ -1675,3 +1675,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-11-07 22:30:53 UTC] [CYCLE #420 SUMMARY] Scanned=791 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=4 | Opened=1 (Shadow=0) | Closed=0 | Cash=$26.87 | Equity=$31.68 (DD=10.28%)
 [2026-11-07 22:40:05 UTC] [CYCLE #421 SUMMARY] Scanned=787 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.87 | Equity=$31.93 (DD=9.59%)
+[EXIT] #105 | LoL: Invictus Gaming vs Gen.G - Game 1 Winner (NO)
+  Shares: 2.84 | Entry VWAP: 0.8950 -> Exit Bid VWAP: 0.9990
+  Proceeds: $2.84 | Realized PnL: $+0.30 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +11.6% gain
+[2026-11-07 22:49:13 UTC] [OPEN TRADE #106] LoL: Invictus Gaming vs Gen.G (BO5) - Worlds Playoffs
+  Категория: Sports | Сторона: NO | Источник: https://gol.gg/esports/home
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=33.3%, Четверть(0.25x)=13.3% -> Применён=8.0% банка
+  Размер сделки: $2.56 USDC (2.81 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: High market consensus NO (90.5%) within 5.3h of expiry
+
+[2026-11-07 22:49:13 UTC] [CYCLE #422 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=1 | Cash=$27.15 | Equity=$31.96 (DD=9.51%)
