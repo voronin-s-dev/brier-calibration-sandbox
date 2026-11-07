@@ -1569,3 +1569,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: Lopsided match no-draw consensus with 5.8h left
 
 [2026-11-07 09:09:58 UTC] [CYCLE #354 SUMMARY] Scanned=783 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=3 | Opened=2 (Shadow=0) | Closed=0 | Cash=$23.01 | Equity=$30.08 (DD=14.83%)
+[2026-11-07 09:19:05 UTC] [CYCLE #355 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.01 | Equity=$30.08 (DD=14.83%)
