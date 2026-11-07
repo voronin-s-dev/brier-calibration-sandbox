@@ -1658,3 +1658,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-07 21:30:53 UTC] [CYCLE #414 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.77 | Equity=$31.54 (DD=10.70%)
 [2026-11-07 21:40:00 UTC] [CYCLE #415 SUMMARY] Scanned=777 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.77 | Equity=$31.57 (DD=10.62%)
 [2026-11-07 21:49:05 UTC] [CYCLE #416 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.77 | Equity=$31.57 (DD=10.62%)
+[EXIT] #101 | Will Paris Saint-Germain FC vs. ES Troyes AC end in a draw? (NO)
+  Shares: 2.65 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9990
+  Proceeds: $2.65 | Realized PnL: $+0.24 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +9.8% gain
+[2026-11-07 22:01:06 UTC] [CYCLE #417 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=1 | Cash=$29.41 | Equity=$31.75 (DD=10.11%)
