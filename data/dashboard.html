@@ -77,29 +77,29 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-11-06 22:37:18 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-11-07 02:05:11 UTC</div>
     </div>
   </div>
 
   <div class="grid">
     <div class="card">
       <div class="metric-label">Текущий капитал (Equity)</div>
-      <div class="metric-val">$30.25 <span style="font-size:15px" class="neg">(-19.75$ / -39.51%)</span></div>
+      <div class="metric-val">$30.22 <span style="font-size:15px" class="neg">(-19.78$ / -39.56%)</span></div>
       <div class="metric-sub">Старт: $50.00 USDC (Оценка по Bid стакана!)</div>
     </div>
     <div class="card">
       <div class="metric-label">Свободный кэш / В позициях</div>
-      <div class="metric-val">$30.25 <span class="muted" style="font-size:16px">/ $0.00</span></div>
-      <div class="metric-sub">Открыто позиций: 0 из 8 (макс 8% банка)</div>
+      <div class="metric-val">$27.83 <span class="muted" style="font-size:16px">/ $2.39</span></div>
+      <div class="metric-sub">Открыто позиций: 1 из 8 (макс 8% банка)</div>
     </div>
     <div class="card">
       <div class="metric-label">Цель подписки ($60 / мес)</div>
-      <div class="metric-val">$-19.75 <span class="muted" style="font-size:16px">/ $60.00</span></div>
+      <div class="metric-val">$-19.78 <span class="muted" style="font-size:16px">/ $60.00</span></div>
       <div class="metric-sub">Прогресс окупаемости: 0.0%</div>
     </div>
     <div class="card">
       <div class="metric-label">Просадка от пика (Drawdown)</div>
-      <div class="metric-val ">14.36% <span class="muted" style="font-size:15px">(Макс: 24.45%)</span></div>
+      <div class="metric-val ">14.44% <span class="muted" style="font-size:15px">(Макс: 24.45%)</span></div>
       <div class="metric-sub">Пик: $35.32 | Лимит остановки: 40.0%</div>
     </div>
     <div class="card">
@@ -126,7 +126,7 @@
     </tbody>
   </table>
 
-  <h2>📂 Открытые виртуальные позиции (0 / 8)</h2>
+  <h2>📂 Открытые виртуальные позиции (1 / 8)</h2>
   <table>
     <thead>
       <tr>
@@ -136,7 +136,21 @@
       </tr>
     </thead>
     <tbody>
-      <tr><td colspan="11" class="empty">Нет открытых позиций</td></tr>
+      
+        <tr>
+            <td>#100</td>
+            <td><strong>Spread: Colts (-3.5)</strong><br><small class="muted">Heavy handicap spread (-3.5+) is historically improbable</small></td>
+            <td><span class="badge cat-sports">Sports</span></td>
+            <td><span class="side-no">NO</span></td>
+            <td>2.88</td>
+            <td>$0.8400</td>
+            <td>$0.8300</td>
+            <td><strong>97.5%</strong> <small>(+13.5pp)</small></td>
+            <td>$2.42 <small>(8.0%)</small></td>
+            <td class="neg">$-0.03</td>
+            <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.504 if P_est &lt;= 70%</small></td>
+        </tr>
+        
     </tbody>
   </table>
 
@@ -151,6 +165,136 @@
     </thead>
     <tbody>
       
+        <tr class="">
+            <td>Games Total: O/U 4.5<br><small class="muted">High market consensus NO (100.0%) within 2.0h of expiry</small></td>
+            <td><span class="badge cat-sports">Sports</span></td>
+            <td>YES</td>
+            <td>1.5%</td>
+            <td>100.0%</td>
+            <td class="muted">-98.5 п.п.</td>
+            <td class="neg">100.00%</td>
+            <td>$20,652</td>
+            <td>2.0h</td>
+            <td><strong>REJECTED: Edge -98.5 pp &lt; 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Spread: Patriots (-3.5)<br><small class="muted">Heavy handicap spread (-3.5+) is historically improbable</small></td>
+            <td><span class="badge cat-sports">Sports</span></td>
+            <td>NO</td>
+            <td>97.5%</td>
+            <td>53.0%</td>
+            <td class="pos">+44.5 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$150,009</td>
+            <td>43.3h</td>
+            <td><strong>REJECTED: Contract price $0.530 outside sweet spot [$0.76, $0.92]</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Games Total: O/U 3.5<br><small class="muted">High market consensus YES (100.0%) within 2.0h of expiry</small></td>
+            <td><span class="badge cat-sports">Sports</span></td>
+            <td>NO</td>
+            <td>1.5%</td>
+            <td>100.0%</td>
+            <td class="muted">-98.5 п.п.</td>
+            <td class="neg">100.00%</td>
+            <td>$109,838</td>
+            <td>2.0h</td>
+            <td><strong>REJECTED: Edge -98.5 pp &lt; 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Game Handicap: T1 (-1.5) vs Karmine Corp (+1.5)<br><small class="muted">High market consensus YES (100.0%) within 2.0h of expiry</small></td>
+            <td><span class="badge cat-sports">Sports</span></td>
+            <td>NO</td>
+            <td>1.5%</td>
+            <td>100.0%</td>
+            <td class="muted">-98.5 п.п.</td>
+            <td class="neg">100.00%</td>
+            <td>$489,752</td>
+            <td>2.0h</td>
+            <td><strong>REJECTED: Edge -98.5 pp &lt; 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Game Handicap: T1 (-2.5) vs Karmine Corp (+2.5)<br><small class="muted">High market consensus NO (100.0%) within 2.0h of expiry</small></td>
+            <td><span class="badge cat-sports">Sports</span></td>
+            <td>YES</td>
+            <td>1.5%</td>
+            <td>100.0%</td>
+            <td class="muted">-98.5 п.п.</td>
+            <td class="neg">100.00%</td>
+            <td>$119,759</td>
+            <td>2.0h</td>
+            <td><strong>REJECTED: Edge -98.5 pp &lt; 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>LoL: Karmine Corp vs T1 - Game 2 Winner<br><small class="muted">High market consensus NO (100.0%) within 2.0h of expiry</small></td>
+            <td><span class="badge cat-sports">Sports</span></td>
+            <td>YES</td>
+            <td>1.5%</td>
+            <td>100.0%</td>
+            <td class="muted">-98.5 п.п.</td>
+            <td class="neg">100.00%</td>
+            <td>$1,530,203</td>
+            <td>2.0h</td>
+            <td><strong>REJECTED: Edge -98.5 pp &lt; 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>LoL: Karmine Corp vs T1 (BO5) - Worlds Playoffs<br><small class="muted">High market consensus NO (100.0%) within 2.0h of expiry</small></td>
+            <td><span class="badge cat-sports">Sports</span></td>
+            <td>YES</td>
+            <td>1.5%</td>
+            <td>100.0%</td>
+            <td class="muted">-98.5 п.п.</td>
+            <td class="neg">100.00%</td>
+            <td>$2,381,854</td>
+            <td>2.0h</td>
+            <td><strong>REJECTED: Edge -98.5 pp &lt; 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>LoL: Karmine Corp vs T1 - Game 3 Winner<br><small class="muted">High market consensus YES (100.0%) within 2.0h of expiry</small></td>
+            <td><span class="badge cat-sports">Sports</span></td>
+            <td>NO</td>
+            <td>1.5%</td>
+            <td>100.0%</td>
+            <td class="muted">-98.5 п.п.</td>
+            <td class="neg">100.00%</td>
+            <td>$1,282,581</td>
+            <td>2.0h</td>
+            <td><strong>REJECTED: Edge -98.5 pp &lt; 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>LoL: Karmine Corp vs T1 - Game 4 Winner<br><small class="muted">High market consensus NO (100.0%) within 2.0h of expiry</small></td>
+            <td><span class="badge cat-sports">Sports</span></td>
+            <td>YES</td>
+            <td>1.5%</td>
+            <td>100.0%</td>
+            <td class="muted">-98.5 п.п.</td>
+            <td class="neg">100.00%</td>
+            <td>$2,097,830</td>
+            <td>2.0h</td>
+            <td><strong>REJECTED: Edge -98.5 pp &lt; 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%)</strong></td>
+        </tr>
+        
+        <tr class="exec-row">
+            <td>Spread: Colts (-3.5)<br><small class="muted">Heavy handicap spread (-3.5+) is historically improbable</small></td>
+            <td><span class="badge cat-sports">Sports</span></td>
+            <td>NO</td>
+            <td>97.5%</td>
+            <td>84.0%</td>
+            <td class="pos">+13.5 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$62,903</td>
+            <td>39.9h</td>
+            <td><strong>EXECUTED BUY #100 ($2.42 @ 0.8400)</strong></td>
+        </tr>
+        
         <tr class="">
             <td>Dota 2: iLTW TEAM vs LenS Team - Game 2 Winner<br><small class="muted">High market consensus NO (100.0%) within 1.4h of expiry</small></td>
             <td><span class="badge cat-sports">Sports</span></td>
@@ -346,150 +490,11 @@
             <td><strong>REJECTED: Edge -98.5 pp &lt; 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%)</strong></td>
         </tr>
         
-        <tr class="">
-            <td>Counter-Strike: QUINTESSÊNCIA vs tao toma - Map 1 Winner<br><small class="muted">High market consensus YES (99.5%) within 4.7h of expiry</small></td>
-            <td><span class="badge cat-sports">Sports</span></td>
-            <td>NO</td>
-            <td>1.5%</td>
-            <td>100.0%</td>
-            <td class="muted">-98.5 п.п.</td>
-            <td class="neg">100.00%</td>
-            <td>$37,107</td>
-            <td>4.7h</td>
-            <td><strong>REJECTED: Edge -98.5 pp &lt; 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Counter-Strike: Drama eSports vs Ryvex - Map 1 Winner<br><small class="muted">High market consensus YES (100.0%) within 4.0h of expiry</small></td>
-            <td><span class="badge cat-sports">Sports</span></td>
-            <td>NO</td>
-            <td>1.5%</td>
-            <td>100.0%</td>
-            <td class="muted">-98.5 п.п.</td>
-            <td class="neg">100.00%</td>
-            <td>$25,980</td>
-            <td>4.0h</td>
-            <td><strong>REJECTED: Edge -98.5 pp &lt; 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Spread: Thunder (-3.5)<br><small class="muted">Heavy handicap spread (-3.5+) is historically improbable</small></td>
-            <td><span class="badge cat-sports">Sports</span></td>
-            <td>NO</td>
-            <td>97.5%</td>
-            <td>48.0%</td>
-            <td class="pos">+49.5 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$117,032</td>
-            <td>7.5h</td>
-            <td><strong>REJECTED: Contract price $0.480 outside sweet spot [$0.76, $0.92]</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Spread: Nebraska (-4.5)<br><small class="muted">Heavy handicap spread (-3.5+) is historically improbable</small></td>
-            <td><span class="badge cat-sports">Sports</span></td>
-            <td>NO</td>
-            <td>97.5%</td>
-            <td>51.0%</td>
-            <td class="pos">+46.5 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$170,224</td>
-            <td>7.5h</td>
-            <td><strong>REJECTED: Contract price $0.510 outside sweet spot [$0.76, $0.92]</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Counter-Strike: BASEMENT BOYS vs Johnny Speeds (BO3) - NODWIN Clutch Series Play-In Group  D<br><small class="muted">High market consensus YES (100.0%) within 3.8h of expiry</small></td>
-            <td><span class="badge cat-sports">Sports</span></td>
-            <td>NO</td>
-            <td>1.5%</td>
-            <td>100.0%</td>
-            <td class="muted">-98.5 п.п.</td>
-            <td class="neg">100.00%</td>
-            <td>$21,025</td>
-            <td>3.8h</td>
-            <td><strong>REJECTED: Edge -98.5 pp &lt; 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Counter-Strike: Drama eSports vs Ryvex - Map 1 Winner<br><small class="muted">High market consensus YES (100.0%) within 4.2h of expiry</small></td>
-            <td><span class="badge cat-sports">Sports</span></td>
-            <td>NO</td>
-            <td>1.5%</td>
-            <td>100.0%</td>
-            <td class="muted">-98.5 п.п.</td>
-            <td class="neg">100.00%</td>
-            <td>$26,392</td>
-            <td>4.2h</td>
-            <td><strong>REJECTED: Edge -98.5 pp &lt; 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Spread: Nebraska (-4.5)<br><small class="muted">Heavy handicap spread (-3.5+) is historically improbable</small></td>
-            <td><span class="badge cat-sports">Sports</span></td>
-            <td>NO</td>
-            <td>97.5%</td>
-            <td>51.0%</td>
-            <td class="pos">+46.5 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$185,257</td>
-            <td>7.6h</td>
-            <td><strong>REJECTED: Contract price $0.510 outside sweet spot [$0.76, $0.92]</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Spread: Thunder (-3.5)<br><small class="muted">Heavy handicap spread (-3.5+) is historically improbable</small></td>
-            <td><span class="badge cat-sports">Sports</span></td>
-            <td>NO</td>
-            <td>97.5%</td>
-            <td>48.0%</td>
-            <td class="pos">+49.5 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$119,552</td>
-            <td>7.6h</td>
-            <td><strong>REJECTED: Contract price $0.480 outside sweet spot [$0.76, $0.92]</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Al Hazem SC win on 2026-11-06?<br><small class="muted">High market consensus NO (99.6%) within 4.8h of expiry</small></td>
-            <td><span class="badge cat-sports">Sports</span></td>
-            <td>YES</td>
-            <td>1.5%</td>
-            <td>100.0%</td>
-            <td class="muted">-98.5 п.п.</td>
-            <td class="neg">100.00%</td>
-            <td>$32,675</td>
-            <td>4.8h</td>
-            <td><strong>REJECTED: Edge -98.5 pp &lt; 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Spread: Chiefs (-3.5)<br><small class="muted">Heavy handicap spread (-3.5+) is historically improbable</small></td>
-            <td><span class="badge cat-sports">Sports</span></td>
-            <td>NO</td>
-            <td>97.5%</td>
-            <td>27.0%</td>
-            <td class="pos">+70.5 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$68,321</td>
-            <td>55.9h</td>
-            <td><strong>REJECTED: Contract price $0.270 outside sweet spot [$0.76, $0.92]</strong></td>
-        </tr>
-        
     </tbody>
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">ерекос/Edge: +12.0 п.п.)
-  Стакан CLOB: BestBid=0.800, BestAsk=0.810, Проскальзывание входа/выхода=1.00% (&lt;= 3.0%)
-  Келли: Полный=63.2%, Четверть(0.25x)=25.3% -&gt; Применён=8.0% банка
-  Размер сделки: $2.18 USDC (2.69 shares @ $0.8100)
-  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.486 if P_est &lt;= 70%
-  Причина: High market consensus YES (89.5%) within 3.9h of expiry
-
-[2026-11-03 10:07:51 UTC] [CYCLE #307 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=13 | Edges(&gt;=8pp)=5 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.46 | Equity=$27.21 (DD=22.95%)
-[2026-11-03 10:16:57 UTC] [CYCLE #308 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(&gt;=8pp)=5 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.46 | Equity=$26.84 (DD=24.01%)
-[RESOLVED] #92 | Counter-Strike: TheMongolz vs Heroic (BO3) - IEM Beijing Group A (YES)
+  <pre class="log-box">VED] #92 | Counter-Strike: TheMongolz vs Heroic (BO3) - IEM Beijing Group A (YES)
   Entry VWAP: 0.8100 | Settlement: 1.00 | PnL: $+0.51 USDC | Reason: MARKET RESOLVED on Polymarket: YES settled at $1.00/share
 [2026-11-03 13:41:41 UTC] [OPEN TRADE #93] Will Aston Villa FC win on 2026-11-03?
   Категория: Sports | Сторона: NO | Источник: https://www.uefa.com/
@@ -615,6 +620,16 @@
 [2026-11-06 22:18:57 UTC] [CYCLE #348 SUMMARY] Scanned=792 | PassedFilter=50 | Evaluated=3 | Edges(&gt;=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.25 | Equity=$30.25 (DD=14.36%)
 [2026-11-06 22:28:05 UTC] [CYCLE #349 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(&gt;=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.25 | Equity=$30.25 (DD=14.36%)
 [2026-11-06 22:37:12 UTC] [CYCLE #350 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=3 | Edges(&gt;=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.25 | Equity=$30.25 (DD=14.36%)
+[2026-11-07 02:05:02 UTC] [OPEN TRADE #100] Spread: Colts (-3.5)
+  Категория: Sports | Сторона: NO | Источник: https://www.nfl.com/scores
+  Оценка бота: 97.5% vs Рынок (Ask VWAP): 84.0% (Перекос/Edge: +13.5 п.п.)
+  Стакан CLOB: BestBid=0.830, BestAsk=0.840, Проскальзывание входа/выхода=1.00% (&lt;= 3.0%)
+  Келли: Полный=84.4%, Четверть(0.25x)=33.8% -&gt; Применён=8.0% банка
+  Размер сделки: $2.42 USDC (2.88 shares @ $0.8400)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.504 if P_est &lt;= 70%
+  Причина: Heavy handicap spread (-3.5+) is historically improbable
+
+[2026-11-07 02:05:02 UTC] [CYCLE #351 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=14 | Edges(&gt;=8pp)=4 | Opened=1 (Shadow=0) | Closed=0 | Cash=$27.83 | Equity=$30.22 (DD=14.44%)
 </pre>
 </body>
 </html>

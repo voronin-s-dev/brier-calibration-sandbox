@@ -1538,3 +1538,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-06 22:18:57 UTC] [CYCLE #348 SUMMARY] Scanned=792 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.25 | Equity=$30.25 (DD=14.36%)
 [2026-11-06 22:28:05 UTC] [CYCLE #349 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.25 | Equity=$30.25 (DD=14.36%)
 [2026-11-06 22:37:12 UTC] [CYCLE #350 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.25 | Equity=$30.25 (DD=14.36%)
+[2026-11-07 02:05:02 UTC] [OPEN TRADE #100] Spread: Colts (-3.5)
+  Категория: Sports | Сторона: NO | Источник: https://www.nfl.com/scores
+  Оценка бота: 97.5% vs Рынок (Ask VWAP): 84.0% (Перекос/Edge: +13.5 п.п.)
+  Стакан CLOB: BestBid=0.830, BestAsk=0.840, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=84.4%, Четверть(0.25x)=33.8% -> Применён=8.0% банка
+  Размер сделки: $2.42 USDC (2.88 shares @ $0.8400)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.504 if P_est <= 70%
+  Причина: Heavy handicap spread (-3.5+) is historically improbable
+
+[2026-11-07 02:05:02 UTC] [CYCLE #351 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=4 | Opened=1 (Shadow=0) | Closed=0 | Cash=$27.83 | Equity=$30.22 (DD=14.44%)
