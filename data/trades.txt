@@ -1592,3 +1592,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-07 15:01:09 UTC] [CYCLE #375 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.01 | Equity=$30.08 (DD=14.83%)
 [2026-11-07 15:10:15 UTC] [CYCLE #376 SUMMARY] Scanned=783 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.01 | Equity=$30.08 (DD=14.83%)
 [2026-11-07 15:19:21 UTC] [CYCLE #377 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.01 | Equity=$30.00 (DD=15.06%)
+[2026-11-07 15:30:53 UTC] [OPEN TRADE #103] Dota 2: Xipto Esports vs PlayTime (BO3) - DreamLeague Division 2 Group A
+  Категория: Sports | Сторона: NO | Источник: https://www.dotabuff.com
+  Оценка бота: 94.5% vs Рынок (Ask VWAP): 88.0% (Перекос/Edge: +6.5 п.п.)
+  Стакан CLOB: BestBid=0.870, BestAsk=0.880, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=54.2%, Четверть(0.25x)=21.7% -> Применён=8.0% банка
+  Размер сделки: $2.40 USDC (2.73 shares @ $0.8800)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.528 if P_est <= 70%
+  Причина: High market consensus NO (91.0%) within 3.5h of expiry
+
+[2026-11-07 15:30:53 UTC] [CYCLE #378 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=3 | Opened=1 (Shadow=0) | Closed=0 | Cash=$20.61 | Equity=$29.92 (DD=15.29%)
