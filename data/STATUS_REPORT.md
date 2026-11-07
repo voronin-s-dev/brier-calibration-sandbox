@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-07 09:28:16 UTC`
+**Обновлено:** `2026-11-07 12:11:38 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -15,8 +15,8 @@
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #100 | Spread: Colts (-3.5) | Sports | **NO** | `0.840` | `0.800` | `97.5%` | `$2.42` | `$-0.12` | https://www.nfl.com/scores |
-| #101 | Will Paris Saint-Germain FC vs. ES Troyes AC end in a d | Sports | **NO** | `0.910` | `0.900` | `96.5%` | `$2.41` | `$-0.03` | https://www.ligue1.com/ |
-| #102 | Will Arsenal FC vs. Hull City AFC end in a draw? | Sports | **NO** | `0.890` | `0.880` | `96.5%` | `$2.41` | `$-0.03` | https://www.premierleague.com/ |
+| #101 | Will Paris Saint-Germain FC vs. ES Troyes AC end in a d | Sports | **NO** | `0.910` | `0.890` | `96.5%` | `$2.41` | `$-0.05` | https://www.ligue1.com/ |
+| #102 | Will Arsenal FC vs. Hull City AFC end in a draw? | Sports | **NO** | `0.890` | `0.890` | `96.5%` | `$2.41` | `$+0.00` | https://www.premierleague.com/ |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -32,6 +32,8 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Dota 2: potn9ki vs Nemiga Gaming - Game 2 Winner | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
+| Dota 2: HULIGANI vs LEGION - Game 1 Winner | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
 | Will Arsenal FC vs. Hull City AFC end in a draw? | Sports | NO | `96.5%` | `89.0%` | `+7.5 п.п.` | `1.00%` | EXECUTED BUY #102 ($2.41 @ 0.8900) |
 | Will Paris Saint-Germain FC vs. ES Troyes AC end i | Sports | NO | `96.5%` | `91.0%` | `+5.5 п.п.` | `1.00%` | EXECUTED BUY #101 ($2.41 @ 0.9100) |
 | Spread: Patriots (-3.5) | Sports | NO | `97.5%` | `53.0%` | `+44.5 п.п.` | `1.00%` | REJECTED: Contract price $0.530 outside sweet spot [$0.76, $0.92] |
@@ -48,5 +50,3 @@
 | Game Handicap: T1 (-1.5) vs Karmine Corp (+1.5) | Sports | NO | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
 | Game Handicap: T1 (-2.5) vs Karmine Corp (+2.5) | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
 | LoL: Karmine Corp vs T1 (BO5) - Worlds Playoffs | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
-| LoL: Karmine Corp vs T1 - Game 3 Winner | Sports | NO | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
-| LoL: Karmine Corp vs T1 - Game 4 Winner | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
