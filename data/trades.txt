@@ -1645,3 +1645,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-07 19:49:10 UTC] [CYCLE #404 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.58 | Equity=$30.69 (DD=13.09%)
 [2026-11-07 20:01:07 UTC] [CYCLE #405 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.58 | Equity=$31.24 (DD=11.55%)
 [2026-11-07 20:10:16 UTC] [CYCLE #406 SUMMARY] Scanned=786 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.58 | Equity=$30.46 (DD=13.74%)
+[EXIT] #104 | Dota 2: InterActive Philippines vs PuckChamp (BO3) - DreamLeague Division 2 Group B (NO)
+  Shares: 3.19 | Entry VWAP: 0.7700 -> Exit Bid VWAP: 0.9990
+  Proceeds: $3.19 | Realized PnL: $+0.73 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +29.7% gain
+[2026-11-07 20:19:23 UTC] [CYCLE #407 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$26.77 | Equity=$31.46 (DD=10.93%)
