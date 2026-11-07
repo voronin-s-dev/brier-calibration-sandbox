@@ -1664,3 +1664,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-07 22:01:06 UTC] [CYCLE #417 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=1 | Cash=$29.41 | Equity=$31.75 (DD=10.11%)
 [2026-11-07 22:10:14 UTC] [CYCLE #418 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.41 | Equity=$31.75 (DD=10.11%)
 [2026-11-07 22:19:21 UTC] [CYCLE #419 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.41 | Equity=$31.75 (DD=10.11%)
+[2026-11-07 22:30:53 UTC] [OPEN TRADE #105] LoL: Invictus Gaming vs Gen.G - Game 1 Winner
+  Категория: Sports | Сторона: NO | Источник: https://gol.gg/esports/home
+  Оценка бота: 98.5% vs Рынок (Ask VWAP): 89.5% (Перекос/Edge: +9.0 п.п.)
+  Стакан CLOB: BestBid=0.893, BestAsk=0.895, Проскальзывание входа/выхода=0.20% (<= 3.0%)
+  Келли: Полный=86.1%, Четверть(0.25x)=34.4% -> Применён=8.0% банка
+  Размер сделки: $2.54 USDC (2.84 shares @ $0.8950)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.537 if P_est <= 70%
+  Причина: High market consensus NO (96.5%) within 5.6h of expiry
+
+[2026-11-07 22:30:53 UTC] [CYCLE #420 SUMMARY] Scanned=791 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=4 | Opened=1 (Shadow=0) | Closed=0 | Cash=$26.87 | Equity=$31.68 (DD=10.28%)
