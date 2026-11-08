@@ -1,22 +1,23 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-08 04:31:02 UTC`
+**Обновлено:** `2026-11-08 04:40:12 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$33.22 USDC`** (`-16.78$` / `-33.56%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$25.87` / `$7.35 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Текущий баланс (Equity)** | **`$33.22 USDC`** (`-16.78$` / `-33.57%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$23.21` / `$10.01 USDC` | До 8 открытых позиций, макс 8% банка |
 | **Цель окупаемости подписки** | `$-16.78 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `5.94%` / `24.45%` (Пик: `$35.32`) | Стоп-кран при просадке 40% |
-| **Закрытых сделок / Win Rate** | `97` / `76.3%` | Brier Score: `0.1849` |
+| **Просадка от пика (Текущая / Макс)** | `5.95%` / `24.45%` (Пик: `$35.32`) | Стоп-кран при просадке 40% |
+| **Закрытых сделок / Win Rate** | `96` / `76.0%` | Brier Score: `0.1849` |
 
-## 📂 Открытые позиции (3 / 8)
+## 📂 Открытые позиции (4 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #100 | Spread: Colts (-3.5) | Sports | **NO** | `0.840` | `0.790` | `97.5%` | `$2.42` | `$-0.14` | https://www.nfl.com/scores |
 | #107 | Spread: Commanders (-3.5) | Sports | **NO** | `0.790` | `0.780` | `97.5%` | `$2.56` | `$-0.03` | https://www.nfl.com/scores |
 | #110 | Spread: Dolphins (-3.5) | Sports | **NO** | `0.840` | `0.830` | `97.5%` | `$2.58` | `$-0.03` | https://www.nfl.com/scores |
+| #113 | Counter-Strike: Natus Vincere vs BetBoom Team - Map 1 W | Sports | **YES** | `0.901` | `0.900` | `98.5%` | `$2.66` | `$-0.00` | https://hltv.org |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -39,6 +40,7 @@
 | Spread: 49ers (-3.5) | Sports | NO | `97.5%` | `29.0%` | `+68.5 п.п.` | `1.00%` | REJECTED: Contract price $0.290 outside sweet spot [$0.76, $0.92] |
 | Spread: Eagles (-3.5) | Sports | NO | `97.5%` | `73.0%` | `+24.5 п.п.` | `1.00%` | REJECTED: Contract price $0.730 outside sweet spot [$0.76, $0.92] |
 | Spread: Giants (-3.5) | Sports | NO | `97.5%` | `56.0%` | `+41.5 п.п.` | `1.00%` | REJECTED: Contract price $0.560 outside sweet spot [$0.76, $0.92] |
+| Counter-Strike: Natus Vincere vs BetBoom Team - Ma | Sports | YES | `98.5%` | `90.1%` | `+8.4 п.п.` | `0.10%` | EXECUTED BUY #113 ($2.66 @ 0.9010) |
 | Spread: Bills (-4.5) | Sports | NO | `97.5%` | `57.0%` | `+40.5 п.п.` | `1.00%` | REJECTED: Contract price $0.570 outside sweet spot [$0.76, $0.92] |
 | Spread: Falcons (-3.5) | Sports | NO | `97.5%` | `75.0%` | `+22.5 п.п.` | `1.00%` | REJECTED: Contract price $0.750 outside sweet spot [$0.76, $0.92] |
 | Spread: Bengals (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.92] |
@@ -47,6 +49,5 @@
 | Spread: Eagles (-3.5) | Sports | NO | `97.5%` | `73.0%` | `+24.5 п.п.` | `1.00%` | REJECTED: Contract price $0.730 outside sweet spot [$0.76, $0.92] |
 | Spread: Giants (-3.5) | Sports | NO | `97.5%` | `56.0%` | `+41.5 п.п.` | `1.00%` | REJECTED: Contract price $0.560 outside sweet spot [$0.76, $0.92] |
 | Spread: Bills (-4.5) | Sports | NO | `97.5%` | `57.0%` | `+40.5 п.п.` | `1.00%` | REJECTED: Contract price $0.570 outside sweet spot [$0.76, $0.92] |
-| Fight to Go the Distance? | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
 | Spread: Falcons (-3.5) | Sports | NO | `97.5%` | `75.0%` | `+22.5 п.п.` | `1.00%` | REJECTED: Contract price $0.750 outside sweet spot [$0.76, $0.92] |
 | Spread: Bengals (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.92] |
