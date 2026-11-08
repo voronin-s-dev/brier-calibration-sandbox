@@ -1732,3 +1732,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-07 23:49:15 UTC] [CYCLE #428 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=4 | Opened=1 (Shadow=0) | Closed=0 | Cash=$16.88 | Equity=$32.19 (DD=8.86%)
 [2026-11-07 23:52:01 UTC] [CYCLE #429 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=0 | Cash=$16.88 | Equity=$32.18 (DD=8.89%)
 [2026-11-08 00:01:10 UTC] [CYCLE #430 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=0 | Cash=$16.88 | Equity=$32.08 (DD=9.15%)
+[EXIT] #109 | Dota 2: Yakult Brothers vs CyberHero (BO3) - DreamLeague Division 2 Group B (NO)
+  Shares: 2.78 | Entry VWAP: 0.9200 -> Exit Bid VWAP: 0.9990
+  Proceeds: $2.78 | Realized PnL: $+0.22 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +8.6% gain
+[2026-11-08 00:10:19 UTC] [OPEN TRADE #111] Game Handicap: GEN (-1.5) vs Invictus Gaming (+1.5)
+  Категория: Sports | Сторона: YES | Источник: https://gol.gg/esports/home
+  Оценка бота: 93.5% vs Рынок (Ask VWAP): 89.0% (Перекос/Edge: +4.5 п.п.)
+  Стакан CLOB: BestBid=0.870, BestAsk=0.890, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=40.9%, Четверть(0.25x)=16.4% -> Применён=8.0% банка
+  Размер сделки: $2.57 USDC (2.89 shares @ $0.8900)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.534 if P_est <= 70%
+  Причина: High market consensus YES (90.0%) within 3.9h of expiry
+
+[2026-11-08 00:10:19 UTC] [CYCLE #431 SUMMARY] Scanned=772 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=4 | Opened=1 (Shadow=0) | Closed=1 | Cash=$17.09 | Equity=$32.10 (DD=9.11%)
