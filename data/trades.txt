@@ -1815,3 +1815,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-11-08 04:49:14 UTC] [CYCLE #458 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=8 | Opened=1 (Shadow=0) | Closed=1 | Cash=$23.47 | Equity=$33.47 (DD=5.22%)
 [2026-11-08 05:01:09 UTC] [CYCLE #459 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=8 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.47 | Equity=$33.47 (DD=5.22%)
+[2026-11-08 05:10:21 UTC] [OPEN TRADE #115] Will FC RFS win on 2026-11-08?
+  Категория: Sports | Сторона: NO | Источник: https://www.virsliga.lv/
+  Оценка бота: 95.3% vs Рынок (Ask VWAP): 91.9% (Перекос/Edge: +3.4 п.п.)
+  Стакан CLOB: BestBid=0.918, BestAsk=0.919, Проскальзывание входа/выхода=0.10% (<= 3.0%)
+  Келли: Полный=42.6%, Четверть(0.25x)=17.0% -> Применён=8.0% банка
+  Размер сделки: $2.68 USDC (2.92 shares @ $0.9190)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.551 if P_est <= 70%
+  Причина: High market consensus NO (91.8%) within 5.8h of expiry
+
+[2026-11-08 05:10:21 UTC] [CYCLE #460 SUMMARY] Scanned=781 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=9 | Opened=1 (Shadow=0) | Closed=0 | Cash=$20.79 | Equity=$33.47 (DD=5.22%)
