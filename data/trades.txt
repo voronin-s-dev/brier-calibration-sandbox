@@ -1801,3 +1801,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus YES (96.5%) within 5.3h of expiry
 
 [2026-11-08 04:40:03 UTC] [CYCLE #457 SUMMARY] Scanned=781 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=8 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.21 | Equity=$33.22 (DD=5.95%)
+[EXIT] #113 | Counter-Strike: Natus Vincere vs BetBoom Team - Map 1 Winner (YES)
+  Shares: 2.95 | Entry VWAP: 0.9010 -> Exit Bid VWAP: 0.9990
+  Proceeds: $2.95 | Realized PnL: $+0.29 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +10.9% gain
+[2026-11-08 04:49:14 UTC] [OPEN TRADE #114] Spread: Chargers (-3.5)
+  Категория: Sports | Сторона: NO | Источник: https://www.nfl.com/scores
+  Оценка бота: 97.5% vs Рынок (Ask VWAP): 81.0% (Перекос/Edge: +16.5 п.п.)
+  Стакан CLOB: BestBid=0.800, BestAsk=0.810, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=86.8%, Четверть(0.25x)=34.7% -> Применён=8.0% банка
+  Размер сделки: $2.68 USDC (3.31 shares @ $0.8100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.486 if P_est <= 70%
+  Причина: Heavy handicap spread (-3.5+) is historically improbable
+
+[2026-11-08 04:49:14 UTC] [CYCLE #458 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=8 | Opened=1 (Shadow=0) | Closed=1 | Cash=$23.47 | Equity=$33.47 (DD=5.22%)
