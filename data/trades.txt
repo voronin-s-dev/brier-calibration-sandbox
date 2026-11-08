@@ -1986,3 +1986,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-08 20:10:12 UTC] [CYCLE #550 SUMMARY] Scanned=751 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=5 | Opened=0 (Shadow=0) | Closed=0 | Cash=$19.36 | Equity=$35.39 (DD=0.71%)
 [2026-11-08 20:19:19 UTC] [CYCLE #551 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=0 | Cash=$19.36 | Equity=$35.49 (DD=0.42%)
 [2026-11-08 20:30:54 UTC] [CYCLE #552 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=0 | Cash=$19.36 | Equity=$36.04 (DD=0.00%)
+[EXIT] #110 | Spread: Dolphins (-3.5) (NO)
+  Shares: 3.07 | Entry VWAP: 0.8400 -> Exit Bid VWAP: 0.9920
+  Proceeds: $3.05 | Realized PnL: $+0.47 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.2%) secured early with +18.1% gain
+[2026-11-08 20:40:06 UTC] [CYCLE #553 SUMMARY] Scanned=774 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=1 | Cash=$22.41 | Equity=$36.26 (DD=0.00%)
