@@ -1826,3 +1826,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-11-08 05:10:21 UTC] [CYCLE #460 SUMMARY] Scanned=781 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=9 | Opened=1 (Shadow=0) | Closed=0 | Cash=$20.79 | Equity=$33.47 (DD=5.22%)
 [2026-11-08 05:19:32 UTC] [CYCLE #461 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=7 | Opened=0 (Shadow=0) | Closed=0 | Cash=$20.79 | Equity=$33.45 (DD=5.28%)
+[2026-11-08 05:30:53 UTC] [OPEN TRADE #116] Counter-Strike: Natus Vincere vs BetBoom Team (BO3) - IEM Beijing Playoffs
+  Категория: Sports | Сторона: YES | Источник: https://hltv.org
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 89.0% (Перекос/Edge: +5.0 п.п.)
+  Стакан CLOB: BestBid=0.880, BestAsk=0.890, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=45.5%, Четверть(0.25x)=18.2% -> Применён=8.0% банка
+  Размер сделки: $2.68 USDC (3.01 shares @ $0.8900)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.534 if P_est <= 70%
+  Причина: High market consensus YES (90.5%) within 4.5h of expiry
+
+[2026-11-08 05:30:53 UTC] [CYCLE #462 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=8 | Opened=1 (Shadow=0) | Closed=0 | Cash=$18.11 | Equity=$33.45 (DD=5.29%)
