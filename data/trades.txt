@@ -1814,3 +1814,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: Heavy handicap spread (-3.5+) is historically improbable
 
 [2026-11-08 04:49:14 UTC] [CYCLE #458 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=8 | Opened=1 (Shadow=0) | Closed=1 | Cash=$23.47 | Equity=$33.47 (DD=5.22%)
+[2026-11-08 05:01:09 UTC] [CYCLE #459 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=8 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.47 | Equity=$33.47 (DD=5.22%)
