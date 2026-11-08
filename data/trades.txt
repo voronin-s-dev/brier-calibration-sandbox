@@ -1918,3 +1918,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-08 16:19:28 UTC] [CYCLE #527 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=6 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.35 | Equity=$34.11 (DD=3.41%)
 [2026-11-08 16:30:53 UTC] [CYCLE #528 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.35 | Equity=$34.11 (DD=3.41%)
 [2026-11-08 16:40:04 UTC] [CYCLE #529 SUMMARY] Scanned=763 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.35 | Equity=$34.11 (DD=3.41%)
+[2026-11-08 16:49:14 UTC] [OPEN TRADE #118] Counter-Strike: 6yuBoJlbl vs 9INE (BO3) - ESL Challenger League Europe Cup #11 Group C
+  Категория: Sports | Сторона: NO | Источник: https://hltv.org
+  Оценка бота: 96.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +5.0 п.п.)
+  Стакан CLOB: BestBid=0.890, BestAsk=0.910, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=55.6%, Четверть(0.25x)=22.2% -> Применён=8.0% банка
+  Размер сделки: $2.70 USDC (2.97 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: High market consensus NO (92.5%) within 3.2h of expiry
+
+[2026-11-08 16:49:14 UTC] [CYCLE #530 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=6 | Opened=1 (Shadow=0) | Closed=0 | Cash=$18.65 | Equity=$33.72 (DD=4.51%)
