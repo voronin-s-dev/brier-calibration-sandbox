@@ -1763,3 +1763,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-08 01:30:51 UTC] [CYCLE #438 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.58 | Equity=$32.96 (DD=6.67%)
 [2026-11-08 01:40:05 UTC] [CYCLE #439 SUMMARY] Scanned=792 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.58 | Equity=$32.96 (DD=6.67%)
 [2026-11-08 01:49:24 UTC] [CYCLE #440 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=5 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.58 | Equity=$32.96 (DD=6.67%)
+[2026-11-08 02:01:07 UTC] [OPEN TRADE #112] UFC Fight Night: Priscila Cachoeira vs. Nina Miloševic (Women's Bantamweight, Prelims)
+  Категория: Sports | Сторона: NO | Источник: https://www.ufc.com/events
+  Оценка бота: 98.5% vs Рынок (Ask VWAP): 90.0% (Перекос/Edge: +8.5 п.п.)
+  Стакан CLOB: BestBid=0.890, BestAsk=0.900, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=85.0%, Четверть(0.25x)=34.0% -> Применён=8.0% банка
+  Размер сделки: $2.64 USDC (2.93 shares @ $0.9000)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.540 if P_est <= 70%
+  Причина: High market consensus NO (95.0%) within 3.0h of expiry
+
+[2026-11-08 02:01:07 UTC] [CYCLE #441 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=8 | Opened=1 (Shadow=0) | Closed=0 | Cash=$22.94 | Equity=$32.93 (DD=6.76%)
