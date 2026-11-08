@@ -1837,3 +1837,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-11-08 05:30:53 UTC] [CYCLE #462 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=8 | Opened=1 (Shadow=0) | Closed=0 | Cash=$18.11 | Equity=$33.45 (DD=5.29%)
 [2026-11-08 05:40:06 UTC] [CYCLE #463 SUMMARY] Scanned=785 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=8 | Opened=0 (Shadow=0) | Closed=0 | Cash=$18.11 | Equity=$33.42 (DD=5.36%)
+[EXIT] #116 | Counter-Strike: Natus Vincere vs BetBoom Team (BO3) - IEM Beijing Playoffs (YES)
+  Shares: 3.01 | Entry VWAP: 0.8900 -> Exit Bid VWAP: 0.9950
+  Proceeds: $3.00 | Realized PnL: $+0.32 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.5%) secured early with +11.8% gain
+[2026-11-08 05:49:18 UTC] [OPEN TRADE #117] Brighton & Hove Albion FC vs. Brentford FC: O/U 5.5
+  Категория: Sports | Сторона: NO | Источник: https://www.premierleague.com/
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=33.3%, Четверть(0.25x)=13.3% -> Применён=8.0% банка
+  Размер сделки: $2.71 USDC (2.98 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: High market consensus NO (90.5%) within 8.2h of expiry
+
+[2026-11-08 05:49:18 UTC] [CYCLE #464 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=7 | Opened=1 (Shadow=0) | Closed=1 | Cash=$18.40 | Equity=$33.89 (DD=4.04%)
