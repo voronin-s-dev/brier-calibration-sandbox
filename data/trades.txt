@@ -1973,3 +1973,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-08 19:30:52 UTC] [CYCLE #546 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.19 | Equity=$34.66 (DD=1.87%)
 [2026-11-08 19:39:59 UTC] [CYCLE #547 SUMMARY] Scanned=767 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.19 | Equity=$34.96 (DD=1.01%)
 [2026-11-08 19:49:05 UTC] [CYCLE #548 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=5 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.19 | Equity=$35.51 (DD=0.00%)
+[2026-11-08 20:01:05 UTC] [OPEN TRADE #121] Spread: Buccaneers (-3.5)
+  Категория: Sports | Сторона: NO | Источник: https://www.nfl.com/scores
+  Оценка бота: 97.5% vs Рынок (Ask VWAP): 81.0% (Перекос/Edge: +16.5 п.п.)
+  Стакан CLOB: BestBid=0.790, BestAsk=0.810, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=86.8%, Четверть(0.25x)=34.7% -> Применён=8.0% банка
+  Размер сделки: $2.83 USDC (3.49 shares @ $0.8100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.486 if P_est <= 70%
+  Причина: Heavy handicap spread (-3.5+) is historically improbable
+
+[2026-11-08 20:01:05 UTC] [CYCLE #549 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=8 | Opened=1 (Shadow=0) | Closed=0 | Cash=$19.36 | Equity=$35.36 (DD=0.78%)
