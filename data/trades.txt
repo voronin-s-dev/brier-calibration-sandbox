@@ -1992,3 +1992,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-08 20:40:06 UTC] [CYCLE #553 SUMMARY] Scanned=774 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=1 | Cash=$22.41 | Equity=$36.26 (DD=0.00%)
 [2026-11-08 20:49:16 UTC] [CYCLE #554 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.41 | Equity=$36.05 (DD=0.58%)
 [2026-11-08 21:01:07 UTC] [CYCLE #555 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.41 | Equity=$35.96 (DD=0.84%)
+[2026-11-08 21:10:17 UTC] [OPEN TRADE #122] Counter-Strike: Ryvex vs Drama eSports (BO3) - CCT Europe Closed Qualifier: Series Group D
+  Категория: Sports | Сторона: YES | Источник: https://hltv.org
+  Оценка бота: 98.5% vs Рынок (Ask VWAP): 86.6% (Перекос/Edge: +11.9 п.п.)
+  Стакан CLOB: BestBid=0.850, BestAsk=0.866, Проскальзывание входа/выхода=1.60% (<= 3.0%)
+  Келли: Полный=88.8%, Четверть(0.25x)=35.5% -> Применён=8.0% банка
+  Размер сделки: $2.92 USDC (3.37 shares @ $0.8660)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.520 if P_est <= 70%
+  Причина: High market consensus YES (95.0%) within 3.3h of expiry
+
+[2026-11-08 21:10:17 UTC] [CYCLE #556 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=5 | Opened=1 (Shadow=0) | Closed=0 | Cash=$19.49 | Equity=$36.41 (DD=0.15%)
