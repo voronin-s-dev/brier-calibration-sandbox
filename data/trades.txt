@@ -1773,3 +1773,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus NO (95.0%) within 3.0h of expiry
 
 [2026-11-08 02:01:07 UTC] [CYCLE #441 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=8 | Opened=1 (Shadow=0) | Closed=0 | Cash=$22.94 | Equity=$32.93 (DD=6.76%)
+[EXIT] #112 | UFC Fight Night: Priscila Cachoeira vs. Nina Miloševic (Women's Bantamweight, Prelims) (NO)
+  Shares: 2.93 | Entry VWAP: 0.9000 -> Exit Bid VWAP: 0.9990
+  Proceeds: $2.93 | Realized PnL: $+0.29 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +11.0% gain
+[2026-11-08 02:10:19 UTC] [CYCLE #442 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=7 | Opened=0 (Shadow=0) | Closed=1 | Cash=$25.87 | Equity=$33.25 (DD=5.85%)
