@@ -1747,3 +1747,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-08 00:10:19 UTC] [CYCLE #431 SUMMARY] Scanned=772 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=4 | Opened=1 (Shadow=0) | Closed=1 | Cash=$17.09 | Equity=$32.10 (DD=9.11%)
 [2026-11-08 00:30:52 UTC] [CYCLE #432 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$17.09 | Equity=$31.44 (DD=10.97%)
 [2026-11-08 00:40:04 UTC] [CYCLE #433 SUMMARY] Scanned=790 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$17.09 | Equity=$32.04 (DD=9.27%)
+[EXIT] #106 | LoL: Invictus Gaming vs Gen.G (BO5) - Worlds Playoffs (NO)
+  Shares: 2.81 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9990
+  Proceeds: $2.81 | Realized PnL: $+0.25 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +9.8% gain
+[EXIT] #108 | Games Total: O/U 4.5 (NO)
+  Shares: 2.79 | Entry VWAP: 0.9200 -> Exit Bid VWAP: 0.9990
+  Proceeds: $2.79 | Realized PnL: $+0.22 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +8.6% gain
+[EXIT] #111 | Game Handicap: GEN (-1.5) vs Invictus Gaming (+1.5) (YES)
+  Shares: 2.89 | Entry VWAP: 0.8900 -> Exit Bid VWAP: 0.9990
+  Proceeds: $2.88 | Realized PnL: $+0.31 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +12.2% gain
+[2026-11-08 00:49:16 UTC] [CYCLE #434 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=3 | Cash=$25.58 | Equity=$32.96 (DD=6.67%)
