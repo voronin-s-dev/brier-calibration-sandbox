@@ -1,14 +1,14 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-08 11:30:59 UTC`
+**Обновлено:** `2026-11-08 11:40:08 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$33.89 USDC`** (`-16.11$` / `-32.22%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$18.40` / `$15.49 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-16.11 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `4.03%` / `24.45%` (Пик: `$35.32`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$33.93 USDC`** (`-16.07$` / `-32.15%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$18.40` / `$15.53 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-16.07 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `3.94%` / `24.45%` (Пик: `$35.32`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `94` / `78.7%` | Brier Score: `0.1849` |
 
 ## 📂 Открытые позиции (6 / 8)
@@ -18,7 +18,7 @@
 | #107 | Spread: Commanders (-3.5) | Sports | **NO** | `0.790` | `0.780` | `97.5%` | `$2.56` | `$-0.03` | https://www.nfl.com/scores |
 | #110 | Spread: Dolphins (-3.5) | Sports | **NO** | `0.840` | `0.830` | `97.5%` | `$2.58` | `$-0.03` | https://www.nfl.com/scores |
 | #114 | Spread: Chargers (-3.5) | Sports | **NO** | `0.810` | `0.800` | `97.5%` | `$2.68` | `$-0.03` | https://www.nfl.com/scores |
-| #115 | Will FC RFS win on 2026-11-08? | Sports | **NO** | `0.919` | `0.964` | `98.5%` | `$2.68` | `$+0.13` | https://www.virsliga.lv/ |
+| #115 | Will FC RFS win on 2026-11-08? | Sports | **NO** | `0.919` | `0.976` | `98.5%` | `$2.68` | `$+0.17` | https://www.virsliga.lv/ |
 | #117 | Brighton & Hove Albion FC vs. Brentford FC: O/U 5.5 | Sports | **NO** | `0.910` | `0.900` | `94.0%` | `$2.71` | `$-0.03` | https://www.premierleague.com/ |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
@@ -35,6 +35,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Spread: Cowboys (-4.5) | Sports | NO | `97.5%` | `52.0%` | `+45.5 п.п.` | `1.00%` | REJECTED: Contract price $0.520 outside sweet spot [$0.76, $0.92] |
 | Spread: Rams (-3.5) | Sports | NO | `97.5%` | `48.0%` | `+49.5 п.п.` | `1.00%` | REJECTED: Contract price $0.480 outside sweet spot [$0.76, $0.92] |
 | Dota 2: CyberHero vs angry birds - Game 1 Winner | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
 | Spread: Eagles (-3.5) | Sports | NO | `97.5%` | `73.0%` | `+24.5 п.п.` | `1.00%` | REJECTED: Contract price $0.730 outside sweet spot [$0.76, $0.92] |
@@ -43,7 +44,7 @@
 | Spread: Rams (-4.5) | Sports | NO | `97.5%` | `51.0%` | `+46.5 п.п.` | `1.00%` | REJECTED: Contract price $0.510 outside sweet spot [$0.76, $0.92] |
 | Spread: Bengals (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.92] |
 | Spread: Giants (-3.5) | Sports | NO | `97.5%` | `56.0%` | `+41.5 п.п.` | `1.00%` | REJECTED: Contract price $0.560 outside sweet spot [$0.76, $0.92] |
-| Spread: Cowboys (-4.5) | Sports | NO | `97.5%` | `51.0%` | `+46.5 п.п.` | `1.00%` | REJECTED: Contract price $0.510 outside sweet spot [$0.76, $0.92] |
+| Dota 2: Power Rangers vs PlayTime - Game 1 Winner | Sports | NO | `98.0%` | `92.6%` | `+5.4 п.п.` | `2.90%` | REJECTED: Contract price $0.926 outside sweet spot [$0.76, $0.92] |
 | Spread: Rams (-3.5) | Sports | NO | `97.5%` | `48.0%` | `+49.5 п.п.` | `1.00%` | REJECTED: Contract price $0.480 outside sweet spot [$0.76, $0.92] |
 | Dota 2: CyberHero vs angry birds - Game 1 Winner | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
 | Spread: Eagles (-3.5) | Sports | NO | `97.5%` | `73.0%` | `+24.5 п.п.` | `1.00%` | REJECTED: Contract price $0.730 outside sweet spot [$0.76, $0.92] |
@@ -52,4 +53,3 @@
 | Spread: Rams (-4.5) | Sports | NO | `97.5%` | `51.0%` | `+46.5 п.п.` | `1.00%` | REJECTED: Contract price $0.510 outside sweet spot [$0.76, $0.92] |
 | Spread: Bengals (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.92] |
 | Spread: Giants (-3.5) | Sports | NO | `97.5%` | `56.0%` | `+41.5 п.п.` | `1.00%` | REJECTED: Contract price $0.560 outside sweet spot [$0.76, $0.92] |
-| Spread: Cowboys (-4.5) | Sports | NO | `97.5%` | `51.0%` | `+46.5 п.п.` | `1.00%` | REJECTED: Contract price $0.510 outside sweet spot [$0.76, $0.92] |
