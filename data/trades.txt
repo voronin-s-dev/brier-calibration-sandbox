@@ -2002,3 +2002,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus YES (95.0%) within 3.3h of expiry
 
 [2026-11-08 21:10:17 UTC] [CYCLE #556 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=5 | Opened=1 (Shadow=0) | Closed=0 | Cash=$19.49 | Equity=$36.41 (DD=0.15%)
+[EXIT] #107 | Spread: Commanders (-3.5) (NO)
+  Shares: 3.24 | Entry VWAP: 0.7900 -> Exit Bid VWAP: 0.9990
+  Proceeds: $3.24 | Realized PnL: $+0.68 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +26.5% gain
+[EXIT] #122 | Counter-Strike: Ryvex vs Drama eSports (BO3) - CCT Europe Closed Qualifier: Series Group D (YES)
+  Shares: 3.37 | Entry VWAP: 0.8660 -> Exit Bid VWAP: 0.9990
+  Proceeds: $3.37 | Realized PnL: $+0.45 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +15.4% gain
+[2026-11-08 21:19:25 UTC] [CYCLE #557 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=2 | Cash=$26.10 | Equity=$37.14 (DD=0.00%)
