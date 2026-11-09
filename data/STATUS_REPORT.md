@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-09 06:49:14 UTC`
+**Обновлено:** `2026-11-09 07:01:17 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -46,5 +46,5 @@
 | Spread: Bills (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.92] |
 | Spread: Rockets (-4.5) | Sports | NO | `97.5%` | `36.4%` | `+61.1 п.п.` | `2.42%` | REJECTED: Contract price $0.364 outside sweet spot [$0.76, $0.92] |
 | Spread: Bills (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.92] |
-| Spread: Rockets (-4.5) | Sports | NO | `97.5%` | `36.0%` | `+61.5 п.п.` | `2.00%` | REJECTED: Contract price $0.360 outside sweet spot [$0.76, $0.92] |
+| Spread: Rockets (-4.5) | Sports | NO | `97.5%` | `36.4%` | `+61.1 п.п.` | `2.42%` | REJECTED: Contract price $0.364 outside sweet spot [$0.76, $0.92] |
 | Spread: Bills (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.92] |
