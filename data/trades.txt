@@ -2121,3 +2121,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-09 09:40:06 UTC] [CYCLE #631 SUMMARY] Scanned=791 | PassedFilter=39 | Evaluated=3 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$39.29 | Equity=$39.29 (DD=0.00%)
 [2026-11-09 09:49:13 UTC] [CYCLE #632 SUMMARY] Scanned=799 | PassedFilter=43 | Evaluated=3 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$39.29 | Equity=$39.29 (DD=0.00%)
 [2026-11-09 10:41:47 UTC] [CYCLE #633 SUMMARY] Scanned=795 | PassedFilter=42 | Evaluated=3 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$39.29 | Equity=$39.29 (DD=0.00%)
+[SHADOW EXEC] #1 | Will Elon Musk post 40-64 tweets from November 9 to November 11, 2026? (NO)
+  Category: Geopolitics | Shares: 3.09 @ 0.8000
+  Bet: $2.47 USDC | P_est: 83.5% | Edge: +3.5 pp
+[SHADOW EXEC] #2 | Will Kai Cenat finish his GTA marathon by November 10? (NO)
+  Category: Other | Shares: 3.23 @ 0.9300
+  Bet: $3.00 USDC | P_est: 95.0% | Edge: +2.0 pp
+[2026-11-09 11:18:45 UTC] [CYCLE #634 SUMMARY] Scanned=800 | PassedFilter=47 | Evaluated=8 | Edges(>=8pp)=3 | Opened=0 (Shadow=2) | Closed=0 | Cash=$39.29 | Equity=$39.29 (DD=0.00%)
