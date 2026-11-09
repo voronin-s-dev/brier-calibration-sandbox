@@ -392,6 +392,69 @@ class TestRiskManagementV2(unittest.TestCase):
         self.assertEqual(res_92.oracle_used, "MatureMarketConsensusOracle")
 
 
+    def test_sports_heavy_handicap_requires_high_market_consensus(self) -> None:
+        """Direction C: SportsHeavyHandicapOracle must NOT trigger on NBA/NFL point spreads (p ~ 0.50)."""
+        from oracles import HighConvictionFactOracle
+        from polymarket_api import MarketInfo
+        oracle = HighConvictionFactOracle()
+        def _mk(mid, q, prices):
+            return MarketInfo(
+                id=mid, question=q, slug=mid, description="", resolution_source="https://official.org",
+                has_official_source=True, end_date_iso="2026-11-10T00:00:00Z", hours_to_close=12.0,
+                liquidity_usd=20000.0, volume_24h_usd=30000.0, outcomes=["Yes", "No"],
+                gamma_prices=prices, clob_token_ids=[f"t_{mid}_y", f"t_{mid}_n"],
+                order_min_size=1.0, tick_size=0.01, category="Sports", closed=False,
+            )
+        # NBA spread at 0.37 (even-money point spread) must NOT trigger
+        m_nba = _mk("m_nba", "Spread: Rockets (-4.5)", [0.63, 0.37])
+        res_nba = oracle.evaluate(m_nba)
+        self.assertIsNone(res_nba)
+
+        # Soccer severe blowout handicap at 0.88 MUST trigger
+        m_soccer = _mk("m_soccer", "Spread: Real Madrid (-3.5)", [0.12, 0.88])
+        res_soccer = oracle.evaluate(m_soccer)
+        self.assertIsNotNone(res_soccer)
+        self.assertEqual(res_soccer.oracle_used, "SportsHeavyHandicapOracle")
+        self.assertEqual(res_soccer.p_no, 0.975)
+
+    def test_trader_does_not_pick_inverted_underdog_on_resolved_markets(self) -> None:
+        """Direction C: Trader must not pick the 1.5% losing side when market is 100%/0%."""
+        from unittest.mock import MagicMock, patch
+        from database import SimDatabase
+        from polymarket_api import MarketInfo
+        from oracles import EvaluationResult
+        import tempfile
+        from trader import GrokCharterPaperTrader
+
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp:
+            db = SimDatabase(db_path=Path(tmp) / "test.db", initial_capital=50.0)
+            trader_instance = GrokCharterPaperTrader(db=db, trades_txt_path=Path(tmp) / "trades.txt")
+
+            m_decided = MarketInfo(
+                id="m_dec", question="Counter-Strike: Sökerorg vs Prestige - Map 2 Winner",
+                slug="m_dec", description="", resolution_source="https://official.org",
+                has_official_source=True, end_date_iso="2026-11-10T00:00:00Z", hours_to_close=3.0,
+                liquidity_usd=15000.0, volume_24h_usd=25000.0, outcomes=["Yes", "No"],
+                gamma_prices=[1.0, 0.0], clob_token_ids=["tok_y", "tok_n"],
+                order_min_size=1.0, tick_size=0.01, category="Sports", closed=False,
+            )
+
+            # Oracle consensus favors YES (0.985 vs 0.015)
+            eval_res = EvaluationResult(
+                market_id="m_dec", question=m_decided.question, category="Sports",
+                oracle_used="MatureMarketConsensusOracle", official_source="HLTV",
+                p_yes=0.985, p_no=0.015, confidence=0.92, rationale="High consensus",
+            )
+            trader_instance._evaluate_market_probability = MagicMock(return_value=(eval_res, None))
+
+            with patch("trader.fetch_active_markets", return_value=[m_decided]):
+                with patch("trader.simulate_clob_buy_and_exit_check") as mock_clob:
+                    res = trader_instance.run_cycle(max_markets_to_scan=5)
+                    # CLOB simulation should NEVER be called on the 1.5% underdog side!
+                    mock_clob.assert_not_called()
+                    self.assertEqual(res["trades_opened"], 0)
+
+
 if __name__ == "__main__":
     unittest.main()
 

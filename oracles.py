@@ -697,18 +697,21 @@ class HighConvictionFactOracle:
         # 2. Sports: Heavy underdog / draw
         if market.category == "Sports":
             if "spread:" in q_lower and ("-3.5" in q_lower or "-4.5" in q_lower):
-                p_no = 0.975
-                return EvaluationResult(
-                    market_id=market.id,
-                    question=market.question,
-                    category="Sports",
-                    oracle_used="SportsHeavyHandicapOracle",
-                    official_source=market.resolution_source or "Official Match Result",
-                    p_yes=round(1.0 - p_no, 4),
-                    p_no=round(p_no, 4),
-                    confidence=0.92,
-                    rationale="Heavy handicap spread (-3.5+) is historically improbable",
-                )
+                # Severe handicap is only improbable in low-scoring sports (soccer/hockey where p_no >= 0.85).
+                # In high-scoring sports (NBA/NFL), a -3.5 or -4.5 point spread is an even-money market (p ~ 0.50).
+                if p_no_mkt >= 0.85:
+                    p_no = 0.975
+                    return EvaluationResult(
+                        market_id=market.id,
+                        question=market.question,
+                        category="Sports",
+                        oracle_used="SportsHeavyHandicapOracle",
+                        official_source=market.resolution_source or "Official Match Result",
+                        p_yes=round(1.0 - p_no, 4),
+                        p_no=round(p_no, 4),
+                        confidence=0.92,
+                        rationale="Heavy handicap spread (-3.5+) is historically improbable",
+                    )
             if (" vs. " in q_lower or " vs " in q_lower) and "draw" in q_lower and p_no_mkt >= 0.88 and market.hours_to_close <= 24.0:
                 p_no = 0.965
                 return EvaluationResult(

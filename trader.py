@@ -663,19 +663,33 @@ class GrokCharterPaperTrader:
 
             evaluated_count += 1
 
-            # Determine which side (YES or NO) has positive divergence vs Gamma indicative price first
+            # Determine which side (YES or NO) satisfies high conviction (>= MIN_ESTIMATED_PROB) and has positive divergence
             gamma_yes, gamma_no = mkt.gamma_prices[0], mkt.gamma_prices[1]
             raw_edge_yes = eval_res.p_yes - gamma_yes
             raw_edge_no = eval_res.p_no - gamma_no
 
-            if raw_edge_yes >= raw_edge_no:
+            valid_yes = (eval_res.p_yes >= self.MIN_ESTIMATED_PROB) and (raw_edge_yes > 0)
+            valid_no = (eval_res.p_no >= self.MIN_ESTIMATED_PROB) and (raw_edge_no > 0)
+
+            if valid_yes and valid_no:
+                if raw_edge_yes >= raw_edge_no:
+                    chosen_side = "YES"
+                    token_id = mkt.clob_token_ids[0]
+                    p_est = eval_res.p_yes
+                else:
+                    chosen_side = "NO"
+                    token_id = mkt.clob_token_ids[1]
+                    p_est = eval_res.p_no
+            elif valid_yes:
                 chosen_side = "YES"
                 token_id = mkt.clob_token_ids[0]
                 p_est = eval_res.p_yes
-            else:
+            elif valid_no:
                 chosen_side = "NO"
                 token_id = mkt.clob_token_ids[1]
                 p_est = eval_res.p_no
+            else:
+                continue
 
             # Refresh portfolio state before sizing
             pf = self.db.get_portfolio()

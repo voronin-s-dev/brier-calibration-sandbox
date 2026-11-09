@@ -1,23 +1,15 @@
 {
   "0": "GrokCharterPaperTrader",
   "1": "SimDatabase",
-  "2": "WeatherOracle",
+  "2": "CryptoOracle",
   "3": "trader.py",
   "4": "AutoGovernor",
-  "5": "TestRiskManagementV2",
+  "5": "Матрица проверок риск-менеджмента (tests_risk.py)",
   "6": "🧠 Реестр авто-доработок и полуавтоматических решений (Auto-Governor)",
   "7": "📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)",
   "8": "README.md",
   "9": "Polymarket Simulation and Agentic Market Architecture",
-  "10": ".test_shadow_candidate_funnel_not_starved",
-  "11": "MarketInfo",
-  "12": "Daily Focus: 2026-11-09",
-  "13": ".test_e2e_dual_track_execution",
-  "14": "progress.md",
+  "10": "http_tls.py",
   "15": ".test_reports_cadence_stale_warning",
-  "16": "CryptoOracle",
-  "17": "NewsAndOrderbookOracle",
-  "18": "Карта проверок проекта (Checks Map): Polymarket-Sim",
-  "19": "Разбор 2026-11-07: ложное утверждение об остановке симулятора из-за локального статуса",
-  "20": "Спецификация: Risk Management & Budget Protection v2"
+  "19": "Разбор 2026-11-07: ложное утверждение об остановке симулятора из-за локального статуса"
 }
