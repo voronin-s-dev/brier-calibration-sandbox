@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-09 04:49:13 UTC`
+**Обновлено:** `2026-11-09 05:01:16 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -30,6 +30,9 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Spread: Rockets (-4.5) | Sports | NO | `97.5%` | `36.0%` | `+61.5 п.п.` | `2.00%` | REJECTED: Contract price $0.360 outside sweet spot [$0.76, $0.92] |
+| Rainbow Six Siege: FaZe Clan vs Falcons Esport (BO | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
+| Spread: Bills (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.92] |
 | Spread: Rockets (-4.5) | Sports | NO | `97.5%` | `35.4%` | `+62.1 п.п.` | `1.44%` | REJECTED: Contract price $0.354 outside sweet spot [$0.76, $0.92] |
 | Spread: Bills (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.92] |
 | Spread: Bills (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.92] |
@@ -45,6 +48,3 @@
 | Spread: Bills (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.92] |
 | Spread: Rockets (-4.5) | Sports | NO | `97.5%` | `35.4%` | `+62.1 п.п.` | `1.43%` | REJECTED: Contract price $0.354 outside sweet spot [$0.76, $0.92] |
 | Spread: Bills (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.92] |
-| Spread: Rockets (-4.5) | Sports | NO | `97.5%` | `35.4%` | `+62.1 п.п.` | `1.43%` | REJECTED: Contract price $0.354 outside sweet spot [$0.76, $0.92] |
-| Spread: Bills (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.92] |
-| Spread: Rockets (-4.5) | Sports | NO | `97.5%` | `35.9%` | `+61.7 п.п.` | `1.85%` | REJECTED: Contract price $0.358 outside sweet spot [$0.76, $0.92] |
