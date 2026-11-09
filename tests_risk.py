@@ -13,13 +13,21 @@ import tempfile
 import unittest
 from pathlib import Path
 
+import os
+os.environ["TESTING"] = "1"
+
+import auto_governor
 from auto_governor import AutoGovernor
 from database import SimDatabase
 from oracles import calibrate_probability
+import trader
 from trader import GrokCharterPaperTrader, extract_event_key
 import telegram_notify
+
 # Silence live Telegram alerts during test suite execution
 telegram_notify.send_telegram_alert = lambda text: False
+auto_governor.send_telegram_alert = lambda text: False
+trader.send_telegram_alert = lambda text: False
 
 
 class TestRiskManagementV2(unittest.TestCase):

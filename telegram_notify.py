@@ -43,6 +43,9 @@ def _plural_deals(n: int) -> str:
 
 def send_telegram_alert(text: str) -> bool:
     """Sends a message via Telegram Bot API if token and chat_id are configured."""
+    if os.getenv("PYTEST_CURRENT_TEST") or os.getenv("TESTING") == "1" or getattr(send_telegram_alert, "_silenced", False):
+        return False
+
     fallback = _load_env_fallback()
     token = os.getenv("TELEGRAM_BOT_TOKEN") or fallback.get("TELEGRAM_BOT_TOKEN", "")
     chat_id = os.getenv("ALLOWED_CHAT_ID") or fallback.get("ALLOWED_CHAT_ID", "")
