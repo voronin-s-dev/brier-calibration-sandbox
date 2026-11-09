@@ -2047,3 +2047,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus YES (90.5%) within 3.0h of expiry
 
 [2026-11-09 01:10:12 UTC] [CYCLE #580 SUMMARY] Scanned=778 | PassedFilter=45 | Evaluated=11 | Edges(>=8pp)=5 | Opened=1 (Shadow=0) | Closed=0 | Cash=$29.23 | Equity=$37.80 (DD=0.23%)
+[2026-11-09 01:19:18 UTC] [OPEN TRADE #124] Games Total: O/U 4.5
+  Категория: Sports | Сторона: NO | Источник: https://gol.gg/esports/home
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 90.0% (Перекос/Edge: +4.0 п.п.)
+  Стакан CLOB: BestBid=0.890, BestAsk=0.900, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=40.0%, Четверть(0.25x)=16.0% -> Применён=8.0% банка
+  Размер сделки: $3.04 USDC (3.38 shares @ $0.9000)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.540 if P_est <= 70%
+  Причина: High market consensus NO (90.5%) within 2.8h of expiry
+
+[2026-11-09 01:19:18 UTC] [CYCLE #581 SUMMARY] Scanned=797 | PassedFilter=23 | Evaluated=9 | Edges(>=8pp)=4 | Opened=1 (Shadow=0) | Closed=0 | Cash=$26.19 | Equity=$37.97 (DD=0.09%)
