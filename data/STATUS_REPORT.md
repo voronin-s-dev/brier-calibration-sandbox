@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-09 06:10:25 UTC`
+**Обновлено:** `2026-11-09 06:19:33 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -38,6 +38,8 @@
 | Spread: Bills (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.92] |
 | Spread: Rockets (-4.5) | Sports | NO | `97.5%` | `36.4%` | `+61.1 п.п.` | `2.42%` | REJECTED: Contract price $0.364 outside sweet spot [$0.76, $0.92] |
 | Spread: Bills (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.92] |
+| Spread: Rockets (-4.5) | Sports | NO | `97.5%` | `36.4%` | `+61.1 п.п.` | `2.42%` | REJECTED: Contract price $0.364 outside sweet spot [$0.76, $0.92] |
+| Spread: Bills (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.92] |
 | Spread: Rockets (-4.5) | Sports | NO | `97.5%` | `36.0%` | `+61.5 п.п.` | `2.00%` | REJECTED: Contract price $0.360 outside sweet spot [$0.76, $0.92] |
 | Spread: Bills (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.92] |
 | Spread: Rockets (-4.5) | Sports | NO | `97.5%` | `36.0%` | `+61.5 п.п.` | `2.00%` | REJECTED: Contract price $0.360 outside sweet spot [$0.76, $0.92] |
@@ -46,5 +48,3 @@
 | Rainbow Six Siege: FaZe Clan vs Falcons Esport (BO | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
 | Spread: Bills (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.92] |
 | Spread: Rockets (-4.5) | Sports | NO | `97.5%` | `36.0%` | `+61.5 п.п.` | `2.00%` | REJECTED: Contract price $0.360 outside sweet spot [$0.76, $0.92] |
-| Rainbow Six Siege: FaZe Clan vs Falcons Esport (BO | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
-| Spread: Bills (-3.5) | Sports | NO | `97.5%` | `54.0%` | `+43.5 п.п.` | `1.00%` | REJECTED: Contract price $0.540 outside sweet spot [$0.76, $0.92] |
