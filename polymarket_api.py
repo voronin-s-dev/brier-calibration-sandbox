@@ -284,6 +284,7 @@ def simulate_clob_buy_and_exit_check(
     side_label: str,
     bet_usdc: float,
     max_slippage_pct: float = 0.03,
+    preloaded_book: Optional[Dict[str, List[Tuple[float, float]]]] = None,
 ) -> OrderBookSimulation:
     """
     Walks the real CLOB orderbook to simulate:
@@ -291,7 +292,7 @@ def simulate_clob_buy_and_exit_check(
     2) Immediately selling those exact `shares_filled` across the Bids (highest bid downwards)
        to verify Rule #6: "входи, только если выйдешь из всей позиции с проскальзыванием до 3%".
     """
-    book = fetch_clob_book(token_id)
+    book = preloaded_book or fetch_clob_book(token_id)
     bids = book["bids"]
     asks = book["asks"]
 

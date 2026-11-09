@@ -79,7 +79,7 @@ class TestShadowTrader(unittest.TestCase):
         self.assertEqual(len(shadow_cand), 1)
         self.assertEqual(shadow_cand[0].id, "m_cr_1")
 
-    @patch("trader.simulate_clob_buy_and_exit_check")
+    @patch("trader.simulate_clob_buy_and_exit_check", autospec=True)
     def test_shadow_trade_execution(self, mock_buy: MagicMock) -> None:
         """Shadow trade meeting Edge >= 8% opens position in shadow_positions with shadow cash."""
         # Mock CLOB buy simulation
@@ -163,6 +163,25 @@ class TestShadowTrader(unittest.TestCase):
         # Shadow cash: 46.00 + 10.00 = 56.00
         shadow_pf = self.db.get_shadow_portfolio()
         self.assertAlmostEqual(float(shadow_pf["cash_usdc"]), 56.00, places=2)
+
+    def test_simulate_clob_buy_accepts_preloaded_book(self) -> None:
+        """Verify simulate_clob_buy_and_exit_check accepts preloaded_book without making network requests."""
+        from polymarket_api import simulate_clob_buy_and_exit_check
+        dummy_book = {
+            "bids": [[0.50, 100.0], [0.49, 200.0]],
+            "asks": [[0.52, 100.0], [0.53, 200.0]],
+        }
+        res = simulate_clob_buy_and_exit_check(
+            token_id="tok_dummy",
+            side_label="YES",
+            bet_usdc=2.00,
+            max_slippage_pct=0.03,
+            preloaded_book=dummy_book,
+        )
+        self.assertTrue(res.sufficient_depth)
+        self.assertEqual(res.best_ask, 0.52)
+        self.assertEqual(res.best_bid, 0.50)
+
 
 
 if __name__ == "__main__":

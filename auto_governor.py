@@ -161,9 +161,10 @@ class AutoGovernor:
             if not row:
                 return False, f"Предложение #{event_id} не найдено."
             now_str = datetime.now(timezone.utc).isoformat()
+            updated_explanation = f"{row['explanation']}\n\n[DISMISSED]: {reason}"
             conn.execute(
-                "UPDATE governance_events SET status = 'DISMISSED', resolved_at = ? WHERE id = ?",
-                (now_str, event_id),
+                "UPDATE governance_events SET status = 'DISMISSED', resolved_at = ?, explanation = ? WHERE id = ?",
+                (now_str, updated_explanation, event_id),
             )
             conn.commit()
         self.generate_governance_report()
@@ -486,40 +487,53 @@ class AutoGovernor:
         # ---------------------------------------------------------------------
         # 5. TIER 2 (Calibration): Brier Score Overconfidence Check (SEMI-AUTO)
         # ---------------------------------------------------------------------
-        res_batch = len(resolved_positions) // 15
-        if res_batch >= 1:
-            rule_key = f"tier2_brier_calibration_batch_{res_batch}"
-            if not self._rule_exists(rule_key):
-                brier_sum = 0.0
-                for p in resolved_positions:
-                    outcome = 1.0 if float(p["realized_pnl"]) > 0 else 0.0
-                    p_est = float(p["initial_p_est"])
-                    brier_sum += (p_est - outcome) ** 2
-                brier_score = brier_sum / len(resolved_positions)
+        if resolved_positions:
+            brier_sum = 0.0
+            for p in resolved_positions:
+                outcome = 1.0 if float(p["realized_pnl"]) > 0 else 0.0
+                p_est = float(p["initial_p_est"])
+                brier_sum += (p_est - outcome) ** 2
+            brier_score = brier_sum / len(resolved_positions)
 
-                if brier_score > 0.22 and oracle_w > 0.52:
-                    new_w = round(max(0.45, oracle_w - 0.12), 2)
-                    explanation = (
-                        f"По итогам {len(resolved_positions)} экспирировавшихся рынков Brier Score составил {brier_score:.4f} (порог нормы <= 0.2200). "
-                        f"Это означает, что оракул систематически переоценивает свою правоту относительно рыночной цены.\n"
-                        f"⚖️ Почему это спорный момент: снижение веса оракула (oracle_weight) с {oracle_w:.2f} до {new_w:.2f} "
-                        f"сделает байесовскую оценку ближе к рынку и уменьшит размер ставок по Келли, но отфильтрует пограничные сделки с Edge 8–10 п.п."
+            # Self-healing: if Brier score healed to normal range (<= 0.22), auto-dismiss pending proposals
+            if brier_score <= 0.22:
+                with self.db._connect() as conn:
+                    pending_brier = conn.execute(
+                        "SELECT id FROM governance_events WHERE rule_key LIKE 'tier2_brier_calibration_%' AND status = 'PENDING_APPROVAL'"
+                    ).fetchall()
+                for (p_id,) in pending_brier:
+                    self.dismiss_proposal(
+                        p_id,
+                        reason=f"Самоисцеление метрики: текущий Brier Score ({brier_score:.4f}) в норме (<= 0.2200), снижение веса оракула не требуется",
                     )
-                    ev_id = self._record_event(
-                        rule_key=rule_key,
-                        tier="TIER_2_CALIBRATION",
-                        mode="SEMI_AUTO",
-                        status="PENDING_APPROVAL",
-                        title=f"Калибровка Brier Score ({brier_score:.3f}): снизить вес оракула до {new_w}",
-                        explanation=explanation,
-                        action_dict={"oracle_weight": new_w},
-                    )
-                    triggered_events.append(ev_id)
-                    send_telegram_alert(
-                        f"🟡 <b>ТРЕБУЕТСЯ РЕШЕНИЕ #{ev_id} (Калибровка Brier Score)</b>\n"
-                        f"{explanation}\n\n"
-                        f"👉 Одобрить в Antigravity или командой:\n<code>python run_sim.py --approve {ev_id}</code>"
-                    )
+
+            res_batch = len(resolved_positions) // 15
+            if res_batch >= 1:
+                rule_key = f"tier2_brier_calibration_batch_{res_batch}"
+                if not self._rule_exists(rule_key):
+                    if brier_score > 0.22 and oracle_w > 0.52:
+                        new_w = round(max(0.45, oracle_w - 0.12), 2)
+                        explanation = (
+                            f"По итогам {len(resolved_positions)} экспирировавшихся рынков Brier Score составил {brier_score:.4f} (порог нормы <= 0.2200). "
+                            f"Это означает, что оракул систематически переоценивает свою правоту относительно рыночной цены.\n"
+                            f"⚖️ Почему это спорный момент: снижение веса оракула (oracle_weight) с {oracle_w:.2f} до {new_w:.2f} "
+                            f"сделает байесовскую оценку ближе к рынку и уменьшит размер ставок по Келли, но отфильтрует пограничные сделки с Edge 8–10 п.п."
+                        )
+                        ev_id = self._record_event(
+                            rule_key=rule_key,
+                            tier="TIER_2_CALIBRATION",
+                            mode="SEMI_AUTO",
+                            status="PENDING_APPROVAL",
+                            title=f"Калибровка Brier Score ({brier_score:.3f}): снизить вес оракула до {new_w}",
+                            explanation=explanation,
+                            action_dict={"oracle_weight": new_w},
+                        )
+                        triggered_events.append(ev_id)
+                        send_telegram_alert(
+                            f"🟡 <b>ТРЕБУЕТСЯ РЕШЕНИЕ #{ev_id} (Калибровка Brier Score)</b>\n"
+                            f"{explanation}\n\n"
+                            f"👉 Одобрить в Antigravity или командой:\n<code>python run_sim.py --approve {ev_id}</code>"
+                        )
 
         # ---------------------------------------------------------------------
         # 5. TIER 1 ARCHITECTURE UPGRADE: Stop-Loss, Realistic Edge, and Liquidity Unclogging
@@ -680,6 +694,18 @@ class AutoGovernor:
             for e in applied:
                 lines.extend([
                     f"- **#{e['id']} [{e['mode']} / {e['status']}] {e['title']}** (`{e['created_at'][:19]}`)",
+                    f"  - {e['explanation']}",
+                ])
+
+        dismissed = [e for e in events if e["status"] == "DISMISSED"]
+        if dismissed:
+            lines.extend([
+                "",
+                f"## ⚪ Отклонённые и утратившие актуальность предложения ({len(dismissed)})",
+            ])
+            for e in dismissed[:10]:
+                lines.extend([
+                    f"- **#{e['id']} [{e['status']}] {e['title']}** (`{e['created_at'][:19]}`)",
                     f"  - {e['explanation']}",
                 ])
 

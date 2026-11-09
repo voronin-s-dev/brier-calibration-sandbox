@@ -1,14 +1,14 @@
 {
   "auto_governor.py": {
-    "mtime": 1793707929.0104182,
-    "seen": 1793707981.9744744,
-    "ast_hash": "ed9ffb5acb9ed250be5fe91d9b09114f",
+    "mtime": 1794220817.432473,
+    "seen": 1794221091.4957361,
+    "ast_hash": "9b225f1124d0c5692c6d8342741b9d72",
     "semantic_hash": ""
   },
   "dashboard_gen.py": {
-    "mtime": 1793154233.0,
-    "seen": 1793707981.9744866,
-    "ast_hash": "605d7a575b48a40cc5a27b282c4180e8",
+    "mtime": 1794220866.968823,
+    "seen": 1794221091.4957597,
+    "ast_hash": "adda17be76c7dcf4cb3f963f06afbed5",
     "semantic_hash": ""
   },
   "data/custom_stations.json": {
@@ -36,10 +36,10 @@
     "semantic_hash": ""
   },
   "polymarket_api.py": {
-    "mtime": 1791837633.0,
-    "seen": 1793707981.9745128,
-    "ast_hash": "c75d47419e12e90c7166560e38ac136c",
-    "semantic_hash": "c75d47419e12e90c7166560e38ac136c"
+    "mtime": 1794220715.7337239,
+    "seen": 1794221091.4958336,
+    "ast_hash": "f68a5771cd56828eef07a168b81ad7f7",
+    "semantic_hash": ""
   },
   "run_sim.py": {
     "mtime": 1793154233.0,
@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "trader.py": {
-    "mtime": 1793707674.2540276,
-    "seen": 1793707981.9745495,
-    "ast_hash": "e8179825e8a27c6994df3ce70916f734",
+    "mtime": 1794220750.8675392,
+    "seen": 1794221091.495914,
+    "ast_hash": "726067b25b86a738c847dadf3e50939e",
     "semantic_hash": ""
   },
   "trigger_cloud.py": {
@@ -84,39 +84,39 @@
     "semantic_hash": ""
   },
   "data/GOVERNANCE_REPORT.md": {
-    "mtime": 1793707968.0823102,
-    "seen": 1793707981.9747941,
-    "ast_hash": "0520392ab3a8b3ba1ab0361be60f3290",
+    "mtime": 1794221001.574837,
+    "seen": 1794221091.4960232,
+    "ast_hash": "4f940e7b6c20664c7ed1e015b812e74b",
     "semantic_hash": ""
   },
   "data/STATUS_REPORT.md": {
-    "mtime": 1793707196.5229013,
-    "seen": 1793707981.9748006,
-    "ast_hash": "0c6edc1cdf82537795e1d72a2b0e5ea0",
+    "mtime": 1794221019.5795462,
+    "seen": 1794221091.4960318,
+    "ast_hash": "36335cc1f8b5327a251e091f33b77215",
     "semantic_hash": ""
   },
   "data/dashboard.html": {
-    "mtime": 1793707196.5250227,
-    "seen": 1793707981.9748042,
-    "ast_hash": "1f333d6a7be969842470568b41c0859e",
+    "mtime": 1794221019.5815454,
+    "seen": 1794221091.4960408,
+    "ast_hash": "d643403e289c7bafe525960fabbd9ef6",
     "semantic_hash": ""
   },
   "data/trades.txt": {
-    "mtime": 1793707196.5479712,
-    "seen": 1793707981.9748073,
-    "ast_hash": "8647168fba3c446a9272df5de0544906",
+    "mtime": 1794220033.8858202,
+    "seen": 1794221091.4960485,
+    "ast_hash": "fe0f463773f2c4d9d10c8ddcc8e6acb9",
     "semantic_hash": ""
   },
   "data/last_digest.json": {
-    "mtime": 1793707196.525553,
-    "seen": 1793707981.974496,
-    "ast_hash": "b7265784eab31f39dd2d973d60d07efb",
+    "mtime": 1794220033.8499532,
+    "seen": 1794221091.4957902,
+    "ast_hash": "48c663c91dea9adacf01eec24ba6f041",
     "semantic_hash": ""
   },
   ".agents/aar/checks-map.md": {
-    "mtime": 1793707541.7067246,
-    "seen": 1793707981.974556,
-    "ast_hash": "220e2839e4728f1ace9aad6b676db4c0",
+    "mtime": 1794018633.6534274,
+    "seen": 1794221091.4959316,
+    "ast_hash": "fa18345d72a1f9fb971d91885884b844",
     "semantic_hash": ""
   },
   ".specs/archive/2026-10-25_risk_management_v2.md": {
@@ -126,15 +126,15 @@
     "semantic_hash": ""
   },
   "test_e2e_shadow.py": {
-    "mtime": 1793155577.0,
-    "seen": 1793707981.9745286,
-    "ast_hash": "38f85e97edcf9ae86867333814968145",
+    "mtime": 1794018633.6589785,
+    "seen": 1794221091.4958613,
+    "ast_hash": "816f16964fe1ff6fd613b0e6cad40886",
     "semantic_hash": ""
   },
   "test_shadow_governor.py": {
-    "mtime": 1793155566.0,
-    "seen": 1793707981.9745324,
-    "ast_hash": "884287f3e3f0c6c6318c680c9123a80c",
+    "mtime": 1794220963.9004223,
+    "seen": 1794221091.4958699,
+    "ast_hash": "5345358771ddb41943a214a758c624c4",
     "semantic_hash": ""
   },
   "test_shadow_portfolio.py": {
@@ -144,15 +144,15 @@
     "semantic_hash": ""
   },
   "test_shadow_reports.py": {
-    "mtime": 1793155561.0,
-    "seen": 1793707981.97454,
-    "ast_hash": "d7db42ce3a759656863b6c86370b5c27",
+    "mtime": 1794018633.6605828,
+    "seen": 1794221091.4958878,
+    "ast_hash": "3e52a78ab6200a229522a843556fc9b9",
     "semantic_hash": ""
   },
   "test_shadow_trader.py": {
-    "mtime": 1793155561.0,
-    "seen": 1793707981.9745436,
-    "ast_hash": "66b3872d4a89eba4383acf2c2f714553",
+    "mtime": 1794220920.5637484,
+    "seen": 1794221091.4958963,
+    "ast_hash": "8a8e1f2c48b28aefb000779da682a798",
     "semantic_hash": ""
   },
   ".superpowers/sdd/2026-10-28-shadow-portfolio/progress.md": {
@@ -177,6 +177,24 @@
     "mtime": 1793201183.0,
     "seen": 1793707981.974562,
     "ast_hash": "84d6efd4f3a6dc7bdf442e5995f0d3ee",
+    "semantic_hash": ""
+  },
+  ".agents/aar/runs/2026-11-07-monitoring-cadence-degradation-aar.md": {
+    "mtime": 1794015876.7755117,
+    "seen": 1794221091.4959502,
+    "ast_hash": "f675ae7d58a0650351e68b067b308700",
+    "semantic_hash": ""
+  },
+  ".agents/aar/runs/2026-11-07-simulator-cloud-runtime-miss-aar.md": {
+    "mtime": 1794015378.3992436,
+    "seen": 1794221091.495959,
+    "ast_hash": "7a88d98a0c91405edb689714b56ed190",
+    "semantic_hash": ""
+  },
+  "DAILY_FOCUS.md": {
+    "mtime": 1794219909.0221374,
+    "seen": 1794221091.496005,
+    "ast_hash": "d5347987aaccc3ad5469afe3e33c776f",
     "semantic_hash": ""
   }
 }

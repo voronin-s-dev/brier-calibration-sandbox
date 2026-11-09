@@ -524,7 +524,7 @@ class GrokCharterPaperTrader:
                 p_est = eval_res.p_no
                 indicative_price = gamma_no
 
-            if not (0.15 <= p_est <= 0.85):
+            if not (0.15 <= p_est <= 0.95):
                 continue
 
             full_k, half_k, applied_size_pct, tentative_bet = self.compute_kelly_sizing(
@@ -546,7 +546,7 @@ class GrokCharterPaperTrader:
                     max_slippage_pct=max_slippage,
                     preloaded_book=preloaded_yes_book if chosen_side == "YES" else None,
                 )
-            except Exception:
+            except Exception as e:
                 continue
 
             real_edge = p_est - ob_sim.vwap_buy_price
@@ -703,6 +703,7 @@ class GrokCharterPaperTrader:
                     side_label=chosen_side,
                     bet_usdc=probe_bet_usdc,
                     max_slippage_pct=max_slippage,
+                    preloaded_book=preloaded_yes_book if chosen_side == "YES" else None,
                 )
             except Exception:
                 continue

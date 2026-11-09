@@ -87,6 +87,39 @@ class TestShadowGovernor(unittest.TestCase):
 
         self.assertEqual(len(rows), 0)
 
+    def test_brier_calibration_auto_dismissed_when_score_heals(self) -> None:
+        """When Brier score is <= 0.22, pending tier2_brier_calibration proposals must be auto-dismissed."""
+        ev_id = self.gov._record_event(
+            rule_key="tier2_brier_calibration_batch_1",
+            tier="TIER_2_CALIBRATION",
+            mode="SEMI_AUTO",
+            status="PENDING_APPROVAL",
+            title="Калибровка Brier Score (0.230)",
+            explanation="Old bad brier score",
+            action_dict={"oracle_weight": 0.53},
+        )
+        pos_id = self.db.open_position(
+            market_id="m_good", question="Good mkt", category="Sports", side="YES",
+            token_id="tok_g", shares=5.0, entry_vwap=0.85, cost_usdc=4.25,
+            current_bid=0.85, p_est=0.90, entry_edge=0.05, kelly_full_pct=0.10, kelly_half_pct=0.05,
+            applied_size_pct=0.05, roundtrip_slippage_pct=0.01, official_source="Official",
+            exit_condition="Exp", rationale="Good", end_date_iso="2026-10-30"
+        )
+        self.db.close_position(
+            pos_id=pos_id, status="RESOLVED", exit_vwap=1.00, proceeds_usdc=5.00,
+            exit_reason="Resolution", latest_p_est=0.95
+        )
+
+        self.gov.evaluate_portfolio_and_rules()
+
+        with self.db._connect() as conn:
+            row = conn.execute("SELECT status, explanation FROM governance_events WHERE id = ?", (ev_id,)).fetchone()
+
+        self.assertEqual(row["status"], "DISMISSED")
+        self.assertIn("[DISMISSED]:", row["explanation"])
+        self.assertIn("Самоисцеление метрики", row["explanation"])
+
+
 
 if __name__ == "__main__":
     unittest.main()

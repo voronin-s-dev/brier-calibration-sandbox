@@ -24,14 +24,14 @@ def generate_reports(
 ) -> Dict[str, str]:
     pf = db.recalculate_portfolio()
     open_pos = db.get_open_positions()
-    all_pos = db.get_all_positions(limit=100)
+    all_pos = db.get_all_positions(limit=5000)
     closed_pos = [p for p in all_pos if p["status"] in ("CLOSED", "RESOLVED")]
     candidates = db.get_recent_candidates(limit=35)
     cycles = db.get_scan_cycles(limit=25)
 
     shadow_pf = db.get_shadow_portfolio()
     shadow_open = db.get_open_shadow_positions()
-    shadow_all = db.get_all_shadow_positions(limit=50)
+    shadow_all = db.get_all_shadow_positions(limit=500)
     shadow_closed = [p for p in shadow_all if p["status"] in ("CLOSED", "RESOLVED")]
     shadow_stats = db.get_shadow_category_stats()
 
