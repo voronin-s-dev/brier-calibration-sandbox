@@ -2114,3 +2114,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-09 09:01:11 UTC] [CYCLE #627 SUMMARY] Scanned=800 | PassedFilter=37 | Evaluated=3 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$36.42 | Equity=$39.27 (DD=0.00%)
 [2026-11-09 09:10:18 UTC] [CYCLE #628 SUMMARY] Scanned=787 | PassedFilter=37 | Evaluated=3 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$36.42 | Equity=$39.28 (DD=0.00%)
 [2026-11-09 09:19:24 UTC] [CYCLE #629 SUMMARY] Scanned=799 | PassedFilter=38 | Evaluated=3 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$36.42 | Equity=$39.28 (DD=0.00%)
+[EXIT] #115 | Will FC RFS win on 2026-11-08? (NO)
+  Shares: 2.92 | Entry VWAP: 0.9190 -> Exit Bid VWAP: 0.9860
+  Proceeds: $2.88 | Realized PnL: $+0.20 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.6%) secured early with +7.3% gain
+[2026-11-09 09:30:59 UTC] [CYCLE #630 SUMMARY] Scanned=800 | PassedFilter=39 | Evaluated=3 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=1 | Cash=$39.29 | Equity=$39.29 (DD=0.00%)
