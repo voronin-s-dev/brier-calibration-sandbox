@@ -2346,3 +2346,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Other | Shares: 3.16 @ 0.5000
   Bet: $1.58 USDC | P_est: 55.8% | Edge: +5.8 pp
 [2026-11-10 13:01:15 UTC] [CYCLE #708 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$33.96 | Equity=$37.06 (DD=5.67%)
+[2026-11-10 13:10:23 UTC] [OPEN TRADE #129] Counter-Strike: FORZE Reload vs MOUZ NXT (BO3) - European Pro League Group C
+  Категория: Sports | Сторона: YES | Источник: https://hltv.org
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 88.0% (Перекос/Edge: +6.0 п.п.)
+  Стакан CLOB: BestBid=0.870, BestAsk=0.880, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=50.0%, Четверть(0.25x)=20.0% -> Применён=8.0% банка
+  Размер сделки: $2.97 USDC (3.38 shares @ $0.8800)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.528 if P_est <= 70%
+  Причина: High market consensus YES (90.5%) within 4.3h of expiry
+
+[2026-11-10 13:10:23 UTC] [CYCLE #709 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$30.99 | Equity=$37.03 (DD=5.76%)
