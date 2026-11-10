@@ -2426,3 +2426,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 7.52 @ 0.2100
   Bet: $1.58 USDC | P_est: 34.9% | Edge: +13.9 pp
 [2026-11-10 16:19:28 UTC] [CYCLE #728 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
+[SHADOW EXIT] #27 | Will Kai Cenat finish his GTA marathon by November 11, 7:59 AM ET? (NO)
+  Shares: 3.74 | Entry VWAP: 0.2700 -> Exit Bid VWAP: 0.3600
+  Proceeds: $1.35 | Realized PnL: $+0.34 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +33.3% >= +12% (Bid VWAP: 0.3600 vs Entry: 0.2700)
+[SHADOW EXIT] #28 | Will Bitcoin dip to $72,000 on November 10? (YES)
+  Shares: 7.52 | Entry VWAP: 0.2100 -> Exit Bid VWAP: 0.3100
+  Proceeds: $2.33 | Realized PnL: $+0.75 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +47.6% >= +12% (Bid VWAP: 0.3100 vs Entry: 0.2100)
+[SHADOW EXEC] #29 | Will Kai Cenat finish his GTA marathon by November 11, 7:59 AM ET? (NO)
+  Category: Other | Shares: 5.16 @ 0.3800
+  Bet: $1.96 USDC | P_est: 45.8% | Edge: +7.8 pp
+[SHADOW EXEC] #30 | Will Bitcoin dip to $72,000 on November 10? (YES)
+  Category: Crypto | Shares: 7.41 @ 0.3200
+  Bet: $2.37 USDC | P_est: 40.2% | Edge: +8.2 pp
+[2026-11-10 16:30:57 UTC] [CYCLE #729 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
