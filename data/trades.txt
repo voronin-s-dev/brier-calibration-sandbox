@@ -2174,3 +2174,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-10 02:39:59 UTC] [CYCLE #648 SUMMARY] Scanned=774 | PassedFilter=36 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$36.15 | Equity=$39.26 (DD=0.09%)
 [2026-11-10 02:49:05 UTC] [CYCLE #649 SUMMARY] Scanned=799 | PassedFilter=37 | Evaluated=2 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$36.15 | Equity=$39.26 (DD=0.09%)
 [2026-11-10 03:01:10 UTC] [CYCLE #650 SUMMARY] Scanned=800 | PassedFilter=35 | Evaluated=0 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$36.15 | Equity=$39.26 (DD=0.09%)
+[SHADOW EXIT] #6 | Will Kai Cenat finish his GTA marathon by November 11, 2:59 PM ET? (NO)
+  Shares: 2.38 | Entry VWAP: 0.5800 -> Exit Bid VWAP: 0.4700
+  Proceeds: $1.12 | Realized PnL: $-0.26 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 18.7 pp (0.618 -> 0.430)
+[SHADOW EXEC] #8 | Will Kai Cenat finish his GTA marathon by November 11, 2:59 PM ET? (YES)
+  Category: Other | Shares: 2.19 @ 0.5300
+  Bet: $1.16 USDC | P_est: 57.0% | Edge: +4.0 pp
+[2026-11-10 03:10:16 UTC] [CYCLE #651 SUMMARY] Scanned=794 | PassedFilter=34 | Evaluated=0 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$36.15 | Equity=$39.26 (DD=0.09%)
