@@ -617,30 +617,33 @@ class TestRiskManagementV2(unittest.TestCase):
         Verifies that send_telegram_alert suppresses identical duplicate text messages
         within the deduplication window.
         """
-        from telegram_notify import send_telegram_alert
         import telegram_notify
         import tempfile
+        from unittest.mock import patch, MagicMock
 
         with tempfile.TemporaryDirectory() as tmpdir:
             test_cache = Path(tmpdir) / "notified_alerts_cache.json"
             
-            with unittest.mock.patch("telegram_notify.Path", lambda *args: test_cache if "notified_alerts_cache.json" in str(args) else Path(*args)):
-                with unittest.mock.patch.dict("os.environ", {"PYTEST_CURRENT_TEST": "", "TESTING": "", "TELEGRAM_BOT_TOKEN": "mock", "ALLOWED_CHAT_ID": "123"}):
-                    with unittest.mock.patch("urllib.request.urlopen") as mock_url:
-                        mock_resp = unittest.mock.MagicMock()
-                        mock_resp.status = 200
-                        mock_url.return_value.__enter__.return_value = mock_resp
+            with patch.dict("os.environ", {"TELEGRAM_BOT_TOKEN": "mock_token", "ALLOWED_CHAT_ID": "123", "TESTING": "0"}):
+                with patch("telegram_notify.urllib.request.urlopen") as mock_url:
+                    mock_resp = MagicMock()
+                    mock_resp.status = 200
+                    mock_url.return_value.__enter__.return_value = mock_resp
 
-                        msg = "⚙️ ОДОБРЕНА ДОРАБОТКА #999"
-                        # First send succeeds and hits HTTP API
-                        first_res = telegram_notify._raw_send_telegram_alert(msg, dedup=True, dedup_window_sec=3600)
-                        self.assertTrue(first_res)
-                        self.assertEqual(mock_url.call_count, 1)
+                    msg = "⚙️ ОДОБРЕНА ДОРАБОТКА #999"
+                    # First send succeeds and hits HTTP API
+                    first_res = telegram_notify._raw_send_telegram_alert(
+                        msg, dedup=True, dedup_window_sec=3600, cache_file_override=test_cache
+                    )
+                    self.assertTrue(first_res)
+                    self.assertEqual(mock_url.call_count, 1)
 
-                        # Second identical send is suppressed without making HTTP API call
-                        second_res = telegram_notify._raw_send_telegram_alert(msg, dedup=True, dedup_window_sec=3600)
-                        self.assertTrue(second_res)
-                        self.assertEqual(mock_url.call_count, 1)
+                    # Second identical send is suppressed without making HTTP API call
+                    second_res = telegram_notify._raw_send_telegram_alert(
+                        msg, dedup=True, dedup_window_sec=3600, cache_file_override=test_cache
+                    )
+                    self.assertTrue(second_res)
+                    self.assertEqual(mock_url.call_count, 1)
 
 
 if __name__ == "__main__":

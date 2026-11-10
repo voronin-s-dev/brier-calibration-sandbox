@@ -43,13 +43,18 @@ def _plural_deals(n: int) -> str:
     return f"{n} сделок"
 
 
-def send_telegram_alert(text: str, dedup: bool = True, dedup_window_sec: int = 3600) -> bool:
+def send_telegram_alert(
+    text: str,
+    dedup: bool = True,
+    dedup_window_sec: int = 3600,
+    cache_file_override: Optional[Path] = None,
+) -> bool:
     """Sends a message via Telegram Bot API with automatic content-hash deduplication."""
-    if os.getenv("PYTEST_CURRENT_TEST") or os.getenv("TESTING") == "1" or getattr(send_telegram_alert, "_silenced", False):
+    if (os.getenv("PYTEST_CURRENT_TEST") and not cache_file_override) or os.getenv("TESTING") == "1" or getattr(send_telegram_alert, "_silenced", False):
         return False
 
     # Universal Content Deduplication Cache
-    cache_file = Path(__file__).resolve().parent / "data" / "notified_alerts_cache.json"
+    cache_file = cache_file_override or (Path(__file__).resolve().parent / "data" / "notified_alerts_cache.json")
     content_hash = hashlib.sha256(text.strip().encode("utf-8")).hexdigest()
     now_ts = time.time()
 
