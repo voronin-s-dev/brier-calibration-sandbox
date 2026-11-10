@@ -2542,3 +2542,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus YES (90.5%) within 20.0h of expiry
 
 [2026-11-10 21:01:07 UTC] [CYCLE #759 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$26.81 | Equity=$37.30 (DD=5.07%)
+[2026-11-10 21:10:15 UTC] [OPEN TRADE #134] Will Ethereum dip to $2,000 on November 10?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/ETH_USDT
+  Оценка бота: 95.0% vs Рынок (Ask VWAP): 92.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.920, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=37.5%, Четверть(0.25x)=15.0% -> Применён=4.0% банка
+  Размер сделки: $1.49 USDC (1.62 shares @ $0.9200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.552 if P_est <= 70%
+  Причина: High market consensus NO (91.5%) within 7.8h of expiry
+
+[2026-11-10 21:10:15 UTC] [CYCLE #760 SUMMARY] Scanned=783 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=3 | Opened=1 (Shadow=0) | Closed=0 | Cash=$25.32 | Equity=$37.29 (DD=5.08%)
