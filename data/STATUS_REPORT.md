@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-10 17:49:20 UTC`
+**Обновлено:** `2026-11-10 18:01:15 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -19,26 +19,26 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$56.50 USDC`** |
-| **Свободный кэш / В сделках** | `$49.19` / `$7.31 USDC` |
+| **Виртуальный баланс (Equity)** | **`$56.24 USDC`** |
+| **Свободный кэш / В сделках** | `$48.98` / `$7.25 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `1.28%` |
+| **Текущая просадка** | `1.75%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `54.6%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
-| #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.2%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
-| #29 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **NO** | `0.380` | `0.380` | `44.5%` | `$1.96` | `$+0.00` | https://www.twitch.tv/kaicenat |
+| #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `54.7%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
+| #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.1%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
 | #31 | Total Kills Over/Under 27.5 in Game 3? | Other | **YES** | `0.510` | `0.490` | `54.0%` | `$1.15` | `$-0.05` | https://gol.gg/esports/home |
-| #34 | Will the price of Ethereum be above $2,000 on November  | Crypto | **NO** | `0.371` | `0.324` | `39.1%` | `$1.50` | `$-0.19` | https://www.binance.com/en/tra |
+| #34 | Will the price of Ethereum be above $2,000 on November  | Crypto | **NO** | `0.371` | `0.296` | `33.5%` | `$1.50` | `$-0.30` | https://www.binance.com/en/tra |
+| #35 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **YES** | `0.660` | `0.660` | `69.6%` | `$2.01` | `$+0.00` | https://www.twitch.tv/kaicenat |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
 | :--- | :--- | :--- | :--- |
 | **Crypto** | `14` | `+$4.83` | `64%` |
 | **Geopolitics** | `4` | `+$0.57` | `75%` |
-| **Other** | `11` | `+$1.40` | `64%` |
+| **Other** | `12` | `+$1.24` | `58%` |
 
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
