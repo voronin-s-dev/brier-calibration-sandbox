@@ -2161,3 +2161,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Other | Shares: 5.07 @ 0.2700
   Bet: $1.37 USDC | P_est: 33.3% | Edge: +6.3 pp
 [2026-11-10 02:19:22 UTC] [CYCLE #646 SUMMARY] Scanned=800 | PassedFilter=37 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$39.29 | Equity=$39.29 (DD=0.00%)
+[2026-11-10 02:30:53 UTC] [OPEN TRADE #125] Bucks vs. Knicks
+  Категория: Sports | Сторона: NO | Источник: https://www.nba.com/
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=33.3%, Четверть(0.25x)=13.3% -> Применён=8.0% банка
+  Размер сделки: $3.14 USDC (3.45 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: High market consensus NO (90.5%) within 22.0h of expiry
+
+[2026-11-10 02:30:53 UTC] [CYCLE #647 SUMMARY] Scanned=797 | PassedFilter=35 | Evaluated=2 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$36.15 | Equity=$39.26 (DD=0.09%)
