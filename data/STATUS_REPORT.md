@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-10 13:30:59 UTC`
+**Обновлено:** `2026-11-10 13:40:05 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -19,8 +19,8 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$50.99 USDC`** |
-| **Свободный кэш / В сделках** | `$41.78` / `$9.21 USDC` |
+| **Виртуальный баланс (Equity)** | **`$51.22 USDC`** |
+| **Свободный кэш / В сделках** | `$41.95` / `$9.27 USDC` |
 | **Открытых позиций** | `5 / 5` |
 | **Текущая просадка** | `0.00%` |
 
@@ -30,13 +30,13 @@
 | #1 | Will Elon Musk post 40-64 tweets from November 9 to Nov | Geopolitics | **NO** | `0.800` | `0.660` | `84.6%` | `$2.47` | `$-0.43` | https://x.com/elonmusk |
 | #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `56.2%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
 | #14 | Total Kills Over/Under 27.5 in Game 3? | Other | **NO** | `0.500` | `0.490` | `55.4%` | `$1.25` | `$-0.02` | https://gol.gg/esports/home |
-| #17 | Will the price of Bitcoin be above $74,000 on November  | Crypto | **NO** | `0.369` | `0.408` | `48.6%` | `$2.72` | `$+0.29` | https://www.binance.com/en/tra |
 | #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.8%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
+| #21 | Will Kai Cenat finish his GTA marathon by November 10? | Other | **NO** | `0.869` | `0.869` | `92.6%` | `$3.07` | `$+0.00` | https://www.twitch.tv/kaicenat |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
 | :--- | :--- | :--- | :--- |
-| **Crypto** | `5` | `-$0.57` | `40%` |
+| **Crypto** | `6` | `-$0.06` | `50%` |
 | **Geopolitics** | `2` | `+$0.66` | `100%` |
 | **Other** | `8` | `+$1.14` | `75%` |
 

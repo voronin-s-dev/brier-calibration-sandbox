@@ -2361,3 +2361,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 3.38 | Entry VWAP: 0.8800 -> Exit Bid VWAP: 0.9990
   Proceeds: $3.37 | Realized PnL: $+0.40 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +13.5% gain
 [2026-11-10 13:30:55 UTC] [CYCLE #711 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$34.36 | Equity=$37.46 (DD=4.65%)
+[SHADOW EXIT] #17 | Will the price of Bitcoin be above $74,000 on November 10? (NO)
+  Shares: 7.37 | Entry VWAP: 0.3690 -> Exit Bid VWAP: 0.4390
+  Proceeds: $3.24 | Realized PnL: $+0.52 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +19.0% >= +12% (Bid VWAP: 0.4390 vs Entry: 0.3690)
+[SHADOW EXEC] #21 | Will Kai Cenat finish his GTA marathon by November 10? (NO)
+  Category: Other | Shares: 3.53 @ 0.8690
+  Bet: $3.07 USDC | P_est: 92.6% | Edge: +5.7 pp
+[2026-11-10 13:40:00 UTC] [CYCLE #712 SUMMARY] Scanned=750 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$34.36 | Equity=$37.46 (DD=4.65%)
