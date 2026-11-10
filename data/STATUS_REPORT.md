@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-10 17:31:02 UTC`
+**Обновлено:** `2026-11-10 17:40:11 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -19,24 +19,24 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$55.83 USDC`** |
-| **Свободный кэш / В сделках** | `$48.16` / `$7.67 USDC` |
+| **Виртуальный баланс (Equity)** | **`$56.69 USDC`** |
+| **Свободный кэш / В сделках** | `$49.19` / `$7.50 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `2.46%` |
+| **Текущая просадка** | `0.95%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `54.7%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
+| #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `54.6%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
 | #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.2%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
-| #29 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **NO** | `0.380` | `0.360` | `44.5%` | `$1.96` | `$-0.10` | https://www.twitch.tv/kaicenat |
+| #29 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **NO** | `0.380` | `0.380` | `44.5%` | `$1.96` | `$+0.00` | https://www.twitch.tv/kaicenat |
 | #31 | Total Kills Over/Under 27.5 in Game 3? | Other | **YES** | `0.510` | `0.490` | `54.0%` | `$1.15` | `$-0.05` | https://gol.gg/esports/home |
-| #33 | Will Bitcoin dip to $72,000 on November 10? | Crypto | **YES** | `0.330` | `0.300` | `42.6%` | `$1.94` | `$-0.18` | https://www.binance.com/en/tra |
+| #34 | Will the price of Ethereum be above $2,000 on November  | Crypto | **NO** | `0.371` | `0.371` | `38.7%` | `$1.50` | `$+0.00` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
 | :--- | :--- | :--- | :--- |
-| **Crypto** | `13` | `+$4.24` | `62%` |
+| **Crypto** | `14` | `+$4.83` | `64%` |
 | **Geopolitics** | `4` | `+$0.57` | `75%` |
 | **Other** | `11` | `+$1.40` | `64%` |
 
