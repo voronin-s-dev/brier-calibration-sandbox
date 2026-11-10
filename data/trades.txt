@@ -2449,3 +2449,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Other | Shares: 2.25 @ 0.5100
   Bet: $1.15 USDC | P_est: 54.0% | Edge: +3.0 pp
 [2026-11-10 16:40:03 UTC] [CYCLE #730 SUMMARY] Scanned=777 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
+[SHADOW EXEC] #32 | Will Ethereum dip to $2,000 on November 10? (YES)
+  Category: Crypto | Shares: 4.93 @ 0.6900
+  Bet: $3.40 USDC | P_est: 74.8% | Edge: +5.8 pp
+[2026-11-10 16:49:12 UTC] [CYCLE #731 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
