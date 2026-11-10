@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-10 18:12:15 UTC`
+**Обновлено:** `2026-11-10 18:18:25 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -19,10 +19,10 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$56.24 USDC`** |
-| **Свободный кэш / В сделках** | `$48.98` / `$7.25 USDC` |
+| **Виртуальный баланс (Equity)** | **`$55.97 USDC`** |
+| **Свободный кэш / В сделках** | `$48.98` / `$6.99 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `1.75%` |
+| **Текущая просадка** | `2.20%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
@@ -30,8 +30,8 @@
 | #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `54.7%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
 | #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.1%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
 | #31 | Total Kills Over/Under 27.5 in Game 3? | Other | **YES** | `0.510` | `0.490` | `54.0%` | `$1.15` | `$-0.05` | https://gol.gg/esports/home |
-| #34 | Will the price of Ethereum be above $2,000 on November  | Crypto | **NO** | `0.371` | `0.296` | `33.5%` | `$1.50` | `$-0.30` | https://www.binance.com/en/tra |
-| #35 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **YES** | `0.660` | `0.660` | `69.6%` | `$2.01` | `$+0.00` | https://www.twitch.tv/kaicenat |
+| #34 | Will the price of Ethereum be above $2,000 on November  | Crypto | **NO** | `0.371` | `0.284` | `32.9%` | `$1.50` | `$-0.35` | https://www.binance.com/en/tra |
+| #35 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **YES** | `0.660` | `0.590` | `66.5%` | `$2.01` | `$-0.21` | https://www.twitch.tv/kaicenat |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
