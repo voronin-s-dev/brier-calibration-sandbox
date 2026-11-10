@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-10 15:10:38 UTC`
+**Обновлено:** `2026-11-10 15:19:46 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -19,19 +19,19 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$51.13 USDC`** |
-| **Свободный кэш / В сделках** | `$43.26` / `$7.87 USDC` |
+| **Виртуальный баланс (Equity)** | **`$51.32 USDC`** |
+| **Свободный кэш / В сделках** | `$43.26` / `$8.06 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `0.26%` |
+| **Текущая просадка** | `0.00%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #1 | Will Elon Musk post 40-64 tweets from November 9 to Nov | Geopolitics | **NO** | `0.800` | `0.570` | `84.6%` | `$2.47` | `$-0.71` | https://x.com/elonmusk |
-| #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `56.1%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
+| #1 | Will Elon Musk post 40-64 tweets from November 9 to Nov | Geopolitics | **NO** | `0.800` | `0.560` | `84.6%` | `$2.47` | `$-0.74` | https://x.com/elonmusk |
+| #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `56.0%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
 | #14 | Total Kills Over/Under 27.5 in Game 3? | Other | **NO** | `0.500` | `0.490` | `55.4%` | `$1.25` | `$-0.02` | https://gol.gg/esports/home |
-| #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.8%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
-| #23 | Will Elon Musk post 260-279 tweets from November 3 to N | Geopolitics | **YES** | `0.422` | `0.422` | `48.0%` | `$1.95` | `$+0.00` | https://x.com/elonmusk |
+| #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.9%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
+| #23 | Will Elon Musk post 260-279 tweets from November 3 to N | Geopolitics | **YES** | `0.422` | `0.469` | `48.0%` | `$1.95` | `$+0.22` | https://x.com/elonmusk |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |

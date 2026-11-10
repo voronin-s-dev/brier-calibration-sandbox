@@ -2389,3 +2389,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Geopolitics | Shares: 4.62 @ 0.4220
   Bet: $1.95 USDC | P_est: 48.0% | Edge: +5.8 pp
 [2026-11-10 15:10:32 UTC] [CYCLE #721 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
+[2026-11-10 15:19:40 UTC] [CYCLE #722 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
