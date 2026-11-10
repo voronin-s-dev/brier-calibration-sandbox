@@ -273,11 +273,17 @@ class GrokCharterPaperTrader:
                 if eval_res is not None:
                     latest_p = eval_res.p_yes if side == "YES" else eval_res.p_no
 
-            # Update MTM in database if valid bid exists
+            # Update MTM in database
             if vwap_sell > 0:
                 self.db.update_open_position_mtm(
                     pos_id=pos_id,
                     current_bid=vwap_sell,
+                    latest_p_est=latest_p,
+                )
+            else:
+                self.db.update_open_position_mtm(
+                    pos_id=pos_id,
+                    current_bid=0.0,
                     latest_p_est=latest_p,
                 )
 
@@ -304,15 +310,23 @@ class GrokCharterPaperTrader:
                     f"STOP-LOSS TRIGGERED: Price dropped to ${vwap_sell:.3f} "
                     f"(-{loss_pct:.1f}% from entry ${entry_vwap:.3f}, P_est={latest_p*100:.1f}%)"
                 )
-            elif vwap_sell <= 0:
-                continue
-            # Exit Rule C: Prob estimate shifted down AND no longer high-conviction
+            # Exit Rule C: Strict Time Exit (< 1.0h left to market close)
+            elif hours_left <= self.MIN_HOURS_TO_CLOSE_EXIT:
+                exit_triggered = True
+                exit_reason = (
+                    f"TIME EXIT: {hours_left:.1f}h left to close "
+                    f"(under {self.MIN_HOURS_TO_CLOSE_EXIT:.1f}h threshold, Bid VWAP: ${vwap_sell:.3f})"
+                )
+            # Exit Rule D: Prob estimate shifted down AND no longer high-conviction
             elif (initial_p - latest_p) >= prob_shift_limit and latest_p <= 0.70:
                 exit_triggered = True
                 exit_reason = (
                     f"THESIS INVALIDATED (Prob Shift > {prob_shift_limit*100:.1f}pp & P_est <= 70%): "
-                    f"Estimate dropped from {initial_p*100:.1f}% to {latest_p*100:.1f}%"
+                    f"Estimate dropped from {initial_p*100:.1f}% to {latest_p*100:.1f}% (Bid VWAP: ${vwap_sell:.3f})"
                 )
+
+            if not exit_triggered and vwap_sell <= 0:
+                continue
 
             if exit_triggered:
                 pnl = self.db.close_position(
@@ -397,6 +411,8 @@ class GrokCharterPaperTrader:
 
             if vwap_sell > 0:
                 self.db.update_open_shadow_position_mtm(pos_id=pos_id, current_bid=best_bid, latest_p_est=latest_p)
+            else:
+                self.db.update_open_shadow_position_mtm(pos_id=pos_id, current_bid=0.0, latest_p_est=latest_p)
 
             should_exit = False
             exit_reason = ""

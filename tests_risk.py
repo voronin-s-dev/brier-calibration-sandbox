@@ -454,6 +454,103 @@ class TestRiskManagementV2(unittest.TestCase):
                     mock_clob.assert_not_called()
                     self.assertEqual(res["trades_opened"], 0)
 
+    def test_main_trader_active_time_exit(self) -> None:
+        """Direction M & U: Active main position under 1.0h to close must trigger TIME EXIT."""
+        from unittest.mock import MagicMock, patch
+        from database import SimDatabase
+        from polymarket_api import MarketInfo
+        import tempfile
+        from trader import GrokCharterPaperTrader
+
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp:
+            db = SimDatabase(db_path=Path(tmp) / "test.db", initial_capital=50.0)
+            trader_instance = GrokCharterPaperTrader(db=db, trades_txt_path=Path(tmp) / "trades.txt")
+
+            db.open_position(
+                market_id="m_time_1", question="Bucks vs Knicks", category="Sports", side="NO",
+                token_id="tok_no_1", shares=10.0, entry_vwap=0.90, cost_usdc=9.00,
+                current_bid=0.90, p_est=0.94, entry_edge=0.04, kelly_full_pct=0.20,
+                kelly_half_pct=0.08, applied_size_pct=0.08, roundtrip_slippage_pct=0.01,
+                official_source="NBA.com", exit_condition="Hold", rationale="Consensus",
+                end_date_iso="2026-11-10T12:00:00Z",
+            )
+
+            m_live = MarketInfo(
+                id="m_time_1", question="Bucks vs Knicks", slug="bucks-knicks",
+                description="", resolution_source="NBA.com", has_official_source=True,
+                end_date_iso="2026-11-10T12:00:00Z", hours_to_close=0.6,
+                liquidity_usd=10000.0, volume_24h_usd=20000.0, outcomes=["YES", "NO"],
+                gamma_prices=[0.10, 0.90], clob_token_ids=["tok_yes_1", "tok_no_1"],
+                order_min_size=1.0, tick_size=0.01, category="Sports", closed=False,
+            )
+
+            with patch("trader.fetch_market_by_id", return_value=m_live):
+                with patch("trader.simulate_clob_sell_shares", return_value=(0.91, 9.10, 0.91)):
+                    closed = trader_instance.monitor_and_manage_open_positions()
+                    self.assertEqual(closed, 1)
+
+                    open_pos = db.get_open_positions()
+                    self.assertEqual(len(open_pos), 0)
+
+                    all_pos = db.get_all_positions()
+                    self.assertEqual(all_pos[0]["status"], "CLOSED")
+                    self.assertIn("TIME EXIT", all_pos[0]["exit_reason"])
+
+    def test_main_trader_thesis_invalidation_even_with_zero_bids(self) -> None:
+        """Direction U & S: Collapsed probability thesis exits and frees slot even if CLOB bids evaporate to 0."""
+        from unittest.mock import MagicMock, patch
+        from database import SimDatabase
+        from polymarket_api import MarketInfo
+        from oracles import EvaluationResult
+        import tempfile
+        from trader import GrokCharterPaperTrader
+
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp:
+            db = SimDatabase(db_path=Path(tmp) / "test.db", initial_capital=50.0)
+            trader_instance = GrokCharterPaperTrader(db=db, trades_txt_path=Path(tmp) / "trades.txt")
+
+            db.open_position(
+                market_id="m_collapse", question="LoL: Team A vs Team B", category="Sports", side="YES",
+                token_id="tok_lol_yes", shares=5.0, entry_vwap=0.90, cost_usdc=4.50,
+                current_bid=0.90, p_est=0.98, entry_edge=0.08, kelly_full_pct=0.20,
+                kelly_half_pct=0.08, applied_size_pct=0.08, roundtrip_slippage_pct=0.01,
+                official_source="gol.gg", exit_condition="Hold", rationale="Strong consensus",
+                end_date_iso="2026-11-10T12:00:00Z",
+            )
+
+            m_live = MarketInfo(
+                id="m_collapse", question="LoL: Team A vs Team B", slug="lol-ab",
+                description="", resolution_source="gol.gg", has_official_source=True,
+                end_date_iso="2026-11-10T12:00:00Z", hours_to_close=2.5,
+                liquidity_usd=10000.0, volume_24h_usd=20000.0, outcomes=["YES", "NO"],
+                gamma_prices=[0.001, 0.999], clob_token_ids=["tok_lol_yes", "tok_lol_no"],
+                order_min_size=1.0, tick_size=0.01, category="Sports", closed=False,
+            )
+
+            # Re-evaluation shows thesis collapsed to 1.5% for YES
+            eval_res = EvaluationResult(
+                market_id="m_collapse", question=m_live.question, category="Sports",
+                oracle_used="MatureMarketConsensusOracle", official_source="gol.gg",
+                p_yes=0.015, p_no=0.985, confidence=0.92, rationale="Market consensus shifted to NO",
+            )
+            trader_instance._evaluate_market_probability = MagicMock(return_value=(eval_res, None))
+
+            # Simulate CLOB sell returning 0.0 bids
+            with patch("trader.fetch_market_by_id", return_value=m_live):
+                with patch("trader.simulate_clob_sell_shares", return_value=(0.0, 0.0, 0.0)):
+                    closed = trader_instance.monitor_and_manage_open_positions()
+                    self.assertEqual(closed, 1)
+
+                    # Slot must be cleanly freed
+                    open_pos = db.get_open_positions()
+                    self.assertEqual(len(open_pos), 0)
+
+                    all_pos = db.get_all_positions()
+                    self.assertEqual(all_pos[0]["status"], "CLOSED")
+                    self.assertIn("THESIS INVALIDATED", all_pos[0]["exit_reason"])
+                    self.assertEqual(all_pos[0]["exit_vwap"], 0.0)
+                    self.assertEqual(all_pos[0]["proceeds_usdc"], 0.0)
+
 
 if __name__ == "__main__":
     unittest.main()

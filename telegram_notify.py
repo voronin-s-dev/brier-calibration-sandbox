@@ -105,6 +105,8 @@ def notify_position_closed(
         reason_ru = f"Достигнута целевая цена (${exit_vwap:.3f}) — прибыль зафиксирована досрочно"
     elif "MARKET RESOLVED" in exit_reason or exit_vwap >= 0.999:
         reason_ru = "Событие завершилось победой (выплата 100%)"
+    elif "TIME EXIT" in exit_reason:
+        reason_ru = "Выход по тайм-лимиту (менее 1ч до закрытия рынка) во избежание риска экспирации"
     elif "THESIS INVALIDATED" in exit_reason:
         reason_ru = "Вероятность события снизилась — позиция закрыта во избежание просадки"
     elif "STOP-LOSS" in exit_reason:

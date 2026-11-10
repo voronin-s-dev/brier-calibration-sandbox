@@ -21,8 +21,9 @@ class TestShadowGovernor(unittest.TestCase):
     def setUp(self) -> None:
         self.tmp_dir = tempfile.TemporaryDirectory(ignore_cleanup_errors=True)
         self.db_path = Path(self.tmp_dir.name) / "test_sim.db"
+        self.gov_report_path = Path(self.tmp_dir.name) / "GOVERNANCE_REPORT.md"
         self.db = SimDatabase(db_path=self.db_path, initial_capital=50.0)
-        self.gov = AutoGovernor(self.db)
+        self.gov = AutoGovernor(self.db, report_path=self.gov_report_path)
 
         # Set active filter to Sports
         with self.db._connect() as conn:

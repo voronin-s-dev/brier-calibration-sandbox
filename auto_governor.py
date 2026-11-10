@@ -31,9 +31,14 @@ TRADES_LOG_PATH = DATA_DIR / "trades.txt"
 
 
 class AutoGovernor:
-    def __init__(self, db: SimDatabase, report_path: Path = GOVERNANCE_REPORT_PATH) -> None:
+    def __init__(self, db: SimDatabase, report_path: Optional[Path] = None) -> None:
         self.db = db
-        self.report_path = report_path
+        if report_path is not None:
+            self.report_path = report_path
+        elif db.db_path != DATA_DIR / "polymarket_sim.db":
+            self.report_path = db.db_path.parent / "GOVERNANCE_REPORT.md"
+        else:
+            self.report_path = GOVERNANCE_REPORT_PATH
         self.report_path.parent.mkdir(parents=True, exist_ok=True)
 
     def _rule_exists(self, rule_key: str) -> bool:

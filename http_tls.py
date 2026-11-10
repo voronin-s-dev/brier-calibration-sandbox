@@ -12,7 +12,68 @@ import time
 import urllib.parse
 import urllib.request
 import zlib
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional, Tuple
+
+
+_RESOLVED_IPS_CACHE: Dict[str, Tuple[List[str], float]] = {}
+
+
+def resolve_secure_ip(host: str, timeout: float = 4.0) -> str:
+    """
+    Resolves hostname via system DNS with public DoH (Google / Cloudflare) fallback
+    to prevent DNS poisoning (e.g. ISP stub pages) from breaking TLS verification.
+    Returns the target IP address string.
+    """
+    now = time.time()
+    if host in _RESOLVED_IPS_CACHE:
+        ips, exp = _RESOLVED_IPS_CACHE[host]
+        if now < exp and ips:
+            return ips[0]
+
+    # 1. Try standard getaddrinfo
+    ips: List[str] = []
+    try:
+        infos = socket.getaddrinfo(host, 443, socket.AF_INET, socket.SOCK_STREAM)
+        for info in infos:
+            ip_str = info[4][0]
+            # Exclude loopback, unrouted, and known ISP blockpage stubs
+            if ip_str not in ("127.0.0.1", "0.0.0.0", "212.8.50.2") and not ip_str.startswith("10."):
+                ips.append(ip_str)
+    except Exception:
+        pass
+
+    # 2. Fallback to Google / Cloudflare DoH if poisoned or unresolvable
+    if not ips:
+        for doh_url in [
+            f"https://dns.google/resolve?name={urllib.parse.quote(host)}&type=A",
+            f"https://cloudflare-dns.com/dns-query?name={urllib.parse.quote(host)}&type=A",
+        ]:
+            try:
+                req = urllib.request.Request(
+                    doh_url,
+                    headers={"Accept": "application/dns-json", "User-Agent": "PolymarketSim/1.0"},
+                )
+                with urllib.request.urlopen(req, timeout=timeout) as resp:
+                    data = json.loads(resp.read().decode("utf-8"))
+                    answers = data.get("Answer", [])
+                    doh_ips = [a["data"] for a in answers if a.get("type") == 1]
+                    if doh_ips:
+                        ips = doh_ips
+                        break
+            except Exception:
+                continue
+
+    # 3. Static fallback for Polymarket edge endpoints
+    if not ips:
+        if "gamma" in host:
+            ips = ["13.32.12.33", "13.32.12.63", "13.32.12.38", "13.32.12.65"]
+        elif "clob" in host:
+            ips = ["104.18.34.205", "172.64.153.51"]
+
+    target_ip = ips[0] if ips else host
+    if ips:
+        _RESOLVED_IPS_CACHE[host] = (ips, now + 300.0)
+    return target_ip
 
 
 def fetch_polymarket_json(
@@ -34,7 +95,8 @@ def fetch_polymarket_json(
             ctx = ssl.create_default_context()
             ssl_obj = ctx.wrap_bio(in_bio, out_bio, server_hostname=host)
 
-            sock = socket.create_connection((host, 443), timeout=timeout)
+            target_ip = resolve_secure_ip(host, timeout=min(timeout, 5.0))
+            sock = socket.create_connection((target_ip, 443), timeout=timeout)
             sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
 
             try:
