@@ -142,6 +142,7 @@ def main() -> None:
     if args.reset_halt:
         trader = GrokCharterPaperTrader(db=db)
         trader.monitor_and_manage_open_positions()
+        trader.monitor_and_manage_shadow_positions()
         pf = db.reset_kill_switch()
         gov.generate_governance_report()
         paths = generate_reports(db)
@@ -171,6 +172,7 @@ def main() -> None:
 
     if args.status and not args.once and not args.loop:
         trader.monitor_and_manage_open_positions()
+        trader.monitor_and_manage_shadow_positions()
         gov.evaluate_portfolio_and_rules()
         paths = generate_reports(db)
         print_console_summary(db)

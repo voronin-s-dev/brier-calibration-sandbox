@@ -1,14 +1,14 @@
 {
   "auto_governor.py": {
-    "mtime": 1794302024.2642817,
-    "seen": 1794302067.074784,
+    "mtime": 1794302218.8297443,
+    "seen": 1794312583.2874765,
     "ast_hash": "c423e79588a6b075b061e67e079541ec",
     "semantic_hash": ""
   },
   "dashboard_gen.py": {
-    "mtime": 1794221322.604342,
-    "seen": 1794225011.6158788,
-    "ast_hash": "adda17be76c7dcf4cb3f963f06afbed5",
+    "mtime": 1794312357.7091255,
+    "seen": 1794312583.28749,
+    "ast_hash": "c6ec0a53265e74d2e9e3e322ddb0a622",
     "semantic_hash": ""
   },
   "data/custom_stations.json": {
@@ -24,9 +24,9 @@
     "semantic_hash": ""
   },
   "http_tls.py": {
-    "mtime": 1794301349.9832823,
-    "seen": 1794301741.3858998,
-    "ast_hash": "f72c8af4858be86196f16cce263dd07f",
+    "mtime": 1794302218.8392937,
+    "seen": 1794312583.2875125,
+    "ast_hash": "c593ffb9247e1e2fa89e5dbd1d2de7e9",
     "semantic_hash": ""
   },
   "oracles.py": {
@@ -42,27 +42,27 @@
     "semantic_hash": ""
   },
   "run_sim.py": {
-    "mtime": 1793154233.0,
-    "seen": 1793707981.974518,
-    "ast_hash": "d27613b42f9f5e11c7ba2d81260b7620",
+    "mtime": 1794312234.795095,
+    "seen": 1794312583.2875252,
+    "ast_hash": "179c2aea3a4b7b5872144bd241996d9f",
     "semantic_hash": ""
   },
   "telegram_notify.py": {
-    "mtime": 1794301535.9209588,
-    "seen": 1794301741.3859148,
-    "ast_hash": "38c6998ef464633d41fc915b62ba18c0",
+    "mtime": 1794302218.8402998,
+    "seen": 1794312583.2875292,
+    "ast_hash": "687018ba2fbfe4f93fac08d01dcb848e",
     "semantic_hash": ""
   },
   "tests_risk.py": {
-    "mtime": 1794301630.146835,
-    "seen": 1794301741.385937,
-    "ast_hash": "e4dec4aef39877f867de7e5766687be1",
+    "mtime": 1794312519.676442,
+    "seen": 1794312583.2875512,
+    "ast_hash": "28572d242c8804e8be26f701db31c3ed",
     "semantic_hash": ""
   },
   "trader.py": {
-    "mtime": 1794301492.9031987,
-    "seen": 1794301741.3859396,
-    "ast_hash": "4389729eb17082791aa1dcea22bee1bb",
+    "mtime": 1794312454.7159393,
+    "seen": 1794312583.2875538,
+    "ast_hash": "02e359817cdd574a76c51b8a68cddf60",
     "semantic_hash": ""
   },
   "trigger_cloud.py": {
@@ -84,27 +84,27 @@
     "semantic_hash": ""
   },
   "data/GOVERNANCE_REPORT.md": {
-    "mtime": 1794302047.6731074,
-    "seen": 1794302067.0748394,
-    "ast_hash": "08ac42805790ce8773a3224f41dcf512",
+    "mtime": 1794312549.8998573,
+    "seen": 1794312583.287585,
+    "ast_hash": "579037a281799e0655b6d0961f4f9dd8",
     "semantic_hash": ""
   },
   "data/STATUS_REPORT.md": {
-    "mtime": 1794300684.696196,
-    "seen": 1794301741.385984,
-    "ast_hash": "4b289395c9c4d30228a4de4de7c2ccd0",
+    "mtime": 1794312549.938493,
+    "seen": 1794312583.2875881,
+    "ast_hash": "f2c606315b27885684f9d47ce1d7075e",
     "semantic_hash": ""
   },
   "data/dashboard.html": {
-    "mtime": 1794300684.6974137,
-    "seen": 1794301741.3859875,
-    "ast_hash": "c74788fa18e7d58b60b3da6d0c230e67",
+    "mtime": 1794312549.9397378,
+    "seen": 1794312583.2875905,
+    "ast_hash": "14983a8d73c43db55a45237bd4498911",
     "semantic_hash": ""
   },
   "data/trades.txt": {
-    "mtime": 1794300684.7094154,
-    "seen": 1794301741.3859916,
-    "ast_hash": "8ef75d51a280c36618dc8c6e0c480555",
+    "mtime": 1794310384.8484135,
+    "seen": 1794312583.2875931,
+    "ast_hash": "28885f5f756a41e2ce81d76623887e10",
     "semantic_hash": ""
   },
   "data/last_digest.json": {
@@ -114,8 +114,8 @@
     "semantic_hash": ""
   },
   ".agents/aar/checks-map.md": {
-    "mtime": 1794301674.2442887,
-    "seen": 1794301741.385946,
+    "mtime": 1794302218.8273005,
+    "seen": 1794312583.2875574,
     "ast_hash": "c1619389e4c26b39f2adf03c745b27ba",
     "semantic_hash": ""
   },
@@ -132,8 +132,8 @@
     "semantic_hash": ""
   },
   "test_shadow_governor.py": {
-    "mtime": 1794301864.4937508,
-    "seen": 1794302067.0748131,
+    "mtime": 1794302218.8402998,
+    "seen": 1794312583.2875366,
     "ast_hash": "aeece8c4d78ad845b11f22f84f018389",
     "semantic_hash": ""
   },
@@ -186,9 +186,9 @@
     "semantic_hash": ""
   },
   ".agents/aar/runs/2026-11-10-shadow-missing-attribute-time-exit-aar.md": {
-    "mtime": 1794269182.726319,
-    "seen": 1794301741.385961,
-    "ast_hash": "dfd3249fb29db7c4513fd15bcc453bc2",
+    "mtime": 1794302218.8273005,
+    "seen": 1794312583.2875662,
+    "ast_hash": "4880067e9d3a69d9a39fec178b28556f",
     "semantic_hash": ""
   }
 }

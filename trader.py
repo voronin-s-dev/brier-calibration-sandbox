@@ -134,6 +134,18 @@ class GrokCharterPaperTrader:
         return full_kelly, frac_kelly, applied_pct, bet_usdc
 
     @classmethod
+    def get_max_bank_pct_for_price(cls, price: float) -> float:
+        """
+        Dynamic risk cap by payoff tier:
+        - Contracts in sweet spot [0.76, 0.895) (payoff +12% to +32%): up to 8% bankroll.
+        - Contracts near ceiling [0.895, 0.92] (payoff < +12%, high upset loss): capped at 4% bankroll.
+        Prevents a single 90c+ upset from wiping out 9 consecutive wins.
+        """
+        if price >= 0.895:
+            return 0.04
+        return cls.MAX_BANK_PCT_PER_TRADE
+
+    @classmethod
     def is_soccer_draw_trap(cls, question: str) -> bool:
         """
         Detects whether a sports market is a 3-way soccer/football match winner bet.
@@ -466,13 +478,14 @@ class GrokCharterPaperTrader:
         """
         active_candidates: List[MarketInfo] = []
         shadow_candidates: List[MarketInfo] = []
+        allowed_cats = {c.strip().upper() for c in cat_filter.split(",")} if cat_filter else {"ALL"}
 
         for m in all_markets:
             if not m.has_official_source:
                 continue
             if not (self.MIN_HOURS_TO_CLOSE <= m.hours_to_close <= self.MAX_HOURS_TO_CLOSE):
                 continue
-            if cat_filter == "ALL" or m.category.upper() == cat_filter.upper():
+            if "ALL" in allowed_cats or m.category.upper() in allowed_cats:
                 liq_threshold = 400.0 if m.category == "Weather" else min_liq
                 if m.liquidity_usd >= liq_threshold and m.id not in open_real_market_ids:
                     active_candidates.append(m)
@@ -639,6 +652,7 @@ class GrokCharterPaperTrader:
         min_liq = float(pf.get("min_liquidity_filter", 5000.0))
         max_slippage = float(pf.get("max_slippage_filter", 0.03))
         cat_filter = str(pf.get("active_category_filter", "ALL"))
+        allowed_cats = {c.strip().upper() for c in cat_filter.split(",")} if cat_filter else {"ALL"}
 
         candidates_to_evaluate, shadow_candidates = self.partition_markets(
             all_markets,
@@ -715,11 +729,12 @@ class GrokCharterPaperTrader:
 
             # Estimate tentative bet size using Gamma price first, then verify against real CLOB Ask VWAP
             tentative_price = gamma_yes if chosen_side == "YES" else gamma_no
+            max_pct_tentative = self.get_max_bank_pct_for_price(tentative_price)
             _, _, _, tentative_bet = self.compute_kelly_sizing(
                 p_est=p_est,
                 ask_vwap=max(tentative_price, 0.02),
                 total_equity=total_equity,
-                max_pct=self.MAX_BANK_PCT_PER_TRADE,
+                max_pct=max_pct_tentative,
                 kelly_fraction=self.KELLY_FRACTION,
             )
             probe_bet_usdc = min(
@@ -746,8 +761,8 @@ class GrokCharterPaperTrader:
                 edges_found += 1
 
             event_key = extract_event_key(mkt.question, mkt.category)
-            if cat_filter != "ALL" and mkt.category.upper() == cat_filter.upper():
-                cat_cap = min(self.MAX_OPEN_POSITIONS, 6)
+            if "ALL" not in allowed_cats and mkt.category.upper() in allowed_cats:
+                cat_cap = min(self.MAX_OPEN_POSITIONS, 6 if len(allowed_cats) == 1 else 4)
             else:
                 cat_cap = self.MAX_CRYPTO_POSITIONS if mkt.category == "Crypto" else self.MAX_POSITIONS_PER_CATEGORY
 
@@ -780,11 +795,12 @@ class GrokCharterPaperTrader:
                 decision = f"REJECTED: Max open positions ({self.MAX_OPEN_POSITIONS}) reached"
             else:
                 # Re-calculate exact Quarter-Kelly size using the real CLOB Ask VWAP
+                max_pct_final = self.get_max_bank_pct_for_price(ob_sim.vwap_buy_price)
                 full_k, frac_k, applied_pct, final_bet_usdc = self.compute_kelly_sizing(
                     p_est=p_est,
                     ask_vwap=ob_sim.vwap_buy_price,
                     total_equity=total_equity,
-                    max_pct=self.MAX_BANK_PCT_PER_TRADE,
+                    max_pct=max_pct_final,
                     kelly_fraction=self.KELLY_FRACTION,
                 )
                 # If calculated Kelly bet exceeds currently available cash, but cash is sufficient for minimum order,

@@ -10,3 +10,4 @@ __pycache__/
 graphify-out/cache/
 DAILY_FOCUS.md
 .superpowers/
+*.log

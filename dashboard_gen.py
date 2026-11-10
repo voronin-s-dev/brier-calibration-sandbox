@@ -150,8 +150,25 @@ def generate_reports(
         f"| **Открытых позиций** | `{len(shadow_open)} / 5` |",
         f"| **Текущая просадка** | `{shadow_dd:.2f}%` |",
         "",
-        "### Доходность по замороженным категориям (Песочница)",
     ])
+
+    if shadow_open:
+        md_lines.extend([
+            f"### Открытые позиции в песочнице ({len(shadow_open)} / 5)",
+            "| # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |",
+            "| :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |",
+        ])
+        for sp in shadow_open:
+            s_upnl = float(sp.get("unrealized_pnl", 0.0))
+            md_lines.append(
+                f"| #{sp['id']} | {sp['question'][:55]} | {sp['category']} | **{sp['side']}** | "
+                f"`{float(sp['entry_vwap']):.3f}` | `{float(sp['current_bid']):.3f}` | "
+                f"`{float(sp['latest_p_est'])*100:.1f}%` | `${float(sp['cost_usdc']):.2f}` | "
+                f"`${s_upnl:+.2f}` | {sp.get('official_source', '')[:30]} |"
+            )
+        md_lines.append("")
+
+    md_lines.append("### Доходность по замороженным категориям (Песочница)")
     if shadow_stats:
         md_lines.extend([
             "| Категория | Сделок | PnL | Win Rate |",
@@ -225,6 +242,28 @@ def generate_reports(
         """
     if not shadow_rows_html:
         shadow_rows_html = '<tr><td colspan="5" class="empty">Теневые сделки пока не закрыты (накапливается история)</td></tr>'
+
+    shadow_open_rows_html = ""
+    for sp in shadow_open:
+        s_upnl = float(sp.get("unrealized_pnl", 0.0))
+        s_pnl_cls = "pos" if s_upnl >= 0 else "neg"
+        shadow_open_rows_html += f"""
+        <tr>
+            <td>#{sp['id']}</td>
+            <td><strong>{html.escape(sp['question'])}</strong><br><small class="muted">{html.escape(sp.get('rationale', ''))}</small></td>
+            <td><span class="badge cat-{sp['category'].lower()}">{html.escape(sp['category'])}</span></td>
+            <td><span class="side-{sp['side'].lower()}">{html.escape(sp['side'])}</span></td>
+            <td>{float(sp['shares']):.2f}</td>
+            <td>${float(sp['entry_vwap']):.4f}</td>
+            <td>${float(sp['current_bid']):.4f}</td>
+            <td><strong>{float(sp['latest_p_est'])*100:.1f}%</strong> <small>(+{float(sp.get('entry_edge', 0.0))*100:.1f}pp)</small></td>
+            <td>${float(sp['cost_usdc']):.2f}</td>
+            <td class="{s_pnl_cls}">${s_upnl:+.2f}</td>
+            <td><small>{html.escape(sp.get('exit_condition', ''))}</small></td>
+        </tr>
+        """
+    if not shadow_open_rows_html:
+        shadow_open_rows_html = '<tr><td colspan="11" class="empty">Нет открытых теневых позиций</td></tr>'
 
     cand_rows_html = ""
     for c in candidates[:25]:
@@ -374,6 +413,20 @@ def generate_reports(
     </thead>
     <tbody>
       {shadow_rows_html}
+    </tbody>
+  </table>
+
+  <h2>🧪 Открытые позиции в песочнице ({len(shadow_open)} / 5)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th><th>Рынок и обоснование</th><th>Кат.</th><th>Исход</th><th>Доли</th>
+        <th>Вход (Ask VWAP)</th><th>Текущий Bid</th><th>Оценка (Edge)</th><th>Размер ($)</th>
+        <th>Нереализ. PnL</th><th>Условие выхода</th>
+      </tr>
+    </thead>
+    <tbody>
+      {shadow_open_rows_html}
     </tbody>
   </table>
 

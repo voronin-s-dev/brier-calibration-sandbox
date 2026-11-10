@@ -551,6 +551,65 @@ class TestRiskManagementV2(unittest.TestCase):
                     self.assertEqual(all_pos[0]["exit_vwap"], 0.0)
                     self.assertEqual(all_pos[0]["proceeds_usdc"], 0.0)
 
+    def test_dynamic_risk_cap_for_ceiling_contracts(self) -> None:
+        """Direction C: High-price contracts (>= 0.895) must be capped at 4% bankroll to limit tail risk."""
+        from trader import GrokCharterPaperTrader
+        # Sweet spot [0.76, 0.895) gets standard 8% cap
+        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.76), 0.08)
+        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.84), 0.08)
+        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.89), 0.08)
+
+        # Ceiling contracts [0.895, 0.92] capped at 4%
+        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.90), 0.04)
+        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.91), 0.04)
+        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.92), 0.04)
+
+        # Kelly sizing with 4% cap on $50 equity: max bet is $2.00 (not $4.00)
+        _, _, applied_pct, bet_usdc = GrokCharterPaperTrader.compute_kelly_sizing(
+            p_est=0.98, ask_vwap=0.90, total_equity=50.0,
+            max_pct=GrokCharterPaperTrader.get_max_bank_pct_for_price(0.90),
+            kelly_fraction=0.40,
+        )
+        self.assertEqual(applied_pct, 0.04)
+        self.assertEqual(bet_usdc, 2.00)
+
+    def test_multi_category_filter_partitioning(self) -> None:
+        """Direction C / S: Comma-separated category filters (e.g. 'Sports, Other') must route correctly."""
+        from polymarket_api import MarketInfo
+        from trader import GrokCharterPaperTrader
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_d:
+            db_tmp = SimDatabase(db_path=Path(tmp_d) / "temp_mc.db", initial_capital=50.0)
+            trader = GrokCharterPaperTrader(db=db_tmp, trades_txt_path=Path(tmp_d) / "t.txt")
+
+            def _mk(mid, q, cat, prices):
+                return MarketInfo(
+                    id=mid, question=q, slug=mid, description="", resolution_source="https://official.org",
+                    has_official_source=True, end_date_iso="2026-11-10T00:00:00Z", hours_to_close=24.0,
+                    liquidity_usd=10000.0, volume_24h_usd=20000.0, outcomes=["Yes", "No"],
+                    gamma_prices=prices, clob_token_ids=[f"t_{mid}_y", f"t_{mid}_n"],
+                    order_min_size=1.0, tick_size=0.01, category=cat, closed=False,
+                )
+
+            m_sp = _mk("1", "Sports Match", "Sports", [0.85, 0.15])
+            m_ot = _mk("2", "Esports Kills", "Other", [0.55, 0.45])
+            m_cr = _mk("3", "Bitcoin > 80k", "Crypto", [0.45, 0.55])
+
+            active, shadow = trader.partition_markets(
+                [m_sp, m_ot, m_cr],
+                cat_filter="Sports, Other",
+                min_liq=5000.0,
+                open_real_market_ids=set(),
+                open_shadow_market_ids=set(),
+            )
+
+            active_ids = {m.id for m in active}
+            shadow_ids = {m.id for m in shadow}
+
+            self.assertIn("1", active_ids)
+            self.assertIn("2", active_ids)
+            self.assertIn("3", shadow_ids)
+            self.assertNotIn("3", active_ids)
+
 
 if __name__ == "__main__":
     unittest.main()

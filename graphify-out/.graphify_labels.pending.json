@@ -9,8 +9,8 @@
   "7": "📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)",
   "8": "README.md",
   "9": "Polymarket Simulation and Agentic Market Architecture",
-  "10": "oracles.py",
-  "11": ".test_shadow_position_active_time_exit",
+  "10": ".test_e2e_dual_track_execution",
+  "11": "Спецификация: Risk Management & Budget Protection v2",
   "15": ".test_reports_cadence_stale_warning",
   "19": "Разбор 2026-11-07: ложное утверждение об остановке симулятора из-за локального статуса"
 }
