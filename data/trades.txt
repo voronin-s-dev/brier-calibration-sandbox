@@ -2327,3 +2327,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus YES (90.5%) within 5.0h of expiry
 
 [2026-11-10 11:01:14 UTC] [CYCLE #698 SUMMARY] Scanned=792 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$30.32 | Equity=$36.27 (DD=7.70%)
+[EXIT] #128 | Dota 2: PlayTime vs Nemiga Gaming - Game 1 Winner (YES)
+  Shares: 3.64 | Entry VWAP: 0.8000 -> Exit Bid VWAP: 0.9990
+  Proceeds: $3.63 | Realized PnL: $+0.72 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +24.9% gain
+[2026-11-10 11:10:20 UTC] [CYCLE #699 SUMMARY] Scanned=775 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$33.96 | Equity=$37.06 (DD=5.67%)
