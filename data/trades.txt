@@ -2419,3 +2419,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $1.01 USDC | P_est: 31.5% | Edge: +4.5 pp
 [2026-11-10 16:01:13 UTC] [CYCLE #726 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
 [2026-11-10 16:10:21 UTC] [CYCLE #727 SUMMARY] Scanned=783 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
+[SHADOW EXIT] #26 | Will Bitcoin dip to $72,000 on November 10? (NO)
+  Shares: 5.00 | Entry VWAP: 0.6600 -> Exit Bid VWAP: 0.7900
+  Proceeds: $3.95 | Realized PnL: $+0.65 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +19.7% >= +12% (Bid VWAP: 0.7900 vs Entry: 0.6600)
+[SHADOW EXEC] #28 | Will Bitcoin dip to $72,000 on November 10? (YES)
+  Category: Crypto | Shares: 7.52 @ 0.2100
+  Bet: $1.58 USDC | P_est: 34.9% | Edge: +13.9 pp
+[2026-11-10 16:19:28 UTC] [CYCLE #728 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
