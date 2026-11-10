@@ -2254,3 +2254,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Other | Shares: 2.50 @ 0.5000
   Bet: $1.25 USDC | P_est: 54.6% | Edge: +4.6 pp
 [2026-11-10 07:49:05 UTC] [CYCLE #679 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$33.01 | Equity=$36.19 (DD=7.90%)
+[2026-11-10 08:01:10 UTC] [OPEN TRADE #127] LoL: Saigon Warriors vs Gromp Esports (BO5) - LCP Promotion Playoffs
+  Категория: Sports | Сторона: YES | Источник: https://gol.gg/esports/home
+  Оценка бота: 94.5% vs Рынок (Ask VWAP): 92.0% (Перекос/Edge: +2.5 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.920, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=31.2%, Четверть(0.25x)=12.5% -> Применён=8.0% банка
+  Размер сделки: $2.89 USDC (3.14 shares @ $0.9200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.552 if P_est <= 70%
+  Причина: High market consensus YES (91.0%) within 7.0h of expiry
+
+[2026-11-10 08:01:10 UTC] [CYCLE #680 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$30.12 | Equity=$36.12 (DD=8.06%)
