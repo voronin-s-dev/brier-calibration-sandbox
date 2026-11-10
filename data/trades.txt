@@ -2192,3 +2192,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-10 03:32:56 UTC] [CYCLE #654 SUMMARY] Scanned=799 | PassedFilter=37 | Evaluated=1 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$36.15 | Equity=$39.26 (DD=0.09%)
 [2026-11-10 03:42:01 UTC] [CYCLE #655 SUMMARY] Scanned=798 | PassedFilter=36 | Evaluated=1 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$36.15 | Equity=$39.26 (DD=0.09%)
 [2026-11-10 04:01:06 UTC] [CYCLE #656 SUMMARY] Scanned=790 | PassedFilter=36 | Evaluated=1 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$36.15 | Equity=$39.26 (DD=0.09%)
+[SHADOW EXIT] #8 | Will Kai Cenat finish his GTA marathon by November 11, 2:59 PM ET? (YES)
+  Shares: 2.19 | Entry VWAP: 0.5300 -> Exit Bid VWAP: 0.6000
+  Proceeds: $1.31 | Realized PnL: $+0.15 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +13.2% >= +12% (Bid VWAP: 0.6000 vs Entry: 0.5300)
+[SHADOW EXEC] #10 | Will the price of Bitcoin be above $74,000 on November 10? (NO)
+  Category: Crypto | Shares: 4.10 @ 0.3000
+  Bet: $1.23 USDC | P_est: 34.9% | Edge: +4.9 pp
+[2026-11-10 04:10:12 UTC] [CYCLE #657 SUMMARY] Scanned=773 | PassedFilter=39 | Evaluated=1 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$36.15 | Equity=$39.26 (DD=0.09%)
