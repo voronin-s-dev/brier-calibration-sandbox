@@ -2385,3 +2385,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $1.42 | Realized PnL: $+0.24 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +20.6% >= +12% (Bid VWAP: 0.4100 vs Entry: 0.3400)
 [2026-11-10 14:49:13 UTC] [CYCLE #719 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
 [2026-11-10 15:01:15 UTC] [CYCLE #720 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
+[SHADOW EXEC] #23 | Will Elon Musk post 260-279 tweets from November 3 to November 10, 2026? (YES)
+  Category: Geopolitics | Shares: 4.62 @ 0.4220
+  Bet: $1.95 USDC | P_est: 48.0% | Edge: +5.8 pp
+[2026-11-10 15:10:32 UTC] [CYCLE #721 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
