@@ -164,6 +164,34 @@ class TestShadowTrader(unittest.TestCase):
         shadow_pf = self.db.get_shadow_portfolio()
         self.assertAlmostEqual(float(shadow_pf["cash_usdc"]), 56.00, places=2)
 
+    @patch("trader.simulate_clob_sell_shares")
+    @patch("trader.fetch_market_by_id")
+    def test_shadow_position_active_time_exit(self, mock_fetch: MagicMock, mock_sell: MagicMock) -> None:
+        """Active shadow position under 1.0h to close must trigger TIME EXIT without AttributeError."""
+        pos_id = self.db.open_shadow_position(
+            market_id="m_cr_active", question="ETH > 4k", category="Crypto", side="YES",
+            token_id="tok_eth_yes", shares=10.0, entry_vwap=0.80, cost_usdc=8.00,
+            initial_p_est=0.85, entry_edge=0.05, kelly_full_pct=0.10, kelly_half_pct=0.05,
+            applied_size_pct=0.05, roundtrip_slippage_pct=0.01, official_source="Coinbase",
+            exit_condition="Exp", rationale="Test", end_date_iso="2026-11-10T12:00:00Z"
+        )
+        # Active market, 0.5 hours left (< 1.0h threshold), not resolved
+        mock_fetch.return_value = make_market_info(
+            "m_cr_active", "ETH > 4k", "Crypto", hours_to_close=0.5,
+            gamma_prices=[0.80, 0.20], resolved=False
+        )
+        mock_sell.return_value = (0.80, 8.00, 0.80)
+
+        closed = self.trader.monitor_and_manage_shadow_positions()
+        self.assertEqual(closed, 1)
+
+        open_shadow = self.db.get_open_shadow_positions()
+        self.assertEqual(len(open_shadow), 0)
+
+        closed_shadow = [p for p in self.db.get_all_shadow_positions() if p["status"] == "CLOSED"]
+        self.assertEqual(len(closed_shadow), 1)
+        self.assertIn("TIME EXIT", closed_shadow[0]["exit_reason"])
+
     def test_simulate_clob_buy_accepts_preloaded_book(self) -> None:
         """Verify simulate_clob_buy_and_exit_check accepts preloaded_book without making network requests."""
         from polymarket_api import simulate_clob_buy_and_exit_check

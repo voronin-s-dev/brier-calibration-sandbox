@@ -77,6 +77,7 @@ class GrokCharterPaperTrader:
     MIN_HOURS_TO_CLOSE = 0.8        # Focus on near-term resolutions (1h to 5 days)
     MAX_HOURS_TO_CLOSE = 120.0      # Fast capital turnover
     EXIT_HOURS_THRESHOLD = 0.0      # NEVER dump prematurely before expiry: hold into resolution ($1.00 payout)
+    MIN_HOURS_TO_CLOSE_EXIT = 1.0   # Exit if under 1.0h to close (Ustav Grok rule 9: <1h to expiry)
     PROB_SHIFT_EXIT_PP = 0.10       # Exit only if probability estimate drops by > 10 pp and falls below entry
     STOP_LOSS_PCT = 0.40            # Hard Stop-Loss: cut positions losing > 40% if thesis severely deteriorates
 
