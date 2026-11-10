@@ -2397,3 +2397,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 8.11 @ 0.3800
   Bet: $3.08 USDC | P_est: 46.5% | Edge: +8.5 pp
 [2026-11-10 15:30:56 UTC] [CYCLE #723 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
+[SHADOW EXIT] #23 | Will Elon Musk post 260-279 tweets from November 3 to November 10, 2026? (YES)
+  Shares: 4.62 | Entry VWAP: 0.4220 -> Exit Bid VWAP: 0.5510
+  Proceeds: $2.55 | Realized PnL: $+0.60 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +30.6% >= +12% (Bid VWAP: 0.5510 vs Entry: 0.4220)
+[SHADOW EXIT] #24 | Will Bitcoin dip to $73,000 on November 10? (YES)
+  Shares: 8.11 | Entry VWAP: 0.3800 -> Exit Bid VWAP: 0.8200
+  Proceeds: $6.65 | Realized PnL: $+3.57 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +115.8% >= +12% (Bid VWAP: 0.8200 vs Entry: 0.3800)
+[SHADOW EXEC] #25 | Will the price of Bitcoin be above $74,000 on November 10? (YES)
+  Category: Crypto | Shares: 18.58 @ 0.1351
+  Bet: $2.51 USDC | P_est: 38.8% | Edge: +25.2 pp
+[SHADOW EXEC] #26 | Will Bitcoin dip to $72,000 on November 10? (NO)
+  Category: Crypto | Shares: 5.00 @ 0.6600
+  Bet: $3.30 USDC | P_est: 77.9% | Edge: +11.9 pp
+[2026-11-10 15:40:03 UTC] [CYCLE #724 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
