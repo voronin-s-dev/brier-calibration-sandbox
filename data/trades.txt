@@ -2182,3 +2182,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $1.16 USDC | P_est: 57.0% | Edge: +4.0 pp
 [2026-11-10 03:10:16 UTC] [CYCLE #651 SUMMARY] Scanned=794 | PassedFilter=34 | Evaluated=0 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$36.15 | Equity=$39.26 (DD=0.09%)
 [2026-11-10 03:19:23 UTC] [CYCLE #652 SUMMARY] Scanned=800 | PassedFilter=37 | Evaluated=0 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$36.15 | Equity=$39.26 (DD=0.09%)
+[SHADOW EXIT] #7 | Will Kai Cenat finish his GTA marathon by November 11, 7:59 AM ET? (YES)
+  Shares: 5.07 | Entry VWAP: 0.2700 -> Exit Bid VWAP: 0.3800
+  Proceeds: $1.93 | Realized PnL: $+0.56 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +40.7% >= +12% (Bid VWAP: 0.3800 vs Entry: 0.2700)
+[SHADOW EXEC] #9 | Will Elon Musk post 280-299 tweets from November 3 to November 10, 2026? (YES)
+  Category: Geopolitics | Shares: 2.42 @ 0.5700
+  Bet: $1.38 USDC | P_est: 61.3% | Edge: +4.3 pp
+[2026-11-10 03:23:51 UTC] [CYCLE #653 SUMMARY] Scanned=796 | PassedFilter=37 | Evaluated=0 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$36.15 | Equity=$39.26 (DD=0.09%)
