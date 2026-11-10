@@ -2490,3 +2490,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: CLOB near-touch depth imbalance OBI=+0.76 (BidDepth=$5,389 vs AskDepth=$732)
 
 [2026-11-10 18:27:27 UTC] [CYCLE #740 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=4 | Opened=1 (Shadow=0) | Closed=0 | Cash=$31.37 | Equity=$37.36 (DD=4.92%)
+[SHADOW EXIT] #34 | Will the price of Ethereum be above $2,000 on November 11? (NO)
+  Shares: 4.04 | Entry VWAP: 0.3710 -> Exit Bid VWAP: 0.2100
+  Proceeds: $0.85 | Realized PnL: $-0.65 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 43.4% from entry (0.3710 -> 0.2100)
+[2026-11-10 18:36:38 UTC] [CYCLE #741 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$31.37 | Equity=$37.36 (DD=4.92%)
