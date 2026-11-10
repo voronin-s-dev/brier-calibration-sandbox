@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-10 14:01:29 UTC`
+**Обновлено:** `2026-11-10 14:10:35 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -19,19 +19,19 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$51.23 USDC`** |
-| **Свободный кэш / В сделках** | `$41.95` / `$9.28 USDC` |
+| **Виртуальный баланс (Equity)** | **`$51.21 USDC`** |
+| **Свободный кэш / В сделках** | `$41.95` / `$9.26 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `0.00%` |
+| **Текущая просадка** | `0.04%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #1 | Will Elon Musk post 40-64 tweets from November 9 to Nov | Geopolitics | **NO** | `0.800` | `0.660` | `84.6%` | `$2.47` | `$-0.43` | https://x.com/elonmusk |
-| #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `56.3%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
+| #1 | Will Elon Musk post 40-64 tweets from November 9 to Nov | Geopolitics | **NO** | `0.800` | `0.650` | `84.6%` | `$2.47` | `$-0.46` | https://x.com/elonmusk |
+| #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `56.1%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
 | #14 | Total Kills Over/Under 27.5 in Game 3? | Other | **NO** | `0.500` | `0.490` | `55.4%` | `$1.25` | `$-0.02` | https://gol.gg/esports/home |
 | #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.8%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
-| #21 | Will Kai Cenat finish his GTA marathon by November 10? | Other | **NO** | `0.869` | `0.871` | `83.0%` | `$3.07` | `$+0.01` | https://www.twitch.tv/kaicenat |
+| #21 | Will Kai Cenat finish his GTA marathon by November 10? | Other | **NO** | `0.869` | `0.874` | `83.0%` | `$3.07` | `$+0.02` | https://www.twitch.tv/kaicenat |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
