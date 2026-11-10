@@ -2247,3 +2247,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-10 07:19:24 UTC] [CYCLE #676 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$33.01 | Equity=$36.19 (DD=7.90%)
 [2026-11-10 07:30:53 UTC] [CYCLE #677 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$33.01 | Equity=$36.19 (DD=7.90%)
 [2026-11-10 07:39:59 UTC] [CYCLE #678 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$33.01 | Equity=$36.19 (DD=7.90%)
+[SHADOW EXIT] #12 | Will Kai Cenat finish his GTA marathon by November 11, 7:59 AM ET? (YES)
+  Shares: 3.00 | Entry VWAP: 0.4200 -> Exit Bid VWAP: 0.4800
+  Proceeds: $1.44 | Realized PnL: $+0.18 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +14.3% >= +12% (Bid VWAP: 0.4800 vs Entry: 0.4200)
+[SHADOW EXEC] #14 | Total Kills Over/Under 27.5 in Game 3? (NO)
+  Category: Other | Shares: 2.50 @ 0.5000
+  Bet: $1.25 USDC | P_est: 54.6% | Edge: +4.6 pp
+[2026-11-10 07:49:05 UTC] [CYCLE #679 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$33.01 | Equity=$36.19 (DD=7.90%)
