@@ -2562,3 +2562,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: CLOB near-touch depth imbalance OBI=-0.54 (BidDepth=$124 vs AskDepth=$423)
 
 [2026-11-10 21:19:23 UTC] [CYCLE #761 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=4 | Opened=1 (Shadow=0) | Closed=0 | Cash=$22.33 | Equity=$37.37 (DD=4.89%)
+[EXIT] #131 | Will Bitcoin reach $75,000 on November 10? (NO)
+  Shares: 1.66 | Entry VWAP: 0.8960 -> Exit Bid VWAP: 0.8010
+  Proceeds: $1.33 | Realized PnL: $-0.16 USDC | Reason: THESIS INVALIDATED (Prob Shift > 8.0pp & P_est <= 70%): Estimate dropped from 93.5% to 67.5% (Bid VWAP: $0.801)
+[2026-11-10 21:30:51 UTC] [CYCLE #762 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=1 | Cash=$23.66 | Equity=$37.50 (DD=4.55%)
