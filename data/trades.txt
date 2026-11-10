@@ -2205,3 +2205,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-10 04:49:12 UTC] [CYCLE #661 SUMMARY] Scanned=800 | PassedFilter=45 | Evaluated=1 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$36.15 | Equity=$39.26 (DD=0.09%)
 [2026-11-10 05:01:09 UTC] [CYCLE #662 SUMMARY] Scanned=797 | PassedFilter=47 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$36.15 | Equity=$39.26 (DD=0.09%)
 [2026-11-10 05:10:14 UTC] [CYCLE #663 SUMMARY] Scanned=780 | PassedFilter=48 | Evaluated=0 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$36.15 | Equity=$39.26 (DD=0.09%)
+[2026-11-10 05:19:18 UTC] [OPEN TRADE #126] LoL: FENNEL vs Nothin'Here (BO5) - LCP Promotion Playoffs
+  Категория: Sports | Сторона: YES | Источник: https://gol.gg/esports/home
+  Оценка бота: 98.0% vs Рынок (Ask VWAP): 90.0% (Перекос/Edge: +8.0 п.п.)
+  Стакан CLOB: BestBid=0.890, BestAsk=0.900, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=80.0%, Четверть(0.25x)=32.0% -> Применён=8.0% банка
+  Размер сделки: $3.14 USDC (3.49 shares @ $0.9000)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.540 if P_est <= 70%
+  Причина: High market consensus YES (94.5%) within 5.8h of expiry
+
+[2026-11-10 05:19:18 UTC] [CYCLE #664 SUMMARY] Scanned=799 | PassedFilter=49 | Evaluated=1 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$33.01 | Equity=$39.22 (DD=0.18%)
