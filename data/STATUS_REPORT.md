@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-10 16:01:18 UTC`
+**Обновлено:** `2026-11-10 16:10:26 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -19,10 +19,10 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$54.54 USDC`** |
-| **Свободный кэш / В сделках** | `$45.91` / `$8.62 USDC` |
+| **Виртуальный баланс (Equity)** | **`$54.62 USDC`** |
+| **Свободный кэш / В сделках** | `$45.91` / `$8.71 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `1.77%` |
+| **Текущая просадка** | `1.61%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
@@ -30,8 +30,8 @@
 | #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `56.1%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
 | #14 | Total Kills Over/Under 27.5 in Game 3? | Other | **NO** | `0.500` | `0.490` | `55.4%` | `$1.25` | `$-0.02` | https://gol.gg/esports/home |
 | #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.9%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
-| #26 | Will Bitcoin dip to $72,000 on November 10? | Crypto | **NO** | `0.660` | `0.690` | `61.2%` | `$3.30` | `$+0.15` | https://www.binance.com/en/tra |
-| #27 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **NO** | `0.270` | `0.270` | `31.5%` | `$1.01` | `$+0.00` | https://www.twitch.tv/kaicenat |
+| #26 | Will Bitcoin dip to $72,000 on November 10? | Crypto | **NO** | `0.660` | `0.700` | `63.1%` | `$3.30` | `$+0.20` | https://www.binance.com/en/tra |
+| #27 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **NO** | `0.270` | `0.280` | `35.0%` | `$1.01` | `$+0.04` | https://www.twitch.tv/kaicenat |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
