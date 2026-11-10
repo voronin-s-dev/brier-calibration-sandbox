@@ -2411,3 +2411,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $3.30 USDC | P_est: 77.9% | Edge: +11.9 pp
 [2026-11-10 15:40:03 UTC] [CYCLE #724 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
 [2026-11-10 15:49:13 UTC] [CYCLE #725 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
+[SHADOW EXIT] #25 | Will the price of Bitcoin be above $74,000 on November 10? (YES)
+  Shares: 18.58 | Entry VWAP: 0.1351 -> Exit Bid VWAP: 0.0846
+  Proceeds: $1.57 | Realized PnL: $-0.94 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 37.4% from entry (0.1351 -> 0.0846)
+[SHADOW EXEC] #27 | Will Kai Cenat finish his GTA marathon by November 11, 7:59 AM ET? (NO)
+  Category: Other | Shares: 3.74 @ 0.2700
+  Bet: $1.01 USDC | P_est: 31.5% | Edge: +4.5 pp
+[2026-11-10 16:01:13 UTC] [CYCLE #726 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
