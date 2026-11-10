@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-10 17:01:17 UTC`
+**Обновлено:** `2026-11-10 17:10:23 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -19,19 +19,19 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$56.64 USDC`** |
-| **Свободный кэш / В сделках** | `$47.79` / `$8.85 USDC` |
+| **Виртуальный баланс (Equity)** | **`$56.53 USDC`** |
+| **Свободный кэш / В сделках** | `$47.79` / `$8.75 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `1.04%` |
+| **Текущая просадка** | `1.23%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `54.8%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
+| #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `54.6%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
 | #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.2%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
-| #29 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **NO** | `0.380` | `0.340` | `44.5%` | `$1.96` | `$-0.21` | https://www.twitch.tv/kaicenat |
+| #29 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **NO** | `0.380` | `0.310` | `44.5%` | `$1.96` | `$-0.36` | https://www.twitch.tv/kaicenat |
 | #31 | Total Kills Over/Under 27.5 in Game 3? | Other | **YES** | `0.510` | `0.490` | `54.0%` | `$1.15` | `$-0.05` | https://gol.gg/esports/home |
-| #32 | Will Ethereum dip to $2,000 on November 10? | Crypto | **YES** | `0.690` | `0.620` | `70.0%` | `$3.40` | `$-0.34` | https://www.binance.com/en/tra |
+| #32 | Will Ethereum dip to $2,000 on November 10? | Crypto | **YES** | `0.690` | `0.630` | `66.9%` | `$3.40` | `$-0.30` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
