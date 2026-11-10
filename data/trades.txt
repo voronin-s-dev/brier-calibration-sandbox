@@ -2455,3 +2455,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-10 16:49:12 UTC] [CYCLE #731 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
 [2026-11-10 17:01:12 UTC] [CYCLE #732 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
 [2026-11-10 17:10:19 UTC] [CYCLE #733 SUMMARY] Scanned=781 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
+[SHADOW EXIT] #32 | Will Ethereum dip to $2,000 on November 10? (YES)
+  Shares: 4.93 | Entry VWAP: 0.6900 -> Exit Bid VWAP: 0.4700
+  Proceeds: $2.32 | Realized PnL: $-1.08 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 10.6 pp (0.748 -> 0.642)
+[SHADOW EXEC] #33 | Will Bitcoin dip to $72,000 on November 10? (YES)
+  Category: Crypto | Shares: 5.88 @ 0.3300
+  Bet: $1.94 USDC | P_est: 42.8% | Edge: +9.7 pp
+[2026-11-10 17:19:28 UTC] [CYCLE #734 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
