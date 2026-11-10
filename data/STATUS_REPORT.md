@@ -1,37 +1,38 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-10 19:10:23 UTC`
+**Обновлено:** `2026-11-10 19:19:31 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$37.36 USDC`** (`-12.64$` / `-25.29%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$31.37` / `$5.99 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-12.64 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `4.92%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$37.32 USDC`** (`-12.68$` / `-25.36%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$29.88` / `$7.44 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-12.68 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `5.02%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `127` / `74.0%` | Brier Score: `0.1960` |
 
-## 📂 Открытые позиции (2 / 8)
+## 📂 Открытые позиции (3 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #125 | Bucks vs. Knicks | Sports | **NO** | `0.910` | `0.890` | `94.0%` | `$3.14` | `$-0.07` | https://www.nba.com/ |
-| #130 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **YES** | `0.820` | `0.800` | `86.2%` | `$2.99` | `$-0.07` | https://www.twitch.tv/kaicenat |
+| #130 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **YES** | `0.820` | `0.790` | `86.2%` | `$2.99` | `$-0.11` | https://www.twitch.tv/kaicenat |
+| #131 | Will Bitcoin reach $75,000 on November 10? | Crypto | **NO** | `0.896` | `0.895` | `93.5%` | `$1.49` | `$-0.00` | https://www.binance.com/en/tra |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$55.43 USDC`** |
-| **Свободный кэш / В сделках** | `$49.83` / `$5.60 USDC` |
+| **Виртуальный баланс (Equity)** | **`$55.68 USDC`** |
+| **Свободный кэш / В сделках** | `$49.83` / `$5.84 USDC` |
 | **Открытых позиций** | `4 / 5` |
-| **Текущая просадка** | `3.15%` |
+| **Текущая просадка** | `2.73%` |
 
 ### Открытые позиции в песочнице (4 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `54.7%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
-| #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.0%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
+| #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `54.9%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
+| #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.1%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
 | #31 | Total Kills Over/Under 27.5 in Game 3? | Other | **YES** | `0.510` | `0.490` | `54.0%` | `$1.15` | `$-0.05` | https://gol.gg/esports/home |
-| #35 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **YES** | `0.660` | `0.510` | `62.8%` | `$2.01` | `$-0.46` | https://www.twitch.tv/kaicenat |
+| #35 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **YES** | `0.660` | `0.590` | `62.8%` | `$2.01` | `$-0.21` | https://www.twitch.tv/kaicenat |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
@@ -43,6 +44,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Bitcoin reach $75,000 on November 10? | Crypto | NO | `93.5%` | `89.6%` | `+4.0 п.п.` | `0.10%` | EXECUTED BUY #131 ($1.49 @ 0.8960) |
 | Will Bitcoin reach $75,000 on November 10? | Crypto | NO | `95.2%` | `86.9%` | `+8.3 п.п.` | `3.50%` | REJECTED: CLOB round-trip slippage 3.50% > 2.0% limit |
 | Will Kai Cenat finish his GTA marathon by November | Other | YES | `86.7%` | `82.0%` | `+4.7 п.п.` | `2.00%` | EXECUTED BUY #130 ($2.99 @ 0.8200) |
 | Dota 2: Xipto Esports vs PlayTime - Game 1 Winner | Sports | YES | `94.0%` | `100.0%` | `-6.0 п.п.` | `100.00%` | REJECTED: Edge -6.0 pp < 2 pp threshold (P_est=94.0% vs AskVWAP=100.0%) |
@@ -60,4 +62,3 @@
 | Dota 2: PlayTime vs potn9ki - Game 1 Winner | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
 | Dota 2: Power Rangers vs Nemiga Gaming - Game 1 Wi | Sports | YES | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
 | Dota 2: Froglings vs Team Synapse - Game 1 Winner | Sports | NO | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
-| Dota 2: Xipto Esports vs HULIGANI - Game 1 Winner | Sports | NO | `1.5%` | `100.0%` | `-98.5 п.п.` | `100.00%` | REJECTED: Edge -98.5 pp < 2 pp threshold (P_est=1.5% vs AskVWAP=100.0%) |
