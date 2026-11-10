@@ -2586,3 +2586,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-10 23:01:08 UTC] [CYCLE #771 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.15 | Equity=$37.69 (DD=4.08%)
 [2026-11-10 23:10:19 UTC] [CYCLE #772 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.15 | Equity=$37.72 (DD=3.99%)
 [2026-11-10 23:19:29 UTC] [CYCLE #773 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.15 | Equity=$37.75 (DD=3.91%)
+[EXIT] #125 | Bucks vs. Knicks (NO)
+  Shares: 3.45 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.8900
+  Proceeds: $3.07 | Realized PnL: $-0.07 USDC | Reason: TIME EXIT: 1.0h left to close (under 1.0h threshold, Bid VWAP: $0.890)
+[2026-11-10 23:30:49 UTC] [CYCLE #774 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=1 | Cash=$25.22 | Equity=$37.63 (DD=4.24%)
