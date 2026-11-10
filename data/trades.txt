@@ -2339,3 +2339,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-10 12:30:56 UTC] [CYCLE #705 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$33.96 | Equity=$37.06 (DD=5.67%)
 [2026-11-10 12:40:06 UTC] [CYCLE #706 SUMMARY] Scanned=763 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$33.96 | Equity=$37.06 (DD=5.67%)
 [2026-11-10 12:49:15 UTC] [CYCLE #707 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$33.96 | Equity=$37.06 (DD=5.67%)
+[SHADOW EXIT] #19 | Will Elon Musk post 280-299 tweets from November 3 to November 10, 2026? (YES)
+  Shares: 4.43 | Entry VWAP: 0.6800 -> Exit Bid VWAP: 0.7900
+  Proceeds: $3.50 | Realized PnL: $+0.49 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +16.2% >= +12% (Bid VWAP: 0.7900 vs Entry: 0.6800)
+[SHADOW EXEC] #20 | Total Kills Over/Under 27.5 in Game 4? (NO)
+  Category: Other | Shares: 3.16 @ 0.5000
+  Bet: $1.58 USDC | P_est: 55.8% | Edge: +5.8 pp
+[2026-11-10 13:01:15 UTC] [CYCLE #708 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$33.96 | Equity=$37.06 (DD=5.67%)

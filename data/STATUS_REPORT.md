@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-10 12:49:23 UTC`
+**Обновлено:** `2026-11-10 13:01:21 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -19,25 +19,25 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$50.19 USDC`** |
-| **Свободный кэш / В сделках** | `$39.87` / `$10.32 USDC` |
+| **Виртуальный баланс (Equity)** | **`$50.33 USDC`** |
+| **Свободный кэш / В сделках** | `$41.78` / `$8.54 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `0.89%` |
+| **Текущая просадка** | `0.62%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #1 | Will Elon Musk post 40-64 tweets from November 9 to Nov | Geopolitics | **NO** | `0.800` | `0.670` | `84.6%` | `$2.47` | `$-0.40` | https://x.com/elonmusk |
+| #1 | Will Elon Musk post 40-64 tweets from November 9 to Nov | Geopolitics | **NO** | `0.800` | `0.660` | `84.6%` | `$2.47` | `$-0.43` | https://x.com/elonmusk |
 | #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `56.2%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
 | #14 | Total Kills Over/Under 27.5 in Game 3? | Other | **NO** | `0.500` | `0.490` | `55.4%` | `$1.25` | `$-0.02` | https://gol.gg/esports/home |
-| #17 | Will the price of Bitcoin be above $74,000 on November  | Crypto | **NO** | `0.369` | `0.338` | `39.5%` | `$2.72` | `$-0.23` | https://www.binance.com/en/tra |
-| #19 | Will Elon Musk post 280-299 tweets from November 3 to N | Geopolitics | **YES** | `0.680` | `0.710` | `70.9%` | `$3.01` | `$+0.13` | https://x.com/elonmusk |
+| #17 | Will the price of Bitcoin be above $74,000 on November  | Crypto | **NO** | `0.369` | `0.313` | `37.2%` | `$2.72` | `$-0.41` | https://www.binance.com/en/tra |
+| #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.500` | `55.8%` | `$1.58` | `$+0.00` | https://gol.gg/esports/home |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
 | :--- | :--- | :--- | :--- |
 | **Crypto** | `5` | `-$0.57` | `40%` |
-| **Geopolitics** | `1` | `+$0.17` | `100%` |
+| **Geopolitics** | `2` | `+$0.66` | `100%` |
 | **Other** | `8` | `+$1.14` | `75%` |
 
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
