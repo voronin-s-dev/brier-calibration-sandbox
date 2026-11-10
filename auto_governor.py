@@ -400,8 +400,11 @@ class AutoGovernor:
         if batch_num >= 1 and active_cat == "ALL":
             rule_key = f"tier2_category_rotation_batch_{batch_num}"
             if not self._rule_exists(rule_key):
+                # Evaluate rolling window of recent closed positions (last 30 trades)
+                # to prevent pre-quarantine historical trades from immediately reversing unfreezes
+                eval_window = closed_positions[-30:] if len(closed_positions) >= 30 else closed_positions
                 cat_stats: Dict[str, Dict[str, float]] = {}
-                for p in closed_positions:
+                for p in eval_window:
                     c = str(p["category"])
                     st = cat_stats.setdefault(c, {"count": 0.0, "pnl": 0.0, "wins": 0.0})
                     st["count"] += 1.0

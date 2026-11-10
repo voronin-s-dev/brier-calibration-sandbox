@@ -6,8 +6,10 @@ Focuses exclusively on actionable, human-readable information:
 2. Daily Digest (once per 24 hours: balance, 24h PnL, win rate, and upcoming expirations)
 """
 
+import hashlib
 import json
 import os
+import time
 import urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -41,10 +43,24 @@ def _plural_deals(n: int) -> str:
     return f"{n} сделок"
 
 
-def send_telegram_alert(text: str) -> bool:
-    """Sends a message via Telegram Bot API if token and chat_id are configured."""
+def send_telegram_alert(text: str, dedup: bool = True, dedup_window_sec: int = 3600) -> bool:
+    """Sends a message via Telegram Bot API with automatic content-hash deduplication."""
     if os.getenv("PYTEST_CURRENT_TEST") or os.getenv("TESTING") == "1" or getattr(send_telegram_alert, "_silenced", False):
         return False
+
+    # Universal Content Deduplication Cache
+    cache_file = Path(__file__).resolve().parent / "data" / "notified_alerts_cache.json"
+    content_hash = hashlib.sha256(text.strip().encode("utf-8")).hexdigest()
+    now_ts = time.time()
+
+    if dedup and cache_file.exists():
+        try:
+            cache = json.loads(cache_file.read_text(encoding="utf-8"))
+            last_ts = float(cache.get(content_hash, 0))
+            if now_ts - last_ts < dedup_window_sec:
+                return True
+        except Exception:
+            pass
 
     fallback = _load_env_fallback()
     token = os.getenv("TELEGRAM_BOT_TOKEN") or fallback.get("TELEGRAM_BOT_TOKEN", "")
@@ -69,9 +85,24 @@ def send_telegram_alert(text: str) -> bool:
     )
     try:
         with urllib.request.urlopen(req, timeout=8.0) as resp:
-            return resp.status == 200
+            success = resp.status == 200
+            if success and dedup:
+                try:
+                    cache_data = {}
+                    if cache_file.exists():
+                        cache_data = json.loads(cache_file.read_text(encoding="utf-8"))
+                    cleaned = {k: v for k, v in cache_data.items() if now_ts - float(v) < 86400}
+                    cleaned[content_hash] = now_ts
+                    cache_file.parent.mkdir(parents=True, exist_ok=True)
+                    cache_file.write_text(json.dumps(cleaned), encoding="utf-8")
+                except Exception:
+                    pass
+            return success
     except Exception:
         return False
+
+
+_raw_send_telegram_alert = send_telegram_alert
 
 
 def notify_position_closed(
