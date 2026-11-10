@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-10 18:37:05 UTC`
+**Обновлено:** `2026-11-10 18:46:15 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -15,15 +15,15 @@
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #125 | Bucks vs. Knicks | Sports | **NO** | `0.910` | `0.890` | `94.0%` | `$3.14` | `$-0.07` | https://www.nba.com/ |
-| #130 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **YES** | `0.820` | `0.800` | `86.1%` | `$2.99` | `$-0.07` | https://www.twitch.tv/kaicenat |
+| #130 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **YES** | `0.820` | `0.800` | `86.2%` | `$2.99` | `$-0.07` | https://www.twitch.tv/kaicenat |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$55.61 USDC`** |
-| **Свободный кэш / В сделках** | `$49.83` / `$5.78 USDC` |
+| **Виртуальный баланс (Equity)** | **`$55.31 USDC`** |
+| **Свободный кэш / В сделках** | `$49.83` / `$5.48 USDC` |
 | **Открытых позиций** | `4 / 5` |
-| **Текущая просадка** | `2.83%` |
+| **Текущая просадка** | `3.36%` |
 
 ### Открытые позиции в песочнице (4 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
@@ -31,7 +31,7 @@
 | #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `54.7%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
 | #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.0%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
 | #31 | Total Kills Over/Under 27.5 in Game 3? | Other | **YES** | `0.510` | `0.490` | `54.0%` | `$1.15` | `$-0.05` | https://gol.gg/esports/home |
-| #35 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **YES** | `0.660` | `0.570` | `62.8%` | `$2.01` | `$-0.27` | https://www.twitch.tv/kaicenat |
+| #35 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **YES** | `0.660` | `0.470` | `62.8%` | `$2.01` | `$-0.58` | https://www.twitch.tv/kaicenat |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
