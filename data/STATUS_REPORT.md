@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-10 15:40:08 UTC`
+**Обновлено:** `2026-11-10 15:49:16 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -19,8 +19,8 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$55.32 USDC`** |
-| **Свободный кэш / В сделках** | `$45.35` / `$9.97 USDC` |
+| **Виртуальный баланс (Equity)** | **`$55.52 USDC`** |
+| **Свободный кэш / В сделках** | `$45.35` / `$10.17 USDC` |
 | **Открытых позиций** | `5 / 5` |
 | **Текущая просадка** | `0.00%` |
 
@@ -30,8 +30,8 @@
 | #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `56.0%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
 | #14 | Total Kills Over/Under 27.5 in Game 3? | Other | **NO** | `0.500` | `0.490` | `55.4%` | `$1.25` | `$-0.02` | https://gol.gg/esports/home |
 | #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.9%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
-| #25 | Will the price of Bitcoin be above $74,000 on November  | Crypto | **YES** | `0.135` | `0.135` | `38.8%` | `$2.51` | `$+0.00` | https://www.binance.com/en/tra |
-| #26 | Will Bitcoin dip to $72,000 on November 10? | Crypto | **NO** | `0.660` | `0.660` | `77.9%` | `$3.30` | `$-0.00` | https://www.binance.com/en/tra |
+| #25 | Will the price of Bitcoin be above $74,000 on November  | Crypto | **YES** | `0.135` | `0.140` | `4.8%` | `$2.51` | `$+0.09` | https://www.binance.com/en/tra |
+| #26 | Will Bitcoin dip to $72,000 on November 10? | Crypto | **NO** | `0.660` | `0.680` | `75.8%` | `$3.30` | `$+0.10` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
