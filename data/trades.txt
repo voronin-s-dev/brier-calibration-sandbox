@@ -2439,3 +2439,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 7.41 @ 0.3200
   Bet: $2.37 USDC | P_est: 40.2% | Edge: +8.2 pp
 [2026-11-10 16:30:57 UTC] [CYCLE #729 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
+[SHADOW EXIT] #14 | Total Kills Over/Under 27.5 in Game 3? (NO)
+  Shares: 2.50 | Entry VWAP: 0.5000 -> Exit Bid VWAP: 0.4900
+  Proceeds: $1.23 | Realized PnL: $-0.02 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 8.6 pp (0.546 -> 0.460)
+[SHADOW EXIT] #30 | Will Bitcoin dip to $72,000 on November 10? (YES)
+  Shares: 7.41 | Entry VWAP: 0.3200 -> Exit Bid VWAP: 0.4700
+  Proceeds: $3.48 | Realized PnL: $+1.11 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +46.9% >= +12% (Bid VWAP: 0.4700 vs Entry: 0.3200)
+[SHADOW EXEC] #31 | Total Kills Over/Under 27.5 in Game 3? (YES)
+  Category: Other | Shares: 2.25 @ 0.5100
+  Bet: $1.15 USDC | P_est: 54.0% | Edge: +3.0 pp
+[2026-11-10 16:40:03 UTC] [CYCLE #730 SUMMARY] Scanned=777 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
