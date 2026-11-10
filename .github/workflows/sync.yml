@@ -33,6 +33,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 1
 
       - name: Setup Python
@@ -64,6 +65,6 @@ jobs:
           git add data/
           if ! git diff --staged --quiet; then
             git commit -m "chore: final session sync [skip ci]" || true
-            git pull --rebase origin main || true
+            git pull --rebase origin main || (git rebase --abort || true)
             git push origin main || true
           fi

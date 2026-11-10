@@ -43,6 +43,10 @@ def git_sync_snapshot(commit_msg: str = "chore: update calibration snapshot [ski
             print("ℹ️ [GIT SYNC] No new file modifications in data/ to push.")
     except Exception as e:
         print(f"⚠️ [GIT SYNC WARNING]: {e}", file=sys.stderr)
+        try:
+            subprocess.run(["git", "rebase", "--abort"], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        except Exception:
+            pass
     return False
 
 

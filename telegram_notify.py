@@ -84,7 +84,19 @@ def notify_position_closed(
     """
     Sends a concise, human-readable notification when a position is closed or resolved.
     Focuses on the financial outcome ($ PnL, ROI%, total portfolio equity).
+    Enforces idempotency: never sends multiple notifications for the same position_id.
     """
+    pos_id = pos.get("id")
+    state_file = Path(__file__).resolve().parent / "data" / "notified_exits.json"
+    notified_ids = set()
+    if pos_id is not None and state_file.exists():
+        try:
+            notified_ids = set(json.loads(state_file.read_text(encoding="utf-8")))
+            if pos_id in notified_ids:
+                return False
+        except Exception:
+            pass
+
     cost = float(pos.get("cost_usdc", 0.0))
     roi = (pnl / cost * 100.0) if cost > 0 else 0.0
     side = pos.get("side", "")
@@ -120,7 +132,16 @@ def notify_position_closed(
         f"💡 {reason_ru}\n"
         f"💰 Баланс портфеля: <b>${total_equity:.2f} USDC</b>"
     )
-    return send_telegram_alert(msg)
+    sent = send_telegram_alert(msg)
+    if sent and pos_id is not None:
+        try:
+            notified_ids.add(pos_id)
+            state_file.parent.mkdir(parents=True, exist_ok=True)
+            recent_ids = list(notified_ids)[-500:]
+            state_file.write_text(json.dumps(recent_ids), encoding="utf-8")
+        except Exception:
+            pass
+    return sent
 
 
 def check_and_send_daily_digest(db: Any, force: bool = False) -> bool:
