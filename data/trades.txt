@@ -2591,3 +2591,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $3.07 | Realized PnL: $-0.07 USDC | Reason: TIME EXIT: 1.0h left to close (under 1.0h threshold, Bid VWAP: $0.890)
 [2026-11-10 23:30:49 UTC] [CYCLE #774 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=1 | Cash=$25.22 | Equity=$37.63 (DD=4.24%)
 [2026-11-10 23:40:01 UTC] [CYCLE #775 SUMMARY] Scanned=792 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.22 | Equity=$37.76 (DD=3.90%)
+[2026-11-10 23:49:11 UTC] [OPEN TRADE #137] Dota 2: CyberHero vs Power Rangers (BO3) - 1win Essence Play-in Group A
+  Категория: Sports | Сторона: YES | Источник: https://www.dotabuff.com
+  Оценка бота: 95.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +4.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=44.4%, Четверть(0.25x)=17.8% -> Применён=4.0% банка
+  Размер сделки: $1.51 USDC (1.66 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: High market consensus YES (91.5%) within 3.9h of expiry
+
+[2026-11-10 23:49:11 UTC] [CYCLE #776 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=3 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.71 | Equity=$37.76 (DD=3.91%)
