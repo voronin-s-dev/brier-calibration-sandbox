@@ -2480,3 +2480,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-10 18:01:10 UTC] [CYCLE #738 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
 [2026-11-10T18:12:14.538304+00:00] [GOVERNOR APPROVED] ✅ Одобрено предложение #22 (Разморозка категории Crypto: стабильный плюс в песочнице ($+3.46)): active_category_filter -> ALL
 [2026-11-10 18:18:16 UTC] [CYCLE #739 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$34.36 | Equity=$37.43 (DD=4.74%)
+[2026-11-10 18:27:27 UTC] [OPEN TRADE #130] Will Kai Cenat finish his GTA marathon by November 11, 2:59 PM ET?
+  Категория: Other | Сторона: YES | Источник: https://www.twitch.tv/kaicenat
+  Оценка бота: 86.7% vs Рынок (Ask VWAP): 82.0% (Перекос/Edge: +4.7 п.п.)
+  Стакан CLOB: BestBid=0.800, BestAsk=0.820, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=26.2%, Четверть(0.25x)=10.5% -> Применён=8.0% банка
+  Размер сделки: $2.99 USDC (3.65 shares @ $0.8200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.492 if P_est <= 70%
+  Причина: CLOB near-touch depth imbalance OBI=+0.76 (BidDepth=$5,389 vs AskDepth=$732)
+
+[2026-11-10 18:27:27 UTC] [CYCLE #740 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=4 | Opened=1 (Shadow=0) | Closed=0 | Cash=$31.37 | Equity=$37.36 (DD=4.92%)
