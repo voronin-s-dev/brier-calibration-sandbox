@@ -2357,3 +2357,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-11-10 13:10:23 UTC] [CYCLE #709 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$30.99 | Equity=$37.03 (DD=5.76%)
 [2026-11-10 13:19:30 UTC] [CYCLE #710 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.99 | Equity=$37.10 (DD=5.58%)
+[EXIT] #129 | Counter-Strike: FORZE Reload vs MOUZ NXT (BO3) - European Pro League Group C (YES)
+  Shares: 3.38 | Entry VWAP: 0.8800 -> Exit Bid VWAP: 0.9990
+  Proceeds: $3.37 | Realized PnL: $+0.40 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +13.5% gain
+[2026-11-10 13:30:55 UTC] [CYCLE #711 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$34.36 | Equity=$37.46 (DD=4.65%)
