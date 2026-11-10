@@ -2296,3 +2296,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Other | Shares: 4.73 @ 0.2600
   Bet: $1.23 USDC | P_est: 31.1% | Edge: +5.1 pp
 [2026-11-10 09:19:26 UTC] [CYCLE #688 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$30.12 | Equity=$36.30 (DD=7.61%)
+[EXIT] #126 | LoL: FENNEL vs Nothin'Here (BO5) - LCP Promotion Playoffs (YES)
+  Shares: 3.49 | Entry VWAP: 0.9000 -> Exit Bid VWAP: 0.0000
+  Proceeds: $0.00 | Realized PnL: $-3.14 USDC | Reason: THESIS INVALIDATED (Prob Shift > 8.0pp & P_est <= 70%): Estimate dropped from 98.0% to 1.5% (Bid VWAP: $0.000)
+[2026-11-10 09:38:04 UTC] [CYCLE #689 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$30.12 | Equity=$36.29 (DD=7.64%)
