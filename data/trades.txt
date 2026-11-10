@@ -2144,3 +2144,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-10 01:10:17 UTC] [CYCLE #639 SUMMARY] Scanned=791 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$39.29 | Equity=$39.29 (DD=0.00%)
 [2026-11-10 01:19:23 UTC] [CYCLE #640 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$39.29 | Equity=$39.29 (DD=0.00%)
 [2026-11-10 01:30:52 UTC] [CYCLE #641 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$39.29 | Equity=$39.29 (DD=0.00%)
+[SHADOW EXIT] #4 | Will Bitcoin reach $76,000 on November 9? (YES)
+  Shares: 10.38 | Entry VWAP: 0.1300 -> Exit Bid VWAP: 0.0900
+  Proceeds: $0.93 | Realized PnL: $-0.42 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 19.3 pp (0.233 -> 0.040)
+[2026-11-10 01:39:56 UTC] [CYCLE #642 SUMMARY] Scanned=780 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$39.29 | Equity=$39.29 (DD=0.00%)
