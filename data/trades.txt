@@ -2773,3 +2773,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-11-11 14:49:09 UTC] [CYCLE #872 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=20 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.21 | Equity=$36.11 (DD=8.09%)
 [2026-11-11 15:01:08 UTC] [CYCLE #873 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=20 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.21 | Equity=$36.18 (DD=7.91%)
+[2026-11-11 15:10:17 UTC] [OPEN TRADE #144] Will Predict.fun launch a token by November 15, 2026?
+  Категория: Other | Сторона: NO | Источник: information from predict.fun (https://predict
+  Оценка бота: 90.9% vs Рынок (Ask VWAP): 84.8% (Перекос/Edge: +6.1 п.п.)
+  Стакан CLOB: BestBid=0.835, BestAsk=0.848, Проскальзывание входа/выхода=1.30% (<= 3.0%)
+  Келли: Полный=39.9%, Четверть(0.25x)=15.9% -> Применён=8.0% банка
+  Размер сделки: $2.90 USDC (3.42 shares @ $0.8480)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.509 if P_est <= 70%
+  Причина: CLOB near-touch depth imbalance OBI=-0.90 (BidDepth=$33 vs AskDepth=$600)
+
+[2026-11-11 15:10:17 UTC] [CYCLE #874 SUMMARY] Scanned=786 | PassedFilter=50 | Evaluated=22 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$20.31 | Equity=$36.23 (DD=7.78%)
