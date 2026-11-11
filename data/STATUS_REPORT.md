@@ -1,23 +1,24 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-11 06:40:04 UTC`
+**Обновлено:** `2026-11-11 06:49:13 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$38.61 USDC`** (`-11.39$` / `-22.77%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$30.72` / `$7.89 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-11.39 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `1.72%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$38.71 USDC`** (`-11.29$` / `-22.57%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$29.17` / `$9.54 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-11.29 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `1.47%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `134` / `73.9%` | Brier Score: `0.1960` |
 
-## 📂 Открытые позиции (4 / 8)
+## 📂 Открытые позиции (5 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #132 | Will the price of Ethereum be above $2,100 on November  | Crypto | **NO** | `0.815` | `0.809` | `80.4%` | `$1.58` | `$-0.01` | Kraken ETHUSDT 1m/1h Spot Klin |
-| #133 | Will the price of Bitcoin be above $72,000 on November  | Crypto | **YES** | `0.913` | `0.951` | `98.5%` | `$1.49` | `$+0.06` | https://www.binance.com/en/tra |
+| #132 | Will the price of Ethereum be above $2,100 on November  | Crypto | **NO** | `0.815` | `0.872` | `82.0%` | `$1.58` | `$+0.11` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #133 | Will the price of Bitcoin be above $72,000 on November  | Crypto | **YES** | `0.913` | `0.947` | `98.2%` | `$1.49` | `$+0.06` | https://www.binance.com/en/tra |
 | #135 | Will Elon Musk post 300-319 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.920` | `85.3%` | `$2.99` | `$+0.25` | https://x.com/elonmusk |
 | #139 | Spurs vs. Bulls | Sports | **YES** | `0.910` | `0.900` | `94.0%` | `$1.55` | `$-0.02` | https://www.nba.com/ |
+| #140 | Counter-Strike: Spirit vs FUT Esports (BO3) - BLAST Riv | Sports | **YES** | `0.920` | `0.910` | `97.0%` | `$1.55` | `$-0.02` | https://hltv.org |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -44,6 +45,8 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Counter-Strike: Spirit vs FUT Esports - Map 1 Winn | Sports | YES | `96.0%` | `89.0%` | `+7.0 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (sports:counter-strike: spirit vs fut espor:nodate) |
+| Counter-Strike: Spirit vs FUT Esports (BO3) - BLAS | Sports | YES | `97.0%` | `92.0%` | `+5.0 п.п.` | `1.00%` | EXECUTED BUY #140 ($1.55 @ 0.9200) |
 | Spurs vs. Bulls | Sports | YES | `94.0%` | `91.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #139 ($1.55 @ 0.9100) |
 | Will Predict.fun launch a token by November 15, 20 | Other | NO | `91.5%` | `86.3%` | `+5.2 п.п.` | `3.20%` | REJECTED: CLOB round-trip slippage 3.20% > 2.0% limit |
 | Will Predict.fun launch a token by November 15, 20 | Other | NO | `91.7%` | `86.3%` | `+5.4 п.п.` | `3.20%` | REJECTED: CLOB round-trip slippage 3.20% > 2.0% limit |
@@ -60,5 +63,3 @@
 | Will Bitcoin reach $75,000 on November 10? | Crypto | NO | `94.2%` | `89.7%` | `+4.5 п.п.` | `0.90%` | EXECUTED BUY #136 ($1.51 @ 0.8970) |
 | Will Bitcoin reach $75,000 on November 10? | Crypto | NO | `94.5%` | `87.8%` | `+6.7 п.п.` | `1.00%` | REJECTED on final sizing: slippage=2.40% |
 | Will Elon Musk post 300-319 tweets from November 6 | Geopolitics | NO | `88.6%` | `85.0%` | `+3.6 п.п.` | `1.00%` | EXECUTED BUY #135 ($2.99 @ 0.8500) |
-| Will Kai Cenat finish his GTA marathon by November | Other | YES | `86.6%` | `82.0%` | `+4.6 п.п.` | `2.00%` | REJECTED: Duplicate underlying event (other:will kai cenat finish his gta marathon b) |
-| Will Ethereum dip to $2,000 on November 10? | Crypto | NO | `95.0%` | `92.0%` | `+3.0 п.п.` | `2.00%` | EXECUTED BUY #134 ($1.49 @ 0.9200) |
