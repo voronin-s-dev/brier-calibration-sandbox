@@ -2646,3 +2646,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus NO (94.8%) within 4.2h of expiry
 
 [2026-11-11 03:49:09 UTC] [CYCLE #803 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=21 | Edges(>=8pp)=3 | Opened=1 (Shadow=0) | Closed=0 | Cash=$27.08 | Equity=$38.48 (DD=2.06%)
+[EXIT] #130 | Will Kai Cenat finish his GTA marathon by November 11, 2:59 PM ET? (YES)
+  Shares: 3.65 | Entry VWAP: 0.8200 -> Exit Bid VWAP: 0.9680
+  Proceeds: $3.53 | Realized PnL: $+0.54 USDC | Reason: TIME EXIT: 1.0h left to close (under 1.0h threshold, Bid VWAP: $0.968)
+[EXIT] #138 | Counter-Strike: Legacy vs FURIA (BO3) - BLAST Rivals Group A (NO)
+  Shares: 1.69 | Entry VWAP: 0.9120 -> Exit Bid VWAP: 0.9880
+  Proceeds: $1.67 | Realized PnL: $+0.13 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.8%) secured early with +8.3% gain
+[2026-11-11 04:01:03 UTC] [CYCLE #804 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=21 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=2 | Cash=$32.27 | Equity=$38.59 (DD=1.78%)
