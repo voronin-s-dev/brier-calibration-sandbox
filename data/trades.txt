@@ -2730,3 +2730,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-11 11:01:09 UTC] [CYCLE #849 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=17 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.79 | Equity=$39.04 (DD=0.63%)
 [2026-11-11 11:10:17 UTC] [CYCLE #850 SUMMARY] Scanned=791 | PassedFilter=50 | Evaluated=19 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.79 | Equity=$39.05 (DD=0.61%)
 [2026-11-11 11:19:24 UTC] [CYCLE #851 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=22 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.79 | Equity=$39.03 (DD=0.66%)
+[2026-11-11 11:30:50 UTC] [OPEN TRADE #142] Counter-Strike: MOUZ vs G2 (BO3) - BLAST Rivals Group B
+  Категория: Sports | Сторона: YES | Источник: https://hltv.org
+  Оценка бота: 95.7% vs Рынок (Ask VWAP): 88.4% (Перекос/Edge: +7.3 п.п.)
+  Стакан CLOB: BestBid=0.883, BestAsk=0.884, Проскальзывание входа/выхода=0.10% (<= 3.0%)
+  Келли: Полный=62.5%, Четверть(0.25x)=25.0% -> Применён=8.0% банка
+  Размер сделки: $3.13 USDC (3.54 shares @ $0.8840)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.530 if P_est <= 70%
+  Причина: High market consensus YES (92.2%) within 4.0h of expiry
+
+[2026-11-11 11:30:50 UTC] [CYCLE #852 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=21 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$24.66 | Equity=$39.11 (DD=0.47%)
