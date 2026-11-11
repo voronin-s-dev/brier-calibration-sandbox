@@ -77,7 +77,7 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-11-11 23:30:53 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-11-11 23:40:00 UTC</div>
     </div>
   </div>
 
@@ -86,22 +86,22 @@
   <div class="grid">
     <div class="card">
       <div class="metric-label">Текущий капитал (Equity)</div>
-      <div class="metric-val">$37.10 <span style="font-size:15px" class="neg">(-12.90$ / -25.80%)</span></div>
+      <div class="metric-val">$37.00 <span style="font-size:15px" class="neg">(-13.00$ / -25.99%)</span></div>
       <div class="metric-sub">Старт: $50.00 USDC (Оценка по Bid стакана!)</div>
     </div>
     <div class="card">
       <div class="metric-label">Свободный кэш / В позициях</div>
-      <div class="metric-val">$20.47 <span class="muted" style="font-size:16px">/ $16.63</span></div>
+      <div class="metric-val">$20.47 <span class="muted" style="font-size:16px">/ $16.53</span></div>
       <div class="metric-sub">Открыто позиций: 7 из 8 (макс 8% банка)</div>
     </div>
     <div class="card">
       <div class="metric-label">Цель подписки ($60 / мес)</div>
-      <div class="metric-val">$-12.90 <span class="muted" style="font-size:16px">/ $60.00</span></div>
+      <div class="metric-val">$-13.00 <span class="muted" style="font-size:16px">/ $60.00</span></div>
       <div class="metric-sub">Прогресс окупаемости: 0.0%</div>
     </div>
     <div class="card">
       <div class="metric-label">Просадка от пика (Drawdown)</div>
-      <div class="metric-val ">5.57% <span class="muted" style="font-size:15px">(Макс: 24.45%)</span></div>
+      <div class="metric-val ">5.82% <span class="muted" style="font-size:15px">(Макс: 24.45%)</span></div>
       <div class="metric-sub">Пик: $39.29 | Лимит остановки: 40.0%</div>
     </div>
     <div class="card">
@@ -282,7 +282,7 @@
             <td><span class="side-no">NO</span></td>
             <td>1.22</td>
             <td>$0.9100</td>
-            <td>$0.9520</td>
+            <td>$0.9500</td>
             <td><strong>98.5%</strong> <small>(+3.0pp)</small></td>
             <td>$1.11 <small>(3.0%)</small></td>
             <td class="pos">$+0.05</td>
@@ -297,7 +297,7 @@
             <td>1.22</td>
             <td>$0.9100</td>
             <td>$0.9300</td>
-            <td><strong>98.0%</strong> <small>(+4.0pp)</small></td>
+            <td><strong>95.0%</strong> <small>(+4.0pp)</small></td>
             <td>$1.11 <small>(3.0%)</small></td>
             <td class="pos">$+0.02</td>
             <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.546 if P_est &lt;= 70%</small></td>
@@ -310,10 +310,10 @@
             <td><span class="side-yes">YES</span></td>
             <td>4.81</td>
             <td>$0.6200</td>
-            <td>$0.6000</td>
-            <td><strong>70.2%</strong> <small>(+8.2pp)</small></td>
+            <td>$0.5800</td>
+            <td><strong>69.4%</strong> <small>(+8.2pp)</small></td>
             <td>$2.98 <small>(8.0%)</small></td>
-            <td class="neg">$-0.10</td>
+            <td class="neg">$-0.19</td>
             <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.372 if P_est &lt;= 70%</small></td>
         </tr>
         
@@ -660,10 +660,7 @@
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box"> входа/выхода=1.30% (&lt;= 3.0%)
-  Келли: Полный=39.9%, Четверть(0.25x)=15.9% -&gt; Применён=8.0% банка
-  Размер сделки: $2.90 USDC (3.42 shares @ $0.8480)
-  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.509 if P_est &lt;= 70%
+  <pre class="log-box"> resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.509 if P_est &lt;= 70%
   Причина: CLOB near-touch depth imbalance OBI=-0.90 (BidDepth=$33 vs AskDepth=$600)
 
 [2026-11-11 15:10:17 UTC] [CYCLE #874 SUMMARY] Scanned=786 | PassedFilter=50 | Evaluated=22 | Edges(&gt;=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$20.31 | Equity=$36.23 (DD=7.78%)
@@ -780,6 +777,7 @@
   Причина: First-passage dip model: ETHUSDT=$2,047.13 -&gt; barrier=$2,000 (-2.30%), vol_h=0.60%, tau=101.5h =&gt; P(touch)=73.1% -&gt; Calibrated(0.75x)=70.2%
 
 [2026-11-11 23:30:47 UTC] [CYCLE #927 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=10 | Edges(&gt;=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$20.47 | Equity=$37.10 (DD=5.57%)
+[2026-11-11 23:39:55 UTC] [CYCLE #928 SUMMARY] Scanned=781 | PassedFilter=50 | Evaluated=9 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$20.47 | Equity=$37.00 (DD=5.82%)
 </pre>
 </body>
 </html>
