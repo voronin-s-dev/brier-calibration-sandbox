@@ -1,26 +1,26 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-10 23:49:20 UTC`
+**Обновлено:** `2026-11-11 00:01:12 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$37.76 USDC`** (`-12.24$` / `-24.49%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$23.71` / `$14.04 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-12.24 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `3.91%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$37.86 USDC`** (`-12.14$` / `-24.29%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$23.71` / `$14.14 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-12.14 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `3.65%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `129` / `72.9%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (7 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #130 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **YES** | `0.820` | `0.930` | `88.4%` | `$2.99` | `$+0.40` | https://www.twitch.tv/kaicenat |
-| #132 | Will the price of Ethereum be above $2,100 on November  | Crypto | **NO** | `0.815` | `0.842` | `82.1%` | `$1.58` | `$+0.05` | Kraken ETHUSDT 1m/1h Spot Klin |
-| #133 | Will the price of Bitcoin be above $72,000 on November  | Crypto | **YES** | `0.913` | `0.915` | `94.9%` | `$1.49` | `$+0.00` | https://www.binance.com/en/tra |
-| #134 | Will Ethereum dip to $2,000 on November 10? | Crypto | **NO** | `0.920` | `0.900` | `95.5%` | `$1.49` | `$-0.03` | https://www.binance.com/en/tra |
+| #130 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **YES** | `0.820` | `0.930` | `88.0%` | `$2.99` | `$+0.40` | https://www.twitch.tv/kaicenat |
+| #132 | Will the price of Ethereum be above $2,100 on November  | Crypto | **NO** | `0.815` | `0.844` | `82.2%` | `$1.58` | `$+0.06` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #133 | Will the price of Bitcoin be above $72,000 on November  | Crypto | **YES** | `0.913` | `0.913` | `95.3%` | `$1.49` | `$+0.00` | https://www.binance.com/en/tra |
+| #134 | Will Ethereum dip to $2,000 on November 10? | Crypto | **NO** | `0.920` | `0.910` | `95.5%` | `$1.49` | `$-0.02` | https://www.binance.com/en/tra |
 | #135 | Will Elon Musk post 300-319 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.860` | `82.1%` | `$2.99` | `$+0.04` | https://x.com/elonmusk |
-| #136 | Will Bitcoin reach $75,000 on November 10? | Crypto | **NO** | `0.897` | `0.921` | `94.8%` | `$1.51` | `$+0.04` | https://www.binance.com/en/tra |
-| #137 | Dota 2: CyberHero vs Power Rangers (BO3) - 1win Essence | Sports | **YES** | `0.910` | `0.900` | `95.0%` | `$1.51` | `$-0.02` | https://www.dotabuff.com |
+| #136 | Will Bitcoin reach $75,000 on November 10? | Crypto | **NO** | `0.897` | `0.932` | `95.9%` | `$1.51` | `$+0.06` | https://www.binance.com/en/tra |
+| #137 | Dota 2: CyberHero vs Power Rangers (BO3) - 1win Essence | Sports | **YES** | `0.910` | `0.940` | `98.0%` | `$1.51` | `$+0.05` | https://www.dotabuff.com |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -33,7 +33,7 @@
 ### Открытые позиции в песочнице (3 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `54.7%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
+| #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `54.6%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
 | #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.0%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
 | #31 | Total Kills Over/Under 27.5 in Game 3? | Other | **YES** | `0.510` | `0.490` | `54.0%` | `$1.15` | `$-0.05` | https://gol.gg/esports/home |
 
