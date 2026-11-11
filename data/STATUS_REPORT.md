@@ -1,25 +1,25 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-11 17:01:17 UTC`
+**Обновлено:** `2026-11-11 17:10:26 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$36.36 USDC`** (`-13.64$` / `-27.27%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$22.92` / `$13.45 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-13.64 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `7.45%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$36.60 USDC`** (`-13.40$` / `-26.80%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$22.92` / `$13.68 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-13.40 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `6.85%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `139` / `74.1%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (6 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #135 | Will Elon Musk post 300-319 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.975` | `89.2%` | `$2.99` | `$+0.44` | https://x.com/elonmusk |
+| #135 | Will Elon Musk post 300-319 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.972` | `89.2%` | `$2.99` | `$+0.43` | https://x.com/elonmusk |
 | #139 | Spurs vs. Bulls | Sports | **YES** | `0.910` | `0.900` | `94.0%` | `$1.55` | `$-0.02` | https://www.nba.com/ |
-| #141 | Will Elon Musk post 280-299 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.930` | `97.0%` | `$3.07` | `$+0.29` | https://x.com/elonmusk |
-| #143 | Dota 2: HULIGANI vs PuckChamp (BO3) - DreamLeague Divis | Sports | **YES** | `0.909` | `0.750` | `98.5%` | `$1.45` | `$-0.25` | https://www.dotabuff.com |
-| #144 | Will Predict.fun launch a token by November 15, 2026? | Other | **NO** | `0.848` | `0.831` | `90.7%` | `$2.90` | `$-0.06` | information from predict.fun ( |
-| #146 | Will Bitcoin reach $76,000 on November 11? | Crypto | **NO** | `0.919` | `0.924` | `97.3%` | `$1.08` | `$+0.01` | https://www.binance.com/en/tra |
+| #141 | Will Elon Musk post 280-299 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.930` | `96.5%` | `$3.07` | `$+0.29` | https://x.com/elonmusk |
+| #143 | Dota 2: HULIGANI vs PuckChamp (BO3) - DreamLeague Divis | Sports | **YES** | `0.909` | `0.894` | `98.5%` | `$1.45` | `$-0.02` | https://www.dotabuff.com |
+| #144 | Will Predict.fun launch a token by November 15, 2026? | Other | **NO** | `0.848` | `0.833` | `90.7%` | `$2.90` | `$-0.05` | information from predict.fun ( |
+| #146 | Will Bitcoin reach $76,000 on November 11? | Crypto | **NO** | `0.919` | `0.932` | `97.0%` | `$1.08` | `$+0.02` | https://www.binance.com/en/tra |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -32,9 +32,9 @@
 ### Открытые позиции в песочнице (3 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `54.8%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
+| #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `55.1%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
 | #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.2%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
-| #31 | Total Kills Over/Under 27.5 in Game 3? | Other | **YES** | `0.510` | `0.490` | `53.8%` | `$1.15` | `$-0.05` | https://gol.gg/esports/home |
+| #31 | Total Kills Over/Under 27.5 in Game 3? | Other | **YES** | `0.510` | `0.490` | `53.7%` | `$1.15` | `$-0.05` | https://gol.gg/esports/home |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
