@@ -2762,3 +2762,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-11 14:19:25 UTC] [CYCLE #869 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=19 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.66 | Equity=$36.17 (DD=7.95%)
 [2026-11-11 14:30:51 UTC] [CYCLE #870 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=20 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.66 | Equity=$36.16 (DD=7.96%)
 [2026-11-11 14:40:00 UTC] [CYCLE #871 SUMMARY] Scanned=781 | PassedFilter=50 | Evaluated=19 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.66 | Equity=$36.16 (DD=7.97%)
+[2026-11-11 14:49:09 UTC] [OPEN TRADE #143] Dota 2: HULIGANI vs PuckChamp (BO3) - DreamLeague Division 2 Group B
+  Категория: Sports | Сторона: YES | Источник: https://www.dotabuff.com
+  Оценка бота: 94.3% vs Рынок (Ask VWAP): 90.9% (Перекос/Edge: +3.4 п.п.)
+  Стакан CLOB: BestBid=0.890, BestAsk=0.909, Проскальзывание входа/выхода=1.90% (<= 3.0%)
+  Келли: Полный=37.4%, Четверть(0.25x)=14.9% -> Применён=4.0% банка
+  Размер сделки: $1.45 USDC (1.60 shares @ $0.9090)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.545 if P_est <= 70%
+  Причина: High market consensus YES (90.8%) within 4.8h of expiry
+
+[2026-11-11 14:49:09 UTC] [CYCLE #872 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=20 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.21 | Equity=$36.11 (DD=8.09%)
