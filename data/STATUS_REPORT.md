@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-11 13:10:23 UTC`
+**Обновлено:** `2026-11-11 13:19:33 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -14,8 +14,8 @@
 ## 📂 Открытые позиции (5 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #132 | Will the price of Ethereum be above $2,100 on November  | Crypto | **NO** | `0.815` | `0.931` | `97.7%` | `$1.58` | `$+0.22` | Kraken ETHUSDT 1m/1h Spot Klin |
-| #133 | Will the price of Bitcoin be above $72,000 on November  | Crypto | **YES** | `0.913` | `0.964` | `98.5%` | `$1.49` | `$+0.08` | https://www.binance.com/en/tra |
+| #132 | Will the price of Ethereum be above $2,100 on November  | Crypto | **NO** | `0.815` | `0.925` | `96.3%` | `$1.58` | `$+0.21` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #133 | Will the price of Bitcoin be above $72,000 on November  | Crypto | **YES** | `0.913` | `0.971` | `98.5%` | `$1.49` | `$+0.09` | https://www.binance.com/en/tra |
 | #135 | Will Elon Musk post 300-319 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.940` | `88.3%` | `$2.99` | `$+0.32` | https://x.com/elonmusk |
 | #139 | Spurs vs. Bulls | Sports | **YES** | `0.910` | `0.900` | `94.0%` | `$1.55` | `$-0.02` | https://www.nba.com/ |
 | #141 | Will Elon Musk post 280-299 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.880` | `83.8%` | `$3.07` | `$+0.11` | https://x.com/elonmusk |
