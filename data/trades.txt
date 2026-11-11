@@ -2714,3 +2714,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-11 08:49:07 UTC] [CYCLE #836 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=15 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.10 | Equity=$38.71 (DD=1.47%)
 [2026-11-11 09:01:06 UTC] [CYCLE #837 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.10 | Equity=$38.80 (DD=1.24%)
 [2026-11-11 09:10:16 UTC] [CYCLE #838 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=15 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.10 | Equity=$38.78 (DD=1.30%)
+[EXIT] #140 | Counter-Strike: Spirit vs FUT Esports (BO3) - BLAST Rivals Group B (YES)
+  Shares: 1.68 | Entry VWAP: 0.9200 -> Exit Bid VWAP: 0.9990
+  Proceeds: $1.68 | Realized PnL: $+0.13 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +8.6% gain
+[2026-11-11 09:19:26 UTC] [CYCLE #839 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$27.79 | Equity=$38.83 (DD=1.18%)
