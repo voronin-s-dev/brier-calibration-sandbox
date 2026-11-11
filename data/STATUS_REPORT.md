@@ -1,25 +1,25 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-11 00:10:21 UTC`
+**Обновлено:** `2026-11-11 00:19:29 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$37.95 USDC`** (`-12.05$` / `-24.10%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$25.36` / `$12.59 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-12.05 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `3.41%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$37.93 USDC`** (`-12.07$` / `-24.14%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$25.36` / `$12.58 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-12.07 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `3.46%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `130` / `73.1%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (6 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #130 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **YES** | `0.820` | `0.930` | `88.4%` | `$2.99` | `$+0.40` | https://www.twitch.tv/kaicenat |
-| #132 | Will the price of Ethereum be above $2,100 on November  | Crypto | **NO** | `0.815` | `0.841` | `82.3%` | `$1.58` | `$+0.05` | Kraken ETHUSDT 1m/1h Spot Klin |
-| #133 | Will the price of Bitcoin be above $72,000 on November  | Crypto | **YES** | `0.913` | `0.916` | `95.2%` | `$1.49` | `$+0.00` | https://www.binance.com/en/tra |
-| #134 | Will Ethereum dip to $2,000 on November 10? | Crypto | **NO** | `0.920` | `0.910` | `95.5%` | `$1.49` | `$-0.02` | https://www.binance.com/en/tra |
-| #135 | Will Elon Musk post 300-319 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.860` | `82.1%` | `$2.99` | `$+0.04` | https://x.com/elonmusk |
-| #136 | Will Bitcoin reach $75,000 on November 10? | Crypto | **NO** | `0.897` | `0.938` | `96.7%` | `$1.51` | `$+0.07` | https://www.binance.com/en/tra |
+| #130 | Will Kai Cenat finish his GTA marathon by November 11,  | Other | **YES** | `0.820` | `0.910` | `87.2%` | `$2.99` | `$+0.33` | https://www.twitch.tv/kaicenat |
+| #132 | Will the price of Ethereum be above $2,100 on November  | Crypto | **NO** | `0.815` | `0.842` | `82.5%` | `$1.58` | `$+0.05` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #133 | Will the price of Bitcoin be above $72,000 on November  | Crypto | **YES** | `0.913` | `0.906` | `94.0%` | `$1.49` | `$-0.01` | https://www.binance.com/en/tra |
+| #134 | Will Ethereum dip to $2,000 on November 10? | Crypto | **NO** | `0.920` | `0.920` | `96.5%` | `$1.49` | `$+0.00` | https://www.binance.com/en/tra |
+| #135 | Will Elon Musk post 300-319 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.870` | `82.9%` | `$2.99` | `$+0.07` | https://x.com/elonmusk |
+| #136 | Will Bitcoin reach $75,000 on November 10? | Crypto | **NO** | `0.897` | `0.949` | `98.2%` | `$1.51` | `$+0.09` | https://www.binance.com/en/tra |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -33,8 +33,8 @@
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `54.9%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
-| #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.1%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
-| #31 | Total Kills Over/Under 27.5 in Game 3? | Other | **YES** | `0.510` | `0.490` | `54.0%` | `$1.15` | `$-0.05` | https://gol.gg/esports/home |
+| #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.2%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
+| #31 | Total Kills Over/Under 27.5 in Game 3? | Other | **YES** | `0.510` | `0.490` | `53.6%` | `$1.15` | `$-0.05` | https://gol.gg/esports/home |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
@@ -46,6 +46,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Bitcoin dip to $72,000 on November 10? | Crypto | NO | `98.0%` | `94.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.76, $0.92] |
 | Dota 2: CyberHero vs Power Rangers (BO3) - 1win Es | Sports | YES | `95.0%` | `91.0%` | `+4.0 п.п.` | `1.00%` | EXECUTED BUY #137 ($1.51 @ 0.9100) |
 | Will Bitcoin reach $75,000 on November 10? | Crypto | NO | `94.2%` | `89.7%` | `+4.5 п.п.` | `0.90%` | EXECUTED BUY #136 ($1.51 @ 0.8970) |
 | Will Bitcoin reach $75,000 on November 10? | Crypto | NO | `94.5%` | `87.8%` | `+6.7 п.п.` | `1.00%` | REJECTED on final sizing: slippage=2.40% |
@@ -63,4 +64,3 @@
 | Dota 2: HULIGANI vs Amaru Gaming - Game 1 Winner | Sports | YES | `97.5%` | `67.0%` | `+30.5 п.п.` | `1.00%` | REJECTED: Contract price $0.670 outside sweet spot [$0.76, $0.92] |
 | Counter-Strike: FORZE Reload vs MOUZ NXT (BO3) - E | Sports | YES | `94.0%` | `88.0%` | `+6.0 п.п.` | `1.00%` | EXECUTED BUY #129 ($2.97 @ 0.8800) |
 | Dota 2: PlayTime vs Nemiga Gaming - Game 1 Winner | Sports | YES | `94.0%` | `80.0%` | `+14.0 п.п.` | `2.00%` | EXECUTED BUY #128 ($2.91 @ 0.8000) |
-| LoL: Saigon Warriors vs Gromp Esports - Game 2 Win | Sports | YES | `98.0%` | `93.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Contract price $0.930 outside sweet spot [$0.76, $0.92] |
