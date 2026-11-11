@@ -1,25 +1,26 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-11 23:19:28 UTC`
+**Обновлено:** `2026-11-11 23:30:53 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$37.24 USDC`** (`-12.76$` / `-25.53%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$23.45` / `$13.78 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-12.76 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `5.23%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$37.10 USDC`** (`-12.90$` / `-25.80%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$20.47` / `$16.63 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-12.90 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `5.57%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `141` / `74.5%` | Brier Score: `0.1960` |
 
-## 📂 Открытые позиции (6 / 8)
+## 📂 Открытые позиции (7 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #135 | Will Elon Musk post 300-319 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.978` | `98.5%` | `$2.99` | `$+0.45` | https://x.com/elonmusk |
+| #135 | Will Elon Musk post 300-319 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.979` | `98.5%` | `$2.99` | `$+0.45` | https://x.com/elonmusk |
 | #139 | Spurs vs. Bulls | Sports | **YES** | `0.910` | `0.900` | `94.0%` | `$1.55` | `$-0.02` | https://www.nba.com/ |
 | #141 | Will Elon Musk post 280-299 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.950` | `98.5%` | `$3.07` | `$+0.36` | https://x.com/elonmusk |
-| #144 | Will Predict.fun launch a token by November 15, 2026? | Other | **NO** | `0.848` | `0.901` | `90.7%` | `$2.90` | `$+0.18` | information from predict.fun ( |
-| #147 | Will the price of Bitcoin be above $76,000 on November  | Crypto | **NO** | `0.910` | `0.954` | `98.5%` | `$1.11` | `$+0.05` | https://www.binance.com/en/tra |
-| #148 | Will Bitcoin reach $75,000 on November 11? | Crypto | **NO** | `0.910` | `0.930` | `97.0%` | `$1.11` | `$+0.02` | https://www.binance.com/en/tra |
+| #144 | Will Predict.fun launch a token by November 15, 2026? | Other | **NO** | `0.848` | `0.890` | `90.7%` | `$2.90` | `$+0.14` | information from predict.fun ( |
+| #147 | Will the price of Bitcoin be above $76,000 on November  | Crypto | **NO** | `0.910` | `0.952` | `98.5%` | `$1.11` | `$+0.05` | https://www.binance.com/en/tra |
+| #148 | Will Bitcoin reach $75,000 on November 11? | Crypto | **NO** | `0.910` | `0.930` | `98.0%` | `$1.11` | `$+0.02` | https://www.binance.com/en/tra |
+| #149 | Will Ethereum dip to $2,000 November 9-15? | Crypto | **YES** | `0.620` | `0.600` | `70.2%` | `$2.98` | `$-0.10` | Kraken ETHUSDT 1m/1h Spot Klin |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -34,7 +35,7 @@
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `54.5%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
 | #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.3%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
-| #31 | Total Kills Over/Under 27.5 in Game 3? | Other | **YES** | `0.510` | `0.490` | `54.5%` | `$1.15` | `$-0.05` | https://gol.gg/esports/home |
+| #31 | Total Kills Over/Under 27.5 in Game 3? | Other | **YES** | `0.510` | `0.490` | `54.6%` | `$1.15` | `$-0.05` | https://gol.gg/esports/home |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
@@ -46,6 +47,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Ethereum dip to $2,000 November 9-15? | Crypto | YES | `70.2%` | `62.0%` | `+8.2 п.п.` | `2.00%` | EXECUTED BUY #149 ($2.98 @ 0.6200) |
 | Will Bitcoin reach $75,000 on November 11? | Crypto | NO | `95.0%` | `91.0%` | `+4.0 п.п.` | `2.00%` | EXECUTED BUY #148 ($1.11 @ 0.9100) |
 | Will the price of Bitcoin be above $76,000 on Nove | Crypto | NO | `94.0%` | `91.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #147 ($1.11 @ 0.9100) |
 | Will Bitcoin reach $75,000 on November 11? | Crypto | YES | `70.0%` | `37.0%` | `+33.1 п.п.` | `3.00%` | REJECTED: Contract price $0.370 outside sweet spot [$0.60, $0.92] |
@@ -63,4 +65,3 @@
 | LoL: Ground Zero Gaming vs Frank Esports - Game 1  | Sports | NO | `98.5%` | `93.0%` | `+5.5 п.п.` | `1.00%` | REJECTED: Contract price $0.930 outside sweet spot [$0.76, $0.92] |
 | Will Elon Musk post 280-299 tweets from November 6 | Geopolitics | NO | `90.2%` | `85.0%` | `+5.2 п.п.` | `1.00%` | EXECUTED BUY #141 ($3.07 @ 0.8500) |
 | Counter-Strike: Spirit vs FUT Esports - Map 1 Winn | Sports | YES | `95.0%` | `87.0%` | `+8.0 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (sports:counter-strike: spirit vs fut espor:nodate) |
-| Counter-Strike: Spirit vs FUT Esports - Map 1 Winn | Sports | YES | `96.0%` | `91.0%` | `+5.0 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (sports:counter-strike: spirit vs fut espor:nodate) |
