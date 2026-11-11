@@ -645,6 +645,156 @@ class TestRiskManagementV2(unittest.TestCase):
                     self.assertTrue(second_res)
                     self.assertEqual(mock_url.call_count, 1)
 
+    def test_run_sim_help_does_not_crash(self):
+        """
+        Direction O (CLI Stability):
+        Verifies that run_sim.py argument parser expands help strings without
+        raising ValueError: unsupported format character '%'.
+        """
+        import subprocess
+        import sys
+        res = subprocess.run(
+            [sys.executable, "run_sim.py", "--help"],
+            capture_output=True,
+            text=True,
+            cwd=Path(__file__).resolve().parent,
+        )
+        self.assertEqual(res.returncode, 0)
+        self.assertIn("Polymarket Autonomous Paper-Trading Simulator", res.stdout)
+        self.assertIn("--reset-halt", res.stdout)
+
+    def test_weather_oracle_date_parsing_with_year_and_rollover(self):
+        """
+        Direction P (Oracles Hardening):
+        Verifies that WeatherOracle correctly parses explicit 4-digit years
+        and rolls over to next year when month difference exceeds 6 months.
+        """
+        from oracles import WeatherOracle
+        from polymarket_api import MarketInfo
+
+        oracle = WeatherOracle()
+        # Mock weather forecasts cache to avoid network calls
+        oracle._cache["chicago"] = {
+            "2027-01-05": 30.0,
+        }
+
+        # Market with explicit year 2027
+        m_explicit = MarketInfo(
+            id="m_weath_1",
+            question="Will the highest temperature in Chicago be 20°F or lower on January 5, 2027?",
+            slug="chicago-weather-jan-2027",
+            description="",
+            resolution_source="NOAA KORD",
+            has_official_source=True,
+            end_date_iso="2027-01-05T23:59:59Z",
+            hours_to_close=24.0,
+            liquidity_usd=10000.0,
+            volume_24h_usd=20000.0,
+            outcomes=["Yes", "No"],
+            gamma_prices=[0.5, 0.5],
+            clob_token_ids=["tok1", "tok2"],
+            order_min_size=1.0,
+            tick_size=0.01,
+            category="Weather",
+        )
+        res = oracle.evaluate(m_explicit)
+        self.assertIsNotNone(res)
+        self.assertEqual(res.supporting_data["target_date"], "2027-01-05")
+
+        # Market with rollover (no year specified, but in Nov/Dec target is Jan)
+        m_rollover = MarketInfo(
+            id="m_weath_2",
+            question="Will the highest temperature in Chicago be 20°F or lower on January 5?",
+            slug="chicago-weather-jan-rollover",
+            description="",
+            resolution_source="NOAA KORD",
+            has_official_source=True,
+            end_date_iso="2027-01-05T23:59:59Z",
+            hours_to_close=24.0,
+            liquidity_usd=10000.0,
+            volume_24h_usd=20000.0,
+            outcomes=["Yes", "No"],
+            gamma_prices=[0.5, 0.5],
+            clob_token_ids=["tok1", "tok2"],
+            order_min_size=1.0,
+            tick_size=0.01,
+            category="Weather",
+        )
+        res_roll = oracle.evaluate(m_rollover)
+        self.assertIsNotNone(res_roll)
+        self.assertEqual(res_roll.supporting_data["target_date"], "2027-01-05")
+
+    def test_notify_position_closed_resolved_loss_explanation(self):
+        """
+        Direction Q (Notification Precision):
+        Verifies that when a position settles at $0.00 (loss), the notification
+        accurately explains the loss instead of claiming a 100% win.
+        """
+        import telegram_notify
+        import tempfile
+        from unittest.mock import patch
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            test_state = Path(tmpdir) / "notified_exits.json"
+            captured_messages = []
+            with patch("telegram_notify.send_telegram_alert") as mock_alert:
+                mock_alert.side_effect = lambda text, *args, **kwargs: (captured_messages.append(text), True)[1]
+                pos = {
+                    "id": 99999,
+                    "question": "Will BTC reach $100k?",
+                    "side": "YES",
+                    "cost_usdc": 3.00,
+                }
+                res = telegram_notify.notify_position_closed(
+                    pos=pos,
+                    pnl=-3.00,
+                    exit_vwap=0.0,
+                    exit_reason="MARKET RESOLVED on Polymarket: YES settled at $0.00/share",
+                    total_equity=35.00,
+                    state_file_override=test_state,
+                )
+                self.assertTrue(res)
+                self.assertEqual(len(captured_messages), 1)
+                msg = captured_messages[0]
+                self.assertIn("Защитный выход: -3.00$", msg)
+                self.assertIn("исходом против нас", msg)
+                self.assertNotIn("победой", msg)
+
+    def test_daily_digest_blocks_midnight_early_trigger(self):
+        """
+        Direction N (Notification & CLI Idempotency):
+        Verifies that check_and_send_daily_digest blocks early midnight triggers (< 07:00 UTC)
+        and only sends at or after the target morning hour.
+        """
+        from datetime import datetime, timezone
+        import telegram_notify
+        from unittest.mock import MagicMock, patch
+
+        mock_db = MagicMock()
+        mock_db.recalculate_portfolio.return_value = {
+            "total_equity": 38.0,
+            "cash_usdc": 35.0,
+            "locked_usdc": 3.0,
+        }
+
+        # 1. At 00:05 UTC (02:05 local time), digest must be blocked
+        early_dt = datetime(2026, 11, 11, 0, 5, 0, tzinfo=timezone.utc)
+        with patch("telegram_notify.datetime") as mock_dt:
+            mock_dt.now.return_value = early_dt
+            mock_dt.side_effect = lambda *args, **kwargs: datetime(*args, **kwargs)
+            res = telegram_notify.check_and_send_daily_digest(mock_db, force=False, target_hour_utc=7)
+            self.assertFalse(res)
+
+        # 2. At 07:15 UTC (09:15 local time), target hour has arrived
+        morning_dt = datetime(2026, 11, 11, 7, 15, 0, tzinfo=timezone.utc)
+        with patch("telegram_notify.datetime") as mock_dt:
+            mock_dt.now.return_value = morning_dt
+            mock_dt.side_effect = lambda *args, **kwargs: datetime(*args, **kwargs)
+            with patch("telegram_notify.send_telegram_alert", return_value=True):
+                with patch("telegram_notify.Path.exists", return_value=False):
+                    res = telegram_notify.check_and_send_daily_digest(mock_db, force=False, target_hour_utc=7)
+                    self.assertTrue(res)
+
 
 if __name__ == "__main__":
     unittest.main()

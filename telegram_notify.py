@@ -116,6 +116,7 @@ def notify_position_closed(
     exit_vwap: float,
     exit_reason: str,
     total_equity: float,
+    state_file_override: Optional[Path] = None,
 ) -> bool:
     """
     Sends a concise, human-readable notification when a position is closed or resolved.
@@ -123,7 +124,7 @@ def notify_position_closed(
     Enforces idempotency: never sends multiple notifications for the same position_id.
     """
     pos_id = pos.get("id")
-    state_file = Path(__file__).resolve().parent / "data" / "notified_exits.json"
+    state_file = state_file_override or (Path(__file__).resolve().parent / "data" / "notified_exits.json")
     notified_ids = set()
     if pos_id is not None and state_file.exists():
         try:
@@ -149,10 +150,13 @@ def notify_position_closed(
         title = "Выход в безубыток"
 
     # Friendly Russian explanation of the exit trigger
-    if "TAKE PROFIT" in exit_reason or exit_vwap >= 0.98:
+    if "TAKE PROFIT" in exit_reason or (exit_vwap >= 0.98 and pnl > 0):
         reason_ru = f"Достигнута целевая цена (${exit_vwap:.3f}) — прибыль зафиксирована досрочно"
     elif "MARKET RESOLVED" in exit_reason or exit_vwap >= 0.999:
-        reason_ru = "Событие завершилось победой (выплата 100%)"
+        if pnl >= 0:
+            reason_ru = "Событие завершилось победой (выплата 100%)"
+        else:
+            reason_ru = "Событие завершилось исходом против нас (экспирация в $0.00)"
     elif "TIME EXIT" in exit_reason:
         reason_ru = "Выход по тайм-лимиту (менее 1ч до закрытия рынка) во избежание риска экспирации"
     elif "THESIS INVALIDATED" in exit_reason:
@@ -180,12 +184,28 @@ def notify_position_closed(
     return sent
 
 
-def check_and_send_daily_digest(db: Any, force: bool = False) -> bool:
+def check_and_send_daily_digest(
+    db: Any,
+    force: bool = False,
+    target_hour_utc: Optional[int] = None,
+) -> bool:
     """
-    Sends a consolidated daily summary once per calendar day (UTC), or if forced.
+    Sends a consolidated daily summary once per calendar day at the target hour (default 07:00 UTC = 09:00/10:00 local), or if forced.
+    Prevents early night triggers (e.g. 02:00 AM immediately after midnight UTC).
     """
     state_file = Path(__file__).resolve().parent / "data" / "last_digest.json"
-    today_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    now_dt = datetime.now(timezone.utc)
+    today_utc = now_dt.strftime("%Y-%m-%d")
+
+    if target_hour_utc is None:
+        try:
+            target_hour_utc = int(os.getenv("DAILY_DIGEST_HOUR_UTC", "7"))
+        except Exception:
+            target_hour_utc = 7
+
+    # Block sending in the middle of the night before target morning hour (07:00 UTC = 09:00/10:00 local)
+    if not force and now_dt.hour < target_hour_utc:
+        return False
 
     if not force and state_file.exists():
         try:

@@ -124,7 +124,7 @@ def main() -> None:
     parser.add_argument("--governor", action="store_true", help="Run 3-tier Auto-Governor audit and generate GOVERNANCE_REPORT.md")
     parser.add_argument("--approve", type=int, help="Approve and apply a pending Semi-Auto proposal by ID")
     parser.add_argument("--dismiss", type=int, help="Dismiss a pending Semi-Auto proposal by ID")
-    parser.add_argument("--reset-halt", action="store_true", help="Reset 40% kill-switch and re-baseline peak equity to current equity")
+    parser.add_argument("--reset-halt", action="store_true", help="Reset 40%% kill-switch and re-baseline peak equity to current equity")
     args = parser.parse_args()
 
     db = SimDatabase(initial_capital=50.0)

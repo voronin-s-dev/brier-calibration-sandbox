@@ -401,9 +401,9 @@ class WeatherOracle:
         if not matched_city:
             return None
 
-        # Extract date (e.g., "on October 13")
+        # Extract date (e.g., "on October 13", "on January 5, 2027")
         date_match = re.search(
-            r"on\s+(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})",
+            r"on\s+(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})(?:,?\s*(\d{4}))?",
             q_lower,
         )
         if not date_match:
@@ -411,7 +411,15 @@ class WeatherOracle:
 
         month_num = self.MONTHS[date_match.group(1)]
         day_num = int(date_match.group(2))
-        year_num = datetime.now(timezone.utc).year
+        explicit_year = date_match.group(3)
+        now_utc = datetime.now(timezone.utc)
+        if explicit_year:
+            year_num = int(explicit_year)
+        else:
+            year_num = now_utc.year
+            # Year rollover guard: if target month is far earlier than current month, target is in next year
+            if month_num < now_utc.month and (now_utc.month - month_num) >= 6:
+                year_num += 1
         target_date_str = f"{year_num:04d}-{month_num:02d}-{day_num:02d}"
 
         forecasts = self._get_daily_max_forecasts(matched_city)
