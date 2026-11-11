@@ -2602,3 +2602,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-11-10 23:49:11 UTC] [CYCLE #776 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=3 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.71 | Equity=$37.76 (DD=3.91%)
 [2026-11-11 00:01:04 UTC] [CYCLE #777 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.71 | Equity=$37.86 (DD=3.65%)
+[EXIT] #137 | Dota 2: CyberHero vs Power Rangers (BO3) - 1win Essence Play-in Group A (YES)
+  Shares: 1.66 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9900
+  Proceeds: $1.64 | Realized PnL: $+0.13 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.0%) secured early with +8.8% gain
+[2026-11-11 00:10:14 UTC] [CYCLE #778 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$25.36 | Equity=$37.95 (DD=3.41%)
