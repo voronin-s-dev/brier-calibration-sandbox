@@ -2858,3 +2858,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-11 22:09:14 UTC] [CYCLE #917 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.51 | Equity=$37.01 (DD=5.80%)
 [2026-11-11 22:09:32 UTC] [CYCLE #918 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.51 | Equity=$37.03 (DD=5.75%)
 [2026-11-11 22:18:40 UTC] [CYCLE #919 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.51 | Equity=$37.03 (DD=5.75%)
+[2026-11-11 22:27:48 UTC] [OPEN TRADE #147] Will the price of Bitcoin be above $76,000 on November 12?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=33.3%, Четверть(0.25x)=13.3% -> Применён=3.0% банка
+  Размер сделки: $1.11 USDC (1.22 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: High market consensus NO (90.5%) within 18.5h of expiry
+
+[2026-11-11 22:27:48 UTC] [CYCLE #920 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.40 | Equity=$37.04 (DD=5.73%)
