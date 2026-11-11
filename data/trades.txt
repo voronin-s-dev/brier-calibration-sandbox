@@ -2740,3 +2740,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus YES (92.2%) within 4.0h of expiry
 
 [2026-11-11 11:30:50 UTC] [CYCLE #852 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=21 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$24.66 | Equity=$39.11 (DD=0.47%)
+[2026-11-11 11:39:58 UTC] [CYCLE #853 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=20 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.66 | Equity=$38.41 (DD=2.24%)
