@@ -147,8 +147,8 @@ class TestRiskManagementV2(unittest.TestCase):
         self.assertEqual(GrokCharterPaperTrader.EXIT_HOURS_THRESHOLD, 0.0)
         self.assertEqual(GrokCharterPaperTrader.STOP_LOSS_PCT, 0.40)
         self.assertEqual(GrokCharterPaperTrader.MIN_EDGE_PP, 0.015)
-        self.assertEqual(GrokCharterPaperTrader.MIN_ESTIMATED_PROB, 0.80)
-        self.assertEqual(GrokCharterPaperTrader.MIN_CONTRACT_PRICE, 0.76)
+        self.assertEqual(GrokCharterPaperTrader.MIN_ESTIMATED_PROB, 0.70)
+        self.assertEqual(GrokCharterPaperTrader.MIN_CONTRACT_PRICE, 0.60)
         self.assertEqual(GrokCharterPaperTrader.MAX_CONTRACT_PRICE, 0.92)
         self.assertEqual(GrokCharterPaperTrader.MAX_BANK_PCT_PER_TRADE, 0.08)
 
@@ -553,26 +553,32 @@ class TestRiskManagementV2(unittest.TestCase):
                     self.assertEqual(all_pos[0]["proceeds_usdc"], 0.0)
 
     def test_dynamic_risk_cap_for_ceiling_contracts(self) -> None:
-        """Direction C: High-price contracts (>= 0.895) must be capped at 4% bankroll to limit tail risk."""
+        """Direction C: Tiered risk cap to protect against asymmetric upsets on expensive contracts."""
         from trader import GrokCharterPaperTrader
-        # Sweet spot [0.76, 0.895) gets standard 8% cap
+        # Value sweet spot [0.60, 0.80) gets standard 8% cap
+        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.60), 0.08)
+        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.70), 0.08)
         self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.76), 0.08)
-        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.84), 0.08)
-        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.89), 0.08)
+        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.79), 0.08)
 
-        # Ceiling contracts [0.895, 0.92] capped at 4%
-        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.90), 0.04)
-        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.91), 0.04)
-        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.92), 0.04)
+        # High-price contracts [0.80, 0.88) capped at 4%
+        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.80), 0.04)
+        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.84), 0.04)
+        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.87), 0.04)
 
-        # Kelly sizing with 4% cap on $50 equity: max bet is $2.00 (not $4.00)
+        # Extreme ceiling contracts (>= 0.88) strictly capped at 3%
+        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.88), 0.03)
+        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.90), 0.03)
+        self.assertEqual(GrokCharterPaperTrader.get_max_bank_pct_for_price(0.92), 0.03)
+
+        # Kelly sizing with 3% cap on $50 equity: max bet is $1.50 (not $4.00)
         _, _, applied_pct, bet_usdc = GrokCharterPaperTrader.compute_kelly_sizing(
             p_est=0.98, ask_vwap=0.90, total_equity=50.0,
             max_pct=GrokCharterPaperTrader.get_max_bank_pct_for_price(0.90),
             kelly_fraction=0.40,
         )
-        self.assertEqual(applied_pct, 0.04)
-        self.assertEqual(bet_usdc, 2.00)
+        self.assertEqual(applied_pct, 0.03)
+        self.assertEqual(bet_usdc, 1.50)
 
     def test_multi_category_filter_partitioning(self) -> None:
         """Direction C / S: Comma-separated category filters (e.g. 'Sports, Other') must route correctly."""
@@ -794,6 +800,100 @@ class TestRiskManagementV2(unittest.TestCase):
                 with patch("telegram_notify.Path.exists", return_value=False):
                     res = telegram_notify.check_and_send_daily_digest(mock_db, force=False, target_hour_utc=7)
                     self.assertTrue(res)
+
+    def test_esports_probability_discounting(self) -> None:
+        """Verify that esports high-consensus favorites are capped at 84% to account for upset risk."""
+        from oracles import HighConvictionFactOracle, is_esports_market
+        from polymarket_api import MarketInfo
+
+        oracle = HighConvictionFactOracle()
+
+        # Esports market (Counter-Strike)
+        m_esports = MarketInfo(
+            id="m_cs",
+            question="Counter-Strike: MOUZ vs G2 (BO3) - BLAST Rivals",
+            slug="m-cs",
+            description="",
+            resolution_source="https://hltv.org",
+            has_official_source=True,
+            end_date_iso="2026-11-12T00:00:00Z",
+            hours_to_close=10.0,
+            liquidity_usd=12000.0,
+            volume_24h_usd=25000.0,
+            outcomes=["Yes", "No"],
+            gamma_prices=[0.92, 0.08],
+            clob_token_ids=["tok_yes", "tok_no"],
+            order_min_size=1.0,
+            tick_size=0.01,
+            category="Sports",
+            closed=False,
+        )
+        self.assertTrue(is_esports_market(m_esports))
+        res_esports = oracle.evaluate(m_esports)
+        self.assertIsNotNone(res_esports)
+        self.assertEqual(res_esports.p_yes, 0.84)
+        self.assertEqual(res_esports.oracle_used, "EsportsDiscountedConsensusOracle")
+
+        # Non-esports mature market (e.g. general Sports or Geopolitics)
+        m_general = MarketInfo(
+            id="m_gen",
+            question="Will Team USA win the International Match?",
+            slug="m-gen",
+            description="",
+            resolution_source="Official Scoreboard",
+            has_official_source=True,
+            end_date_iso="2026-11-12T00:00:00Z",
+            hours_to_close=10.0,
+            liquidity_usd=12000.0,
+            volume_24h_usd=25000.0,
+            outcomes=["Yes", "No"],
+            gamma_prices=[0.92, 0.08],
+            clob_token_ids=["tok_yes", "tok_no"],
+            order_min_size=1.0,
+            tick_size=0.01,
+            category="Sports",
+            closed=False,
+        )
+        self.assertFalse(is_esports_market(m_general))
+        res_general = oracle.evaluate(m_general)
+        self.assertIsNotNone(res_general)
+        self.assertEqual(res_general.p_yes, 0.955)
+        self.assertEqual(res_general.oracle_used, "MatureMarketConsensusOracle")
+
+    def test_value_sweet_spot_selection_priority(self) -> None:
+        """Verify that markets in the 60-75 cent value sweet spot are prioritized ahead of 80-92 cent favorites."""
+        from unittest.mock import MagicMock
+        from polymarket_api import MarketInfo
+        from trader import GrokCharterPaperTrader
+
+        m_value = MarketInfo(
+            id="m_val", question="Match A", slug="m-val", description="",
+            resolution_source="https://official.org", has_official_source=True,
+            end_date_iso="2026-11-12T00:00:00Z", hours_to_close=10.0,
+            liquidity_usd=10000.0, volume_24h_usd=50000.0, outcomes=["Yes", "No"],
+            gamma_prices=[0.68, 0.32], clob_token_ids=["t1", "t2"],
+            order_min_size=1.0, tick_size=0.01, category="Sports", closed=False,
+        )
+        m_favorite = MarketInfo(
+            id="m_fav", question="Match B", slug="m-fav", description="",
+            resolution_source="https://official.org", has_official_source=True,
+            end_date_iso="2026-11-12T00:00:00Z", hours_to_close=10.0,
+            liquidity_usd=20000.0, volume_24h_usd=100000.0, outcomes=["Yes", "No"],
+            gamma_prices=[0.89, 0.11], clob_token_ids=["t3", "t4"],
+            order_min_size=1.0, tick_size=0.01, category="Sports", closed=False,
+        )
+
+        trader = GrokCharterPaperTrader(db=MagicMock())
+        candidates, _ = trader.partition_markets(
+            all_markets=[m_favorite, m_value],
+            open_real_market_ids=set(),
+            open_shadow_market_ids=set(),
+            cat_filter="ALL",
+            min_liq=5000.0,
+        )
+        # Value market [0.60, 0.80) MUST be sorted first despite having lower volume than the favorite
+        self.assertEqual(candidates[0].id, "m_val")
+        self.assertEqual(candidates[1].id, "m_fav")
 
 
 if __name__ == "__main__":

@@ -30,9 +30,9 @@
     "semantic_hash": ""
   },
   "oracles.py": {
-    "mtime": 1794397129.3859448,
-    "seen": 1794397468.1663406,
-    "ast_hash": "dda8fb99a64abefa357fa2d191ad152c",
+    "mtime": 1794411511.1915715,
+    "seen": 1794411802.774659,
+    "ast_hash": "307c3089dc174c2a69cd1749d6e78d23",
     "semantic_hash": ""
   },
   "polymarket_api.py": {
@@ -42,27 +42,27 @@
     "semantic_hash": ""
   },
   "run_sim.py": {
-    "mtime": 1794397296.3262362,
-    "seen": 1794397468.1663468,
+    "mtime": 1794397537.971291,
+    "seen": 1794411802.7746673,
     "ast_hash": "aa87766ce5111465efbb007b3efcb32e",
     "semantic_hash": ""
   },
   "telegram_notify.py": {
-    "mtime": 1794397414.9743066,
-    "seen": 1794397468.1663504,
+    "mtime": 1794397537.9730551,
+    "seen": 1794411802.7746708,
     "ast_hash": "378dea7b545970f08cba2564e541c785",
     "semantic_hash": ""
   },
   "tests_risk.py": {
-    "mtime": 1794397433.0964386,
-    "seen": 1794397468.1663759,
-    "ast_hash": "47f74b44260708db25b06850be2a6932",
+    "mtime": 1794411806.021899,
+    "seen": 1794411896.6585605,
+    "ast_hash": "6fd88cd588dac402ab85c971aa64d185",
     "semantic_hash": ""
   },
   "trader.py": {
-    "mtime": 1794312715.0211003,
-    "seen": 1794334397.8334444,
-    "ast_hash": "02e359817cdd574a76c51b8a68cddf60",
+    "mtime": 1794411563.3352914,
+    "seen": 1794411802.7746978,
+    "ast_hash": "a395808a328fda8a9ba36496b21fbd38",
     "semantic_hash": ""
   },
   "trigger_cloud.py": {
@@ -84,32 +84,32 @@
     "semantic_hash": ""
   },
   "data/GOVERNANCE_REPORT.md": {
-    "mtime": 1794397078.1070821,
-    "seen": 1794397468.1664362,
-    "ast_hash": "968a10a20bec8c429ecc2ba0470f261a",
+    "mtime": 1794402831.1359668,
+    "seen": 1794411802.7747478,
+    "ast_hash": "16920f619da51339276a3854a0222df7",
     "semantic_hash": ""
   },
   "data/STATUS_REPORT.md": {
-    "mtime": 1794397078.1085901,
-    "seen": 1794397468.1664402,
-    "ast_hash": "c2d05d864b7015283723cce0f26e2cfd",
+    "mtime": 1794402831.1369727,
+    "seen": 1794411802.774752,
+    "ast_hash": "09af3c48426a0e5a6bba8538e164ad47",
     "semantic_hash": ""
   },
   "data/dashboard.html": {
-    "mtime": 1794397078.1097672,
-    "seen": 1794397468.1664436,
-    "ast_hash": "00b54dd90d11ae17db9c85294fd7a22b",
+    "mtime": 1794402831.1394045,
+    "seen": 1794411802.7747555,
+    "ast_hash": "0d782929b45b3532f86b90141a646ed1",
     "semantic_hash": ""
   },
   "data/trades.txt": {
-    "mtime": 1794397078.132981,
-    "seen": 1794397468.1664476,
-    "ast_hash": "7ce07ee2c14f054853f35e6088b28424",
+    "mtime": 1794402831.1540375,
+    "seen": 1794411802.7747586,
+    "ast_hash": "d3de150d81657a5a38bf4d1a8609090a",
     "semantic_hash": ""
   },
   "data/last_digest.json": {
-    "mtime": 1794397444.111966,
-    "seen": 1794397468.1663203,
+    "mtime": 1794411876.7290158,
+    "seen": 1794411896.6585326,
     "ast_hash": "12042c79a48ac6bbb9f9d93d2aa60960",
     "semantic_hash": ""
   },
@@ -192,9 +192,9 @@
     "semantic_hash": ""
   },
   "data/notified_alerts_cache.json": {
-    "mtime": 1794397078.1117873,
-    "seen": 1794397468.1663253,
-    "ast_hash": "62d1b4127a7f3d80bb8a4bd00e03aac8",
+    "mtime": 1794402831.1400762,
+    "seen": 1794411802.774643,
+    "ast_hash": "dc66a2f0811aeeb59cdbaf460518096e",
     "semantic_hash": ""
   },
   ".agents/aar/runs/2026-11-10-duplicate-telegram-approval-alerts-aar.md": {
@@ -204,15 +204,15 @@
     "semantic_hash": ""
   },
   "data/notified_exits.json": {
-    "mtime": 1794397418.8683062,
-    "seen": 1794397468.1663291,
-    "ast_hash": "b3f72a88e367c58d62a04e2ca90806fb",
+    "mtime": 1794402831.1411507,
+    "seen": 1794411802.7746468,
+    "ast_hash": "b330b697833c654b4dbded0f989ebd24",
     "semantic_hash": ""
   },
   ".agents/aar/runs/2026-11-11-daily-digest-midnight-early-trigger-aar.md": {
-    "mtime": 1794397203.1975317,
-    "seen": 1794397468.1664143,
-    "ast_hash": "b9dace5e1f696ad6e31638f9acec8680",
+    "mtime": 1794397537.9500277,
+    "seen": 1794411802.774729,
+    "ast_hash": "099d12235eead4550aeeb0a9af0d18fa",
     "semantic_hash": ""
   }
 }

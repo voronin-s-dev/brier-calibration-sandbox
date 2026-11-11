@@ -664,6 +664,23 @@ class NewsAndOrderbookOracle:
         )
 
 
+def is_esports_market(market: MarketInfo) -> bool:
+    """
+    Detects whether a market is an esports event (CS2, Dota 2, LoL, etc.).
+    Esports favorites have frequent upset rates (15-20%), so public consensus
+    often overvalues favorites at 88c-92c.
+    """
+    q = (market.question or "").lower()
+    src = (market.resolution_source or "").lower()
+    esports_keywords = [
+        "counter-strike", "cs2", "cs:go", "csgo", "dota", "dota 2",
+        "league of legends", "lol", "valorant", "overwatch", "starcraft",
+        "rainbow six", "r6 siege", "blast rivals", "esl pro", "hltv",
+        "liquipedia", "vlr.gg",
+    ]
+    return any(k in q or k in src for k in esports_keywords)
+
+
 class HighConvictionFactOracle:
     """
     Strategy 2: High-Conviction Fact & Resolution Harvester.
@@ -781,31 +798,44 @@ class HighConvictionFactOracle:
 
         # 5. General High-Consensus Events (p >= 0.90, short horizon <= 48h, liq >= $8k, vol >= $15k)
         if market.hours_to_close <= 48.0 and market.liquidity_usd >= 8000.0 and market.volume_24h_usd >= 15000.0:
+            is_esports = is_esports_market(market)
             if p_yes_mkt >= 0.90:
-                p_yes = min(p_yes_mkt + 0.035, 0.985)
+                p_yes = min(p_yes_mkt, 0.84) if is_esports else min(p_yes_mkt + 0.035, 0.985)
+                oracle_label = "EsportsDiscountedConsensusOracle" if is_esports else "MatureMarketConsensusOracle"
+                rationale_text = (
+                    f"Esports consensus capped at {p_yes*100:.1f}% (upset discount) with {market.hours_to_close:.1f}h of expiry"
+                    if is_esports
+                    else f"High market consensus YES ({p_yes_mkt*100:.1f}%) within {market.hours_to_close:.1f}h of expiry"
+                )
                 return EvaluationResult(
                     market_id=market.id,
                     question=market.question,
                     category=market.category,
-                    oracle_used="MatureMarketConsensusOracle",
+                    oracle_used=oracle_label,
                     official_source=market.resolution_source or "Polymarket UMA Oracle",
                     p_yes=round(p_yes, 4),
                     p_no=round(1.0 - p_yes, 4),
-                    confidence=0.92,
-                    rationale=f"High market consensus YES ({p_yes_mkt*100:.1f}%) within {market.hours_to_close:.1f}h of expiry",
+                    confidence=0.84 if is_esports else 0.92,
+                    rationale=rationale_text,
                 )
             elif p_no_mkt >= 0.90:
-                p_no = min(p_no_mkt + 0.035, 0.985)
+                p_no = min(p_no_mkt, 0.84) if is_esports else min(p_no_mkt + 0.035, 0.985)
+                oracle_label = "EsportsDiscountedConsensusOracle" if is_esports else "MatureMarketConsensusOracle"
+                rationale_text = (
+                    f"Esports consensus capped at {p_no*100:.1f}% (upset discount) with {market.hours_to_close:.1f}h of expiry"
+                    if is_esports
+                    else f"High market consensus NO ({p_no_mkt*100:.1f}%) within {market.hours_to_close:.1f}h of expiry"
+                )
                 return EvaluationResult(
                     market_id=market.id,
                     question=market.question,
                     category=market.category,
-                    oracle_used="MatureMarketConsensusOracle",
+                    oracle_used=oracle_label,
                     official_source=market.resolution_source or "Polymarket UMA Oracle",
                     p_yes=round(1.0 - p_no, 4),
                     p_no=round(p_no, 4),
-                    confidence=0.92,
-                    rationale=f"High market consensus NO ({p_no_mkt*100:.1f}%) within {market.hours_to_close:.1f}h of expiry",
+                    confidence=0.84 if is_esports else 0.92,
+                    rationale=rationale_text,
                 )
 
         return None

@@ -1,7 +1,7 @@
 {
   "0": "GrokCharterPaperTrader",
   "1": "SimDatabase",
-  "2": "oracles.py",
+  "2": "CryptoOracle",
   "3": "trader.py",
   "4": "AutoGovernor",
   "5": "Матрица проверок риск-менеджмента (tests_risk.py)",
@@ -9,14 +9,8 @@
   "7": "📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)",
   "8": "README.md",
   "9": "Polymarket Simulation and Agentic Market Architecture",
-  "10": ".test_e2e_dual_track_execution",
-  "11": "Спецификация: Risk Management & Budget Protection v2",
-  "12": "NewsAndOrderbookOracle",
-  "13": "test_shadow_trader.py",
-  "14": "TestShadowTrader",
+  "10": "check_and_send_daily_digest",
   "15": ".test_reports_cadence_stale_warning",
-  "16": "Task 2: Shadow Market Evaluation & Position Lifecycle in `trader.py`",
   "17": ".test_shadow_position_active_time_exit",
-  "18": ".partition_markets",
   "19": "Разбор 2026-11-07: ложное утверждение об остановке симулятора из-за локального статуса"
 }

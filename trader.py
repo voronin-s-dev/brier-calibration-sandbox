@@ -71,8 +71,8 @@ class GrokCharterPaperTrader:
     KELLY_FRACTION = 0.40           # Fractional Kelly sizing for high-winrate strategy (up from 0.35)
     MAX_BANK_PCT_PER_TRADE = 0.08   # Up to 8% bankroll per trade (~$2.15-$2.40 on current bankroll)
     MIN_EDGE_PP = 0.015             # 1.5 percentage points minimum divergence against Ask VWAP
-    MIN_ESTIMATED_PROB = 0.80       # Minimum estimated probability: strictly high-conviction events (80%+ likelihood)
-    MIN_CONTRACT_PRICE = 0.76       # High-velocity sweet spot [0.76, 0.92]: yield +8.7% to +31.6%
+    MIN_ESTIMATED_PROB = 0.70       # Minimum estimated probability: high-conviction value bets (>=70% win likelihood)
+    MIN_CONTRACT_PRICE = 0.60       # Value sweet spot [0.60, 0.92]: high payoff +8.7% to +66.7%
     MAX_CONTRACT_PRICE = 0.92       # Strict cap: eliminates asymmetric -100% downside on 95c+ contracts
     MIN_HOURS_TO_CLOSE = 0.8        # Focus on near-term resolutions (1h to 5 days)
     MAX_HOURS_TO_CLOSE = 120.0      # Fast capital turnover
@@ -137,11 +137,14 @@ class GrokCharterPaperTrader:
     def get_max_bank_pct_for_price(cls, price: float) -> float:
         """
         Dynamic risk cap by payoff tier:
-        - Contracts in sweet spot [0.76, 0.895) (payoff +12% to +32%): up to 8% bankroll.
-        - Contracts near ceiling [0.895, 0.92] (payoff < +12%, high upset loss): capped at 4% bankroll.
-        Prevents a single 90c+ upset from wiping out 9 consecutive wins.
+        - Contracts in value sweet spot [0.60, 0.80) (payoff +25% to +66%): up to 8% bankroll.
+        - Contracts from $0.80 to $0.88 (payoff +13% to +25%): strictly capped at 4% bankroll.
+        - Contracts above $0.88 (payoff < +13%, extreme upset risk): strictly capped at 3% bankroll.
+        Prevents expensive upsets from wiping out dozens of winning trades.
         """
-        if price >= 0.895:
+        if price >= 0.88:
+            return 0.03
+        if price >= 0.80:
             return 0.04
         return cls.MAX_BANK_PCT_PER_TRADE
 
@@ -495,8 +498,18 @@ class GrokCharterPaperTrader:
                     shadow_candidates.append(m)
 
         def _priority_key(m: MarketInfo) -> Tuple[int, float]:
-            has_high_prob = 0 if (m.gamma_prices and (0.76 <= m.gamma_prices[0] <= 0.92 or 0.76 <= m.gamma_prices[1] <= 0.92)) else 1
-            return (has_high_prob, -m.volume_24h_usd)
+            # Tier 0: Value sweet spot [0.60, 0.80) (high payoff +25%..+66%, prioritized)
+            # Tier 1: Capped favorites [0.80, 0.92] (lower payoff, tail risk)
+            # Tier 2: Outside sweet spot
+            prices = m.gamma_prices or []
+            tier = 2
+            for p in prices:
+                if 0.60 <= p < 0.80:
+                    tier = 0
+                    break
+                elif 0.80 <= p <= 0.92:
+                    tier = min(tier, 1)
+            return (tier, -m.volume_24h_usd)
 
         def _shadow_priority_key(m: MarketInfo) -> Tuple[int, float]:
             in_range = 0 if (m.gamma_prices and (0.20 <= m.gamma_prices[0] <= 0.80 or 0.20 <= m.gamma_prices[1] <= 0.80)) else 1
