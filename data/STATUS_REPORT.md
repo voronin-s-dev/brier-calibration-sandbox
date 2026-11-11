@@ -1,26 +1,26 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-11 15:10:24 UTC`
+**Обновлено:** `2026-11-11 15:19:37 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$36.23 USDC`** (`-13.77$` / `-27.54%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$20.31` / `$15.92 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-13.77 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `7.78%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
-| **Закрытых сделок / Win Rate** | `136` / `73.5%` | Brier Score: `0.1960` |
+| **Текущий баланс (Equity)** | **`$36.22 USDC`** (`-13.78$` / `-27.56%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$19.02` / `$17.21 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-13.78 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `7.81%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Закрытых сделок / Win Rate** | `137` / `73.7%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (7 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #132 | Will the price of Ethereum be above $2,100 on November  | Crypto | **NO** | `0.815` | `0.974` | `98.5%` | `$1.58` | `$+0.31` | Kraken ETHUSDT 1m/1h Spot Klin |
-| #133 | Will the price of Bitcoin be above $72,000 on November  | Crypto | **YES** | `0.913` | `0.978` | `98.5%` | `$1.49` | `$+0.11` | https://www.binance.com/en/tra |
-| #135 | Will Elon Musk post 300-319 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.961` | `89.2%` | `$2.99` | `$+0.39` | https://x.com/elonmusk |
+| #132 | Will the price of Ethereum be above $2,100 on November  | Crypto | **NO** | `0.815` | `0.947` | `97.3%` | `$1.58` | `$+0.26` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #135 | Will Elon Musk post 300-319 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.965` | `89.2%` | `$2.99` | `$+0.40` | https://x.com/elonmusk |
 | #139 | Spurs vs. Bulls | Sports | **YES** | `0.910` | `0.900` | `94.0%` | `$1.55` | `$-0.02` | https://www.nba.com/ |
-| #141 | Will Elon Musk post 280-299 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.890` | `85.2%` | `$3.07` | `$+0.14` | https://x.com/elonmusk |
-| #143 | Dota 2: HULIGANI vs PuckChamp (BO3) - DreamLeague Divis | Sports | **YES** | `0.909` | `0.913` | `93.7%` | `$1.45` | `$+0.01` | https://www.dotabuff.com |
-| #144 | Will Predict.fun launch a token by November 15, 2026? | Other | **NO** | `0.848` | `0.835` | `90.9%` | `$2.90` | `$-0.04` | information from predict.fun ( |
+| #141 | Will Elon Musk post 280-299 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.900` | `85.2%` | `$3.07` | `$+0.18` | https://x.com/elonmusk |
+| #143 | Dota 2: HULIGANI vs PuckChamp (BO3) - DreamLeague Divis | Sports | **YES** | `0.909` | `0.921` | `97.5%` | `$1.45` | `$+0.02` | https://www.dotabuff.com |
+| #144 | Will Predict.fun launch a token by November 15, 2026? | Other | **NO** | `0.848` | `0.835` | `90.6%` | `$2.90` | `$-0.04` | information from predict.fun ( |
+| #145 | Bitcoin Up or Down on November 11? | Crypto | **YES** | `0.880` | `0.870` | `94.0%` | `$2.90` | `$-0.03` | https://www.binance.com/en/tra |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -47,6 +47,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Bitcoin Up or Down on November 11? | Crypto | YES | `94.0%` | `88.0%` | `+6.0 п.п.` | `1.00%` | EXECUTED BUY #145 ($2.90 @ 0.8800) |
 | Will Predict.fun launch a token by November 15, 20 | Other | NO | `90.9%` | `84.8%` | `+6.1 п.п.` | `1.30%` | EXECUTED BUY #144 ($2.90 @ 0.8480) |
 | Dota 2: HULIGANI vs PuckChamp (BO3) - DreamLeague  | Sports | YES | `94.3%` | `90.9%` | `+3.4 п.п.` | `1.90%` | EXECUTED BUY #143 ($1.45 @ 0.9090) |
 | Counter-Strike: MOUZ vs G2 (BO3) - BLAST Rivals Gr | Sports | YES | `95.7%` | `88.4%` | `+7.2 п.п.` | `0.10%` | EXECUTED BUY #142 ($3.13 @ 0.8840) |
@@ -64,4 +65,3 @@
 | Will Predict.fun launch a token by November 15, 20 | Other | NO | `91.7%` | `86.3%` | `+5.4 п.п.` | `3.20%` | REJECTED: CLOB round-trip slippage 3.20% > 2.0% limit |
 | Will Predict.fun launch a token by November 15, 20 | Other | NO | `91.7%` | `86.3%` | `+5.4 п.п.` | `3.20%` | REJECTED: CLOB round-trip slippage 3.20% > 2.0% limit |
 | Counter-Strike: Legacy vs FURIA (BO3) - BLAST Riva | Sports | NO | `98.4%` | `91.2%` | `+7.1 п.п.` | `0.20%` | EXECUTED BUY #138 ($1.54 @ 0.9120) |
-| Will Kai Cenat finish his GTA marathon by November | Other | YES | `85.2%` | `80.0%` | `+5.2 п.п.` | `2.00%` | REJECTED: Duplicate underlying event (other:will kai cenat finish his gta marathon b) |
