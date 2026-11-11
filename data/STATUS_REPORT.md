@@ -1,20 +1,20 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-11 06:01:12 UTC`
+**Обновлено:** `2026-11-11 06:10:21 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$38.49 USDC`** (`-11.51$` / `-23.02%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$32.27` / `$6.22 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-11.51 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `2.03%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$38.55 USDC`** (`-11.45$` / `-22.91%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$32.27` / `$6.27 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-11.45 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `1.90%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `134` / `73.9%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (3 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #132 | Will the price of Ethereum be above $2,100 on November  | Crypto | **NO** | `0.815` | `0.755` | `75.8%` | `$1.58` | `$-0.12` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #132 | Will the price of Ethereum be above $2,100 on November  | Crypto | **NO** | `0.815` | `0.783` | `76.4%` | `$1.58` | `$-0.06` | Kraken ETHUSDT 1m/1h Spot Klin |
 | #133 | Will the price of Bitcoin be above $72,000 on November  | Crypto | **YES** | `0.913` | `0.951` | `98.5%` | `$1.49` | `$+0.06` | https://www.binance.com/en/tra |
 | #135 | Will Elon Musk post 300-319 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.910` | `85.3%` | `$2.99` | `$+0.21` | https://x.com/elonmusk |
 
@@ -30,7 +30,7 @@
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `56.1%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
-| #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.9%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
+| #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.8%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
 | #31 | Total Kills Over/Under 27.5 in Game 3? | Other | **YES** | `0.510` | `0.490` | `54.1%` | `$1.15` | `$-0.05` | https://gol.gg/esports/home |
 
 ### Доходность по замороженным категориям (Песочница)
@@ -43,6 +43,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Predict.fun launch a token by November 15, 20 | Other | NO | `91.7%` | `86.3%` | `+5.4 п.п.` | `3.20%` | REJECTED: CLOB round-trip slippage 3.20% > 2.0% limit |
 | Will Predict.fun launch a token by November 15, 20 | Other | NO | `91.7%` | `86.3%` | `+5.4 п.п.` | `3.20%` | REJECTED: CLOB round-trip slippage 3.20% > 2.0% limit |
 | Will Predict.fun launch a token by November 15, 20 | Other | NO | `91.7%` | `86.3%` | `+5.4 п.п.` | `3.20%` | REJECTED: CLOB round-trip slippage 3.20% > 2.0% limit |
 | Counter-Strike: Legacy vs FURIA (BO3) - BLAST Riva | Sports | NO | `98.4%` | `91.2%` | `+7.1 п.п.` | `0.20%` | EXECUTED BUY #138 ($1.54 @ 0.9120) |
@@ -60,4 +61,3 @@
 | Will Ethereum dip to $2,000 on November 10? | Crypto | NO | `95.0%` | `92.0%` | `+3.0 п.п.` | `2.00%` | EXECUTED BUY #134 ($1.49 @ 0.9200) |
 | Will the price of Bitcoin be above $72,000 on Nove | Crypto | YES | `94.0%` | `91.3%` | `+2.8 п.п.` | `0.10%` | EXECUTED BUY #133 ($1.49 @ 0.9130) |
 | Counter-Strike: Isurus vs RED Canids Academy (BO3) | Sports | YES | `95.0%` | `99.0%` | `-4.0 п.п.` | `1.00%` | REJECTED: Edge -4.0 pp < 2 pp threshold (P_est=95.0% vs AskVWAP=99.0%) |
-| Dota 2: Froglings vs Power Rangers - Game 2 Winner | Sports | NO | `98.5%` | `90.0%` | `+8.5 п.п.` | `5.00%` | REJECTED: CLOB round-trip slippage 5.00% > 2.0% limit |
