@@ -1,22 +1,22 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-11 11:10:22 UTC`
+**Обновлено:** `2026-11-11 11:19:29 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$39.05 USDC`** (`-10.95$` / `-21.90%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$27.79` / `$11.26 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-10.95 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `0.61%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$39.03 USDC`** (`-10.97$` / `-21.94%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$27.79` / `$11.24 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-10.97 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `0.66%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `135` / `74.1%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (5 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #132 | Will the price of Ethereum be above $2,100 on November  | Crypto | **NO** | `0.815` | `0.897` | `89.9%` | `$1.58` | `$+0.16` | Kraken ETHUSDT 1m/1h Spot Klin |
-| #133 | Will the price of Bitcoin be above $72,000 on November  | Crypto | **YES** | `0.913` | `0.967` | `98.5%` | `$1.49` | `$+0.09` | https://www.binance.com/en/tra |
-| #135 | Will Elon Musk post 300-319 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.940` | `88.1%` | `$2.99` | `$+0.32` | https://x.com/elonmusk |
+| #132 | Will the price of Ethereum be above $2,100 on November  | Crypto | **NO** | `0.815` | `0.884` | `89.9%` | `$1.58` | `$+0.13` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #133 | Will the price of Bitcoin be above $72,000 on November  | Crypto | **YES** | `0.913` | `0.970` | `98.5%` | `$1.49` | `$+0.09` | https://www.binance.com/en/tra |
+| #135 | Will Elon Musk post 300-319 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.940` | `88.5%` | `$2.99` | `$+0.32` | https://x.com/elonmusk |
 | #139 | Spurs vs. Bulls | Sports | **YES** | `0.910` | `0.900` | `94.0%` | `$1.55` | `$-0.02` | https://www.nba.com/ |
 | #141 | Will Elon Musk post 280-299 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.860` | `90.2%` | `$3.07` | `$+0.04` | https://x.com/elonmusk |
 
@@ -45,6 +45,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Counter-Strike: MOUZ vs G2 (BO3) - BLAST Rivals Gr | Sports | YES | `94.0%` | `98.0%` | `-4.0 п.п.` | `1.00%` | REJECTED: Edge -4.0 pp < 2 pp threshold (P_est=94.0% vs AskVWAP=98.0%) |
 | Spread: Spain (-4.5) | Sports | NO | `97.5%` | `93.0%` | `+4.5 п.п.` | `3.00%` | REJECTED: Contract price $0.930 outside sweet spot [$0.76, $0.92] |
 | LoL: Ground Zero Gaming vs Frank Esports - Game 1  | Sports | NO | `98.5%` | `93.0%` | `+5.5 п.п.` | `1.00%` | REJECTED: Contract price $0.930 outside sweet spot [$0.76, $0.92] |
 | Will Elon Musk post 280-299 tweets from November 6 | Geopolitics | NO | `90.2%` | `85.0%` | `+5.2 п.п.` | `1.00%` | EXECUTED BUY #141 ($3.07 @ 0.8500) |
@@ -62,4 +63,3 @@
 | Counter-Strike: Legacy vs FURIA - Map 1 Winner | Sports | NO | `98.5%` | `94.0%` | `+4.5 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.76, $0.92] |
 | Will the price of Bitcoin be above $76,000 on Nove | Crypto | NO | `98.5%` | `94.4%` | `+4.1 п.п.` | `0.10%` | REJECTED: Contract price $0.944 outside sweet spot [$0.76, $0.92] |
 | Will Kai Cenat finish his GTA marathon by November | Other | YES | `85.1%` | `94.0%` | `-8.9 п.п.` | `5.00%` | REJECTED: Edge -8.9 pp < 2 pp threshold (P_est=85.1% vs AskVWAP=94.0%) |
-| Will Kai Cenat finish his GTA marathon by November | Other | YES | `84.4%` | `94.0%` | `-9.6 п.п.` | `5.00%` | REJECTED: Edge -9.6 pp < 2 pp threshold (P_est=84.4% vs AskVWAP=94.0%) |
