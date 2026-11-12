@@ -2960,3 +2960,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 1.22 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9850
   Proceeds: $1.20 | Realized PnL: $+0.09 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.5%) secured early with +8.2% gain
 [2026-11-12 02:58:35 UTC] [CYCLE #949 SUMMARY] Scanned=756 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$24.44 | Equity=$36.54 (DD=7.01%)
+[2026-11-12 03:07:46 UTC] [CYCLE #950 SUMMARY] Scanned=790 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.44 | Equity=$35.89 (DD=8.64%)
