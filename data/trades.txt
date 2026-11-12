@@ -2995,3 +2995,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-12 06:10:14 UTC] [CYCLE #970 SUMMARY] Scanned=790 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.96 | Equity=$35.53 (DD=9.57%)
 [2026-11-12 06:19:23 UTC] [CYCLE #971 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.96 | Equity=$36.04 (DD=8.27%)
 [2026-11-12 06:30:50 UTC] [CYCLE #972 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.96 | Equity=$35.53 (DD=9.58%)
+[2026-11-12 06:39:57 UTC] [OPEN TRADE #154] Will Elon Musk post 220-239 tweets from November 6 to November 13, 2026?
+  Категория: Geopolitics | Сторона: NO | Источник: https://x.com/elonmusk
+  Оценка бота: 72.5% vs Рынок (Ask VWAP): 67.0% (Перекос/Edge: +5.4 п.п.)
+  Стакан CLOB: BestBid=0.668, BestAsk=0.670, Проскальзывание входа/выхода=0.20% (<= 3.0%)
+  Келли: Полный=16.5%, Четверть(0.25x)=6.6% -> Применён=6.6% банка
+  Размер сделки: $2.33 USDC (3.48 shares @ $0.6700)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.402 if P_est <= 70%
+  Причина: CLOB near-touch depth imbalance OBI=-0.74 (BidDepth=$71 vs AskDepth=$477)
+
+[2026-11-12 06:39:57 UTC] [CYCLE #973 SUMMARY] Scanned=783 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.63 | Equity=$35.20 (DD=10.42%)
