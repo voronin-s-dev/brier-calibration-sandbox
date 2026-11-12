@@ -1,25 +1,26 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-12 14:01:11 UTC`
+**Обновлено:** `2026-11-12 14:10:20 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$38.08 USDC`** (`-11.92$` / `-23.85%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$25.82` / `$12.26 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-11.92 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `3.09%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$38.29 USDC`** (`-11.71$` / `-23.42%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$23.58` / `$14.71 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-11.71 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `2.55%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `153` / `72.5%` | Brier Score: `0.1960` |
 
-## 📂 Открытые позиции (6 / 8)
+## 📂 Открытые позиции (7 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #141 | Will Elon Musk post 280-299 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.974` | `98.5%` | `$3.07` | `$+0.45` | https://x.com/elonmusk |
-| #154 | Will Elon Musk post 220-239 tweets from November 6 to N | Geopolitics | **NO** | `0.670` | `0.555` | `68.0%` | `$2.33` | `$-0.40` | https://x.com/elonmusk |
+| #141 | Will Elon Musk post 280-299 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.975` | `98.5%` | `$3.07` | `$+0.45` | https://x.com/elonmusk |
+| #154 | Will Elon Musk post 220-239 tweets from November 6 to N | Geopolitics | **NO** | `0.670` | `0.532` | `68.0%` | `$2.33` | `$-0.48` | https://x.com/elonmusk |
 | #155 | Will Elon Musk post 200-219 tweets from November 6 to N | Geopolitics | **NO** | `0.917` | `0.871` | `93.5%` | `$1.07` | `$-0.05` | https://x.com/elonmusk |
-| #157 | Will Croatia win on 2026-11-12? | Sports | **NO** | `0.920` | `0.910` | `95.0%` | `$1.10` | `$-0.01` | https://www.uefa.com/uefanatio |
-| #159 | Will the price of Bitcoin be above $74,000 on November  | Crypto | **NO** | `0.860` | `0.920` | `96.5%` | `$1.46` | `$+0.10` | Kraken BTCUSDT 1m/1h Spot Klin |
-| #160 | Will Bitcoin dip to $72,000 November 9-15? | Crypto | **YES** | `0.770` | `0.800` | `88.2%` | `$3.03` | `$+0.12` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #157 | Will Croatia win on 2026-11-12? | Sports | **NO** | `0.920` | `0.910` | `94.0%` | `$1.10` | `$-0.01` | https://www.uefa.com/uefanatio |
+| #159 | Will the price of Bitcoin be above $74,000 on November  | Crypto | **NO** | `0.860` | `0.940` | `97.0%` | `$1.46` | `$+0.14` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #160 | Will Bitcoin dip to $72,000 November 9-15? | Crypto | **YES** | `0.770` | `0.880` | `88.4%` | `$3.03` | `$+0.43` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #161 | Will Ethereum dip to $1,950 on November 12? | Crypto | **NO** | `0.720` | `0.700` | `76.1%` | `$2.24` | `$-0.06` | Kraken ETHUSDT 1m/1h Spot Klin |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -46,6 +47,10 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Ethereum dip to $1,950 on November 12? | Crypto | NO | `76.1%` | `72.0%` | `+4.1 п.п.` | `2.00%` | EXECUTED BUY #161 ($2.24 @ 0.7200) |
+| Will the price of Bitcoin be between $72,000 and $ | Crypto | YES | `72.4%` | `64.0%` | `+8.4 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 12) |
+| Will Bitcoin dip to $72,000 on November 12? | Crypto | YES | `75.1%` | `80.0%` | `-4.9 п.п.` | `1.00%` | REJECTED: Edge -4.9 pp < 2 pp threshold (P_est=75.1% vs AskVWAP=80.0%) |
+| Will the price of Bitcoin be above $72,000 on Nove | Crypto | YES | `74.7%` | `65.8%` | `+8.9 п.п.` | `0.10%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 12) |
 | Will Bitcoin dip to $72,000 on November 12? | Crypto | YES | `74.0%` | `68.0%` | `+6.0 п.п.` | `2.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 12) |
 | Will the price of Bitcoin be between $72,000 and $ | Crypto | YES | `74.1%` | `69.0%` | `+5.1 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 12) |
 | Will Bitcoin dip to $72,000 November 9-15? | Crypto | YES | `85.0%` | `77.0%` | `+8.1 п.п.` | `1.00%` | EXECUTED BUY #160 ($3.03 @ 0.7700) |
@@ -60,7 +65,3 @@
 | Will Zoran Janković win the 2026 Ljubljana mayoral | Geopolitics | YES | `76.5%` | `70.0%` | `+6.5 п.п.` | `2.00%` | REJECTED: Category cap reached (3/3 in Geopolitics) |
 | Will Zoran Janković win the 2026 Ljubljana mayoral | Geopolitics | YES | `75.2%` | `70.0%` | `+5.2 п.п.` | `3.00%` | REJECTED: CLOB round-trip slippage 3.00% > 2.0% limit |
 | Will Bitcoin dip to $72,000 November 9-15? | Crypto | YES | `74.6%` | `65.0%` | `+9.6 п.п.` | `1.00%` | EXECUTED BUY #158 ($2.92 @ 0.6500) |
-| Will Zoran Janković win the 2026 Ljubljana mayoral | Geopolitics | YES | `75.3%` | `70.0%` | `+5.3 п.п.` | `3.00%` | REJECTED: CLOB round-trip slippage 3.00% > 2.0% limit |
-| Will Zoran Janković win the 2026 Ljubljana mayoral | Geopolitics | YES | `75.3%` | `70.0%` | `+5.3 п.п.` | `3.00%` | REJECTED: CLOB round-trip slippage 3.00% > 2.0% limit |
-| Will Zoran Janković win the 2026 Ljubljana mayoral | Geopolitics | YES | `76.0%` | `71.0%` | `+5.0 п.п.` | `4.00%` | REJECTED: CLOB round-trip slippage 4.00% > 2.0% limit |
-| Will Zoran Janković win the 2026 Ljubljana mayoral | Geopolitics | YES | `75.6%` | `70.0%` | `+5.6 п.п.` | `3.00%` | REJECTED: CLOB round-trip slippage 3.00% > 2.0% limit |
