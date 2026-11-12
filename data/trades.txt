@@ -3111,3 +3111,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $4.04 | Realized PnL: $+1.12 USDC | Reason: TAKE PROFIT (Sweet Spot +25% Lock): Live CLOB Bid VWAP (90.0%) secured early with +38.5% net gain
 [2026-11-12 13:10:14 UTC] [CYCLE #1015 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=3 | Cash=$28.85 | Equity=$37.95 (DD=3.43%)
 [2026-11-12 13:19:22 UTC] [CYCLE #1016 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.85 | Equity=$37.94 (DD=3.44%)
+[2026-11-12 13:30:51 UTC] [OPEN TRADE #160] Will Bitcoin dip to $72,000 November 9-15?
+  Категория: Crypto | Сторона: YES | Источник: Kraken BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 85.0% vs Рынок (Ask VWAP): 77.0% (Перекос/Edge: +8.1 п.п.)
+  Стакан CLOB: BestBid=0.760, BestAsk=0.770, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=35.0%, Четверть(0.25x)=14.0% -> Применён=8.0% банка
+  Размер сделки: $3.03 USDC (3.94 shares @ $0.7700)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.462 if P_est <= 70%
+  Причина: First-passage dip model: BTCUSDT=$72,624.40 -> barrier=$72,000 (-0.86%), vol_h=0.50%, tau=87.5h => P(touch)=86.9% -> Calibrated(0.75x)=85.1%
+
+[2026-11-12 13:30:51 UTC] [CYCLE #1017 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$25.82 | Equity=$37.87 (DD=3.63%)
