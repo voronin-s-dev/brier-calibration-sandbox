@@ -2978,3 +2978,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-12 04:49:03 UTC] [CYCLE #962 SUMMARY] Scanned=785 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.91 | Equity=$36.45 (DD=7.24%)
 [2026-11-12 05:01:04 UTC] [CYCLE #963 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.91 | Equity=$36.45 (DD=7.22%)
 [2026-11-12 05:10:13 UTC] [CYCLE #964 SUMMARY] Scanned=783 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.91 | Equity=$36.56 (DD=6.96%)
+[2026-11-12 05:19:24 UTC] [OPEN TRADE #153] Will Ethereum dip to $2,000 November 9-15?
+  Категория: Crypto | Сторона: YES | Источник: Kraken ETHUSDT 1m/1h Spot Klines
+  Оценка бота: 70.5% vs Рынок (Ask VWAP): 66.0% (Перекос/Edge: +4.5 п.п.)
+  Стакан CLOB: BestBid=0.640, BestAsk=0.660, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=13.4%, Четверть(0.25x)=5.3% -> Применён=5.3% банка
+  Размер сделки: $1.95 USDC (2.95 shares @ $0.6600)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.396 if P_est <= 70%
+  Причина: First-passage dip model: ETHUSDT=$2,046.10 -> barrier=$2,000 (-2.25%), vol_h=0.60%, tau=95.7h => P(touch)=72.9% -> Calibrated(0.75x)=70.5%
+
+[2026-11-12 05:19:24 UTC] [CYCLE #965 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$25.96 | Equity=$36.47 (DD=7.18%)
