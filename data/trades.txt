@@ -3018,3 +3018,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-12 07:01:03 UTC] [CYCLE #975 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.56 | Equity=$35.77 (DD=8.96%)
 [2026-11-12 07:10:14 UTC] [CYCLE #976 SUMMARY] Scanned=786 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.56 | Equity=$36.24 (DD=7.78%)
 [2026-11-12 07:19:24 UTC] [CYCLE #977 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.56 | Equity=$36.22 (DD=7.81%)
+[2026-11-12 07:30:47 UTC] [OPEN TRADE #156] Will Vitality Win the BLAST Rivals Hong Kong 2026?
+  Категория: Other | Сторона: NO | Источник: https://www.hltv.org/events/8251/blast-rivals-2026-season-2
+  Оценка бота: 79.7% vs Рынок (Ask VWAP): 74.0% (Перекос/Edge: +5.7 п.п.)
+  Стакан CLOB: BestBid=0.720, BestAsk=0.740, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=21.8%, Четверть(0.25x)=8.7% -> Применён=8.0% банка
+  Размер сделки: $2.91 USDC (3.93 shares @ $0.7400)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.444 if P_est <= 70%
+  Причина: CLOB near-touch depth imbalance OBI=-0.89 (BidDepth=$105 vs AskDepth=$1,763)
+
+[2026-11-12 07:30:47 UTC] [CYCLE #978 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=3 | Opened=1 (Shadow=0) | Closed=0 | Cash=$19.65 | Equity=$36.32 (DD=7.56%)
