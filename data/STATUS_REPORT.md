@@ -1,23 +1,23 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-12 11:29:51 UTC`
+**Обновлено:** `2026-11-12 11:31:02 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$36.45 USDC`** (`-13.55$` / `-27.10%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$24.65` / `$11.80 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-13.55 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `7.23%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$36.55 USDC`** (`-13.45$` / `-26.89%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$24.65` / `$11.91 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-13.45 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `6.97%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `149` / `72.5%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (7 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #141 | Will Elon Musk post 280-299 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.965` | `98.5%` | `$3.07` | `$+0.42` | https://x.com/elonmusk |
-| #147 | Will the price of Bitcoin be above $76,000 on November  | Crypto | **NO** | `0.910` | `0.979` | `98.5%` | `$1.11` | `$+0.08` | https://www.binance.com/en/tra |
-| #152 | Will the price of Ethereum be above $2,000 on November  | Crypto | **YES** | `0.911` | `0.881` | `90.4%` | `$1.10` | `$-0.04` | https://www.binance.com/en/tra |
-| #153 | Will Ethereum dip to $2,000 November 9-15? | Crypto | **YES** | `0.660` | `0.650` | `71.3%` | `$1.95` | `$-0.03` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #141 | Will Elon Musk post 280-299 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.966` | `98.5%` | `$3.07` | `$+0.42` | https://x.com/elonmusk |
+| #147 | Will the price of Bitcoin be above $76,000 on November  | Crypto | **NO** | `0.910` | `0.974` | `98.5%` | `$1.11` | `$+0.08` | https://www.binance.com/en/tra |
+| #152 | Will the price of Ethereum be above $2,000 on November  | Crypto | **YES** | `0.911` | `0.823` | `84.3%` | `$1.10` | `$-0.11` | https://www.binance.com/en/tra |
+| #153 | Will Ethereum dip to $2,000 November 9-15? | Crypto | **YES** | `0.660` | `0.710` | `76.9%` | `$1.95` | `$+0.15` | Kraken ETHUSDT 1m/1h Spot Klin |
 | #154 | Will Elon Musk post 220-239 tweets from November 6 to N | Geopolitics | **NO** | `0.670` | `0.580` | `68.0%` | `$2.33` | `$-0.31` | https://x.com/elonmusk |
 | #155 | Will Elon Musk post 200-219 tweets from November 6 to N | Geopolitics | **NO** | `0.917` | `0.884` | `93.5%` | `$1.07` | `$-0.04` | https://x.com/elonmusk |
 | #157 | Will Croatia win on 2026-11-12? | Sports | **NO** | `0.920` | `0.910` | `95.0%` | `$1.10` | `$-0.01` | https://www.uefa.com/uefanatio |
@@ -48,6 +48,7 @@
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | Will Zoran Janković win the 2026 Ljubljana mayoral | Geopolitics | YES | `75.3%` | `70.0%` | `+5.3 п.п.` | `3.00%` | REJECTED: CLOB round-trip slippage 3.00% > 2.0% limit |
+| Will Zoran Janković win the 2026 Ljubljana mayoral | Geopolitics | YES | `75.3%` | `70.0%` | `+5.3 п.п.` | `3.00%` | REJECTED: CLOB round-trip slippage 3.00% > 2.0% limit |
 | Will Zoran Janković win the 2026 Ljubljana mayoral | Geopolitics | YES | `76.0%` | `71.0%` | `+5.0 п.п.` | `4.00%` | REJECTED: CLOB round-trip slippage 4.00% > 2.0% limit |
 | Will Zoran Janković win the 2026 Ljubljana mayoral | Geopolitics | YES | `75.6%` | `70.0%` | `+5.6 п.п.` | `3.00%` | REJECTED: CLOB round-trip slippage 3.00% > 2.0% limit |
 | Will Zoran Janković win the 2026 Ljubljana mayoral | Geopolitics | YES | `75.7%` | `70.0%` | `+5.7 п.п.` | `3.00%` | REJECTED: CLOB round-trip slippage 3.00% > 2.0% limit |
@@ -64,4 +65,3 @@
 | Will Bitcoin reach $74,000 on November 12? | Crypto | YES | `70.2%` | `63.0%` | `+7.2 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 12) |
 | Will Bitcoin reach $74,000 on November 12? | Crypto | YES | `70.5%` | `65.0%` | `+5.5 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 12) |
 | Will Bitcoin reach $74,000 on November 12? | Crypto | YES | `71.1%` | `65.0%` | `+6.1 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 12) |
-| Will Bitcoin reach $74,000 on November 12? | Crypto | YES | `71.5%` | `57.0%` | `+14.5 п.п.` | `1.00%` | REJECTED: Contract price $0.570 outside sweet spot [$0.60, $0.92] |
