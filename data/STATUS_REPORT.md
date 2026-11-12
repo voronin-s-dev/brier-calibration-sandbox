@@ -1,23 +1,23 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-12 03:40:03 UTC`
+**Обновлено:** `2026-11-12 03:49:12 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$36.40 USDC`** (`-13.60$` / `-27.20%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$27.91` / `$8.49 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-13.60 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `7.35%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$36.32 USDC`** (`-13.68$` / `-27.36%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$27.91` / `$8.41 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-13.68 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `7.57%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `147` / `72.8%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (4 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #141 | Will Elon Musk post 280-299 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.966` | `98.5%` | `$3.07` | `$+0.42` | https://x.com/elonmusk |
-| #144 | Will Predict.fun launch a token by November 15, 2026? | Other | **NO** | `0.848` | `0.810` | `90.7%` | `$2.90` | `$-0.13` | information from predict.fun ( |
-| #147 | Will the price of Bitcoin be above $76,000 on November  | Crypto | **NO** | `0.910` | `0.961` | `98.5%` | `$1.11` | `$+0.06` | https://www.binance.com/en/tra |
-| #152 | Will the price of Ethereum be above $2,000 on November  | Crypto | **YES** | `0.911` | `0.880` | `85.9%` | `$1.10` | `$-0.04` | https://www.binance.com/en/tra |
+| #141 | Will Elon Musk post 280-299 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.951` | `98.5%` | `$3.07` | `$+0.36` | https://x.com/elonmusk |
+| #144 | Will Predict.fun launch a token by November 15, 2026? | Other | **NO** | `0.848` | `0.800` | `90.7%` | `$2.90` | `$-0.16` | information from predict.fun ( |
+| #147 | Will the price of Bitcoin be above $76,000 on November  | Crypto | **NO** | `0.910` | `0.962` | `98.5%` | `$1.11` | `$+0.06` | https://www.binance.com/en/tra |
+| #152 | Will the price of Ethereum be above $2,000 on November  | Crypto | **YES** | `0.911` | `0.882` | `86.1%` | `$1.10` | `$-0.03` | https://www.binance.com/en/tra |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -30,8 +30,8 @@
 ### Открытые позиции в песочнице (3 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `54.7%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
-| #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.4%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
+| #5 | Total Kills Over/Under 27.5 in Game 2? | Other | **NO** | `0.500` | `0.490` | `54.4%` | `$1.42` | `$-0.03` | https://gol.gg/esports/home |
+| #20 | Total Kills Over/Under 27.5 in Game 4? | Other | **NO** | `0.500` | `0.490` | `55.5%` | `$1.58` | `$-0.03` | https://gol.gg/esports/home |
 | #31 | Total Kills Over/Under 27.5 in Game 3? | Other | **YES** | `0.510` | `0.490` | `55.0%` | `$1.15` | `$-0.05` | https://gol.gg/esports/home |
 
 ### Доходность по замороженным категориям (Песочница)
