@@ -103,9 +103,9 @@ class GrokCharterPaperTrader:
     MIN_ESTIMATED_PROB = 0.70       # Minimum estimated probability: high-conviction value bets (>=70% win likelihood)
     MIN_CONTRACT_PRICE = 0.60       # Value sweet spot [0.60, 0.92]: high payoff +8.7% to +66.7%
     MAX_CONTRACT_PRICE = 0.92       # Strict cap: eliminates asymmetric -100% downside on 95c+ contracts
-    MIN_HOURS_TO_CLOSE = 0.8        # Focus on near-term resolutions (1h to 5 days)
+    MIN_HOURS_TO_CLOSE = 2.0        # Skip markets closing in < 2h (Charter Rule #1: min 2h horizon to prevent instant churn)
     MAX_HOURS_TO_CLOSE = 120.0      # Fast capital turnover
-    EXIT_HOURS_THRESHOLD = 0.0      # NEVER dump prematurely before expiry: hold into resolution ($1.00 payout)
+    EXIT_HOURS_THRESHOLD = 0.0      # Deprecated: superseded by MIN_HOURS_TO_CLOSE_EXIT
     MIN_HOURS_TO_CLOSE_EXIT = 1.0   # Exit if under 1.0h to close (Ustav Grok rule 9: <1h to expiry)
     PROB_SHIFT_EXIT_PP = 0.10       # Exit only if probability estimate drops by > 10 pp and falls below entry
     STOP_LOSS_PCT = 0.40            # Hard Stop-Loss: cut positions losing > 40% if thesis severely deteriorates
@@ -378,8 +378,8 @@ class GrokCharterPaperTrader:
                     f"STOP-LOSS TRIGGERED: Price dropped to ${vwap_sell:.3f} "
                     f"(-{loss_pct:.1f}% from entry ${entry_vwap:.3f}, P_est={latest_p*100:.1f}%)"
                 )
-            # Exit Rule C: Strict Time Exit (< 1.0h left to market close)
-            elif hours_left <= self.MIN_HOURS_TO_CLOSE_EXIT:
+            # Exit Rule C: Strict Time Exit (< 1.0h left to market close, only with valid bid > $0.00)
+            elif hours_left <= self.MIN_HOURS_TO_CLOSE_EXIT and vwap_sell > 0:
                 exit_triggered = True
                 exit_reason = (
                     f"TIME EXIT: {hours_left:.1f}h left to close "
@@ -495,9 +495,9 @@ class GrokCharterPaperTrader:
                     should_exit = True
                     exit_reason = f"STOP-LOSS TRIGGERED: Price dropped by {(1 - vwap_sell/entry_vwap)*100:.1f}% from entry ({entry_vwap:.4f} -> {vwap_sell:.4f})"
 
-            if not should_exit and hours_left <= self.MIN_HOURS_TO_CLOSE_EXIT:
+            if not should_exit and hours_left <= self.MIN_HOURS_TO_CLOSE_EXIT and vwap_sell > 0:
                 should_exit = True
-                exit_reason = f"TIME EXIT: {hours_left:.1f}h left to close (under {self.MIN_HOURS_TO_CLOSE_EXIT:.1f}h threshold)"
+                exit_reason = f"TIME EXIT: {hours_left:.1f}h left to close (under {self.MIN_HOURS_TO_CLOSE_EXIT:.1f}h threshold, Bid VWAP: ${vwap_sell:.3f})"
 
             if not should_exit and (initial_p - latest_p) >= prob_shift_exit_pp and vwap_sell < entry_vwap:
                 should_exit = True
@@ -536,10 +536,11 @@ class GrokCharterPaperTrader:
         shadow_candidates: List[MarketInfo] = []
         allowed_cats = {c.strip().upper() for c in cat_filter.split(",")} if cat_filter else {"ALL"}
 
+        min_entry_hours = max(self.MIN_HOURS_TO_CLOSE, self.MIN_HOURS_TO_CLOSE_EXIT + 0.5)
         for m in all_markets:
             if not m.has_official_source:
                 continue
-            if not (self.MIN_HOURS_TO_CLOSE <= m.hours_to_close <= self.MAX_HOURS_TO_CLOSE):
+            if not (min_entry_hours <= m.hours_to_close <= self.MAX_HOURS_TO_CLOSE):
                 continue
             if "ALL" in allowed_cats or m.category.upper() in allowed_cats:
                 liq_threshold = 400.0 if m.category == "Weather" else min_liq

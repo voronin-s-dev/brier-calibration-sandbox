@@ -143,7 +143,7 @@ class TestRiskManagementV2(unittest.TestCase):
         self.assertAlmostEqual(frac_k, 0.15, places=4)
         self.assertEqual(applied_pct, 0.04)
         self.assertEqual(bet, 2.00)
-        self.assertEqual(GrokCharterPaperTrader.MIN_HOURS_TO_CLOSE, 0.8)
+        self.assertEqual(GrokCharterPaperTrader.MIN_HOURS_TO_CLOSE, 2.0)
         self.assertEqual(GrokCharterPaperTrader.EXIT_HOURS_THRESHOLD, 0.0)
         self.assertEqual(GrokCharterPaperTrader.STOP_LOSS_PCT, 0.40)
         self.assertEqual(GrokCharterPaperTrader.MIN_EDGE_PP, 0.015)
@@ -1003,6 +1003,117 @@ class TestRiskManagementV2(unittest.TestCase):
             self.assertEqual(pos["status"], "CLOSED")
             self.assertIn("TAKE PROFIT (Sweet Spot +25% Lock)", pos["exit_reason"])
             self.assertAlmostEqual(float(pos["realized_pnl"]), 2.20, places=2)
+
+    def test_partition_markets_rejects_sub_two_hour_expiry(self) -> None:
+        """Verify that markets with hours_to_close < 2.0 (Charter Rule #1) are never admitted into active or shadow pipelines."""
+        from polymarket_api import MarketInfo
+        db = SimDatabase(db_path=Path(":memory:"), initial_capital=50.0)
+        trader = GrokCharterPaperTrader(db=db)
+
+        mkts = [
+            MarketInfo(
+                id=f"mkt_h_{h}", question=f"Market with {h}h left", slug=f"mkt-{h}",
+                description="", resolution_source="https://official.org", has_official_source=True,
+                end_date_iso="2026-11-13T00:00:00Z", hours_to_close=float(h),
+                liquidity_usd=10000.0, volume_24h_usd=20000.0, outcomes=["YES", "NO"],
+                gamma_prices=[0.70, 0.30], clob_token_ids=["tok_yes", "tok_no"],
+                order_min_size=1.0, tick_size=0.01, category="Crypto", closed=False,
+            )
+            for h in [0.5, 0.8, 1.2, 1.9, 2.5, 5.0]
+        ]
+
+        active, shadow = trader.partition_markets(
+            mkts, open_real_market_ids=set(), open_shadow_market_ids=set(), cat_filter="ALL", min_liq=5000.0
+        )
+        active_hours = [m.hours_to_close for m in active]
+        self.assertEqual(active_hours, [2.5, 5.0])
+        self.assertTrue(all(h >= 2.0 for h in active_hours))
+
+    def test_time_exit_requires_positive_bid_vwap(self) -> None:
+        """Verify that Time Exit (< 1.0h to expiry) does NOT dump positions for $0.00 when CLOB bids are zero."""
+        from unittest.mock import patch
+        from polymarket_api import MarketInfo
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            db = SimDatabase(db_path=Path(tmp_dir) / "test_te.db", initial_capital=50.0)
+            trader = GrokCharterPaperTrader(db=db, trades_txt_path=Path(tmp_dir) / "trades.txt")
+
+            db.open_position(
+                market_id="mkt_te_1", question="Spurs vs Bulls Match Winner", category="Sports", side="YES",
+                token_id="tok_spurs", shares=10.0, entry_vwap=0.90, cost_usdc=9.00, current_bid=0.90,
+                p_est=0.95, entry_edge=0.05, kelly_full_pct=0.20, kelly_half_pct=0.08,
+                applied_size_pct=0.08, roundtrip_slippage_pct=0.01, official_source="NBA.com",
+                exit_condition="Hold", rationale="Consensus", end_date_iso="2026-11-12T15:00:00Z"
+            )
+
+            m_live = MarketInfo(
+                id="mkt_te_1", question="Spurs vs Bulls Match Winner", slug="spurs-bulls",
+                description="", resolution_source="NBA.com", has_official_source=True,
+                end_date_iso="2026-11-12T15:00:00Z", hours_to_close=0.5,
+                liquidity_usd=10000.0, volume_24h_usd=20000.0, outcomes=["YES", "NO"],
+                gamma_prices=[0.90, 0.10], clob_token_ids=["tok_yes", "tok_no"],
+                order_min_size=1.0, tick_size=0.01, category="Sports", closed=False,
+            )
+
+            # Case A: Zero bids in CLOB -> Must NOT dump for $0.00! Position remains open waiting for settlement.
+            with patch("trader.fetch_market_by_id", return_value=m_live), \
+                 patch("trader.simulate_clob_sell_shares", return_value=(0.0, 0.0, 0.0)):
+                closed = trader.monitor_and_manage_open_positions()
+
+            self.assertEqual(closed, 0)
+            open_pos = db.get_open_positions()
+            self.assertEqual(len(open_pos), 1)
+
+            # Case B: Positive bid in CLOB ($0.91) -> Time Exit triggers and executes safely at $0.91
+            with patch("trader.fetch_market_by_id", return_value=m_live), \
+                 patch("trader.simulate_clob_sell_shares", return_value=(0.91, 9.10, 0.91)):
+                closed = trader.monitor_and_manage_open_positions()
+
+            self.assertEqual(closed, 1)
+            self.assertEqual(len(db.get_open_positions()), 0)
+            closed_pos = db.get_all_positions()[0]
+            self.assertEqual(closed_pos["status"], "CLOSED")
+            self.assertIn("TIME EXIT", closed_pos["exit_reason"])
+            self.assertAlmostEqual(float(closed_pos["realized_pnl"]), 0.10, places=2)
+
+    def test_shadow_time_exit_requires_positive_bid_vwap(self) -> None:
+        """Verify that shadow Time Exit also requires positive bid VWAP to prevent simulated $0 liquidations."""
+        from unittest.mock import patch
+        from polymarket_api import MarketInfo
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            db = SimDatabase(db_path=Path(tmp_dir) / "test_ste.db", initial_capital=50.0)
+            trader = GrokCharterPaperTrader(db=db, trades_txt_path=Path(tmp_dir) / "trades.txt")
+
+            db.open_shadow_position(
+                market_id="mkt_ste_1", question="Shadow ETH > 4k", category="Crypto", side="YES",
+                token_id="tok_seth", shares=5.0, entry_vwap=0.80, cost_usdc=4.00,
+                initial_p_est=0.85, entry_edge=0.05, kelly_full_pct=0.15, kelly_half_pct=0.05,
+                applied_size_pct=0.05, roundtrip_slippage_pct=0.01,
+                official_source="Binance", exit_condition="Hold", rationale="Shadow test",
+                end_date_iso="2026-11-12T15:00:00Z"
+            )
+
+            m_live = MarketInfo(
+                id="mkt_ste_1", question="Shadow ETH > 4k", slug="shadow-eth",
+                description="", resolution_source="Binance", has_official_source=True,
+                end_date_iso="2026-11-12T15:00:00Z", hours_to_close=0.6,
+                liquidity_usd=10000.0, volume_24h_usd=20000.0, outcomes=["YES", "NO"],
+                gamma_prices=[0.80, 0.20], clob_token_ids=["tok_yes", "tok_no"],
+                order_min_size=1.0, tick_size=0.01, category="Crypto", closed=False,
+            )
+
+            # Case A: Zero bid -> does not exit
+            with patch("trader.fetch_market_by_id", return_value=m_live), \
+                 patch("trader.simulate_clob_sell_shares", return_value=(0.0, 0.0, 0.0)):
+                closed = trader.monitor_and_manage_shadow_positions()
+            self.assertEqual(closed, 0)
+            self.assertEqual(len(db.get_open_shadow_positions()), 1)
+
+            # Case B: Real bid -> exits
+            with patch("trader.fetch_market_by_id", return_value=m_live), \
+                 patch("trader.simulate_clob_sell_shares", return_value=(0.85, 4.25, 0.85)):
+                closed = trader.monitor_and_manage_shadow_positions()
+            self.assertEqual(closed, 1)
+            self.assertEqual(len(db.get_open_shadow_positions()), 0)
 
 
 if __name__ == "__main__":
