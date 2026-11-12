@@ -504,6 +504,25 @@ class WeatherOracle:
         )
 
 
+
+
+def is_esports_market(market: MarketInfo) -> bool:
+    """
+    Detects whether a market is an esports event (CS2, Dota 2, LoL, etc.).
+    Esports favorites have frequent upset rates (15-20%), so public consensus
+    often overvalues favorites at 88c-92c.
+    """
+    q = (market.question or "").lower()
+    src = (market.resolution_source or "").lower()
+    esports_keywords = [
+        "counter-strike", "cs2", "cs:go", "csgo", "dota", "dota 2",
+        "league of legends", "lol", "valorant", "overwatch", "starcraft",
+        "rainbow six", "r6 siege", "blast rivals", "esl pro", "hltv",
+        "liquipedia", "vlr.gg",
+    ]
+    return any(k in q or k in src for k in esports_keywords)
+
+
 class NewsAndOrderbookOracle:
     """
     Combines live News/Search headlines (freshness & authority weighted) with
@@ -584,6 +603,10 @@ class NewsAndOrderbookOracle:
         bids: List[Tuple[float, float]],
         asks: List[Tuple[float, float]],
     ) -> Optional[EvaluationResult]:
+        # Sports and Esports outcomes must never be evaluated solely via local Polymarket book depth
+        if market.category == "Sports" or is_esports_market(market):
+            return None
+
         if not bids or not asks:
             return None
 
@@ -596,11 +619,11 @@ class NewsAndOrderbookOracle:
         if midpoint < 0.04 or midpoint > 0.96 or spread > 0.06:
             return None
 
-        # Calculate near-touch Order Book Imbalance (top 3 levels within 3 cents of touch)
+        # Calculate near-touch Order Book Imbalance (top 4 levels within 3.5 cents of touch)
         bid_depth_usdc = sum(p * s for p, s in bids[:4] if best_bid - p <= 0.035)
         ask_depth_usdc = sum(p * s for p, s in asks[:4] if p - best_ask <= 0.035)
         total_near_depth = bid_depth_usdc + ask_depth_usdc
-        if total_near_depth < 500:
+        if total_near_depth < 1500:
             return None
 
         # Imbalance in [-1, +1]: +1 means massive bid wall (buying pressure), -1 means massive ask wall
@@ -616,17 +639,18 @@ class NewsAndOrderbookOracle:
         sentiment, news_count, headlines = self.fetch_news_sentiment(query)
 
         # Combine Order Book Imbalance + News Sentiment + Gamma-vs-CLOB lead-lag
-        # Notice: Only generate a strong >8pp signal when BOTH microstructure (strong OBI >= 0.45)
-        # AND news/momentum align, or when Gamma indicative price lags a sharp CLOB move.
+        # Only generate a strong >8pp signal when BOTH microstructure (strong OBI >= 0.45)
+        # AND news/momentum align. Unconfirmed OBI is damped to max ±2.5 pp to prevent orderbook spoofing.
         shift = 0.0
         reasons = []
 
         if abs(obi) >= 0.40:
-            obi_shift = obi * 0.075  # up to ±7.5 pp from strong orderbook absorption/imbalance
+            obi_multiplier = 0.075 if (news_count >= 2 and abs(sentiment) >= 0.15) else 0.025
+            obi_shift = obi * obi_multiplier
             shift += obi_shift
             reasons.append(
                 f"CLOB near-touch depth imbalance OBI={obi:+.2f} "
-                f"(BidDepth=${bid_depth_usdc:,.0f} vs AskDepth=${ask_depth_usdc:,.0f})"
+                f"(BidDepth=${bid_depth_usdc:,.0f} vs AskDepth=${ask_depth_usdc:,.0f}, mult={obi_multiplier})"
             )
 
         if news_count >= 3 and abs(sentiment) >= 0.20:
@@ -664,21 +688,6 @@ class NewsAndOrderbookOracle:
         )
 
 
-def is_esports_market(market: MarketInfo) -> bool:
-    """
-    Detects whether a market is an esports event (CS2, Dota 2, LoL, etc.).
-    Esports favorites have frequent upset rates (15-20%), so public consensus
-    often overvalues favorites at 88c-92c.
-    """
-    q = (market.question or "").lower()
-    src = (market.resolution_source or "").lower()
-    esports_keywords = [
-        "counter-strike", "cs2", "cs:go", "csgo", "dota", "dota 2",
-        "league of legends", "lol", "valorant", "overwatch", "starcraft",
-        "rainbow six", "r6 siege", "blast rivals", "esl pro", "hltv",
-        "liquipedia", "vlr.gg",
-    ]
-    return any(k in q or k in src for k in esports_keywords)
 
 
 class HighConvictionFactOracle:

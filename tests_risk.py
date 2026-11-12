@@ -895,7 +895,117 @@ class TestRiskManagementV2(unittest.TestCase):
         self.assertEqual(candidates[0].id, "m_val")
         self.assertEqual(candidates[1].id, "m_fav")
 
+    def test_extract_event_key_bracket_and_mention_deduplication(self) -> None:
+        """Verify that multi-strike brackets and social mentions share the same canonical event key."""
+        # 1. Social mentions with numeric tweet/post count brackets
+        k1 = extract_event_key("Will Elon Musk post 280-299 tweets from November 6 to November 13, 2026?", "Geopolitics")
+        k2 = extract_event_key("Will Elon Musk post 220-239 tweets from November 6 to November 13, 2026?", "Geopolitics")
+        k3 = extract_event_key("Will Elon Musk post 200-219 tweets from November 6 to November 13, 2026?", "Geopolitics")
+        self.assertEqual(k1, k2)
+        self.assertEqual(k2, k3)
+        self.assertIn("mentions:elon_musk", k1)
+
+        # 2. General multi-strike bracket questions across dates
+        b1 = extract_event_key("Will inflation rate be between 2.5-2.7% in November 2026?", "Macro")
+        b2 = extract_event_key("Will inflation rate be between 2.8-3.0% in November 2026?", "Macro")
+        self.assertEqual(b1, b2)
+
+    def test_esports_excluded_from_clob_orderbook_oracle(self) -> None:
+        """Verify that esports markets categorized as 'Other' are excluded from CLOB book imbalance trading."""
+        from oracles import NewsAndOrderbookOracle
+        from polymarket_api import MarketInfo
+
+        oracle = NewsAndOrderbookOracle()
+        m_esports = MarketInfo(
+            id="m_blast",
+            question="Will Vitality Win the BLAST Rivals Hong Kong 2026?",
+            slug="vitality-blast",
+            description="",
+            resolution_source="https://www.hltv.org/events/8251/blast-rivals-2026-season-2",
+            has_official_source=True,
+            end_date_iso="2026-11-17T00:00:00Z",
+            hours_to_close=96.0,
+            liquidity_usd=15000.0,
+            volume_24h_usd=25000.0,
+            outcomes=["Yes", "No"],
+            gamma_prices=[0.26, 0.74],
+            clob_token_ids=["tok_yes", "tok_no"],
+            order_min_size=1.0,
+            tick_size=0.01,
+            category="Other",
+            closed=False,
+        )
+        bids = [(0.25, 500.0), (0.24, 600.0)]
+        asks = [(0.27, 2000.0), (0.28, 3000.0)]
+        # Orderbook oracle must strictly return None for esports
+        res = oracle.evaluate_with_orderbook(m_esports, bids, asks)
+        self.assertIsNone(res)
+
+    def test_orderbook_oracle_damps_unconfirmed_obi(self) -> None:
+        """Verify that shallow depth (<$1500) returns None, and unconfirmed OBI without news is damped."""
+        from oracles import NewsAndOrderbookOracle
+        from polymarket_api import MarketInfo
+
+        oracle = NewsAndOrderbookOracle()
+        m_general = MarketInfo(
+            id="m_macro",
+            question="Will President sign Bill X in November 2026?",
+            slug="bill-x",
+            description="",
+            resolution_source="https://whitehouse.gov",
+            has_official_source=True,
+            end_date_iso="2026-11-20T00:00:00Z",
+            hours_to_close=120.0,
+            liquidity_usd=20000.0,
+            volume_24h_usd=30000.0,
+            outcomes=["Yes", "No"],
+            gamma_prices=[0.50, 0.50],
+            clob_token_ids=["tok_yes", "tok_no"],
+            order_min_size=1.0,
+            tick_size=0.01,
+            category="Macro",
+            closed=False,
+        )
+        # Shallow book: near depth = $100 + $500 = $600 < $1500 threshold
+        shallow_bids = [(0.49, 200.0)]
+        shallow_asks = [(0.51, 1000.0)]
+        self.assertIsNone(oracle.evaluate_with_orderbook(m_general, shallow_bids, shallow_asks))
+
+    def test_sweet_spot_early_take_profit(self) -> None:
+        """Verify that sweet spot trades [0.60, 0.80) can lock in +25% gains early when Bid >= 0.88."""
+        import tempfile
+        from unittest.mock import patch
+        from database import SimDatabase
+        from trader import GrokCharterPaperTrader
+
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            db_path = Path(tmp_dir) / "test_tp.db"
+            trades_path = Path(tmp_dir) / "trades.txt"
+            db = SimDatabase(db_path=db_path, initial_capital=50.0)
+            trader = GrokCharterPaperTrader(db=db, trades_txt_path=trades_path)
+
+            # 1. Sweet spot position entered at 0.66, now Bid reaches 0.88 (+33.3% gain)
+            pos_id = db.open_position(
+                market_id="m_sweet", question="Sweet Spot Market", category="Crypto", side="YES",
+                token_id="tok_sweet", shares=10.0, entry_vwap=0.66, cost_usdc=6.60, current_bid=0.66,
+                p_est=0.72, entry_edge=0.06, kelly_full_pct=0.15, kelly_half_pct=0.06,
+                applied_size_pct=0.06, roundtrip_slippage_pct=0.01, official_source="Binance",
+                exit_condition="TP", rationale="Test", end_date_iso="2026-11-20T00:00:00Z"
+            )
+
+            # Mock CLOB sell: returns 0.88 VWAP ($8.80 proceeds)
+            with patch("trader.fetch_market_by_id", return_value=None), \
+                 patch("trader.simulate_clob_sell_shares", return_value=(0.88, 8.80, 0.88)):
+                closed_count = trader.monitor_and_manage_open_positions()
+
+            self.assertEqual(closed_count, 1)
+            pos = db.get_all_positions()[0]
+            self.assertEqual(pos["status"], "CLOSED")
+            self.assertIn("TAKE PROFIT (Sweet Spot +25% Lock)", pos["exit_reason"])
+            self.assertAlmostEqual(float(pos["realized_pnl"]), 2.20, places=2)
+
 
 if __name__ == "__main__":
     unittest.main()
+
 

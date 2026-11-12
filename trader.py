@@ -11,7 +11,14 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Set, Tuple
 
 from database import SimDatabase
-from oracles import CryptoOracle, EvaluationResult, HighConvictionFactOracle, NewsAndOrderbookOracle, WeatherOracle
+from oracles import (
+    CryptoOracle,
+    EvaluationResult,
+    HighConvictionFactOracle,
+    NewsAndOrderbookOracle,
+    WeatherOracle,
+    is_esports_market,
+)
 from polymarket_api import (
     MarketInfo,
     OrderBookSimulation,
@@ -30,7 +37,7 @@ TRADES_LOG_PATH = Path(__file__).resolve().parent / "data" / "trades.txt"
 def extract_event_key(question: str, category: str) -> str:
     """
     Extracts a canonical underlying event key so the bot never opens multiple positions
-    on the same thermometer/city, crypto asset on the same day, or sports match.
+    on the same thermometer/city, crypto asset on the same day, sports match, or strike bracket.
     """
     q_low = question.lower().strip()
     date_m = re.search(
@@ -38,6 +45,13 @@ def extract_event_key(question: str, category: str) -> str:
         q_low,
     )
     date_part = date_m.group(0) if date_m else "nodate"
+
+    # Date range matching (e.g. "from November 6 to November 13")
+    date_range_m = re.search(
+        r"(?:from\s+)?(january|february|march|april|may|june|july|august|september|october|november|december)\s+\d{1,2}\s+to\s+(?:january|february|march|april|may|june|july|august|september|october|november|december)?\s*\d{1,2}(?:,\s*\d{4})?",
+        q_low,
+    )
+    date_or_range = date_range_m.group(0) if date_range_m else date_part
 
     if category == "Weather" or "temperature in" in q_low:
         city_m = re.search(r"temperature\s+in\s+([a-z\s\(\)]+?)\s+be\b", q_low)
@@ -50,12 +64,27 @@ def extract_event_key(question: str, category: str) -> str:
                 norm_coin = "bitcoin" if coin == "btc" else ("ethereum" if coin == "eth" else ("solana" if coin == "sol" else coin))
                 return f"crypto:{norm_coin}:{date_part}"
 
-    if category == "Sports":
+    # Social media mentions / post counts (e.g. Elon Musk tweets, Donald Trump posts)
+    if any(k in q_low for k in ["tweet", "tweets", "post", "posts", "truth social", "x post"]):
+        entity_m = re.search(r"\b(elon\s+musk|donald\s+trump|joe\s+biden|musk|trump)\b", q_low)
+        if entity_m:
+            entity = entity_m.group(1).replace(" ", "_")
+            return f"mentions:{entity}:{date_or_range}"
+
+    # Sports and Esports
+    esports_keywords = (
+        "counter-strike", "cs2", "cs:go", "csgo", "dota", "dota 2",
+        "league of legends", "lol", "valorant", "overwatch", "starcraft",
+        "rainbow six", "r6 siege", "blast rivals", "esl pro", "hltv",
+    )
+    if category == "Sports" or any(k in q_low for k in esports_keywords):
         cleaned = re.sub(r"^(spread:\s*|will\s+)", "", q_low)
         cleaned = re.sub(r":\s*o/u.*$|\s+win\s+on.*$|\(\-[0-9\.]+\)", "", cleaned).strip()
         return f"sports:{cleaned[:35]}:{date_part}"
 
-    return f"{category.lower()}:{q_low[:40]}"
+    # General multi-strike bracket normalization (collapse numeric ranges like 280-299, 10-15%, 50+ to <bracket>)
+    cleaned_q = re.sub(r"\b\d+[\-–]\d+\+?\b|\b\d+\+\b", "<bracket>", q_low)
+    return f"{category.lower()}:{cleaned_q[:40].strip()}:{date_or_range}"
 
 
 class GrokCharterPaperTrader:
@@ -203,8 +232,12 @@ class GrokCharterPaperTrader:
             if res is not None:
                 return res, preloaded_book
 
-        # 4. Fallback for Macro, Geopolitics, Other: News Consensus & CLOB Imbalance (NEVER Sports!)
-        if market.category != "Sports" and market.clob_token_ids:
+        # 4. Fallback for Macro, Geopolitics, Other: News Consensus & CLOB Imbalance (NEVER Sports or Esports!)
+        if (
+            market.category != "Sports"
+            and not is_esports_market(market)
+            and market.clob_token_ids
+        ):
             try:
                 book = preloaded_book or fetch_clob_book(market.clob_token_ids[0])
                 bids = book.get("bids", [])
@@ -307,14 +340,34 @@ class GrokCharterPaperTrader:
             exit_triggered = False
             exit_reason = ""
 
-            # Exit Rule A: GENUINE TAKE PROFIT (Lock in 98.5%+ bid early to free up capital)
+            # Exit Rule A: GENUINE TAKE PROFIT
+            # 1. Near-ceiling target (98.5%+ bid) for high-price entries ($0.88-$0.92)
+            # 2. Strong profit lock (gain >= +25% AND Bid VWAP >= 0.88) for sweet spot entries ($0.60-$0.79)
+            # 3. Super profit lock (gain >= +35% AND Bid VWAP >= 0.82)
+            is_take_profit = False
+            gain_pct = ((vwap_sell - entry_vwap) / entry_vwap * 100.0) if entry_vwap > 0 else 0.0
+
             if vwap_sell >= 0.985:
-                exit_triggered = True
-                gain_pct = (vwap_sell - entry_vwap) / entry_vwap * 100.0
+                is_take_profit = True
                 exit_reason = (
                     f"TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP ({vwap_sell*100:.1f}%) "
                     f"secured early with +{gain_pct:.1f}% gain"
                 )
+            elif gain_pct >= 25.0 and vwap_sell >= 0.88:
+                is_take_profit = True
+                exit_reason = (
+                    f"TAKE PROFIT (Sweet Spot +25% Lock): Live CLOB Bid VWAP ({vwap_sell*100:.1f}%) "
+                    f"secured early with +{gain_pct:.1f}% net gain"
+                )
+            elif gain_pct >= 35.0 and vwap_sell >= 0.82:
+                is_take_profit = True
+                exit_reason = (
+                    f"TAKE PROFIT (Sweet Spot +35% Lock): Live CLOB Bid VWAP ({vwap_sell*100:.1f}%) "
+                    f"secured early with +{gain_pct:.1f}% net gain"
+                )
+
+            if is_take_profit:
+                exit_triggered = True
             # Exit Rule B: HARD STOP-LOSS (Protect capital only if price drops AND thesis deteriorated)
             elif vwap_sell > 0 and (
                 vwap_sell <= entry_vwap * (1.0 - self.STOP_LOSS_PCT) and latest_p <= 0.75
@@ -843,7 +896,7 @@ class GrokCharterPaperTrader:
                         # EXECUTE VIRTUAL TRADE!
                         exit_cond = (
                             f"Hold to binary resolution ($1.00 payout), "
-                            f"or early Take Profit if Bid VWAP >= 0.985, "
+                            f"or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), "
                             f"or Stop-Loss <= {final_sim.vwap_buy_price * (1.0 - self.STOP_LOSS_PCT):.3f} if P_est <= 70%"
                         )
                         pos_id = self.db.open_position(
