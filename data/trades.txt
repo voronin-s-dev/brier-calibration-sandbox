@@ -3201,3 +3201,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus NO (91.5%) within 23.2h of expiry
 
 [2026-11-12 17:49:08 UTC] [CYCLE #1043 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$31.66 | Equity=$36.50 (DD=7.09%)
+[2026-11-12 18:01:12 UTC] [OPEN TRADE #165] Will Bitcoin dip to $70,000 on November 12?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 94.2% vs Рынок (Ask VWAP): 90.8% (Перекос/Edge: +3.3 п.п.)
+  Стакан CLOB: BestBid=0.907, BestAsk=0.908, Проскальзывание входа/выхода=0.10% (<= 3.0%)
+  Келли: Полный=36.4%, Четверть(0.25x)=14.6% -> Применён=3.0% банка
+  Размер сделки: $1.09 USDC (1.20 shares @ $0.9080)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.545 if P_est <= 70%
+  Причина: High market consensus NO (90.6%) within 11.0h of expiry
+
+[2026-11-12 18:01:12 UTC] [CYCLE #1044 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$30.57 | Equity=$36.41 (DD=7.32%)
