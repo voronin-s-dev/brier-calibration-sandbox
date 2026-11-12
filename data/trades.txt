@@ -3061,3 +3061,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-12 10:40:52 UTC] [CYCLE #997 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.94 | Equity=$36.22 (DD=7.83%)
 [2026-11-12 10:51:01 UTC] [CYCLE #998 SUMMARY] Scanned=792 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.94 | Equity=$36.27 (DD=7.70%)
 [2026-11-12 10:52:40 UTC] [CYCLE #999 SUMMARY] Scanned=788 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.94 | Equity=$36.27 (DD=7.69%)
+[EXIT] #156 | Will Vitality Win the BLAST Rivals Hong Kong 2026? (NO)
+  Shares: 3.93 | Entry VWAP: 0.7400 -> Exit Bid VWAP: 0.6900
+  Proceeds: $2.71 | Realized PnL: $-0.20 USDC | Reason: THESIS INVALIDATED (Prob Shift > 8.0pp & P_est <= 70%): Estimate dropped from 79.7% to 65.5% (Bid VWAP: $0.690)
+[2026-11-12 11:01:54 UTC] [CYCLE #1000 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=1 | Cash=$24.65 | Equity=$36.31 (DD=7.60%)
