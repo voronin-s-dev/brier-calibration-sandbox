@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-12 02:01:17 UTC`
+**Обновлено:** `2026-11-12 02:10:27 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -14,12 +14,12 @@
 ## 📂 Открытые позиции (6 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #135 | Will Elon Musk post 300-319 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.974` | `98.5%` | `$2.99` | `$+0.44` | https://x.com/elonmusk |
-| #141 | Will Elon Musk post 280-299 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.950` | `98.5%` | `$3.07` | `$+0.36` | https://x.com/elonmusk |
-| #144 | Will Predict.fun launch a token by November 15, 2026? | Other | **NO** | `0.848` | `0.844` | `90.7%` | `$2.90` | `$-0.01` | information from predict.fun ( |
-| #147 | Will the price of Bitcoin be above $76,000 on November  | Crypto | **NO** | `0.910` | `0.961` | `98.5%` | `$1.11` | `$+0.06` | https://www.binance.com/en/tra |
+| #135 | Will Elon Musk post 300-319 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.980` | `98.5%` | `$2.99` | `$+0.46` | https://x.com/elonmusk |
+| #141 | Will Elon Musk post 280-299 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.956` | `98.5%` | `$3.07` | `$+0.38` | https://x.com/elonmusk |
+| #144 | Will Predict.fun launch a token by November 15, 2026? | Other | **NO** | `0.848` | `0.818` | `90.7%` | `$2.90` | `$-0.10` | information from predict.fun ( |
+| #147 | Will the price of Bitcoin be above $76,000 on November  | Crypto | **NO** | `0.910` | `0.962` | `98.5%` | `$1.11` | `$+0.06` | https://www.binance.com/en/tra |
 | #148 | Will Bitcoin reach $75,000 on November 11? | Crypto | **NO** | `0.910` | `0.983` | `98.5%` | `$1.11` | `$+0.09` | https://www.binance.com/en/tra |
-| #152 | Will the price of Ethereum be above $2,000 on November  | Crypto | **YES** | `0.911` | `0.853` | `81.8%` | `$1.10` | `$-0.07` | https://www.binance.com/en/tra |
+| #152 | Will the price of Ethereum be above $2,000 on November  | Crypto | **YES** | `0.911` | `0.890` | `82.1%` | `$1.10` | `$-0.03` | https://www.binance.com/en/tra |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
