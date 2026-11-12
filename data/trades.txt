@@ -3213,3 +3213,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-12 18:01:12 UTC] [CYCLE #1044 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$30.57 | Equity=$36.41 (DD=7.32%)
 [2026-11-12 18:10:22 UTC] [CYCLE #1045 SUMMARY] Scanned=778 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.57 | Equity=$36.46 (DD=7.21%)
 [2026-11-12 18:19:31 UTC] [CYCLE #1046 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.57 | Equity=$36.48 (DD=7.15%)
+[2026-11-12 18:30:58 UTC] [OPEN TRADE #166] Will Ethereum dip to $1,950 on November 12?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/ETH_USDT
+  Оценка бота: 93.5% vs Рынок (Ask VWAP): 92.0% (Перекос/Edge: +1.5 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.920, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=18.8%, Четверть(0.25x)=7.5% -> Применён=3.0% банка
+  Размер сделки: $1.10 USDC (1.20 shares @ $0.9200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.552 if P_est <= 70%
+  Причина: High market consensus NO (90.0%) within 10.5h of expiry
+
+[2026-11-12 18:30:58 UTC] [CYCLE #1047 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$29.47 | Equity=$36.49 (DD=7.14%)
