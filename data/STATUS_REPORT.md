@@ -1,27 +1,24 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-12 13:01:12 UTC`
+**Обновлено:** `2026-11-12 13:10:20 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$36.97 USDC`** (`-13.03$` / `-26.05%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$21.47` / `$15.50 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-13.03 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `5.90%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
-| **Закрытых сделок / Win Rate** | `150` / `72.7%` | Brier Score: `0.1960` |
+| **Текущий баланс (Equity)** | **`$37.95 USDC`** (`-12.05$` / `-24.11%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$28.85` / `$9.10 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-12.05 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `3.43%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Закрытых сделок / Win Rate** | `153` / `72.5%` | Brier Score: `0.1960` |
 
-## 📂 Открытые позиции (8 / 8)
+## 📂 Открытые позиции (5 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #141 | Will Elon Musk post 280-299 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.969` | `98.5%` | `$3.07` | `$+0.43` | https://x.com/elonmusk |
-| #152 | Will the price of Ethereum be above $2,000 on November  | Crypto | **YES** | `0.911` | `0.736` | `74.2%` | `$1.10` | `$-0.21` | https://www.binance.com/en/tra |
-| #153 | Will Ethereum dip to $2,000 November 9-15? | Crypto | **YES** | `0.660` | `0.820` | `87.1%` | `$1.95` | `$+0.47` | Kraken ETHUSDT 1m/1h Spot Klin |
-| #154 | Will Elon Musk post 220-239 tweets from November 6 to N | Geopolitics | **NO** | `0.670` | `0.560` | `68.0%` | `$2.33` | `$-0.38` | https://x.com/elonmusk |
-| #155 | Will Elon Musk post 200-219 tweets from November 6 to N | Geopolitics | **NO** | `0.917` | `0.881` | `93.5%` | `$1.07` | `$-0.04` | https://x.com/elonmusk |
+| #154 | Will Elon Musk post 220-239 tweets from November 6 to N | Geopolitics | **NO** | `0.670` | `0.553` | `68.0%` | `$2.33` | `$-0.41` | https://x.com/elonmusk |
+| #155 | Will Elon Musk post 200-219 tweets from November 6 to N | Geopolitics | **NO** | `0.917` | `0.876` | `93.5%` | `$1.07` | `$-0.05` | https://x.com/elonmusk |
 | #157 | Will Croatia win on 2026-11-12? | Sports | **NO** | `0.920` | `0.900` | `94.0%` | `$1.10` | `$-0.02` | https://www.uefa.com/uefanatio |
-| #158 | Will Bitcoin dip to $72,000 November 9-15? | Crypto | **YES** | `0.650` | `0.700` | `80.7%` | `$2.92` | `$+0.22` | Kraken BTCUSDT 1m/1h Spot Klin |
-| #159 | Will the price of Bitcoin be above $74,000 on November  | Crypto | **NO** | `0.860` | `0.880` | `92.3%` | `$1.46` | `$+0.03` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #159 | Will the price of Bitcoin be above $74,000 on November  | Crypto | **NO** | `0.860` | `0.930` | `92.5%` | `$1.46` | `$+0.12` | Kraken BTCUSDT 1m/1h Spot Klin |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -48,6 +45,11 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will the price of Ethereum be between $2,000 and $ | Crypto | YES | `73.0%` | `43.0%` | `+30.0 п.п.` | `5.00%` | REJECTED: Contract price $0.430 outside sweet spot [$0.60, $0.92] |
+| Will Ethereum dip to $1,950 on November 12? | Crypto | NO | `78.4%` | `52.0%` | `+26.4 п.п.` | `4.00%` | REJECTED: Contract price $0.520 outside sweet spot [$0.60, $0.92] |
+| Will the price of Bitcoin be between $72,000 and $ | Crypto | YES | `76.3%` | `59.0%` | `+17.3 п.п.` | `1.00%` | REJECTED: Contract price $0.590 outside sweet spot [$0.60, $0.92] |
+| Will Bitcoin dip to $72,000 November 9-15? | Crypto | YES | `81.0%` | `91.0%` | `-10.0 п.п.` | `2.00%` | REJECTED: Edge -10.0 pp < 2 pp threshold (P_est=81.0% vs AskVWAP=91.0%) |
+| Will the price of Ethereum be above $2,000 on Nove | Crypto | YES | `72.0%` | `46.7%` | `+25.4 п.п.` | `2.80%` | REJECTED: Contract price $0.467 outside sweet spot [$0.60, $0.92] |
 | Will the price of Bitcoin be above $74,000 on Nove | Crypto | NO | `89.8%` | `86.0%` | `+3.8 п.п.` | `1.00%` | EXECUTED BUY #159 ($1.46 @ 0.8600) |
 | Will Zoran Janković win the 2026 Ljubljana mayoral | Geopolitics | YES | `76.5%` | `70.0%` | `+6.5 п.п.` | `2.00%` | REJECTED: Category cap reached (3/3 in Geopolitics) |
 | Will Zoran Janković win the 2026 Ljubljana mayoral | Geopolitics | YES | `75.2%` | `70.0%` | `+5.2 п.п.` | `3.00%` | REJECTED: CLOB round-trip slippage 3.00% > 2.0% limit |
@@ -61,8 +63,3 @@
 | Will Bitcoin reach $74,000 on November 12? | Crypto | YES | `70.7%` | `66.0%` | `+4.7 п.п.` | `2.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 12) |
 | Will Bitcoin reach $74,000 on November 12? | Crypto | YES | `72.4%` | `65.0%` | `+7.4 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 12) |
 | Will Bitcoin reach $74,000 on November 12? | Crypto | YES | `73.5%` | `68.0%` | `+5.5 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 12) |
-| Will Bitcoin reach $74,000 on November 12? | Crypto | YES | `74.0%` | `67.0%` | `+7.0 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 12) |
-| Will Bitcoin reach $74,000 on November 12? | Crypto | YES | `70.3%` | `66.0%` | `+4.3 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 12) |
-| Will the highest temperature in Austin be between  | Weather | NO | `74.6%` | `70.0%` | `+4.6 п.п.` | `5.00%` | REJECTED: Narrow weather bracket NO bet prohibited (airport METAR microclimate tail risk) |
-| Will Bitcoin reach $74,000 on November 12? | Crypto | YES | `71.4%` | `61.0%` | `+10.4 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 12) |
-| Will Bitcoin reach $74,000 on November 12? | Crypto | YES | `71.5%` | `66.0%` | `+5.5 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 12) |
