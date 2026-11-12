@@ -1,11 +1,11 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-12 23:31:01 UTC`
+**Обновлено:** `2026-11-12 23:40:09 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$36.39 USDC`** (`-13.61$` / `-27.21%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Текущий баланс (Equity)** | **`$36.39 USDC`** (`-13.61$` / `-27.22%`) | Cash + Mark-to-Market по CLOB Bid |
 | **Свободный кэш / В сделках** | `$30.57` / `$5.82 USDC` | До 8 открытых позиций, макс 8% банка |
 | **Цель окупаемости подписки** | `$-13.61 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
 | **Просадка от пика (Текущая / Макс)** | `7.38%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
@@ -14,11 +14,11 @@
 ## 📂 Открытые позиции (5 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #154 | Will Elon Musk post 220-239 tweets from November 6 to N | Geopolitics | **NO** | `0.670` | `0.524` | `68.0%` | `$2.33` | `$-0.51` | https://x.com/elonmusk |
-| #155 | Will Elon Musk post 200-219 tweets from November 6 to N | Geopolitics | **NO** | `0.917` | `0.603` | `93.5%` | `$1.07` | `$-0.37` | https://x.com/elonmusk |
+| #154 | Will Elon Musk post 220-239 tweets from November 6 to N | Geopolitics | **NO** | `0.670` | `0.526` | `68.0%` | `$2.33` | `$-0.50` | https://x.com/elonmusk |
+| #155 | Will Elon Musk post 200-219 tweets from November 6 to N | Geopolitics | **NO** | `0.917` | `0.613` | `93.5%` | `$1.07` | `$-0.35` | https://x.com/elonmusk |
 | #164 | Will the price of Bitcoin be above $74,000 on November  | Crypto | **NO** | `0.920` | `0.960` | `98.5%` | `$1.10` | `$+0.05` | https://www.binance.com/en/tra |
-| #165 | Will Bitcoin dip to $70,000 on November 12? | Crypto | **NO** | `0.908` | `0.855` | `85.0%` | `$1.09` | `$-0.06` | https://www.binance.com/en/tra |
-| #166 | Will Ethereum dip to $1,950 on November 12? | Crypto | **NO** | `0.920` | `0.940` | `97.5%` | `$1.10` | `$+0.02` | https://www.binance.com/en/tra |
+| #165 | Will Bitcoin dip to $70,000 on November 12? | Crypto | **NO** | `0.908` | `0.838` | `85.3%` | `$1.09` | `$-0.08` | https://www.binance.com/en/tra |
+| #166 | Will Ethereum dip to $1,950 on November 12? | Crypto | **NO** | `0.920` | `0.940` | `98.0%` | `$1.10` | `$+0.02` | https://www.binance.com/en/tra |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
