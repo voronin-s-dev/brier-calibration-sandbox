@@ -3224,3 +3224,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-11-12 18:30:58 UTC] [CYCLE #1047 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$29.47 | Equity=$36.49 (DD=7.14%)
 [2026-11-12 18:40:06 UTC] [CYCLE #1048 SUMMARY] Scanned=788 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.47 | Equity=$36.50 (DD=7.11%)
+[EXIT] #157 | Will Croatia win on 2026-11-12? (NO)
+  Shares: 1.20 | Entry VWAP: 0.9200 -> Exit Bid VWAP: 0.9200
+  Proceeds: $1.10 | Realized PnL: $+0.00 USDC | Reason: TIME EXIT: 0.9h left to close (under 1.0h threshold, Bid VWAP: $0.920)
+[2026-11-12 18:49:15 UTC] [CYCLE #1049 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$30.57 | Equity=$36.37 (DD=7.43%)
