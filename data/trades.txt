@@ -2924,3 +2924,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus YES (90.5%) within 0.8h of expiry
 
 [2026-11-12 00:10:14 UTC] [CYCLE #931 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=1 | Cash=$20.88 | Equity=$36.94 (DD=5.97%)
+[EXIT] #151 | Spurs vs. Bulls (YES)
+  Shares: 1.22 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9000
+  Proceeds: $1.10 | Realized PnL: $-0.01 USDC | Reason: TIME EXIT: 0.7h left to close (under 1.0h threshold, Bid VWAP: $0.900)
+[2026-11-12 00:19:24 UTC] [CYCLE #932 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$21.98 | Equity=$36.77 (DD=6.43%)
