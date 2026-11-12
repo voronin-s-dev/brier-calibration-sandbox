@@ -2911,3 +2911,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus YES (90.5%) within 1.0h of expiry
 
 [2026-11-12 00:01:03 UTC] [CYCLE #930 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=1 | Cash=$20.89 | Equity=$36.86 (DD=6.19%)
+[EXIT] #150 | Spurs vs. Bulls (YES)
+  Shares: 1.22 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9000
+  Proceeds: $1.10 | Realized PnL: $-0.01 USDC | Reason: TIME EXIT: 0.8h left to close (under 1.0h threshold, Bid VWAP: $0.900)
+[2026-11-12 00:10:14 UTC] [OPEN TRADE #151] Spurs vs. Bulls
+  Категория: Sports | Сторона: YES | Источник: https://www.nba.com/
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=33.3%, Четверть(0.25x)=13.3% -> Применён=3.0% банка
+  Размер сделки: $1.11 USDC (1.22 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: High market consensus YES (90.5%) within 0.8h of expiry
+
+[2026-11-12 00:10:14 UTC] [CYCLE #931 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=1 | Cash=$20.88 | Equity=$36.94 (DD=5.97%)
