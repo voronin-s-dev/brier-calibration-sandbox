@@ -1,27 +1,27 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-12 12:31:00 UTC`
+**Обновлено:** `2026-11-12 12:40:10 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$37.04 USDC`** (`-12.96$` / `-25.92%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$21.47` / `$15.57 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-12.96 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `5.73%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$36.85 USDC`** (`-13.15$` / `-26.29%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$21.47` / `$15.38 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-13.15 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `6.20%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `150` / `72.7%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (8 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #141 | Will Elon Musk post 280-299 tweets from November 6 to N | Geopolitics | **NO** | `0.850` | `0.969` | `98.5%` | `$3.07` | `$+0.43` | https://x.com/elonmusk |
-| #152 | Will the price of Ethereum be above $2,000 on November  | Crypto | **YES** | `0.911` | `0.747` | `74.8%` | `$1.10` | `$-0.20` | https://www.binance.com/en/tra |
-| #153 | Will Ethereum dip to $2,000 November 9-15? | Crypto | **YES** | `0.660` | `0.800` | `85.9%` | `$1.95` | `$+0.41` | Kraken ETHUSDT 1m/1h Spot Klin |
-| #154 | Will Elon Musk post 220-239 tweets from November 6 to N | Geopolitics | **NO** | `0.670` | `0.570` | `68.0%` | `$2.33` | `$-0.35` | https://x.com/elonmusk |
-| #155 | Will Elon Musk post 200-219 tweets from November 6 to N | Geopolitics | **NO** | `0.917` | `0.884` | `93.5%` | `$1.07` | `$-0.04` | https://x.com/elonmusk |
+| #152 | Will the price of Ethereum be above $2,000 on November  | Crypto | **YES** | `0.911` | `0.764` | `75.7%` | `$1.10` | `$-0.18` | https://www.binance.com/en/tra |
+| #153 | Will Ethereum dip to $2,000 November 9-15? | Crypto | **YES** | `0.660` | `0.790` | `85.9%` | `$1.95` | `$+0.38` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #154 | Will Elon Musk post 220-239 tweets from November 6 to N | Geopolitics | **NO** | `0.670` | `0.564` | `68.0%` | `$2.33` | `$-0.37` | https://x.com/elonmusk |
+| #155 | Will Elon Musk post 200-219 tweets from November 6 to N | Geopolitics | **NO** | `0.917` | `0.881` | `93.5%` | `$1.07` | `$-0.04` | https://x.com/elonmusk |
 | #157 | Will Croatia win on 2026-11-12? | Sports | **NO** | `0.920` | `0.910` | `95.0%` | `$1.10` | `$-0.01` | https://www.uefa.com/uefanatio |
-| #158 | Will Bitcoin dip to $72,000 November 9-15? | Crypto | **YES** | `0.650` | `0.710` | `80.3%` | `$2.92` | `$+0.27` | Kraken BTCUSDT 1m/1h Spot Klin |
-| #159 | Will the price of Bitcoin be above $74,000 on November  | Crypto | **NO** | `0.860` | `0.890` | `91.5%` | `$1.46` | `$+0.05` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #158 | Will Bitcoin dip to $72,000 November 9-15? | Crypto | **YES** | `0.650` | `0.680` | `80.3%` | `$2.92` | `$+0.13` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #159 | Will the price of Bitcoin be above $74,000 on November  | Crypto | **NO** | `0.860` | `0.880` | `91.5%` | `$1.46` | `$+0.03` | Kraken BTCUSDT 1m/1h Spot Klin |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
