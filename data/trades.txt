@@ -3081,3 +3081,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-11-12 11:40:04 UTC] [CYCLE #1006 SUMMARY] Scanned=790 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$21.73 | Equity=$36.51 (DD=7.08%)
 [2026-11-12 11:49:13 UTC] [CYCLE #1007 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.73 | Equity=$36.70 (DD=6.59%)
+[EXIT] #147 | Will the price of Bitcoin be above $76,000 on November 12? (NO)
+  Shares: 1.22 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9860
+  Proceeds: $1.20 | Realized PnL: $+0.09 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.6%) secured early with +8.4% gain
+[2026-11-12 12:01:07 UTC] [CYCLE #1008 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$22.93 | Equity=$36.88 (DD=6.14%)
