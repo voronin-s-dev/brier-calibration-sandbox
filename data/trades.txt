@@ -2928,3 +2928,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 1.22 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9000
   Proceeds: $1.10 | Realized PnL: $-0.01 USDC | Reason: TIME EXIT: 0.7h left to close (under 1.0h threshold, Bid VWAP: $0.900)
 [2026-11-12 00:19:24 UTC] [CYCLE #932 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$21.98 | Equity=$36.77 (DD=6.43%)
+[2026-11-12 00:30:49 UTC] [OPEN TRADE #152] Will the price of Ethereum be above $2,000 on November 12?
+  Категория: Crypto | Сторона: YES | Источник: https://www.binance.com/en/trade/ETH_USDT
+  Оценка бота: 93.9% vs Рынок (Ask VWAP): 91.1% (Перекос/Edge: +2.8 п.п.)
+  Стакан CLOB: BestBid=0.905, BestAsk=0.911, Проскальзывание входа/выхода=0.60% (<= 3.0%)
+  Келли: Полный=31.5%, Четверть(0.25x)=12.6% -> Применён=3.0% банка
+  Размер сделки: $1.10 USDC (1.21 shares @ $0.9110)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985, or Stop-Loss <= 0.547 if P_est <= 70%
+  Причина: High market consensus YES (90.4%) within 16.5h of expiry
+
+[2026-11-12 00:30:49 UTC] [CYCLE #933 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$20.88 | Equity=$36.52 (DD=7.06%)
