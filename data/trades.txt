@@ -3086,3 +3086,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $1.20 | Realized PnL: $+0.09 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.6%) secured early with +8.4% gain
 [2026-11-12 12:01:07 UTC] [CYCLE #1008 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$22.93 | Equity=$36.88 (DD=6.14%)
 [2026-11-12 12:10:16 UTC] [CYCLE #1009 SUMMARY] Scanned=773 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.93 | Equity=$37.05 (DD=5.69%)
+[2026-11-12 12:19:25 UTC] [OPEN TRADE #159] Will the price of Bitcoin be above $74,000 on November 12?
+  Категория: Crypto | Сторона: NO | Источник: Kraken BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 89.8% vs Рынок (Ask VWAP): 86.0% (Перекос/Edge: +3.7 п.п.)
+  Стакан CLOB: BestBid=0.850, BestAsk=0.860, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=26.8%, Четверть(0.25x)=10.7% -> Применён=4.0% банка
+  Размер сделки: $1.46 USDC (1.70 shares @ $0.8600)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.516 if P_est <= 70%
+  Причина: Terminal GBM model: BTCUSDT=$72,804.70 vs strike=$74,000 (-1.62%), vol_h=0.50%, tau=4.7h => P(S_T > K)=8.8% -> Calibrated(0.75x)=10.3%
+
+[2026-11-12 12:19:25 UTC] [CYCLE #1010 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$21.47 | Equity=$36.58 (DD=6.91%)
