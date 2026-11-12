@@ -77,7 +77,7 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-11-12 13:10:20 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-11-12 13:19:27 UTC</div>
     </div>
   </div>
 
@@ -86,7 +86,7 @@
   <div class="grid">
     <div class="card">
       <div class="metric-label">Текущий капитал (Equity)</div>
-      <div class="metric-val">$37.95 <span style="font-size:15px" class="neg">(-12.05$ / -24.11%)</span></div>
+      <div class="metric-val">$37.94 <span style="font-size:15px" class="neg">(-12.06$ / -24.12%)</span></div>
       <div class="metric-sub">Старт: $50.00 USDC (Оценка по Bid стакана!)</div>
     </div>
     <div class="card">
@@ -96,12 +96,12 @@
     </div>
     <div class="card">
       <div class="metric-label">Цель подписки ($60 / мес)</div>
-      <div class="metric-val">$-12.05 <span class="muted" style="font-size:16px">/ $60.00</span></div>
+      <div class="metric-val">$-12.06 <span class="muted" style="font-size:16px">/ $60.00</span></div>
       <div class="metric-sub">Прогресс окупаемости: 0.0%</div>
     </div>
     <div class="card">
       <div class="metric-label">Просадка от пика (Drawdown)</div>
-      <div class="metric-val ">3.43% <span class="muted" style="font-size:15px">(Макс: 24.45%)</span></div>
+      <div class="metric-val ">3.44% <span class="muted" style="font-size:15px">(Макс: 24.45%)</span></div>
       <div class="metric-sub">Пик: $39.29 | Лимит остановки: 40.0%</div>
     </div>
     <div class="card">
@@ -226,7 +226,7 @@
             <td><span class="side-no">NO</span></td>
             <td>3.61</td>
             <td>$0.8500</td>
-            <td>$0.9690</td>
+            <td>$0.9700</td>
             <td><strong>98.5%</strong> <small>(+5.2pp)</small></td>
             <td>$3.07 <small>(8.0%)</small></td>
             <td class="pos">$+0.43</td>
@@ -240,10 +240,10 @@
             <td><span class="side-no">NO</span></td>
             <td>3.48</td>
             <td>$0.6700</td>
-            <td>$0.5530</td>
+            <td>$0.5650</td>
             <td><strong>68.0%</strong> <small>(+5.5pp)</small></td>
             <td>$2.33 <small>(6.6%)</small></td>
-            <td class="neg">$-0.41</td>
+            <td class="neg">$-0.37</td>
             <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.402 if P_est &lt;= 70%</small></td>
         </tr>
         
@@ -254,7 +254,7 @@
             <td><span class="side-no">NO</span></td>
             <td>1.17</td>
             <td>$0.9170</td>
-            <td>$0.8760</td>
+            <td>$0.8770</td>
             <td><strong>93.5%</strong> <small>(+3.4pp)</small></td>
             <td>$1.07 <small>(3.0%)</small></td>
             <td class="neg">$-0.05</td>
@@ -282,10 +282,10 @@
             <td><span class="side-no">NO</span></td>
             <td>1.70</td>
             <td>$0.8600</td>
-            <td>$0.9300</td>
-            <td><strong>92.5%</strong> <small>(+3.8pp)</small></td>
+            <td>$0.9000</td>
+            <td><strong>94.0%</strong> <small>(+3.8pp)</small></td>
             <td>$1.46 <small>(4.0%)</small></td>
-            <td class="pos">$+0.12</td>
+            <td class="pos">$+0.07</td>
             <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985 (or +25% gain if Bid &gt;= 0.88), or Stop-Loss &lt;= 0.516 if P_est &lt;= 70%</small></td>
         </tr>
         
@@ -303,6 +303,32 @@
     </thead>
     <tbody>
       
+        <tr class="">
+            <td>Will the price of Bitcoin be between $72,000 and $74,000 on November 12?<br><small class="muted">Terminal range model: BTCUSDT=$72,760.90 in [$72,000, $74,000], vol_h=0.50%, tau=3.7h =&gt; P=77.8% -&gt; Calibrated(0.75x)=73.6%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>73.6%</td>
+            <td>64.0%</td>
+            <td class="pos">+9.6 п.п.</td>
+            <td class="pos">2.00%</td>
+            <td>$44,752</td>
+            <td>3.7h</td>
+            <td><strong>REJECTED: Duplicate underlying event (crypto:bitcoin:november 12)</strong></td>
+        </tr>
+        
+        <tr class="">
+            <td>Will the price of Bitcoin be above $72,000 on November 12?<br><small class="muted">Terminal GBM model: BTCUSDT=$72,760.90 vs strike=$72,000 (+1.06%), vol_h=0.50%, tau=3.7h =&gt; P(S_T &gt; K)=83.5% -&gt; Calibrated(0.75x)=79.5%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>79.5%</td>
+            <td>71.3%</td>
+            <td class="pos">+8.2 п.п.</td>
+            <td class="pos">0.60%</td>
+            <td>$51,260</td>
+            <td>3.7h</td>
+            <td><strong>REJECTED: Duplicate underlying event (crypto:bitcoin:november 12)</strong></td>
+        </tr>
+        
         <tr class="">
             <td>Will the price of Ethereum be between $2,000 and $2,100 on November 12?<br><small class="muted">Terminal range model: ETHUSDT=$2,016.83 in [$2,000, $2,100], vol_h=0.60%, tau=3.8h =&gt; P=73.5% -&gt; Calibrated(0.75x)=73.0%</small></td>
             <td><span class="badge cat-crypto">Crypto</span></td>
@@ -602,38 +628,11 @@
             <td><strong>REJECTED: Duplicate underlying event (crypto:bitcoin:november 12)</strong></td>
         </tr>
         
-        <tr class="">
-            <td>Will the highest temperature in Austin be between 80-81°F on November 12?<br><small class="muted">CLOB near-touch depth imbalance OBI=-0.85 (BidDepth=$52 vs AskDepth=$644)</small></td>
-            <td><span class="badge cat-weather">Weather</span></td>
-            <td>NO</td>
-            <td>72.9%</td>
-            <td>68.0%</td>
-            <td class="muted">+4.9 п.п.</td>
-            <td class="pos">3.00%</td>
-            <td>$447</td>
-            <td>2.2h</td>
-            <td><strong>REJECTED: Narrow weather bracket NO bet prohibited (airport METAR microclimate tail risk)</strong></td>
-        </tr>
-        
-        <tr class="">
-            <td>Will Bitcoin reach $74,000 on November 12?<br><small class="muted">First-passage reach model: BTCUSDT=$73,379.10 -&gt; barrier=$74,000 (+0.85%), vol_h=0.50%, tau=19.2h =&gt; P(touch)=73.1% -&gt; Calibrated(0.75x)=70.2%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>70.2%</td>
-            <td>63.0%</td>
-            <td class="muted">+7.2 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$27,373</td>
-            <td>19.2h</td>
-            <td><strong>REJECTED: Duplicate underlying event (crypto:bitcoin:november 12)</strong></td>
-        </tr>
-        
     </tbody>
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.96 | Equity=$36.42 (DD=7.32%)
-[2026-11-12 05:39:54 UTC] [CYCLE #967 SUMMARY] Scanned=790 | PassedFilter=50 | Evaluated=7 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.96 | Equity=$36.45 (DD=7.23%)
+  <pre class="log-box">0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.96 | Equity=$36.45 (DD=7.23%)
 [2026-11-12 05:49:01 UTC] [CYCLE #968 SUMMARY] Scanned=791 | PassedFilter=50 | Evaluated=7 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.96 | Equity=$36.54 (DD=7.01%)
 [2026-11-12 06:01:03 UTC] [CYCLE #969 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=7 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.96 | Equity=$36.39 (DD=7.37%)
 [2026-11-12 06:10:14 UTC] [CYCLE #970 SUMMARY] Scanned=790 | PassedFilter=50 | Evaluated=7 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.96 | Equity=$35.53 (DD=9.57%)
@@ -754,6 +753,7 @@
   Shares: 4.49 | Entry VWAP: 0.6500 -&gt; Exit Bid VWAP: 0.9000
   Proceeds: $4.04 | Realized PnL: $+1.12 USDC | Reason: TAKE PROFIT (Sweet Spot +25% Lock): Live CLOB Bid VWAP (90.0%) secured early with +38.5% net gain
 [2026-11-12 13:10:14 UTC] [CYCLE #1015 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=9 | Edges(&gt;=8pp)=4 | Opened=0 (Shadow=0) | Closed=3 | Cash=$28.85 | Equity=$37.95 (DD=3.43%)
+[2026-11-12 13:19:22 UTC] [CYCLE #1016 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=8 | Edges(&gt;=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.85 | Equity=$37.94 (DD=3.44%)
 </pre>
 </body>
 </html>
