@@ -1,24 +1,24 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-13 06:30:15 UTC`
+**Обновлено:** `2026-11-13 06:39:23 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$35.97 USDC`** (`-14.03$` / `-28.05%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$30.32` / `$5.66 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-14.03 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `8.45%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$36.00 USDC`** (`-14.00$` / `-28.00%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$30.32` / `$5.68 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-14.00 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `8.38%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `168` / `70.2%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (5 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #155 | Will Elon Musk post 200-219 tweets from November 6 to N | Geopolitics | **NO** | `0.917` | `0.827` | `93.5%` | `$1.07` | `$-0.11` | https://x.com/elonmusk |
+| #155 | Will Elon Musk post 200-219 tweets from November 6 to N | Geopolitics | **NO** | `0.917` | `0.808` | `93.5%` | `$1.07` | `$-0.13` | https://x.com/elonmusk |
 | #169 | Jazz vs. Rockets | Sports | **NO** | `0.920` | `0.910` | `95.0%` | `$1.12` | `$-0.01` | https://www.nba.com/ |
 | #170 | Bitcoin Up or Down on November 13? | Crypto | **NO** | `0.910` | `0.961` | `98.5%` | `$1.07` | `$+0.06` | https://www.binance.com/en/tra |
-| #171 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **YES** | `0.912` | `0.903` | `94.2%` | `$1.08` | `$-0.01` | https://www.binance.com/en/tra |
-| #174 | Will the price of Ethereum be above $1,900 on November  | Crypto | **YES** | `0.743` | `0.734` | `76.8%` | `$1.40` | `$-0.02` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #171 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **YES** | `0.912` | `0.917` | `96.2%` | `$1.08` | `$+0.01` | https://www.binance.com/en/tra |
+| #174 | Will the price of Ethereum be above $1,900 on November  | Crypto | **YES** | `0.743` | `0.751` | `77.3%` | `$1.40` | `$+0.02` | Kraken ETHUSDT 1m/1h Spot Klin |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -45,6 +45,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will the price of Bitcoin be above $70,000 on Nove | Crypto | NO | `83.5%` | `79.3%` | `+4.2 п.п.` | `1.10%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
 | Will the price of Ethereum be above $1,900 on Nove | Crypto | YES | `76.8%` | `74.3%` | `+2.5 п.п.` | `0.90%` | EXECUTED BUY #174 ($1.40 @ 0.7430) |
 | Will the price of Bitcoin be above $66,000 on Nove | Crypto | YES | `94.7%` | `90.6%` | `+4.1 п.п.` | `0.10%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
 | Will the price of Bitcoin be above $70,000 on Nove | Crypto | NO | `92.8%` | `85.7%` | `+7.1 п.п.` | `0.70%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
@@ -62,4 +63,3 @@
 | Will the price of Bitcoin be above $68,000 on Nove | Crypto | YES | `74.2%` | `70.0%` | `+4.2 п.п.` | `0.10%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
 | Will the price of Ethereum be above $2,000 on Nove | Crypto | NO | `91.7%` | `87.0%` | `+4.7 п.п.` | `2.00%` | REJECTED: Category cap reached (4/4 in Crypto) |
 | Will the price of Bitcoin be above $70,000 on Nove | Crypto | NO | `80.3%` | `73.6%` | `+6.7 п.п.` | `0.10%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
-| Will the price of Ethereum be above $2,000 on Nove | Crypto | NO | `91.5%` | `87.0%` | `+4.5 п.п.` | `2.00%` | REJECTED: Category cap reached (4/4 in Crypto) |

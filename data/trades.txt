@@ -3400,3 +3400,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: Terminal GBM model: ETHUSDT=$1,932.18 vs strike=$1,900 (+1.69%), vol_h=0.60%, tau=10.5h => P(S_T > K)=77.7% -> Calibrated(0.75x)=76.8%
 
 [2026-11-13 06:30:07 UTC] [CYCLE #1125 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=17 | Edges(>=8pp)=3 | Opened=1 (Shadow=0) | Closed=0 | Cash=$30.32 | Equity=$35.97 (DD=8.45%)
+[2026-11-13 06:39:17 UTC] [CYCLE #1126 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=17 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.32 | Equity=$36.00 (DD=8.38%)
