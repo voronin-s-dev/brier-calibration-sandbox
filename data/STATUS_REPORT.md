@@ -1,26 +1,26 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-13 05:40:08 UTC`
+**Обновлено:** `2026-11-13 05:49:16 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$36.03 USDC`** (`-13.97$` / `-27.95%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$26.40` / `$9.63 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-13.97 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `8.31%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$36.04 USDC`** (`-13.96$` / `-27.92%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$26.40` / `$9.64 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-13.96 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `8.28%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `165` / `70.3%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (7 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #154 | Will Elon Musk post 220-239 tweets from November 6 to N | Geopolitics | **NO** | `0.670` | `0.775` | `68.0%` | `$2.33` | `$+0.37` | https://x.com/elonmusk |
-| #155 | Will Elon Musk post 200-219 tweets from November 6 to N | Geopolitics | **NO** | `0.917` | `0.262` | `93.5%` | `$1.07` | `$-0.76` | https://x.com/elonmusk |
+| #155 | Will Elon Musk post 200-219 tweets from November 6 to N | Geopolitics | **NO** | `0.917` | `0.273` | `93.5%` | `$1.07` | `$-0.75` | https://x.com/elonmusk |
 | #169 | Jazz vs. Rockets | Sports | **NO** | `0.920` | `0.910` | `95.0%` | `$1.12` | `$-0.01` | https://www.nba.com/ |
-| #170 | Bitcoin Up or Down on November 13? | Crypto | **NO** | `0.910` | `0.961` | `98.5%` | `$1.07` | `$+0.06` | https://www.binance.com/en/tra |
-| #171 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **YES** | `0.912` | `0.877` | `86.8%` | `$1.08` | `$-0.04` | https://www.binance.com/en/tra |
-| #172 | Will Bitcoin dip to $68,000 November 9-15? | Crypto | **YES** | `0.760` | `0.800` | `85.8%` | `$1.90` | `$+0.10` | Kraken BTCUSDT 1m/1h Spot Klin |
-| #173 | Will Ethereum dip to $1,900 November 9-15? | Crypto | **YES** | `0.760` | `0.810` | `88.4%` | `$1.27` | `$+0.08` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #170 | Bitcoin Up or Down on November 13? | Crypto | **NO** | `0.910` | `0.962` | `98.5%` | `$1.07` | `$+0.06` | https://www.binance.com/en/tra |
+| #171 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **YES** | `0.912` | `0.897` | `87.1%` | `$1.08` | `$-0.02` | https://www.binance.com/en/tra |
+| #172 | Will Bitcoin dip to $68,000 November 9-15? | Crypto | **YES** | `0.760` | `0.790` | `85.6%` | `$1.90` | `$+0.08` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #173 | Will Ethereum dip to $1,900 November 9-15? | Crypto | **YES** | `0.760` | `0.810` | `86.8%` | `$1.27` | `$+0.08` | Kraken ETHUSDT 1m/1h Spot Klin |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
