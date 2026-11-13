@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-13 22:40:08 UTC`
+**Обновлено:** `2026-11-13 22:49:14 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -16,10 +16,10 @@
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #169 | Jazz vs. Rockets | Sports | **NO** | `0.920` | `0.900` | `94.0%` | `$1.12` | `$-0.02` | https://www.nba.com/ |
 | #175 | Fourth Jensen Huang affair reported by November 13? | Other | **NO** | `0.910` | `0.982` | `98.5%` | `$1.08` | `$+0.09` | reporting from the qualifying  |
-| #179 | Will the price of Ethereum be above $2,000 on November  | Crypto | **NO** | `0.920` | `0.971` | `98.5%` | `$1.08` | `$+0.06` | https://www.binance.com/en/tra |
-| #180 | Will the price of Bitcoin be above $70,000 on November  | Crypto | **NO** | `0.914` | `0.965` | `98.5%` | `$1.08` | `$+0.06` | https://www.binance.com/en/tra |
-| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.928` | `96.4%` | `$1.08` | `$+0.01` | https://x.com/elonmusk |
-| #182 | Will Bitcoin dip to $67,000 on November 13? | Crypto | **NO** | `0.903` | `0.915` | `95.2%` | `$1.09` | `$+0.01` | https://www.binance.com/en/tra |
+| #179 | Will the price of Ethereum be above $2,000 on November  | Crypto | **NO** | `0.920` | `0.970` | `98.5%` | `$1.08` | `$+0.06` | https://www.binance.com/en/tra |
+| #180 | Will the price of Bitcoin be above $70,000 on November  | Crypto | **NO** | `0.914` | `0.967` | `98.5%` | `$1.08` | `$+0.06` | https://www.binance.com/en/tra |
+| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.921` | `96.0%` | `$1.08` | `$+0.00` | https://x.com/elonmusk |
+| #182 | Will Bitcoin dip to $67,000 on November 13? | Crypto | **NO** | `0.903` | `0.920` | `96.2%` | `$1.09` | `$+0.02` | https://www.binance.com/en/tra |
 | #183 | Spread: Colorado (-4.5) | Sports | **NO** | `0.870` | `0.850` | `97.5%` | `$1.45` | `$-0.03` | https://www.ncaa.com/ |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
