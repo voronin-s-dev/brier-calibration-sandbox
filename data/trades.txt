@@ -3510,3 +3510,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-13 15:30:57 UTC] [CYCLE #1185 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.43 | Equity=$36.06 (DD=8.23%)
 [2026-11-13 15:40:05 UTC] [CYCLE #1186 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.43 | Equity=$36.01 (DD=8.35%)
 [2026-11-13 15:49:13 UTC] [CYCLE #1187 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.43 | Equity=$36.05 (DD=8.25%)
+[EXIT] #177 | Will the price of Ethereum be above $2,000 on November 13? (NO)
+  Shares: 1.24 | Entry VWAP: 0.8800 -> Exit Bid VWAP: 0.9750
+  Proceeds: $1.21 | Realized PnL: $+0.12 USDC | Reason: TIME EXIT: 1.0h left to close (under 1.0h threshold, Bid VWAP: $0.975)
+[2026-11-13 16:01:12 UTC] [CYCLE #1188 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$31.64 | Equity=$36.08 (DD=8.17%)
