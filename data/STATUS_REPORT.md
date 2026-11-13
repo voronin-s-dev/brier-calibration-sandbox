@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-13 20:40:12 UTC`
+**Обновлено:** `2026-11-13 20:49:20 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -17,8 +17,8 @@
 | #169 | Jazz vs. Rockets | Sports | **NO** | `0.920` | `0.900` | `94.0%` | `$1.12` | `$-0.02` | https://www.nba.com/ |
 | #175 | Fourth Jensen Huang affair reported by November 13? | Other | **NO** | `0.910` | `0.944` | `98.5%` | `$1.08` | `$+0.04` | reporting from the qualifying  |
 | #179 | Will the price of Ethereum be above $2,000 on November  | Crypto | **NO** | `0.920` | `0.940` | `84.5%` | `$1.08` | `$+0.02` | https://www.binance.com/en/tra |
-| #180 | Will the price of Bitcoin be above $70,000 on November  | Crypto | **NO** | `0.914` | `0.934` | `97.0%` | `$1.08` | `$+0.02` | https://www.binance.com/en/tra |
-| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.917` | `95.2%` | `$1.08` | `$-0.00` | https://x.com/elonmusk |
+| #180 | Will the price of Bitcoin be above $70,000 on November  | Crypto | **NO** | `0.914` | `0.932` | `96.1%` | `$1.08` | `$+0.02` | https://www.binance.com/en/tra |
+| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.920` | `95.5%` | `$1.08` | `$+0.00` | https://x.com/elonmusk |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
