@@ -3348,3 +3348,22 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus YES (91.2%) within 37.2h of expiry
 
 [2026-11-13 03:49:41 UTC] [CYCLE #1109 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=18 | Edges(>=8pp)=4 | Opened=1 (Shadow=0) | Closed=0 | Cash=$29.57 | Equity=$35.84 (DD=8.79%)
+[2026-11-13 04:01:06 UTC] [OPEN TRADE #172] Will Bitcoin dip to $68,000 November 9-15?
+  Категория: Crypto | Сторона: YES | Источник: Kraken BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 79.2% vs Рынок (Ask VWAP): 76.0% (Перекос/Edge: +3.2 п.п.)
+  Стакан CLOB: BestBid=0.740, BestAsk=0.760, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=13.3%, Четверть(0.25x)=5.3% -> Применён=5.3% банка
+  Размер сделки: $1.90 USDC (2.50 shares @ $0.7600)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.456 if P_est <= 70%
+  Причина: First-passage dip model: BTCUSDT=$68,712.40 -> barrier=$68,000 (-1.04%), vol_h=0.50%, tau=73.0h => P(touch)=82.8% -> Calibrated(0.75x)=79.2%
+
+[2026-11-13 04:01:06 UTC] [OPEN TRADE #173] Will Ethereum dip to $1,900 November 9-15?
+  Категория: Crypto | Сторона: YES | Источник: Kraken ETHUSDT 1m/1h Spot Klines
+  Оценка бота: 78.1% vs Рынок (Ask VWAP): 76.0% (Перекос/Edge: +2.1 п.п.)
+  Стакан CLOB: BestBid=0.740, BestAsk=0.760, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=8.9%, Четверть(0.25x)=3.5% -> Применён=3.5% банка
+  Размер сделки: $1.27 USDC (1.67 shares @ $0.7600)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.456 if P_est <= 70%
+  Причина: First-passage dip model: ETHUSDT=$1,929.03 -> barrier=$1,900 (-1.50%), vol_h=0.60%, tau=73.0h => P(touch)=79.2% -> Calibrated(0.75x)=78.1%
+
+[2026-11-13 04:01:06 UTC] [CYCLE #1110 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=20 | Edges(>=8pp)=6 | Opened=2 (Shadow=0) | Closed=0 | Cash=$26.40 | Equity=$35.74 (DD=9.05%)
