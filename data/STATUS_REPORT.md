@@ -1,25 +1,23 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-13 03:19:52 UTC`
+**Обновлено:** `2026-11-13 03:31:30 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$37.38 USDC`** (`-12.62$` / `-25.24%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$30.54` / `$6.84 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-12.62 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `4.86%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
-| **Закрытых сделок / Win Rate** | `162` / `71.0%` | Brier Score: `0.1960` |
+| **Текущий баланс (Equity)** | **`$35.73 USDC`** (`-14.27$` / `-28.54%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$30.65` / `$5.09 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-14.27 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `9.06%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Закрытых сделок / Win Rate** | `165` / `70.3%` | Brier Score: `0.1960` |
 
-## 📂 Открытые позиции (6 / 8)
+## 📂 Открытые позиции (4 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #154 | Will Elon Musk post 220-239 tweets from November 6 to N | Geopolitics | **NO** | `0.670` | `0.720` | `68.0%` | `$2.33` | `$+0.17` | https://x.com/elonmusk |
-| #155 | Will Elon Musk post 200-219 tweets from November 6 to N | Geopolitics | **NO** | `0.917` | `0.352` | `93.5%` | `$1.07` | `$-0.66` | https://x.com/elonmusk |
-| #164 | Will the price of Bitcoin be above $74,000 on November  | Crypto | **NO** | `0.920` | `0.985` | `98.5%` | `$1.10` | `$+0.08` | https://www.binance.com/en/tra |
-| #166 | Will Ethereum dip to $1,950 on November 12? | Crypto | **NO** | `0.920` | `0.700` | `94.5%` | `$1.10` | `$-0.26` | https://www.binance.com/en/tra |
-| #168 | Will Bitcoin dip to $69,000 on November 12? | Crypto | **NO** | `0.908` | `0.654` | `98.3%` | `$1.12` | `$-0.31` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #154 | Will Elon Musk post 220-239 tweets from November 6 to N | Geopolitics | **NO** | `0.670` | `0.722` | `68.0%` | `$2.33` | `$+0.18` | https://x.com/elonmusk |
+| #155 | Will Elon Musk post 200-219 tweets from November 6 to N | Geopolitics | **NO** | `0.917` | `0.350` | `93.5%` | `$1.07` | `$-0.66` | https://x.com/elonmusk |
 | #169 | Jazz vs. Rockets | Sports | **NO** | `0.920` | `0.910` | `95.0%` | `$1.12` | `$-0.01` | https://www.nba.com/ |
+| #170 | Bitcoin Up or Down on November 13? | Crypto | **NO** | `0.910` | `0.900` | `95.0%` | `$1.07` | `$-0.01` | https://www.binance.com/en/tra |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -46,6 +44,8 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Bitcoin Up or Down on November 13? | Crypto | NO | `95.0%` | `91.0%` | `+4.0 п.п.` | `1.00%` | EXECUTED BUY #170 ($1.07 @ 0.9100) |
+| Will the price of Bitcoin be above $70,000 on Nove | Crypto | NO | `70.4%` | `65.9%` | `+4.5 п.п.` | `2.10%` | REJECTED: CLOB round-trip slippage 2.10% > 2.0% limit |
 | Will the price of Bitcoin be above $68,000 on Nove | Crypto | YES | `91.4%` | `84.2%` | `+7.2 п.п.` | `1.20%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
 | Will the highest temperature in Houston be between | Weather | NO | `85.0%` | `62.0%` | `+23.1 п.п.` | `3.00%` | REJECTED: Narrow weather bracket NO bet prohibited (airport METAR microclimate tail risk) |
 | Will the price of Bitcoin be above $68,000 on Nove | Crypto | YES | `94.0%` | `89.6%` | `+4.5 п.п.` | `1.30%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
@@ -62,5 +62,3 @@
 | Will Ethereum dip to $1,950 on November 12? | Crypto | NO | `93.5%` | `92.0%` | `+1.5 п.п.` | `2.00%` | EXECUTED BUY #166 ($1.10 @ 0.9200) |
 | Will Bitcoin dip to $70,000 on November 12? | Crypto | NO | `94.2%` | `90.8%` | `+3.4 п.п.` | `0.40%` | EXECUTED BUY #165 ($1.09 @ 0.9080) |
 | Will the price of Bitcoin be above $74,000 on Nove | Crypto | NO | `95.0%` | `92.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #164 ($1.10 @ 0.9200) |
-| Will Bitcoin dip to $71,000 on November 12? | Crypto | YES | `70.3%` | `62.0%` | `+8.3 п.п.` | `1.00%` | EXECUTED BUY #163 ($3.05 @ 0.6200) |
-| Will Bitcoin dip to $71,000 on November 12? | Crypto | YES | `76.8%` | `75.0%` | `+1.8 п.п.` | `2.00%` | EXECUTED BUY #162 ($1.07 @ 0.7500) |
