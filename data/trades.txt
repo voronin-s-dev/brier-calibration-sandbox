@@ -3293,3 +3293,22 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-13 02:19:27 UTC] [CYCLE #1100 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.65 | Equity=$36.96 (DD=5.94%)
 [2026-11-13 02:30:54 UTC] [CYCLE #1101 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.65 | Equity=$37.01 (DD=5.82%)
 [2026-11-13 02:40:12 UTC] [CYCLE #1102 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.65 | Equity=$37.19 (DD=5.35%)
+[2026-11-13 02:49:22 UTC] [OPEN TRADE #168] Will Bitcoin dip to $69,000 on November 12?
+  Категория: Crypto | Сторона: NO | Источник: Kraken BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 98.2% vs Рынок (Ask VWAP): 90.8% (Перекос/Edge: +7.4 п.п.)
+  Стакан CLOB: BestBid=0.905, BestAsk=0.908, Проскальзывание входа/выхода=0.30% (<= 3.0%)
+  Келли: Полный=78.0%, Четверть(0.25x)=31.2% -> Применён=3.0% банка
+  Размер сделки: $1.12 USDC (1.23 shares @ $0.9080)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.545 if P_est <= 70%
+  Причина: First-passage dip model: BTCUSDT=$70,358.10 -> barrier=$69,000 (-1.93%), vol_h=0.50%, tau=2.2h => P(touch)=1.8%
+
+[2026-11-13 02:49:22 UTC] [OPEN TRADE #169] Jazz vs. Rockets
+  Категория: Sports | Сторона: NO | Источник: https://www.nba.com/
+  Оценка бота: 95.0% vs Рынок (Ask VWAP): 92.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.910, BestAsk=0.920, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=37.5%, Четверть(0.25x)=15.0% -> Применён=3.0% банка
+  Размер сделки: $1.12 USDC (1.22 shares @ $0.9200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.552 if P_est <= 70%
+  Причина: High market consensus NO (91.5%) within 22.7h of expiry
+
+[2026-11-13 02:49:22 UTC] [CYCLE #1103 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=3 | Opened=2 (Shadow=0) | Closed=0 | Cash=$26.41 | Equity=$37.26 (DD=5.18%)
