@@ -3277,3 +3277,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: First-passage dip model: BTCUSDT=$70,780.00 -> barrier=$70,000 (-1.10%), vol_h=0.50%, tau=76.4h => P(touch)=82.1% -> Calibrated(0.75x)=78.1%
 
 [2026-11-13 00:38:53 UTC] [CYCLE #1089 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$27.68 | Equity=$35.99 (DD=8.41%)
+[EXIT] #165 | Will Bitcoin dip to $70,000 on November 12? (NO)
+  Shares: 1.20 | Entry VWAP: 0.9080 -> Exit Bid VWAP: 0.8110
+  Proceeds: $0.97 | Realized PnL: $-0.12 USDC | Reason: THESIS INVALIDATED (Prob Shift > 8.0pp & P_est <= 70%): Estimate dropped from 94.2% to 69.1% (Bid VWAP: $0.811)
+[2026-11-13 00:48:05 UTC] [CYCLE #1090 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$28.65 | Equity=$35.84 (DD=8.78%)
