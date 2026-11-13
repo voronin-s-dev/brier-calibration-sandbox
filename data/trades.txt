@@ -3434,3 +3434,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-13 09:49:27 UTC] [CYCLE #1148 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.24 | Equity=$36.07 (DD=8.19%)
 [2026-11-13 10:01:14 UTC] [CYCLE #1149 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.24 | Equity=$36.12 (DD=8.08%)
 [2026-11-13 10:10:20 UTC] [CYCLE #1150 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.24 | Equity=$36.10 (DD=8.13%)
+[2026-11-13 10:19:26 UTC] [OPEN TRADE #176] S&P 500 (SPX) Up or Down on November 13?
+  Категория: Macro | Сторона: YES | Источник: https://www.wsj.com/market-data/stocks
+  Оценка бота: 70.0% vs Рынок (Ask VWAP): 65.0% (Перекос/Edge: +5.0 п.п.)
+  Стакан CLOB: BestBid=0.640, BestAsk=0.650, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=14.3%, Четверть(0.25x)=5.7% -> Применён=5.7% банка
+  Размер сделки: $2.07 USDC (3.18 shares @ $0.6500)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.390 if P_est <= 70%
+  Причина: News sentiment=+1.00 (12 articles; top: 'Stock Market: Will S&P 500 Open Up or Down Today? - Benzinga')
+
+[2026-11-13 10:19:26 UTC] [CYCLE #1151 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=3 | Opened=1 (Shadow=0) | Closed=0 | Cash=$27.17 | Equity=$36.11 (DD=8.09%)
