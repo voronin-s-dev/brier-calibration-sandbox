@@ -1,14 +1,14 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-13 23:01:22 UTC`
+**Обновлено:** `2026-11-13 23:10:33 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$36.19 USDC`** (`-13.81$` / `-27.61%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$28.13` / `$8.07 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-13.81 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `7.88%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$36.16 USDC`** (`-13.84$` / `-27.67%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$28.13` / `$8.04 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-13.84 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `7.96%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `175` / `70.3%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (7 / 8)
@@ -16,10 +16,10 @@
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #169 | Jazz vs. Rockets | Sports | **NO** | `0.920` | `0.900` | `94.0%` | `$1.12` | `$-0.02` | https://www.nba.com/ |
 | #175 | Fourth Jensen Huang affair reported by November 13? | Other | **NO** | `0.910` | `0.983` | `98.5%` | `$1.08` | `$+0.09` | reporting from the qualifying  |
-| #179 | Will the price of Ethereum be above $2,000 on November  | Crypto | **NO** | `0.920` | `0.981` | `98.5%` | `$1.08` | `$+0.07` | https://www.binance.com/en/tra |
-| #180 | Will the price of Bitcoin be above $70,000 on November  | Crypto | **NO** | `0.914` | `0.970` | `98.5%` | `$1.08` | `$+0.07` | https://www.binance.com/en/tra |
+| #179 | Will the price of Ethereum be above $2,000 on November  | Crypto | **NO** | `0.920` | `0.979` | `98.5%` | `$1.08` | `$+0.07` | https://www.binance.com/en/tra |
+| #180 | Will the price of Bitcoin be above $70,000 on November  | Crypto | **NO** | `0.914` | `0.969` | `98.5%` | `$1.08` | `$+0.06` | https://www.binance.com/en/tra |
 | #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.921` | `96.0%` | `$1.08` | `$+0.00` | https://x.com/elonmusk |
-| #182 | Will Bitcoin dip to $67,000 on November 13? | Crypto | **NO** | `0.903` | `0.833` | `95.9%` | `$1.09` | `$-0.08` | https://www.binance.com/en/tra |
+| #182 | Will Bitcoin dip to $67,000 on November 13? | Crypto | **NO** | `0.903` | `0.811` | `80.4%` | `$1.09` | `$-0.11` | https://www.binance.com/en/tra |
 | #183 | Spread: Colorado (-4.5) | Sports | **NO** | `0.870` | `0.850` | `97.5%` | `$1.45` | `$-0.03` | https://www.ncaa.com/ |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
