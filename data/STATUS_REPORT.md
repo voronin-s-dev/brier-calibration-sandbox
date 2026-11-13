@@ -1,24 +1,24 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-13 14:49:26 UTC`
+**Обновлено:** `2026-11-13 14:51:35 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$35.99 USDC`** (`-14.01$` / `-28.03%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Текущий баланс (Equity)** | **`$35.99 USDC`** (`-14.01$` / `-28.02%`) | Cash + Mark-to-Market по CLOB Bid |
 | **Свободный кэш / В сделках** | `$29.27` / `$6.72 USDC` | До 8 открытых позиций, макс 8% банка |
 | **Цель окупаемости подписки** | `$-14.01 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `8.41%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Просадка от пика (Текущая / Макс)** | `8.40%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `171` / `70.2%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (6 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #169 | Jazz vs. Rockets | Sports | **NO** | `0.920` | `0.900` | `94.0%` | `$1.12` | `$-0.02` | https://www.nba.com/ |
-| #170 | Bitcoin Up or Down on November 13? | Crypto | **NO** | `0.910` | `0.983` | `98.5%` | `$1.07` | `$+0.09` | https://www.binance.com/en/tra |
-| #171 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **YES** | `0.912` | `0.969` | `98.5%` | `$1.08` | `$+0.07` | https://www.binance.com/en/tra |
+| #170 | Bitcoin Up or Down on November 13? | Crypto | **NO** | `0.910` | `0.984` | `98.5%` | `$1.07` | `$+0.09` | https://www.binance.com/en/tra |
+| #171 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **YES** | `0.912` | `0.960` | `98.5%` | `$1.08` | `$+0.06` | https://www.binance.com/en/tra |
 | #175 | Fourth Jensen Huang affair reported by November 13? | Other | **NO** | `0.910` | `0.920` | `94.0%` | `$1.08` | `$+0.01` | reporting from the qualifying  |
-| #177 | Will the price of Ethereum be above $2,000 on November  | Crypto | **NO** | `0.880` | `0.930` | `99.1%` | `$1.09` | `$+0.06` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #177 | Will the price of Ethereum be above $2,000 on November  | Crypto | **NO** | `0.880` | `0.940` | `98.0%` | `$1.09` | `$+0.07` | Kraken ETHUSDT 1m/1h Spot Klin |
 | #178 | Will Serbia win on 2026-11-13? | Sports | **NO** | `0.920` | `0.900` | `94.0%` | `$1.10` | `$-0.02` | https://www.uefa.com/uefanatio |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
@@ -46,6 +46,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will the price of Bitcoin be between $68,000 and $ | Crypto | YES | `88.1%` | `82.6%` | `+5.5 п.п.` | `4.00%` | REJECTED: CLOB round-trip slippage 4.00% > 2.0% limit |
 | Will the price of Bitcoin be between $68,000 and $ | Crypto | YES | `87.1%` | `77.7%` | `+9.4 п.п.` | `0.40%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
 | Will the price of Bitcoin be between $68,000 and $ | Crypto | YES | `86.1%` | `77.7%` | `+8.4 п.п.` | `2.20%` | REJECTED: CLOB round-trip slippage 2.20% > 2.0% limit |
 | Will the price of Bitcoin be above $70,000 on Nove | Crypto | NO | `89.2%` | `81.0%` | `+8.2 п.п.` | `1.40%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
@@ -63,4 +64,3 @@
 | Will the price of Bitcoin be above $70,000 on Nove | Crypto | NO | `85.9%` | `80.2%` | `+5.7 п.п.` | `0.10%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
 | Will the price of Bitcoin be between $68,000 and $ | Crypto | YES | `72.9%` | `64.3%` | `+8.6 п.п.` | `4.70%` | REJECTED: CLOB round-trip slippage 4.70% > 2.0% limit |
 | Will the price of Bitcoin be above $70,000 on Nove | Crypto | NO | `79.9%` | `74.0%` | `+5.9 п.п.` | `0.10%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
-| Will the price of Bitcoin be between $68,000 and $ | Crypto | YES | `72.0%` | `64.5%` | `+7.5 п.п.` | `4.50%` | REJECTED: CLOB round-trip slippage 4.50% > 2.0% limit |
