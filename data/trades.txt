@@ -3390,3 +3390,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $1.15 | Realized PnL: $-1.18 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.332 (-50.4% from entry $0.670, P_est=68.0%)
 [2026-11-13 06:10:17 UTC] [CYCLE #1123 SUMMARY] Scanned=790 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=1 | Cash=$31.72 | Equity=$36.01 (DD=8.36%)
 [2026-11-13 06:19:23 UTC] [CYCLE #1124 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=15 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$31.72 | Equity=$36.05 (DD=8.26%)
+[2026-11-13 06:30:07 UTC] [OPEN TRADE #174] Will the price of Ethereum be above $1,900 on November 13?
+  Категория: Crypto | Сторона: YES | Источник: Kraken ETHUSDT 1m/1h Spot Klines
+  Оценка бота: 76.8% vs Рынок (Ask VWAP): 74.3% (Перекос/Edge: +2.5 п.п.)
+  Стакан CLOB: BestBid=0.734, BestAsk=0.743, Проскальзывание входа/выхода=0.90% (<= 3.0%)
+  Келли: Полный=9.7%, Четверть(0.25x)=3.9% -> Применён=3.9% банка
+  Размер сделки: $1.40 USDC (1.88 shares @ $0.7430)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.446 if P_est <= 70%
+  Причина: Terminal GBM model: ETHUSDT=$1,932.18 vs strike=$1,900 (+1.69%), vol_h=0.60%, tau=10.5h => P(S_T > K)=77.7% -> Calibrated(0.75x)=76.8%
+
+[2026-11-13 06:30:07 UTC] [CYCLE #1125 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=17 | Edges(>=8pp)=3 | Opened=1 (Shadow=0) | Closed=0 | Cash=$30.32 | Equity=$35.97 (DD=8.45%)
