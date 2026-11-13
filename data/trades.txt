@@ -3385,3 +3385,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 1.67 | Entry VWAP: 0.7600 -> Exit Bid VWAP: 0.9990
   Proceeds: $1.67 | Realized PnL: $+0.40 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +31.4% gain
 [2026-11-13 06:01:08 UTC] [CYCLE #1122 SUMMARY] Scanned=788 | PassedFilter=50 | Evaluated=15 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=2 | Cash=$30.56 | Equity=$36.12 (DD=8.06%)
+[EXIT] #154 | Will Elon Musk post 220-239 tweets from November 6 to November 13, 2026? (NO)
+  Shares: 3.48 | Entry VWAP: 0.6700 -> Exit Bid VWAP: 0.3320
+  Proceeds: $1.15 | Realized PnL: $-1.18 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.332 (-50.4% from entry $0.670, P_est=68.0%)
+[2026-11-13 06:10:17 UTC] [CYCLE #1123 SUMMARY] Scanned=790 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=1 | Cash=$31.72 | Equity=$36.01 (DD=8.36%)

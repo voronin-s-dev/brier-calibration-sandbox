@@ -1,24 +1,23 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-13 06:01:15 UTC`
+**Обновлено:** `2026-11-13 06:10:22 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$36.12 USDC`** (`-13.88$` / `-27.75%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$30.56` / `$5.56 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-13.88 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `8.06%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
-| **Закрытых сделок / Win Rate** | `167` / `70.7%` | Brier Score: `0.1960` |
+| **Текущий баланс (Equity)** | **`$36.01 USDC`** (`-13.99$` / `-27.99%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$31.72` / `$4.29 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-13.99 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `8.36%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Закрытых сделок / Win Rate** | `168` / `70.2%` | Brier Score: `0.1960` |
 
-## 📂 Открытые позиции (5 / 8)
+## 📂 Открытые позиции (4 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #154 | Will Elon Musk post 220-239 tweets from November 6 to N | Geopolitics | **NO** | `0.670` | `0.411` | `68.0%` | `$2.33` | `$-0.90` | https://x.com/elonmusk |
-| #155 | Will Elon Musk post 200-219 tweets from November 6 to N | Geopolitics | **NO** | `0.917` | `0.768` | `93.5%` | `$1.07` | `$-0.17` | https://x.com/elonmusk |
+| #155 | Will Elon Musk post 200-219 tweets from November 6 to N | Geopolitics | **NO** | `0.917` | `0.880` | `93.5%` | `$1.07` | `$-0.04` | https://x.com/elonmusk |
 | #169 | Jazz vs. Rockets | Sports | **NO** | `0.920` | `0.910` | `95.0%` | `$1.12` | `$-0.01` | https://www.nba.com/ |
-| #170 | Bitcoin Up or Down on November 13? | Crypto | **NO** | `0.910` | `0.963` | `98.5%` | `$1.07` | `$+0.06` | https://www.binance.com/en/tra |
-| #171 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **YES** | `0.912` | `0.840` | `82.3%` | `$1.08` | `$-0.09` | https://www.binance.com/en/tra |
+| #170 | Bitcoin Up or Down on November 13? | Crypto | **NO** | `0.910` | `0.967` | `98.5%` | `$1.07` | `$+0.07` | https://www.binance.com/en/tra |
+| #171 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **YES** | `0.912` | `0.858` | `82.5%` | `$1.08` | `$-0.06` | https://www.binance.com/en/tra |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -45,6 +44,9 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Bitcoin dip to $65,000 on November 13? | Crypto | NO | `94.0%` | `88.0%` | `+6.0 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
+| Will the price of Bitcoin be above $70,000 on Nove | Crypto | NO | `92.7%` | `88.5%` | `+4.2 п.п.` | `0.90%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
+| Will Bitcoin reach $69,000 on November 13? | Crypto | YES | `99.5%` | `68.0%` | `+31.5 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
 | Will the highest temperature in Houston be between | Weather | NO | `89.3%` | `62.0%` | `+27.3 п.п.` | `3.00%` | REJECTED: Narrow weather bracket NO bet prohibited (airport METAR microclimate tail risk) |
 | Will the price of Bitcoin be above $70,000 on Nove | Crypto | NO | `80.8%` | `85.4%` | `-4.6 п.п.` | `3.90%` | REJECTED: Edge -4.6 pp < 2 pp threshold (P_est=80.8% vs AskVWAP=85.4%) |
 | Will the highest temperature in Houston be between | Weather | NO | `89.2%` | `62.0%` | `+27.2 п.п.` | `4.00%` | REJECTED: Narrow weather bracket NO bet prohibited (airport METAR microclimate tail risk) |
@@ -60,6 +62,3 @@
 | Will the price of Bitcoin be above $70,000 on Nove | Crypto | NO | `80.3%` | `74.9%` | `+5.4 п.п.` | `0.10%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
 | Will the highest temperature in Houston be between | Weather | NO | `85.0%` | `62.0%` | `+23.1 п.п.` | `2.00%` | REJECTED: Narrow weather bracket NO bet prohibited (airport METAR microclimate tail risk) |
 | Will Ethereum dip to $1,900 November 9-15? | Crypto | YES | `78.1%` | `76.0%` | `+2.1 п.п.` | `2.00%` | EXECUTED BUY #173 ($1.27 @ 0.7600) |
-| Will Bitcoin dip to $68,000 November 9-15? | Crypto | YES | `79.2%` | `76.0%` | `+3.2 п.п.` | `2.00%` | EXECUTED BUY #172 ($1.90 @ 0.7600) |
-| Will the price of Ethereum be above $1,900 on Nove | Crypto | YES | `88.0%` | `80.5%` | `+7.5 п.п.` | `2.90%` | REJECTED: CLOB round-trip slippage 2.90% > 2.0% limit |
-| Will the price of Bitcoin be above $66,000 on Nove | Crypto | YES | `94.8%` | `91.2%` | `+3.5 п.п.` | `0.80%` | EXECUTED BUY #171 ($1.08 @ 0.9120) |
