@@ -3455,3 +3455,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-13 11:49:16 UTC] [CYCLE #1160 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.17 | Equity=$36.20 (DD=7.86%)
 [2026-11-13 12:01:10 UTC] [CYCLE #1161 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.17 | Equity=$36.29 (DD=7.64%)
 [2026-11-13 12:10:20 UTC] [CYCLE #1162 SUMMARY] Scanned=784 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.17 | Equity=$36.36 (DD=7.47%)
+[EXIT] #174 | Will the price of Ethereum be above $1,900 on November 13? (YES)
+  Shares: 1.88 | Entry VWAP: 0.7430 -> Exit Bid VWAP: 0.9320
+  Proceeds: $1.76 | Realized PnL: $+0.36 USDC | Reason: TAKE PROFIT (Sweet Spot +25% Lock): Live CLOB Bid VWAP (93.2%) secured early with +25.4% net gain
+[2026-11-13 12:19:30 UTC] [OPEN TRADE #177] Will the price of Ethereum be above $2,000 on November 13?
+  Категория: Crypto | Сторона: NO | Источник: Kraken ETHUSDT 1m/1h Spot Klines
+  Оценка бота: 90.1% vs Рынок (Ask VWAP): 88.0% (Перекос/Edge: +2.1 п.п.)
+  Стакан CLOB: BestBid=0.870, BestAsk=0.880, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=17.7%, Четверть(0.25x)=7.1% -> Применён=3.0% банка
+  Размер сделки: $1.09 USDC (1.24 shares @ $0.8800)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.528 if P_est <= 70%
+  Причина: Terminal GBM model: ETHUSDT=$1,960.43 vs strike=$2,000 (-1.98%), vol_h=0.60%, tau=4.7h => P(S_T > K)=8.3% -> Calibrated(0.75x)=9.9%
+
+[2026-11-13 12:19:30 UTC] [CYCLE #1163 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=4 | Opened=1 (Shadow=0) | Closed=1 | Cash=$27.83 | Equity=$36.30 (DD=7.61%)
