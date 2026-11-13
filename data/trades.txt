@@ -3475,3 +3475,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-13 13:10:22 UTC] [CYCLE #1168 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.83 | Equity=$36.40 (DD=7.37%)
 [2026-11-13 13:19:29 UTC] [CYCLE #1169 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.83 | Equity=$36.41 (DD=7.33%)
 [2026-11-13 13:31:03 UTC] [CYCLE #1170 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.83 | Equity=$36.59 (DD=6.89%)
+[2026-11-13 13:40:10 UTC] [OPEN TRADE #178] Will Serbia win on 2026-11-13?
+  Категория: Sports | Сторона: NO | Источник: https://www.uefa.com/uefanationsleague/
+  Оценка бота: 95.0% vs Рынок (Ask VWAP): 92.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.910, BestAsk=0.920, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=37.5%, Четверть(0.25x)=15.0% -> Применён=3.0% банка
+  Размер сделки: $1.10 USDC (1.20 shares @ $0.9200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.552 if P_est <= 70%
+  Причина: High market consensus NO (91.5%) within 6.1h of expiry
+
+[2026-11-13 13:40:10 UTC] [CYCLE #1171 SUMMARY] Scanned=792 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$26.73 | Equity=$36.52 (DD=7.06%)
