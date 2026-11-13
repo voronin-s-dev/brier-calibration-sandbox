@@ -1,26 +1,27 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-13 23:10:33 UTC`
+**Обновлено:** `2026-11-13 23:19:45 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$36.16 USDC`** (`-13.84$` / `-27.67%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$28.13` / `$8.04 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-13.84 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `7.96%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$36.13 USDC`** (`-13.87$` / `-27.73%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$27.05` / `$9.09 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-13.87 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `8.03%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `175` / `70.3%` | Brier Score: `0.1960` |
 
-## 📂 Открытые позиции (7 / 8)
+## 📂 Открытые позиции (8 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #169 | Jazz vs. Rockets | Sports | **NO** | `0.920` | `0.900` | `94.0%` | `$1.12` | `$-0.02` | https://www.nba.com/ |
-| #175 | Fourth Jensen Huang affair reported by November 13? | Other | **NO** | `0.910` | `0.983` | `98.5%` | `$1.08` | `$+0.09` | reporting from the qualifying  |
-| #179 | Will the price of Ethereum be above $2,000 on November  | Crypto | **NO** | `0.920` | `0.979` | `98.5%` | `$1.08` | `$+0.07` | https://www.binance.com/en/tra |
+| #175 | Fourth Jensen Huang affair reported by November 13? | Other | **NO** | `0.910` | `0.981` | `98.5%` | `$1.08` | `$+0.08` | reporting from the qualifying  |
+| #179 | Will the price of Ethereum be above $2,000 on November  | Crypto | **NO** | `0.920` | `0.982` | `98.5%` | `$1.08` | `$+0.07` | https://www.binance.com/en/tra |
 | #180 | Will the price of Bitcoin be above $70,000 on November  | Crypto | **NO** | `0.914` | `0.969` | `98.5%` | `$1.08` | `$+0.06` | https://www.binance.com/en/tra |
-| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.921` | `96.0%` | `$1.08` | `$+0.00` | https://x.com/elonmusk |
-| #182 | Will Bitcoin dip to $67,000 on November 13? | Crypto | **NO** | `0.903` | `0.811` | `80.4%` | `$1.09` | `$-0.11` | https://www.binance.com/en/tra |
+| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.939` | `96.6%` | `$1.08` | `$+0.02` | https://x.com/elonmusk |
+| #182 | Will Bitcoin dip to $67,000 on November 13? | Crypto | **NO** | `0.903` | `0.775` | `79.7%` | `$1.09` | `$-0.15` | https://www.binance.com/en/tra |
 | #183 | Spread: Colorado (-4.5) | Sports | **NO** | `0.870` | `0.850` | `97.5%` | `$1.45` | `$-0.03` | https://www.ncaa.com/ |
+| #184 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **YES** | `0.910` | `0.903` | `94.4%` | `$1.08` | `$-0.01` | https://www.binance.com/en/tra |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -47,6 +48,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will the price of Bitcoin be above $66,000 on Nove | Crypto | YES | `94.4%` | `91.0%` | `+3.4 п.п.` | `0.70%` | EXECUTED BUY #184 ($1.08 @ 0.9100) |
 | Spread: Colorado (-4.5) | Sports | NO | `97.5%` | `87.0%` | `+10.5 п.п.` | `2.00%` | EXECUTED BUY #183 ($1.45 @ 0.8700) |
 | Will Bitcoin dip to $67,000 on November 13? | Crypto | NO | `94.5%` | `90.2%` | `+4.3 п.п.` | `1.60%` | EXECUTED BUY #182 ($1.09 @ 0.9030) |
 | Will Bitcoin dip to $67,000 on November 13? | Crypto | NO | `94.7%` | `90.6%` | `+4.0 п.п.` | `3.10%` | REJECTED: CLOB round-trip slippage 3.10% > 2.0% limit |
@@ -64,4 +66,3 @@
 | Will the price of Bitcoin be between $68,000 and $ | Crypto | YES | `77.4%` | `71.4%` | `+6.0 п.п.` | `4.30%` | REJECTED: CLOB round-trip slippage 4.30% > 2.0% limit |
 | Will the price of Bitcoin be above $70,000 on Nove | Crypto | NO | `79.7%` | `74.9%` | `+4.8 п.п.` | `2.20%` | REJECTED: CLOB round-trip slippage 2.20% > 2.0% limit |
 | Will the price of Bitcoin be between $68,000 and $ | Crypto | YES | `75.3%` | `67.8%` | `+7.5 п.п.` | `3.20%` | REJECTED: CLOB round-trip slippage 3.20% > 2.0% limit |
-| Will the price of Bitcoin be above $70,000 on Nove | Crypto | NO | `78.0%` | `72.6%` | `+5.4 п.п.` | `0.50%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
