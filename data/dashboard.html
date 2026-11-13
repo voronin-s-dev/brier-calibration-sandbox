@@ -77,7 +77,7 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-11-13 11:10:32 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-11-13 11:19:42 UTC</div>
     </div>
   </div>
 
@@ -86,7 +86,7 @@
   <div class="grid">
     <div class="card">
       <div class="metric-label">Текущий капитал (Equity)</div>
-      <div class="metric-val">$36.15 <span style="font-size:15px" class="neg">(-13.85$ / -27.69%)</span></div>
+      <div class="metric-val">$36.16 <span style="font-size:15px" class="neg">(-13.84$ / -27.69%)</span></div>
       <div class="metric-sub">Старт: $50.00 USDC (Оценка по Bid стакана!)</div>
     </div>
     <div class="card">
@@ -96,7 +96,7 @@
     </div>
     <div class="card">
       <div class="metric-label">Цель подписки ($60 / мес)</div>
-      <div class="metric-val">$-13.85 <span class="muted" style="font-size:16px">/ $60.00</span></div>
+      <div class="metric-val">$-13.84 <span class="muted" style="font-size:16px">/ $60.00</span></div>
       <div class="metric-sub">Прогресс окупаемости: 0.0%</div>
     </div>
     <div class="card">
@@ -226,10 +226,10 @@
             <td><span class="side-no">NO</span></td>
             <td>1.17</td>
             <td>$0.9170</td>
-            <td>$0.6560</td>
+            <td>$0.6420</td>
             <td><strong>93.5%</strong> <small>(+3.4pp)</small></td>
             <td>$1.07 <small>(3.0%)</small></td>
-            <td class="neg">$-0.30</td>
+            <td class="neg">$-0.32</td>
             <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985, or Stop-Loss &lt;= 0.550 if P_est &lt;= 70%</small></td>
         </tr>
         
@@ -254,7 +254,7 @@
             <td><span class="side-no">NO</span></td>
             <td>1.18</td>
             <td>$0.9100</td>
-            <td>$0.9650</td>
+            <td>$0.9630</td>
             <td><strong>98.5%</strong> <small>(+4.0pp)</small></td>
             <td>$1.07 <small>(3.0%)</small></td>
             <td class="pos">$+0.06</td>
@@ -268,7 +268,7 @@
             <td><span class="side-yes">YES</span></td>
             <td>1.18</td>
             <td>$0.9120</td>
-            <td>$0.9530</td>
+            <td>$0.9540</td>
             <td><strong>98.5%</strong> <small>(+3.5pp)</small></td>
             <td>$1.08 <small>(3.0%)</small></td>
             <td class="pos">$+0.05</td>
@@ -282,10 +282,10 @@
             <td><span class="side-yes">YES</span></td>
             <td>1.88</td>
             <td>$0.7430</td>
-            <td>$0.8980</td>
-            <td><strong>93.2%</strong> <small>(+2.5pp)</small></td>
+            <td>$0.9080</td>
+            <td><strong>94.2%</strong> <small>(+2.5pp)</small></td>
             <td>$1.40 <small>(3.9%)</small></td>
-            <td class="pos">$+0.29</td>
+            <td class="pos">$+0.31</td>
             <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985 (or +25% gain if Bid &gt;= 0.88), or Stop-Loss &lt;= 0.446 if P_est &lt;= 70%</small></td>
         </tr>
         
@@ -331,6 +331,19 @@
     </thead>
     <tbody>
       
+        <tr class="">
+            <td>Will the price of Bitcoin be above $70,000 on November 13?<br><small class="muted">Terminal GBM model: BTCUSDT=$69,259.20 vs strike=$70,000 (-1.06%), vol_h=0.50%, tau=5.7h =&gt; P(S_T &gt; K)=21.1% -&gt; Calibrated(0.75x)=22.8%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>NO</td>
+            <td>77.2%</td>
+            <td>72.1%</td>
+            <td class="muted">+5.1 п.п.</td>
+            <td class="pos">0.10%</td>
+            <td>$43,455</td>
+            <td>5.7h</td>
+            <td><strong>REJECTED: Duplicate underlying event (crypto:bitcoin:november 13)</strong></td>
+        </tr>
+        
         <tr class="exec-row">
             <td>S&amp;P 500 (SPX) Up or Down on November 13?<br><small class="muted">News sentiment=+1.00 (12 articles; top: &#x27;Stock Market: Will S&amp;P 500 Open Up or Down Today? - Benzinga&#x27;)</small></td>
             <td><span class="badge cat-macro">Macro</span></td>
@@ -643,26 +656,11 @@
             <td><strong>REJECTED: Duplicate underlying event (crypto:bitcoin:november 13)</strong></td>
         </tr>
         
-        <tr class="">
-            <td>Will Bitcoin dip to $65,000 on November 13?<br><small class="muted">High market consensus NO (90.5%) within 22.8h of expiry</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>NO</td>
-            <td>94.0%</td>
-            <td>88.0%</td>
-            <td class="muted">+6.0 п.п.</td>
-            <td class="pos">1.00%</td>
-            <td>$10,922</td>
-            <td>22.8h</td>
-            <td><strong>REJECTED: Duplicate underlying event (crypto:bitcoin:november 13)</strong></td>
-        </tr>
-        
     </tbody>
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">Келли: Полный=44.4%, Четверть(0.25x)=17.8% -&gt; Применён=3.0% банка
-  Размер сделки: $1.07 USDC (1.18 shares @ $0.9100)
-  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985 (or +25% gain if Bid &gt;= 0.88), or Stop-Loss &lt;= 0.546 if P_est &lt;= 70%
+  <pre class="log-box">ly Take Profit if Bid VWAP &gt;= 0.985 (or +25% gain if Bid &gt;= 0.88), or Stop-Loss &lt;= 0.546 if P_est &lt;= 70%
   Причина: High market consensus NO (91.5%) within 13.5h of expiry
 
 [2026-11-13 03:30:55 UTC] [CYCLE #1107 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=16 | Edges(&gt;=8pp)=2 | Opened=1 (Shadow=0) | Closed=3 | Cash=$30.65 | Equity=$35.73 (DD=9.06%)
@@ -778,6 +776,7 @@
 [2026-11-13 10:49:36 UTC] [CYCLE #1154 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.17 | Equity=$36.10 (DD=8.12%)
 [2026-11-13 11:01:14 UTC] [CYCLE #1155 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=11 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.17 | Equity=$36.07 (DD=8.19%)
 [2026-11-13 11:10:24 UTC] [CYCLE #1156 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=14 | Edges(&gt;=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.17 | Equity=$36.15 (DD=7.98%)
+[2026-11-13 11:19:34 UTC] [CYCLE #1157 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=14 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.17 | Equity=$36.16 (DD=7.98%)
 </pre>
 </body>
 </html>

@@ -1,24 +1,24 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-13 11:10:32 UTC`
+**Обновлено:** `2026-11-13 11:19:42 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$36.15 USDC`** (`-13.85$` / `-27.69%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Текущий баланс (Equity)** | **`$36.16 USDC`** (`-13.84$` / `-27.69%`) | Cash + Mark-to-Market по CLOB Bid |
 | **Свободный кэш / В сделках** | `$27.17` / `$8.99 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-13.85 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Цель окупаемости подписки** | `$-13.84 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
 | **Просадка от пика (Текущая / Макс)** | `7.98%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `168` / `70.2%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (7 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #155 | Will Elon Musk post 200-219 tweets from November 6 to N | Geopolitics | **NO** | `0.917` | `0.656` | `93.5%` | `$1.07` | `$-0.30` | https://x.com/elonmusk |
+| #155 | Will Elon Musk post 200-219 tweets from November 6 to N | Geopolitics | **NO** | `0.917` | `0.642` | `93.5%` | `$1.07` | `$-0.32` | https://x.com/elonmusk |
 | #169 | Jazz vs. Rockets | Sports | **NO** | `0.920` | `0.910` | `95.0%` | `$1.12` | `$-0.01` | https://www.nba.com/ |
-| #170 | Bitcoin Up or Down on November 13? | Crypto | **NO** | `0.910` | `0.965` | `98.5%` | `$1.07` | `$+0.06` | https://www.binance.com/en/tra |
-| #171 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **YES** | `0.912` | `0.953` | `98.5%` | `$1.08` | `$+0.05` | https://www.binance.com/en/tra |
-| #174 | Will the price of Ethereum be above $1,900 on November  | Crypto | **YES** | `0.743` | `0.898` | `93.2%` | `$1.40` | `$+0.29` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #170 | Bitcoin Up or Down on November 13? | Crypto | **NO** | `0.910` | `0.963` | `98.5%` | `$1.07` | `$+0.06` | https://www.binance.com/en/tra |
+| #171 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **YES** | `0.912` | `0.954` | `98.5%` | `$1.08` | `$+0.05` | https://www.binance.com/en/tra |
+| #174 | Will the price of Ethereum be above $1,900 on November  | Crypto | **YES** | `0.743` | `0.908` | `94.2%` | `$1.40` | `$+0.31` | Kraken ETHUSDT 1m/1h Spot Klin |
 | #175 | Fourth Jensen Huang affair reported by November 13? | Other | **NO** | `0.910` | `0.890` | `94.0%` | `$1.08` | `$-0.02` | reporting from the qualifying  |
 | #176 | S&P 500 (SPX) Up or Down on November 13? | Macro | **YES** | `0.650` | `0.660` | `72.5%` | `$2.07` | `$+0.03` | https://www.wsj.com/market-dat |
 
@@ -47,6 +47,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will the price of Bitcoin be above $70,000 on Nove | Crypto | NO | `77.2%` | `72.1%` | `+5.1 п.п.` | `0.10%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
 | S&P 500 (SPX) Up or Down on November 13? | Macro | YES | `70.0%` | `65.0%` | `+5.0 п.п.` | `1.00%` | EXECUTED BUY #176 ($2.07 @ 0.6500) |
 | Will the price of Bitcoin be above $70,000 on Nove | Crypto | NO | `79.5%` | `69.7%` | `+9.8 п.п.` | `0.10%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
 | Will the price of Bitcoin be above $70,000 on Nove | Crypto | NO | `80.1%` | `74.1%` | `+6.0 п.п.` | `0.10%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
@@ -64,4 +65,3 @@
 | Will the price of Bitcoin be above $70,000 on Nove | Crypto | NO | `82.9%` | `72.7%` | `+10.2 п.п.` | `0.10%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
 | Will the price of Ethereum be above $2,000 on Nove | Crypto | NO | `95.0%` | `90.0%` | `+5.0 п.п.` | `2.00%` | REJECTED: Duplicate underlying event (crypto:ethereum:november 13) |
 | Will the price of Bitcoin be above $70,000 on Nove | Crypto | NO | `83.9%` | `75.5%` | `+8.4 п.п.` | `0.10%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
-| Will the price of Bitcoin be above $68,000 on Nove | Crypto | YES | `72.3%` | `78.8%` | `-6.5 п.п.` | `1.10%` | REJECTED: Edge -6.5 pp < 2 pp threshold (P_est=72.3% vs AskVWAP=78.8%) |
