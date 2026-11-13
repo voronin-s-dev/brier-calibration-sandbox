@@ -3539,3 +3539,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-13 18:19:29 UTC] [CYCLE #1202 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.56 | Equity=$36.15 (DD=8.00%)
 [2026-11-13 18:31:00 UTC] [CYCLE #1203 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.56 | Equity=$36.15 (DD=7.99%)
 [2026-11-13 18:40:08 UTC] [CYCLE #1204 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.56 | Equity=$36.17 (DD=7.94%)
+[EXIT] #178 | Will Serbia win on 2026-11-13? (NO)
+  Shares: 1.20 | Entry VWAP: 0.9200 -> Exit Bid VWAP: 0.9200
+  Proceeds: $1.10 | Realized PnL: $+0.00 USDC | Reason: TIME EXIT: 0.9h left to close (under 1.0h threshold, Bid VWAP: $0.920)
+[2026-11-13 18:49:16 UTC] [CYCLE #1205 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$31.66 | Equity=$36.17 (DD=7.94%)
