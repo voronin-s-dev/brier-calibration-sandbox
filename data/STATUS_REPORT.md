@@ -1,24 +1,24 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-13 20:49:20 UTC`
+**Обновлено:** `2026-11-13 21:01:20 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$36.17 USDC`** (`-13.83$` / `-27.66%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$30.67` / `$5.50 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-13.83 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `7.94%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$36.18 USDC`** (`-13.82$` / `-27.65%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$30.67` / `$5.51 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-13.82 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `7.93%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `175` / `70.3%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (5 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #169 | Jazz vs. Rockets | Sports | **NO** | `0.920` | `0.900` | `94.0%` | `$1.12` | `$-0.02` | https://www.nba.com/ |
-| #175 | Fourth Jensen Huang affair reported by November 13? | Other | **NO** | `0.910` | `0.944` | `98.5%` | `$1.08` | `$+0.04` | reporting from the qualifying  |
-| #179 | Will the price of Ethereum be above $2,000 on November  | Crypto | **NO** | `0.920` | `0.940` | `84.5%` | `$1.08` | `$+0.02` | https://www.binance.com/en/tra |
-| #180 | Will the price of Bitcoin be above $70,000 on November  | Crypto | **NO** | `0.914` | `0.932` | `96.1%` | `$1.08` | `$+0.02` | https://www.binance.com/en/tra |
-| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.920` | `95.5%` | `$1.08` | `$+0.00` | https://x.com/elonmusk |
+| #175 | Fourth Jensen Huang affair reported by November 13? | Other | **NO** | `0.910` | `0.948` | `98.5%` | `$1.08` | `$+0.05` | reporting from the qualifying  |
+| #179 | Will the price of Ethereum be above $2,000 on November  | Crypto | **NO** | `0.920` | `0.940` | `85.7%` | `$1.08` | `$+0.02` | https://www.binance.com/en/tra |
+| #180 | Will the price of Bitcoin be above $70,000 on November  | Crypto | **NO** | `0.914` | `0.939` | `97.0%` | `$1.08` | `$+0.03` | https://www.binance.com/en/tra |
+| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.914` | `95.0%` | `$1.08` | `$-0.00` | https://x.com/elonmusk |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
