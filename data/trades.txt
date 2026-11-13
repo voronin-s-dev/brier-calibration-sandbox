@@ -3412,3 +3412,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-13 07:39:59 UTC] [CYCLE #1135 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=15 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.32 | Equity=$36.01 (DD=8.35%)
 [2026-11-13 07:49:07 UTC] [CYCLE #1136 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.32 | Equity=$36.02 (DD=8.33%)
 [2026-11-13 08:01:10 UTC] [CYCLE #1137 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.32 | Equity=$35.88 (DD=8.68%)
+[2026-11-13 08:10:27 UTC] [OPEN TRADE #175] Fourth Jensen Huang affair reported by November 13?
+  Категория: Other | Сторона: NO | Источник: reporting from the qualifying outlets; for acknowledgments, official information from Jensen Huang or his official or legal representatives may also be used
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=33.3%, Четверть(0.25x)=13.3% -> Применён=3.0% банка
+  Размер сделки: $1.08 USDC (1.19 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: High market consensus NO (90.5%) within 20.8h of expiry
+
+[2026-11-13 08:10:27 UTC] [CYCLE #1138 SUMMARY] Scanned=788 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$29.24 | Equity=$35.97 (DD=8.46%)
