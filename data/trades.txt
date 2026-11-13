@@ -3378,3 +3378,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-13 05:30:53 UTC] [CYCLE #1119 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=17 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.40 | Equity=$36.07 (DD=8.20%)
 [2026-11-13 05:40:02 UTC] [CYCLE #1120 SUMMARY] Scanned=791 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.40 | Equity=$36.03 (DD=8.31%)
 [2026-11-13 05:49:10 UTC] [CYCLE #1121 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.40 | Equity=$36.04 (DD=8.28%)
+[EXIT] #172 | Will Bitcoin dip to $68,000 November 9-15? (YES)
+  Shares: 2.50 | Entry VWAP: 0.7600 -> Exit Bid VWAP: 0.9990
+  Proceeds: $2.50 | Realized PnL: $+0.60 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +31.4% gain
+[EXIT] #173 | Will Ethereum dip to $1,900 November 9-15? (YES)
+  Shares: 1.67 | Entry VWAP: 0.7600 -> Exit Bid VWAP: 0.9990
+  Proceeds: $1.67 | Realized PnL: $+0.40 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +31.4% gain
+[2026-11-13 06:01:08 UTC] [CYCLE #1122 SUMMARY] Scanned=788 | PassedFilter=50 | Evaluated=15 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=2 | Cash=$30.56 | Equity=$36.12 (DD=8.06%)
