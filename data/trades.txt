@@ -3586,3 +3586,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-13 21:50:01 UTC] [CYCLE #1225 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.67 | Equity=$36.29 (DD=7.65%)
 [2026-11-13 21:59:08 UTC] [CYCLE #1226 SUMMARY] Scanned=757 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.67 | Equity=$36.29 (DD=7.65%)
 [2026-11-13 22:01:19 UTC] [CYCLE #1227 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.67 | Equity=$36.28 (DD=7.67%)
+[2026-11-13 22:10:29 UTC] [OPEN TRADE #182] Will Bitcoin dip to $67,000 on November 13?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 94.5% vs Рынок (Ask VWAP): 90.3% (Перекос/Edge: +4.2 п.п.)
+  Стакан CLOB: BestBid=0.893, BestAsk=0.903, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=44.4%, Четверть(0.25x)=17.8% -> Применён=3.0% банка
+  Размер сделки: $1.09 USDC (1.21 shares @ $0.9030)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.542 if P_est <= 70%
+  Причина: High market consensus NO (91.0%) within 6.8h of expiry
+
+[2026-11-13 22:10:29 UTC] [CYCLE #1228 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$29.58 | Equity=$36.28 (DD=7.66%)
