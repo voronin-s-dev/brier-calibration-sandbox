@@ -3494,3 +3494,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-13 14:20:04 UTC] [CYCLE #1175 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.90 | Equity=$37.07 (DD=5.66%)
 [2026-11-13 14:31:06 UTC] [CYCLE #1176 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.90 | Equity=$36.76 (DD=6.45%)
 [2026-11-13 14:40:13 UTC] [CYCLE #1177 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.90 | Equity=$36.17 (DD=7.94%)
+[EXIT] #176 | S&P 500 (SPX) Up or Down on November 13? (YES)
+  Shares: 3.18 | Entry VWAP: 0.6500 -> Exit Bid VWAP: 0.4300
+  Proceeds: $1.37 | Realized PnL: $-0.70 USDC | Reason: THESIS INVALIDATED (Prob Shift > 8.0pp & P_est <= 70%): Estimate dropped from 70.0% to 56.7% (Bid VWAP: $0.430)
+[2026-11-13 14:49:20 UTC] [CYCLE #1178 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$29.27 | Equity=$35.99 (DD=8.41%)
