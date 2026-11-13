@@ -3597,3 +3597,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-11-13 22:10:29 UTC] [CYCLE #1228 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$29.58 | Equity=$36.28 (DD=7.66%)
 [2026-11-13 22:19:38 UTC] [CYCLE #1229 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.58 | Equity=$36.27 (DD=7.69%)
+[2026-11-13 22:30:55 UTC] [OPEN TRADE #183] Spread: Colorado (-4.5)
+  Категория: Sports | Сторона: NO | Источник: https://www.ncaa.com/
+  Оценка бота: 97.5% vs Рынок (Ask VWAP): 87.0% (Перекос/Edge: +10.5 п.п.)
+  Стакан CLOB: BestBid=0.850, BestAsk=0.870, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=80.8%, Четверть(0.25x)=32.3% -> Применён=4.0% банка
+  Размер сделки: $1.45 USDC (1.67 shares @ $0.8700)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.522 if P_est <= 70%
+  Причина: Heavy handicap spread (-3.5+) is historically improbable
+
+[2026-11-13 22:30:55 UTC] [CYCLE #1230 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$28.13 | Equity=$36.24 (DD=7.76%)
