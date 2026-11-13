@@ -3312,3 +3312,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus NO (91.5%) within 22.7h of expiry
 
 [2026-11-13 02:49:22 UTC] [CYCLE #1103 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=3 | Opened=2 (Shadow=0) | Closed=0 | Cash=$26.41 | Equity=$37.26 (DD=5.18%)
+[EXIT] #167 | Will Bitcoin dip to $70,000 November 9-15? (YES)
+  Shares: 4.13 | Entry VWAP: 0.7000 -> Exit Bid VWAP: 0.9990
+  Proceeds: $4.12 | Realized PnL: $+1.23 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +42.7% gain
+[2026-11-13 03:01:23 UTC] [CYCLE #1104 SUMMARY] Scanned=793 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=1 | Cash=$30.54 | Equity=$37.79 (DD=3.82%)
