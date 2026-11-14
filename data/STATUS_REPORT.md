@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-14 09:10:56 UTC`
+**Обновлено:** `2026-11-14 09:11:13 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -15,7 +15,7 @@
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.892` | `97.5%` | `$1.08` | `$-0.03` | https://x.com/elonmusk |
-| #188 | Will the price of Bitcoin be above $68,000 on November  | Crypto | **NO** | `0.787` | `0.890` | `94.7%` | `$1.61` | `$+0.21` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #188 | Will the price of Bitcoin be above $68,000 on November  | Crypto | **NO** | `0.787` | `0.890` | `94.2%` | `$1.61` | `$+0.21` | Kraken BTCUSDT 1m/1h Spot Klin |
 | #189 | Will China PR win on 2026-11-14? | Geopolitics | **YES** | `0.650` | `0.640` | `70.0%` | `$1.97` | `$-0.03` | https://www.fifa.com |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
