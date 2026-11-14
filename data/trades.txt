@@ -3932,3 +3932,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-14 19:49:02 UTC] [CYCLE #1367 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.76 | Equity=$34.36 (DD=12.54%)
 [2026-11-14 20:01:04 UTC] [CYCLE #1368 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.76 | Equity=$34.54 (DD=12.08%)
 [2026-11-14 20:10:11 UTC] [CYCLE #1369 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.76 | Equity=$34.54 (DD=12.10%)
+[2026-11-14 20:19:17 UTC] [OPEN TRADE #198] Will the price of Bitcoin be above $64,000 on November 17?
+  Категория: Crypto | Сторона: YES | Источник: Kraken BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 71.2% vs Рынок (Ask VWAP): 69.4% (Перекос/Edge: +1.8 п.п.)
+  Стакан CLOB: BestBid=0.688, BestAsk=0.694, Проскальзывание входа/выхода=0.60% (<= 3.0%)
+  Келли: Полный=5.9%, Четверть(0.25x)=2.4% -> Применён=2.9% банка
+  Размер сделки: $1.00 USDC (1.44 shares @ $0.6940)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.416 if P_est <= 70%
+  Причина: Terminal GBM model: BTCUSDT=$65,809.90 vs strike=$64,000 (+2.83%), vol_h=0.50%, tau=68.7h => P(S_T > K)=71.8% -> Calibrated(0.75x)=71.2%
+
+[2026-11-14 20:19:17 UTC] [CYCLE #1370 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$27.76 | Equity=$34.11 (DD=13.19%)
