@@ -3640,3 +3640,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: CLOB near-touch depth imbalance OBI=-0.56 (BidDepth=$518 vs AskDepth=$1,816, mult=0.075) | News sentiment=-1.00 (12 articles; top: 'Flights halted at airports across US due to air traffic control communications problems - AP News')
 
 [2026-11-14 00:30:52 UTC] [CYCLE #1242 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=1 | Cash=$25.23 | Equity=$36.28 (DD=7.66%)
+[2026-11-14 00:40:00 UTC] [CYCLE #1243 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.23 | Equity=$36.60 (DD=6.84%)
