@@ -3749,3 +3749,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-14 08:49:20 UTC] [CYCLE #1295 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$31.52 | Equity=$34.42 (DD=12.41%)
 [2026-11-14 08:52:30 UTC] [CYCLE #1296 SUMMARY] Scanned=779 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$31.52 | Equity=$34.44 (DD=12.36%)
 [2026-11-14 09:01:39 UTC] [CYCLE #1297 SUMMARY] Scanned=779 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$31.52 | Equity=$34.45 (DD=12.33%)
+[2026-11-14 09:10:48 UTC] [OPEN TRADE #189] Will China PR win on 2026-11-14?
+  Категория: Geopolitics | Сторона: YES | Источник: https://www.fifa.com
+  Оценка бота: 70.0% vs Рынок (Ask VWAP): 65.0% (Перекос/Edge: +5.0 п.п.)
+  Стакан CLOB: BestBid=0.640, BestAsk=0.650, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=14.3%, Четверть(0.25x)=5.7% -> Применён=5.7% банка
+  Размер сделки: $1.97 USDC (3.03 shares @ $0.6500)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.390 if P_est <= 70%
+  Причина: News sentiment=+1.00 (4 articles; top: 'WBSC U-23 Baseball World Cup: Venezuela stay undefeated after Day 1 of the Super Round, Japan back into conten')
+
+[2026-11-14 09:10:48 UTC] [CYCLE #1298 SUMMARY] Scanned=793 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$29.55 | Equity=$34.36 (DD=12.54%)
