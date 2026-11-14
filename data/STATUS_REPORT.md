@@ -1,20 +1,21 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-14 15:30:58 UTC`
+**Обновлено:** `2026-11-14 15:40:06 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$34.24 USDC`** (`-15.76$` / `-31.52%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$33.81` / `$0.43 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-15.76 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `12.85%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$34.09 USDC`** (`-15.91$` / `-31.82%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$31.08` / `$3.01 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-15.91 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `13.23%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `189` / `68.3%` | Brier Score: `0.1960` |
 
-## 📂 Открытые позиции (1 / 8)
+## 📂 Открытые позиции (2 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.368` | `97.5%` | `$1.08` | `$-0.65` | https://x.com/elonmusk |
+| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.253` | `97.5%` | `$1.08` | `$-0.78` | https://x.com/elonmusk |
+| #192 | Will Bitcoin dip to $62,000 November 9-15? | Crypto | **NO** | `0.783` | `0.779` | `83.0%` | `$2.73` | `$-0.01` | Kraken BTCUSDT 1m/1h Spot Klin |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -41,6 +42,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Bitcoin dip to $62,000 November 9-15? | Crypto | NO | `83.0%` | `78.3%` | `+4.7 п.п.` | `0.40%` | EXECUTED BUY #192 ($2.73 @ 0.7830) |
 | Will Bitcoin dip to $62,000 November 9-15? | Crypto | NO | `82.5%` | `76.4%` | `+6.1 п.п.` | `3.70%` | REJECTED: CLOB round-trip slippage 3.70% > 2.0% limit |
 | Will Ethereum dip to $1,800 on November 14? | Crypto | NO | `73.1%` | `59.7%` | `+13.4 п.п.` | `10.00%` | REJECTED: Contract price $0.597 outside sweet spot [$0.60, $0.92] |
 | Will Bitcoin dip to $62,000 November 9-15? | Crypto | NO | `91.0%` | `85.5%` | `+5.5 п.п.` | `3.70%` | REJECTED: CLOB round-trip slippage 3.70% > 2.0% limit |
@@ -58,4 +60,3 @@
 | Will Bitcoin reach $70,000 November 9-15? | Crypto | YES | `99.5%` | `15.0%` | `+84.5 п.п.` | `1.46%` | REJECTED: Contract price $0.150 outside sweet spot [$0.60, $0.92] |
 | Will the price of Bitcoin be above $66,000 on Nove | Crypto | YES | `94.0%` | `89.1%` | `+5.0 п.п.` | `0.70%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 14) |
 | Will the price of Bitcoin be between $68,000 and $ | Crypto | NO | `74.1%` | `78.9%` | `-4.8 п.п.` | `1.70%` | REJECTED: Edge -4.8 pp < 2 pp threshold (P_est=74.1% vs AskVWAP=78.9%) |
-| Will the price of Bitcoin be above $68,000 on Nove | Crypto | NO | `72.1%` | `76.7%` | `-4.6 п.п.` | `0.10%` | REJECTED: Edge -4.6 pp < 2 pp threshold (P_est=72.1% vs AskVWAP=76.7%) |
