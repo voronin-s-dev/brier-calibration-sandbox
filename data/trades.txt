@@ -3693,3 +3693,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 1.19 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.7180
   Proceeds: $0.85 | Realized PnL: $-0.23 USDC | Reason: THESIS INVALIDATED (Prob Shift > 8.0pp & P_est <= 70%): Estimate dropped from 94.4% to 70.0% (Bid VWAP: $0.718)
 [2026-11-14 03:49:16 UTC] [CYCLE #1265 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$32.45 | Equity=$34.73 (DD=11.62%)
+[EXIT] #180 | Will the price of Bitcoin be above $70,000 on November 14? (NO)
+  Shares: 1.18 | Entry VWAP: 0.9140 -> Exit Bid VWAP: 0.9870
+  Proceeds: $1.17 | Realized PnL: $+0.09 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.7%) secured early with +8.0% gain
+[2026-11-14 04:01:03 UTC] [OPEN TRADE #187] Will Bitcoin dip to $66,000 November 9-15?
+  Категория: Crypto | Сторона: YES | Источник: Kraken BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 77.4% vs Рынок (Ask VWAP): 73.1% (Перекос/Edge: +4.3 п.п.)
+  Стакан CLOB: BestBid=0.723, BestAsk=0.731, Проскальзывание входа/выхода=0.80% (<= 3.0%)
+  Келли: Полный=15.7%, Четверть(0.25x)=6.3% -> Применён=6.3% банка
+  Размер сделки: $2.19 USDC (3.00 shares @ $0.7310)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.439 if P_est <= 70%
+  Причина: First-passage dip model: BTCUSDT=$66,704.40 -> barrier=$66,000 (-1.06%), vol_h=0.50%, tau=49.0h => P(touch)=78.6% -> Calibrated(0.75x)=77.4%
+
+[2026-11-14 04:01:03 UTC] [CYCLE #1266 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=15 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=1 | Cash=$31.43 | Equity=$34.72 (DD=11.63%)
