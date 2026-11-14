@@ -77,7 +77,7 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-11-14 14:40:07 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-11-14 14:49:14 UTC</div>
     </div>
   </div>
 
@@ -86,22 +86,22 @@
   <div class="grid">
     <div class="card">
       <div class="metric-label">Текущий капитал (Equity)</div>
-      <div class="metric-val">$35.36 <span style="font-size:15px" class="neg">(-14.64$ / -29.29%)</span></div>
+      <div class="metric-val">$35.19 <span style="font-size:15px" class="neg">(-14.81$ / -29.63%)</span></div>
       <div class="metric-sub">Старт: $50.00 USDC (Оценка по Bid стакана!)</div>
     </div>
     <div class="card">
       <div class="metric-label">Свободный кэш / В позициях</div>
-      <div class="metric-val">$34.60 <span class="muted" style="font-size:16px">/ $0.75</span></div>
+      <div class="metric-val">$34.60 <span class="muted" style="font-size:16px">/ $0.58</span></div>
       <div class="metric-sub">Открыто позиций: 1 из 8 (макс 8% банка)</div>
     </div>
     <div class="card">
       <div class="metric-label">Цель подписки ($60 / мес)</div>
-      <div class="metric-val">$-14.64 <span class="muted" style="font-size:16px">/ $60.00</span></div>
+      <div class="metric-val">$-14.81 <span class="muted" style="font-size:16px">/ $60.00</span></div>
       <div class="metric-sub">Прогресс окупаемости: 0.0%</div>
     </div>
     <div class="card">
       <div class="metric-label">Просадка от пика (Drawdown)</div>
-      <div class="metric-val ">10.01% <span class="muted" style="font-size:15px">(Макс: 24.45%)</span></div>
+      <div class="metric-val ">10.45% <span class="muted" style="font-size:15px">(Макс: 24.45%)</span></div>
       <div class="metric-sub">Пик: $39.29 | Лимит остановки: 40.0%</div>
     </div>
     <div class="card">
@@ -226,10 +226,10 @@
             <td><span class="side-no">NO</span></td>
             <td>1.18</td>
             <td>$0.9180</td>
-            <td>$0.6400</td>
+            <td>$0.4940</td>
             <td><strong>97.5%</strong> <small>(+3.0pp)</small></td>
             <td>$1.08 <small>(3.0%)</small></td>
-            <td class="neg">$-0.33</td>
+            <td class="neg">$-0.50</td>
             <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985 (or +25% gain if Bid &gt;= 0.88), or Stop-Loss &lt;= 0.551 if P_est &lt;= 70%</small></td>
         </tr>
         
@@ -247,6 +247,19 @@
     </thead>
     <tbody>
       
+        <tr class="">
+            <td>Will Ethereum dip to $1,800 on November 14?<br><small class="muted">First-passage dip model: ETHUSDT=$1,861.15 -&gt; barrier=$1,800 (-3.29%), vol_h=0.60%, tau=14.2h =&gt; P(touch)=18.7% -&gt; Calibrated(0.75x)=22.0%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>NO</td>
+            <td>78.0%</td>
+            <td>71.6%</td>
+            <td class="muted">+6.4 п.п.</td>
+            <td class="neg">8.10%</td>
+            <td>$12,352</td>
+            <td>14.2h</td>
+            <td><strong>REJECTED: CLOB round-trip slippage 8.10% &gt; 2.0% limit</strong></td>
+        </tr>
+        
         <tr class="">
             <td>Will Ethereum dip to $1,800 on November 14?<br><small class="muted">First-passage dip model: ETHUSDT=$1,861.15 -&gt; barrier=$1,800 (-3.29%), vol_h=0.60%, tau=14.3h =&gt; P(touch)=18.9% -&gt; Calibrated(0.75x)=22.1%</small></td>
             <td><span class="badge cat-crypto">Crypto</span></td>
@@ -559,26 +572,11 @@
             <td><strong>REJECTED: Max open positions (8) reached</strong></td>
         </tr>
         
-        <tr class="exec-row">
-            <td>Will the FAA&#x27;s nationwide ground stop be lifted by November 13, 10:00 PM ET?<br><small class="muted">High market consensus NO (90.5%) within 2.2h of expiry</small></td>
-            <td><span class="badge cat-other">Other</span></td>
-            <td>NO</td>
-            <td>94.0%</td>
-            <td>91.0%</td>
-            <td class="muted">+3.0 п.п.</td>
-            <td class="pos">2.00%</td>
-            <td>$33,065</td>
-            <td>2.2h</td>
-            <td><strong>EXECUTED BUY #186 ($1.12 @ 0.9100)</strong></td>
-        </tr>
-        
     </tbody>
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">C] [OPEN TRADE #188] Will the price of Bitcoin be above $68,000 on November 14?
-  Категория: Crypto | Сторона: NO | Источник: Kraken BTCUSDT 1m/1h Spot Klines
-  Оценка бота: 81.2% vs Рынок (Ask VWAP): 78.7% (Перекос/Edge: +2.5 п.п.)
+  <pre class="log-box">ынок (Ask VWAP): 78.7% (Перекос/Edge: +2.5 п.п.)
   Стакан CLOB: BestBid=0.786, BestAsk=0.787, Проскальзывание входа/выхода=0.10% (&lt;= 3.0%)
   Келли: Полный=11.7%, Четверть(0.25x)=4.7% -&gt; Применён=4.7% банка
   Размер сделки: $1.61 USDC (2.05 shares @ $0.7870)
@@ -678,6 +676,7 @@
   Proceeds: $3.88 | Realized PnL: $+1.12 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +40.7% gain
 [2026-11-14 14:30:52 UTC] [CYCLE #1332 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=5 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=2 | Cash=$34.60 | Equity=$35.37 (DD=9.98%)
 [2026-11-14 14:40:01 UTC] [CYCLE #1333 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=3 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$34.60 | Equity=$35.36 (DD=10.01%)
+[2026-11-14 14:49:08 UTC] [CYCLE #1334 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$34.60 | Equity=$35.19 (DD=10.45%)
 </pre>
 </body>
 </html>
