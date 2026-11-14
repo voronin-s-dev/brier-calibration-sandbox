@@ -3988,3 +3988,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-14 21:17:00 UTC] [CYCLE #1378 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.11 | Equity=$31.20 (DD=20.59%)
 [2026-11-14 21:26:04 UTC] [CYCLE #1379 SUMMARY] Scanned=773 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.11 | Equity=$31.73 (DD=19.25%)
 [2026-11-14 21:30:50 UTC] [CYCLE #1380 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.11 | Equity=$32.09 (DD=18.32%)
+[2026-11-14 21:39:55 UTC] [CYCLE #1381 SUMMARY] Scanned=774 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.11 | Equity=$32.40 (DD=17.53%)
