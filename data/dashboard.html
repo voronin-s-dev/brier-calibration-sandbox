@@ -77,7 +77,7 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-11-14 01:49:21 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-11-14 01:49:37 UTC</div>
     </div>
   </div>
 
@@ -86,22 +86,22 @@
   <div class="grid">
     <div class="card">
       <div class="metric-label">Текущий капитал (Equity)</div>
-      <div class="metric-val">$36.11 <span style="font-size:15px" class="neg">(-13.89$ / -27.79%)</span></div>
+      <div class="metric-val">$36.07 <span style="font-size:15px" class="neg">(-13.93$ / -27.85%)</span></div>
       <div class="metric-sub">Старт: $50.00 USDC (Оценка по Bid стакана!)</div>
     </div>
     <div class="card">
       <div class="metric-label">Свободный кэш / В позициях</div>
-      <div class="metric-val">$27.87 <span class="muted" style="font-size:16px">/ $8.24</span></div>
+      <div class="metric-val">$27.87 <span class="muted" style="font-size:16px">/ $8.21</span></div>
       <div class="metric-sub">Открыто позиций: 7 из 8 (макс 8% банка)</div>
     </div>
     <div class="card">
       <div class="metric-label">Цель подписки ($60 / мес)</div>
-      <div class="metric-val">$-13.89 <span class="muted" style="font-size:16px">/ $60.00</span></div>
+      <div class="metric-val">$-13.93 <span class="muted" style="font-size:16px">/ $60.00</span></div>
       <div class="metric-sub">Прогресс окупаемости: 0.0%</div>
     </div>
     <div class="card">
       <div class="metric-label">Просадка от пика (Drawdown)</div>
-      <div class="metric-val ">8.11% <span class="muted" style="font-size:15px">(Макс: 24.45%)</span></div>
+      <div class="metric-val ">8.19% <span class="muted" style="font-size:15px">(Макс: 24.45%)</span></div>
       <div class="metric-sub">Пик: $39.29 | Лимит остановки: 40.0%</div>
     </div>
     <div class="card">
@@ -268,10 +268,10 @@
             <td><span class="side-no">NO</span></td>
             <td>1.18</td>
             <td>$0.9180</td>
-            <td>$0.9520</td>
+            <td>$0.9310</td>
             <td><strong>98.5%</strong> <small>(+3.0pp)</small></td>
             <td>$1.08 <small>(3.0%)</small></td>
-            <td class="pos">$+0.04</td>
+            <td class="pos">$+0.02</td>
             <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985 (or +25% gain if Bid &gt;= 0.88), or Stop-Loss &lt;= 0.551 if P_est &lt;= 70%</small></td>
         </tr>
         
@@ -310,7 +310,7 @@
             <td><span class="side-yes">YES</span></td>
             <td>1.19</td>
             <td>$0.9100</td>
-            <td>$0.9530</td>
+            <td>$0.9480</td>
             <td><strong>98.5%</strong> <small>(+3.4pp)</small></td>
             <td>$1.08 <small>(3.0%)</small></td>
             <td class="pos">$+0.05</td>
@@ -660,8 +660,7 @@
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">C | Reason: TIME EXIT: 0.9h left to close (under 1.0h threshold, Bid VWAP: $0.920)
-[2026-11-13 18:49:16 UTC] [CYCLE #1205 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=10 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$31.66 | Equity=$36.17 (DD=7.94%)
+  <pre class="log-box">&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$31.66 | Equity=$36.17 (DD=7.94%)
 [2026-11-13 19:01:15 UTC] [CYCLE #1206 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$31.66 | Equity=$36.16 (DD=7.97%)
 [2026-11-13 19:10:24 UTC] [CYCLE #1207 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=10 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$31.66 | Equity=$36.14 (DD=8.03%)
 [2026-11-13 19:19:32 UTC] [CYCLE #1208 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=11 | Edges(&gt;=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$31.66 | Equity=$36.10 (DD=8.11%)
@@ -782,6 +781,7 @@
   Shares: 1.23 | Entry VWAP: 0.9100 -&gt; Exit Bid VWAP: 0.0000
   Proceeds: $0.00 | Realized PnL: $-1.12 USDC | Reason: THESIS INVALIDATED (Prob Shift &gt; 8.0pp &amp; P_est &lt;= 70%): Estimate dropped from 94.0% to 1.5% (Bid VWAP: $0.000)
 [2026-11-14 01:49:14 UTC] [CYCLE #1250 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=16 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$27.87 | Equity=$36.11 (DD=8.11%)
+[2026-11-14 01:49:29 UTC] [CYCLE #1251 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=16 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.87 | Equity=$36.07 (DD=8.19%)
 </pre>
 </body>
 </html>
