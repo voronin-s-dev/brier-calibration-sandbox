@@ -1115,6 +1115,107 @@ class TestRiskManagementV2(unittest.TestCase):
             self.assertEqual(closed, 1)
             self.assertEqual(len(db.get_open_shadow_positions()), 0)
 
+    def test_canonical_date_range_event_key_deduplication(self) -> None:
+        """Verify that all syntactic variants of date ranges produce an identical canonical event key."""
+        variants = [
+            "Will Elon Musk post 200-219 tweets from November 6 to November 13, 2026?",
+            "Will Elon Musk post 220-239 tweets November 6 to November 13?",
+            "Will Elon Musk post 240-259 tweets November 6-13?",
+            "Will Elon Musk post 260-279 tweets between November 6 and November 13, 2026?",
+            "Will Elon Musk post 280-299 tweets from November 6 to 13?",
+        ]
+        keys = {extract_event_key(q, "Geopolitics") for q in variants}
+        self.assertEqual(len(keys), 1)
+        self.assertEqual(keys.pop(), "mentions:elon_musk:november 6 - november 13")
+
+        # Crypto weekly date range deduplication
+        c1 = extract_event_key("Will Bitcoin dip to $72,000 November 9-15?", "Crypto")
+        c2 = extract_event_key("Will Bitcoin dip to $70,000 from November 9 to November 15, 2026?", "Crypto")
+        self.assertEqual(c1, c2)
+        self.assertEqual(c1, "crypto:bitcoin:november 9 - november 15")
+
+    def test_shadow_take_profit_near_ceiling(self) -> None:
+        """Verify that shadow positions exit on near-ceiling 98.5%+ bids even when bought at high price."""
+        from unittest.mock import patch
+        from polymarket_api import MarketInfo
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            db = SimDatabase(db_path=Path(tmp_dir) / "test_stp.db", initial_capital=50.0)
+            trader = GrokCharterPaperTrader(db=db, trades_txt_path=Path(tmp_dir) / "trades.txt")
+
+            db.open_shadow_position(
+                market_id="mkt_stp_1", question="High Price Favorite", category="Crypto", side="YES",
+                token_id="tok_stp", shares=10.0, entry_vwap=0.90, cost_usdc=9.00,
+                initial_p_est=0.95, entry_edge=0.05, kelly_full_pct=0.10, kelly_half_pct=0.05,
+                applied_size_pct=0.05, roundtrip_slippage_pct=0.01, official_source="Binance",
+                exit_condition="Hold", rationale="Consensus", end_date_iso="2026-11-20T00:00:00Z"
+            )
+
+            m_live = MarketInfo(
+                id="mkt_stp_1", question="High Price Favorite", slug="hpf",
+                description="", resolution_source="Binance", has_official_source=True,
+                end_date_iso="2026-11-20T00:00:00Z", hours_to_close=20.0,
+                liquidity_usd=10000.0, volume_24h_usd=20000.0, outcomes=["YES", "NO"],
+                gamma_prices=[0.985, 0.015], clob_token_ids=["tok_yes", "tok_no"],
+                order_min_size=1.0, tick_size=0.01, category="Crypto", closed=False,
+            )
+
+            with patch("trader.fetch_market_by_id", return_value=m_live), \
+                 patch("trader.simulate_clob_sell_shares", return_value=(0.988, 9.88, 0.988)):
+                closed = trader.monitor_and_manage_shadow_positions()
+
+            self.assertEqual(closed, 1)
+            pos = db.get_all_shadow_positions()[0]
+            self.assertEqual(pos["status"], "CLOSED")
+            self.assertIn("TAKE PROFIT (98.5%+ Bid Reached)", pos["exit_reason"])
+            self.assertAlmostEqual(float(pos["realized_pnl"]), 0.88, places=2)
+
+    def test_shadow_deduplication_and_contract_price_bounds(self) -> None:
+        """Verify that shadow candidate evaluation deduplicates same event key and rejects out-of-bounds contract prices."""
+        from unittest.mock import patch, MagicMock
+        from polymarket_api import MarketInfo, OrderBookSimulation
+        from oracles import EvaluationResult
+
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            db = SimDatabase(db_path=Path(tmp_dir) / "test_sdedup.db", initial_capital=50.0)
+            trader = GrokCharterPaperTrader(db=db, trades_txt_path=Path(tmp_dir) / "trades.txt")
+
+            mkt1 = MarketInfo(
+                id="mkt_dup_1", question="Will Elon Musk post 200-219 tweets November 6-13?", slug="m1",
+                description="", resolution_source="https://x.com", has_official_source=True,
+                end_date_iso="2026-11-13T17:00:00Z", hours_to_close=10.0,
+                liquidity_usd=10000.0, volume_24h_usd=20000.0, outcomes=["YES", "NO"],
+                gamma_prices=[0.30, 0.70], clob_token_ids=["tok_1_y", "tok_1_n"],
+                order_min_size=1.0, tick_size=0.01, category="Geopolitics", closed=False,
+            )
+            mkt2 = MarketInfo(
+                id="mkt_dup_2", question="Will Elon Musk post 220-239 tweets from November 6 to November 13, 2026?", slug="m2",
+                description="", resolution_source="https://x.com", has_official_source=True,
+                end_date_iso="2026-11-13T17:00:00Z", hours_to_close=10.0,
+                liquidity_usd=10000.0, volume_24h_usd=20000.0, outcomes=["YES", "NO"],
+                gamma_prices=[0.30, 0.70], clob_token_ids=["tok_2_y", "tok_2_n"],
+                order_min_size=1.0, tick_size=0.01, category="Geopolitics", closed=False,
+            )
+
+            eval_res = EvaluationResult(
+                market_id="mkt_dup_1", question=mkt1.question, category="Geopolitics",
+                oracle_used="TestOracle", official_source="X", p_yes=0.20, p_no=0.80,
+                confidence=0.90, rationale="Test",
+            )
+            ob_good = OrderBookSimulation(
+                token_id="tok_1_n", side_label="NO", best_bid=0.69, best_ask=0.70, midpoint=0.695,
+                spread_pct=0.015, bet_usdc=2.00, shares_filled=2.857, vwap_buy_price=0.70,
+                vwap_sell_price=0.69, entry_slippage_pct=0.005, exit_slippage_pct=0.005,
+                roundtrip_slippage_pct=0.01, sufficient_depth=True, passes_slippage_limit=True,
+            )
+
+            with patch.object(trader, "_evaluate_market_probability", return_value=(eval_res, None)), \
+                 patch("trader.simulate_clob_buy_and_exit_check", return_value=ob_good):
+                opened = trader.evaluate_and_execute_shadow_candidates([mkt1, mkt2], open_shadow_market_ids=set())
+
+            # Only 1 position should open; mkt2 shares the exact same canonical event key!
+            self.assertEqual(opened, 1)
+            self.assertEqual(len(db.get_open_shadow_positions()), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

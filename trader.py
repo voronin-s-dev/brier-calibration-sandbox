@@ -34,35 +34,59 @@ from telegram_notify import check_and_send_daily_digest, notify_position_closed,
 TRADES_LOG_PATH = Path(__file__).resolve().parent / "data" / "trades.txt"
 
 
+MONTHS_PATTERN = r"(?:january|february|march|april|may|june|july|august|september|october|november|december)"
+
+
+def parse_canonical_date_or_range(q_low: str) -> str:
+    """
+    Parses date ranges or individual dates into a uniform canonical string.
+    Normalizes 'from Nov 6 to Nov 13, 2026', 'Nov 6-13', 'between Nov 6 and 13' into 'november 6 - november 13'.
+    Normalizes single dates into 'november 13' or ISO format.
+    """
+    # 1. Spanned date range across days/months (with optional 'from', 'between', hyphen, 'to', 'and', year)
+    range_pat = rf"(?:from\s+|between\s+)?({MONTHS_PATTERN})\s+(\d{{1,2}})(?:\s*(?:to|and|\-|–)\s*({MONTHS_PATTERN})?\s*(\d{{1,2}}))(?:\s*,\s*\d{{4}})?"
+    m = re.search(range_pat, q_low)
+    if m:
+        m1, d1, m2, d2 = m.group(1), m.group(2), m.group(3), m.group(4)
+        end_month = m2 if m2 else m1
+        return f"{m1} {d1} - {end_month} {d2}"
+
+    # 2. ISO date range (2026-11-06 to 2026-11-13)
+    iso_range_m = re.search(r"(\d{4}-\d{2}-\d{2})\s*(?:to|\-|–)\s*(\d{4}-\d{2}-\d{2})", q_low)
+    if iso_range_m:
+        return f"{iso_range_m.group(1)} - {iso_range_m.group(2)}"
+
+    # 3. Single month + day
+    single_m = re.search(rf"\b({MONTHS_PATTERN})\s+(\d{{1,2}})\b", q_low)
+    if single_m:
+        return f"{single_m.group(1)} {single_m.group(2)}"
+
+    # 4. Single ISO date
+    iso_m = re.search(r"\b202\d-\d{2}-\d{2}\b", q_low)
+    if iso_m:
+        return iso_m.group(0)
+
+    return "nodate"
+
+
 def extract_event_key(question: str, category: str) -> str:
     """
     Extracts a canonical underlying event key so the bot never opens multiple positions
-    on the same thermometer/city, crypto asset on the same day, sports match, or strike bracket.
+    on the same thermometer/city, crypto asset on the same day/range, sports match, or strike bracket.
     """
     q_low = question.lower().strip()
-    date_m = re.search(
-        r"\b(january|february|march|april|may|june|july|august|september|october|november|december)\s+\d{1,2}\b|\b202\d-\d{2}-\d{2}\b",
-        q_low,
-    )
-    date_part = date_m.group(0) if date_m else "nodate"
-
-    # Date range matching (e.g. "from November 6 to November 13")
-    date_range_m = re.search(
-        r"(?:from\s+)?(january|february|march|april|may|june|july|august|september|october|november|december)\s+\d{1,2}\s+to\s+(?:january|february|march|april|may|june|july|august|september|october|november|december)?\s*\d{1,2}(?:,\s*\d{4})?",
-        q_low,
-    )
-    date_or_range = date_range_m.group(0) if date_range_m else date_part
+    date_or_range = parse_canonical_date_or_range(q_low)
 
     if category == "Weather" or "temperature in" in q_low:
         city_m = re.search(r"temperature\s+in\s+([a-z\s\(\)]+?)\s+be\b", q_low)
         city = city_m.group(1).strip() if city_m else q_low[:25]
-        return f"weather:{city}:{date_part}"
+        return f"weather:{city}:{date_or_range}"
 
     if category == "Crypto":
         for coin in ("bitcoin", "btc", "ethereum", "eth", "solana", "sol", "xrp", "doge", "bnb"):
             if re.search(rf"\b{coin}\b", q_low):
                 norm_coin = "bitcoin" if coin == "btc" else ("ethereum" if coin == "eth" else ("solana" if coin == "sol" else coin))
-                return f"crypto:{norm_coin}:{date_part}"
+                return f"crypto:{norm_coin}:{date_or_range}"
 
     # Social media mentions / post counts (e.g. Elon Musk tweets, Donald Trump posts)
     if any(k in q_low for k in ["tweet", "tweets", "post", "posts", "truth social", "x post"]):
@@ -80,7 +104,7 @@ def extract_event_key(question: str, category: str) -> str:
     if category == "Sports" or any(k in q_low for k in esports_keywords):
         cleaned = re.sub(r"^(spread:\s*|will\s+)", "", q_low)
         cleaned = re.sub(r":\s*o/u.*$|\s+win\s+on.*$|\(\-[0-9\.]+\)", "", cleaned).strip()
-        return f"sports:{cleaned[:35]}:{date_part}"
+        return f"sports:{cleaned[:35]}:{date_or_range}"
 
     # General multi-strike bracket normalization (collapse numeric ranges like 280-299, 10-15%, 50+ to <bracket>)
     cleaned_q = re.sub(r"\b\d+[\-–]\d+\+?\b|\b\d+\+\b", "<bracket>", q_low)
@@ -478,7 +502,7 @@ class GrokCharterPaperTrader:
                     latest_p = eval_res.p_yes if side == "YES" else eval_res.p_no
 
             if vwap_sell > 0:
-                self.db.update_open_shadow_position_mtm(pos_id=pos_id, current_bid=best_bid, latest_p_est=latest_p)
+                self.db.update_open_shadow_position_mtm(pos_id=pos_id, current_bid=vwap_sell, latest_p_est=latest_p)
             else:
                 self.db.update_open_shadow_position_mtm(pos_id=pos_id, current_bid=0.0, latest_p_est=latest_p)
 
@@ -488,7 +512,27 @@ class GrokCharterPaperTrader:
             if vwap_sell > 0:
                 cost = float(pos["cost_usdc"])
                 gross_return_pct = (proceeds - cost) / cost if cost > 0 else 0.0
-                if gross_return_pct >= 0.12:
+                gain_pct = ((vwap_sell - entry_vwap) / entry_vwap * 100.0) if entry_vwap > 0 else 0.0
+
+                if vwap_sell >= 0.985:
+                    should_exit = True
+                    exit_reason = (
+                        f"TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP ({vwap_sell*100:.1f}%) "
+                        f"secured early with +{gain_pct:.1f}% gain"
+                    )
+                elif gain_pct >= 25.0 and vwap_sell >= 0.88:
+                    should_exit = True
+                    exit_reason = (
+                        f"TAKE PROFIT (Sweet Spot +25% Lock): Live CLOB Bid VWAP ({vwap_sell*100:.1f}%) "
+                        f"secured early with +{gain_pct:.1f}% net gain"
+                    )
+                elif gain_pct >= 35.0 and vwap_sell >= 0.82:
+                    should_exit = True
+                    exit_reason = (
+                        f"TAKE PROFIT (Sweet Spot +35% Lock): Live CLOB Bid VWAP ({vwap_sell*100:.1f}%) "
+                        f"secured early with +{gain_pct:.1f}% net gain"
+                    )
+                elif gross_return_pct >= 0.12:
                     should_exit = True
                     exit_reason = f"TAKE-PROFIT TRIGGERED: Net return +{gross_return_pct*100:.1f}% >= +12% (Bid VWAP: {vwap_sell:.4f} vs Entry: {entry_vwap:.4f})"
                 elif vwap_sell <= entry_vwap * 0.65:
@@ -587,6 +631,10 @@ class GrokCharterPaperTrader:
         if len(open_shadow) >= 5:
             return 0
 
+        active_shadow_event_keys: Set[str] = {
+            extract_event_key(str(p["question"]), str(p["category"])) for p in open_shadow
+        }
+
         shadow_pf = self.db.get_shadow_portfolio()
         if shadow_pf.get("halted"):
             return 0
@@ -600,6 +648,10 @@ class GrokCharterPaperTrader:
             if len(open_shadow) + opened_count >= 5:
                 break
             if mkt.id in open_shadow_market_ids:
+                continue
+
+            event_key = extract_event_key(mkt.question, mkt.category)
+            if event_key in active_shadow_event_keys:
                 continue
 
             eval_res, preloaded_yes_book = self._evaluate_market_probability(mkt)
@@ -651,6 +703,8 @@ class GrokCharterPaperTrader:
                 continue
             if not (ob_sim.sufficient_depth and ob_sim.passes_slippage_limit):
                 continue
+            if not (0.15 <= ob_sim.vwap_buy_price <= self.MAX_CONTRACT_PRICE):
+                continue
 
             pos_id = self.db.open_shadow_position(
                 market_id=mkt.id,
@@ -668,7 +722,7 @@ class GrokCharterPaperTrader:
                 applied_size_pct=applied_size_pct,
                 roundtrip_slippage_pct=ob_sim.roundtrip_slippage_pct,
                 official_source=mkt.resolution_source,
-                exit_condition="Take-Profit (+12%), Stop-Loss (-35%), or Settlement",
+                exit_condition="Take-Profit (+12% or 98.5%+ bid), Stop-Loss (-35%), or Settlement",
                 rationale=eval_res.rationale,
                 end_date_iso=mkt.end_date_iso,
             )
@@ -678,6 +732,7 @@ class GrokCharterPaperTrader:
                 f"  Bet: ${ob_sim.bet_usdc:.2f} USDC | P_est: {p_est*100:.1f}% | Edge: {real_edge*100:+.1f} pp"
             )
             opened_count += 1
+            active_shadow_event_keys.add(event_key)
             shadow_cash -= ob_sim.bet_usdc
 
         return opened_count
