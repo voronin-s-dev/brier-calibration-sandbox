@@ -1,22 +1,22 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-14 21:07:38 UTC`
+**Обновлено:** `2026-11-14 21:07:58 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$32.00 USDC`** (`-18.00$` / `-35.99%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$26.34` / `$5.66 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-18.00 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `18.55%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
-| **Закрытых сделок / Win Rate** | `195` / `66.7%` | Brier Score: `0.1960` |
+| **Текущий баланс (Equity)** | **`$32.07 USDC`** (`-17.93$` / `-35.87%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$25.61` / `$6.45 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-17.93 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `18.39%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Закрытых сделок / Win Rate** | `196` / `66.3%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (3 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #192 | Will Bitcoin dip to $62,000 November 9-15? | Crypto | **NO** | `0.783` | `0.667` | `84.9%` | `$2.73` | `$-0.40` | Kraken BTCUSDT 1m/1h Spot Klin |
-| #198 | Will the price of Bitcoin be above $64,000 on November  | Crypto | **YES** | `0.694` | `0.570` | `65.3%` | `$1.00` | `$-0.18` | Kraken BTCUSDT 1m/1h Spot Klin |
-| #199 | Will Ethereum dip to $1,700 November 9-15? | Crypto | **NO** | `0.650` | `0.638` | `85.8%` | `$2.56` | `$-0.05` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #192 | Will Bitcoin dip to $62,000 November 9-15? | Crypto | **NO** | `0.783` | `0.684` | `77.9%` | `$2.73` | `$-0.35` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #199 | Will Ethereum dip to $1,700 November 9-15? | Crypto | **NO** | `0.650` | `0.632` | `75.3%` | `$2.56` | `$-0.07` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #200 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.662` | `0.661` | `70.4%` | `$1.58` | `$-0.00` | Kraken BTCUSDT 1m/1h Spot Klin |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -41,6 +41,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will the price of Bitcoin be above $66,000 on Nove | Crypto | NO | `70.4%` | `66.2%` | `+4.2 п.п.` | `0.10%` | EXECUTED BUY #200 ($1.58 @ 0.6620) |
 | Will Ethereum dip to $1,700 November 9-15? | Crypto | NO | `85.8%` | `65.0%` | `+20.8 п.п.` | `1.20%` | EXECUTED BUY #199 ($2.56 @ 0.6500) |
 | Will the price of Bitcoin be above $62,000 on Nove | Crypto | YES | `84.4%` | `79.8%` | `+4.6 п.п.` | `3.10%` | REJECTED: CLOB round-trip slippage 3.10% > 2.0% limit |
 | Will Bitcoin dip to $63,000 on November 14? | Crypto | NO | `98.2%` | `77.7%` | `+20.5 п.п.` | `11.90%` | REJECTED: CLOB round-trip slippage 11.90% > 2.0% limit |
@@ -58,4 +59,3 @@
 | Will Ethereum dip to $1,750 on November 14? | Crypto | NO | `86.8%` | `77.8%` | `+9.0 п.п.` | `15.50%` | REJECTED: CLOB round-trip slippage 15.50% > 2.0% limit |
 | Will Ethereum dip to $1,800 November 9-15? | Crypto | YES | `80.1%` | `87.3%` | `-7.2 п.п.` | `5.90%` | REJECTED: Edge -7.2 pp < 2 pp threshold (P_est=80.1% vs AskVWAP=87.3%) |
 | Will Ethereum dip to $1,800 November 9-15? | Crypto | YES | `75.9%` | `88.0%` | `-12.1 п.п.` | `3.00%` | REJECTED: Edge -12.1 pp < 2 pp threshold (P_est=75.9% vs AskVWAP=88.0%) |
-| Will Bitcoin dip to $65,000 on November 14? | Crypto | YES | `80.0%` | `100.0%` | `-20.0 п.п.` | `100.00%` | REJECTED: Edge -20.0 pp < 2 pp threshold (P_est=80.0% vs AskVWAP=100.0%) |

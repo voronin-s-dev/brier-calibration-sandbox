@@ -3963,3 +3963,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: First-passage dip model: ETHUSDT=$1,821.05 -> barrier=$1,700 (-6.65%), vol_h=0.60%, tau=31.9h => P(touch)=7.0% -> Calibrated(0.75x)=14.2%
 
 [2026-11-14 21:07:32 UTC] [CYCLE #1376 SUMMARY] Scanned=779 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=4 | Opened=1 (Shadow=0) | Closed=1 | Cash=$26.34 | Equity=$32.00 (DD=18.55%)
+[EXIT] #198 | Will the price of Bitcoin be above $64,000 on November 17? (YES)
+  Shares: 1.44 | Entry VWAP: 0.6940 -> Exit Bid VWAP: 0.5900
+  Proceeds: $0.85 | Realized PnL: $-0.15 USDC | Reason: THESIS INVALIDATED (Prob Shift > 8.0pp & P_est <= 70%): Estimate dropped from 71.2% to 58.4% (Bid VWAP: $0.590)
+[2026-11-14 21:07:55 UTC] [OPEN TRADE #200] Will the price of Bitcoin be above $66,000 on November 16?
+  Категория: Crypto | Сторона: NO | Источник: Kraken BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 70.4% vs Рынок (Ask VWAP): 66.2% (Перекос/Edge: +4.2 п.п.)
+  Стакан CLOB: BestBid=0.661, BestAsk=0.662, Проскальзывание входа/выхода=0.10% (<= 3.0%)
+  Келли: Полный=12.3%, Четверть(0.25x)=4.9% -> Применён=4.9% банка
+  Размер сделки: $1.58 USDC (2.39 shares @ $0.6620)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.397 if P_est <= 70%
+  Причина: Terminal GBM model: BTCUSDT=$64,651.40 vs strike=$66,000 (-2.04%), vol_h=0.50%, tau=43.9h => P(S_T > K)=28.3% -> Calibrated(0.75x)=29.6%
+
+[2026-11-14 21:07:55 UTC] [CYCLE #1377 SUMMARY] Scanned=770 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=1 | Cash=$25.61 | Equity=$32.07 (DD=18.39%)
