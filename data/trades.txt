@@ -3720,3 +3720,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: Terminal GBM model: BTCUSDT=$66,820.70 vs strike=$68,000 (-1.73%), vol_h=0.50%, tau=12.2h => P(S_T > K)=18.3% -> Calibrated(0.75x)=18.8%
 
 [2026-11-14 04:49:01 UTC] [CYCLE #1271 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$29.82 | Equity=$34.20 (DD=12.96%)
+[EXIT] #187 | Will Bitcoin dip to $66,000 November 9-15? (YES)
+  Shares: 3.00 | Entry VWAP: 0.7310 -> Exit Bid VWAP: 0.5700
+  Proceeds: $1.71 | Realized PnL: $-0.48 USDC | Reason: THESIS INVALIDATED (Prob Shift > 8.0pp & P_est <= 70%): Estimate dropped from 77.4% to 66.3% (Bid VWAP: $0.570)
+[2026-11-14 05:01:08 UTC] [CYCLE #1272 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$31.52 | Equity=$34.34 (DD=12.59%)
