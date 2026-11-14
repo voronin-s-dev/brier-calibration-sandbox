@@ -3862,3 +3862,22 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 3.90 | Entry VWAP: 0.6940 -> Exit Bid VWAP: 0.6300
   Proceeds: $2.46 | Realized PnL: $-0.25 USDC | Reason: THESIS INVALIDATED (Prob Shift > 8.0pp & P_est <= 70%): Estimate dropped from 79.4% to 68.8% (Bid VWAP: $0.630)
 [2026-11-14 16:30:52 UTC] [CYCLE #1347 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$30.83 | Equity=$33.57 (DD=14.56%)
+[2026-11-14 16:40:00 UTC] [OPEN TRADE #194] Will Bitcoin dip to $65,000 on November 14?
+  Категория: Crypto | Сторона: YES | Источник: Kraken BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 79.6% vs Рынок (Ask VWAP): 74.0% (Перекос/Edge: +5.6 п.п.)
+  Стакан CLOB: BestBid=0.730, BestAsk=0.740, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=21.4%, Четверть(0.25x)=8.6% -> Применён=8.0% банка
+  Размер сделки: $2.69 USDC (3.64 shares @ $0.7400)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.444 if P_est <= 70%
+  Причина: First-passage dip model: BTCUSDT=$65,304.00 -> barrier=$65,000 (-0.47%), vol_h=0.50%, tau=12.3h => P(touch)=81.2% -> Calibrated(0.75x)=79.6%
+
+[2026-11-14 16:40:00 UTC] [OPEN TRADE #195] Will the price of Bitcoin be between $66,000 and $68,000 on November 15?
+  Категория: Crypto | Сторона: NO | Источник: Kraken BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 71.4% vs Рынок (Ask VWAP): 69.6% (Перекос/Edge: +1.8 п.п.)
+  Стакан CLOB: BestBid=0.686, BestAsk=0.696, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=5.9%, Четверть(0.25x)=2.3% -> Применён=3.0% банка
+  Размер сделки: $1.00 USDC (1.44 shares @ $0.6960)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.418 if P_est <= 70%
+  Причина: Terminal range model: BTCUSDT=$65,304.00 in [$66,000, $68,000], vol_h=0.50%, tau=24.3h => P=27.6% -> Calibrated(0.75x)=28.6%
+
+[2026-11-14 16:40:00 UTC] [CYCLE #1348 SUMMARY] Scanned=779 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=2 | Opened=2 (Shadow=0) | Closed=0 | Cash=$27.14 | Equity=$33.53 (DD=14.66%)
