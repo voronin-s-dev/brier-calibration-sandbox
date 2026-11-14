@@ -3845,3 +3845,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 1.18 | Entry VWAP: 0.9180 -> Exit Bid VWAP: 0.0040
   Proceeds: $0.00 | Realized PnL: $-1.08 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.004 (-99.6% from entry $0.918, P_est=1.5%)
 [2026-11-14 15:58:30 UTC] [CYCLE #1342 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$31.08 | Equity=$33.90 (DD=13.71%)
+[2026-11-14 16:07:39 UTC] [OPEN TRADE #193] Will Bitcoin dip to $64,000 on November 14?
+  Категория: Crypto | Сторона: NO | Источник: Kraken BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 79.4% vs Рынок (Ask VWAP): 69.4% (Перекос/Edge: +10.0 п.п.)
+  Стакан CLOB: BestBid=0.693, BestAsk=0.694, Проскальзывание входа/выхода=0.10% (<= 3.0%)
+  Келли: Полный=32.6%, Четверть(0.25x)=13.0% -> Применён=8.0% банка
+  Размер сделки: $2.71 USDC (3.90 shares @ $0.6940)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.416 if P_est <= 70%
+  Причина: First-passage dip model: BTCUSDT=$65,724.80 -> barrier=$64,000 (-2.62%), vol_h=0.50%, tau=12.9h => P(touch)=18.6% -> Calibrated(0.75x)=20.6%
+
+[2026-11-14 16:07:39 UTC] [CYCLE #1343 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$28.37 | Equity=$33.83 (DD=13.91%)
