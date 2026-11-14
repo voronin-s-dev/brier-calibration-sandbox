@@ -3675,3 +3675,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $1.40 | Realized PnL: $-0.05 USDC | Reason: TIME EXIT: 1.0h left to close (under 1.0h threshold, Bid VWAP: $0.840)
 [2026-11-14 02:17:19 UTC] [CYCLE #1255 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$30.42 | Equity=$36.07 (DD=8.21%)
 [2026-11-14 02:26:26 UTC] [CYCLE #1256 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.42 | Equity=$35.84 (DD=8.78%)
+[EXIT] #175 | Fourth Jensen Huang affair reported by November 13? (NO)
+  Shares: 1.19 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9900
+  Proceeds: $1.17 | Realized PnL: $+0.09 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.0%) secured early with +8.8% gain
+[EXIT] #182 | Will Bitcoin dip to $67,000 on November 13? (NO)
+  Shares: 1.21 | Entry VWAP: 0.9030 -> Exit Bid VWAP: 0.0000
+  Proceeds: $0.00 | Realized PnL: $-1.09 USDC | Reason: THESIS INVALIDATED (Prob Shift > 8.0pp & P_est <= 70%): Estimate dropped from 94.5% to 0.5% (Bid VWAP: $0.000)
+[2026-11-14 02:31:01 UTC] [CYCLE #1257 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=2 | Cash=$31.60 | Equity=$34.73 (DD=11.62%)

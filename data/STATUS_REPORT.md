@@ -1,24 +1,22 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-14 02:26:31 UTC`
+**Обновлено:** `2026-11-14 02:31:09 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$35.84 USDC`** (`-14.16$` / `-28.32%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$30.42` / `$5.42 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-14.16 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `8.78%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
-| **Закрытых сделок / Win Rate** | `180` / `69.4%` | Brier Score: `0.1960` |
+| **Текущий баланс (Equity)** | **`$34.73 USDC`** (`-15.27$` / `-30.55%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$31.60` / `$3.13 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-15.27 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `11.62%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Закрытых сделок / Win Rate** | `182` / `69.2%` | Brier Score: `0.1960` |
 
-## 📂 Открытые позиции (5 / 8)
+## 📂 Открытые позиции (3 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #175 | Fourth Jensen Huang affair reported by November 13? | Other | **NO** | `0.910` | `0.982` | `98.5%` | `$1.08` | `$+0.09` | reporting from the qualifying  |
-| #180 | Will the price of Bitcoin be above $70,000 on November  | Crypto | **NO** | `0.914` | `0.977` | `98.5%` | `$1.08` | `$+0.07` | https://www.binance.com/en/tra |
-| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.935` | `97.9%` | `$1.08` | `$+0.02` | https://x.com/elonmusk |
-| #182 | Will Bitcoin dip to $67,000 on November 13? | Crypto | **NO** | `0.903` | `0.770` | `91.0%` | `$1.09` | `$-0.16` | https://www.binance.com/en/tra |
-| #184 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **YES** | `0.910` | `0.900` | `94.5%` | `$1.08` | `$-0.01` | https://www.binance.com/en/tra |
+| #180 | Will the price of Bitcoin be above $70,000 on November  | Crypto | **NO** | `0.914` | `0.976` | `98.5%` | `$1.08` | `$+0.07` | https://www.binance.com/en/tra |
+| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.920` | `97.5%` | `$1.08` | `$+0.00` | https://x.com/elonmusk |
+| #184 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **YES** | `0.910` | `0.752` | `70.2%` | `$1.08` | `$-0.19` | https://www.binance.com/en/tra |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -45,6 +43,8 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will the price of Bitcoin be between $68,000 and $ | Crypto | NO | `73.6%` | `80.5%` | `-6.9 п.п.` | `11.40%` | REJECTED: Edge -6.9 pp < 2 pp threshold (P_est=73.6% vs AskVWAP=80.5%) |
+| Will the price of Bitcoin be above $68,000 on Nove | Crypto | NO | `71.2%` | `81.8%` | `-10.6 п.п.` | `3.70%` | REJECTED: Edge -10.6 pp < 2 pp threshold (P_est=71.2% vs AskVWAP=81.8%) |
 | Will the FAA's nationwide ground stop be lifted by | Other | NO | `72.5%` | `68.0%` | `+4.5 п.п.` | `2.00%` | REJECTED: Max open positions (8) reached |
 | Will the FAA's nationwide ground stop be lifted by | Other | NO | `78.5%` | `74.0%` | `+4.5 п.п.` | `2.00%` | REJECTED: Max open positions (8) reached |
 | Will the FAA's nationwide ground stop be lifted by | Other | NO | `94.0%` | `91.0%` | `+3.0 п.п.` | `2.00%` | EXECUTED BUY #186 ($1.12 @ 0.9100) |
@@ -61,5 +61,3 @@
 | Will the price of Ethereum be above $2,000 on Nove | Crypto | NO | `95.0%` | `92.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #179 ($1.08 @ 0.9200) |
 | Will Bitcoin dip to $66,000 on November 13? | Crypto | NO | `89.7%` | `95.1%` | `-5.4 п.п.` | `3.80%` | REJECTED: Edge -5.4 pp < 2 pp threshold (P_est=89.7% vs AskVWAP=95.1%) |
 | Will the price of Bitcoin be between $68,000 and $ | Crypto | YES | `88.1%` | `82.6%` | `+5.5 п.п.` | `4.00%` | REJECTED: CLOB round-trip slippage 4.00% > 2.0% limit |
-| Will the price of Bitcoin be between $68,000 and $ | Crypto | YES | `87.1%` | `77.7%` | `+9.4 п.п.` | `0.40%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
-| Will the price of Bitcoin be between $68,000 and $ | Crypto | YES | `86.1%` | `77.7%` | `+8.4 п.п.` | `2.20%` | REJECTED: CLOB round-trip slippage 2.20% > 2.0% limit |
