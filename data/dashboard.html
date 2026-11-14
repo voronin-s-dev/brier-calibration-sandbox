@@ -77,7 +77,7 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-11-14 17:30:57 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-11-14 17:40:06 UTC</div>
     </div>
   </div>
 
@@ -101,7 +101,7 @@
     </div>
     <div class="card">
       <div class="metric-label">Просадка от пика (Drawdown)</div>
-      <div class="metric-val ">12.25% <span class="muted" style="font-size:15px">(Макс: 24.45%)</span></div>
+      <div class="metric-val ">12.24% <span class="muted" style="font-size:15px">(Макс: 24.45%)</span></div>
       <div class="metric-sub">Пик: $39.29 | Лимит остановки: 40.0%</div>
     </div>
     <div class="card">
@@ -226,10 +226,10 @@
             <td><span class="side-no">NO</span></td>
             <td>3.49</td>
             <td>$0.7830</td>
-            <td>$0.8110</td>
-            <td><strong>88.4%</strong> <small>(+4.7pp)</small></td>
+            <td>$0.8560</td>
+            <td><strong>88.8%</strong> <small>(+4.7pp)</small></td>
             <td>$2.73 <small>(8.0%)</small></td>
-            <td class="pos">$+0.10</td>
+            <td class="pos">$+0.25</td>
             <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985 (or +25% gain if Bid &gt;= 0.88), or Stop-Loss &lt;= 0.470 if P_est &lt;= 70%</small></td>
         </tr>
         
@@ -240,10 +240,10 @@
             <td><span class="side-no">NO</span></td>
             <td>1.44</td>
             <td>$0.6960</td>
-            <td>$0.6330</td>
-            <td><strong>67.5%</strong> <small>(+1.8pp)</small></td>
+            <td>$0.5260</td>
+            <td><strong>67.9%</strong> <small>(+1.8pp)</small></td>
             <td>$1.00 <small>(3.0%)</small></td>
-            <td class="neg">$-0.09</td>
+            <td class="neg">$-0.24</td>
             <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP &gt;= 0.985 (or +25% gain if Bid &gt;= 0.88), or Stop-Loss &lt;= 0.418 if P_est &lt;= 70%</small></td>
         </tr>
         
@@ -261,6 +261,19 @@
     </thead>
     <tbody>
       
+        <tr class="">
+            <td>Will Bitcoin dip to $64,000 on November 14?<br><small class="muted">First-passage dip model: BTCUSDT=$65,586.10 -&gt; barrier=$64,000 (-2.42%), vol_h=0.50%, tau=11.3h =&gt; P(touch)=19.4% -&gt; Calibrated(0.75x)=20.1%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>NO</td>
+            <td>79.9%</td>
+            <td>86.5%</td>
+            <td class="muted">-6.6 п.п.</td>
+            <td class="neg">3.90%</td>
+            <td>$23,832</td>
+            <td>11.3h</td>
+            <td><strong>REJECTED: Edge -6.6 pp &lt; 2 pp threshold (P_est=79.9% vs AskVWAP=86.5%)</strong></td>
+        </tr>
+        
         <tr class="">
             <td>Will Ethereum dip to $1,750 on November 14?<br><small class="muted">First-passage dip model: ETHUSDT=$1,817.04 -&gt; barrier=$1,750 (-3.69%), vol_h=0.60%, tau=11.8h =&gt; P(touch)=10.4% -&gt; Calibrated(0.75x)=14.3%</small></td>
             <td><span class="badge cat-crypto">Crypto</span></td>
@@ -573,25 +586,11 @@
             <td><strong>REJECTED: CLOB round-trip slippage 3.00% &gt; 2.0% limit</strong></td>
         </tr>
         
-        <tr class="exec-row">
-            <td>Will Bitcoin dip to $66,000 November 9-15?<br><small class="muted">First-passage dip model: BTCUSDT=$66,704.40 -&gt; barrier=$66,000 (-1.06%), vol_h=0.50%, tau=49.0h =&gt; P(touch)=78.6% -&gt; Calibrated(0.75x)=77.4%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>77.4%</td>
-            <td>73.2%</td>
-            <td class="muted">+4.2 п.п.</td>
-            <td class="pos">0.90%</td>
-            <td>$42,992</td>
-            <td>49.0h</td>
-            <td><strong>EXECUTED BUY #187 ($2.19 @ 0.7310)</strong></td>
-        </tr>
-        
     </tbody>
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">r=50 | Evaluated=7 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.55 | Equity=$34.39 (DD=12.46%)
-[2026-11-14 10:39:57 UTC] [CYCLE #1309 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=7 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.55 | Equity=$34.44 (DD=12.36%)
+  <pre class="log-box">r=50 | Evaluated=7 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.55 | Equity=$34.44 (DD=12.36%)
 [2026-11-14 10:49:05 UTC] [CYCLE #1310 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.55 | Equity=$34.45 (DD=12.31%)
 [EXIT] #189 | Will China PR win on 2026-11-14? (YES)
   Shares: 3.03 | Entry VWAP: 0.6500 -&gt; Exit Bid VWAP: 0.6300
@@ -711,6 +710,7 @@
 [2026-11-14 17:10:13 UTC] [CYCLE #1351 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=6 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.74 | Equity=$34.42 (DD=12.39%)
 [2026-11-14 17:19:22 UTC] [CYCLE #1352 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=7 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.74 | Equity=$34.46 (DD=12.30%)
 [2026-11-14 17:30:51 UTC] [CYCLE #1353 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.74 | Equity=$34.48 (DD=12.25%)
+[2026-11-14 17:39:59 UTC] [CYCLE #1354 SUMMARY] Scanned=786 | PassedFilter=50 | Evaluated=4 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.74 | Equity=$34.48 (DD=12.24%)
 </pre>
 </body>
 </html>
