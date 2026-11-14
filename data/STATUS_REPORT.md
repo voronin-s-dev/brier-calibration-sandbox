@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-14 01:01:12 UTC`
+**Обновлено:** `2026-11-14 01:10:21 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -14,13 +14,13 @@
 ## 📂 Открытые позиции (8 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #175 | Fourth Jensen Huang affair reported by November 13? | Other | **NO** | `0.910` | `0.981` | `98.5%` | `$1.08` | `$+0.08` | reporting from the qualifying  |
-| #179 | Will the price of Ethereum be above $2,000 on November  | Crypto | **NO** | `0.920` | `0.984` | `98.5%` | `$1.08` | `$+0.08` | https://www.binance.com/en/tra |
-| #180 | Will the price of Bitcoin be above $70,000 on November  | Crypto | **NO** | `0.914` | `0.966` | `98.5%` | `$1.08` | `$+0.06` | https://www.binance.com/en/tra |
-| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.943` | `98.2%` | `$1.08` | `$+0.03` | https://x.com/elonmusk |
-| #182 | Will Bitcoin dip to $67,000 on November 13? | Crypto | **NO** | `0.903` | `0.920` | `97.2%` | `$1.09` | `$+0.02` | https://www.binance.com/en/tra |
+| #175 | Fourth Jensen Huang affair reported by November 13? | Other | **NO** | `0.910` | `0.982` | `98.5%` | `$1.08` | `$+0.09` | reporting from the qualifying  |
+| #179 | Will the price of Ethereum be above $2,000 on November  | Crypto | **NO** | `0.920` | `0.980` | `98.5%` | `$1.08` | `$+0.07` | https://www.binance.com/en/tra |
+| #180 | Will the price of Bitcoin be above $70,000 on November  | Crypto | **NO** | `0.914` | `0.965` | `98.5%` | `$1.08` | `$+0.06` | https://www.binance.com/en/tra |
+| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.946` | `98.2%` | `$1.08` | `$+0.03` | https://x.com/elonmusk |
+| #182 | Will Bitcoin dip to $67,000 on November 13? | Crypto | **NO** | `0.903` | `0.921` | `95.9%` | `$1.09` | `$+0.02` | https://www.binance.com/en/tra |
 | #183 | Spread: Colorado (-4.5) | Sports | **NO** | `0.870` | `0.840` | `97.5%` | `$1.45` | `$-0.05` | https://www.ncaa.com/ |
-| #184 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **YES** | `0.910` | `0.941` | `97.9%` | `$1.08` | `$+0.04` | https://www.binance.com/en/tra |
+| #184 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **YES** | `0.910` | `0.941` | `97.8%` | `$1.08` | `$+0.04` | https://www.binance.com/en/tra |
 | #186 | Will the FAA's nationwide ground stop be lifted by Nove | Other | **NO** | `0.910` | `0.880` | `94.0%` | `$1.12` | `$-0.04` | official information from the  |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
@@ -48,6 +48,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will the FAA's nationwide ground stop be lifted by | Other | NO | `72.5%` | `68.0%` | `+4.5 п.п.` | `2.00%` | REJECTED: Max open positions (8) reached |
 | Will the FAA's nationwide ground stop be lifted by | Other | NO | `78.5%` | `74.0%` | `+4.5 п.п.` | `2.00%` | REJECTED: Max open positions (8) reached |
 | Will the FAA's nationwide ground stop be lifted by | Other | NO | `94.0%` | `91.0%` | `+3.0 п.п.` | `2.00%` | EXECUTED BUY #186 ($1.12 @ 0.9100) |
 | Will the FAA's nationwide ground stop be lifted by | Other | NO | `78.2%` | `69.0%` | `+9.2 п.п.` | `1.00%` | EXECUTED BUY #185 ($2.91 @ 0.6900) |
@@ -65,4 +66,3 @@
 | Will the price of Bitcoin be between $68,000 and $ | Crypto | YES | `88.1%` | `82.6%` | `+5.5 п.п.` | `4.00%` | REJECTED: CLOB round-trip slippage 4.00% > 2.0% limit |
 | Will the price of Bitcoin be between $68,000 and $ | Crypto | YES | `87.1%` | `77.7%` | `+9.4 п.п.` | `0.40%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
 | Will the price of Bitcoin be between $68,000 and $ | Crypto | YES | `86.1%` | `77.7%` | `+8.4 п.п.` | `2.20%` | REJECTED: CLOB round-trip slippage 2.20% > 2.0% limit |
-| Will the price of Bitcoin be above $70,000 on Nove | Crypto | NO | `89.2%` | `81.0%` | `+8.2 п.п.` | `1.40%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 13) |
