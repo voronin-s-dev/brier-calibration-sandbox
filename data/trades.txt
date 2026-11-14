@@ -3881,3 +3881,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: Terminal range model: BTCUSDT=$65,304.00 in [$66,000, $68,000], vol_h=0.50%, tau=24.3h => P=27.6% -> Calibrated(0.75x)=28.6%
 
 [2026-11-14 16:40:00 UTC] [CYCLE #1348 SUMMARY] Scanned=779 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=2 | Opened=2 (Shadow=0) | Closed=0 | Cash=$27.14 | Equity=$33.53 (DD=14.66%)
+[EXIT] #194 | Will Bitcoin dip to $65,000 on November 14? (YES)
+  Shares: 3.64 | Entry VWAP: 0.7400 -> Exit Bid VWAP: 0.9900
+  Proceeds: $3.60 | Realized PnL: $+0.91 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.0%) secured early with +33.8% gain
+[2026-11-14 16:49:12 UTC] [CYCLE #1349 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$30.74 | Equity=$34.35 (DD=12.57%)
