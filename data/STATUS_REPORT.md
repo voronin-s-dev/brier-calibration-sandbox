@@ -1,22 +1,22 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-14 03:31:05 UTC`
+**Обновлено:** `2026-11-14 03:40:14 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$34.83 USDC`** (`-15.17$` / `-30.34%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$31.60` / `$3.23 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-15.17 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `11.35%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$34.72 USDC`** (`-15.28$` / `-30.57%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$31.60` / `$3.12 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-15.28 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `11.65%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `182` / `69.2%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (3 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #180 | Will the price of Bitcoin be above $70,000 on November  | Crypto | **NO** | `0.914` | `0.980` | `98.5%` | `$1.08` | `$+0.08` | https://www.binance.com/en/tra |
-| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.937` | `98.1%` | `$1.08` | `$+0.02` | https://x.com/elonmusk |
-| #184 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **YES** | `0.910` | `0.820` | `72.5%` | `$1.08` | `$-0.11` | https://www.binance.com/en/tra |
+| #180 | Will the price of Bitcoin be above $70,000 on November  | Crypto | **NO** | `0.914` | `0.977` | `98.5%` | `$1.08` | `$+0.07` | https://www.binance.com/en/tra |
+| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.945` | `98.4%` | `$1.08` | `$+0.03` | https://x.com/elonmusk |
+| #184 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **YES** | `0.910` | `0.717` | `70.5%` | `$1.08` | `$-0.23` | https://www.binance.com/en/tra |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -43,6 +43,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Bitcoin reach $70,000 November 9-15? | Crypto | YES | `99.5%` | `12.0%` | `+87.5 п.п.` | `1.00%` | REJECTED: Contract price $0.120 outside sweet spot [$0.60, $0.92] |
 | Will Bitcoin reach $70,000 November 9-15? | Crypto | YES | `99.5%` | `15.0%` | `+84.5 п.п.` | `1.46%` | REJECTED: Contract price $0.150 outside sweet spot [$0.60, $0.92] |
 | Will the price of Bitcoin be above $66,000 on Nove | Crypto | YES | `94.0%` | `89.1%` | `+5.0 п.п.` | `0.70%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 14) |
 | Will the price of Bitcoin be between $68,000 and $ | Crypto | NO | `74.1%` | `78.9%` | `-4.8 п.п.` | `1.70%` | REJECTED: Edge -4.8 pp < 2 pp threshold (P_est=74.1% vs AskVWAP=78.9%) |
@@ -60,4 +61,3 @@
 | Will the FAA's nationwide ground stop be lifted by | Other | NO | `78.5%` | `74.0%` | `+4.5 п.п.` | `2.00%` | REJECTED: Max open positions (8) reached |
 | Will the FAA's nationwide ground stop be lifted by | Other | NO | `94.0%` | `91.0%` | `+3.0 п.п.` | `2.00%` | EXECUTED BUY #186 ($1.12 @ 0.9100) |
 | Will the FAA's nationwide ground stop be lifted by | Other | NO | `78.2%` | `69.0%` | `+9.2 п.п.` | `1.00%` | EXECUTED BUY #185 ($2.91 @ 0.6900) |
-| Will the FAA's nationwide ground stop be lifted by | Other | NO | `72.0%` | `63.0%` | `+9.0 п.п.` | `1.00%` | REJECTED: Max open positions (8) reached |
