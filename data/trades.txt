@@ -3659,3 +3659,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-14 01:19:22 UTC] [CYCLE #1247 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.87 | Equity=$36.18 (DD=7.91%)
 [2026-11-14 01:30:53 UTC] [CYCLE #1248 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=15 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.87 | Equity=$36.07 (DD=8.19%)
 [2026-11-14 01:40:04 UTC] [CYCLE #1249 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.87 | Equity=$36.10 (DD=8.13%)
+[EXIT] #186 | Will the FAA's nationwide ground stop be lifted by November 13, 10:00 PM ET? (NO)
+  Shares: 1.23 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.0000
+  Proceeds: $0.00 | Realized PnL: $-1.12 USDC | Reason: THESIS INVALIDATED (Prob Shift > 8.0pp & P_est <= 70%): Estimate dropped from 94.0% to 1.5% (Bid VWAP: $0.000)
+[2026-11-14 01:49:14 UTC] [CYCLE #1250 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$27.87 | Equity=$36.11 (DD=8.11%)
