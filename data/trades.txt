@@ -3641,3 +3641,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 
 [2026-11-14 00:30:52 UTC] [CYCLE #1242 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=1 | Cash=$25.23 | Equity=$36.28 (DD=7.66%)
 [2026-11-14 00:40:00 UTC] [CYCLE #1243 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.23 | Equity=$36.60 (DD=6.84%)
+[EXIT] #185 | Will the FAA's nationwide ground stop be lifted by November 13, 10:00 PM ET? (NO)
+  Shares: 4.22 | Entry VWAP: 0.6900 -> Exit Bid VWAP: 0.8900
+  Proceeds: $3.75 | Realized PnL: $+0.84 USDC | Reason: TAKE PROFIT (Sweet Spot +25% Lock): Live CLOB Bid VWAP (89.0%) secured early with +29.0% net gain
+[2026-11-14 00:49:08 UTC] [OPEN TRADE #186] Will the FAA's nationwide ground stop be lifted by November 13, 10:00 PM ET?
+  Категория: Other | Сторона: NO | Источник: official information from the FAA & the Department of Transportation; however, a consensus of credible reporting may also be used
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.890, BestAsk=0.910, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=33.3%, Четверть(0.25x)=13.3% -> Применён=3.0% банка
+  Размер сделки: $1.12 USDC (1.23 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: High market consensus NO (90.5%) within 2.2h of expiry
+
+[2026-11-14 00:49:08 UTC] [CYCLE #1244 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=1 | Cash=$27.87 | Equity=$37.17 (DD=5.40%)
