@@ -3925,3 +3925,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 3.17 | Entry VWAP: 0.7310 -> Exit Bid VWAP: 0.7060
   Proceeds: $2.24 | Realized PnL: $-0.08 USDC | Reason: THESIS INVALIDATED (Prob Shift > 8.0pp & P_est <= 70%): Estimate dropped from 77.6% to 68.8% (Bid VWAP: $0.706)
 [2026-11-14 19:30:51 UTC] [CYCLE #1365 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$28.76 | Equity=$34.16 (DD=13.06%)
+[SHADOW EXIT] #31 | Total Kills Over/Under 27.5 in Game 3? (YES)
+  Shares: 2.25 | Entry VWAP: 0.5100 -> Exit Bid VWAP: 0.2400
+  Proceeds: $0.54 | Realized PnL: $-0.61 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 52.9% from entry (0.5100 -> 0.2400)
+[2026-11-14 19:39:57 UTC] [CYCLE #1366 SUMMARY] Scanned=776 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.76 | Equity=$34.37 (DD=12.53%)
