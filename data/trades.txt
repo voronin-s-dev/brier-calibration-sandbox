@@ -4003,3 +4003,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus NO (90.0%) within 7.0h of expiry
 
 [2026-11-14 22:01:02 UTC] [CYCLE #1383 SUMMARY] Scanned=764 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=6 | Opened=1 (Shadow=0) | Closed=1 | Cash=$24.31 | Equity=$31.70 (DD=19.33%)
+[EXIT] #192 | Will Bitcoin dip to $62,000 November 9-15? (NO)
+  Shares: 3.49 | Entry VWAP: 0.7830 -> Exit Bid VWAP: 0.4450
+  Proceeds: $1.55 | Realized PnL: $-1.18 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.445 (-43.2% from entry $0.783, P_est=72.1%)
+[2026-11-14 22:10:09 UTC] [CYCLE #1384 SUMMARY] Scanned=782 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=4 | Opened=0 (Shadow=0) | Closed=1 | Cash=$25.86 | Equity=$30.84 (DD=21.50%)
