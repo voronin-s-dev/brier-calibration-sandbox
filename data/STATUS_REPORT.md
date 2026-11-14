@@ -1,23 +1,23 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-14 02:07:56 UTC`
+**Обновлено:** `2026-11-14 02:08:17 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$36.06 USDC`** (`-13.94$` / `-27.87%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Текущий баланс (Equity)** | **`$36.07 USDC`** (`-13.93$` / `-27.87%`) | Cash + Mark-to-Market по CLOB Bid |
 | **Свободный кэш / В сделках** | `$29.02` / `$7.04 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-13.94 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `8.22%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Цель окупаемости подписки** | `$-13.93 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `8.20%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `179` / `69.8%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (6 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #175 | Fourth Jensen Huang affair reported by November 13? | Other | **NO** | `0.910` | `0.981` | `98.5%` | `$1.08` | `$+0.08` | reporting from the qualifying  |
-| #180 | Will the price of Bitcoin be above $70,000 on November  | Crypto | **NO** | `0.914` | `0.964` | `98.5%` | `$1.08` | `$+0.06` | https://www.binance.com/en/tra |
-| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.931` | `96.7%` | `$1.08` | `$+0.02` | https://x.com/elonmusk |
-| #182 | Will Bitcoin dip to $67,000 on November 13? | Crypto | **NO** | `0.903` | `0.931` | `97.2%` | `$1.09` | `$+0.03` | https://www.binance.com/en/tra |
+| #180 | Will the price of Bitcoin be above $70,000 on November  | Crypto | **NO** | `0.914` | `0.967` | `98.5%` | `$1.08` | `$+0.06` | https://www.binance.com/en/tra |
+| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.932` | `96.9%` | `$1.08` | `$+0.02` | https://x.com/elonmusk |
+| #182 | Will Bitcoin dip to $67,000 on November 13? | Crypto | **NO** | `0.903` | `0.931` | `97.0%` | `$1.09` | `$+0.03` | https://www.binance.com/en/tra |
 | #183 | Spread: Colorado (-4.5) | Sports | **NO** | `0.870` | `0.840` | `97.5%` | `$1.45` | `$-0.05` | https://www.ncaa.com/ |
 | #184 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **YES** | `0.910` | `0.941` | `98.2%` | `$1.08` | `$+0.04` | https://www.binance.com/en/tra |
 
