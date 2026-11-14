@@ -3627,3 +3627,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-14 00:01:11 UTC] [CYCLE #1239 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.05 | Equity=$36.28 (DD=7.66%)
 [2026-11-14 00:10:21 UTC] [CYCLE #1240 SUMMARY] Scanned=788 | PassedFilter=50 | Evaluated=15 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.05 | Equity=$36.29 (DD=7.64%)
 [2026-11-14 00:19:31 UTC] [CYCLE #1241 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.05 | Equity=$36.28 (DD=7.66%)
+[EXIT] #169 | Jazz vs. Rockets (NO)
+  Shares: 1.22 | Entry VWAP: 0.9200 -> Exit Bid VWAP: 0.9000
+  Proceeds: $1.10 | Realized PnL: $-0.02 USDC | Reason: TIME EXIT: 1.0h left to close (under 1.0h threshold, Bid VWAP: $0.900)
+[2026-11-14 00:30:52 UTC] [OPEN TRADE #185] Will the FAA's nationwide ground stop be lifted by November 13, 10:00 PM ET?
+  Категория: Other | Сторона: NO | Источник: official information from the FAA & the Department of Transportation; however, a consensus of credible reporting may also be used
+  Оценка бота: 78.2% vs Рынок (Ask VWAP): 69.0% (Перекос/Edge: +9.2 п.п.)
+  Стакан CLOB: BestBid=0.680, BestAsk=0.690, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=29.6%, Четверть(0.25x)=11.8% -> Применён=8.0% банка
+  Размер сделки: $2.91 USDC (4.22 shares @ $0.6900)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.414 if P_est <= 70%
+  Причина: CLOB near-touch depth imbalance OBI=-0.56 (BidDepth=$518 vs AskDepth=$1,816, mult=0.075) | News sentiment=-1.00 (12 articles; top: 'Flights halted at airports across US due to air traffic control communications problems - AP News')
+
+[2026-11-14 00:30:52 UTC] [CYCLE #1242 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=1 | Cash=$25.23 | Equity=$36.28 (DD=7.66%)
