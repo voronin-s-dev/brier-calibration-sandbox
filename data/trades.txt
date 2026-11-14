@@ -3990,3 +3990,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-14 21:30:50 UTC] [CYCLE #1380 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.11 | Equity=$32.09 (DD=18.32%)
 [2026-11-14 21:39:55 UTC] [CYCLE #1381 SUMMARY] Scanned=774 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.11 | Equity=$32.40 (DD=17.53%)
 [2026-11-14 21:49:00 UTC] [CYCLE #1382 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.11 | Equity=$31.93 (DD=18.74%)
+[EXIT] #199 | Will Ethereum dip to $1,700 November 9-15? (NO)
+  Shares: 3.94 | Entry VWAP: 0.6500 -> Exit Bid VWAP: 0.5580
+  Proceeds: $2.20 | Realized PnL: $-0.36 USDC | Reason: THESIS INVALIDATED (Prob Shift > 8.0pp & P_est <= 70%): Estimate dropped from 85.8% to 68.5% (Bid VWAP: $0.558)
+[2026-11-14 22:01:02 UTC] [OPEN TRADE #202] Will Bitcoin dip to $62,000 on November 14?
+  Категория: Crypto | Сторона: NO | Источник: https://www.binance.com/en/trade/BTC_USDT
+  Оценка бота: 93.5% vs Рынок (Ask VWAP): 88.3% (Перекос/Edge: +5.2 п.п.)
+  Стакан CLOB: BestBid=0.877, BestAsk=0.883, Проскальзывание входа/выхода=0.60% (<= 3.0%)
+  Келли: Полный=44.9%, Четверть(0.25x)=17.9% -> Применён=3.1% банка
+  Размер сделки: $1.00 USDC (1.13 shares @ $0.8830)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.530 if P_est <= 70%
+  Причина: High market consensus NO (90.0%) within 7.0h of expiry
+
+[2026-11-14 22:01:02 UTC] [CYCLE #1383 SUMMARY] Scanned=764 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=6 | Opened=1 (Shadow=0) | Closed=1 | Cash=$24.31 | Equity=$31.70 (DD=19.33%)

@@ -1,23 +1,23 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-14 21:49:03 UTC`
+**Обновлено:** `2026-11-14 22:01:07 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$31.93 USDC`** (`-18.07$` / `-36.14%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$23.11` / `$8.81 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-18.07 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `18.74%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
-| **Закрытых сделок / Win Rate** | `196` / `66.3%` | Brier Score: `0.1960` |
+| **Текущий баланс (Equity)** | **`$31.70 USDC`** (`-18.30$` / `-36.61%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$24.31` / `$7.38 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-18.30 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `19.33%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Закрытых сделок / Win Rate** | `197` / `66.0%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (4 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #192 | Will Bitcoin dip to $62,000 November 9-15? | Crypto | **NO** | `0.783` | `0.663` | `77.5%` | `$2.73` | `$-0.42` | Kraken BTCUSDT 1m/1h Spot Klin |
-| #199 | Will Ethereum dip to $1,700 November 9-15? | Crypto | **NO** | `0.650` | `0.575` | `76.2%` | `$2.56` | `$-0.30` | Kraken ETHUSDT 1m/1h Spot Klin |
-| #200 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.662` | `0.700` | `71.4%` | `$1.58` | `$+0.09` | Kraken BTCUSDT 1m/1h Spot Klin |
-| #201 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.738` | `0.758` | `80.0%` | `$2.50` | `$+0.07` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #192 | Will Bitcoin dip to $62,000 November 9-15? | Crypto | **NO** | `0.783` | `0.611` | `73.0%` | `$2.73` | `$-0.60` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #200 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.662` | `0.713` | `75.2%` | `$1.58` | `$+0.12` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #201 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.738` | `0.755` | `77.4%` | `$2.50` | `$+0.06` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #202 | Will Bitcoin dip to $62,000 on November 14? | Crypto | **NO** | `0.883` | `0.877` | `93.5%` | `$1.00` | `$-0.01` | https://www.binance.com/en/tra |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -42,6 +42,8 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Bitcoin dip to $62,000 on November 14? | Crypto | NO | `93.5%` | `88.3%` | `+5.2 п.п.` | `0.60%` | EXECUTED BUY #202 ($1.00 @ 0.8830) |
+| Will Bitcoin dip to $63,000 on November 14? | Crypto | NO | `80.7%` | `74.3%` | `+6.4 п.п.` | `8.30%` | REJECTED: CLOB round-trip slippage 8.30% > 2.0% limit |
 | Will Bitcoin dip to $63,000 on November 14? | Crypto | NO | `84.8%` | `74.5%` | `+10.3 п.п.` | `6.50%` | REJECTED: CLOB round-trip slippage 6.50% > 2.0% limit |
 | Will the price of Bitcoin be above $62,000 on Nove | Crypto | YES | `73.2%` | `78.1%` | `-4.9 п.п.` | `4.50%` | REJECTED: Edge -4.9 pp < 2 pp threshold (P_est=73.2% vs AskVWAP=78.1%) |
 | Will the price of Bitcoin be above $66,000 on Nove | Crypto | NO | `81.6%` | `75.9%` | `+5.7 п.п.` | `0.10%` | REJECTED: Category cap reached (4/4 in Crypto) |
@@ -58,5 +60,3 @@
 | Will the price of Bitcoin be above $64,000 on Nove | Crypto | YES | `71.2%` | `69.4%` | `+1.8 п.п.` | `0.60%` | EXECUTED BUY #198 ($1.00 @ 0.6940) |
 | Will Bitcoin dip to $64,000 on November 14? | Crypto | NO | `88.2%` | `76.6%` | `+11.6 п.п.` | `1.00%` | EXECUTED BUY #197 ($2.74 @ 0.7660) |
 | Will Bitcoin dip to $64,000 on November 14? | Crypto | NO | `88.5%` | `83.8%` | `+4.7 п.п.` | `4.80%` | REJECTED: CLOB round-trip slippage 4.80% > 2.0% limit |
-| Will the price of Ethereum be above $1,800 on Nove | Crypto | YES | `77.6%` | `73.1%` | `+4.5 п.п.` | `0.80%` | EXECUTED BUY #196 ($2.32 @ 0.7310) |
-| Will Ethereum dip to $1,800 on November 14? | Crypto | NO | `71.1%` | `58.2%` | `+12.9 п.п.` | `6.10%` | REJECTED: Contract price $0.582 outside sweet spot [$0.60, $0.92] |
