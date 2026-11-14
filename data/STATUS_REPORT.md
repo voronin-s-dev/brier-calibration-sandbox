@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-14 04:01:10 UTC`
+**Обновлено:** `2026-11-14 04:10:19 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -14,8 +14,8 @@
 ## 📂 Открытые позиции (2 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.958` | `98.5%` | `$1.08` | `$+0.05` | https://x.com/elonmusk |
-| #187 | Will Bitcoin dip to $66,000 November 9-15? | Crypto | **YES** | `0.731` | `0.723` | `77.4%` | `$2.19` | `$-0.02` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.963` | `98.5%` | `$1.08` | `$+0.05` | https://x.com/elonmusk |
+| #187 | Will Bitcoin dip to $66,000 November 9-15? | Crypto | **YES** | `0.731` | `0.721` | `76.7%` | `$2.19` | `$-0.03` | Kraken BTCUSDT 1m/1h Spot Klin |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |

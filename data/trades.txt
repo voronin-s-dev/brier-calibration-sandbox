@@ -3706,3 +3706,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: First-passage dip model: BTCUSDT=$66,704.40 -> barrier=$66,000 (-1.06%), vol_h=0.50%, tau=49.0h => P(touch)=78.6% -> Calibrated(0.75x)=77.4%
 
 [2026-11-14 04:01:03 UTC] [CYCLE #1266 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=15 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=1 | Cash=$31.43 | Equity=$34.72 (DD=11.63%)
+[2026-11-14 04:10:12 UTC] [CYCLE #1267 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$31.43 | Equity=$34.72 (DD=11.63%)
