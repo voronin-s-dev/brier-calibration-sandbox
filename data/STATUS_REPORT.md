@@ -1,22 +1,22 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-14 14:10:23 UTC`
+**Обновлено:** `2026-11-14 14:19:31 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$34.53 USDC`** (`-15.47$` / `-30.94%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$28.70` / `$5.83 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-15.47 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `12.12%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$34.50 USDC`** (`-15.50$` / `-31.00%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$28.70` / `$5.80 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-15.50 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `12.19%` / `24.45%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `186` / `68.3%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (3 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.777` | `97.5%` | `$1.08` | `$-0.17` | https://x.com/elonmusk |
-| #188 | Will the price of Bitcoin be above $68,000 on November  | Crypto | **NO** | `0.787` | `0.966` | `98.5%` | `$1.61` | `$+0.37` | Kraken BTCUSDT 1m/1h Spot Klin |
-| #190 | Will Bitcoin dip to $66,000 November 9-15? | Crypto | **YES** | `0.710` | `0.755` | `75.3%` | `$2.76` | `$+0.17` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #181 | Will Elon Musk post 90-114 tweets from November 12 to N | Geopolitics | **NO** | `0.918` | `0.742` | `97.5%` | `$1.08` | `$-0.21` | https://x.com/elonmusk |
+| #188 | Will the price of Bitcoin be above $68,000 on November  | Crypto | **NO** | `0.787` | `0.975` | `98.5%` | `$1.61` | `$+0.38` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #190 | Will Bitcoin dip to $66,000 November 9-15? | Crypto | **YES** | `0.710` | `0.754` | `76.3%` | `$2.76` | `$+0.17` | Kraken BTCUSDT 1m/1h Spot Klin |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -43,6 +43,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Ethereum dip to $1,800 November 9-15? | Crypto | NO | `74.2%` | `68.3%` | `+5.9 п.п.` | `3.50%` | REJECTED: CLOB round-trip slippage 3.50% > 2.0% limit |
 | Will Bitcoin dip to $66,000 November 9-15? | Crypto | YES | `77.6%` | `71.0%` | `+6.6 п.п.` | `1.40%` | EXECUTED BUY #190 ($2.76 @ 0.7100) |
 | Will China PR win on 2026-11-14? | Geopolitics | YES | `70.0%` | `65.0%` | `+5.0 п.п.` | `1.00%` | EXECUTED BUY #189 ($1.97 @ 0.6500) |
 | Will the price of Bitcoin be above $68,000 on Nove | Crypto | NO | `81.2%` | `78.7%` | `+2.5 п.п.` | `0.10%` | EXECUTED BUY #188 ($1.61 @ 0.7870) |
@@ -60,4 +61,3 @@
 | Will the price of Bitcoin be between $68,000 and $ | Crypto | NO | `75.0%` | `64.8%` | `+10.2 п.п.` | `1.30%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 14) |
 | Will the price of Bitcoin be above $68,000 on Nove | Crypto | NO | `72.9%` | `63.4%` | `+9.5 п.п.` | `0.10%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 14) |
 | Will the price of Bitcoin be between $68,000 and $ | Crypto | NO | `74.8%` | `69.5%` | `+5.3 п.п.` | `0.10%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 14) |
-| Will the price of Bitcoin be above $68,000 on Nove | Crypto | NO | `72.9%` | `68.2%` | `+4.7 п.п.` | `0.10%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 14) |
