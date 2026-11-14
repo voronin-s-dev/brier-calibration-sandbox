@@ -3674,3 +3674,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 1.67 | Entry VWAP: 0.8700 -> Exit Bid VWAP: 0.8400
   Proceeds: $1.40 | Realized PnL: $-0.05 USDC | Reason: TIME EXIT: 1.0h left to close (under 1.0h threshold, Bid VWAP: $0.840)
 [2026-11-14 02:17:19 UTC] [CYCLE #1255 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=14 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$30.42 | Equity=$36.07 (DD=8.21%)
+[2026-11-14 02:26:26 UTC] [CYCLE #1256 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$30.42 | Equity=$35.84 (DD=8.78%)
