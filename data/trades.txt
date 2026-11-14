@@ -3771,3 +3771,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-14 10:30:50 UTC] [CYCLE #1308 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.55 | Equity=$34.39 (DD=12.46%)
 [2026-11-14 10:39:57 UTC] [CYCLE #1309 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.55 | Equity=$34.44 (DD=12.36%)
 [2026-11-14 10:49:05 UTC] [CYCLE #1310 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.55 | Equity=$34.45 (DD=12.31%)
+[EXIT] #189 | Will China PR win on 2026-11-14? (YES)
+  Shares: 3.03 | Entry VWAP: 0.6500 -> Exit Bid VWAP: 0.6300
+  Proceeds: $1.91 | Realized PnL: $-0.06 USDC | Reason: TIME EXIT: 1.0h left to close (under 1.0h threshold, Bid VWAP: $0.630)
+[2026-11-14 11:01:09 UTC] [CYCLE #1311 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$31.46 | Equity=$34.35 (DD=12.57%)
