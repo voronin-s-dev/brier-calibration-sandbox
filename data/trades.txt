@@ -4095,3 +4095,22 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-15 02:01:03 UTC] [CYCLE #1409 SUMMARY] Scanned=799 | PassedFilter=47 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.89 | Equity=$29.85 (DD=24.04%)
 [2026-11-15 02:10:09 UTC] [CYCLE #1410 SUMMARY] Scanned=780 | PassedFilter=43 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.89 | Equity=$29.65 (DD=24.54%)
 [2026-11-15 02:19:14 UTC] [CYCLE #1411 SUMMARY] Scanned=800 | PassedFilter=43 | Evaluated=1 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.89 | Equity=$29.52 (DD=24.86%)
+[SHADOW EXIT] #41 | Will the price of Bitcoin be above $66,000 on November 19? (NO)
+  Shares: 3.20 | Entry VWAP: 0.7100 -> Exit Bid VWAP: 0.5900
+  Proceeds: $1.89 | Realized PnL: $-0.38 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 9.5 pp (0.747 -> 0.652)
+[SHADOW EXIT] #42 | Will the price of Bitcoin be above $64,000 on November 17? (NO)
+  Shares: 3.95 | Entry VWAP: 0.6300 -> Exit Bid VWAP: 0.3820
+  Proceeds: $1.51 | Realized PnL: $-0.98 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 39.4% from entry (0.6300 -> 0.3820)
+[SHADOW EXIT] #44 | Will the price of Ethereum be above $1,800 on November 17? (NO)
+  Shares: 3.45 | Entry VWAP: 0.7560 -> Exit Bid VWAP: 0.4400
+  Proceeds: $1.52 | Realized PnL: $-1.09 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 41.8% from entry (0.7560 -> 0.4400)
+[SHADOW EXEC] #45 | Will Bitcoin reach $68,000 November 9-15? (NO)
+  Category: Crypto | Shares: 3.75 @ 0.8100
+  Bet: $3.04 USDC | P_est: 90.0% | Edge: +9.0 pp
+[SHADOW EXEC] #46 | Will the price of Bitcoin be above $66,000 on November 16? (NO)
+  Category: Crypto | Shares: 3.81 @ 0.6620
+  Bet: $2.52 USDC | P_est: 73.4% | Edge: +7.2 pp
+[SHADOW EXEC] #47 | Will the price of Bitcoin be above $62,000 on November 19? (YES)
+  Category: Crypto | Shares: 1.99 @ 0.6990
+  Bet: $1.39 USDC | P_est: 72.6% | Edge: +2.7 pp
+[2026-11-15 02:30:56 UTC] [CYCLE #1412 SUMMARY] Scanned=793 | PassedFilter=39 | Evaluated=1 | Edges(>=8pp)=1 | Opened=0 (Shadow=3) | Closed=0 | Cash=$27.89 | Equity=$29.47 (DD=25.00%)
