@@ -4191,3 +4191,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-15 05:30:48 UTC] [CYCLE #1430 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.89 | Equity=$29.47 (DD=25.00%)
 [2026-11-15 05:39:52 UTC] [CYCLE #1431 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.89 | Equity=$29.48 (DD=24.97%)
 [2026-11-15 05:48:55 UTC] [CYCLE #1432 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.89 | Equity=$29.51 (DD=24.90%)
+[SHADOW EXIT] #52 | Will the price of Bitcoin be above $66,000 on November 17? (NO)
+  Shares: 2.48 | Entry VWAP: 0.5690 -> Exit Bid VWAP: 0.6520
+  Proceeds: $1.62 | Realized PnL: $+0.21 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +14.6% >= +12% (Bid VWAP: 0.6520 vs Entry: 0.5690)
+[SHADOW EXIT] #53 | Will the price of Bitcoin be above $66,000 on November 15? (NO)
+  Shares: 2.00 | Entry VWAP: 0.7760 -> Exit Bid VWAP: 0.8980
+  Proceeds: $1.79 | Realized PnL: $+0.24 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +15.7% >= +12% (Bid VWAP: 0.8980 vs Entry: 0.7760)
+[SHADOW EXEC] #56 | Will Bitcoin dip to $62,000 on November 15? (NO)
+  Category: Crypto | Shares: 3.52 @ 0.7300
+  Bet: $2.57 USDC | P_est: 81.6% | Edge: +8.6 pp
+[2026-11-15 06:01:04 UTC] [CYCLE #1433 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=2 | Opened=0 (Shadow=1) | Closed=0 | Cash=$26.89 | Equity=$29.62 (DD=24.61%)
