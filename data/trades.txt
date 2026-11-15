@@ -4236,3 +4236,22 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-15 08:30:49 UTC] [CYCLE #1451 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.89 | Equity=$29.62 (DD=24.60%)
 [2026-11-15 08:39:52 UTC] [CYCLE #1452 SUMMARY] Scanned=785 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.89 | Equity=$29.60 (DD=24.67%)
 [2026-11-15 08:48:55 UTC] [CYCLE #1453 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.89 | Equity=$29.56 (DD=24.76%)
+[SHADOW EXIT] #56 | Will Bitcoin dip to $62,000 on November 15? (NO)
+  Shares: 3.52 | Entry VWAP: 0.7300 -> Exit Bid VWAP: 0.8200
+  Proceeds: $2.89 | Realized PnL: $+0.32 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +12.3% >= +12% (Bid VWAP: 0.8200 vs Entry: 0.7300)
+[SHADOW EXIT] #58 | Will the price of Bitcoin be above $66,000 on November 16? (NO)
+  Shares: 2.02 | Entry VWAP: 0.7510 -> Exit Bid VWAP: 0.5920
+  Proceeds: $1.20 | Realized PnL: $-0.32 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 13.1 pp (0.775 -> 0.644)
+[SHADOW EXIT] #59 | Will the price of Bitcoin be above $64,000 on November 18? (NO)
+  Shares: 3.18 | Entry VWAP: 0.4530 -> Exit Bid VWAP: 0.3020
+  Proceeds: $0.96 | Realized PnL: $-0.48 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 13.1 pp (0.482 -> 0.351)
+[2026-11-15 09:01:06 UTC] [OPEN TRADE #205] Will France vs. Türkiye end in a draw?
+  Категория: Sports | Сторона: NO | Источник: https://www.uefa.com/uefanationsleague/
+  Оценка бота: 96.5% vs Рынок (Ask VWAP): 89.0% (Перекос/Edge: +7.5 п.п.)
+  Стакан CLOB: BestBid=0.880, BestAsk=0.890, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=68.2%, Четверть(0.25x)=27.3% -> Применён=3.4% банка
+  Размер сделки: $1.00 USDC (1.12 shares @ $0.8900)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.534 if P_est <= 70%
+  Причина: Lopsided match no-draw consensus with 10.7h left
+
+[2026-11-15 09:01:06 UTC] [CYCLE #1454 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$25.89 | Equity=$29.30 (DD=25.44%)

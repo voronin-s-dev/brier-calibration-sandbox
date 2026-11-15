@@ -1,49 +1,48 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-15 08:48:57 UTC`
+**Обновлено:** `2026-11-15 09:01:13 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$29.56 USDC`** (`-20.44$` / `-40.88%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$26.89` / `$2.67 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-20.44 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `24.76%` / `25.48%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$29.30 USDC`** (`-20.70$` / `-41.41%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$25.89` / `$3.41 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-20.70 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `25.44%` / `25.48%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `201` / `64.7%` | Brier Score: `0.1960` |
 
-## 📂 Открытые позиции (2 / 8)
+## 📂 Открытые позиции (3 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #200 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.662` | `0.705` | `74.9%` | `$1.58` | `$+0.10` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #200 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.662` | `0.598` | `64.4%` | `$1.58` | `$-0.15` | Kraken BTCUSDT 1m/1h Spot Klin |
 | #204 | Spurs vs. Jazz | Sports | **YES** | `0.920` | `0.910` | `95.0%` | `$1.00` | `$-0.01` | https://www.nba.com/ |
+| #205 | Will France vs. Türkiye end in a draw? | Sports | **NO** | `0.890` | `0.880` | `96.5%` | `$1.00` | `$-0.01` | https://www.uefa.com/uefanatio |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$51.07 USDC`** |
-| **Свободный кэш / В сделках** | `$40.93` / `$10.13 USDC` |
-| **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `10.78%` |
+| **Виртуальный баланс (Equity)** | **`$50.75 USDC`** |
+| **Свободный кэш / В сделках** | `$45.98` / `$4.77 USDC` |
+| **Открытых позиций** | `2 / 5` |
+| **Текущая просадка** | `11.34%` |
 
-### Открытые позиции в песочнице (5 / 5)
+### Открытые позиции в песочнице (2 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #49 | Will Ethereum dip to $1,700 November 9-15? | Crypto | **NO** | `0.776` | `0.788` | `90.0%` | `$3.05` | `$+0.05` | https://www.binance.com/en/tra |
-| #56 | Will Bitcoin dip to $62,000 on November 15? | Crypto | **NO** | `0.730` | `0.810` | `87.1%` | `$2.57` | `$+0.28` | https://www.binance.com/en/tra |
-| #57 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.760` | `0.837` | `82.9%` | `$1.44` | `$+0.15` | https://www.binance.com/en/tra |
-| #58 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.751` | `0.705` | `74.9%` | `$1.52` | `$-0.09` | https://www.binance.com/en/tra |
-| #59 | Will the price of Bitcoin be above $64,000 on November  | Crypto | **NO** | `0.453` | `0.369` | `42.4%` | `$1.44` | `$-0.27` | https://www.binance.com/en/tra |
+| #49 | Will Ethereum dip to $1,700 November 9-15? | Crypto | **NO** | `0.776` | `0.815` | `92.6%` | `$3.05` | `$+0.15` | https://www.binance.com/en/tra |
+| #57 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.760` | `0.826` | `87.8%` | `$1.44` | `$+0.13` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
 | :--- | :--- | :--- | :--- |
-| **Crypto** | `34` | `+$1.31` | `53%` |
+| **Crypto** | `37` | `+$0.82` | `51%` |
 | **Geopolitics** | `4` | `+$0.57` | `75%` |
 | **Other** | `16` | `-$0.93` | `44%` |
 
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will France vs. Türkiye end in a draw? | Sports | NO | `96.5%` | `89.0%` | `+7.5 п.п.` | `1.00%` | EXECUTED BUY #205 ($1.00 @ 0.8900) |
 | Spurs vs. Jazz | Sports | YES | `95.0%` | `92.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #204 ($1.00 @ 0.9200) |
 | Will Ethereum dip to $1,600 November 9-15? | Crypto | NO | `98.7%` | `88.4%` | `+10.3 п.п.` | `1.60%` | REJECTED: Category cap reached (4/4 in Crypto) |
 | Will the price of Bitcoin be above $66,000 on Nove | Crypto | NO | `77.2%` | `71.7%` | `+5.5 п.п.` | `0.20%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 17) |
@@ -61,4 +60,3 @@
 | Will the price of Ethereum be above $1,600 on Nove | Crypto | YES | `90.7%` | `85.9%` | `+4.8 п.п.` | `0.10%` | REJECTED: Category cap reached (4/4 in Crypto) |
 | Will Bitcoin reach $68,000 November 9-15? | Crypto | NO | `92.7%` | `87.0%` | `+5.7 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 9 - november 15) |
 | Will the price of Bitcoin be above $68,000 on Nove | Crypto | NO | `92.6%` | `87.8%` | `+4.8 п.п.` | `0.30%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 16) |
-| Will the price of Bitcoin be above $66,000 on Nove | Crypto | NO | `86.0%` | `81.4%` | `+4.6 п.п.` | `0.10%` | REJECTED: Category cap reached (4/4 in Crypto) |
