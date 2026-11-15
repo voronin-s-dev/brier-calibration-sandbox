@@ -4114,3 +4114,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 1.99 @ 0.6990
   Bet: $1.39 USDC | P_est: 72.6% | Edge: +2.7 pp
 [2026-11-15 02:30:56 UTC] [CYCLE #1412 SUMMARY] Scanned=793 | PassedFilter=39 | Evaluated=1 | Edges(>=8pp)=1 | Opened=0 (Shadow=3) | Closed=0 | Cash=$27.89 | Equity=$29.47 (DD=25.00%)
+[SHADOW EXIT] #39 | Will the price of Bitcoin be above $66,000 on November 15? (NO)
+  Shares: 3.65 | Entry VWAP: 0.8840 -> Exit Bid VWAP: 0.7830
+  Proceeds: $2.86 | Realized PnL: $-0.37 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 8.8 pp (0.926 -> 0.838)
+[SHADOW EXEC] #48 | Will the price of Bitcoin be above $66,000 on November 15? (NO)
+  Category: Crypto | Shares: 3.85 @ 0.7900
+  Bet: $3.04 USDC | P_est: 83.8% | Edge: +4.8 pp
+[2026-11-15 02:40:19 UTC] [CYCLE #1413 SUMMARY] Scanned=779 | PassedFilter=40 | Evaluated=1 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$27.89 | Equity=$29.42 (DD=25.12%)
