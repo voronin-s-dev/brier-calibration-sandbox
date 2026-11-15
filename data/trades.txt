@@ -4081,3 +4081,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 4.26 @ 0.7520
   Bet: $3.20 USDC | P_est: 82.2% | Edge: +7.0 pp
 [2026-11-15 01:30:49 UTC] [CYCLE #1406 SUMMARY] Scanned=788 | PassedFilter=45 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=2) | Closed=1 | Cash=$27.16 | Equity=$29.99 (DD=23.66%)
+[SHADOW EXIT] #38 | Will the price of Bitcoin be above $66,000 on November 16? (NO)
+  Shares: 4.22 | Entry VWAP: 0.7650 -> Exit Bid VWAP: 0.8620
+  Proceeds: $3.64 | Realized PnL: $+0.41 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +12.7% >= +12% (Bid VWAP: 0.8620 vs Entry: 0.7650)
+[SHADOW EXEC] #44 | Will the price of Ethereum be above $1,800 on November 17? (NO)
+  Category: Crypto | Shares: 3.45 @ 0.7560
+  Bet: $2.61 USDC | P_est: 78.1% | Edge: +2.5 pp
+[2026-11-15 01:39:56 UTC] [CYCLE #1407 SUMMARY] Scanned=789 | PassedFilter=43 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$27.16 | Equity=$29.92 (DD=23.85%)
