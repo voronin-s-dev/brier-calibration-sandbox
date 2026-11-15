@@ -77,7 +77,7 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-11-15 14:49:32 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-11-15 14:58:39 UTC</div>
     </div>
   </div>
 
@@ -111,8 +111,8 @@
     </div>
     <div class="card" style="border-left: 3px solid #8b5cf6;">
       <div class="metric-label">🧪 Shadow Sandbox (Песочница)</div>
-      <div class="metric-val">$53.04 <span class="muted" style="font-size:15px">(Старт: $50)</span></div>
-      <div class="metric-sub">Кэш: $45.79 | В сделках: $7.25 | Открыто: 3/5</div>
+      <div class="metric-val">$53.33 <span class="muted" style="font-size:15px">(Старт: $50)</span></div>
+      <div class="metric-sub">Кэш: $44.41 | В сделках: $8.92 | Открыто: 4/5</div>
     </div>
   </div>
 
@@ -152,7 +152,7 @@
     </tbody>
   </table>
 
-  <h2>🧪 Открытые позиции в песочнице (3 / 5)</h2>
+  <h2>🧪 Открытые позиции в песочнице (4 / 5)</h2>
   <table>
     <thead>
       <tr>
@@ -170,10 +170,10 @@
             <td><span class="side-no">NO</span></td>
             <td>3.52</td>
             <td>$0.8990</td>
-            <td>$0.8320</td>
-            <td><strong>92.7%</strong> <small>(+5.0pp)</small></td>
+            <td>$0.8590</td>
+            <td><strong>94.0%</strong> <small>(+5.0pp)</small></td>
             <td>$3.16</td>
-            <td class="neg">$-0.24</td>
+            <td class="neg">$-0.14</td>
             <td><small>Take-Profit (+12% or 98.5%+ bid), Stop-Loss (-35%), or Settlement</small></td>
         </tr>
         
@@ -184,10 +184,10 @@
             <td><span class="side-no">NO</span></td>
             <td>4.40</td>
             <td>$0.7200</td>
-            <td>$0.7100</td>
-            <td><strong>78.4%</strong> <small>(+8.7pp)</small></td>
+            <td>$0.7600</td>
+            <td><strong>80.2%</strong> <small>(+8.7pp)</small></td>
             <td>$3.17</td>
-            <td class="neg">$-0.04</td>
+            <td class="pos">$+0.18</td>
             <td><small>Take-Profit (+12% or 98.5%+ bid), Stop-Loss (-35%), or Settlement</small></td>
         </tr>
         
@@ -198,9 +198,23 @@
             <td><span class="side-no">NO</span></td>
             <td>1.68</td>
             <td>$0.7150</td>
-            <td>$0.7150</td>
-            <td><strong>73.8%</strong> <small>(+2.3pp)</small></td>
+            <td>$0.6970</td>
+            <td><strong>73.5%</strong> <small>(+2.3pp)</small></td>
             <td>$1.20</td>
+            <td class="neg">$-0.03</td>
+            <td><small>Take-Profit (+12% or 98.5%+ bid), Stop-Loss (-35%), or Settlement</small></td>
+        </tr>
+        
+        <tr>
+            <td>#70</td>
+            <td><strong>Will the price of Ethereum be above $1,800 on November 15?</strong><br><small class="muted">Terminal GBM model: ETHUSDT=$1,805.98 vs strike=$1,800 (+0.33%), vol_h=0.61%, tau=2.0h =&gt; P(S_T &gt; K)=63.2% -&gt; Calibrated(0.75x)=65.7%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td><span class="side-no">NO</span></td>
+            <td>5.59</td>
+            <td>$0.2470</td>
+            <td>$0.2470</td>
+            <td><strong>34.3%</strong> <small>(+9.6pp)</small></td>
+            <td>$1.38</td>
             <td class="pos">$+0.00</td>
             <td><small>Take-Profit (+12% or 98.5%+ bid), Stop-Loss (-35%), or Settlement</small></td>
         </tr>
@@ -590,11 +604,7 @@
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">aluated=2 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.89 | Equity=$29.67 (DD=24.48%)
-[SHADOW EXIT] #54 | Will Bitcoin dip to $62,000 November 9-15? (NO)
-  Shares: 3.90 | Entry VWAP: 0.7900 -&gt; Exit Bid VWAP: 0.6290
-  Proceeds: $2.45 | Realized PnL: $-0.63 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 8.7 pp (0.862 -&gt; 0.775)
-[SHADOW EXEC] #59 | Will the price of Bitcoin be above $64,000 on November 18? (NO)
+  <pre class="log-box">HADOW EXEC] #59 | Will the price of Bitcoin be above $64,000 on November 18? (NO)
   Category: Crypto | Shares: 3.18 @ 0.4530
   Bet: $1.44 USDC | P_est: 48.2% | Edge: +2.9 pp
 [2026-11-15 07:37:41 UTC] [CYCLE #1445 SUMMARY] Scanned=784 | PassedFilter=50 | Evaluated=2 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$26.89 | Equity=$29.67 (DD=24.48%)
@@ -721,6 +731,10 @@
   Category: Crypto | Shares: 1.68 @ 0.7150
   Bet: $1.20 USDC | P_est: 73.8% | Edge: +2.3 pp
 [2026-11-15 14:49:26 UTC] [CYCLE #1490 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$27.11 | Equity=$29.08 (DD=25.99%)
+[SHADOW EXEC] #70 | Will the price of Ethereum be above $1,800 on November 15? (NO)
+  Category: Crypto | Shares: 5.59 @ 0.2470
+  Bet: $1.38 USDC | P_est: 34.3% | Edge: +9.6 pp
+[2026-11-15 14:58:33 UTC] [CYCLE #1491 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=1 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$27.11 | Equity=$29.08 (DD=25.99%)
 </pre>
 </body>
 </html>
