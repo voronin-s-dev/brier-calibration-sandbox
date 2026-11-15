@@ -4129,3 +4129,22 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $3.05 USDC | P_est: 88.0% | Edge: +10.4 pp
 [2026-11-15 02:49:22 UTC] [CYCLE #1414 SUMMARY] Scanned=800 | PassedFilter=42 | Evaluated=1 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$27.89 | Equity=$29.44 (DD=25.08%)
 [2026-11-15 03:01:09 UTC] [CYCLE #1415 SUMMARY] Scanned=799 | PassedFilter=37 | Evaluated=1 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.89 | Equity=$29.37 (DD=25.25%)
+[SHADOW EXIT] #46 | Will the price of Bitcoin be above $66,000 on November 16? (NO)
+  Shares: 3.81 | Entry VWAP: 0.6620 -> Exit Bid VWAP: 0.5820
+  Proceeds: $2.22 | Realized PnL: $-0.30 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 8.9 pp (0.734 -> 0.645)
+[SHADOW EXIT] #47 | Will the price of Bitcoin be above $62,000 on November 19? (YES)
+  Shares: 1.99 | Entry VWAP: 0.6990 -> Exit Bid VWAP: 0.8020
+  Proceeds: $1.59 | Realized PnL: $+0.20 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +14.7% >= +12% (Bid VWAP: 0.8020 vs Entry: 0.6990)
+[SHADOW EXIT] #48 | Will the price of Bitcoin be above $66,000 on November 15? (NO)
+  Shares: 3.85 | Entry VWAP: 0.7900 -> Exit Bid VWAP: 0.6780
+  Proceeds: $2.61 | Realized PnL: $-0.43 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 9.5 pp (0.838 -> 0.743)
+[SHADOW EXEC] #50 | Will the price of Bitcoin be above $66,000 on November 15? (NO)
+  Category: Crypto | Shares: 2.02 @ 0.6840
+  Bet: $1.38 USDC | P_est: 74.3% | Edge: +5.9 pp
+[SHADOW EXEC] #51 | Will the price of Bitcoin be above $66,000 on November 16? (NO)
+  Category: Crypto | Shares: 2.73 @ 0.5830
+  Bet: $1.59 USDC | P_est: 64.8% | Edge: +6.5 pp
+[SHADOW EXEC] #52 | Will the price of Bitcoin be above $66,000 on November 17? (NO)
+  Category: Crypto | Shares: 2.48 @ 0.5690
+  Bet: $1.41 USDC | P_est: 61.8% | Edge: +4.9 pp
+[2026-11-15 03:10:14 UTC] [CYCLE #1416 SUMMARY] Scanned=798 | PassedFilter=37 | Evaluated=1 | Edges(>=8pp)=1 | Opened=0 (Shadow=3) | Closed=0 | Cash=$27.89 | Equity=$29.28 (DD=25.48%)
