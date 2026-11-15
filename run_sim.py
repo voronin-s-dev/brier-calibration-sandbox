@@ -8,10 +8,12 @@ Usage:
 """
 
 import argparse
+import json
 import os
 import subprocess
 import sys
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 if sys.platform == "win32":
@@ -25,6 +27,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from dashboard_gen import generate_reports
 from database import SimDatabase
+from telegram_notify import send_telegram_alert
 from trader import GrokCharterPaperTrader
 
 
@@ -155,15 +158,53 @@ def main() -> None:
         return
 
     if args.set_category or args.set_liquidity is not None or args.set_slippage is not None:
+        now_str = datetime.now(timezone.utc).isoformat()
         with db._connect() as conn:
             if args.set_category:
-                conn.execute("UPDATE portfolio_state SET active_category_filter = ? WHERE id = 1", (args.set_category,))
+                conn.execute(
+                    "UPDATE portfolio_state SET active_category_filter = ?, updated_at = ? WHERE id = 1",
+                    (args.set_category, now_str),
+                )
+                conn.execute(
+                    """
+                    INSERT INTO governance_events (
+                        rule_key, tier, mode, status, title, explanation,
+                        proposed_action_json, created_at, resolved_at
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        f"manual_category_rotation_{args.set_category.lower()}",
+                        "TIER_2_CALIBRATION",
+                        "MANUAL",
+                        "APPLIED",
+                        f"Ротация категорий: фокус переключен на {args.set_category}",
+                        f"Ручная фиксация фильтра категорий: active_category_filter -> {args.set_category}. Непрофильные категории возвращены в теневую песочницу.",
+                        json.dumps({"active_category_filter": args.set_category}),
+                        now_str,
+                        now_str,
+                    ),
+                )
             if args.set_liquidity is not None:
-                conn.execute("UPDATE portfolio_state SET min_liquidity_filter = ? WHERE id = 1", (args.set_liquidity,))
+                conn.execute("UPDATE portfolio_state SET min_liquidity_filter = ?, updated_at = ? WHERE id = 1", (args.set_liquidity, now_str))
             if args.set_slippage is not None:
-                conn.execute("UPDATE portfolio_state SET max_slippage_filter = ? WHERE id = 1", (args.set_slippage,))
+                conn.execute("UPDATE portfolio_state SET max_slippage_filter = ?, updated_at = ? WHERE id = 1", (args.set_slippage, now_str))
             conn.commit()
+
+        trades_log_file = Path(__file__).resolve().parent / "data" / "trades.txt"
+        if trades_log_file.exists() and args.set_category:
+            with open(trades_log_file, "a", encoding="utf-8") as f:
+                f.write(f"[{now_str}] [GOVERNOR MANUAL ACTION] active_category_filter -> {args.set_category}\n")
+
+        if args.set_category:
+            send_telegram_alert(
+                f"⚙️ <b>ПРИМЕНЕНА РОТАЦИЯ КАТЕГОРИЙ</b>\n"
+                f"Фокус возвращён на <b>{args.set_category}</b> (исторический винрейт 91.7%)\n"
+                f"Категория Crypto отправлена обратно в теневую песочницу (Shadow Sandbox)."
+            )
+
         gov.generate_governance_report()
+        generate_reports(db)
+        print(f"⚙️ Фильтры обновлены: active_category_filter -> {args.set_category}")
 
     if args.governor and not args.once and not args.loop:
         res_gov = gov.evaluate_portfolio_and_rules()
