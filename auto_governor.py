@@ -110,8 +110,8 @@ class AutoGovernor:
             if "active_category_filter" in action:
                 val = str(action["active_category_filter"])
                 conn.execute(
-                    "UPDATE portfolio_state SET active_category_filter = ?, updated_at = ? WHERE id = 1",
-                    (val, now_str),
+                    "UPDATE portfolio_state SET active_category_filter = ?, category_filter_updated_at = ?, updated_at = ? WHERE id = 1",
+                    (val, now_str, now_str),
                 )
                 applied_notes.append(f"active_category_filter -> {val}")
             if "oracle_weight" in action:
@@ -457,7 +457,9 @@ class AutoGovernor:
         # 5b. TIER 2 (Calibration): Shadow Category Recovery & Unfreeze (SEMI-AUTO)
         # ---------------------------------------------------------------------
         if active_cat != "ALL":
-            shadow_stats = self.db.get_shadow_category_stats()
+            # Only evaluate shadow recovery from trades opened AFTER the category was quarantined
+            freeze_time = str(pf.get("category_filter_updated_at") or "").strip()
+            shadow_stats = self.db.get_shadow_category_stats(since_iso=freeze_time if freeze_time else None)
             for cat, st in shadow_stats.items():
                 if cat.upper() == active_cat.upper():
                     continue

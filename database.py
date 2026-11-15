@@ -43,6 +43,7 @@ class SimDatabase:
                     halted INTEGER NOT NULL DEFAULT 0,
                     halt_reason TEXT DEFAULT '',
                     active_category_filter TEXT DEFAULT 'ALL',
+                    category_filter_updated_at TEXT DEFAULT '',
                     min_liquidity_filter REAL NOT NULL DEFAULT 5000.0,
                     max_slippage_filter REAL NOT NULL DEFAULT 0.03,
                     updated_at TEXT NOT NULL
@@ -201,6 +202,8 @@ class SimDatabase:
                 conn.execute("ALTER TABLE portfolio_state ADD COLUMN oracle_weight REAL NOT NULL DEFAULT 0.65")
             if "prob_shift_exit_pp" not in existing_cols:
                 conn.execute("ALTER TABLE portfolio_state ADD COLUMN prob_shift_exit_pp REAL NOT NULL DEFAULT 0.05")
+            if "category_filter_updated_at" not in existing_cols:
+                conn.execute("ALTER TABLE portfolio_state ADD COLUMN category_filter_updated_at TEXT DEFAULT ''")
 
             now_str = datetime.now(timezone.utc).isoformat()
             row = conn.execute("SELECT * FROM portfolio_state WHERE id = 1").fetchone()
@@ -235,6 +238,19 @@ class SimDatabase:
         with self._connect() as conn:
             row = conn.execute("SELECT * FROM portfolio_state WHERE id = 1").fetchone()
             return dict(row) if row else {}
+
+    def set_active_category_filter(self, category: str) -> None:
+        now_str = datetime.now(timezone.utc).isoformat()
+        with self._connect() as conn:
+            conn.execute(
+                """
+                UPDATE portfolio_state
+                SET active_category_filter = ?, category_filter_updated_at = ?, updated_at = ?
+                WHERE id = 1
+                """,
+                (category, now_str, now_str),
+            )
+            conn.commit()
 
     def get_open_positions(self) -> List[Dict[str, Any]]:
         with self._connect() as conn:
@@ -734,19 +750,33 @@ class SimDatabase:
             conn.commit()
         return self.get_shadow_portfolio()
 
-    def get_shadow_category_stats(self) -> Dict[str, Dict[str, float]]:
+    def get_shadow_category_stats(self, since_iso: Optional[str] = None) -> Dict[str, Dict[str, float]]:
         with self._connect() as conn:
-            rows = conn.execute(
-                """
-                SELECT category,
-                       COUNT(*) as count,
-                       SUM(realized_pnl) as pnl,
-                       SUM(CASE WHEN realized_pnl > 0 THEN 1 ELSE 0 END) as wins
-                FROM shadow_positions
-                WHERE status IN ('CLOSED', 'RESOLVED')
-                GROUP BY category
-                """
-            ).fetchall()
+            if since_iso:
+                rows = conn.execute(
+                    """
+                    SELECT category,
+                           COUNT(*) as count,
+                           SUM(realized_pnl) as pnl,
+                           SUM(CASE WHEN realized_pnl > 0 THEN 1 ELSE 0 END) as wins
+                    FROM shadow_positions
+                    WHERE status IN ('CLOSED', 'RESOLVED') AND opened_at >= ?
+                    GROUP BY category
+                    """,
+                    (since_iso,),
+                ).fetchall()
+            else:
+                rows = conn.execute(
+                    """
+                    SELECT category,
+                           COUNT(*) as count,
+                           SUM(realized_pnl) as pnl,
+                           SUM(CASE WHEN realized_pnl > 0 THEN 1 ELSE 0 END) as wins
+                    FROM shadow_positions
+                    WHERE status IN ('CLOSED', 'RESOLVED')
+                    GROUP BY category
+                    """
+                ).fetchall()
             stats: Dict[str, Dict[str, float]] = {}
             for r in rows:
                 c = str(r["category"])

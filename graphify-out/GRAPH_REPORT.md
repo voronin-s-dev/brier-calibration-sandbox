@@ -1,17 +1,17 @@
 # Graph Report - Polymarket-Sim  (2026-11-15)
 
 ## Corpus Check
-- 34 files · ~104,507 words
+- 34 files · ~104,783 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 6 file(s) not represented in the graph (top: (none) 4, .db 1, .ini 1)
+- Unclassified: 7 file(s) not represented in the graph (top: (none) 5, .db 1, .ini 1)
 
 ## Summary
-- 419 nodes · 1085 edges · 17 communities (15 shown, 2 thin omitted)
-- Extraction: 77% EXTRACTED · 23% INFERRED · 0% AMBIGUOUS · INFERRED: 246 edges (avg confidence: 0.9)
+- 421 nodes · 1092 edges · 17 communities (16 shown, 1 thin omitted)
+- Extraction: 77% EXTRACTED · 23% INFERRED · 0% AMBIGUOUS · INFERRED: 250 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `45a5a814`
+- Built from commit: `1077cc59`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -19,15 +19,15 @@
 - GrokCharterPaperTrader
 - SimDatabase
 - TestRiskManagementV2
+- .test_e2e_dual_track_execution
 - AutoGovernor
-- CryptoOracle
+- http_tls.py
 - 🧠 Реестр авто-доработок и полуавтоматических решений (Auto-Governor)
 - 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
 - README.md
 - Polymarket Simulation and Agentic Market Architecture
 - .monitor_and_manage_shadow_positions
 - Acceptance Gates: Polymarket Simulation Daily Audit & Auto-Refinement
-- .test_reports_cadence_stale_warning
 - trader.py
 - Разбор 2026-11-07: ложное утверждение об остановке симулятора из-за локального статуса
 - Разбор 2026-11-11: преждевременная отправка дневного дайджеста в 02:00 ночи сразу после смены даты по UTC
@@ -35,7 +35,7 @@
 - Разбор 2026-11-03: Стагнация капитала, фиктивная альфа оракула и паралич слотов
 
 ## God Nodes (most connected - your core abstractions)
-1. `SimDatabase` - 71 edges
+1. `SimDatabase` - 72 edges
 2. `GrokCharterPaperTrader` - 53 edges
 3. `TestRiskManagementV2` - 48 edges
 4. `MarketInfo` - 46 edges
@@ -61,27 +61,35 @@
 ## Import Cycles
 - None detected.
 
-## Communities (17 total, 2 thin omitted)
+## Communities (17 total, 1 thin omitted)
 
 ### Community 0 - "GrokCharterPaperTrader"
 Cohesion: 0.06
-Nodes (8): Global Constraints, Shadow Portfolio (Sandbox) Implementation Plan, Task 2: Shadow Market Evaluation & Position Lifecycle in `trader.py`, fetch_clob_book(), simulate_clob_sell_shares(), 3. Реализация (How), extract_event_key(), GrokCharterPaperTrader
+Nodes (10): Global Constraints, Shadow Portfolio (Sandbox) Implementation Plan, Task 2: Shadow Market Evaluation & Position Lifecycle in `trader.py`, fetch_clob_book(), fetch_market_by_id(), simulate_clob_buy_and_exit_check(), simulate_clob_sell_shares(), 3. Реализация (How) (+2 more)
 
 ### Community 1 - "SimDatabase"
-Cohesion: 0.06
-Nodes (15): generate_reports(), SimDatabase, Review Focus, Task 1: Shadow Portfolio Database Schema & Access Layer, Task 3: Auto-Governor Tier 2 Shadow Category Unfreeze Rule, Task 4: Reporting & Dashboard Integration, Task 5: End-to-End Simulation & Verification, print_console_summary() (+7 more)
+Cohesion: 0.05
+Nodes (14): Ведомость, Исправления, Разбор 2026-11-07: подмена 10-минутного мониторинга уставного бота задержкой бесплатного GitHub Actions, Чем доказано, что ловится, generate_reports(), SimDatabase, Review Focus, Task 1: Shadow Portfolio Database Schema & Access Layer (+6 more)
 
 ### Community 2 - "TestRiskManagementV2"
-Cohesion: 0.05
-Nodes (15): Матрица проверок риск-менеджмента (tests_risk.py), Исправления, calibrate_probability(), EvaluationResult, HighConvictionFactOracle, is_esports_market(), NewsAndOrderbookOracle, norm_cdf() (+7 more)
+Cohesion: 0.06
+Nodes (14): Матрица проверок риск-менеджмента (tests_risk.py), Исправления, calibrate_probability(), EvaluationResult, HighConvictionFactOracle, is_esports_market(), NewsAndOrderbookOracle, norm_cdf() (+6 more)
+
+### Community 3 - ".test_e2e_dual_track_execution"
+Cohesion: 0.25
+Nodes (4): make_market(), TestE2EShadowPortfolio, side_effect_buy(), side_effect_eval()
 
 ### Community 4 - "AutoGovernor"
-Cohesion: 0.08
-Nodes (13): Карта проверок проекта (Checks Map): Polymarket-Sim, Когда направление обязательно, Лестница исправления AAR (Fix Ladder), Направления проверок, Ведомость, Исправления, Первопричина (Root Cause), Разбор 2026-11-10: троекратное дублирование уведомления об одобрении доработки #22 в Telegram (+5 more)
+Cohesion: 0.09
+Nodes (15): Карта проверок проекта (Checks Map): Polymarket-Sim, Когда направление обязательно, Лестница исправления AAR (Fix Ladder), Направления проверок, Ведомость, Исправления, Первопричина (Root Cause), Разбор 2026-11-10: троекратное дублирование уведомления об одобрении доработки #22 в Telegram (+7 more)
+
+### Community 5 - "http_tls.py"
+Cohesion: 0.11
+Nodes (5): fetch_polymarket_json(), fetch_standard_url(), resolve_secure_ip(), CryptoOracle, trigger_workflow()
 
 ### Community 6 - "🧠 Реестр авто-доработок и полуавтоматических решений (Auto-Governor)"
-Cohesion: 0.25
-Nodes (7): 🛠️ История применённых авто-фиксов и одобренных правок (20), 🟡 Ожидают твоего решения (Полуавтоматический режим: 1), ⚪ Отклонённые и утратившие актуальность предложения (4), Предложение #25: Разморозка категории Crypto: стабильный плюс в песочнице ($+4.18) (`TIER_2_CALIBRATION`), 🧠 Реестр авто-доработок и полуавтоматических решений (Auto-Governor), 🧪 Результаты теневой песочницы (Shadow Sandbox), ⚙️ Текущие активные параметры риск-менеджмента
+Cohesion: 0.29
+Nodes (6): 🛠️ История применённых авто-фиксов и одобренных правок (20), 🟡 Ожидают твоего решения (Полуавтоматический режим: 0), ⚪ Отклонённые и утратившие актуальность предложения (5), 🧠 Реестр авто-доработок и полуавтоматических решений (Auto-Governor), 🧪 Результаты теневой песочницы (Shadow Sandbox), ⚙️ Текущие активные параметры риск-менеджмента
 
 ### Community 7 - "📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)"
 Cohesion: 0.25
@@ -99,21 +107,17 @@ Nodes (6): Ведомость, Исправления, Разбор 2026-11-10: 
 Cohesion: 0.33
 Nodes (5): Acceptance Gates: Polymarket Simulation Daily Audit & Auto-Refinement, Gate 1: Unit & Behavior Risk Tests, Gate 2: Full Test Suite, Gate 3: Auto-Governor & Status Inspection, Gate 4: Knowledge Graph Synchronization
 
-### Community 15 - ".test_reports_cadence_stale_warning"
-Cohesion: 0.38
-Nodes (4): Ведомость, Исправления, Разбор 2026-11-07: подмена 10-минутного мониторинга уставного бота задержкой бесплатного GitHub Actions, Чем доказано, что ловится
-
 ### Community 17 - "trader.py"
-Cohesion: 0.06
-Nodes (14): fetch_polymarket_json(), fetch_standard_url(), resolve_secure_ip(), classify_market_category(), extract_resolution_source(), fetch_active_markets(), fetch_market_by_id(), OrderBookSimulation (+6 more)
+Cohesion: 0.09
+Nodes (7): WeatherOracle, classify_market_category(), extract_resolution_source(), fetch_active_markets(), OrderBookSimulation, parse_market_dict(), parse_canonical_date_or_range()
 
 ### Community 19 - "Разбор 2026-11-07: ложное утверждение об остановке симулятора из-за локального статуса"
 Cohesion: 0.40
 Nodes (4): Ведомость, Исправления, Разбор 2026-11-07: ложное утверждение об остановке симулятора из-за локального статуса, Чем доказано, что ловится
 
 ### Community 20 - "Разбор 2026-11-11: преждевременная отправка дневного дайджеста в 02:00 ночи сразу после смены даты по UTC"
-Cohesion: 0.24
-Nodes (6): Ведомость, Исправления, Первопричина (Root Cause), Разбор 2026-11-11: преждевременная отправка дневного дайджеста в 02:00 ночи сразу после смены даты по UTC, check_and_send_daily_digest(), _plural_deals()
+Cohesion: 0.14
+Nodes (7): Ведомость, Исправления, Первопричина (Root Cause), Разбор 2026-11-11: преждевременная отправка дневного дайджеста в 02:00 ночи сразу после смены даты по UTC, check_and_send_daily_digest(), notify_position_closed(), _plural_deals()
 
 ### Community 22 - "3. Реализация (How)"
 Cohesion: 0.40
@@ -124,22 +128,22 @@ Cohesion: 0.50
 Nodes (3): Ведомость, Разбор 2026-11-03: Стагнация капитала, фиктивная альфа оракула и паралич слотов, Чем доказано, что ловится
 
 ## Knowledge Gaps
-- **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `SimDatabase` connect `SimDatabase` to `GrokCharterPaperTrader`, `TestRiskManagementV2`, `AutoGovernor`, `.monitor_and_manage_shadow_positions`, `trader.py`?**
-  _High betweenness centrality (0.203) - this node is a cross-community bridge._
+- **Why does `SimDatabase` connect `SimDatabase` to `GrokCharterPaperTrader`, `TestRiskManagementV2`, `.test_e2e_dual_track_execution`, `AutoGovernor`, `.monitor_and_manage_shadow_positions`, `trader.py`?**
+  _High betweenness centrality (0.207) - this node is a cross-community bridge._
 - **Are the 11 inferred relationships involving `SimDatabase` (e.g. with `AutoGovernor` and `generate_reports()`) actually correct?**
   _`SimDatabase` has 11 INFERRED edges - model-reasoned connections that need verification._
 - **Should `GrokCharterPaperTrader` be split into smaller, more focused modules?**
-  _Cohesion score 0.05764411027568922 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06095791001451379 - nodes in this community are weakly interconnected._
 - **Why does `TestRiskManagementV2` connect `TestRiskManagementV2` to `GrokCharterPaperTrader`, `SimDatabase`, `AutoGovernor`, `trader.py`, `Разбор 2026-11-11: преждевременная отправка дневного дайджеста в 02:00 ночи сразу после смены даты по UTC`?**
   _High betweenness centrality (0.137) - this node is a cross-community bridge._
 - **Are the 17 inferred relationships involving `GrokCharterPaperTrader` (e.g. with `Исправления` and `Shadow Portfolio (Sandbox) Implementation Plan`) actually correct?**
   _`GrokCharterPaperTrader` has 17 INFERRED edges - model-reasoned connections that need verification._
 - **Should `SimDatabase` be split into smaller, more focused modules?**
-  _Cohesion score 0.0608250526949714 - nodes in this community are weakly interconnected._
-- **Why does `GrokCharterPaperTrader` connect `GrokCharterPaperTrader` to `SimDatabase`, `TestRiskManagementV2`, `AutoGovernor`, `CryptoOracle`, `.monitor_and_manage_shadow_positions`, `trader.py`?**
+  _Cohesion score 0.05307709906199954 - nodes in this community are weakly interconnected._
+- **Why does `GrokCharterPaperTrader` connect `GrokCharterPaperTrader` to `SimDatabase`, `TestRiskManagementV2`, `.test_e2e_dual_track_execution`, `AutoGovernor`, `http_tls.py`, `.monitor_and_manage_shadow_positions`, `trader.py`?**
   _High betweenness centrality (0.117) - this node is a cross-community bridge._

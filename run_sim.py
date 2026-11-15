@@ -162,8 +162,8 @@ def main() -> None:
         with db._connect() as conn:
             if args.set_category:
                 conn.execute(
-                    "UPDATE portfolio_state SET active_category_filter = ?, updated_at = ? WHERE id = 1",
-                    (args.set_category, now_str),
+                    "UPDATE portfolio_state SET active_category_filter = ?, category_filter_updated_at = ?, updated_at = ? WHERE id = 1",
+                    (args.set_category, now_str, now_str),
                 )
                 conn.execute(
                     """

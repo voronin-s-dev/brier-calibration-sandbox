@@ -88,6 +88,40 @@ class TestShadowGovernor(unittest.TestCase):
 
         self.assertEqual(len(rows), 0)
 
+    def test_shadow_recovery_ignores_pre_quarantine_trades(self) -> None:
+        """Old historical shadow trades opened before category was quarantined must not trigger unfreeze."""
+        for i in range(5):
+            pos_id = self.db.open_shadow_position(
+                market_id=f"m_old_{i}", question=f"Old Crypto Q{i}", category="Crypto", side="YES",
+                token_id=f"tok_old_{i}", shares=5.0, entry_vwap=0.50, cost_usdc=2.50,
+                initial_p_est=0.70, entry_edge=0.20, kelly_full_pct=0.10, kelly_half_pct=0.05,
+                applied_size_pct=0.05, roundtrip_slippage_pct=0.01, official_source="Coinbase",
+                exit_condition="Exp", rationale="Test", end_date_iso="2026-10-30"
+            )
+            self.db.close_shadow_position(
+                pos_id=pos_id, status="RESOLVED", exit_vwap=0.60, proceeds_usdc=3.00,
+                exit_reason="TP", latest_p_est=0.60
+            )
+            with self.db._connect() as conn:
+                conn.execute("UPDATE shadow_positions SET opened_at = '2026-10-01T00:00:00+00:00' WHERE id = ?", (pos_id,))
+                conn.commit()
+
+        # Quarantined to Sports at 2026-11-01
+        with self.db._connect() as conn:
+            conn.execute(
+                "UPDATE portfolio_state SET active_category_filter = 'Sports', category_filter_updated_at = '2026-11-01T00:00:00+00:00' WHERE id = 1"
+            )
+            conn.commit()
+
+        self.gov.evaluate_portfolio_and_rules()
+
+        with self.db._connect() as conn:
+            rows = conn.execute(
+                "SELECT * FROM governance_events WHERE rule_key LIKE 'tier2_shadow_unfreeze_crypto_%'"
+            ).fetchall()
+
+        self.assertEqual(len(rows), 0)
+
     def test_brier_calibration_auto_dismissed_when_score_heals(self) -> None:
         """When Brier score is <= 0.22, pending tier2_brier_calibration proposals must be auto-dismissed."""
         ev_id = self.gov._record_event(
