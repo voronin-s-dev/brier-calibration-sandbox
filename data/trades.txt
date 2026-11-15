@@ -4366,3 +4366,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 3.11 @ 0.6500
   Bet: $2.02 USDC | P_est: 72.0% | Edge: +7.0 pp
 [2026-11-15 15:07:56 UTC] [CYCLE #1493 SUMMARY] Scanned=787 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$27.11 | Equity=$29.08 (DD=25.99%)
+[SHADOW EXEC] #72 | Will the price of Bitcoin be above $64,000 on November 17? (NO)
+  Category: Crypto | Shares: 3.02 @ 0.3670
+  Bet: $1.11 USDC | P_est: 41.4% | Edge: +4.7 pp
+[SHADOW EXEC] #73 | Will the price of Ethereum be above $1,800 on November 16? (NO)
+  Category: Crypto | Shares: 2.29 @ 0.4540
+  Bet: $1.04 USDC | P_est: 48.8% | Edge: +3.4 pp
+[2026-11-15 15:17:03 UTC] [CYCLE #1494 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=1 | Opened=0 (Shadow=2) | Closed=0 | Cash=$27.11 | Equity=$29.08 (DD=25.99%)
