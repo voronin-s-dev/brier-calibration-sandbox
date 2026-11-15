@@ -4158,3 +4158,25 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-15 03:30:49 UTC] [CYCLE #1418 SUMMARY] Scanned=788 | PassedFilter=39 | Evaluated=1 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$27.89 | Equity=$29.42 (DD=25.12%)
 [2026-11-15 03:39:54 UTC] [CYCLE #1419 SUMMARY] Scanned=773 | PassedFilter=40 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.89 | Equity=$29.39 (DD=25.20%)
 [2026-11-15 03:48:59 UTC] [CYCLE #1420 SUMMARY] Scanned=780 | PassedFilter=42 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.89 | Equity=$29.42 (DD=25.12%)
+[SHADOW EXIT] #45 | Will Bitcoin reach $68,000 November 9-15? (NO)
+  Shares: 3.75 | Entry VWAP: 0.8100 -> Exit Bid VWAP: 0.9100
+  Proceeds: $3.42 | Realized PnL: $+0.38 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +12.3% >= +12% (Bid VWAP: 0.9100 vs Entry: 0.8100)
+[SHADOW EXIT] #51 | Will the price of Bitcoin be above $66,000 on November 16? (NO)
+  Shares: 2.73 | Entry VWAP: 0.5830 -> Exit Bid VWAP: 0.6570
+  Proceeds: $1.79 | Realized PnL: $+0.20 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +12.7% >= +12% (Bid VWAP: 0.6570 vs Entry: 0.5830)
+[2026-11-15 04:01:07 UTC] [OPEN TRADE #204] Spurs vs. Jazz
+  Категория: Sports | Сторона: YES | Источник: https://www.nba.com/
+  Оценка бота: 95.0% vs Рынок (Ask VWAP): 92.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.910, BestAsk=0.920, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=37.5%, Четверть(0.25x)=15.0% -> Применён=3.4% банка
+  Размер сделки: $1.00 USDC (1.09 shares @ $0.9200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.552 if P_est <= 70%
+  Причина: High market consensus YES (91.5%) within 18.0h of expiry
+
+[SHADOW EXEC] #54 | Will Bitcoin dip to $62,000 November 9-15? (NO)
+  Category: Crypto | Shares: 3.90 @ 0.7900
+  Bet: $3.08 USDC | P_est: 86.2% | Edge: +7.2 pp
+[SHADOW EXEC] #55 | Will the price of Bitcoin be above $66,000 on November 16? (NO)
+  Category: Crypto | Shares: 1.75 @ 0.6580
+  Bet: $1.15 USDC | P_est: 69.8% | Edge: +4.0 pp
+[2026-11-15 04:01:07 UTC] [CYCLE #1421 SUMMARY] Scanned=799 | PassedFilter=45 | Evaluated=4 | Edges(>=8pp)=3 | Opened=1 (Shadow=2) | Closed=0 | Cash=$26.89 | Equity=$29.44 (DD=25.06%)
