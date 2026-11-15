@@ -4406,3 +4406,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-15 18:19:10 UTC] [CYCLE #1513 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.11 | Equity=$29.07 (DD=26.02%)
 [2026-11-15 18:30:54 UTC] [CYCLE #1514 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.11 | Equity=$29.06 (DD=26.05%)
 [2026-11-15 18:39:58 UTC] [CYCLE #1515 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.11 | Equity=$29.07 (DD=26.02%)
+[EXIT] #205 | Will France vs. Türkiye end in a draw? (NO)
+  Shares: 1.12 | Entry VWAP: 0.8900 -> Exit Bid VWAP: 0.8900
+  Proceeds: $1.00 | Realized PnL: $+0.00 USDC | Reason: TIME EXIT: 0.9h left to close (under 1.0h threshold, Bid VWAP: $0.890)
+[2026-11-15 18:49:02 UTC] [CYCLE #1516 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$28.11 | Equity=$29.07 (DD=26.02%)
