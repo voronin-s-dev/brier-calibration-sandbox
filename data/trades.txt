@@ -4255,3 +4255,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: Lopsided match no-draw consensus with 10.7h left
 
 [2026-11-15 09:01:06 UTC] [CYCLE #1454 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$25.89 | Equity=$29.30 (DD=25.44%)
+[EXIT] #200 | Will the price of Bitcoin be above $66,000 on November 16? (NO)
+  Shares: 2.39 | Entry VWAP: 0.6620 -> Exit Bid VWAP: 0.5120
+  Proceeds: $1.22 | Realized PnL: $-0.36 USDC | Reason: THESIS INVALIDATED (Prob Shift > 8.0pp & P_est <= 70%): Estimate dropped from 70.4% to 59.9% (Bid VWAP: $0.512)
+[SHADOW EXIT] #57 | Will the price of Bitcoin be above $62,000 on November 17? (YES)
+  Shares: 1.89 | Entry VWAP: 0.7600 -> Exit Bid VWAP: 0.8980
+  Proceeds: $1.70 | Realized PnL: $+0.26 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +18.2% >= +12% (Bid VWAP: 0.8980 vs Entry: 0.7600)
+[SHADOW EXEC] #60 | Will the price of Bitcoin be above $66,000 on November 15? (NO)
+  Category: Crypto | Shares: 4.66 @ 0.5640
+  Bet: $2.63 USDC | P_est: 71.3% | Edge: +14.9 pp
+[SHADOW EXEC] #61 | Will the price of Bitcoin be above $66,000 on November 16? (NO)
+  Category: Crypto | Shares: 3.24 @ 0.5160
+  Bet: $1.67 USDC | P_est: 60.9% | Edge: +9.3 pp
+[2026-11-15 09:10:15 UTC] [CYCLE #1455 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=1 | Opened=0 (Shadow=2) | Closed=1 | Cash=$27.11 | Equity=$29.09 (DD=25.96%)
