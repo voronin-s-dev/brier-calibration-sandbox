@@ -4380,3 +4380,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-15 16:01:07 UTC] [CYCLE #1499 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.11 | Equity=$29.08 (DD=25.99%)
 [2026-11-15 16:10:13 UTC] [CYCLE #1500 SUMMARY] Scanned=776 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.11 | Equity=$29.08 (DD=25.99%)
 [2026-11-15 16:19:18 UTC] [CYCLE #1501 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.11 | Equity=$29.08 (DD=25.99%)
+[SHADOW EXIT] #71 | Will Bitcoin dip to $63,000 on November 15? (NO)
+  Shares: 3.11 | Entry VWAP: 0.6500 -> Exit Bid VWAP: 0.7700
+  Proceeds: $2.39 | Realized PnL: $+0.37 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +18.5% >= +12% (Bid VWAP: 0.7700 vs Entry: 0.6500)
+[SHADOW EXIT] #73 | Will the price of Ethereum be above $1,800 on November 16? (NO)
+  Shares: 2.29 | Entry VWAP: 0.4540 -> Exit Bid VWAP: 0.3010
+  Proceeds: $0.69 | Realized PnL: $-0.35 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 12.6 pp (0.488 -> 0.362)
+[SHADOW EXEC] #74 | Will Bitcoin dip to $63,000 on November 15? (NO)
+  Category: Crypto | Shares: 4.13 @ 0.7800
+  Bet: $3.22 USDC | P_est: 80.7% | Edge: +2.7 pp
+[2026-11-15 16:30:51 UTC] [CYCLE #1502 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$27.11 | Equity=$29.08 (DD=25.99%)
