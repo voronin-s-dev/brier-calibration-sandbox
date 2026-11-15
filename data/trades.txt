@@ -4050,3 +4050,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 3.65 @ 0.8840
   Bet: $3.23 USDC | P_est: 92.6% | Edge: +4.2 pp
 [2026-11-15 00:40:16 UTC] [CYCLE #1402 SUMMARY] Scanned=773 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=4) | Closed=0 | Cash=$24.63 | Equity=$30.81 (DD=21.59%)
+[EXIT] #201 | Will the price of Bitcoin be above $62,000 on November 17? (YES)
+  Shares: 3.39 | Entry VWAP: 0.7380 -> Exit Bid VWAP: 0.6590
+  Proceeds: $2.23 | Realized PnL: $-0.27 USDC | Reason: THESIS INVALIDATED (Prob Shift > 8.0pp & P_est <= 70%): Estimate dropped from 79.8% to 67.3% (Bid VWAP: $0.659)
+[SHADOW EXIT] #36 | Will Ethereum dip to $1,700 November 9-15? (NO)
+  Shares: 6.60 | Entry VWAP: 0.4606 -> Exit Bid VWAP: 0.3640
+  Proceeds: $2.40 | Realized PnL: $-0.64 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 10.7 pp (0.564 -> 0.456)
+[SHADOW EXEC] #40 | Will the price of Ethereum be above $1,700 on November 15? (YES)
+  Category: Crypto | Shares: 1.84 @ 0.7680
+  Bet: $1.41 USDC | P_est: 78.9% | Edge: +2.1 pp
+[SHADOW EXEC] #41 | Will the price of Bitcoin be above $66,000 on November 19? (NO)
+  Category: Crypto | Shares: 3.20 @ 0.7100
+  Bet: $2.27 USDC | P_est: 74.7% | Edge: +3.7 pp
+[2026-11-15 01:01:04 UTC] [CYCLE #1403 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=1 | Cash=$26.87 | Equity=$30.63 (DD=22.04%)
