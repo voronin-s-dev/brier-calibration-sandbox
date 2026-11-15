@@ -4268,3 +4268,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 3.24 @ 0.5160
   Bet: $1.67 USDC | P_est: 60.9% | Edge: +9.3 pp
 [2026-11-15 09:10:15 UTC] [CYCLE #1455 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=1 | Opened=0 (Shadow=2) | Closed=1 | Cash=$27.11 | Equity=$29.09 (DD=25.96%)
+[SHADOW EXEC] #62 | Will Bitcoin reach $68,000 November 9-15? (NO)
+  Category: Crypto | Shares: 3.92 @ 0.7840
+  Bet: $3.07 USDC | P_est: 85.7% | Edge: +7.3 pp
+[2026-11-15 09:19:23 UTC] [CYCLE #1456 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$27.11 | Equity=$29.09 (DD=25.96%)
