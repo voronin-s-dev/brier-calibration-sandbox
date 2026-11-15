@@ -4280,3 +4280,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $1.28 USDC | P_est: 60.8% | Edge: +2.8 pp
 [2026-11-15 09:30:50 UTC] [CYCLE #1457 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$27.11 | Equity=$29.09 (DD=25.96%)
 [2026-11-15 09:39:56 UTC] [CYCLE #1458 SUMMARY] Scanned=786 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.11 | Equity=$29.09 (DD=25.96%)
+[SHADOW EXIT] #61 | Will the price of Bitcoin be above $66,000 on November 16? (NO)
+  Shares: 3.24 | Entry VWAP: 0.5160 -> Exit Bid VWAP: 0.5890
+  Proceeds: $1.91 | Realized PnL: $+0.24 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +14.1% >= +12% (Bid VWAP: 0.5890 vs Entry: 0.5160)
+[SHADOW EXIT] #62 | Will Bitcoin reach $68,000 November 9-15? (NO)
+  Shares: 3.92 | Entry VWAP: 0.7840 -> Exit Bid VWAP: 0.8920
+  Proceeds: $3.49 | Realized PnL: $+0.42 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +13.8% >= +12% (Bid VWAP: 0.8920 vs Entry: 0.7840)
+[SHADOW EXIT] #63 | Will Bitcoin reach $67,000 on November 15? (NO)
+  Shares: 2.21 | Entry VWAP: 0.5800 -> Exit Bid VWAP: 0.6700
+  Proceeds: $1.48 | Realized PnL: $+0.20 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +15.5% >= +12% (Bid VWAP: 0.6700 vs Entry: 0.5800)
+[SHADOW EXEC] #64 | Will Bitcoin dip to $63,000 on November 15? (NO)
+  Category: Crypto | Shares: 4.08 @ 0.7700
+  Bet: $3.14 USDC | P_est: 86.5% | Edge: +9.5 pp
+[2026-11-15 09:49:01 UTC] [CYCLE #1459 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$27.11 | Equity=$29.09 (DD=25.96%)
