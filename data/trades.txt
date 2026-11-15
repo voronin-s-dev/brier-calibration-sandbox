@@ -4036,3 +4036,17 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-15 00:28:36 UTC] [CYCLE #1399 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=15 | Edges(>=8pp)=8 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.63 | Equity=$30.82 (DD=21.56%)
 [2026-11-15 00:37:42 UTC] [CYCLE #1400 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=7 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.63 | Equity=$30.85 (DD=21.48%)
 [2026-11-15 00:37:56 UTC] [CYCLE #1401 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=17 | Edges(>=8pp)=7 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.63 | Equity=$30.77 (DD=21.69%)
+[2026-11-15T00:40:16.455014+00:00] [GOVERNOR MANUAL ACTION] active_category_filter -> Sports
+[SHADOW EXEC] #36 | Will Ethereum dip to $1,700 November 9-15? (NO)
+  Category: Crypto | Shares: 6.60 @ 0.4606
+  Bet: $3.04 USDC | P_est: 56.4% | Edge: +10.3 pp
+[SHADOW EXEC] #37 | Will the price of Bitcoin be above $62,000 on November 17? (YES)
+  Category: Crypto | Shares: 1.74 @ 0.6910
+  Bet: $1.20 USDC | P_est: 71.5% | Edge: +2.4 pp
+[SHADOW EXEC] #38 | Will the price of Bitcoin be above $66,000 on November 16? (NO)
+  Category: Crypto | Shares: 4.22 @ 0.7650
+  Bet: $3.23 USDC | P_est: 82.0% | Edge: +5.5 pp
+[SHADOW EXEC] #39 | Will the price of Bitcoin be above $66,000 on November 15? (NO)
+  Category: Crypto | Shares: 3.65 @ 0.8840
+  Bet: $3.23 USDC | P_est: 92.6% | Edge: +4.2 pp
+[2026-11-15 00:40:16 UTC] [CYCLE #1402 SUMMARY] Scanned=773 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=4) | Closed=0 | Cash=$24.63 | Equity=$30.81 (DD=21.59%)
