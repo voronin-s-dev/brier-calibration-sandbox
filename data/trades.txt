@@ -4594,3 +4594,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 1.85 | Entry VWAP: 0.6000 -> Exit Bid VWAP: 0.5870
   Proceeds: $1.09 | Realized PnL: $-0.02 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 10.8 pp (0.667 -> 0.559)
 [2026-11-16 08:30:53 UTC] [CYCLE #1607 SUMMARY] Scanned=799 | PassedFilter=45 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
+[2026-11-16 08:40:01 UTC] [CYCLE #1608 SUMMARY] Scanned=788 | PassedFilter=44 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
