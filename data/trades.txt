@@ -4738,3 +4738,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 3.79 | Entry VWAP: 0.9000 -> Exit Bid VWAP: 0.9850
   Proceeds: $3.73 | Realized PnL: $+0.32 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.5%) secured early with +9.4% gain
 [2026-11-16 23:01:11 UTC] [CYCLE #1697 SUMMARY] Scanned=786 | PassedFilter=40 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
+[SHADOW EXIT] #98 | Fourth Jensen Huang affair reported by November 20? (NO)
+  Shares: 3.95 | Entry VWAP: 0.8700 -> Exit Bid VWAP: 0.8000
+  Proceeds: $3.16 | Realized PnL: $-0.28 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 15.2 pp (0.920 -> 0.768)
+[SHADOW EXEC] #99 | Will Bitcoin reach $66,000 on November 16? (YES)
+  Category: Crypto | Shares: 4.23 @ 0.3000
+  Bet: $1.27 USDC | P_est: 35.3% | Edge: +5.3 pp
+[2026-11-16 23:10:16 UTC] [CYCLE #1698 SUMMARY] Scanned=792 | PassedFilter=40 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
