@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-16 21:01:12 UTC`
+**Обновлено:** `2026-11-16 21:10:18 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -17,16 +17,16 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$57.41 USDC`** |
-| **Свободный кэш / В сделках** | `$43.39` / `$14.02 USDC` |
+| **Виртуальный баланс (Equity)** | **`$57.38 USDC`** |
+| **Свободный кэш / В сделках** | `$43.39` / `$13.99 USDC` |
 | **Открытых позиций** | `4 / 5` |
-| **Текущая просадка** | `0.62%` |
+| **Текущая просадка** | `0.67%` |
 
 ### Открытые позиции в песочнице (4 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #94 | Will Elon Musk post 240-259 tweets from November 10 to  | Geopolitics | **NO** | `0.912` | `0.886` | `94.0%` | `$3.39` | `$-0.10` | https://x.com/elonmusk |
-| #95 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.888` | `0.956` | `98.5%` | `$3.39` | `$+0.26` | https://www.binance.com/en/tra |
+| #94 | Will Elon Musk post 240-259 tweets from November 10 to  | Geopolitics | **NO** | `0.912` | `0.876` | `94.0%` | `$3.39` | `$-0.13` | https://x.com/elonmusk |
+| #95 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.888` | `0.958` | `98.5%` | `$3.39` | `$+0.27` | https://www.binance.com/en/tra |
 | #97 | Will Bitcoin dip to $62,000 on November 16? | Crypto | **NO** | `0.900` | `0.971` | `98.5%` | `$3.41` | `$+0.27` | https://www.binance.com/en/tra |
 | #98 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.870` | `0.860` | `92.1%` | `$3.44` | `$-0.04` | reporting from the qualifying  |
 
