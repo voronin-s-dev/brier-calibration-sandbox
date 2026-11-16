@@ -4598,3 +4598,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-16 08:49:07 UTC] [CYCLE #1609 SUMMARY] Scanned=800 | PassedFilter=46 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
 [2026-11-16 09:01:10 UTC] [CYCLE #1610 SUMMARY] Scanned=798 | PassedFilter=46 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
 [2026-11-16 09:10:16 UTC] [CYCLE #1611 SUMMARY] Scanned=791 | PassedFilter=44 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
+[SHADOW EXIT] #86 | Will the price of Bitcoin be above $64,000 on November 18? (NO)
+  Shares: 2.69 | Entry VWAP: 0.3830 -> Exit Bid VWAP: 0.4380
+  Proceeds: $1.18 | Realized PnL: $+0.15 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +14.4% >= +12% (Bid VWAP: 0.4380 vs Entry: 0.3830)
+[SHADOW EXEC] #90 | Will the price of Ethereum be above $1,800 on November 16? (YES)
+  Category: Crypto | Shares: 2.75 @ 0.4980
+  Bet: $1.37 USDC | P_est: 52.2% | Edge: +2.4 pp
+[2026-11-16 09:19:21 UTC] [CYCLE #1612 SUMMARY] Scanned=797 | PassedFilter=44 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
