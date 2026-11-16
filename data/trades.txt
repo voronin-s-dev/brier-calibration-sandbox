@@ -4567,3 +4567,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-16 07:10:17 UTC] [CYCLE #1596 SUMMARY] Scanned=798 | PassedFilter=43 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
 [2026-11-16 07:19:22 UTC] [CYCLE #1597 SUMMARY] Scanned=800 | PassedFilter=43 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
 [2026-11-16 07:19:34 UTC] [CYCLE #1598 SUMMARY] Scanned=800 | PassedFilter=43 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
+[SHADOW EXEC] #86 | Will the price of Bitcoin be above $64,000 on November 18? (NO)
+  Category: Crypto | Shares: 2.69 @ 0.3830
+  Bet: $1.03 USDC | P_est: 43.4% | Edge: +5.1 pp
+[SHADOW EXEC] #87 | Will the price of Ethereum be above $1,800 on November 16? (NO)
+  Category: Crypto | Shares: 4.89 @ 0.3130
+  Bet: $1.53 USDC | P_est: 43.3% | Edge: +12.0 pp
+[2026-11-16 07:28:39 UTC] [CYCLE #1599 SUMMARY] Scanned=800 | PassedFilter=44 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
