@@ -4506,3 +4506,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $1.35 USDC | P_est: 44.4% | Edge: +9.0 pp
 [2026-11-16 02:10:15 UTC] [CYCLE #1566 SUMMARY] Scanned=794 | PassedFilter=24 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=2) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
 [2026-11-16 02:19:20 UTC] [CYCLE #1567 SUMMARY] Scanned=787 | PassedFilter=21 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
+[SHADOW EXIT] #75 | Will Ethereum dip to $1,700 November 9-15? (NO)
+  Shares: 3.53 | Entry VWAP: 0.9120 -> Exit Bid VWAP: 0.9960
+  Proceeds: $3.52 | Realized PnL: $+0.30 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.6%) secured early with +9.2% gain
+[SHADOW EXIT] #82 | Will the price of Ethereum be above $1,800 on November 16? (NO)
+  Shares: 3.81 | Entry VWAP: 0.3540 -> Exit Bid VWAP: 0.2580
+  Proceeds: $0.98 | Realized PnL: $-0.37 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 16.6 pp (0.444 -> 0.278)
+[2026-11-16 02:30:54 UTC] [CYCLE #1568 SUMMARY] Scanned=794 | PassedFilter=24 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
