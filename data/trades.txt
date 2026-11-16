@@ -4495,3 +4495,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 2.08 | Entry VWAP: 0.6770 -> Exit Bid VWAP: 0.6250
   Proceeds: $1.30 | Realized PnL: $-0.11 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 9.8 pp (0.706 -> 0.608)
 [2026-11-16 02:01:08 UTC] [CYCLE #1565 SUMMARY] Scanned=800 | PassedFilter=22 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
+[SHADOW EXIT] #66 | Will Bitcoin dip to $62,000 November 9-15? (NO)
+  Shares: 3.52 | Entry VWAP: 0.8990 -> Exit Bid VWAP: 0.9910
+  Proceeds: $3.48 | Realized PnL: $+0.32 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.1%) secured early with +10.2% gain
+[SHADOW EXEC] #81 | Will the price of Bitcoin be above $64,000 on November 18? (NO)
+  Category: Crypto | Shares: 3.06 @ 0.3530
+  Bet: $1.08 USDC | P_est: 41.1% | Edge: +5.8 pp
+[SHADOW EXEC] #82 | Will the price of Ethereum be above $1,800 on November 16? (NO)
+  Category: Crypto | Shares: 3.81 @ 0.3540
+  Bet: $1.35 USDC | P_est: 44.4% | Edge: +9.0 pp
+[2026-11-16 02:10:15 UTC] [CYCLE #1566 SUMMARY] Scanned=794 | PassedFilter=24 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=2) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
