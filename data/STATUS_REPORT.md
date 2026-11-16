@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-16 07:38:03 UTC`
+**Обновлено:** `2026-11-16 07:47:09 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -18,16 +18,16 @@
 | Показатель | Значение |
 | :--- | :--- |
 | **Виртуальный баланс (Equity)** | **`$56.45 USDC`** |
-| **Свободный кэш / В сделках** | `$51.12` / `$5.33 USDC` |
+| **Свободный кэш / В сделках** | `$51.12` / `$5.32 USDC` |
 | **Открытых позиций** | `3 / 5` |
 | **Текущая просадка** | `1.38%` |
 
 ### Открытые позиции в песочнице (3 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #85 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.896` | `0.818` | `83.7%` | `$2.06` | `$-0.18` | https://www.binance.com/en/tra |
-| #86 | Will the price of Bitcoin be above $64,000 on November  | Crypto | **NO** | `0.383` | `0.349` | `37.4%` | `$1.03` | `$-0.09` | https://www.binance.com/en/tra |
-| #88 | Will the price of Bitcoin be between $66,000 and $68,00 | Crypto | **NO** | `0.771` | `0.770` | `77.7%` | `$2.51` | `$-0.00` | https://www.binance.com/en/tra |
+| #85 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.896` | `0.818` | `84.1%` | `$2.06` | `$-0.18` | https://www.binance.com/en/tra |
+| #86 | Will the price of Bitcoin be above $64,000 on November  | Crypto | **NO** | `0.383` | `0.345` | `37.5%` | `$1.03` | `$-0.10` | https://www.binance.com/en/tra |
+| #88 | Will the price of Bitcoin be between $66,000 and $68,00 | Crypto | **NO** | `0.771` | `0.773` | `77.8%` | `$2.51` | `$+0.01` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
