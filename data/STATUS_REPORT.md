@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-16 08:10:27 UTC`
+**Обновлено:** `2026-11-16 08:19:34 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -17,17 +17,18 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$56.74 USDC`** |
-| **Свободный кэш / В сделках** | `$51.12` / `$5.62 USDC` |
-| **Открытых позиций** | `3 / 5` |
-| **Текущая просадка** | `0.87%` |
+| **Виртуальный баланс (Equity)** | **`$56.89 USDC`** |
+| **Свободный кэш / В сделках** | `$50.01` / `$6.88 USDC` |
+| **Открытых позиций** | `4 / 5` |
+| **Текущая просадка** | `0.60%` |
 
-### Открытые позиции в песочнице (3 / 5)
+### Открытые позиции в песочнице (4 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #85 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.896` | `0.866` | `85.7%` | `$2.06` | `$-0.07` | https://www.binance.com/en/tra |
-| #86 | Will the price of Bitcoin be above $64,000 on November  | Crypto | **NO** | `0.383` | `0.382` | `38.4%` | `$1.03` | `$-0.00` | https://www.binance.com/en/tra |
-| #88 | Will the price of Bitcoin be between $66,000 and $68,00 | Crypto | **NO** | `0.771` | `0.798` | `78.2%` | `$2.51` | `$+0.09` | https://www.binance.com/en/tra |
+| #85 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.896` | `0.895` | `86.4%` | `$2.06` | `$-0.00` | https://www.binance.com/en/tra |
+| #86 | Will the price of Bitcoin be above $64,000 on November  | Crypto | **NO** | `0.383` | `0.397` | `38.5%` | `$1.03` | `$+0.04` | https://www.binance.com/en/tra |
+| #88 | Will the price of Bitcoin be between $66,000 and $68,00 | Crypto | **NO** | `0.771` | `0.813` | `78.5%` | `$2.51` | `$+0.14` | https://www.binance.com/en/tra |
+| #89 | Will the price of Ethereum be above $1,800 on November  | Crypto | **YES** | `0.600` | `0.600` | `66.7%` | `$1.11` | `$+0.00` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
