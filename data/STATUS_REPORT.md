@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-16 15:49:14 UTC`
+**Обновлено:** `2026-11-16 16:01:13 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -17,23 +17,23 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$56.87 USDC`** |
-| **Свободный кэш / В сделках** | `$44.15` / `$12.72 USDC` |
+| **Виртуальный баланс (Equity)** | **`$56.88 USDC`** |
+| **Свободный кэш / В сделках** | `$43.02` / `$13.86 USDC` |
 | **Открытых позиций** | `4 / 5` |
-| **Текущая просадка** | `1.55%` |
+| **Текущая просадка** | `1.54%` |
 
 ### Открытые позиции в песочнице (4 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #85 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.896` | `0.965` | `98.5%` | `$2.06` | `$+0.16` | https://www.binance.com/en/tra |
-| #94 | Will Elon Musk post 240-259 tweets from November 10 to  | Geopolitics | **NO** | `0.912` | `0.883` | `94.0%` | `$3.39` | `$-0.11` | https://x.com/elonmusk |
-| #95 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.888` | `0.907` | `90.1%` | `$3.39` | `$+0.07` | https://www.binance.com/en/tra |
-| #96 | Will Ethereum dip to $1,750 on November 16? | Crypto | **NO** | `0.730` | `0.810` | `81.9%` | `$3.39` | `$+0.37` | https://www.binance.com/en/tra |
+| #94 | Will Elon Musk post 240-259 tweets from November 10 to  | Geopolitics | **NO** | `0.912` | `0.882` | `94.0%` | `$3.39` | `$-0.11` | https://x.com/elonmusk |
+| #95 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.888` | `0.893` | `93.8%` | `$3.39` | `$+0.02` | https://www.binance.com/en/tra |
+| #96 | Will Ethereum dip to $1,750 on November 16? | Crypto | **NO** | `0.730` | `0.810` | `85.5%` | `$3.39` | `$+0.37` | https://www.binance.com/en/tra |
+| #97 | Will Bitcoin dip to $62,000 on November 16? | Crypto | **NO** | `0.900` | `0.900` | `92.7%` | `$3.41` | `$+0.00` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
 | :--- | :--- | :--- | :--- |
-| **Crypto** | `71` | `+$6.49` | `59%` |
+| **Crypto** | `72` | `+$6.71` | `60%` |
 | **Geopolitics** | `5` | `+$0.82` | `80%` |
 | **Other** | `16` | `-$0.93` | `44%` |
 
