@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-16 07:28:42 UTC`
+**Обновлено:** `2026-11-16 07:37:47 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -17,17 +17,18 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$56.84 USDC`** |
-| **Свободный кэш / В сделках** | `$52.31` / `$4.53 USDC` |
-| **Открытых позиций** | `3 / 5` |
-| **Текущая просадка** | `0.69%` |
+| **Виртуальный баланс (Equity)** | **`$56.45 USDC`** |
+| **Свободный кэш / В сделках** | `$49.80` / `$6.64 USDC` |
+| **Открытых позиций** | `4 / 5` |
+| **Текущая просадка** | `1.38%` |
 
-### Открытые позиции в песочнице (3 / 5)
+### Открытые позиции в песочнице (4 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #85 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.896` | `0.857` | `91.0%` | `$2.06` | `$-0.09` | https://www.binance.com/en/tra |
-| #86 | Will the price of Bitcoin be above $64,000 on November  | Crypto | **NO** | `0.383` | `0.383` | `43.4%` | `$1.03` | `$+0.00` | https://www.binance.com/en/tra |
-| #87 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.313` | `0.313` | `43.3%` | `$1.53` | `$+0.00` | https://www.binance.com/en/tra |
+| #85 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.896` | `0.818` | `89.6%` | `$2.06` | `$-0.18` | https://www.binance.com/en/tra |
+| #86 | Will the price of Bitcoin be above $64,000 on November  | Crypto | **NO** | `0.383` | `0.349` | `42.5%` | `$1.03` | `$-0.09` | https://www.binance.com/en/tra |
+| #87 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.313` | `0.269` | `40.9%` | `$1.53` | `$-0.22` | https://www.binance.com/en/tra |
+| #88 | Will the price of Bitcoin be between $66,000 and $68,00 | Crypto | **NO** | `0.771` | `0.771` | `81.1%` | `$2.51` | `$+0.00` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
