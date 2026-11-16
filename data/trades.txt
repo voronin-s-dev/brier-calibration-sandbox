@@ -4532,3 +4532,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 2.28 @ 0.6830
   Bet: $1.56 USDC | P_est: 72.0% | Edge: +3.7 pp
 [2026-11-16 04:10:13 UTC] [CYCLE #1578 SUMMARY] Scanned=796 | PassedFilter=29 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
+[SHADOW EXIT] #83 | Will Elon Musk post 65-89 tweets from November 14 to November 16, 2026? (NO)
+  Shares: 3.68 | Entry VWAP: 0.9170 -> Exit Bid VWAP: 0.9850
+  Proceeds: $3.62 | Realized PnL: $+0.25 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.5%) secured early with +7.4% gain
+[2026-11-16 04:19:19 UTC] [CYCLE #1579 SUMMARY] Scanned=797 | PassedFilter=30 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
