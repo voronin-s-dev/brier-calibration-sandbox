@@ -4916,3 +4916,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 5.84 @ 0.2930
   Bet: $1.71 USDC | P_est: 39.9% | Edge: +10.6 pp
 [2026-11-17 11:40:14 UTC] [CYCLE #1779 SUMMARY] Scanned=783 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
+[SHADOW EXEC] #115 | S&P 500 (SPX) Up or Down on November 17? (NO)
+  Category: Macro | Shares: 4.74 @ 0.4200
+  Bet: $1.99 USDC | P_est: 46.5% | Edge: +4.5 pp
+[2026-11-17 11:49:30 UTC] [CYCLE #1780 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
