@@ -223,8 +223,9 @@ class CryptoOracle:
         s0 = stats["current_price"]
         sigma_h = stats["hourly_vol"]
         tau = max(market.hours_to_close, 0.25)
-        # Apply a 1.12x fat-tail jump multiplier standard for crypto intraday distributions
+        # Apply fat-tail jump multipliers: 1.12x for terminal strikes, 1.35x for barrier first-passage wicks
         sigma_total = sigma_h * math.sqrt(tau) * 1.12
+        sigma_barrier = sigma_h * math.sqrt(tau) * 1.35
 
         target = targets[0]
         # Avoid non-price dollar mentions (e.g., "$1B market cap")
@@ -244,9 +245,9 @@ class CryptoOracle:
                 p_yes = 0.995
                 mode_desc = f"{symbol} already touched/below ${target:,.0f} (Current=${s0:,.2f}, RefLow=${ref_low:,.2f})"
             else:
-                # Reflection principle for first-passage time of GBM (zero-drift intraday)
+                # Reflection principle for first-passage time with crypto fat-tail jump multiplier (1.35x)
                 dist = abs(math.log(s0 / target))
-                p_touch = math.erfc(dist / (sigma_total * math.sqrt(2.0)))
+                p_touch = math.erfc(dist / (sigma_barrier * math.sqrt(2.0)))
                 p_yes = min(max(p_touch, 0.005), 0.99)
                 mode_desc = (
                     f"First-passage dip model: {symbol}=${s0:,.2f} -> barrier=${target:,.0f} "
@@ -260,7 +261,7 @@ class CryptoOracle:
                 mode_desc = f"{symbol} already reached ${target:,.0f} (Current=${s0:,.2f}, RefHigh=${ref_high:,.2f})"
             else:
                 dist = abs(math.log(s0 / target))
-                p_touch = math.erfc(dist / (sigma_total * math.sqrt(2.0)))
+                p_touch = math.erfc(dist / (sigma_barrier * math.sqrt(2.0)))
                 p_yes = min(max(p_touch, 0.005), 0.99)
                 mode_desc = (
                     f"First-passage reach model: {symbol}=${s0:,.2f} -> barrier=${target:,.0f} "

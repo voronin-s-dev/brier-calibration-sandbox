@@ -146,10 +146,12 @@ class TestRiskManagementV2(unittest.TestCase):
         self.assertEqual(GrokCharterPaperTrader.MIN_HOURS_TO_CLOSE, 2.0)
         self.assertEqual(GrokCharterPaperTrader.EXIT_HOURS_THRESHOLD, 0.0)
         self.assertEqual(GrokCharterPaperTrader.STOP_LOSS_PCT, 0.40)
-        self.assertEqual(GrokCharterPaperTrader.MIN_EDGE_PP, 0.015)
+        self.assertEqual(GrokCharterPaperTrader.MIN_EDGE_PP, 0.025)
+        self.assertEqual(GrokCharterPaperTrader.MIN_NET_EDGE_PP, 0.015)
         self.assertEqual(GrokCharterPaperTrader.MIN_ESTIMATED_PROB, 0.70)
-        self.assertEqual(GrokCharterPaperTrader.MIN_CONTRACT_PRICE, 0.60)
-        self.assertEqual(GrokCharterPaperTrader.MAX_CONTRACT_PRICE, 0.92)
+        self.assertEqual(GrokCharterPaperTrader.MIN_CONTRACT_PRICE, 0.70)
+        self.assertEqual(GrokCharterPaperTrader.MAX_CONTRACT_PRICE, 0.87)
+        self.assertEqual(GrokCharterPaperTrader.PROB_SHIFT_EXIT_PP, 0.12)
         self.assertEqual(GrokCharterPaperTrader.MAX_BANK_PCT_PER_TRADE, 0.08)
 
     def test_soccer_draw_guard(self) -> None:
@@ -456,7 +458,7 @@ class TestRiskManagementV2(unittest.TestCase):
                     self.assertEqual(res["trades_opened"], 0)
 
     def test_main_trader_active_time_exit(self) -> None:
-        """Direction M & U: Active main position under 1.0h to close must trigger TIME EXIT."""
+        """Direction M & U: Active non-Sports main position under 1.0h to close must trigger TIME EXIT."""
         from unittest.mock import MagicMock, patch
         from database import SimDatabase
         from polymarket_api import MarketInfo
@@ -468,25 +470,25 @@ class TestRiskManagementV2(unittest.TestCase):
             trader_instance = GrokCharterPaperTrader(db=db, trades_txt_path=Path(tmp) / "trades.txt")
 
             db.open_position(
-                market_id="m_time_1", question="Bucks vs Knicks", category="Sports", side="NO",
-                token_id="tok_no_1", shares=10.0, entry_vwap=0.90, cost_usdc=9.00,
-                current_bid=0.90, p_est=0.94, entry_edge=0.04, kelly_full_pct=0.20,
+                market_id="m_time_1", question="Will BTC be above $66,000?", category="Crypto", side="NO",
+                token_id="tok_no_1", shares=10.0, entry_vwap=0.82, cost_usdc=8.20,
+                current_bid=0.82, p_est=0.88, entry_edge=0.06, kelly_full_pct=0.20,
                 kelly_half_pct=0.08, applied_size_pct=0.08, roundtrip_slippage_pct=0.01,
-                official_source="NBA.com", exit_condition="Hold", rationale="Consensus",
+                official_source="Kraken", exit_condition="Hold", rationale="Terminal GBM",
                 end_date_iso="2026-11-10T12:00:00Z",
             )
 
             m_live = MarketInfo(
-                id="m_time_1", question="Bucks vs Knicks", slug="bucks-knicks",
-                description="", resolution_source="NBA.com", has_official_source=True,
+                id="m_time_1", question="Will BTC be above $66,000?", slug="btc-66k",
+                description="", resolution_source="Kraken", has_official_source=True,
                 end_date_iso="2026-11-10T12:00:00Z", hours_to_close=0.6,
                 liquidity_usd=10000.0, volume_24h_usd=20000.0, outcomes=["YES", "NO"],
-                gamma_prices=[0.10, 0.90], clob_token_ids=["tok_yes_1", "tok_no_1"],
-                order_min_size=1.0, tick_size=0.01, category="Sports", closed=False,
+                gamma_prices=[0.14, 0.86], clob_token_ids=["tok_yes_1", "tok_no_1"],
+                order_min_size=1.0, tick_size=0.01, category="Crypto", closed=False,
             )
 
             with patch("trader.fetch_market_by_id", return_value=m_live):
-                with patch("trader.simulate_clob_sell_shares", return_value=(0.91, 9.10, 0.91)):
+                with patch("trader.simulate_clob_sell_shares", return_value=(0.86, 8.60, 0.86)):
                     closed = trader_instance.monitor_and_manage_open_positions()
                     self.assertEqual(closed, 1)
 
@@ -496,6 +498,43 @@ class TestRiskManagementV2(unittest.TestCase):
                     all_pos = db.get_all_positions()
                     self.assertEqual(all_pos[0]["status"], "CLOSED")
                     self.assertIn("TIME EXIT", all_pos[0]["exit_reason"])
+
+    def test_sports_skips_pre_match_time_exit(self) -> None:
+        """Verify Sports positions do NOT trigger TIME EXIT before kickoff (endDate is game start, not resolution)."""
+        from unittest.mock import patch
+        from database import SimDatabase
+        from polymarket_api import MarketInfo
+        import tempfile
+        from trader import GrokCharterPaperTrader
+
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp:
+            db = SimDatabase(db_path=Path(tmp) / "test_sp.db", initial_capital=50.0)
+            trader_instance = GrokCharterPaperTrader(db=db, trades_txt_path=Path(tmp) / "trades.txt")
+
+            db.open_position(
+                market_id="m_sp_1", question="Spurs vs. Jazz", category="Sports", side="YES",
+                token_id="tok_sp_1", shares=10.0, entry_vwap=0.84, cost_usdc=8.40,
+                current_bid=0.83, p_est=0.90, entry_edge=0.06, kelly_full_pct=0.20,
+                kelly_half_pct=0.08, applied_size_pct=0.04, roundtrip_slippage_pct=0.01,
+                official_source="NBA.com", exit_condition="Hold", rationale="Consensus",
+                end_date_iso="2026-11-17T22:00:00Z",
+            )
+
+            m_live = MarketInfo(
+                id="m_sp_1", question="Spurs vs. Jazz", slug="spurs-jazz",
+                description="", resolution_source="NBA.com", has_official_source=True,
+                end_date_iso="2026-11-17T22:00:00Z", hours_to_close=0.5,
+                liquidity_usd=10000.0, volume_24h_usd=20000.0, outcomes=["YES", "NO"],
+                gamma_prices=[0.84, 0.16], clob_token_ids=["tok_sp_1", "tok_no_1"],
+                order_min_size=1.0, tick_size=0.01, category="Sports", closed=False,
+            )
+
+            with patch("trader.fetch_market_by_id", return_value=m_live), \
+                 patch("trader.simulate_clob_sell_shares", return_value=(0.83, 8.30, 0.83)):
+                closed = trader_instance.monitor_and_manage_open_positions()
+
+            self.assertEqual(closed, 0)
+            self.assertEqual(len(db.get_open_positions()), 1)
 
     def test_main_trader_thesis_invalidation_even_with_zero_bids(self) -> None:
         """Direction U & S: Collapsed probability thesis exits and frees slot even if CLOB bids evaporate to 0."""
@@ -861,7 +900,7 @@ class TestRiskManagementV2(unittest.TestCase):
         self.assertEqual(res_general.oracle_used, "MatureMarketConsensusOracle")
 
     def test_value_sweet_spot_selection_priority(self) -> None:
-        """Verify that markets in the 60-75 cent value sweet spot are prioritized ahead of 80-92 cent favorites."""
+        """Verify that markets in the 70-80 cent value sweet spot are prioritized ahead of 80-87 cent favorites."""
         from unittest.mock import MagicMock
         from polymarket_api import MarketInfo
         from trader import GrokCharterPaperTrader
@@ -871,7 +910,7 @@ class TestRiskManagementV2(unittest.TestCase):
             resolution_source="https://official.org", has_official_source=True,
             end_date_iso="2026-11-12T00:00:00Z", hours_to_close=10.0,
             liquidity_usd=10000.0, volume_24h_usd=50000.0, outcomes=["Yes", "No"],
-            gamma_prices=[0.68, 0.32], clob_token_ids=["t1", "t2"],
+            gamma_prices=[0.74, 0.26], clob_token_ids=["t1", "t2"],
             order_min_size=1.0, tick_size=0.01, category="Sports", closed=False,
         )
         m_favorite = MarketInfo(
@@ -879,7 +918,7 @@ class TestRiskManagementV2(unittest.TestCase):
             resolution_source="https://official.org", has_official_source=True,
             end_date_iso="2026-11-12T00:00:00Z", hours_to_close=10.0,
             liquidity_usd=20000.0, volume_24h_usd=100000.0, outcomes=["Yes", "No"],
-            gamma_prices=[0.89, 0.11], clob_token_ids=["t3", "t4"],
+            gamma_prices=[0.84, 0.16], clob_token_ids=["t3", "t4"],
             order_min_size=1.0, tick_size=0.01, category="Sports", closed=False,
         )
 
@@ -891,7 +930,7 @@ class TestRiskManagementV2(unittest.TestCase):
             cat_filter="ALL",
             min_liq=5000.0,
         )
-        # Value market [0.60, 0.80) MUST be sorted first despite having lower volume than the favorite
+        # Value market [0.70, 0.80) MUST be sorted first despite having lower volume than [0.80, 0.87]
         self.assertEqual(candidates[0].id, "m_val")
         self.assertEqual(candidates[1].id, "m_fav")
 
@@ -1038,7 +1077,7 @@ class TestRiskManagementV2(unittest.TestCase):
             self.assertAlmostEqual(float(pos["realized_pnl"]), 0.90, places=2)
 
     def test_prob_shift_noise_protection_when_price_above_entry(self) -> None:
-        """Verify that a drop in P_est does NOT panic-dump if current Bid VWAP is at or above entry price."""
+        """Verify THESIS INVALIDATED never dumps +EV holds (latest_p >= Bid) or positions at/above entry."""
         import tempfile
         from unittest.mock import patch
         from database import SimDatabase
@@ -1059,7 +1098,6 @@ class TestRiskManagementV2(unittest.TestCase):
                 exit_condition="Hold", rationale="Test", end_date_iso="2026-11-20T00:00:00Z"
             )
 
-            # Case A: Model dropped to 0.68 (-14 pp shift, <= 0.70), but Bid is 0.71 (>= entry 0.70). Must NOT exit!
             from polymarket_api import MarketInfo
             m_live = MarketInfo(
                 id="m_noise", question="ETH Market", slug="eth-market", description="",
@@ -1069,22 +1107,33 @@ class TestRiskManagementV2(unittest.TestCase):
                 tick_size=0.01, category="Crypto", closed=False
             )
             from oracles import EvaluationResult
-            mock_eval = EvaluationResult(
+            mock_eval_pos_ev = EvaluationResult(
                 market_id="m_noise", question="ETH Market", category="Crypto", oracle_used="Kraken",
                 official_source="Kraken", p_yes=0.68, p_no=0.32, confidence=0.8, rationale="Shift"
             )
 
+            # Case A: Model dropped to 0.68 (-14 pp), Bid is 0.71 (>= entry 0.70). Must NOT exit!
             with patch("trader.fetch_market_by_id", return_value=m_live), \
-                 patch.object(trader, "_evaluate_market_probability", return_value=(mock_eval, None)), \
+                 patch.object(trader, "_evaluate_market_probability", return_value=(mock_eval_pos_ev, None)), \
                  patch("trader.simulate_clob_sell_shares", return_value=(0.71, 7.10, 0.71)):
                 closed = trader.monitor_and_manage_open_positions()
+            self.assertEqual(closed, 0)
 
+            # Case B: Bid dropped to 0.66 (< entry 0.70), BUT model is 0.68 > 0.66 (+EV to hold!). Must NOT dump!
+            with patch("trader.fetch_market_by_id", return_value=m_live), \
+                 patch.object(trader, "_evaluate_market_probability", return_value=(mock_eval_pos_ev, None)), \
+                 patch("trader.simulate_clob_sell_shares", return_value=(0.66, 6.60, 0.66)):
+                closed = trader.monitor_and_manage_open_positions()
             self.assertEqual(closed, 0)
             self.assertEqual(len(db.get_open_positions()), 1)
 
-            # Case B: Now Bid drops to 0.66 (< entry 0.70). Market confirms loss -> THESIS INVALIDATED triggers!
+            # Case C: Model collapses to 0.58 (< Bid 0.66 -> holding is now -EV!). THESIS INVALIDATED triggers!
+            mock_eval_neg_ev = EvaluationResult(
+                market_id="m_noise", question="ETH Market", category="Crypto", oracle_used="Kraken",
+                official_source="Kraken", p_yes=0.58, p_no=0.42, confidence=0.8, rationale="Broken thesis"
+            )
             with patch("trader.fetch_market_by_id", return_value=m_live), \
-                 patch.object(trader, "_evaluate_market_probability", return_value=(mock_eval, None)), \
+                 patch.object(trader, "_evaluate_market_probability", return_value=(mock_eval_neg_ev, None)), \
                  patch("trader.simulate_clob_sell_shares", return_value=(0.66, 6.60, 0.66)):
                 closed = trader.monitor_and_manage_open_positions()
 
@@ -1092,6 +1141,93 @@ class TestRiskManagementV2(unittest.TestCase):
             pos = db.get_all_positions()[0]
             self.assertEqual(pos["status"], "CLOSED")
             self.assertIn("THESIS INVALIDATED", pos["exit_reason"])
+
+    def test_net_edge_rejects_slippage_eaten_entries(self) -> None:
+        """Verify entries where (gross_edge - slippage) < MIN_NET_EDGE_PP (1.5pp) are rejected."""
+        import tempfile
+        from unittest.mock import patch
+        from polymarket_api import MarketInfo, OrderBookSimulation
+        from oracles import EvaluationResult
+
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            db = SimDatabase(db_path=Path(tmp_dir) / "test_ne.db", initial_capital=50.0)
+            trader = GrokCharterPaperTrader(db=db, trades_txt_path=Path(tmp_dir) / "trades.txt")
+
+            mkt = MarketInfo(
+                id="mkt_ne_1", question="Will ETH be above $1,800 on November 20?", slug="eth-1800",
+                description="", resolution_source="Kraken", has_official_source=True,
+                end_date_iso="2026-11-20T17:00:00Z", hours_to_close=20.0,
+                liquidity_usd=20000.0, volume_24h_usd=50000.0, outcomes=["YES", "NO"],
+                gamma_prices=[0.78, 0.22], clob_token_ids=["t_yes", "t_no"],
+                order_min_size=1.0, tick_size=0.01, category="Crypto", closed=False,
+            )
+            # Gross edge = 0.822 - 0.780 = +4.2pp (>= 2.5pp), BUT slippage = 2.9% -> Net edge = +1.3pp (< 1.5pp)!
+            ev = EvaluationResult(
+                market_id="mkt_ne_1", question=mkt.question, category="Crypto", oracle_used="Kraken",
+                official_source="Kraken", p_yes=0.822, p_no=0.178, confidence=0.82, rationale="GBM"
+            )
+            ob_sim = OrderBookSimulation(
+                token_id="t_yes", side_label="YES", best_bid=0.751, best_ask=0.780,
+                midpoint=0.765, spread_pct=0.029, bet_usdc=2.0, shares_filled=2.56,
+                vwap_buy_price=0.780, vwap_sell_price=0.751, entry_slippage_pct=0.0145,
+                exit_slippage_pct=0.0145, roundtrip_slippage_pct=0.029,
+                sufficient_depth=True, passes_slippage_limit=True,
+            )
+
+            with patch("trader.fetch_active_markets", return_value=[mkt]), \
+                 patch.object(trader, "_evaluate_market_probability", return_value=(ev, None)), \
+                 patch("trader.simulate_clob_buy_and_exit_check", return_value=ob_sim), \
+                 patch.object(trader, "monitor_and_manage_open_positions", return_value=0), \
+                 patch.object(trader, "monitor_and_manage_shadow_positions", return_value=0):
+                res = trader.run_cycle(max_markets_to_scan=10)
+
+            self.assertEqual(res["trades_opened"], 0)
+            cands = db.get_recent_candidates(limit=5)
+            self.assertEqual(len(cands), 1)
+            self.assertIn("REJECTED: Net EV edge", cands[0]["decision"])
+
+    def test_first_passage_barrier_uses_135x_fat_tail_multiplier(self) -> None:
+        """Verify First-Passage barrier model prices fat-tail touch probability conservatively (~14-15% vs old ~8%)."""
+        from unittest.mock import patch
+        from polymarket_api import MarketInfo
+        from oracles import CryptoOracle
+
+        oracle = CryptoOracle()
+        mkt = MarketInfo(
+            id="m_eth_reach", question="Will Ethereum reach $1,850 on November 17?", slug="eth-reach",
+            description="", resolution_source="Binance", has_official_source=True,
+            end_date_iso="2026-11-18T05:00:00Z", hours_to_close=11.8,
+            liquidity_usd=20000.0, volume_24h_usd=50000.0, outcomes=["YES", "NO"],
+            gamma_prices=[0.11, 0.89], clob_token_ids=["ty", "tn"],
+            order_min_size=1.0, tick_size=0.01, category="Crypto", closed=False,
+        )
+        fake_stats = {
+            "source": "Kraken", "current_price": 1773.05, "hourly_vol": 0.0063,
+            "annual_vol": 0.59, "today_high": 1790.0, "today_low": 1750.0,
+            "month_high": 2100.0, "month_low": 1650.0, "high_24h": 1790.0, "low_24h": 1750.0,
+        }
+        with patch.object(oracle, "_get_symbol_stats", return_value=fake_stats):
+            res = oracle.evaluate(mkt)
+
+        self.assertIsNotNone(res)
+        # With 1.35x barrier vol, raw P(touch) ~ 14.6%, calibrated p_no must be < 0.89 (no false NO edge!)
+        self.assertLess(res.p_no, 0.89)
+
+    def test_recently_closed_market_cooldown_prevents_churn(self) -> None:
+        """Verify get_recently_closed_market_ids blocks immediate re-entry into just-closed markets."""
+        import tempfile
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            db = SimDatabase(db_path=Path(tmp_dir) / "test_cd.db", initial_capital=50.0)
+            pos_id = db.open_position(
+                market_id="mkt_churn_1", question="Test Market", category="Crypto", side="YES",
+                token_id="t1", shares=5.0, entry_vwap=0.75, cost_usdc=3.75, current_bid=0.75,
+                p_est=0.82, entry_edge=0.07, kelly_full_pct=0.20, kelly_half_pct=0.08,
+                applied_size_pct=0.08, roundtrip_slippage_pct=0.01, official_source="Kraken",
+                exit_condition="Hold", rationale="Test", end_date_iso="2026-11-20T00:00:00Z"
+            )
+            db.close_position(pos_id=pos_id, status="CLOSED", exit_vwap=0.74, proceeds_usdc=3.70, exit_reason="TIME EXIT", latest_p_est=0.80)
+            recent_ids = db.get_recently_closed_market_ids(hours=12.0)
+            self.assertIn("mkt_churn_1", recent_ids)
 
     def test_partition_markets_rejects_sub_two_hour_expiry(self) -> None:
         """Verify that markets with hours_to_close < 2.0 (Charter Rule #1) are never admitted into active or shadow pipelines."""
@@ -1119,7 +1255,7 @@ class TestRiskManagementV2(unittest.TestCase):
         self.assertTrue(all(h >= 2.0 for h in active_hours))
 
     def test_time_exit_requires_positive_bid_vwap(self) -> None:
-        """Verify that Time Exit (< 1.0h to expiry) does NOT dump positions for $0.00 when CLOB bids are zero."""
+        """Verify that Time Exit (< 1.0h to expiry) does NOT dump non-Sports positions for $0.00 when CLOB bids are zero."""
         from unittest.mock import patch
         from polymarket_api import MarketInfo
         with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
@@ -1127,24 +1263,25 @@ class TestRiskManagementV2(unittest.TestCase):
             trader = GrokCharterPaperTrader(db=db, trades_txt_path=Path(tmp_dir) / "trades.txt")
 
             db.open_position(
-                market_id="mkt_te_1", question="Spurs vs Bulls Match Winner", category="Sports", side="YES",
-                token_id="tok_spurs", shares=10.0, entry_vwap=0.90, cost_usdc=9.00, current_bid=0.90,
-                p_est=0.95, entry_edge=0.05, kelly_full_pct=0.20, kelly_half_pct=0.08,
-                applied_size_pct=0.08, roundtrip_slippage_pct=0.01, official_source="NBA.com",
-                exit_condition="Hold", rationale="Consensus", end_date_iso="2026-11-12T15:00:00Z"
+                market_id="mkt_te_1", question="Will BTC be above $66,000?", category="Crypto", side="YES",
+                token_id="tok_btc", shares=10.0, entry_vwap=0.82, cost_usdc=8.20, current_bid=0.82,
+                p_est=0.88, entry_edge=0.06, kelly_full_pct=0.20, kelly_half_pct=0.08,
+                applied_size_pct=0.08, roundtrip_slippage_pct=0.01, official_source="Kraken",
+                exit_condition="Hold", rationale="GBM", end_date_iso="2026-11-12T15:00:00Z"
             )
 
             m_live = MarketInfo(
-                id="mkt_te_1", question="Spurs vs Bulls Match Winner", slug="spurs-bulls",
-                description="", resolution_source="NBA.com", has_official_source=True,
+                id="mkt_te_1", question="Will BTC be above $66,000?", slug="btc-66k",
+                description="", resolution_source="Kraken", has_official_source=True,
                 end_date_iso="2026-11-12T15:00:00Z", hours_to_close=0.5,
                 liquidity_usd=10000.0, volume_24h_usd=20000.0, outcomes=["YES", "NO"],
-                gamma_prices=[0.90, 0.10], clob_token_ids=["tok_yes", "tok_no"],
-                order_min_size=1.0, tick_size=0.01, category="Sports", closed=False,
+                gamma_prices=[0.83, 0.17], clob_token_ids=["tok_btc", "tok_no"],
+                order_min_size=1.0, tick_size=0.01, category="Crypto", closed=False,
             )
 
             # Case A: Zero bids in CLOB -> Must NOT dump for $0.00! Position remains open waiting for settlement.
             with patch("trader.fetch_market_by_id", return_value=m_live), \
+                 patch.object(trader, "_evaluate_market_probability", return_value=(None, None)), \
                  patch("trader.simulate_clob_sell_shares", return_value=(0.0, 0.0, 0.0)):
                 closed = trader.monitor_and_manage_open_positions()
 
@@ -1152,9 +1289,10 @@ class TestRiskManagementV2(unittest.TestCase):
             open_pos = db.get_open_positions()
             self.assertEqual(len(open_pos), 1)
 
-            # Case B: Positive bid in CLOB ($0.91) -> Time Exit triggers and executes safely at $0.91
+            # Case B: Positive bid in CLOB ($0.83) -> Time Exit triggers and executes safely at $0.83
             with patch("trader.fetch_market_by_id", return_value=m_live), \
-                 patch("trader.simulate_clob_sell_shares", return_value=(0.91, 9.10, 0.91)):
+                 patch.object(trader, "_evaluate_market_probability", return_value=(None, None)), \
+                 patch("trader.simulate_clob_sell_shares", return_value=(0.83, 8.30, 0.83)):
                 closed = trader.monitor_and_manage_open_positions()
 
             self.assertEqual(closed, 1)

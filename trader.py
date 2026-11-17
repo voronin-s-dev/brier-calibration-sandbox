@@ -123,15 +123,16 @@ class GrokCharterPaperTrader:
     MAX_CRYPTO_POSITIONS = 4        # Max 4 for high-liquidity Crypto (fast turnover ~6.7h)
     KELLY_FRACTION = 0.40           # Fractional Kelly sizing for high-winrate strategy (up from 0.35)
     MAX_BANK_PCT_PER_TRADE = 0.08   # Up to 8% bankroll per trade (~$2.15-$2.40 on current bankroll)
-    MIN_EDGE_PP = 0.015             # 1.5 percentage points minimum divergence against Ask VWAP
+    MIN_EDGE_PP = 0.025             # 2.5 percentage points minimum gross divergence against Ask VWAP
+    MIN_NET_EDGE_PP = 0.015         # 1.5 percentage points minimum NET edge after CLOB round-trip slippage
     MIN_ESTIMATED_PROB = 0.70       # Minimum estimated probability: high-conviction value bets (>=70% win likelihood)
-    MIN_CONTRACT_PRICE = 0.60       # Value sweet spot [0.60, 0.92]: high payoff +8.7% to +66.7%
-    MAX_CONTRACT_PRICE = 0.92       # Strict cap: eliminates asymmetric -100% downside on 95c+ contracts
+    MIN_CONTRACT_PRICE = 0.70       # Proven profitable zone [0.70, 0.87]: 71% WR, +15% to +43% payoff (reachable +12% TP)
+    MAX_CONTRACT_PRICE = 0.87       # Strict cap: excludes 0.88-0.92 death zone where +12% TP is mathematically impossible
     MIN_HOURS_TO_CLOSE = 2.0        # Skip markets closing in < 2h (Charter Rule #1: min 2h horizon to prevent instant churn)
     MAX_HOURS_TO_CLOSE = 120.0      # Fast capital turnover
     EXIT_HOURS_THRESHOLD = 0.0      # Deprecated: superseded by MIN_HOURS_TO_CLOSE_EXIT
-    MIN_HOURS_TO_CLOSE_EXIT = 1.0   # Exit if under 1.0h to close (Ustav Grok rule 9: <1h to expiry)
-    PROB_SHIFT_EXIT_PP = 0.10       # Exit only if probability estimate drops by > 10 pp and falls below entry
+    MIN_HOURS_TO_CLOSE_EXIT = 1.0   # Exit non-Sports if under 1.0h to close (Ustav Grok rule 9: <1h to expiry)
+    PROB_SHIFT_EXIT_PP = 0.12       # Exit only on >= 12 pp drop when holding turns -EV (latest_p < vwap_sell)
     STOP_LOSS_PCT = 0.40            # Hard Stop-Loss: cut positions losing > 40% if thesis severely deteriorates
 
     def __init__(
@@ -360,7 +361,7 @@ class GrokCharterPaperTrader:
                 )
 
             pf_now = self.db.get_portfolio()
-            prob_shift_limit = float(pf_now.get("prob_shift_exit_pp", self.PROB_SHIFT_EXIT_PP))
+            prob_shift_limit = max(float(pf_now.get("prob_shift_exit_pp", self.PROB_SHIFT_EXIT_PP)), self.PROB_SHIFT_EXIT_PP)
             exit_triggered = False
             exit_reason = ""
 
@@ -412,23 +413,30 @@ class GrokCharterPaperTrader:
                     f"(-{loss_pct:.1f}% from entry ${entry_vwap:.3f}, P_est={latest_p*100:.1f}%)"
                 )
             # Exit Rule C: Strict Time Exit (< 1.0h left to market close, only with valid bid > $0.00)
-            elif hours_left <= self.MIN_HOURS_TO_CLOSE_EXIT and vwap_sell > 0:
+            # Skip Sports: Polymarket Sports endDate is kickoff/tip-off time, not match resolution;
+            # exiting 1h pre-match guarantees spread loss before the game even starts.
+            elif pos["category"] != "Sports" and hours_left <= self.MIN_HOURS_TO_CLOSE_EXIT and vwap_sell > 0:
                 exit_triggered = True
                 exit_reason = (
                     f"TIME EXIT: {hours_left:.1f}h left to close "
                     f"(under {self.MIN_HOURS_TO_CLOSE_EXIT:.1f}h threshold, Bid VWAP: ${vwap_sell:.3f})"
                 )
-            # Exit Rule D: Prob estimate shifted down AND no longer high-conviction AND market confirms price drop below entry
+            # Exit Rule D: Prob estimate shifted down AND either:
+            #   (a) Active book: holding is now -EV (latest_p < vwap_sell) AND price dropped below entry, OR
+            #   (b) Evaporated book (vwap_sell <= 0): thesis completely collapsed (latest_p <= 0.15) to free slot.
             elif (
                 (initial_p - latest_p) >= prob_shift_limit
                 and latest_p <= 0.70
-                and vwap_sell < entry_vwap
+                and (
+                    (vwap_sell > 0 and vwap_sell < entry_vwap and latest_p < vwap_sell)
+                    or (vwap_sell <= 0 and latest_p <= 0.15)
+                )
             ):
                 exit_triggered = True
                 exit_reason = (
-                    f"THESIS INVALIDATED (Prob Shift > {prob_shift_limit*100:.1f}pp & P_est <= 70%): "
+                    f"THESIS INVALIDATED (Prob Shift >= {prob_shift_limit*100:.1f}pp & -EV Hold): "
                     f"Estimate dropped from {initial_p*100:.1f}% to {latest_p*100:.1f}% "
-                    f"(Bid VWAP: ${vwap_sell:.3f} < Entry: ${entry_vwap:.3f})"
+                    f"(Bid VWAP: ${vwap_sell:.3f}, Entry: ${entry_vwap:.3f})"
                 )
 
             if not exit_triggered and vwap_sell <= 0:
@@ -553,7 +561,7 @@ class GrokCharterPaperTrader:
                     should_exit = True
                     exit_reason = f"STOP-LOSS TRIGGERED: Price dropped by {(1 - vwap_sell/entry_vwap)*100:.1f}% from entry ({entry_vwap:.4f} -> {vwap_sell:.4f})"
 
-            if not should_exit and hours_left <= self.MIN_HOURS_TO_CLOSE_EXIT and vwap_sell > 0:
+            if not should_exit and pos["category"] != "Sports" and hours_left <= self.MIN_HOURS_TO_CLOSE_EXIT and vwap_sell > 0:
                 should_exit = True
                 exit_reason = f"TIME EXIT: {hours_left:.1f}h left to close (under {self.MIN_HOURS_TO_CLOSE_EXIT:.1f}h threshold, Bid VWAP: ${vwap_sell:.3f})"
 
@@ -610,16 +618,16 @@ class GrokCharterPaperTrader:
                     shadow_candidates.append(m)
 
         def _priority_key(m: MarketInfo) -> Tuple[int, float]:
-            # Tier 0: Value sweet spot [0.60, 0.80) (high payoff +25%..+66%, prioritized)
-            # Tier 1: Capped favorites [0.80, 0.92] (lower payoff, tail risk)
-            # Tier 2: Outside sweet spot
+            # Tier 0: Value sweet spot [0.70, 0.80) (high payoff +25%..+43%, prioritized)
+            # Tier 1: Proven high-winrate core [0.80, 0.87] (89.5% WR, reachable +12% TP)
+            # Tier 2: Outside profitable corridor [0.70, 0.87]
             prices = m.gamma_prices or []
             tier = 2
             for p in prices:
-                if 0.60 <= p < 0.80:
+                if self.MIN_CONTRACT_PRICE <= p < 0.80:
                     tier = 0
                     break
-                elif 0.80 <= p <= 0.92:
+                elif 0.80 <= p <= self.MAX_CONTRACT_PRICE:
                     tier = min(tier, 1)
             return (tier, -m.volume_24h_usd)
 
@@ -770,7 +778,12 @@ class GrokCharterPaperTrader:
             return {"status": "HALTED", "reason": pf.get("halt_reason"), "portfolio": pf, "trades_closed": trades_closed}
 
         open_positions = self.db.get_open_positions()
-        open_market_ids = {str(p["market_id"]) for p in open_positions}
+        recently_closed_ids = (
+            self.db.get_recently_closed_market_ids(hours=12.0)
+            if hasattr(self.db, "get_recently_closed_market_ids")
+            else set()
+        )
+        open_market_ids = {str(p["market_id"]) for p in open_positions} | recently_closed_ids
         open_shadow_positions = self.db.get_open_shadow_positions()
         open_shadow_market_ids = {str(p["market_id"]) for p in open_shadow_positions}
 
@@ -892,8 +905,9 @@ class GrokCharterPaperTrader:
 
             # Real actionable edge is against the actual CLOB Ask VWAP price (not mid or stale Gamma price!)
             real_edge = p_est - ob_sim.vwap_buy_price
+            net_edge = real_edge - ob_sim.roundtrip_slippage_pct
 
-            if real_edge >= self.MIN_EDGE_PP:
+            if real_edge >= self.MIN_EDGE_PP and net_edge >= self.MIN_NET_EDGE_PP:
                 edges_found += 1
 
             event_key = extract_event_key(mkt.question, mkt.category)
@@ -905,7 +919,12 @@ class GrokCharterPaperTrader:
             # Decide whether to execute or reject
             decision = ""
             if real_edge < self.MIN_EDGE_PP:
-                decision = f"REJECTED: Edge {real_edge*100:+.1f} pp < {self.MIN_EDGE_PP*100:.0f} pp threshold (P_est={p_est*100:.1f}% vs AskVWAP={ob_sim.vwap_buy_price*100:.1f}%)"
+                decision = f"REJECTED: Edge {real_edge*100:+.1f} pp < {self.MIN_EDGE_PP*100:.1f} pp threshold (P_est={p_est*100:.1f}% vs AskVWAP={ob_sim.vwap_buy_price*100:.1f}%)"
+            elif net_edge < self.MIN_NET_EDGE_PP:
+                decision = (
+                    f"REJECTED: Net EV edge {net_edge*100:+.1f} pp < {self.MIN_NET_EDGE_PP*100:.1f} pp "
+                    f"(Gross {real_edge*100:+.1f} pp - Slippage {ob_sim.roundtrip_slippage_pct*100:.2f}%)"
+                )
             elif p_est < self.MIN_ESTIMATED_PROB:
                 decision = f"REJECTED: Win probability {p_est*100:.1f}% < {self.MIN_ESTIMATED_PROB*100:.0f}% minimum (no underdog lottery bets)"
             elif ob_sim.vwap_buy_price < self.MIN_CONTRACT_PRICE or ob_sim.vwap_buy_price > self.MAX_CONTRACT_PRICE:
@@ -960,8 +979,17 @@ class GrokCharterPaperTrader:
                         bet_usdc=final_bet_usdc,
                         max_slippage_pct=max_slippage,
                     )
-                    if not final_sim.passes_slippage_limit or (p_est - final_sim.vwap_buy_price) < self.MIN_EDGE_PP:
-                        decision = f"REJECTED on final sizing: slippage={final_sim.roundtrip_slippage_pct*100:.2f}%"
+                    final_gross_edge = p_est - final_sim.vwap_buy_price
+                    final_net_edge = final_gross_edge - final_sim.roundtrip_slippage_pct
+                    if (
+                        not final_sim.passes_slippage_limit
+                        or final_gross_edge < self.MIN_EDGE_PP
+                        or final_net_edge < self.MIN_NET_EDGE_PP
+                    ):
+                        decision = (
+                            f"REJECTED on final sizing: net_edge={final_net_edge*100:+.1f}pp, "
+                            f"slippage={final_sim.roundtrip_slippage_pct*100:.2f}%"
+                        )
                     else:
                         # EXECUTE VIRTUAL TRADE!
                         exit_cond = (

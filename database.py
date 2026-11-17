@@ -6,9 +6,9 @@ order book executions, calibration metrics (Brier score), and rejected opportuni
 
 import json
 import sqlite3
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Set
 
 
 DEFAULT_DB_PATH = Path(__file__).resolve().parent / "data" / "polymarket_sim.db"
@@ -201,7 +201,7 @@ class SimDatabase:
             if "oracle_weight" not in existing_cols:
                 conn.execute("ALTER TABLE portfolio_state ADD COLUMN oracle_weight REAL NOT NULL DEFAULT 0.65")
             if "prob_shift_exit_pp" not in existing_cols:
-                conn.execute("ALTER TABLE portfolio_state ADD COLUMN prob_shift_exit_pp REAL NOT NULL DEFAULT 0.05")
+                conn.execute("ALTER TABLE portfolio_state ADD COLUMN prob_shift_exit_pp REAL NOT NULL DEFAULT 0.12")
             if "category_filter_updated_at" not in existing_cols:
                 conn.execute("ALTER TABLE portfolio_state ADD COLUMN category_filter_updated_at TEXT DEFAULT ''")
 
@@ -215,7 +215,7 @@ class SimDatabase:
                         peak_equity, max_drawdown_pct, current_drawdown_pct,
                         monthly_target_usdc, halted, halt_reason, active_category_filter,
                         min_liquidity_filter, max_slippage_filter, oracle_weight, prob_shift_exit_pp, updated_at
-                    ) VALUES (1, ?, ?, 0.0, ?, ?, 0.0, 0.0, 60.0, 0, '', 'ALL', 5000.0, 0.03, 0.65, 0.05, ?)
+                    ) VALUES (1, ?, ?, 0.0, ?, ?, 0.0, 0.0, 60.0, 0, '', 'ALL', 5000.0, 0.03, 0.65, 0.12, ?)
                     """,
                     (self.initial_capital, self.initial_capital, self.initial_capital, self.initial_capital, now_str),
                 )
@@ -256,6 +256,16 @@ class SimDatabase:
         with self._connect() as conn:
             rows = conn.execute("SELECT * FROM positions WHERE status = 'OPEN' ORDER BY id ASC").fetchall()
             return [dict(r) for r in rows]
+
+    def get_recently_closed_market_ids(self, hours: float = 12.0) -> Set[str]:
+        """Returns market_ids closed within the last `hours` to prevent instant churn / re-entry."""
+        cutoff = (datetime.now(timezone.utc) - timedelta(hours=hours)).isoformat()
+        with self._connect() as conn:
+            rows = conn.execute(
+                "SELECT DISTINCT market_id FROM positions WHERE status = 'CLOSED' AND closed_at >= ?",
+                (cutoff,),
+            ).fetchall()
+            return {str(r["market_id"]) for r in rows}
 
     def get_all_positions(self, limit: int = 100) -> List[Dict[str, Any]]:
         with self._connect() as conn:
