@@ -4899,3 +4899,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-17 11:01:12 UTC] [CYCLE #1775 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
 [2026-11-17 11:10:20 UTC] [CYCLE #1776 SUMMARY] Scanned=791 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
 [2026-11-17 11:19:26 UTC] [CYCLE #1777 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
+[SHADOW EXIT] #110 | S&P 500 (SPX) Up or Down on November 17? (NO)
+  Shares: 3.15 | Entry VWAP: 0.6000 -> Exit Bid VWAP: 0.4800
+  Proceeds: $1.51 | Realized PnL: $-0.38 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 10.0 pp (0.645 -> 0.545)
+[SHADOW EXIT] #112 | Will the price of Ethereum be above $1,800 on November 17? (NO)
+  Shares: 2.63 | Entry VWAP: 0.5470 -> Exit Bid VWAP: 0.3910
+  Proceeds: $1.03 | Realized PnL: $-0.41 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 15.8 pp (0.586 -> 0.428)
+[SHADOW EXEC] #113 | S&P 500 (SPX) Up or Down on November 17? (NO)
+  Category: Macro | Shares: 2.76 @ 0.5000
+  Bet: $1.38 USDC | P_est: 54.5% | Edge: +4.5 pp
+[2026-11-17 11:30:55 UTC] [CYCLE #1778 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
