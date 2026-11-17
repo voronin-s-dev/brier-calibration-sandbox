@@ -4884,3 +4884,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $1.78 USDC | P_est: 58.5% | Edge: +6.2 pp
 [2026-11-17 10:10:23 UTC] [CYCLE #1770 SUMMARY] Scanned=790 | PassedFilter=50 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
 [2026-11-17 10:19:27 UTC] [CYCLE #1771 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
+[SHADOW EXIT] #111 | Will the price of Ethereum be above $1,800 on November 17? (YES)
+  Shares: 3.40 | Entry VWAP: 0.5230 -> Exit Bid VWAP: 0.4530
+  Proceeds: $1.54 | Realized PnL: $-0.24 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 16.8 pp (0.585 -> 0.416)
+[SHADOW EXEC] #112 | Will the price of Ethereum be above $1,800 on November 17? (NO)
+  Category: Crypto | Shares: 2.63 @ 0.5470
+  Bet: $1.44 USDC | P_est: 58.6% | Edge: +3.9 pp
+[2026-11-17 10:31:01 UTC] [CYCLE #1772 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
