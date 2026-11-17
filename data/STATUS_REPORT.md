@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-17 01:37:02 UTC`
+**Обновлено:** `2026-11-17 01:37:13 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -27,9 +27,9 @@
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #94 | Will Elon Musk post 240-259 tweets from November 10 to  | Geopolitics | **NO** | `0.912` | `0.969` | `98.5%` | `$3.39` | `$+0.21` | https://x.com/elonmusk |
 | #95 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.888` | `0.957` | `98.5%` | `$3.39` | `$+0.26` | https://www.binance.com/en/tra |
-| #100 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.780` | `0.790` | `84.0%` | `$3.40` | `$+0.04` | reporting from the qualifying  |
+| #100 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.780` | `0.790` | `88.9%` | `$3.40` | `$+0.04` | reporting from the qualifying  |
 | #101 | Will Bitcoin reach $66,000 on November 16? | Crypto | **NO** | `0.920` | `0.940` | `98.5%` | `$3.40` | `$+0.07` | https://www.binance.com/en/tra |
-| #102 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.332` | `0.310` | `36.2%` | `$1.25` | `$-0.08` | https://www.binance.com/en/tra |
+| #102 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.332` | `0.310` | `36.1%` | `$1.25` | `$-0.08` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
