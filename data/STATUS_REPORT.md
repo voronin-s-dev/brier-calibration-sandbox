@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-17 09:18:48 UTC`
+**Обновлено:** `2026-11-17 09:27:53 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -17,19 +17,19 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$56.85 USDC`** |
-| **Свободный кэш / В сделках** | `$43.80` / `$13.05 USDC` |
+| **Виртуальный баланс (Equity)** | **`$56.95 USDC`** |
+| **Свободный кэш / В сделках** | `$43.80` / `$13.15 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `1.58%` |
+| **Текущая просадка** | `1.41%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #95 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.888` | `0.957` | `98.5%` | `$3.39` | `$+0.26` | https://www.binance.com/en/tra |
+| #95 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.888` | `0.962` | `98.5%` | `$3.39` | `$+0.28` | https://www.binance.com/en/tra |
 | #100 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.780` | `0.830` | `89.0%` | `$3.40` | `$+0.22` | reporting from the qualifying  |
 | #105 | Will China PR win on 2026-11-17? | Geopolitics | **YES** | `0.530` | `0.510` | `57.0%` | `$1.64` | `$-0.06` | https://www.fifa.com |
-| #107 | Will Zimbabwe win? | Other | **YES** | `0.780` | `0.710` | `82.6%` | `$3.43` | `$-0.31` | https://www.espncricinfo.com/ |
-| #109 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.368` | `0.368` | `39.1%` | `$1.08` | `$+0.00` | https://www.binance.com/en/tra |
+| #107 | Will Zimbabwe win? | Other | **YES** | `0.780` | `0.720` | `82.6%` | `$3.43` | `$-0.26` | https://www.espncricinfo.com/ |
+| #109 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.368` | `0.379` | `40.2%` | `$1.08` | `$+0.03` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
