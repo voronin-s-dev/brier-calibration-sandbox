@@ -1,24 +1,25 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-17 23:01:23 UTC`
+**Обновлено:** `2026-11-17 23:10:31 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$29.06 USDC`** (`-20.94$` / `-41.88%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$24.21` / `$4.85 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-20.94 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `26.04%` / `26.35%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$28.75 USDC`** (`-21.25$` / `-42.50%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$23.06` / `$5.69 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-21.25 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `26.82%` / `26.82%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `206` / `63.6%` | Brier Score: `0.1960` |
 
-## 📂 Открытые позиции (5 / 8)
+## 📂 Открытые позиции (6 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #207 | Will Ethereum reach $1,850 on November 17? | Crypto | **NO** | `0.890` | `0.780` | `74.9%` | `$1.00` | `$-0.12` | Kraken ETHUSDT 1m/1h Spot Klin |
-| #208 | Will the price of Ethereum be above $1,700 on November  | Crypto | **YES** | `0.882` | `0.960` | `98.6%` | `$1.00` | `$+0.09` | Kraken ETHUSDT 1m/1h Spot Klin |
-| #210 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.893` | `0.818` | `80.0%` | `$1.00` | `$-0.08` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #207 | Will Ethereum reach $1,850 on November 17? | Crypto | **NO** | `0.890` | `0.570` | `73.6%` | `$1.00` | `$-0.36` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #208 | Will the price of Ethereum be above $1,700 on November  | Crypto | **YES** | `0.882` | `0.966` | `98.6%` | `$1.00` | `$+0.10` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #210 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.893` | `0.761` | `79.2%` | `$1.00` | `$-0.15` | Kraken BTCUSDT 1m/1h Spot Klin |
 | #211 | Will Elon Musk post 65-89 tweets from November 16 to No | Geopolitics | **NO** | `0.920` | `0.900` | `94.0%` | `$1.00` | `$-0.02` | https://x.com/elonmusk |
 | #212 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.910` | `0.900` | `96.0%` | `$1.00` | `$-0.01` | reporting from the qualifying  |
+| #213 | Will the price of Ethereum be above $1,900 on November  | Crypto | **NO** | `0.810` | `0.800` | `84.2%` | `$1.15` | `$-0.01` | Kraken ETHUSDT 1m/1h Spot Klin |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -39,6 +40,8 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will the price of Ethereum be above $1,900 on Nove | Crypto | NO | `95.3%` | `90.6%` | `+4.8 п.п.` | `0.70%` | REJECTED: Duplicate underlying event (crypto:ethereum:november 18) |
+| Will the price of Ethereum be above $1,900 on Nove | Crypto | NO | `84.2%` | `81.0%` | `+3.2 п.п.` | `1.00%` | EXECUTED BUY #213 ($1.15 @ 0.8100) |
 | Will Ethereum dip to $1,750 on November 17? | Crypto | YES | `99.5%` | `10.5%` | `+89.0 п.п.` | `2.50%` | REJECTED: Contract price $0.105 outside sweet spot [$0.60, $0.92] |
 | Will Ethereum dip to $1,750 on November 17? | Crypto | YES | `99.5%` | `13.0%` | `+86.5 п.п.` | `2.00%` | REJECTED: Contract price $0.130 outside sweet spot [$0.60, $0.92] |
 | Will Ethereum dip to $1,750 on November 17? | Crypto | YES | `99.5%` | `13.0%` | `+86.5 п.п.` | `2.00%` | REJECTED: Contract price $0.130 outside sweet spot [$0.60, $0.92] |
@@ -55,5 +58,3 @@
 | Fourth Jensen Huang affair reported by November 20 | Other | NO | `96.0%` | `91.0%` | `+5.0 п.п.` | `1.00%` | EXECUTED BUY #212 ($1.00 @ 0.9100) |
 | Will Ethereum dip to $1,750 on November 17? | Crypto | YES | `99.5%` | `19.0%` | `+80.5 п.п.` | `1.00%` | REJECTED: Contract price $0.190 outside sweet spot [$0.60, $0.92] |
 | Will Ethereum dip to $1,750 on November 17? | Crypto | YES | `99.5%` | `22.0%` | `+77.5 п.п.` | `1.00%` | REJECTED: Contract price $0.220 outside sweet spot [$0.60, $0.92] |
-| Will Ethereum dip to $1,750 on November 17? | Crypto | YES | `99.5%` | `26.0%` | `+73.5 п.п.` | `1.00%` | REJECTED: Contract price $0.260 outside sweet spot [$0.60, $0.92] |
-| Will Ethereum dip to $1,750 on November 17? | Crypto | YES | `99.5%` | `25.0%` | `+74.5 п.п.` | `1.00%` | REJECTED: Contract price $0.250 outside sweet spot [$0.60, $0.92] |
