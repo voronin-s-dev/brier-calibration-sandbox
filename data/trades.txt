@@ -5052,3 +5052,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $1.41 USDC | P_est: 85.0% | Edge: +2.0 pp
 [2026-11-17 16:40:11 UTC] [CYCLE #1809 SUMMARY] Scanned=773 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$28.08 | Equity=$29.07 (DD=26.02%)
 [2026-11-17 16:49:18 UTC] [CYCLE #1810 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.08 | Equity=$29.07 (DD=26.02%)
+[2026-11-17T16:54:31.295030+00:00] [GOVERNOR APPROVED] ✅ Одобрено предложение #33 (Разморозка категории Crypto: стабильный плюс в песочнице ($+4.24)): active_category_filter -> ALL

@@ -368,7 +368,10 @@ class GrokCharterPaperTrader:
             # 1. Near-ceiling target (98.5%+ bid) for high-price entries ($0.88-$0.92)
             # 2. Strong profit lock (gain >= +25% AND Bid VWAP >= 0.88) for sweet spot entries ($0.60-$0.79)
             # 3. Super profit lock (gain >= +35% AND Bid VWAP >= 0.82)
+            # 4. Standard Take-Profit (+12% net return lock or price gain >= +12%)
             is_take_profit = False
+            cost = float(pos["cost_usdc"])
+            gross_return_pct = (proceeds - cost) / cost if cost > 0 else 0.0
             gain_pct = ((vwap_sell - entry_vwap) / entry_vwap * 100.0) if entry_vwap > 0 else 0.0
 
             if vwap_sell >= 0.985:
@@ -388,6 +391,12 @@ class GrokCharterPaperTrader:
                 exit_reason = (
                     f"TAKE PROFIT (Sweet Spot +35% Lock): Live CLOB Bid VWAP ({vwap_sell*100:.1f}%) "
                     f"secured early with +{gain_pct:.1f}% net gain"
+                )
+            elif gross_return_pct >= 0.12 or gain_pct >= 12.0:
+                is_take_profit = True
+                exit_reason = (
+                    f"TAKE-PROFIT TRIGGERED: Net return +{max(gross_return_pct*100, gain_pct):.1f}% >= +12% "
+                    f"(Bid VWAP: {vwap_sell:.4f} vs Entry: {entry_vwap:.4f})"
                 )
 
             if is_take_profit:
@@ -409,12 +418,17 @@ class GrokCharterPaperTrader:
                     f"TIME EXIT: {hours_left:.1f}h left to close "
                     f"(under {self.MIN_HOURS_TO_CLOSE_EXIT:.1f}h threshold, Bid VWAP: ${vwap_sell:.3f})"
                 )
-            # Exit Rule D: Prob estimate shifted down AND no longer high-conviction
-            elif (initial_p - latest_p) >= prob_shift_limit and latest_p <= 0.70:
+            # Exit Rule D: Prob estimate shifted down AND no longer high-conviction AND market confirms price drop below entry
+            elif (
+                (initial_p - latest_p) >= prob_shift_limit
+                and latest_p <= 0.70
+                and vwap_sell < entry_vwap
+            ):
                 exit_triggered = True
                 exit_reason = (
                     f"THESIS INVALIDATED (Prob Shift > {prob_shift_limit*100:.1f}pp & P_est <= 70%): "
-                    f"Estimate dropped from {initial_p*100:.1f}% to {latest_p*100:.1f}% (Bid VWAP: ${vwap_sell:.3f})"
+                    f"Estimate dropped from {initial_p*100:.1f}% to {latest_p*100:.1f}% "
+                    f"(Bid VWAP: ${vwap_sell:.3f} < Entry: ${entry_vwap:.3f})"
                 )
 
             if not exit_triggered and vwap_sell <= 0:
@@ -952,7 +966,7 @@ class GrokCharterPaperTrader:
                         # EXECUTE VIRTUAL TRADE!
                         exit_cond = (
                             f"Hold to binary resolution ($1.00 payout), "
-                            f"or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), "
+                            f"or early Take Profit (+12% net gain or Bid VWAP >= 0.985), "
                             f"or Stop-Loss <= {final_sim.vwap_buy_price * (1.0 - self.STOP_LOSS_PCT):.3f} if P_est <= 70%"
                         )
                         pos_id = self.db.open_position(

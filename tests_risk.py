@@ -1004,6 +1004,95 @@ class TestRiskManagementV2(unittest.TestCase):
             self.assertIn("TAKE PROFIT (Sweet Spot +25% Lock)", pos["exit_reason"])
             self.assertAlmostEqual(float(pos["realized_pnl"]), 2.20, places=2)
 
+    def test_standard_twelve_percent_take_profit(self) -> None:
+        """Verify that live trades lock in +12% net return early even below sweet spot 0.88 bid threshold."""
+        import tempfile
+        from unittest.mock import patch
+        from database import SimDatabase
+        from trader import GrokCharterPaperTrader
+
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            db_path = Path(tmp_dir) / "test_tp12.db"
+            trades_path = Path(tmp_dir) / "trades.txt"
+            db = SimDatabase(db_path=db_path, initial_capital=50.0)
+            trader = GrokCharterPaperTrader(db=db, trades_txt_path=trades_path)
+
+            # Open position at 0.70
+            db.open_position(
+                market_id="m_tp12", question="BTC Dip Market", category="Crypto", side="NO",
+                token_id="tok_tp12", shares=10.0, entry_vwap=0.70, cost_usdc=7.00, current_bid=0.70,
+                p_est=0.78, entry_edge=0.08, kelly_full_pct=0.15, kelly_half_pct=0.06,
+                applied_size_pct=0.06, roundtrip_slippage_pct=0.01, official_source="Binance",
+                exit_condition="TP", rationale="Test", end_date_iso="2026-11-20T00:00:00Z"
+            )
+
+            # Mock CLOB sell: returns 0.79 VWAP ($7.90 proceeds, +12.8% return)
+            with patch("trader.fetch_market_by_id", return_value=None), \
+                 patch("trader.simulate_clob_sell_shares", return_value=(0.79, 7.90, 0.79)):
+                closed_count = trader.monitor_and_manage_open_positions()
+
+            self.assertEqual(closed_count, 1)
+            pos = db.get_all_positions()[0]
+            self.assertEqual(pos["status"], "CLOSED")
+            self.assertIn("TAKE-PROFIT TRIGGERED: Net return", pos["exit_reason"])
+            self.assertAlmostEqual(float(pos["realized_pnl"]), 0.90, places=2)
+
+    def test_prob_shift_noise_protection_when_price_above_entry(self) -> None:
+        """Verify that a drop in P_est does NOT panic-dump if current Bid VWAP is at or above entry price."""
+        import tempfile
+        from unittest.mock import patch
+        from database import SimDatabase
+        from trader import GrokCharterPaperTrader
+
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            db_path = Path(tmp_dir) / "test_ps_noise.db"
+            trades_path = Path(tmp_dir) / "trades.txt"
+            db = SimDatabase(db_path=db_path, initial_capital=50.0)
+            trader = GrokCharterPaperTrader(db=db, trades_txt_path=trades_path)
+
+            # Open at 0.70, initial_p=0.82
+            db.open_position(
+                market_id="m_noise", question="ETH Market", category="Crypto", side="YES",
+                token_id="tok_noise", shares=10.0, entry_vwap=0.70, cost_usdc=7.00, current_bid=0.71,
+                p_est=0.82, entry_edge=0.12, kelly_full_pct=0.20, kelly_half_pct=0.08,
+                applied_size_pct=0.08, roundtrip_slippage_pct=0.01, official_source="Kraken",
+                exit_condition="Hold", rationale="Test", end_date_iso="2026-11-20T00:00:00Z"
+            )
+
+            # Case A: Model dropped to 0.68 (-14 pp shift, <= 0.70), but Bid is 0.71 (>= entry 0.70). Must NOT exit!
+            from polymarket_api import MarketInfo
+            m_live = MarketInfo(
+                id="m_noise", question="ETH Market", slug="eth-market", description="",
+                resolution_source="Kraken", has_official_source=True, end_date_iso="2026-11-20T00:00:00Z",
+                hours_to_close=10.0, liquidity_usd=10000.0, volume_24h_usd=20000.0, outcomes=["YES", "NO"],
+                gamma_prices=[0.71, 0.29], clob_token_ids=["tok_noise", "tok_no"], order_min_size=1.0,
+                tick_size=0.01, category="Crypto", closed=False
+            )
+            from oracles import EvaluationResult
+            mock_eval = EvaluationResult(
+                market_id="m_noise", question="ETH Market", category="Crypto", oracle_used="Kraken",
+                official_source="Kraken", p_yes=0.68, p_no=0.32, confidence=0.8, rationale="Shift"
+            )
+
+            with patch("trader.fetch_market_by_id", return_value=m_live), \
+                 patch.object(trader, "_evaluate_market_probability", return_value=(mock_eval, None)), \
+                 patch("trader.simulate_clob_sell_shares", return_value=(0.71, 7.10, 0.71)):
+                closed = trader.monitor_and_manage_open_positions()
+
+            self.assertEqual(closed, 0)
+            self.assertEqual(len(db.get_open_positions()), 1)
+
+            # Case B: Now Bid drops to 0.66 (< entry 0.70). Market confirms loss -> THESIS INVALIDATED triggers!
+            with patch("trader.fetch_market_by_id", return_value=m_live), \
+                 patch.object(trader, "_evaluate_market_probability", return_value=(mock_eval, None)), \
+                 patch("trader.simulate_clob_sell_shares", return_value=(0.66, 6.60, 0.66)):
+                closed = trader.monitor_and_manage_open_positions()
+
+            self.assertEqual(closed, 1)
+            pos = db.get_all_positions()[0]
+            self.assertEqual(pos["status"], "CLOSED")
+            self.assertIn("THESIS INVALIDATED", pos["exit_reason"])
+
     def test_partition_markets_rejects_sub_two_hour_expiry(self) -> None:
         """Verify that markets with hours_to_close < 2.0 (Charter Rule #1) are never admitted into active or shadow pipelines."""
         from polymarket_api import MarketInfo
