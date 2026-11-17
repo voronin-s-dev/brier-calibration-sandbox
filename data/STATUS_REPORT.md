@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-17 06:49:08 UTC`
+**Обновлено:** `2026-11-17 07:01:22 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -17,18 +17,18 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$56.76 USDC`** |
-| **Свободный кэш / В сделках** | `$45.86` / `$10.90 USDC` |
+| **Виртуальный баланс (Equity)** | **`$56.95 USDC`** |
+| **Свободный кэш / В сделках** | `$45.86` / `$11.09 USDC` |
 | **Открытых позиций** | `4 / 5` |
-| **Текущая просадка** | `1.75%` |
+| **Текущая просадка** | `1.41%` |
 
 ### Открытые позиции в песочнице (4 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #95 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.888` | `0.954` | `98.5%` | `$3.39` | `$+0.25` | https://www.binance.com/en/tra |
+| #95 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.888` | `0.962` | `98.5%` | `$3.39` | `$+0.28` | https://www.binance.com/en/tra |
 | #100 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.780` | `0.830` | `88.0%` | `$3.40` | `$+0.22` | reporting from the qualifying  |
-| #105 | Will China PR win on 2026-11-17? | Geopolitics | **YES** | `0.530` | `0.520` | `58.0%` | `$1.64` | `$-0.03` | https://www.fifa.com |
-| #106 | Will the price of Ethereum be above $1,800 on November  | Crypto | **YES** | `0.707` | `0.722` | `74.5%` | `$1.99` | `$+0.04` | https://www.binance.com/en/tra |
+| #105 | Will China PR win on 2026-11-17? | Geopolitics | **YES** | `0.530` | `0.530` | `58.0%` | `$1.64` | `$+0.00` | https://www.fifa.com |
+| #106 | Will the price of Ethereum be above $1,800 on November  | Crypto | **YES** | `0.707` | `0.769` | `74.8%` | `$1.99` | `$+0.17` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
