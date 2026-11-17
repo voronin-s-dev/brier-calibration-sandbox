@@ -1,23 +1,22 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-17 22:30:58 UTC`
+**Обновлено:** `2026-11-17 22:40:04 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$29.12 USDC`** (`-20.88$` / `-41.75%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$22.91` / `$6.22 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-20.88 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `25.88%` / `26.35%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
-| **Закрытых сделок / Win Rate** | `205` / `63.4%` | Brier Score: `0.1960` |
+| **Текущий баланс (Equity)** | **`$29.08 USDC`** (`-20.92$` / `-41.84%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$24.21` / `$4.87 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-20.92 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `25.99%` / `26.35%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Закрытых сделок / Win Rate** | `206` / `63.6%` | Brier Score: `0.1960` |
 
-## 📂 Открытые позиции (6 / 8)
+## 📂 Открытые позиции (5 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #207 | Will Ethereum reach $1,850 on November 17? | Crypto | **NO** | `0.890` | `0.840` | `80.4%` | `$1.00` | `$-0.06` | Kraken ETHUSDT 1m/1h Spot Klin |
-| #208 | Will the price of Ethereum be above $1,700 on November  | Crypto | **YES** | `0.882` | `0.953` | `97.3%` | `$1.00` | `$+0.08` | Kraken ETHUSDT 1m/1h Spot Klin |
-| #209 | Will Bitcoin dip to $62,000 on November 17? | Crypto | **NO** | `0.876` | `0.979` | `98.5%` | `$1.16` | `$+0.14` | Kraken BTCUSDT 1m/1h Spot Klin |
-| #210 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.893` | `0.828` | `82.5%` | `$1.00` | `$-0.07` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #207 | Will Ethereum reach $1,850 on November 17? | Crypto | **NO** | `0.890` | `0.810` | `79.9%` | `$1.00` | `$-0.09` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #208 | Will the price of Ethereum be above $1,700 on November  | Crypto | **YES** | `0.882` | `0.957` | `98.0%` | `$1.00` | `$+0.09` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #210 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.893` | `0.808` | `81.5%` | `$1.00` | `$-0.10` | Kraken BTCUSDT 1m/1h Spot Klin |
 | #211 | Will Elon Musk post 65-89 tweets from November 16 to No | Geopolitics | **NO** | `0.920` | `0.900` | `94.0%` | `$1.00` | `$-0.02` | https://x.com/elonmusk |
 | #212 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.910` | `0.900` | `96.0%` | `$1.00` | `$-0.01` | reporting from the qualifying  |
 
