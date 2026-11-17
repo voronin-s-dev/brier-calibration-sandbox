@@ -5127,3 +5127,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-17 19:50:00 UTC] [CYCLE #1831 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.92 | Equity=$29.08 (DD=25.98%)
 [2026-11-17 20:01:13 UTC] [CYCLE #1832 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.92 | Equity=$29.10 (DD=25.94%)
 [2026-11-17 20:10:22 UTC] [CYCLE #1833 SUMMARY] Scanned=773 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.92 | Equity=$29.11 (DD=25.92%)
+[2026-11-17 20:19:30 UTC] [OPEN TRADE #212] Fourth Jensen Huang affair reported by November 20?
+  Категория: Other | Сторона: NO | Источник: reporting from the qualifying outlets; for acknowledgments, official information from Jensen Huang or his official or legal representatives may also be used
+  Оценка бота: 96.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +5.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=55.6%, Четверть(0.25x)=22.2% -> Применён=3.4% банка
+  Размер сделки: $1.00 USDC (1.10 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: News sentiment=-1.00 (12 articles; top: 'Nvidia Has Fallen 18% Since the Jensen Huang Scandal Broke and the Biggest Chip ETF Barely Moved. Here's What ')
+
+[2026-11-17 20:19:30 UTC] [CYCLE #1834 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$21.92 | Equity=$29.11 (DD=25.90%)
