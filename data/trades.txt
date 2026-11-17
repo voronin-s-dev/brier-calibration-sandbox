@@ -5096,3 +5096,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-17 18:33:40 UTC] [CYCLE #1821 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=3 | Opened=1 (Shadow=0) | Closed=0 | Cash=$24.92 | Equity=$29.05 (DD=26.06%)
 [2026-11-17 18:42:46 UTC] [CYCLE #1822 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.92 | Equity=$29.04 (DD=26.09%)
 [2026-11-17 18:43:01 UTC] [CYCLE #1823 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.92 | Equity=$29.03 (DD=26.11%)
+[SHADOW EXIT] #126 | Will Ukraine win on 2026-11-17? (YES)
+  Shares: 2.96 | Entry VWAP: 0.4700 -> Exit Bid VWAP: 0.4400
+  Proceeds: $1.30 | Realized PnL: $-0.09 USDC | Reason: TIME EXIT: 0.9h left to close (under 1.0h threshold, Bid VWAP: $0.440)
+[2026-11-17 18:52:42 UTC] [OPEN TRADE #210] Will the price of Bitcoin be above $66,000 on November 18?
+  Категория: Crypto | Сторона: NO | Источник: Kraken BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 91.7% vs Рынок (Ask VWAP): 89.3% (Перекос/Edge: +2.4 п.п.)
+  Стакан CLOB: BestBid=0.891, BestAsk=0.893, Проскальзывание входа/выхода=0.20% (<= 3.0%)
+  Келли: Полный=22.8%, Четверть(0.25x)=9.1% -> Применён=3.4% банка
+  Размер сделки: $1.00 USDC (1.12 shares @ $0.8930)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.536 if P_est <= 70%
+  Причина: Terminal GBM model: BTCUSDT=$63,635.80 vs strike=$66,000 (-3.58%), vol_h=0.50%, tau=22.1h => P(S_T > K)=8.1% -> Calibrated(0.75x)=8.3%
+
+[2026-11-17 18:52:42 UTC] [CYCLE #1824 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=4 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.92 | Equity=$29.10 (DD=25.94%)
