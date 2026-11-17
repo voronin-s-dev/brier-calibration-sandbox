@@ -4951,3 +4951,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $1.46 | Realized PnL: $+0.16 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +12.3% >= +12% (Bid VWAP: 0.8030 vs Entry: 0.7150)
 [2026-11-17 13:49:16 UTC] [CYCLE #1792 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
 [2026-11-17 14:01:15 UTC] [CYCLE #1793 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
+[SHADOW EXEC] #118 | S&P 500 (SPX) Up or Down on November 17? (NO)
+  Category: Macro | Shares: 3.04 @ 0.5300
+  Bet: $1.61 USDC | P_est: 57.5% | Edge: +4.5 pp
+[2026-11-17 14:10:32 UTC] [CYCLE #1794 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
