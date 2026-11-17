@@ -4974,3 +4974,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $1.75 USDC | P_est: 72.0% | Edge: +3.4 pp
 [2026-11-17 14:40:09 UTC] [CYCLE #1797 SUMMARY] Scanned=778 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
 [2026-11-17 14:49:16 UTC] [CYCLE #1798 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
+[2026-11-17 15:01:24 UTC] [OPEN TRADE #206] Will Argentina win on 2026-11-17?
+  Категория: Sports | Сторона: YES | Источник: https://www.fifa.com
+  Оценка бота: 95.0% vs Рынок (Ask VWAP): 92.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.910, BestAsk=0.920, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=37.5%, Четверть(0.25x)=15.0% -> Применён=3.4% банка
+  Размер сделки: $1.00 USDC (1.09 shares @ $0.9200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit if Bid VWAP >= 0.985 (or +25% gain if Bid >= 0.88), or Stop-Loss <= 0.552 if P_est <= 70%
+  Причина: High market consensus YES (91.5%) within 8.0h of expiry
+
+[2026-11-17 15:01:24 UTC] [CYCLE #1799 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$28.08 | Equity=$29.07 (DD=26.02%)
