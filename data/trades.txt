@@ -5054,3 +5054,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-17 16:49:18 UTC] [CYCLE #1810 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.08 | Equity=$29.07 (DD=26.02%)
 [2026-11-17T16:54:31.295030+00:00] [GOVERNOR APPROVED] ✅ Одобрено предложение #33 (Разморозка категории Crypto: стабильный плюс в песочнице ($+4.24)): active_category_filter -> ALL
 [2026-11-17 17:01:13 UTC] [CYCLE #1811 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.08 | Equity=$29.07 (DD=26.02%)
+[2026-11-17 17:10:20 UTC] [OPEN TRADE #207] Will Ethereum reach $1,850 on November 17?
+  Категория: Crypto | Сторона: NO | Источник: Kraken ETHUSDT 1m/1h Spot Klines
+  Оценка бота: 90.8% vs Рынок (Ask VWAP): 89.0% (Перекос/Edge: +1.8 п.п.)
+  Стакан CLOB: BestBid=0.870, BestAsk=0.890, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=16.1%, Четверть(0.25x)=6.4% -> Применён=3.4% банка
+  Размер сделки: $1.00 USDC (1.12 shares @ $0.8900)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.534 if P_est <= 70%
+  Причина: First-passage reach model: ETHUSDT=$1,773.05 -> barrier=$1,850 (+4.34%), vol_h=0.63%, tau=11.8h => P(touch)=8.0% -> Calibrated(0.75x)=9.2%
+
+[2026-11-17 17:10:20 UTC] [CYCLE #1812 SUMMARY] Scanned=780 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$27.08 | Equity=$29.05 (DD=26.07%)
