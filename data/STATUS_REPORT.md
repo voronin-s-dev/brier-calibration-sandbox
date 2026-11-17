@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-17 10:01:21 UTC`
+**Обновлено:** `2026-11-17 10:10:25 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -17,24 +17,24 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$56.46 USDC`** |
-| **Свободный кэш / В сделках** | `$44.77` / `$11.69 USDC` |
+| **Виртуальный баланс (Equity)** | **`$56.91 USDC`** |
+| **Свободный кэш / В сделках** | `$44.39` / `$12.52 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `2.25%` |
+| **Текущая просадка** | `1.48%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #95 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.888` | `0.963` | `98.5%` | `$3.39` | `$+0.29` | https://www.binance.com/en/tra |
-| #100 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.780` | `0.830` | `89.0%` | `$3.40` | `$+0.22` | reporting from the qualifying  |
-| #105 | Will China PR win on 2026-11-17? | Geopolitics | **YES** | `0.530` | `0.510` | `57.0%` | `$1.64` | `$-0.06` | https://www.fifa.com |
-| #109 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.368` | `0.328` | `37.1%` | `$1.08` | `$-0.12` | https://www.binance.com/en/tra |
-| #110 | S&P 500 (SPX) Up or Down on November 17? | Macro | **NO** | `0.600` | `0.590` | `65.5%` | `$1.89` | `$-0.03` | https://www.wsj.com/market-dat |
+| #95 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.888` | `0.966` | `98.5%` | `$3.39` | `$+0.30` | https://www.binance.com/en/tra |
+| #100 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.780` | `0.830` | `89.5%` | `$3.40` | `$+0.22` | reporting from the qualifying  |
+| #105 | Will China PR win on 2026-11-17? | Geopolitics | **YES** | `0.530` | `0.520` | `58.0%` | `$1.64` | `$-0.03` | https://www.fifa.com |
+| #110 | S&P 500 (SPX) Up or Down on November 17? | Macro | **NO** | `0.600` | `0.580` | `65.0%` | `$1.89` | `$-0.06` | https://www.wsj.com/market-dat |
+| #111 | Will the price of Ethereum be above $1,800 on November  | Crypto | **YES** | `0.523` | `0.523` | `58.5%` | `$1.78` | `$+0.00` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
 | :--- | :--- | :--- | :--- |
-| **Crypto** | `81` | `+$6.81` | `60%` |
+| **Crypto** | `82` | `+$7.13` | `61%` |
 | **Geopolitics** | `6` | `+$1.14` | `83%` |
 | **Other** | `18` | `-$1.78` | `39%` |
 
