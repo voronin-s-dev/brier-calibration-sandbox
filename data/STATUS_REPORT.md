@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-17 08:31:20 UTC`
+**Обновлено:** `2026-11-17 08:40:37 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -17,16 +17,16 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$57.00 USDC`** |
-| **Свободный кэш / В сделках** | `$44.69` / `$12.31 USDC` |
+| **Виртуальный баланс (Equity)** | **`$56.95 USDC`** |
+| **Свободный кэш / В сделках** | `$44.69` / `$12.26 USDC` |
 | **Открытых позиций** | `4 / 5` |
-| **Текущая просадка** | `1.32%` |
+| **Текущая просадка** | `1.41%` |
 
 ### Открытые позиции в песочнице (4 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #95 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.888` | `0.969` | `98.5%` | `$3.39` | `$+0.31` | https://www.binance.com/en/tra |
-| #100 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.780` | `0.840` | `89.0%` | `$3.40` | `$+0.26` | reporting from the qualifying  |
+| #95 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.888` | `0.967` | `98.5%` | `$3.39` | `$+0.30` | https://www.binance.com/en/tra |
+| #100 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.780` | `0.830` | `89.0%` | `$3.40` | `$+0.22` | reporting from the qualifying  |
 | #105 | Will China PR win on 2026-11-17? | Geopolitics | **YES** | `0.530` | `0.520` | `58.0%` | `$1.64` | `$-0.03` | https://www.fifa.com |
 | #107 | Will Zimbabwe win? | Other | **YES** | `0.780` | `0.760` | `82.2%` | `$3.43` | `$-0.09` | https://www.espncricinfo.com/ |
 
