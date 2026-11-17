@@ -1,39 +1,39 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-17 20:19:36 UTC`
+**Обновлено:** `2026-11-17 20:31:04 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$29.11 USDC`** (`-20.89$` / `-41.77%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Текущий баланс (Equity)** | **`$29.12 USDC`** (`-20.88$` / `-41.76%`) | Cash + Mark-to-Market по CLOB Bid |
 | **Свободный кэш / В сделках** | `$21.92` / `$7.20 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-20.89 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `25.90%` / `26.19%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Цель окупаемости подписки** | `$-20.88 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `25.88%` / `26.19%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `204` / `63.7%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (7 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #206 | Will Argentina win on 2026-11-17? | Sports | **YES** | `0.920` | `0.910` | `95.0%` | `$1.00` | `$-0.01` | https://www.fifa.com |
-| #207 | Will Ethereum reach $1,850 on November 17? | Crypto | **NO** | `0.890` | `0.880` | `90.1%` | `$1.00` | `$-0.01` | Kraken ETHUSDT 1m/1h Spot Klin |
-| #208 | Will the price of Ethereum be above $1,700 on November  | Crypto | **YES** | `0.882` | `0.927` | `93.7%` | `$1.00` | `$+0.05` | Kraken ETHUSDT 1m/1h Spot Klin |
-| #209 | Will Bitcoin dip to $62,000 on November 17? | Crypto | **NO** | `0.876` | `0.891` | `88.0%` | `$1.16` | `$+0.02` | Kraken BTCUSDT 1m/1h Spot Klin |
-| #210 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.893` | `0.910` | `92.3%` | `$1.00` | `$+0.02` | Kraken BTCUSDT 1m/1h Spot Klin |
-| #211 | Will Elon Musk post 65-89 tweets from November 16 to No | Geopolitics | **NO** | `0.920` | `0.900` | `94.0%` | `$1.00` | `$-0.02` | https://x.com/elonmusk |
+| #207 | Will Ethereum reach $1,850 on November 17? | Crypto | **NO** | `0.890` | `0.880` | `85.7%` | `$1.00` | `$-0.01` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #208 | Will the price of Ethereum be above $1,700 on November  | Crypto | **YES** | `0.882` | `0.933` | `95.2%` | `$1.00` | `$+0.06` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #209 | Will Bitcoin dip to $62,000 on November 17? | Crypto | **NO** | `0.876` | `0.910` | `94.3%` | `$1.16` | `$+0.05` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #210 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.893` | `0.898` | `90.0%` | `$1.00` | `$+0.01` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #211 | Will Elon Musk post 65-89 tweets from November 16 to No | Geopolitics | **NO** | `0.920` | `0.890` | `94.0%` | `$1.00` | `$-0.03` | https://x.com/elonmusk |
 | #212 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.910` | `0.900` | `96.0%` | `$1.00` | `$-0.01` | reporting from the qualifying  |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$58.94 USDC`** |
-| **Свободный кэш / В сделках** | `$57.42` / `$1.52 USDC` |
+| **Виртуальный баланс (Equity)** | **`$58.97 USDC`** |
+| **Свободный кэш / В сделках** | `$57.42` / `$1.55 USDC` |
 | **Открытых позиций** | `1 / 5` |
-| **Текущая просадка** | `2.80%` |
+| **Текущая просадка** | `2.74%` |
 
 ### Открытые позиции в песочнице (1 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #130 | Will Bitcoin dip to $62,000 on November 17? | Crypto | **NO** | `0.830` | `0.892` | `88.0%` | `$1.41` | `$+0.11` | https://www.binance.com/en/tra |
+| #130 | Will Bitcoin dip to $62,000 on November 17? | Crypto | **NO** | `0.830` | `0.915` | `94.3%` | `$1.41` | `$+0.14` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
@@ -46,6 +46,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Ethereum dip to $1,750 on November 17? | Crypto | YES | `99.5%` | `18.0%` | `+81.5 п.п.` | `1.00%` | REJECTED: Contract price $0.180 outside sweet spot [$0.60, $0.92] |
 | Fourth Jensen Huang affair reported by November 20 | Other | NO | `96.0%` | `91.0%` | `+5.0 п.п.` | `1.00%` | EXECUTED BUY #212 ($1.00 @ 0.9100) |
 | Will Ethereum dip to $1,750 on November 17? | Crypto | YES | `99.5%` | `19.0%` | `+80.5 п.п.` | `1.00%` | REJECTED: Contract price $0.190 outside sweet spot [$0.60, $0.92] |
 | Will Ethereum dip to $1,750 on November 17? | Crypto | YES | `99.5%` | `22.0%` | `+77.5 п.п.` | `1.00%` | REJECTED: Contract price $0.220 outside sweet spot [$0.60, $0.92] |
@@ -63,4 +64,3 @@
 | Will Ethereum dip to $1,750 on November 17? | Crypto | YES | `99.5%` | `31.0%` | `+68.5 п.п.` | `1.00%` | REJECTED: Contract price $0.310 outside sweet spot [$0.60, $0.92] |
 | Will the price of Bitcoin be above $66,000 on Nove | Crypto | NO | `91.7%` | `89.2%` | `+2.5 п.п.` | `0.10%` | EXECUTED BUY #210 ($1.00 @ 0.8930) |
 | Will Ethereum dip to $1,750 on November 17? | Crypto | YES | `99.5%` | `27.0%` | `+72.5 п.п.` | `1.00%` | REJECTED: Contract price $0.270 outside sweet spot [$0.60, $0.92] |
-| Will Ethereum dip to $1,750 on November 17? | Crypto | YES | `99.5%` | `33.0%` | `+66.5 п.п.` | `1.00%` | REJECTED: Contract price $0.330 outside sweet spot [$0.60, $0.92] |
