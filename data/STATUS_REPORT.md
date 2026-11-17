@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-17 01:18:28 UTC`
+**Обновлено:** `2026-11-17 01:18:49 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -17,19 +17,19 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$56.74 USDC`** |
-| **Свободный кэш / В сделках** | `$41.47` / `$15.27 USDC` |
+| **Виртуальный баланс (Equity)** | **`$56.71 USDC`** |
+| **Свободный кэш / В сделках** | `$41.47` / `$15.24 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `1.78%` |
+| **Текущая просадка** | `1.83%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #94 | Will Elon Musk post 240-259 tweets from November 10 to  | Geopolitics | **NO** | `0.912` | `0.949` | `98.2%` | `$3.39` | `$+0.14` | https://x.com/elonmusk |
+| #94 | Will Elon Musk post 240-259 tweets from November 10 to  | Geopolitics | **NO** | `0.912` | `0.952` | `98.2%` | `$3.39` | `$+0.15` | https://x.com/elonmusk |
 | #95 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.888` | `0.957` | `98.5%` | `$3.39` | `$+0.26` | https://www.binance.com/en/tra |
 | #100 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.780` | `0.780` | `84.0%` | `$3.40` | `$+0.00` | reporting from the qualifying  |
 | #101 | Will Bitcoin reach $66,000 on November 16? | Crypto | **NO** | `0.920` | `0.930` | `97.0%` | `$3.40` | `$+0.04` | https://www.binance.com/en/tra |
-| #102 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.332` | `0.332` | `38.0%` | `$1.25` | `$+0.00` | https://www.binance.com/en/tra |
+| #102 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.332` | `0.322` | `35.9%` | `$1.25` | `$-0.04` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
