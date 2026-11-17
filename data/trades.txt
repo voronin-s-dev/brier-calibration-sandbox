@@ -4775,3 +4775,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-17 01:37:00 UTC] [CYCLE #1714 SUMMARY] Scanned=800 | PassedFilter=28 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
 [2026-11-17 01:37:10 UTC] [CYCLE #1715 SUMMARY] Scanned=800 | PassedFilter=28 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
 [2026-11-17 01:46:15 UTC] [CYCLE #1716 SUMMARY] Scanned=800 | PassedFilter=27 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
+[SHADOW EXIT] #94 | Will Elon Musk post 240-259 tweets from November 10 to November 17, 2026? (NO)
+  Shares: 3.72 | Entry VWAP: 0.9120 -> Exit Bid VWAP: 0.9970
+  Proceeds: $3.71 | Realized PnL: $+0.32 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.7%) secured early with +9.3% gain
+[2026-11-17 01:55:18 UTC] [CYCLE #1717 SUMMARY] Scanned=775 | PassedFilter=27 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
