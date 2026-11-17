@@ -5069,3 +5069,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 4.36 | Entry VWAP: 0.7800 -> Exit Bid VWAP: 0.8900
   Proceeds: $3.88 | Realized PnL: $+0.48 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +14.1% >= +12% (Bid VWAP: 0.8900 vs Entry: 0.7800)
 [2026-11-17 17:30:58 UTC] [CYCLE #1814 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.08 | Equity=$29.06 (DD=26.05%)
+[2026-11-17 17:40:10 UTC] [OPEN TRADE #208] Will the price of Ethereum be above $1,700 on November 18?
+  Категория: Crypto | Сторона: YES | Источник: Kraken ETHUSDT 1m/1h Spot Klines
+  Оценка бота: 90.6% vs Рынок (Ask VWAP): 88.2% (Перекос/Edge: +2.4 п.п.)
+  Стакан CLOB: BestBid=0.880, BestAsk=0.882, Проскальзывание входа/выхода=0.20% (<= 3.0%)
+  Келли: Полный=20.4%, Четверть(0.25x)=8.2% -> Применён=3.4% банка
+  Размер сделки: $1.00 USDC (1.13 shares @ $0.8820)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.529 if P_est <= 70%
+  Причина: Terminal GBM model: ETHUSDT=$1,782.00 vs strike=$1,700 (+4.82%), vol_h=0.63%, tau=23.3h => P(S_T > K)=91.4% -> Calibrated(0.75x)=90.6%
+
+[2026-11-17 17:40:10 UTC] [CYCLE #1815 SUMMARY] Scanned=784 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$26.08 | Equity=$29.09 (DD=25.97%)
