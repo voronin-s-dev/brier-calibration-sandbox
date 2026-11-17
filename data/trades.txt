@@ -5149,3 +5149,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-17 21:30:55 UTC] [CYCLE #1841 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.92 | Equity=$28.95 (DD=26.32%)
 [2026-11-17 21:40:03 UTC] [CYCLE #1842 SUMMARY] Scanned=785 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.92 | Equity=$29.02 (DD=26.14%)
 [2026-11-17 21:49:09 UTC] [CYCLE #1843 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.92 | Equity=$29.10 (DD=25.94%)
+[EXIT] #206 | Will Argentina win on 2026-11-17? (YES)
+  Shares: 1.09 | Entry VWAP: 0.9200 -> Exit Bid VWAP: 0.9100
+  Proceeds: $0.99 | Realized PnL: $-0.01 USDC | Reason: TIME EXIT: 1.0h left to close (under 1.0h threshold, Bid VWAP: $0.910)
+[2026-11-17 22:01:10 UTC] [CYCLE #1844 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$22.91 | Equity=$29.20 (DD=25.69%)
