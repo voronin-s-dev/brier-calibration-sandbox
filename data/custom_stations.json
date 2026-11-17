@@ -82,5 +82,12 @@
     "Asia/Taipei",
     "celsius",
     "Auto-Meteo Taipei (TW)"
+  ],
+  "madrid": [
+    40.4165,
+    -3.70256,
+    "Europe/Madrid",
+    "celsius",
+    "Auto-Meteo Madrid (ES)"
   ]
 }

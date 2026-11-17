@@ -5064,3 +5064,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: First-passage reach model: ETHUSDT=$1,773.05 -> barrier=$1,850 (+4.34%), vol_h=0.63%, tau=11.8h => P(touch)=8.0% -> Calibrated(0.75x)=9.2%
 
 [2026-11-17 17:10:20 UTC] [CYCLE #1812 SUMMARY] Scanned=780 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$27.08 | Equity=$29.05 (DD=26.07%)
+[2026-11-17 17:19:27 UTC] [CYCLE #1813 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.08 | Equity=$29.00 (DD=26.19%)
