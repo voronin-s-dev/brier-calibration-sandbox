@@ -4984,3 +4984,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus YES (91.5%) within 8.0h of expiry
 
 [2026-11-17 15:01:24 UTC] [CYCLE #1799 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$28.08 | Equity=$29.07 (DD=26.02%)
+[SHADOW EXIT] #118 | S&P 500 (SPX) Up or Down on November 17? (NO)
+  Shares: 3.04 | Entry VWAP: 0.5300 -> Exit Bid VWAP: 0.6900
+  Proceeds: $2.10 | Realized PnL: $+0.49 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +30.2% >= +12% (Bid VWAP: 0.6900 vs Entry: 0.5300)
+[SHADOW EXIT] #120 | Will the price of Bitcoin be above $66,000 on November 17? (NO)
+  Shares: 4.02 | Entry VWAP: 0.8540 -> Exit Bid VWAP: 0.9810
+  Proceeds: $3.94 | Realized PnL: $+0.51 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +14.9% >= +12% (Bid VWAP: 0.9810 vs Entry: 0.8540)
+[SHADOW EXIT] #121 | Will the price of Bitcoin be above $66,000 on November 18? (NO)
+  Shares: 2.55 | Entry VWAP: 0.6860 -> Exit Bid VWAP: 0.8150
+  Proceeds: $2.08 | Realized PnL: $+0.33 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +18.8% >= +12% (Bid VWAP: 0.8150 vs Entry: 0.6860)
+[SHADOW EXEC] #122 | Will Bitcoin dip to $64,000 on November 17? (NO)
+  Category: Crypto | Shares: 2.80 @ 0.4100
+  Bet: $1.15 USDC | P_est: 47.9% | Edge: +7.0 pp
+[2026-11-17 15:10:32 UTC] [CYCLE #1800 SUMMARY] Scanned=785 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$28.08 | Equity=$29.07 (DD=26.02%)
