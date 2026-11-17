@@ -4909,3 +4909,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Macro | Shares: 2.76 @ 0.5000
   Bet: $1.38 USDC | P_est: 54.5% | Edge: +4.5 pp
 [2026-11-17 11:30:55 UTC] [CYCLE #1778 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
+[SHADOW EXIT] #113 | S&P 500 (SPX) Up or Down on November 17? (NO)
+  Shares: 2.76 | Entry VWAP: 0.5000 -> Exit Bid VWAP: 0.3900
+  Proceeds: $1.08 | Realized PnL: $-0.30 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 9.0 pp (0.545 -> 0.455)
+[SHADOW EXEC] #114 | Will the price of Ethereum be above $1,800 on November 17? (NO)
+  Category: Crypto | Shares: 5.84 @ 0.2930
+  Bet: $1.71 USDC | P_est: 39.9% | Edge: +10.6 pp
+[2026-11-17 11:40:14 UTC] [CYCLE #1779 SUMMARY] Scanned=783 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
