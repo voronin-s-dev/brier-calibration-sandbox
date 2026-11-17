@@ -4868,3 +4868,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-17 09:36:55 UTC] [CYCLE #1765 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
 [2026-11-17 09:37:08 UTC] [CYCLE #1766 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
 [2026-11-17 09:46:14 UTC] [CYCLE #1767 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
+[SHADOW EXIT] #107 | Will Zimbabwe win? (YES)
+  Shares: 4.40 | Entry VWAP: 0.7800 -> Exit Bid VWAP: 0.6500
+  Proceeds: $2.86 | Realized PnL: $-0.57 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 15.7 pp (0.874 -> 0.717)
+[SHADOW EXEC] #110 | S&P 500 (SPX) Up or Down on November 17? (NO)
+  Category: Macro | Shares: 3.15 @ 0.6000
+  Bet: $1.89 USDC | P_est: 64.5% | Edge: +4.5 pp
+[2026-11-17 09:55:18 UTC] [CYCLE #1768 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
