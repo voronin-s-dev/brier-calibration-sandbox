@@ -5030,3 +5030,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 5.28 @ 0.1950
   Bet: $1.03 USDC | P_est: 25.6% | Edge: +6.1 pp
 [2026-11-17 15:40:07 UTC] [CYCLE #1803 SUMMARY] Scanned=780 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=0 | Cash=$28.08 | Equity=$29.07 (DD=26.02%)
+[SHADOW EXIT] #127 | Will Bitcoin reach $66,000 on November 17? (YES)
+  Shares: 13.52 | Entry VWAP: 0.2100 -> Exit Bid VWAP: 0.0600
+  Proceeds: $0.81 | Realized PnL: $-2.03 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 71.4% from entry (0.2100 -> 0.0600)
+[SHADOW EXIT] #128 | Will the price of Bitcoin be above $66,000 on November 18? (YES)
+  Shares: 5.28 | Entry VWAP: 0.1950 -> Exit Bid VWAP: 0.0860
+  Proceeds: $0.45 | Realized PnL: $-0.58 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 55.9% from entry (0.1950 -> 0.0860)
+[2026-11-17 15:49:26 UTC] [CYCLE #1804 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.08 | Equity=$29.07 (DD=26.02%)
