@@ -5017,3 +5017,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Geopolitics | Shares: 2.96 @ 0.4700
   Bet: $1.39 USDC | P_est: 51.5% | Edge: +4.5 pp
 [2026-11-17 15:30:57 UTC] [CYCLE #1802 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=0 | Cash=$28.08 | Equity=$29.07 (DD=26.02%)
+[SHADOW EXIT] #124 | S&P 500 (SPX) Up or Down on November 17? (NO)
+  Shares: 4.88 | Entry VWAP: 0.7200 -> Exit Bid VWAP: 0.8500
+  Proceeds: $4.14 | Realized PnL: $+0.63 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +18.1% >= +12% (Bid VWAP: 0.8500 vs Entry: 0.7200)
+[SHADOW EXIT] #125 | Will Bitcoin dip to $64,000 on November 17? (YES)
+  Shares: 6.76 | Entry VWAP: 0.3700 -> Exit Bid VWAP: 0.4900
+  Proceeds: $3.31 | Realized PnL: $+0.81 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +32.4% >= +12% (Bid VWAP: 0.4900 vs Entry: 0.3700)
+[SHADOW EXEC] #127 | Will Bitcoin reach $66,000 on November 17? (YES)
+  Category: Crypto | Shares: 13.52 @ 0.2100
+  Bet: $2.84 USDC | P_est: 37.0% | Edge: +16.0 pp
+[SHADOW EXEC] #128 | Will the price of Bitcoin be above $66,000 on November 18? (YES)
+  Category: Crypto | Shares: 5.28 @ 0.1950
+  Bet: $1.03 USDC | P_est: 25.6% | Edge: +6.1 pp
+[2026-11-17 15:40:07 UTC] [CYCLE #1803 SUMMARY] Scanned=780 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=0 | Cash=$28.08 | Equity=$29.07 (DD=26.02%)
