@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-17 10:31:03 UTC`
+**Обновлено:** `2026-11-17 10:40:07 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -17,19 +17,19 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$56.51 USDC`** |
-| **Свободный кэш / В сделках** | `$44.49` / `$12.02 USDC` |
+| **Виртуальный баланс (Equity)** | **`$56.46 USDC`** |
+| **Свободный кэш / В сделках** | `$44.49` / `$11.97 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `2.18%` |
+| **Текущая просадка** | `2.27%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #95 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.888` | `0.956` | `98.5%` | `$3.39` | `$+0.26` | https://www.binance.com/en/tra |
+| #95 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.888` | `0.961` | `98.5%` | `$3.39` | `$+0.28` | https://www.binance.com/en/tra |
 | #100 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.780` | `0.830` | `89.0%` | `$3.40` | `$+0.22` | reporting from the qualifying  |
-| #105 | Will China PR win on 2026-11-17? | Geopolitics | **YES** | `0.530` | `0.510` | `57.5%` | `$1.64` | `$-0.06` | https://www.fifa.com |
+| #105 | Will China PR win on 2026-11-17? | Geopolitics | **YES** | `0.530` | `0.510` | `57.0%` | `$1.64` | `$-0.06` | https://www.fifa.com |
 | #110 | S&P 500 (SPX) Up or Down on November 17? | Macro | **NO** | `0.600` | `0.550` | `62.0%` | `$1.89` | `$-0.16` | https://www.wsj.com/market-dat |
-| #112 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.547` | `0.547` | `58.6%` | `$1.44` | `$+0.00` | https://www.binance.com/en/tra |
+| #112 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.547` | `0.520` | `58.4%` | `$1.44` | `$-0.07` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
