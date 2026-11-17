@@ -4963,3 +4963,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $1.92 USDC | P_est: 45.2% | Edge: +7.2 pp
 [2026-11-17 14:19:48 UTC] [CYCLE #1795 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
 [2026-11-17 14:31:03 UTC] [CYCLE #1796 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
+[SHADOW EXIT] #119 | Will Bitcoin reach $66,000 on November 17? (YES)
+  Shares: 5.05 | Entry VWAP: 0.3800 -> Exit Bid VWAP: 0.5200
+  Proceeds: $2.63 | Realized PnL: $+0.71 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +36.8% >= +12% (Bid VWAP: 0.5200 vs Entry: 0.3800)
+[SHADOW EXEC] #120 | Will the price of Bitcoin be above $66,000 on November 17? (NO)
+  Category: Crypto | Shares: 4.02 @ 0.8540
+  Bet: $3.43 USDC | P_est: 93.3% | Edge: +7.9 pp
+[SHADOW EXEC] #121 | Will the price of Bitcoin be above $66,000 on November 18? (NO)
+  Category: Crypto | Shares: 2.55 @ 0.6860
+  Bet: $1.75 USDC | P_est: 72.0% | Edge: +3.4 pp
+[2026-11-17 14:40:09 UTC] [CYCLE #1797 SUMMARY] Scanned=778 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
