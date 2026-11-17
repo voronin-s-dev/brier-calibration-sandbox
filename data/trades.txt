@@ -5109,3 +5109,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: Terminal GBM model: BTCUSDT=$63,635.80 vs strike=$66,000 (-3.58%), vol_h=0.50%, tau=22.1h => P(S_T > K)=8.1% -> Calibrated(0.75x)=8.3%
 
 [2026-11-17 18:52:42 UTC] [CYCLE #1824 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=4 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.92 | Equity=$29.10 (DD=25.94%)
+[2026-11-17 19:02:24 UTC] [CYCLE #1825 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.92 | Equity=$29.08 (DD=25.98%)
