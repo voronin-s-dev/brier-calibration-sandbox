@@ -4793,3 +4793,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $0.85 | Realized PnL: $-0.40 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 13.0 pp (0.381 -> 0.251)
 [2026-11-17 03:30:52 UTC] [CYCLE #1727 SUMMARY] Scanned=800 | PassedFilter=27 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
 [2026-11-17 03:39:59 UTC] [CYCLE #1728 SUMMARY] Scanned=788 | PassedFilter=31 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
+[2026-11-17 03:49:05 UTC] [CYCLE #1729 SUMMARY] Scanned=779 | PassedFilter=33 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.08 | Equity=$29.08 (DD=25.99%)
