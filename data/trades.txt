@@ -5161,3 +5161,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $1.30 | Realized PnL: $+0.14 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +12.2% >= +12% (Bid VWAP: 0.9830 vs Entry: 0.8760)
 [2026-11-17 22:40:00 UTC] [CYCLE #1848 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$24.21 | Equity=$29.08 (DD=25.99%)
 [2026-11-17 22:49:06 UTC] [CYCLE #1849 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.21 | Equity=$29.04 (DD=26.10%)
+[2026-11-17 23:01:15 UTC] [CYCLE #1850 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=15 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.21 | Equity=$29.06 (DD=26.04%)
