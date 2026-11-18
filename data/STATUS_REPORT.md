@@ -1,23 +1,23 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-18 15:19:34 UTC`
+**Обновлено:** `2026-11-18 15:31:14 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$28.85 USDC`** (`-21.15$` / `-42.29%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$23.02` / `$5.83 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-21.15 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `26.56%` / `28.41%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$28.81 USDC`** (`-21.19$` / `-42.38%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$23.02` / `$5.79 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-21.19 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `26.68%` / `28.41%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `213` / `63.8%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (4 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #212 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.910` | `0.943` | `98.0%` | `$1.00` | `$+0.04` | reporting from the qualifying  |
-| #215 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.738` | `0.753` | `75.7%` | `$1.26` | `$+0.03` | Kraken BTCUSDT 1m/1h Spot Klin |
-| #216 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.791` | `0.813` | `82.8%` | `$2.27` | `$+0.06` | Kraken BTCUSDT 1m/1h Spot Klin |
-| #217 | Will the price of Ethereum be above $1,700 on November  | Crypto | **YES** | `0.844` | `0.879` | `88.7%` | `$1.13` | `$+0.05` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #215 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.738` | `0.748` | `72.2%` | `$1.26` | `$+0.02` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #216 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.791` | `0.807` | `79.7%` | `$2.27` | `$+0.05` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #217 | Will the price of Ethereum be above $1,700 on November  | Crypto | **YES** | `0.844` | `0.865` | `86.0%` | `$1.13` | `$+0.03` | Kraken ETHUSDT 1m/1h Spot Klin |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -38,6 +38,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Israel x Iran ceasefire continues through November | Geopolitics | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.87] |
 | Will Bitcoin dip to $61,000 on November 18? | Crypto | NO | `91.2%` | `82.6%` | `+8.6 п.п.` | `3.20%` | REJECTED: CLOB round-trip slippage 3.20% > 2.0% limit |
 | Will Ethereum dip to $1,700 on November 18? | Crypto | NO | `86.2%` | `71.0%` | `+15.2 п.п.` | `1.00%` | EXECUTED BUY #218 ($2.25 @ 0.7100) |
 | Will the price of Ethereum be above $1,700 on Nove | Crypto | YES | `91.6%` | `84.4%` | `+7.2 п.п.` | `0.90%` | EXECUTED BUY #217 ($1.13 @ 0.8440) |
@@ -55,4 +56,3 @@
 | Will Bitcoin reach $65,000 on November 18? | Crypto | YES | `80.4%` | `75.0%` | `+5.4 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 18) |
 | Will Bitcoin reach $65,000 on November 18? | Crypto | YES | `81.1%` | `77.0%` | `+4.1 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 18) |
 | Will Bitcoin reach $65,000 on November 18? | Crypto | YES | `82.2%` | `78.0%` | `+4.2 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 18) |
-| Will Bitcoin reach $66,000 November 16-22? | Crypto | YES | `77.3%` | `70.0%` | `+7.3 п.п.` | `1.00%` | EXECUTED BUY #214 ($2.34 @ 0.7000) |
