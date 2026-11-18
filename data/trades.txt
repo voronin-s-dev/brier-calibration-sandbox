@@ -5399,3 +5399,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 3.24 | Entry VWAP: 0.7010 -> Exit Bid VWAP: 0.8020
   Proceeds: $2.60 | Realized PnL: $+0.33 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +14.4% >= +12% (Bid VWAP: 0.8020 vs Entry: 0.7010)
 [2026-11-18 17:19:34 UTC] [CYCLE #1966 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=1 | Cash=$26.48 | Equity=$28.62 (DD=27.16%)
+[SHADOW EXIT] #133 | Will Bitcoin reach $66,000 November 16-22? (YES)
+  Shares: 11.31 | Entry VWAP: 0.2900 -> Exit Bid VWAP: 0.3444
+  Proceeds: $3.90 | Realized PnL: $+0.62 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +18.8% >= +12% (Bid VWAP: 0.3444 vs Entry: 0.2900)
+[SHADOW EXEC] #135 | Will Bitcoin dip to $62,000 November 16-22? (YES)
+  Category: Crypto | Shares: 4.83 @ 0.6900
+  Bet: $3.33 USDC | P_est: 77.0% | Edge: +8.0 pp
+[2026-11-18 17:30:59 UTC] [CYCLE #1967 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=2 | Opened=0 (Shadow=1) | Closed=0 | Cash=$26.48 | Equity=$28.68 (DD=27.00%)
