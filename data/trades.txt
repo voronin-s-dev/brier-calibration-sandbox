@@ -5335,3 +5335,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: First-passage dip model: ETHUSDT=$1,795.00 -> barrier=$1,700 (-5.29%), vol_h=0.63%, tau=14.2h => P(touch)=8.9% -> Calibrated(0.75x)=13.8%
 
 [2026-11-18 14:49:12 UTC] [CYCLE #1951 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=21 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=1 | Cash=$20.42 | Equity=$28.13 (DD=28.41%)
+[EXIT] #218 | Will Ethereum dip to $1,700 on November 18? (NO)
+  Shares: 3.17 | Entry VWAP: 0.7100 -> Exit Bid VWAP: 0.8200
+  Proceeds: $2.60 | Realized PnL: $+0.35 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +15.5% >= +12% (Bid VWAP: 0.8200 vs Entry: 0.7100)
+[2026-11-18 15:01:18 UTC] [CYCLE #1952 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=17 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$23.02 | Equity=$28.95 (DD=26.33%)

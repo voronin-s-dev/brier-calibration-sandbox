@@ -1,24 +1,23 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-18 14:49:16 UTC`
+**Обновлено:** `2026-11-18 15:01:23 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$28.13 USDC`** (`-21.87$` / `-43.74%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$20.42` / `$7.70 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-21.87 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `28.41%` / `28.41%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
-| **Закрытых сделок / Win Rate** | `212` / `63.7%` | Brier Score: `0.1960` |
+| **Текущий баланс (Equity)** | **`$28.95 USDC`** (`-21.05$` / `-42.11%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$23.02` / `$5.92 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-21.05 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `26.33%` / `28.41%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Закрытых сделок / Win Rate** | `213` / `63.8%` | Brier Score: `0.1960` |
 
-## 📂 Открытые позиции (5 / 8)
+## 📂 Открытые позиции (4 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #212 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.910` | `0.944` | `98.0%` | `$1.00` | `$+0.04` | reporting from the qualifying  |
-| #215 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.738` | `0.703` | `76.6%` | `$1.26` | `$-0.06` | Kraken BTCUSDT 1m/1h Spot Klin |
-| #216 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.791` | `0.757` | `84.6%` | `$2.27` | `$-0.10` | Kraken BTCUSDT 1m/1h Spot Klin |
-| #217 | Will the price of Ethereum be above $1,700 on November  | Crypto | **YES** | `0.844` | `0.804` | `90.0%` | `$1.13` | `$-0.05` | Kraken ETHUSDT 1m/1h Spot Klin |
-| #218 | Will Ethereum dip to $1,700 on November 18? | Crypto | **NO** | `0.710` | `0.700` | `86.2%` | `$2.25` | `$-0.03` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #212 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.910` | `0.943` | `98.0%` | `$1.00` | `$+0.04` | reporting from the qualifying  |
+| #215 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.738` | `0.764` | `75.6%` | `$1.26` | `$+0.04` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #216 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **YES** | `0.791` | `0.831` | `82.8%` | `$2.27` | `$+0.11` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #217 | Will the price of Ethereum be above $1,700 on November  | Crypto | **YES** | `0.844` | `0.895` | `88.5%` | `$1.13` | `$+0.07` | Kraken ETHUSDT 1m/1h Spot Klin |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
