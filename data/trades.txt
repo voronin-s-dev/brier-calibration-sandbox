@@ -5322,3 +5322,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: Terminal GBM model: ETHUSDT=$1,795.00 vs strike=$1,700 (+5.59%), vol_h=0.63%, tau=26.3h => P(S_T > K)=93.2% -> Calibrated(0.75x)=91.6%
 
 [2026-11-18 14:40:05 UTC] [CYCLE #1950 SUMMARY] Scanned=776 | PassedFilter=50 | Evaluated=20 | Edges(>=8pp)=4 | Opened=3 (Shadow=0) | Closed=1 | Cash=$21.57 | Equity=$28.33 (DD=27.90%)
+[EXIT] #210 | Will the price of Bitcoin be above $66,000 on November 18? (NO)
+  Shares: 1.12 | Entry VWAP: 0.8930 -> Exit Bid VWAP: 0.9880
+  Proceeds: $1.11 | Realized PnL: $+0.11 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.8%) secured early with +10.6% gain
+[2026-11-18 14:49:12 UTC] [OPEN TRADE #218] Will Ethereum dip to $1,700 on November 18?
+  Категория: Crypto | Сторона: NO | Источник: Kraken ETHUSDT 1m/1h Spot Klines
+  Оценка бота: 86.2% vs Рынок (Ask VWAP): 71.0% (Перекос/Edge: +15.2 п.п.)
+  Стакан CLOB: BestBid=0.700, BestAsk=0.710, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=52.6%, Четверть(0.25x)=21.0% -> Применён=8.0% банка
+  Размер сделки: $2.25 USDC (3.17 shares @ $0.7100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.426 if P_est <= 70%
+  Причина: First-passage dip model: ETHUSDT=$1,795.00 -> barrier=$1,700 (-5.29%), vol_h=0.63%, tau=14.2h => P(touch)=8.9% -> Calibrated(0.75x)=13.8%
+
+[2026-11-18 14:49:12 UTC] [CYCLE #1951 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=21 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=1 | Cash=$20.42 | Equity=$28.13 (DD=28.41%)
