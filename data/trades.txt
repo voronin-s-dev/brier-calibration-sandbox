@@ -5250,3 +5250,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-18 08:19:30 UTC] [CYCLE #1909 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$23.84 | Equity=$29.06 (DD=26.04%)
 [2026-11-18 08:30:56 UTC] [CYCLE #1910 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=15 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.84 | Equity=$29.21 (DD=25.66%)
 [2026-11-18 08:40:20 UTC] [CYCLE #1911 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=15 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.84 | Equity=$29.21 (DD=25.66%)
+[EXIT] #208 | Will the price of Ethereum be above $1,700 on November 18? (YES)
+  Shares: 1.13 | Entry VWAP: 0.8820 -> Exit Bid VWAP: 0.9850
+  Proceeds: $1.12 | Realized PnL: $+0.12 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.5%) secured early with +11.7% gain
+[2026-11-18 08:49:43 UTC] [CYCLE #1912 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=15 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$24.96 | Equity=$29.20 (DD=25.68%)
