@@ -5368,3 +5368,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: First-passage dip model: BTCUSDT=$63,012.00 -> barrier=$61,000 (-3.19%), vol_h=0.50%, tau=12.7h => P(touch)=17.7% -> Calibrated(0.75x)=19.1%
 
 [2026-11-18 16:19:33 UTC] [CYCLE #1960 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=17 | Edges(>=8pp)=5 | Opened=1 (Shadow=0) | Closed=1 | Cash=$21.09 | Equity=$28.29 (DD=28.00%)
+[EXIT] #215 | Will the price of Bitcoin be above $62,000 on November 20? (YES)
+  Shares: 1.71 | Entry VWAP: 0.7380 -> Exit Bid VWAP: 0.5910
+  Proceeds: $1.01 | Realized PnL: $-0.25 USDC | Reason: THESIS INVALIDATED (Prob Shift >= 12.0pp & -EV Hold): Estimate dropped from 76.7% to 56.9% (Bid VWAP: $0.591, Entry: $0.738)
+[EXIT] #216 | Will the price of Bitcoin be above $62,000 on November 19? (YES)
+  Shares: 2.87 | Entry VWAP: 0.7910 -> Exit Bid VWAP: 0.6220
+  Proceeds: $1.79 | Realized PnL: $-0.49 USDC | Reason: THESIS INVALIDATED (Prob Shift >= 12.0pp & -EV Hold): Estimate dropped from 85.0% to 60.0% (Bid VWAP: $0.622, Entry: $0.791)
+[2026-11-18 16:30:59 UTC] [CYCLE #1961 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=2 | Cash=$23.88 | Equity=$28.15 (DD=28.36%)
