@@ -5291,3 +5291,34 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-18 14:10:18 UTC] [CYCLE #1947 SUMMARY] Scanned=780 | PassedFilter=50 | Evaluated=19 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.96 | Equity=$28.66 (DD=27.05%)
 [2026-11-18 14:19:23 UTC] [CYCLE #1948 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=19 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.96 | Equity=$28.70 (DD=26.95%)
 [2026-11-18 14:30:58 UTC] [CYCLE #1949 SUMMARY] Scanned=793 | PassedFilter=50 | Evaluated=18 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.96 | Equity=$28.76 (DD=26.81%)
+[EXIT] #214 | Will Bitcoin reach $66,000 November 16-22? (YES)
+  Shares: 3.34 | Entry VWAP: 0.7000 -> Exit Bid VWAP: 0.3800
+  Proceeds: $1.27 | Realized PnL: $-1.07 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.380 (-45.7% from entry $0.700, P_est=61.4%)
+[2026-11-18 14:40:05 UTC] [OPEN TRADE #215] Will the price of Bitcoin be above $62,000 on November 20?
+  Категория: Crypto | Сторона: YES | Источник: Kraken BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 76.7% vs Рынок (Ask VWAP): 73.8% (Перекос/Edge: +2.9 п.п.)
+  Стакан CLOB: BestBid=0.726, BestAsk=0.738, Проскальзывание входа/выхода=1.20% (<= 3.0%)
+  Келли: Полный=11.1%, Четверть(0.25x)=4.4% -> Применён=4.4% банка
+  Размер сделки: $1.26 USDC (1.71 shares @ $0.7380)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.443 if P_est <= 70%
+  Причина: Terminal GBM model: BTCUSDT=$64,016.70 vs strike=$62,000 (+3.25%), vol_h=0.50%, tau=50.3h => P(S_T > K)=78.4% -> Calibrated(0.75x)=76.7%
+
+[2026-11-18 14:40:05 UTC] [OPEN TRADE #216] Will the price of Bitcoin be above $62,000 on November 19?
+  Категория: Crypto | Сторона: YES | Источник: Kraken BTCUSDT 1m/1h Spot Klines
+  Оценка бота: 85.0% vs Рынок (Ask VWAP): 79.1% (Перекос/Edge: +5.9 п.п.)
+  Стакан CLOB: BestBid=0.790, BestAsk=0.791, Проскальзывание входа/выхода=0.10% (<= 3.0%)
+  Келли: Полный=28.1%, Четверть(0.25x)=11.2% -> Применён=8.0% банка
+  Размер сделки: $2.27 USDC (2.87 shares @ $0.7910)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.475 if P_est <= 70%
+  Причина: Terminal GBM model: BTCUSDT=$64,016.70 vs strike=$62,000 (+3.25%), vol_h=0.50%, tau=26.3h => P(S_T > K)=86.4% -> Calibrated(0.75x)=85.0%
+
+[2026-11-18 14:40:05 UTC] [OPEN TRADE #217] Will the price of Ethereum be above $1,700 on November 19?
+  Категория: Crypto | Сторона: YES | Источник: Kraken ETHUSDT 1m/1h Spot Klines
+  Оценка бота: 91.6% vs Рынок (Ask VWAP): 84.4% (Перекос/Edge: +7.2 п.п.)
+  Стакан CLOB: BestBid=0.835, BestAsk=0.844, Проскальзывание входа/выхода=0.90% (<= 3.0%)
+  Келли: Полный=46.0%, Четверть(0.25x)=18.4% -> Применён=4.0% банка
+  Размер сделки: $1.13 USDC (1.34 shares @ $0.8440)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.506 if P_est <= 70%
+  Причина: Terminal GBM model: ETHUSDT=$1,795.00 vs strike=$1,700 (+5.59%), vol_h=0.63%, tau=26.3h => P(S_T > K)=93.2% -> Calibrated(0.75x)=91.6%
+
+[2026-11-18 14:40:05 UTC] [CYCLE #1950 SUMMARY] Scanned=776 | PassedFilter=50 | Evaluated=20 | Edges(>=8pp)=4 | Opened=3 (Shadow=0) | Closed=1 | Cash=$21.57 | Equity=$28.33 (DD=27.90%)
