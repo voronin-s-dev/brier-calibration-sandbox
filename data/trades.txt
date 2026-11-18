@@ -5493,3 +5493,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $4.61 | Realized PnL: $+1.52 USDC | Reason: TAKE PROFIT (Sweet Spot +25% Lock): Live CLOB Bid VWAP (88.0%) secured early with +49.2% net gain
 [2026-11-18 22:49:09 UTC] [CYCLE #2002 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.48 | Equity=$28.65 (DD=27.08%)
 [2026-11-18 23:01:10 UTC] [CYCLE #2003 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.48 | Equity=$28.69 (DD=26.99%)
+[SHADOW EXEC] #145 | Will the price of Bitcoin be above $64,000 on November 20? (NO)
+  Category: Crypto | Shares: 2.24 @ 0.7400
+  Bet: $1.66 USDC | P_est: 77.1% | Edge: +3.1 pp
+[2026-11-18 23:10:18 UTC] [CYCLE #2004 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=15 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$26.48 | Equity=$28.75 (DD=26.84%)
