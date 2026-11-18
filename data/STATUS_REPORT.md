@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-18 11:40:03 UTC`
+**Обновлено:** `2026-11-18 11:49:09 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -14,7 +14,7 @@
 ## 📂 Открытые позиции (3 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #210 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.893` | `0.949` | `98.5%` | `$1.00` | `$+0.06` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #210 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.893` | `0.948` | `98.5%` | `$1.00` | `$+0.06` | Kraken BTCUSDT 1m/1h Spot Klin |
 | #212 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.910` | `0.940` | `98.0%` | `$1.00` | `$+0.03` | reporting from the qualifying  |
 | #214 | Will Bitcoin reach $66,000 November 16-22? | Crypto | **YES** | `0.700` | `0.530` | `64.9%` | `$2.34` | `$-0.57` | Kraken BTCUSDT 1m/1h Spot Klin |
 
