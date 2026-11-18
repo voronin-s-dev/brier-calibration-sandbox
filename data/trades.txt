@@ -5472,3 +5472,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-18 21:10:18 UTC] [CYCLE #1992 SUMMARY] Scanned=786 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.48 | Equity=$28.65 (DD=27.08%)
 [2026-11-18 21:19:23 UTC] [CYCLE #1993 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.48 | Equity=$28.68 (DD=27.00%)
 [2026-11-18 21:30:58 UTC] [CYCLE #1994 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.48 | Equity=$28.69 (DD=26.97%)
+[SHADOW EXEC] #143 | Will Ethereum dip to $1,700 on November 18? (NO)
+  Category: Crypto | Shares: 4.15 @ 0.9100
+  Bet: $3.78 USDC | P_est: 93.5% | Edge: +2.5 pp
+[2026-11-18 21:40:04 UTC] [CYCLE #1995 SUMMARY] Scanned=784 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$26.48 | Equity=$28.71 (DD=26.93%)
