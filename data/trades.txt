@@ -5243,3 +5243,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: First-passage reach model: BTCUSDT=$64,764.70 -> barrier=$66,000 (+1.91%), vol_h=0.50%, tau=117.0h => P(touch)=79.6% -> Calibrated(0.75x)=77.3%
 
 [2026-11-18 08:01:17 UTC] [CYCLE #1907 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=16 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$22.55 | Equity=$29.21 (DD=25.65%)
+[2026-11-18 08:10:24 UTC] [CYCLE #1908 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=15 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.55 | Equity=$29.11 (DD=25.92%)
