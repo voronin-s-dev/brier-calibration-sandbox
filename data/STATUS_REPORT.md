@@ -1,22 +1,22 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-18 09:48:15 UTC`
+**Обновлено:** `2026-11-18 09:57:21 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$29.11 USDC`** (`-20.89$` / `-41.78%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$24.96` / `$4.15 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-20.89 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `25.91%` / `26.82%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$29.12 USDC`** (`-20.88$` / `-41.77%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$24.96` / `$4.16 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-20.88 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `25.90%` / `26.82%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `210` / `63.8%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (3 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #210 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.893` | `0.926` | `95.9%` | `$1.00` | `$+0.04` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #210 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.893` | `0.931` | `96.5%` | `$1.00` | `$+0.04` | Kraken BTCUSDT 1m/1h Spot Klin |
 | #212 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.910` | `0.950` | `98.0%` | `$1.00` | `$+0.04` | reporting from the qualifying  |
-| #214 | Will Bitcoin reach $66,000 November 16-22? | Crypto | **YES** | `0.700` | `0.620` | `73.4%` | `$2.34` | `$-0.27` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #214 | Will Bitcoin reach $66,000 November 16-22? | Crypto | **YES** | `0.700` | `0.620` | `72.9%` | `$2.34` | `$-0.27` | Kraken BTCUSDT 1m/1h Spot Klin |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -37,6 +37,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Bitcoin reach $65,000 on November 18? | Crypto | YES | `81.1%` | `77.0%` | `+4.1 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 18) |
 | Will Bitcoin reach $65,000 on November 18? | Crypto | YES | `82.2%` | `78.0%` | `+4.2 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 18) |
 | Will Bitcoin reach $66,000 November 16-22? | Crypto | YES | `77.3%` | `70.0%` | `+7.3 п.п.` | `1.00%` | EXECUTED BUY #214 ($2.34 @ 0.7000) |
 | Will the highest temperature in Chengdu be 19°C on | Weather | NO | `96.2%` | `85.0%` | `+11.2 п.п.` | `6.20%` | REJECTED: Narrow weather bracket NO bet prohibited (airport METAR microclimate tail risk) |
@@ -54,4 +55,3 @@
 | Will the price of Ethereum be above $1,900 on Nove | Crypto | NO | `95.3%` | `90.6%` | `+4.8 п.п.` | `0.70%` | REJECTED: Duplicate underlying event (crypto:ethereum:november 18) |
 | Will the price of Ethereum be above $1,900 on Nove | Crypto | NO | `84.2%` | `81.0%` | `+3.2 п.п.` | `1.00%` | EXECUTED BUY #213 ($1.15 @ 0.8100) |
 | Will Ethereum dip to $1,750 on November 17? | Crypto | YES | `99.5%` | `10.5%` | `+89.0 п.п.` | `2.50%` | REJECTED: Contract price $0.105 outside sweet spot [$0.60, $0.92] |
-| Will Ethereum dip to $1,750 on November 17? | Crypto | YES | `99.5%` | `13.0%` | `+86.5 п.п.` | `2.00%` | REJECTED: Contract price $0.130 outside sweet spot [$0.60, $0.92] |
