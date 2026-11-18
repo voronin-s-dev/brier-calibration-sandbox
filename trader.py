@@ -126,8 +126,8 @@ class GrokCharterPaperTrader:
     MIN_EDGE_PP = 0.025             # 2.5 percentage points minimum gross divergence against Ask VWAP
     MIN_NET_EDGE_PP = 0.015         # 1.5 percentage points minimum NET edge after CLOB round-trip slippage
     MIN_ESTIMATED_PROB = 0.70       # Minimum estimated probability: high-conviction value bets (>=70% win likelihood)
-    MIN_CONTRACT_PRICE = 0.70       # Proven profitable zone [0.70, 0.87]: 71% WR, +15% to +43% payoff (reachable +12% TP)
-    MAX_CONTRACT_PRICE = 0.87       # Strict cap: excludes 0.88-0.92 death zone where +12% TP is mathematically impossible
+    MIN_CONTRACT_PRICE = 0.70       # Proven profitable zone [0.70, 0.92] for Sports/Geopolitics/Other (Crypto quarantined)
+    MAX_CONTRACT_PRICE = 0.92       # Covers core Sports 0.87-0.92 volume (80% WR) while blocking 95c+ tail traps
     MIN_HOURS_TO_CLOSE = 2.0        # Skip markets closing in < 2h (Charter Rule #1: min 2h horizon to prevent instant churn)
     MAX_HOURS_TO_CLOSE = 120.0      # Fast capital turnover
     EXIT_HOURS_THRESHOLD = 0.0      # Deprecated: superseded by MIN_HOURS_TO_CLOSE_EXIT
@@ -227,6 +227,19 @@ class GrokCharterPaperTrader:
             "soccer", "football club"
         ]
         return any(k in q for k in soccer_keywords)
+
+    @classmethod
+    def is_social_mention_count_trap(cls, question: str) -> bool:
+        """
+        Detects high-variance social media post/tweet count bracket markets
+        (e.g., Elon Musk tweet ranges, Truth Social post counts).
+        Burst posting patterns cause systematic consensus mispricing.
+        """
+        q = question.lower()
+        return any(k in q for k in ("tweet", "tweets", "truth social", "x post", "x posts")) or (
+            any(e in q for e in ("elon musk", "musk", "donald trump", "trump"))
+            and (" post " in q or " posts " in q)
+        )
 
     def _evaluate_market_probability(
         self,
@@ -938,6 +951,8 @@ class GrokCharterPaperTrader:
                 decision = "REJECTED: Narrow weather bracket NO bet prohibited (airport METAR microclimate tail risk)"
             elif mkt.category == "Sports" and chosen_side == "YES" and self.is_soccer_draw_trap(mkt.question):
                 decision = "REJECTED: Soccer Draw Guard: Binary YES on 3-way soccer match winner prohibited (draw resolves to $0.00)"
+            elif self.is_social_mention_count_trap(mkt.question):
+                decision = "REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap)"
             elif not ob_sim.sufficient_depth:
                 decision = f"REJECTED: {ob_sim.reject_reason}"
             elif not ob_sim.passes_slippage_limit:

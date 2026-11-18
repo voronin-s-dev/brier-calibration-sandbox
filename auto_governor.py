@@ -31,6 +31,10 @@ TRADES_LOG_PATH = DATA_DIR / "trades.txt"
 
 
 class AutoGovernor:
+    # Categories permanently excluded from automatic shadow-based unfreeze proposals
+    # (Crypto GBM lacks live options IV surface / adverse selection; Weather has airport METAR tail risk)
+    SHADOW_UNFREEZE_BLOCKLIST = {"CRYPTO", "WEATHER"}
+
     def __init__(self, db: SimDatabase, report_path: Optional[Path] = None) -> None:
         self.db = db
         if report_path is not None:
@@ -457,11 +461,14 @@ class AutoGovernor:
         # 5b. TIER 2 (Calibration): Shadow Category Recovery & Unfreeze (SEMI-AUTO)
         # ---------------------------------------------------------------------
         if active_cat != "ALL":
+            allowed_active = {c.strip().upper() for c in active_cat.split(",") if c.strip()}
             # Only evaluate shadow recovery from trades opened AFTER the category was quarantined
             freeze_time = str(pf.get("category_filter_updated_at") or "").strip()
             shadow_stats = self.db.get_shadow_category_stats(since_iso=freeze_time if freeze_time else None)
             for cat, st in shadow_stats.items():
-                if cat.upper() == active_cat.upper():
+                if cat.upper() in allowed_active:
+                    continue
+                if cat.upper() in self.SHADOW_UNFREEZE_BLOCKLIST:
                     continue
                 cnt = int(st["count"])
                 pnl = float(st["pnl"])

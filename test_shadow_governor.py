@@ -34,12 +34,40 @@ class TestShadowGovernor(unittest.TestCase):
         self.tmp_dir.cleanup()
 
     def test_unfreeze_proposal_triggered_on_strong_shadow_performance(self) -> None:
-        """When shadow Crypto closes >= 5 trades with PnL >= +$1.50 and WR >= 60%, unfreeze proposal must trigger."""
-        # Insert 5 winning trades in shadow Crypto (total PnL: +$2.50, WR 100%)
+        """When eligible shadow category (Geopolitics) closes >= 5 trades with PnL >= +$1.50 and WR >= 60%, unfreeze triggers."""
         for i in range(5):
             pos_id = self.db.open_shadow_position(
-                market_id=f"m_cr_{i}", question=f"Crypto Q{i}", category="Crypto", side="YES",
+                market_id=f"m_geo_{i}", question=f"Geo Q{i}", category="Geopolitics", side="YES",
                 token_id=f"tok_{i}", shares=5.0, entry_vwap=0.50, cost_usdc=2.50,
+                initial_p_est=0.70, entry_edge=0.20, kelly_full_pct=0.10, kelly_half_pct=0.05,
+                applied_size_pct=0.05, roundtrip_slippage_pct=0.01, official_source="Reuters",
+                exit_condition="Exp", rationale="Test", end_date_iso="2026-10-30"
+            )
+            self.db.close_shadow_position(
+                pos_id=pos_id, status="RESOLVED", exit_vwap=0.60, proceeds_usdc=3.00,
+                exit_reason="TP", latest_p_est=0.60
+            )
+
+        res = self.gov.evaluate_portfolio_and_rules()
+
+        with self.db._connect() as conn:
+            rows = conn.execute(
+                "SELECT * FROM governance_events WHERE rule_key LIKE 'tier2_shadow_unfreeze_geopolitics_%'"
+            ).fetchall()
+
+        self.assertEqual(len(rows), 1)
+        event = dict(rows[0])
+        self.assertEqual(event["status"], "PENDING_APPROVAL")
+        self.assertEqual(event["tier"], "TIER_2_CALIBRATION")
+        self.assertIn("Разморозка категории Geopolitics", event["title"])
+        self.assertIn('"active_category_filter": "ALL"', event["proposed_action_json"])
+
+    def test_crypto_blocked_from_shadow_unfreeze(self) -> None:
+        """Crypto is permanently blocklisted from automatic shadow-based unfreeze proposals."""
+        for i in range(5):
+            pos_id = self.db.open_shadow_position(
+                market_id=f"m_cr_blk_{i}", question=f"Crypto Q{i}", category="Crypto", side="YES",
+                token_id=f"tok_blk_{i}", shares=5.0, entry_vwap=0.50, cost_usdc=2.50,
                 initial_p_est=0.70, entry_edge=0.20, kelly_full_pct=0.10, kelly_half_pct=0.05,
                 applied_size_pct=0.05, roundtrip_slippage_pct=0.01, official_source="Coinbase",
                 exit_condition="Exp", rationale="Test", end_date_iso="2026-10-30"
@@ -49,20 +77,14 @@ class TestShadowGovernor(unittest.TestCase):
                 exit_reason="TP", latest_p_est=0.60
             )
 
-        res = self.gov.evaluate_portfolio_and_rules()
-        events = self.gov.get_pending_proposals() if hasattr(self.gov, "get_pending_proposals") else []
+        self.gov.evaluate_portfolio_and_rules()
 
         with self.db._connect() as conn:
             rows = conn.execute(
                 "SELECT * FROM governance_events WHERE rule_key LIKE 'tier2_shadow_unfreeze_crypto_%'"
             ).fetchall()
 
-        self.assertEqual(len(rows), 1)
-        event = dict(rows[0])
-        self.assertEqual(event["status"], "PENDING_APPROVAL")
-        self.assertEqual(event["tier"], "TIER_2_CALIBRATION")
-        self.assertIn("Разморозка категории Crypto", event["title"])
-        self.assertIn('"active_category_filter": "ALL"', event["proposed_action_json"])
+        self.assertEqual(len(rows), 0)
 
     def test_unfreeze_requires_minimum_five_trades(self) -> None:
         """If shadow category has only 2 winning trades, it must not trigger an unfreeze proposal yet."""

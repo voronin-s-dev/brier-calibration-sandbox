@@ -1,8 +1,8 @@
 {
   "0": "Матрица проверок риск-менеджмента (tests_risk.py)",
   "1": "SimDatabase",
-  "2": "MarketInfo",
-  "3": "SimDatabase",
+  "2": "GrokCharterPaperTrader",
+  "3": ".monitor_and_manage_shadow_positions",
   "4": "AutoGovernor",
   "5": "extract_event_key",
   "6": "🧠 Реестр авто-доработок и полуавтоматических решений (Auto-Governor)",
@@ -19,6 +19,7 @@
   "17": "trader.py",
   "18": ".partition_markets",
   "19": "Разбор 2026-11-07: ложное утверждение об остановке симулятора из-за локального статуса",
-  "20": "run_sim.py",
+  "20": "check_and_send_daily_digest",
+  "21": ".is_social_mention_count_trap",
   "26": ".test_shadow_candidate_funnel_not_starved"
 }

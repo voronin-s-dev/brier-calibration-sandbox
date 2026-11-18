@@ -150,9 +150,18 @@ class TestRiskManagementV2(unittest.TestCase):
         self.assertEqual(GrokCharterPaperTrader.MIN_NET_EDGE_PP, 0.015)
         self.assertEqual(GrokCharterPaperTrader.MIN_ESTIMATED_PROB, 0.70)
         self.assertEqual(GrokCharterPaperTrader.MIN_CONTRACT_PRICE, 0.70)
-        self.assertEqual(GrokCharterPaperTrader.MAX_CONTRACT_PRICE, 0.87)
+        self.assertEqual(GrokCharterPaperTrader.MAX_CONTRACT_PRICE, 0.92)
         self.assertEqual(GrokCharterPaperTrader.PROB_SHIFT_EXIT_PP, 0.12)
         self.assertEqual(GrokCharterPaperTrader.MAX_BANK_PCT_PER_TRADE, 0.08)
+
+    def test_social_mention_count_guard(self) -> None:
+        """Verify high-variance social post/tweet count markets (Elon Musk tweets, Truth Social) are blocked."""
+        self.assertTrue(GrokCharterPaperTrader.is_social_mention_count_trap("Will Elon Musk post 65-89 tweets from November 16 to November 18, 2026?"))
+        self.assertTrue(GrokCharterPaperTrader.is_social_mention_count_trap("Will Elon Musk post 220-239 tweets this week?"))
+        self.assertTrue(GrokCharterPaperTrader.is_social_mention_count_trap("Will Donald Trump post 30-39 Truth Social posts?"))
+        self.assertFalse(GrokCharterPaperTrader.is_social_mention_count_trap("Fourth Jensen Huang affair reported by November 20?"))
+        self.assertFalse(GrokCharterPaperTrader.is_social_mention_count_trap("Will Argentina win on 2026-11-17?"))
+        self.assertFalse(GrokCharterPaperTrader.is_social_mention_count_trap("Spurs vs. Jazz"))
 
     def test_soccer_draw_guard(self) -> None:
         """Verify that 3-way soccer win markets are flagged to prevent draw loss traps."""
