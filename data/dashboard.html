@@ -77,7 +77,7 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-11-18 06:31:00 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-11-18 06:40:09 UTC</div>
     </div>
   </div>
 
@@ -86,12 +86,12 @@
   <div class="grid">
     <div class="card">
       <div class="metric-label">Текущий капитал (Equity)</div>
-      <div class="metric-val">$29.25 <span style="font-size:15px" class="neg">(-20.75$ / -41.49%)</span></div>
+      <div class="metric-val">$29.25 <span style="font-size:15px" class="neg">(-20.75$ / -41.50%)</span></div>
       <div class="metric-sub">Старт: $50.00 USDC (Оценка по Bid стакана!)</div>
     </div>
     <div class="card">
       <div class="metric-label">Свободный кэш / В позициях</div>
-      <div class="metric-val">$24.89 <span class="muted" style="font-size:16px">/ $4.37</span></div>
+      <div class="metric-val">$24.89 <span class="muted" style="font-size:16px">/ $4.36</span></div>
       <div class="metric-sub">Открыто позиций: 4 из 8 (макс 8% банка)</div>
     </div>
     <div class="card">
@@ -206,8 +206,8 @@
             <td><span class="side-no">NO</span></td>
             <td>1.12</td>
             <td>$0.8930</td>
-            <td>$0.9000</td>
-            <td><strong>89.1%</strong> <small>(+2.4pp)</small></td>
+            <td>$0.8980</td>
+            <td><strong>89.3%</strong> <small>(+2.4pp)</small></td>
             <td>$1.00 <small>(3.4%)</small></td>
             <td class="pos">$+0.01</td>
             <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP &gt;= 0.985), or Stop-Loss &lt;= 0.536 if P_est &lt;= 70%</small></td>
@@ -255,6 +255,19 @@
     </thead>
     <tbody>
       
+        <tr class="">
+            <td>Will the highest temperature in Chengdu be 19°C on November 18?<br><small class="muted">Station Auto-Meteo Chengdu (CN) (2026-11-18): Model Max=14.8°C (±1.5°C), Target=19°C (±0.5) =&gt; RawP=1.0%, Calibrated(0.80x)=3.8%</small></td>
+            <td><span class="badge cat-weather">Weather</span></td>
+            <td>NO</td>
+            <td>96.2%</td>
+            <td>85.0%</td>
+            <td class="pos">+11.2 п.п.</td>
+            <td class="neg">6.20%</td>
+            <td>$519</td>
+            <td>5.3h</td>
+            <td><strong>REJECTED: Narrow weather bracket NO bet prohibited (airport METAR microclimate tail risk)</strong></td>
+        </tr>
+        
         <tr class="">
             <td>Will Bitcoin reach $66,000 November 16-22?<br><small class="muted">First-passage reach model: BTCUSDT=$64,554.20 -&gt; barrier=$66,000 (+2.24%), vol_h=0.50%, tau=118.5h =&gt; P(touch)=76.3% -&gt; Calibrated(0.75x)=73.6%</small></td>
             <td><span class="badge cat-crypto">Crypto</span></td>
@@ -567,25 +580,11 @@
             <td><strong>REJECTED: Contract price $0.190 outside sweet spot [$0.60, $0.92]</strong></td>
         </tr>
         
-        <tr class="">
-            <td>Will Ethereum dip to $1,750 on November 17?<br><small class="muted">ETHUSDT already touched/below $1,750 (Current=$1,796.07, RefLow=$1,749.17)</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>99.5%</td>
-            <td>17.0%</td>
-            <td class="pos">+82.5 п.п.</td>
-            <td class="pos">2.00%</td>
-            <td>$20,072</td>
-            <td>8.3h</td>
-            <td><strong>REJECTED: Contract price $0.170 outside sweet spot [$0.60, $0.92]</strong></td>
-        </tr>
-        
     </tbody>
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box"> reported by November 20?
-  Категория: Other | Сторона: NO | Источник: reporting from the qualifying outlets; for acknowledgments, official information from Jensen Huang or his official or legal representatives may also be used
+  <pre class="log-box"> or legal representatives may also be used
   Оценка бота: 96.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +5.0 п.п.)
   Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (&lt;= 3.0%)
   Келли: Полный=55.6%, Четверть(0.25x)=22.2% -&gt; Применён=3.4% банка
@@ -682,6 +681,7 @@
 [2026-11-18 06:10:34 UTC] [CYCLE #1896 SUMMARY] Scanned=785 | PassedFilter=50 | Evaluated=18 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.89 | Equity=$29.22 (DD=25.64%)
 [2026-11-18 06:19:58 UTC] [CYCLE #1897 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=19 | Edges(&gt;=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.89 | Equity=$29.24 (DD=25.59%)
 [2026-11-18 06:30:53 UTC] [CYCLE #1898 SUMMARY] Scanned=774 | PassedFilter=50 | Evaluated=18 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.89 | Equity=$29.25 (DD=25.55%)
+[2026-11-18 06:40:02 UTC] [CYCLE #1899 SUMMARY] Scanned=783 | PassedFilter=50 | Evaluated=17 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.89 | Equity=$29.25 (DD=25.55%)
 </pre>
 </body>
 </html>
