@@ -1,22 +1,22 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-18 10:49:10 UTC`
+**Обновлено:** `2026-11-18 11:01:17 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$28.90 USDC`** (`-21.10$` / `-42.21%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$24.96` / `$3.94 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-21.10 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `26.46%` / `26.82%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$28.93 USDC`** (`-21.07$` / `-42.14%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$24.96` / `$3.97 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-21.07 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `26.37%` / `26.82%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `210` / `63.8%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (3 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #210 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.893` | `0.944` | `98.1%` | `$1.00` | `$+0.06` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #210 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.893` | `0.944` | `97.9%` | `$1.00` | `$+0.06` | Kraken BTCUSDT 1m/1h Spot Klin |
 | #212 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.910` | `0.950` | `98.0%` | `$1.00` | `$+0.04` | reporting from the qualifying  |
-| #214 | Will Bitcoin reach $66,000 November 16-22? | Crypto | **YES** | `0.700` | `0.550` | `66.7%` | `$2.34` | `$-0.50` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #214 | Will Bitcoin reach $66,000 November 16-22? | Crypto | **YES** | `0.700` | `0.560` | `67.5%` | `$2.34` | `$-0.47` | Kraken BTCUSDT 1m/1h Spot Klin |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -37,6 +37,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Bitcoin dip to $64,000 on November 18? | Crypto | YES | `86.6%` | `82.0%` | `+4.6 п.п.` | `2.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 18) |
 | Will Bitcoin dip to $64,000 on November 18? | Crypto | YES | `88.5%` | `81.0%` | `+7.5 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 18) |
 | Will Bitcoin dip to $64,000 on November 18? | Crypto | YES | `89.2%` | `85.0%` | `+4.2 п.п.` | `2.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 18) |
 | Will Bitcoin dip to $64,000 on November 18? | Crypto | YES | `87.2%` | `82.0%` | `+5.2 п.п.` | `2.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 18) |
@@ -54,4 +55,3 @@
 | Will Bitcoin reach $66,000 November 16-22? | Crypto | YES | `75.5%` | `68.0%` | `+7.5 п.п.` | `1.00%` | REJECTED: Contract price $0.680 outside sweet spot [$0.70, $0.87] |
 | Will Bitcoin reach $66,000 November 16-22? | Crypto | YES | `75.8%` | `68.0%` | `+7.8 п.п.` | `1.00%` | REJECTED: Contract price $0.680 outside sweet spot [$0.70, $0.87] |
 | Will South Africa win? | Other | YES | `77.0%` | `73.0%` | `+4.0 п.п.` | `3.00%` | REJECTED: Net EV edge +1.0 pp < 1.5 pp (Gross +4.0 pp - Slippage 3.00%) |
-| Will Bitcoin reach $66,000 on November 17? | Crypto | NO | `94.1%` | `88.9%` | `+5.2 п.п.` | `0.40%` | REJECTED: Contract price $0.889 outside sweet spot [$0.70, $0.87] |
