@@ -77,7 +77,7 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-11-18 16:31:05 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-11-18 16:40:12 UTC</div>
     </div>
   </div>
 
@@ -86,22 +86,22 @@
   <div class="grid">
     <div class="card">
       <div class="metric-label">Текущий капитал (Equity)</div>
-      <div class="metric-val">$28.15 <span style="font-size:15px" class="neg">(-21.85$ / -43.70%)</span></div>
+      <div class="metric-val">$27.92 <span style="font-size:15px" class="neg">(-22.08$ / -44.17%)</span></div>
       <div class="metric-sub">Старт: $50.00 USDC (Оценка по Bid стакана!)</div>
     </div>
     <div class="card">
       <div class="metric-label">Свободный кэш / В позициях</div>
-      <div class="metric-val">$23.88 <span class="muted" style="font-size:16px">/ $4.26</span></div>
+      <div class="metric-val">$23.88 <span class="muted" style="font-size:16px">/ $4.03</span></div>
       <div class="metric-sub">Открыто позиций: 3 из 8 (макс 8% банка)</div>
     </div>
     <div class="card">
       <div class="metric-label">Цель подписки ($60 / мес)</div>
-      <div class="metric-val">$-21.85 <span class="muted" style="font-size:16px">/ $60.00</span></div>
+      <div class="metric-val">$-22.08 <span class="muted" style="font-size:16px">/ $60.00</span></div>
       <div class="metric-sub">Прогресс окупаемости: 0.0%</div>
     </div>
     <div class="card">
       <div class="metric-label">Просадка от пика (Drawdown)</div>
-      <div class="metric-val neg">28.36% <span class="muted" style="font-size:15px">(Макс: 28.85%)</span></div>
+      <div class="metric-val neg">28.95% <span class="muted" style="font-size:15px">(Макс: 28.95%)</span></div>
       <div class="metric-sub">Пик: $39.29 | Лимит остановки: 40.0%</div>
     </div>
     <div class="card">
@@ -206,10 +206,10 @@
             <td><span class="side-yes">YES</span></td>
             <td>1.34</td>
             <td>$0.8440</td>
-            <td>$0.7900</td>
-            <td><strong>79.3%</strong> <small>(+7.2pp)</small></td>
+            <td>$0.7130</td>
+            <td><strong>79.0%</strong> <small>(+7.2pp)</small></td>
             <td>$1.13 <small>(4.0%)</small></td>
-            <td class="neg">$-0.07</td>
+            <td class="neg">$-0.18</td>
             <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP &gt;= 0.985), or Stop-Loss &lt;= 0.506 if P_est &lt;= 70%</small></td>
         </tr>
         
@@ -220,10 +220,10 @@
             <td><span class="side-no">NO</span></td>
             <td>3.24</td>
             <td>$0.7010</td>
-            <td>$0.6700</td>
-            <td><strong>67.8%</strong> <small>(+10.8pp)</small></td>
+            <td>$0.6300</td>
+            <td><strong>66.9%</strong> <small>(+10.8pp)</small></td>
             <td>$2.27 <small>(8.0%)</small></td>
-            <td class="neg">$-0.10</td>
+            <td class="neg">$-0.23</td>
             <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP &gt;= 0.985), or Stop-Loss &lt;= 0.421 if P_est &lt;= 70%</small></td>
         </tr>
         
@@ -241,6 +241,19 @@
     </thead>
     <tbody>
       
+        <tr class="">
+            <td>Will Bitcoin dip to $62,000 on November 18?<br><small class="muted">First-passage dip model: BTCUSDT=$62,401.10 -&gt; barrier=$62,000 (-0.64%), vol_h=0.50%, tau=12.3h =&gt; P(touch)=78.6% -&gt; Calibrated(0.75x)=76.3%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td>YES</td>
+            <td>76.3%</td>
+            <td>84.0%</td>
+            <td class="muted">-7.7 п.п.</td>
+            <td class="pos">1.00%</td>
+            <td>$26,435</td>
+            <td>12.3h</td>
+            <td><strong>REJECTED: Edge -7.7 pp &lt; 2.5 pp threshold (P_est=76.3% vs AskVWAP=84.0%)</strong></td>
+        </tr>
+        
         <tr class="">
             <td>Will Bitcoin dip to $59,000 on November 18?<br><small class="muted">High market consensus NO (94.2%) within 12.5h of expiry</small></td>
             <td><span class="badge cat-crypto">Crypto</span></td>
@@ -553,25 +566,11 @@
             <td><strong>REJECTED: Duplicate underlying event (crypto:bitcoin:november 18)</strong></td>
         </tr>
         
-        <tr class="">
-            <td>Will Bitcoin dip to $64,000 on November 18?<br><small class="muted">First-passage dip model: BTCUSDT=$64,220.10 -&gt; barrier=$64,000 (-0.34%), vol_h=0.50%, tau=18.3h =&gt; P(touch)=90.5% -&gt; Calibrated(0.75x)=89.2%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>YES</td>
-            <td>89.2%</td>
-            <td>85.0%</td>
-            <td class="muted">+4.2 п.п.</td>
-            <td class="pos">2.00%</td>
-            <td>$20,709</td>
-            <td>18.3h</td>
-            <td><strong>REJECTED: Duplicate underlying event (crypto:bitcoin:november 18)</strong></td>
-        </tr>
-        
     </tbody>
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">7 UTC] [CYCLE #1915 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=19 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.96 | Equity=$29.18 (DD=25.74%)
-[2026-11-18 09:20:12 UTC] [CYCLE #1916 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=17 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.96 | Equity=$29.18 (DD=25.74%)
+  <pre class="log-box">2 UTC] [CYCLE #1916 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=17 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.96 | Equity=$29.18 (DD=25.74%)
 [2026-11-18 09:29:27 UTC] [CYCLE #1917 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=17 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.96 | Equity=$29.15 (DD=25.81%)
 [2026-11-18 09:38:43 UTC] [CYCLE #1918 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=17 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.96 | Equity=$29.18 (DD=25.73%)
 [2026-11-18 09:39:06 UTC] [CYCLE #1919 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=18 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.96 | Equity=$29.18 (DD=25.72%)
@@ -689,6 +688,7 @@
   Shares: 2.87 | Entry VWAP: 0.7910 -&gt; Exit Bid VWAP: 0.6220
   Proceeds: $1.79 | Realized PnL: $-0.49 USDC | Reason: THESIS INVALIDATED (Prob Shift &gt;= 12.0pp &amp; -EV Hold): Estimate dropped from 85.0% to 60.0% (Bid VWAP: $0.622, Entry: $0.791)
 [2026-11-18 16:30:59 UTC] [CYCLE #1961 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(&gt;=8pp)=3 | Opened=0 (Shadow=0) | Closed=2 | Cash=$23.88 | Equity=$28.15 (DD=28.36%)
+[2026-11-18 16:40:08 UTC] [CYCLE #1962 SUMMARY] Scanned=787 | PassedFilter=50 | Evaluated=12 | Edges(&gt;=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.88 | Equity=$27.92 (DD=28.95%)
 </pre>
 </body>
 </html>
