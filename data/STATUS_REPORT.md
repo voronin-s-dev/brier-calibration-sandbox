@@ -1,22 +1,22 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-18 12:19:51 UTC`
+**Обновлено:** `2026-11-18 12:30:59 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$28.92 USDC`** (`-21.08$` / `-42.15%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$24.96` / `$3.97 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-21.08 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `26.38%` / `26.82%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$28.86 USDC`** (`-21.14$` / `-42.28%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$24.96` / `$3.90 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-21.14 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `26.55%` / `26.82%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `210` / `63.8%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (3 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #210 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.893` | `0.949` | `98.5%` | `$1.00` | `$+0.06` | Kraken BTCUSDT 1m/1h Spot Klin |
-| #212 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.910` | `0.940` | `98.0%` | `$1.00` | `$+0.03` | reporting from the qualifying  |
-| #214 | Will Bitcoin reach $66,000 November 16-22? | Crypto | **YES** | `0.700` | `0.560` | `64.5%` | `$2.34` | `$-0.47` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #210 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.893` | `0.948` | `98.5%` | `$1.00` | `$+0.06` | Kraken BTCUSDT 1m/1h Spot Klin |
+| #212 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.910` | `0.943` | `98.0%` | `$1.00` | `$+0.04` | reporting from the qualifying  |
+| #214 | Will Bitcoin reach $66,000 November 16-22? | Crypto | **YES** | `0.700` | `0.540` | `66.3%` | `$2.34` | `$-0.53` | Kraken BTCUSDT 1m/1h Spot Klin |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -37,6 +37,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Bitcoin dip to $64,000 on November 18? | Crypto | YES | `90.1%` | `86.0%` | `+4.1 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 18) |
 | Will Bitcoin dip to $64,000 on November 18? | Crypto | YES | `93.6%` | `79.0%` | `+14.6 п.п.` | `2.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 18) |
 | Will Bitcoin dip to $64,000 on November 18? | Crypto | YES | `92.5%` | `88.0%` | `+4.5 п.п.` | `2.00%` | REJECTED: Contract price $0.880 outside sweet spot [$0.70, $0.87] |
 | Will Bitcoin dip to $64,000 on November 18? | Crypto | YES | `86.6%` | `82.0%` | `+4.6 п.п.` | `2.00%` | REJECTED: Duplicate underlying event (crypto:bitcoin:november 18) |
@@ -54,4 +55,3 @@
 | Will Bitcoin reach $66,000 November 16-22? | Crypto | YES | `73.5%` | `66.0%` | `+7.5 п.п.` | `1.00%` | REJECTED: Contract price $0.660 outside sweet spot [$0.70, $0.87] |
 | Will Bitcoin reach $66,000 November 16-22? | Crypto | YES | `73.5%` | `65.0%` | `+8.5 п.п.` | `1.00%` | REJECTED: Contract price $0.650 outside sweet spot [$0.70, $0.87] |
 | Will Bitcoin reach $66,000 November 16-22? | Crypto | YES | `75.5%` | `66.0%` | `+9.5 п.п.` | `1.00%` | REJECTED: Contract price $0.660 outside sweet spot [$0.70, $0.87] |
-| Will Bitcoin reach $66,000 November 16-22? | Crypto | YES | `75.5%` | `68.0%` | `+7.5 п.п.` | `1.00%` | REJECTED: Contract price $0.680 outside sweet spot [$0.70, $0.87] |
