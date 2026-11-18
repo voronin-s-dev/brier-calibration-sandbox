@@ -77,7 +77,7 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-11-18 03:40:53 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-11-18 03:50:18 UTC</div>
     </div>
   </div>
 
@@ -86,12 +86,12 @@
   <div class="grid">
     <div class="card">
       <div class="metric-label">Текущий капитал (Equity)</div>
-      <div class="metric-val">$29.22 <span style="font-size:15px" class="neg">(-20.78$ / -41.56%)</span></div>
+      <div class="metric-val">$29.22 <span style="font-size:15px" class="neg">(-20.78$ / -41.55%)</span></div>
       <div class="metric-sub">Старт: $50.00 USDC (Оценка по Bid стакана!)</div>
     </div>
     <div class="card">
       <div class="metric-label">Свободный кэш / В позициях</div>
-      <div class="metric-val">$24.89 <span class="muted" style="font-size:16px">/ $4.33</span></div>
+      <div class="metric-val">$24.89 <span class="muted" style="font-size:16px">/ $4.34</span></div>
       <div class="metric-sub">Открыто позиций: 4 из 8 (макс 8% банка)</div>
     </div>
     <div class="card">
@@ -101,7 +101,7 @@
     </div>
     <div class="card">
       <div class="metric-label">Просадка от пика (Drawdown)</div>
-      <div class="metric-val neg">25.63% <span class="muted" style="font-size:15px">(Макс: 26.82%)</span></div>
+      <div class="metric-val neg">25.62% <span class="muted" style="font-size:15px">(Макс: 26.82%)</span></div>
       <div class="metric-sub">Пик: $39.29 | Лимит остановки: 40.0%</div>
     </div>
     <div class="card">
@@ -206,10 +206,10 @@
             <td><span class="side-no">NO</span></td>
             <td>1.12</td>
             <td>$0.8930</td>
-            <td>$0.8860</td>
-            <td><strong>87.8%</strong> <small>(+2.4pp)</small></td>
+            <td>$0.8900</td>
+            <td><strong>88.1%</strong> <small>(+2.4pp)</small></td>
             <td>$1.00 <small>(3.4%)</small></td>
-            <td class="neg">$-0.01</td>
+            <td class="neg">$-0.00</td>
             <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP &gt;= 0.985), or Stop-Loss &lt;= 0.536 if P_est &lt;= 70%</small></td>
         </tr>
         
@@ -235,7 +235,7 @@
             <td>1.42</td>
             <td>$0.8100</td>
             <td>$0.8800</td>
-            <td><strong>88.6%</strong> <small>(+3.2pp)</small></td>
+            <td><strong>88.7%</strong> <small>(+3.2pp)</small></td>
             <td>$1.15 <small>(4.0%)</small></td>
             <td class="pos">$+0.10</td>
             <td><small>Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP &gt;= 0.985), or Stop-Loss &lt;= 0.486 if P_est &lt;= 70%</small></td>
@@ -584,10 +584,7 @@
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">екос/Edge: +2.4 п.п.)
-  Стакан CLOB: BestBid=0.891, BestAsk=0.893, Проскальзывание входа/выхода=0.20% (&lt;= 3.0%)
-  Келли: Полный=22.8%, Четверть(0.25x)=9.1% -&gt; Применён=3.4% банка
-  Размер сделки: $1.00 USDC (1.12 shares @ $0.8930)
+  <pre class="log-box">ер сделки: $1.00 USDC (1.12 shares @ $0.8930)
   Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP &gt;= 0.985), or Stop-Loss &lt;= 0.536 if P_est &lt;= 70%
   Причина: Terminal GBM model: BTCUSDT=$63,635.80 vs strike=$66,000 (-3.58%), vol_h=0.50%, tau=22.1h =&gt; P(S_T &gt; K)=8.1% -&gt; Calibrated(0.75x)=8.3%
 
@@ -691,6 +688,7 @@
   Shares: 1.09 | Entry VWAP: 0.9200 -&gt; Exit Bid VWAP: 0.9990
   Proceeds: $1.09 | Realized PnL: $+0.09 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +8.6% gain
 [2026-11-18 03:40:20 UTC] [CYCLE #1881 SUMMARY] Scanned=782 | PassedFilter=50 | Evaluated=16 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$24.89 | Equity=$29.22 (DD=25.63%)
+[2026-11-18 03:49:54 UTC] [CYCLE #1882 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=16 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.89 | Equity=$29.22 (DD=25.62%)
 </pre>
 </body>
 </html>
