@@ -5609,3 +5609,22 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-19 06:30:53 UTC] [CYCLE #2051 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.76 | Equity=$28.82 (DD=26.66%)
 [2026-11-19 06:40:01 UTC] [CYCLE #2052 SUMMARY] Scanned=793 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.76 | Equity=$28.82 (DD=26.66%)
 [2026-11-19 06:49:07 UTC] [CYCLE #2053 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.76 | Equity=$28.82 (DD=26.66%)
+[SHADOW EXIT] #150 | Will the price of Bitcoin be above $60,000 on November 20? (YES)
+  Shares: 3.39 | Entry VWAP: 0.8440 -> Exit Bid VWAP: 0.9490
+  Proceeds: $3.22 | Realized PnL: $+0.36 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +12.4% >= +12% (Bid VWAP: 0.9490 vs Entry: 0.8440)
+[SHADOW EXIT] #153 | Will Ethereum reach $1,900 November 16-22? (YES)
+  Shares: 12.68 | Entry VWAP: 0.3100 -> Exit Bid VWAP: 0.3600
+  Proceeds: $4.56 | Realized PnL: $+0.63 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +16.1% >= +12% (Bid VWAP: 0.3600 vs Entry: 0.3100)
+[SHADOW EXIT] #154 | Will Bitcoin dip to $62,000 November 16-22? (YES)
+  Shares: 6.13 | Entry VWAP: 0.6442 -> Exit Bid VWAP: 0.4880
+  Proceeds: $2.99 | Realized PnL: $-0.96 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 10.2 pp (0.733 -> 0.631)
+[SHADOW EXIT] #155 | Will the price of Ethereum be above $1,800 on November 19? (NO)
+  Shares: 2.18 | Entry VWAP: 0.4900 -> Exit Bid VWAP: 0.3800
+  Proceeds: $0.83 | Realized PnL: $-0.24 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 12.1 pp (0.537 -> 0.416)
+[SHADOW EXEC] #156 | Will Bitcoin reach $66,000 November 16-22? (YES)
+  Category: Crypto | Shares: 9.80 @ 0.4000
+  Bet: $3.92 USDC | P_est: 54.2% | Edge: +14.2 pp
+[SHADOW EXEC] #157 | Will Ethereum reach $1,900 November 16-22? (YES)
+  Category: Crypto | Shares: 10.57 @ 0.3700
+  Bet: $3.91 USDC | P_est: 50.2% | Edge: +13.2 pp
+[2026-11-19 07:01:15 UTC] [CYCLE #2054 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=2 | Opened=0 (Shadow=2) | Closed=0 | Cash=$27.76 | Equity=$28.82 (DD=26.66%)
