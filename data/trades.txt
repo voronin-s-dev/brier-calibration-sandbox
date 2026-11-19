@@ -5930,3 +5930,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $2.45 USDC | P_est: 61.7% | Edge: +10.7 pp
 [2026-11-19 22:40:03 UTC] [CYCLE #2154 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$28.84 | Equity=$28.84 (DD=26.59%)
 [2026-11-19 22:49:09 UTC] [CYCLE #2155 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.84 | Equity=$28.84 (DD=26.59%)
+[SHADOW EXIT] #182 | Canadiens vs. Hurricanes (NO)
+  Shares: 4.41 | Entry VWAP: 0.7500 -> Exit Bid VWAP: 0.7500
+  Proceeds: $3.31 | Realized PnL: $-0.00 USDC | Reason: TIME EXIT: 1.0h left to close (under 1.0h threshold, Bid VWAP: $0.750)
+[SHADOW EXEC] #192 | Will the price of Bitcoin be above $64,000 on November 20? (NO)
+  Category: Crypto | Shares: 4.33 @ 0.8500
+  Bet: $3.68 USDC | P_est: 88.2% | Edge: +3.2 pp
+[2026-11-19 23:01:10 UTC] [CYCLE #2156 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$28.84 | Equity=$28.84 (DD=26.59%)
