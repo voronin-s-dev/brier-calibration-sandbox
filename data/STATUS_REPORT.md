@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-19 11:01:17 UTC`
+**Обновлено:** `2026-11-19 11:10:22 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -19,19 +19,19 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$65.12 USDC`** |
-| **Свободный кэш / В сделках** | `$48.85` / `$16.26 USDC` |
+| **Виртуальный баланс (Equity)** | **`$64.81 USDC`** |
+| **Свободный кэш / В сделках** | `$48.85` / `$15.95 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `1.32%` |
+| **Текущая просадка** | `1.79%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #137 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.920` | `0.957` | `98.5%` | `$3.59` | `$+0.14` | https://www.binance.com/en/tra |
-| #156 | Will Bitcoin reach $66,000 November 16-22? | Crypto | **YES** | `0.400` | `0.420` | `54.2%` | `$3.92` | `$+0.20` | https://www.binance.com/en/tra |
-| #157 | Will Ethereum reach $1,900 November 16-22? | Crypto | **YES** | `0.370` | `0.330` | `47.0%` | `$3.91` | `$-0.42` | https://www.binance.com/en/tra |
-| #158 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.450` | `0.430` | `47.2%` | `$1.12` | `$-0.05` | https://www.binance.com/en/tra |
-| #159 | Will the price of Ethereum be above $1,900 on November  | Crypto | **NO** | `0.900` | `0.890` | `91.2%` | `$3.90` | `$-0.04` | https://www.binance.com/en/tra |
+| #137 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.920` | `0.964` | `98.5%` | `$3.59` | `$+0.17` | https://www.binance.com/en/tra |
+| #156 | Will Bitcoin reach $66,000 November 16-22? | Crypto | **YES** | `0.400` | `0.390` | `53.4%` | `$3.92` | `$-0.10` | https://www.binance.com/en/tra |
+| #157 | Will Ethereum reach $1,900 November 16-22? | Crypto | **YES** | `0.370` | `0.330` | `46.7%` | `$3.91` | `$-0.42` | https://www.binance.com/en/tra |
+| #158 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.450` | `0.430` | `47.8%` | `$1.12` | `$-0.05` | https://www.binance.com/en/tra |
+| #159 | Will the price of Ethereum be above $1,900 on November  | Crypto | **NO** | `0.900` | `0.880` | `91.3%` | `$3.90` | `$-0.09` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
@@ -44,6 +44,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Elon Musk post 340-359 tweets from November 1 | Geopolitics | NO | `94.0%` | `89.6%` | `+4.4 п.п.` | `0.50%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
 | Will Elon Musk post 340-359 tweets from November 1 | Geopolitics | NO | `95.1%` | `91.0%` | `+4.1 п.п.` | `0.20%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
 | Israel x Iran ceasefire continues through November | Geopolitics | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
 | Israel x Iran ceasefire continues through November | Geopolitics | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
@@ -56,7 +57,6 @@
 | Will South Africa win? | Other | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `2.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
 | Will Elon Musk post 320-339 tweets from November 1 | Geopolitics | NO | `94.2%` | `89.6%` | `+4.5 п.п.` | `1.00%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
 | Will Elon Musk post 380-399 tweets from November 1 | Geopolitics | NO | `94.8%` | `90.6%` | `+4.2 п.п.` | `0.50%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
-| Israel x Iran ceasefire continues through November | Geopolitics | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
 | Israel x Iran ceasefire continues through November | Geopolitics | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
 | Israel x Iran ceasefire continues through November | Geopolitics | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
 | Israel x Iran ceasefire continues through November | Geopolitics | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
