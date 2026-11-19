@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-19 07:31:18 UTC`
+**Обновлено:** `2026-11-19 07:40:42 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -14,22 +14,22 @@
 ## 📂 Открытые позиции (1 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #212 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.910` | `0.962` | `98.5%` | `$1.00` | `$+0.06` | reporting from the qualifying  |
+| #212 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.910` | `0.963` | `98.5%` | `$1.00` | `$+0.06` | reporting from the qualifying  |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$64.63 USDC`** |
-| **Свободный кэш / В сделках** | `$53.87` / `$10.75 USDC` |
+| **Виртуальный баланс (Equity)** | **`$64.44 USDC`** |
+| **Свободный кэш / В сделках** | `$53.87` / `$10.56 USDC` |
 | **Открытых позиций** | `3 / 5` |
-| **Текущая просадка** | `2.06%` |
+| **Текущая просадка** | `2.35%` |
 
 ### Открытые позиции в песочнице (3 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #137 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.920` | `0.947` | `98.5%` | `$3.59` | `$+0.11` | https://www.binance.com/en/tra |
-| #156 | Will Bitcoin reach $66,000 November 16-22? | Crypto | **YES** | `0.400` | `0.370` | `51.1%` | `$3.92` | `$-0.29` | https://www.binance.com/en/tra |
-| #157 | Will Ethereum reach $1,900 November 16-22? | Crypto | **YES** | `0.370` | `0.325` | `47.6%` | `$3.91` | `$-0.48` | https://www.binance.com/en/tra |
+| #137 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.920` | `0.950` | `98.5%` | `$3.59` | `$+0.12` | https://www.binance.com/en/tra |
+| #156 | Will Bitcoin reach $66,000 November 16-22? | Crypto | **YES** | `0.400` | `0.360` | `51.0%` | `$3.92` | `$-0.39` | https://www.binance.com/en/tra |
+| #157 | Will Ethereum reach $1,900 November 16-22? | Crypto | **YES** | `0.370` | `0.315` | `47.4%` | `$3.91` | `$-0.58` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
@@ -42,6 +42,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Elon Musk post 400-419 tweets from November 1 | Geopolitics | NO | `94.5%` | `88.0%` | `+6.5 п.п.` | `1.70%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
 | Will Elon Musk post 400-419 tweets from November 1 | Geopolitics | NO | `95.8%` | `91.6%` | `+4.2 п.п.` | `0.90%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
 | Israel x Iran ceasefire continues through November | Geopolitics | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
 | Will Elon Musk post 400-419 tweets from November 1 | Geopolitics | NO | `96.7%` | `92.1%` | `+4.5 п.п.` | `1.60%` | REJECTED: Contract price $0.921 outside sweet spot [$0.70, $0.92] |
@@ -59,4 +60,3 @@
 | Israel x Iran ceasefire continues through November | Geopolitics | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
 | Will Elon Musk post 300-319 tweets from November 1 | Geopolitics | NO | `95.4%` | `91.3%` | `+4.1 п.п.` | `0.70%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
 | Israel x Iran ceasefire continues through November | Geopolitics | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
-| Will Bitcoin dip to $62,000 on November 18? | Crypto | YES | `76.3%` | `84.0%` | `-7.7 п.п.` | `1.00%` | REJECTED: Edge -7.7 pp < 2.5 pp threshold (P_est=76.3% vs AskVWAP=84.0%) |
