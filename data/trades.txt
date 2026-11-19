@@ -5946,3 +5946,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Macro | Shares: 5.09 @ 0.5300
   Bet: $2.70 USDC | P_est: 61.1% | Edge: +8.1 pp
 [2026-11-19 23:30:55 UTC] [CYCLE #2159 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$28.84 | Equity=$28.84 (DD=26.59%)
+[SHADOW EXIT] #190 | Will Bitcoin dip to $60,000 November 16-22? (YES)
+  Shares: 4.07 | Entry VWAP: 0.4500 -> Exit Bid VWAP: 0.5100
+  Proceeds: $2.07 | Realized PnL: $+0.24 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +13.3% >= +12% (Bid VWAP: 0.5100 vs Entry: 0.4500)
+[SHADOW EXIT] #191 | Will Ethereum dip to $1,700 November 16-22? (YES)
+  Shares: 4.80 | Entry VWAP: 0.5100 -> Exit Bid VWAP: 0.6000
+  Proceeds: $2.88 | Realized PnL: $+0.43 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +17.6% >= +12% (Bid VWAP: 0.6000 vs Entry: 0.5100)
+[SHADOW EXEC] #194 | Will Bitcoin dip to $60,000 November 16-22? (YES)
+  Category: Crypto | Shares: 5.40 @ 0.5200
+  Bet: $2.81 USDC | P_est: 58.6% | Edge: +6.6 pp
+[SHADOW EXEC] #195 | Will Ethereum dip to $1,700 on November 19? (NO)
+  Category: Crypto | Shares: 4.65 @ 0.8100
+  Bet: $3.77 USDC | P_est: 84.2% | Edge: +3.2 pp
+[2026-11-19 23:40:02 UTC] [CYCLE #2160 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=0 | Cash=$28.84 | Equity=$28.84 (DD=26.59%)
