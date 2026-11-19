@@ -5942,3 +5942,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $4.28 | Realized PnL: $+0.38 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.7%) secured early with +9.7% gain
 [2026-11-19 23:10:16 UTC] [CYCLE #2157 SUMMARY] Scanned=787 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.84 | Equity=$28.84 (DD=26.59%)
 [2026-11-19 23:19:23 UTC] [CYCLE #2158 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.84 | Equity=$28.84 (DD=26.59%)
+[SHADOW EXEC] #193 | S&P 500 (SPX) Up or Down on November 20? (YES)
+  Category: Macro | Shares: 5.09 @ 0.5300
+  Bet: $2.70 USDC | P_est: 61.1% | Edge: +8.1 pp
+[2026-11-19 23:30:55 UTC] [CYCLE #2159 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$28.84 | Equity=$28.84 (DD=26.59%)
