@@ -5856,3 +5856,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 8.43 @ 0.4200
   Bet: $3.54 USDC | P_est: 53.4% | Edge: +11.4 pp
 [2026-11-19 19:01:11 UTC] [CYCLE #2132 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$27.76 | Equity=$28.83 (DD=26.62%)
+[EXIT] #212 | Fourth Jensen Huang affair reported by November 20? (NO)
+  Shares: 1.10 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9860
+  Proceeds: $1.08 | Realized PnL: $+0.08 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.6%) secured early with +8.4% gain
+[2026-11-19 19:10:18 UTC] [CYCLE #2133 SUMMARY] Scanned=788 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$28.84 | Equity=$28.84 (DD=26.59%)
