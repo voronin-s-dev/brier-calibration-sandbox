@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-19 00:01:26 UTC`
+**Обновлено:** `2026-11-19 00:10:32 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -14,25 +14,25 @@
 ## 📂 Открытые позиции (2 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #212 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.910` | `0.957` | `98.0%` | `$1.00` | `$+0.05` | reporting from the qualifying  |
-| #217 | Will the price of Ethereum be above $1,700 on November  | Crypto | **YES** | `0.844` | `0.912` | `92.2%` | `$1.13` | `$+0.09` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #212 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.910` | `0.959` | `98.0%` | `$1.00` | `$+0.05` | reporting from the qualifying  |
+| #217 | Will the price of Ethereum be above $1,700 on November  | Crypto | **YES** | `0.844` | `0.909` | `92.0%` | `$1.13` | `$+0.09` | Kraken ETHUSDT 1m/1h Spot Klin |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$63.65 USDC`** |
-| **Свободный кэш / В сделках** | `$47.38` / `$16.27 USDC` |
+| **Виртуальный баланс (Equity)** | **`$63.84 USDC`** |
+| **Свободный кэш / В сделках** | `$47.38` / `$16.46 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `1.76%` |
+| **Текущая просадка** | `1.47%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #137 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.920` | `0.945` | `97.2%` | `$3.59` | `$+0.10` | https://www.binance.com/en/tra |
-| #143 | Will Ethereum dip to $1,700 on November 18? | Crypto | **NO** | `0.910` | `0.940` | `98.0%` | `$3.78` | `$+0.12` | https://www.binance.com/en/tra |
-| #146 | Will Bitcoin dip to $60,000 November 16-22? | Crypto | **YES** | `0.340` | `0.340` | `45.0%` | `$3.07` | `$-0.00` | https://www.binance.com/en/tra |
-| #147 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.630` | `0.670` | `69.0%` | `$2.80` | `$+0.18` | https://www.binance.com/en/tra |
-| #148 | Will Ethereum reach $1,900 November 16-22? | Crypto | **YES** | `0.240` | `0.240` | `37.8%` | `$2.63` | `$+0.00` | https://www.binance.com/en/tra |
+| #137 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.920` | `0.958` | `98.5%` | `$3.59` | `$+0.15` | https://www.binance.com/en/tra |
+| #143 | Will Ethereum dip to $1,700 on November 18? | Crypto | **NO** | `0.910` | `0.940` | `98.5%` | `$3.78` | `$+0.12` | https://www.binance.com/en/tra |
+| #146 | Will Bitcoin dip to $60,000 November 16-22? | Crypto | **YES** | `0.340` | `0.370` | `45.9%` | `$3.07` | `$+0.27` | https://www.binance.com/en/tra |
+| #147 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.630` | `0.690` | `70.2%` | `$2.80` | `$+0.27` | https://www.binance.com/en/tra |
+| #148 | Will Ethereum reach $1,900 November 16-22? | Crypto | **YES** | `0.240` | `0.220` | `37.0%` | `$2.63` | `$-0.22` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
