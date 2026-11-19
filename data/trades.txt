@@ -5780,3 +5780,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-19 16:30:57 UTC] [CYCLE #2114 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.76 | Equity=$28.83 (DD=26.62%)
 [2026-11-19 16:40:02 UTC] [CYCLE #2115 SUMMARY] Scanned=779 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.76 | Equity=$28.83 (DD=26.62%)
 [2026-11-19 16:49:08 UTC] [CYCLE #2116 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.76 | Equity=$28.83 (DD=26.62%)
+[SHADOW EXIT] #173 | Will Bitcoin dip to $62,000 on November 19? (YES)
+  Shares: 5.97 | Entry VWAP: 0.4000 -> Exit Bid VWAP: 0.5700
+  Proceeds: $3.41 | Realized PnL: $+1.02 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +42.5% >= +12% (Bid VWAP: 0.5700 vs Entry: 0.4000)
+[2026-11-19 17:01:15 UTC] [CYCLE #2117 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$27.76 | Equity=$28.83 (DD=26.62%)
