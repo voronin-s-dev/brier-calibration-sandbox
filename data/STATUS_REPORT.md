@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-19 05:01:17 UTC`
+**Обновлено:** `2026-11-19 05:10:25 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -19,18 +19,18 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$65.44 USDC`** |
-| **Свободный кэш / В сделках** | `$50.10` / `$15.33 USDC` |
+| **Виртуальный баланс (Equity)** | **`$65.38 USDC`** |
+| **Свободный кэш / В сделках** | `$50.10` / `$15.28 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `0.75%` |
+| **Текущая просадка** | `0.83%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #137 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.920` | `0.940` | `98.2%` | `$3.59` | `$+0.08` | https://www.binance.com/en/tra |
-| #150 | Will the price of Bitcoin be above $60,000 on November  | Crypto | **YES** | `0.844` | `0.934` | `97.2%` | `$2.86` | `$+0.30` | https://www.binance.com/en/tra |
-| #153 | Will Ethereum reach $1,900 November 16-22? | Crypto | **YES** | `0.310` | `0.304` | `46.0%` | `$3.93` | `$-0.08` | https://www.binance.com/en/tra |
-| #154 | Will Bitcoin dip to $62,000 November 16-22? | Crypto | **YES** | `0.644` | `0.583` | `68.7%` | `$3.95` | `$-0.37` | https://www.binance.com/en/tra |
+| #137 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.920` | `0.947` | `98.3%` | `$3.59` | `$+0.11` | https://www.binance.com/en/tra |
+| #150 | Will the price of Bitcoin be above $60,000 on November  | Crypto | **YES** | `0.844` | `0.935` | `97.0%` | `$2.86` | `$+0.31` | https://www.binance.com/en/tra |
+| #153 | Will Ethereum reach $1,900 November 16-22? | Crypto | **YES** | `0.310` | `0.300` | `45.7%` | `$3.93` | `$-0.13` | https://www.binance.com/en/tra |
+| #154 | Will Bitcoin dip to $62,000 November 16-22? | Crypto | **YES** | `0.644` | `0.578` | `68.7%` | `$3.95` | `$-0.41` | https://www.binance.com/en/tra |
 | #155 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.490` | `0.490` | `52.3%` | `$1.07` | `$+0.00` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
