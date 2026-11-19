@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-19 10:01:14 UTC`
+**Обновлено:** `2026-11-19 10:10:20 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -14,24 +14,24 @@
 ## 📂 Открытые позиции (1 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #212 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.910` | `0.966` | `98.5%` | `$1.00` | `$+0.06` | reporting from the qualifying  |
+| #212 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.910` | `0.965` | `98.5%` | `$1.00` | `$+0.06` | reporting from the qualifying  |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$65.13 USDC`** |
-| **Свободный кэш / В сделках** | `$48.85` / `$16.28 USDC` |
+| **Виртуальный баланс (Equity)** | **`$65.22 USDC`** |
+| **Свободный кэш / В сделках** | `$48.85` / `$16.37 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `1.30%` |
+| **Текущая просадка** | `1.16%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #137 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.920` | `0.944` | `98.4%` | `$3.59` | `$+0.09` | https://www.binance.com/en/tra |
-| #156 | Will Bitcoin reach $66,000 November 16-22? | Crypto | **YES** | `0.400` | `0.410` | `54.6%` | `$3.92` | `$+0.10` | https://www.binance.com/en/tra |
-| #157 | Will Ethereum reach $1,900 November 16-22? | Crypto | **YES** | `0.370` | `0.350` | `48.0%` | `$3.91` | `$-0.21` | https://www.binance.com/en/tra |
-| #158 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.450` | `0.410` | `44.4%` | `$1.12` | `$-0.10` | https://www.binance.com/en/tra |
-| #159 | Will the price of Ethereum be above $1,900 on November  | Crypto | **NO** | `0.900` | `0.890` | `90.5%` | `$3.90` | `$-0.04` | https://www.binance.com/en/tra |
+| #137 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.920` | `0.952` | `98.0%` | `$3.59` | `$+0.12` | https://www.binance.com/en/tra |
+| #156 | Will Bitcoin reach $66,000 November 16-22? | Crypto | **YES** | `0.400` | `0.420` | `54.6%` | `$3.92` | `$+0.20` | https://www.binance.com/en/tra |
+| #157 | Will Ethereum reach $1,900 November 16-22? | Crypto | **YES** | `0.370` | `0.360` | `48.2%` | `$3.91` | `$-0.11` | https://www.binance.com/en/tra |
+| #158 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.450` | `0.370` | `43.9%` | `$1.12` | `$-0.20` | https://www.binance.com/en/tra |
+| #159 | Will the price of Ethereum be above $1,900 on November  | Crypto | **NO** | `0.900` | `0.880` | `90.5%` | `$3.90` | `$-0.09` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
@@ -44,6 +44,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Elon Musk post 340-359 tweets from November 1 | Geopolitics | NO | `95.1%` | `91.0%` | `+4.1 п.п.` | `0.20%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
 | Israel x Iran ceasefire continues through November | Geopolitics | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
 | Israel x Iran ceasefire continues through November | Geopolitics | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
 | Will Elon Musk post 400-419 tweets from November 1 | Geopolitics | NO | `94.5%` | `88.0%` | `+6.5 п.п.` | `1.70%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
@@ -55,7 +56,6 @@
 | Will South Africa win? | Other | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `2.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
 | Will Elon Musk post 320-339 tweets from November 1 | Geopolitics | NO | `94.2%` | `89.6%` | `+4.5 п.п.` | `1.00%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
 | Will Elon Musk post 380-399 tweets from November 1 | Geopolitics | NO | `94.8%` | `90.6%` | `+4.2 п.п.` | `0.50%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
-| Israel x Iran ceasefire continues through November | Geopolitics | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
 | Israel x Iran ceasefire continues through November | Geopolitics | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
 | Israel x Iran ceasefire continues through November | Geopolitics | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
 | Israel x Iran ceasefire continues through November | Geopolitics | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
