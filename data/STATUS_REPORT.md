@@ -1,38 +1,38 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-19 02:10:18 UTC`
+**Обновлено:** `2026-11-19 02:19:25 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$28.76 USDC`** (`-21.24$` / `-42.47%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Текущий баланс (Equity)** | **`$28.77 USDC`** (`-21.23$` / `-42.47%`) | Cash + Mark-to-Market по CLOB Bid |
 | **Свободный кэш / В сделках** | `$26.48` / `$2.28 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-21.24 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Цель окупаемости подписки** | `$-21.23 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
 | **Просадка от пика (Текущая / Макс)** | `26.79%` / `28.95%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `217` / `63.6%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (2 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #212 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.910` | `0.949` | `98.0%` | `$1.00` | `$+0.04` | reporting from the qualifying  |
-| #217 | Will the price of Ethereum be above $1,700 on November  | Crypto | **YES** | `0.844` | `0.925` | `96.5%` | `$1.13` | `$+0.11` | Kraken ETHUSDT 1m/1h Spot Klin |
+| #212 | Fourth Jensen Huang affair reported by November 20? | Other | **NO** | `0.910` | `0.951` | `98.0%` | `$1.00` | `$+0.05` | reporting from the qualifying  |
+| #217 | Will the price of Ethereum be above $1,700 on November  | Crypto | **YES** | `0.844` | `0.926` | `96.4%` | `$1.13` | `$+0.11` | Kraken ETHUSDT 1m/1h Spot Klin |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$64.22 USDC`** |
-| **Свободный кэш / В сделках** | `$48.19` / `$16.02 USDC` |
+| **Виртуальный баланс (Equity)** | **`$64.38 USDC`** |
+| **Свободный кэш / В сделках** | `$48.19` / `$16.19 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `0.89%` |
+| **Текущая просадка** | `0.64%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #137 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.920` | `0.968` | `98.5%` | `$3.59` | `$+0.19` | https://www.binance.com/en/tra |
-| #143 | Will Ethereum dip to $1,700 on November 18? | Crypto | **NO** | `0.910` | `0.971` | `98.5%` | `$3.78` | `$+0.25` | https://www.binance.com/en/tra |
-| #147 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.630` | `0.700` | `70.0%` | `$2.80` | `$+0.31` | https://www.binance.com/en/tra |
-| #148 | Will Ethereum reach $1,900 November 16-22? | Crypto | **YES** | `0.240` | `0.210` | `37.4%` | `$2.63` | `$-0.33` | https://www.binance.com/en/tra |
-| #149 | Will Bitcoin reach $66,000 November 16-22? | Crypto | **YES** | `0.260` | `0.260` | `40.4%` | `$2.80` | `$+0.00` | https://www.binance.com/en/tra |
+| #137 | Will the price of Bitcoin be above $66,000 on November  | Crypto | **NO** | `0.920` | `0.964` | `98.5%` | `$3.59` | `$+0.17` | https://www.binance.com/en/tra |
+| #143 | Will Ethereum dip to $1,700 on November 18? | Crypto | **NO** | `0.910` | `0.973` | `98.5%` | `$3.78` | `$+0.26` | https://www.binance.com/en/tra |
+| #147 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.630` | `0.690` | `69.6%` | `$2.80` | `$+0.27` | https://www.binance.com/en/tra |
+| #148 | Will Ethereum reach $1,900 November 16-22? | Crypto | **YES** | `0.240` | `0.220` | `37.6%` | `$2.63` | `$-0.22` | https://www.binance.com/en/tra |
+| #149 | Will Bitcoin reach $66,000 November 16-22? | Crypto | **YES** | `0.260` | `0.270` | `40.3%` | `$2.80` | `$+0.11` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
