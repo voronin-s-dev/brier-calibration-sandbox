@@ -5897,3 +5897,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-19 21:01:21 UTC] [CYCLE #2144 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.84 | Equity=$28.84 (DD=26.59%)
 [2026-11-19 21:10:27 UTC] [CYCLE #2145 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.84 | Equity=$28.84 (DD=26.59%)
 [2026-11-19 21:19:33 UTC] [CYCLE #2146 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.84 | Equity=$28.84 (DD=26.59%)
+[SHADOW EXIT] #187 | Will Ethereum dip to $1,700 November 16-22? (YES)
+  Shares: 6.46 | Entry VWAP: 0.5700 -> Exit Bid VWAP: 0.6500
+  Proceeds: $4.20 | Realized PnL: $+0.52 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +14.0% >= +12% (Bid VWAP: 0.6500 vs Entry: 0.5700)
+[SHADOW EXEC] #188 | Will the price of Bitcoin be above $60,000 on November 20? (YES)
+  Category: Crypto | Shares: 3.90 @ 0.7760
+  Bet: $3.03 USDC | P_est: 82.4% | Edge: +4.8 pp
+[2026-11-19 21:30:55 UTC] [CYCLE #2147 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$28.84 | Equity=$28.84 (DD=26.59%)
