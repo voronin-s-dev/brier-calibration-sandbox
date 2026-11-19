@@ -5937,3 +5937,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 4.33 @ 0.8500
   Bet: $3.68 USDC | P_est: 88.2% | Edge: +3.2 pp
 [2026-11-19 23:01:10 UTC] [CYCLE #2156 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$28.84 | Equity=$28.84 (DD=26.59%)
+[SHADOW EXIT] #159 | Will the price of Ethereum be above $1,900 on November 20? (NO)
+  Shares: 4.33 | Entry VWAP: 0.9000 -> Exit Bid VWAP: 0.9870
+  Proceeds: $4.28 | Realized PnL: $+0.38 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.7%) secured early with +9.7% gain
+[2026-11-19 23:10:16 UTC] [CYCLE #2157 SUMMARY] Scanned=787 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$28.84 | Equity=$28.84 (DD=26.59%)
