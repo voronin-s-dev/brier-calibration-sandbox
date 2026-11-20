@@ -6253,3 +6253,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 2.73 @ 0.4000
   Bet: $1.09 USDC | P_est: 42.8% | Edge: +2.8 pp
 [2026-11-20 12:10:22 UTC] [CYCLE #2241 SUMMARY] Scanned=791 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=1 | Opened=0 (Shadow=2) | Closed=0 | Cash=$26.81 | Equity=$29.02 (DD=26.15%)
+[2026-11-20 12:19:28 UTC] [OPEN TRADE #223] Israel x Iran ceasefire continues through November 22?
+  Категория: Geopolitics | Сторона: YES | Источник: the totality of information available from the resolution sources at that time
+  Оценка бота: 96.0% vs Рынок (Ask VWAP): 92.0% (Перекос/Edge: +4.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.920, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=50.0%, Четверть(0.25x)=20.0% -> Применён=3.5% банка
+  Размер сделки: $1.00 USDC (1.09 shares @ $0.9200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.552 if P_est <= 70%
+  Причина: Ceasefire holding within 64.7h deadline
+
+[2026-11-20 12:19:28 UTC] [CYCLE #2242 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$25.81 | Equity=$28.99 (DD=26.21%)
