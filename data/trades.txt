@@ -6210,3 +6210,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-20 10:40:04 UTC] [CYCLE #2232 SUMMARY] Scanned=788 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$26.81 | Equity=$29.02 (DD=26.15%)
 [2026-11-20 10:49:11 UTC] [CYCLE #2233 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.81 | Equity=$29.02 (DD=26.15%)
 [2026-11-20 11:01:13 UTC] [CYCLE #2234 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.81 | Equity=$29.02 (DD=26.15%)
+[SHADOW EXIT] #214 | Will the highest temperature in London be 10°C or higher on November 21? (NO)
+  Shares: 8.03 | Entry VWAP: 0.3100 -> Exit Bid VWAP: 0.1900
+  Proceeds: $1.53 | Realized PnL: $-0.96 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 38.7% from entry (0.3100 -> 0.1900)
+[SHADOW EXIT] #221 | Will Bitcoin dip to $60,000 November 16-22? (YES)
+  Shares: 10.14 | Entry VWAP: 0.3600 -> Exit Bid VWAP: 0.4400
+  Proceeds: $4.46 | Realized PnL: $+0.81 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +22.2% >= +12% (Bid VWAP: 0.4400 vs Entry: 0.3600)
+[SHADOW EXEC] #222 | Will Bitcoin dip to $60,000 November 16-22? (YES)
+  Category: Crypto | Shares: 5.40 @ 0.4500
+  Bet: $2.43 USDC | P_est: 51.7% | Edge: +6.7 pp
+[SHADOW EXEC] #223 | Will Bitcoin reach $63,000 on November 20? (YES)
+  Category: Crypto | Shares: 5.25 @ 0.4800
+  Bet: $2.52 USDC | P_est: 54.9% | Edge: +6.9 pp
+[2026-11-20 11:10:21 UTC] [CYCLE #2235 SUMMARY] Scanned=764 | PassedFilter=50 | Evaluated=15 | Edges(>=8pp)=1 | Opened=0 (Shadow=2) | Closed=0 | Cash=$26.81 | Equity=$29.02 (DD=26.15%)
