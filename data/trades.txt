@@ -6278,3 +6278,19 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-20 13:31:00 UTC] [CYCLE #2249 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.81 | Equity=$29.05 (DD=26.06%)
 [2026-11-20 13:40:07 UTC] [CYCLE #2250 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.81 | Equity=$29.05 (DD=26.06%)
 [2026-11-20 13:49:14 UTC] [CYCLE #2251 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.81 | Equity=$29.04 (DD=26.08%)
+[SHADOW EXIT] #225 | Will Bitcoin reach $64,000 November 16-22? (YES)
+  Shares: 13.50 | Entry VWAP: 0.2763 -> Exit Bid VWAP: 0.3400
+  Proceeds: $4.59 | Realized PnL: $+0.86 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +23.1% >= +12% (Bid VWAP: 0.3400 vs Entry: 0.2763)
+[SHADOW EXIT] #226 | Will the price of Bitcoin be above $62,000 on November 21? (YES)
+  Shares: 2.73 | Entry VWAP: 0.4000 -> Exit Bid VWAP: 0.4900
+  Proceeds: $1.34 | Realized PnL: $+0.25 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +22.5% >= +12% (Bid VWAP: 0.4900 vs Entry: 0.4000)
+[SHADOW EXIT] #227 | Will Ethereum dip to $1,700 November 16-22? (YES)
+  Shares: 5.94 | Entry VWAP: 0.6300 -> Exit Bid VWAP: 0.4584
+  Proceeds: $2.72 | Realized PnL: $-1.02 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 10.9 pp (0.729 -> 0.620)
+[SHADOW EXEC] #229 | Will Bitcoin dip to $60,000 November 16-22? (YES)
+  Category: Crypto | Shares: 5.27 @ 0.4400
+  Bet: $2.32 USDC | P_est: 54.5% | Edge: +10.5 pp
+[SHADOW EXEC] #230 | Oilers vs. Hurricanes (YES)
+  Category: Weather | Shares: 3.59 @ 0.3900
+  Bet: $1.40 USDC | P_est: 44.0% | Edge: +5.0 pp
+[2026-11-20 14:01:23 UTC] [CYCLE #2252 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=2) | Closed=0 | Cash=$25.81 | Equity=$29.05 (DD=26.06%)
