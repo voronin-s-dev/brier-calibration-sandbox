@@ -6004,3 +6004,19 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 4.68 @ 0.8200
   Bet: $3.84 USDC | P_est: 91.3% | Edge: +9.3 pp
 [2026-11-20 01:40:03 UTC] [CYCLE #2175 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=0 | Cash=$28.84 | Equity=$28.84 (DD=26.59%)
+[SHADOW EXIT] #196 | Will Ethereum dip to $1,700 November 16-22? (YES)
+  Shares: 7.83 | Entry VWAP: 0.4800 -> Exit Bid VWAP: 0.5400
+  Proceeds: $4.23 | Realized PnL: $+0.47 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +12.5% >= +12% (Bid VWAP: 0.5400 vs Entry: 0.4800)
+[2026-11-20 01:49:11 UTC] [OPEN TRADE #221] Will Kai Cenat finish his GTA VI marathon by November 23?
+  Категория: Other | Сторона: NO | Источник: footage from Kai Cenat's official broadcast on YouTube and Twitch
+  Оценка бота: 87.7% vs Рынок (Ask VWAP): 79.0% (Перекос/Edge: +8.7 п.п.)
+  Стакан CLOB: BestBid=0.770, BestAsk=0.790, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=41.4%, Четверть(0.25x)=16.6% -> Применён=8.0% банка
+  Размер сделки: $2.31 USDC (2.92 shares @ $0.7900)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.474 if P_est <= 70%
+  Причина: CLOB near-touch depth imbalance OBI=-0.56 (BidDepth=$516 vs AskDepth=$1,820, mult=0.075) | News sentiment=-1.00 (8 articles; top: 'Trader Picks: The Quirkiest Prediction Market Bets We Found This Week - Casino.org')
+
+[SHADOW EXEC] #201 | Will Ethereum dip to $1,700 November 16-22? (YES)
+  Category: Crypto | Shares: 3.84 @ 0.5500
+  Bet: $2.11 USDC | P_est: 60.5% | Edge: +5.5 pp
+[2026-11-20 01:49:11 UTC] [CYCLE #2176 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=1 | Opened=1 (Shadow=1) | Closed=0 | Cash=$26.53 | Equity=$28.78 (DD=26.74%)
