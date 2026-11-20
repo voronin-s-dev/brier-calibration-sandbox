@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-20 10:49:15 UTC`
+**Обновлено:** `2026-11-20 11:01:19 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -14,23 +14,23 @@
 ## 📂 Открытые позиции (1 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #222 | Will Kai Cenat finish his GTA VI marathon by November 2 | Other | **NO** | `0.780` | `0.740` | `83.2%` | `$2.33` | `$-0.12` | https://www.twitch.tv/kaicenat |
+| #222 | Will Kai Cenat finish his GTA VI marathon by November 2 | Other | **NO** | `0.780` | `0.740` | `80.5%` | `$2.33` | `$-0.12` | https://www.twitch.tv/kaicenat |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$61.13 USDC`** |
-| **Свободный кэш / В сделках** | `$47.87` / `$13.26 USDC` |
+| **Виртуальный баланс (Equity)** | **`$60.90 USDC`** |
+| **Свободный кэш / В сделках** | `$47.87` / `$13.02 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `7.36%` |
+| **Текущая просадка** | `7.71%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #193 | S&P 500 (SPX) Up or Down on November 20? | Macro | **YES** | `0.530` | `0.450` | `62.6%` | `$2.70` | `$-0.41` | https://www.wsj.com/market-dat |
-| #213 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.510` | `0.450` | `49.6%` | `$1.69` | `$-0.20` | https://www.binance.com/en/tra |
-| #214 | Will the highest temperature in London be 10°C or highe | Weather | **NO** | `0.310` | `0.280` | `44.3%` | `$2.49` | `$-0.24` | https://aviationweather.gov/ap |
-| #220 | Will Ethereum dip to $1,700 November 16-22? | Crypto | **YES** | `0.510` | `0.450` | `61.9%` | `$3.71` | `$-0.44` | https://www.binance.com/en/tra |
+| #193 | S&P 500 (SPX) Up or Down on November 20? | Macro | **YES** | `0.530` | `0.430` | `62.6%` | `$2.70` | `$-0.51` | https://www.wsj.com/market-dat |
+| #213 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.510` | `0.460` | `49.6%` | `$1.69` | `$-0.17` | https://www.binance.com/en/tra |
+| #214 | Will the highest temperature in London be 10°C or highe | Weather | **NO** | `0.310` | `0.250` | `39.1%` | `$2.49` | `$-0.48` | https://aviationweather.gov/ap |
+| #220 | Will Ethereum dip to $1,700 November 16-22? | Crypto | **YES** | `0.510` | `0.460` | `59.8%` | `$3.71` | `$-0.36` | https://www.binance.com/en/tra |
 | #221 | Will Bitcoin dip to $60,000 November 16-22? | Crypto | **YES** | `0.360` | `0.390` | `51.4%` | `$3.65` | `$+0.30` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
