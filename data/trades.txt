@@ -6384,3 +6384,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 3.85 @ 0.6500
   Bet: $2.50 USDC | P_est: 67.7% | Edge: +2.7 pp
 [2026-11-20 16:01:26 UTC] [CYCLE #2264 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.81 | Equity=$29.09 (DD=25.96%)
+[2026-11-20 16:10:36 UTC] [OPEN TRADE #224] Will Kai Cenat finish his GTA VI marathon by November 23?
+  Категория: Other | Сторона: NO | Источник: footage from Kai Cenat's official broadcast on YouTube and Twitch
+  Оценка бота: 94.5% vs Рынок (Ask VWAP): 90.0% (Перекос/Edge: +4.5 п.п.)
+  Стакан CLOB: BestBid=0.880, BestAsk=0.900, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=45.0%, Четверть(0.25x)=18.0% -> Применён=3.4% банка
+  Размер сделки: $1.00 USDC (1.11 shares @ $0.9000)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.540 if P_est <= 70%
+  Причина: News sentiment=-1.00 (7 articles; top: 'Trader Picks: The Quirkiest Prediction Market Bets We Found This Week - Casino.org')
+
+[2026-11-20 16:10:36 UTC] [CYCLE #2265 SUMMARY] Scanned=782 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$24.81 | Equity=$29.06 (DD=26.04%)
