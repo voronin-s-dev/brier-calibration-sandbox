@@ -6312,3 +6312,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $2.12 USDC | P_est: 46.7% | Edge: +4.7 pp
 [2026-11-20 14:49:17 UTC] [CYCLE #2257 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.81 | Equity=$29.07 (DD=26.01%)
 [2026-11-20 15:01:18 UTC] [CYCLE #2258 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.81 | Equity=$29.04 (DD=26.08%)
+[SHADOW EXIT] #229 | Will Bitcoin dip to $60,000 November 16-22? (YES)
+  Shares: 5.27 | Entry VWAP: 0.4400 -> Exit Bid VWAP: 0.6100
+  Proceeds: $3.22 | Realized PnL: $+0.90 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +38.6% >= +12% (Bid VWAP: 0.6100 vs Entry: 0.4400)
+[SHADOW EXEC] #233 | S&P 500 (SPX) Up or Down on November 20? (NO)
+  Category: Macro | Shares: 5.98 @ 0.5400
+  Bet: $3.23 USDC | P_est: 57.0% | Edge: +3.0 pp
+[SHADOW EXEC] #234 | Will Bitcoin reach $64,000 November 16-22? (YES)
+  Category: Crypto | Shares: 20.00 @ 0.1900
+  Bet: $3.80 USDC | P_est: 42.6% | Edge: +23.6 pp
+[2026-11-20 15:10:26 UTC] [CYCLE #2259 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=2) | Closed=0 | Cash=$25.81 | Equity=$29.11 (DD=25.90%)
