@@ -6140,3 +6140,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-20 06:30:54 UTC] [CYCLE #2204 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=2 | Opened=1 (Shadow=1) | Closed=0 | Cash=$26.81 | Equity=$29.08 (DD=26.00%)
 [2026-11-20 06:40:03 UTC] [CYCLE #2205 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.81 | Equity=$29.08 (DD=26.00%)
 [2026-11-20 06:49:11 UTC] [CYCLE #2206 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$26.81 | Equity=$29.08 (DD=26.00%)
+[SHADOW EXIT] #210 | Will Bitcoin dip to $60,000 November 16-22? (YES)
+  Shares: 4.30 | Entry VWAP: 0.5700 -> Exit Bid VWAP: 0.4200
+  Proceeds: $1.81 | Realized PnL: $-0.64 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 10.2 pp (0.633 -> 0.531)
+[SHADOW EXEC] #215 | Will Bitcoin dip to $60,000 November 16-22? (YES)
+  Category: Crypto | Shares: 6.60 @ 0.4300
+  Bet: $2.84 USDC | P_est: 53.1% | Edge: +10.1 pp
+[2026-11-20 06:58:00 UTC] [CYCLE #2207 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=2 | Opened=0 (Shadow=1) | Closed=0 | Cash=$26.81 | Equity=$29.08 (DD=26.00%)
