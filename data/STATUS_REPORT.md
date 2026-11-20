@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-20 09:01:17 UTC`
+**Обновлено:** `2026-11-20 09:10:25 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -19,19 +19,19 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$61.92 USDC`** |
-| **Свободный кэш / В сделках** | `$47.83` / `$14.09 USDC` |
+| **Виртуальный баланс (Equity)** | **`$61.86 USDC`** |
+| **Свободный кэш / В сделках** | `$47.83` / `$14.03 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `6.17%` |
+| **Текущая просадка** | `6.25%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #192 | Will the price of Bitcoin be above $64,000 on November  | Crypto | **NO** | `0.850` | `0.950` | `98.5%` | `$3.68` | `$+0.43` | https://www.binance.com/en/tra |
-| #193 | S&P 500 (SPX) Up or Down on November 20? | Macro | **YES** | `0.530` | `0.460` | `62.6%` | `$2.70` | `$-0.36` | https://www.wsj.com/market-dat |
-| #213 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.510` | `0.510` | `54.4%` | `$1.69` | `$+0.00` | https://www.binance.com/en/tra |
-| #214 | Will the highest temperature in London be 10°C or highe | Weather | **NO** | `0.310` | `0.300` | `41.4%` | `$2.49` | `$-0.08` | https://aviationweather.gov/ap |
-| #217 | Will Bitcoin dip to $60,000 November 16-22? | Crypto | **YES** | `0.450` | `0.440` | `56.5%` | `$3.61` | `$-0.08` | https://www.binance.com/en/tra |
+| #193 | S&P 500 (SPX) Up or Down on November 20? | Macro | **YES** | `0.530` | `0.420` | `62.6%` | `$2.70` | `$-0.56` | https://www.wsj.com/market-dat |
+| #213 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.510` | `0.530` | `55.2%` | `$1.69` | `$+0.07` | https://www.binance.com/en/tra |
+| #214 | Will the highest temperature in London be 10°C or highe | Weather | **NO** | `0.310` | `0.290` | `41.4%` | `$2.49` | `$-0.16` | https://aviationweather.gov/ap |
+| #217 | Will Bitcoin dip to $60,000 November 16-22? | Crypto | **YES** | `0.450` | `0.460` | `57.3%` | `$3.61` | `$+0.08` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
