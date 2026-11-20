@@ -6047,3 +6047,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-20 02:30:55 UTC] [CYCLE #2180 SUMMARY] Scanned=793 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.14 | Equity=$29.14 (DD=25.85%)
 [2026-11-20 02:40:02 UTC] [CYCLE #2181 SUMMARY] Scanned=791 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.14 | Equity=$29.14 (DD=25.85%)
 [2026-11-20 02:49:07 UTC] [CYCLE #2182 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.14 | Equity=$29.14 (DD=25.85%)
+[SHADOW EXIT] #202 | Will Bitcoin dip to $60,000 November 16-22? (YES)
+  Shares: 5.00 | Entry VWAP: 0.5800 -> Exit Bid VWAP: 0.3900
+  Proceeds: $1.95 | Realized PnL: $-0.95 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 15.2 pp (0.660 -> 0.508)
+[SHADOW EXIT] #203 | Will Ethereum dip to $1,700 November 16-22? (YES)
+  Shares: 5.26 | Entry VWAP: 0.7300 -> Exit Bid VWAP: 0.5400
+  Proceeds: $2.84 | Realized PnL: $-1.00 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 11.1 pp (0.785 -> 0.675)
+[SHADOW EXIT] #204 | Will the price of Bitcoin be above $62,000 on November 21? (NO)
+  Shares: 2.26 | Entry VWAP: 0.5400 -> Exit Bid VWAP: 0.4100
+  Proceeds: $0.93 | Realized PnL: $-0.29 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 13.2 pp (0.599 -> 0.467)
+[SHADOW EXEC] #205 | Will Bitcoin dip to $60,000 November 16-22? (YES)
+  Category: Crypto | Shares: 4.75 @ 0.4000
+  Bet: $1.90 USDC | P_est: 51.3% | Edge: +11.3 pp
+[2026-11-20 03:01:08 UTC] [CYCLE #2183 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$29.14 | Equity=$29.14 (DD=25.85%)
