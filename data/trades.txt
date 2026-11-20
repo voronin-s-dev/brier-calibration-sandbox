@@ -6122,3 +6122,19 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-20 06:01:08 UTC] [CYCLE #2201 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.14 | Equity=$29.14 (DD=25.85%)
 [2026-11-20 06:10:16 UTC] [CYCLE #2202 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.14 | Equity=$29.14 (DD=25.85%)
 [2026-11-20 06:19:24 UTC] [CYCLE #2203 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$29.14 | Equity=$29.14 (DD=25.85%)
+[SHADOW EXIT] #212 | Will Ethereum dip to $1,600 November 16-22? (YES)
+  Shares: 5.32 | Entry VWAP: 0.2200 -> Exit Bid VWAP: 0.1400
+  Proceeds: $0.74 | Realized PnL: $-0.43 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 36.4% from entry (0.2200 -> 0.1400)
+[2026-11-20 06:30:54 UTC] [OPEN TRADE #222] Will Kai Cenat finish his GTA VI marathon by November 24?
+  Категория: Other | Сторона: NO | Источник: https://www.twitch.tv/kaicenat
+  Оценка бота: 82.5% vs Рынок (Ask VWAP): 78.0% (Перекос/Edge: +4.5 п.п.)
+  Стакан CLOB: BestBid=0.760, BestAsk=0.780, Проскальзывание входа/выхода=2.00% (<= 3.0%)
+  Келли: Полный=20.5%, Четверть(0.25x)=8.2% -> Применён=8.0% банка
+  Размер сделки: $2.33 USDC (2.99 shares @ $0.7800)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.468 if P_est <= 70%
+  Причина: News sentiment=-1.00 (8 articles; top: 'Trader Picks: The Quirkiest Prediction Market Bets We Found This Week - Casino.org')
+
+[SHADOW EXEC] #214 | Will the highest temperature in London be 10°C or higher on November 21? (NO)
+  Category: Weather | Shares: 8.03 @ 0.3100
+  Bet: $2.49 USDC | P_est: 41.7% | Edge: +10.7 pp
+[2026-11-20 06:30:54 UTC] [CYCLE #2204 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=2 | Opened=1 (Shadow=1) | Closed=0 | Cash=$26.81 | Equity=$29.08 (DD=26.00%)
