@@ -6434,3 +6434,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $3.20 USDC | P_est: 91.5% | Edge: +2.8 pp
 [2026-11-20 17:40:08 UTC] [CYCLE #2277 SUMMARY] Scanned=791 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=0 | Cash=$24.81 | Equity=$29.02 (DD=26.14%)
 [2026-11-20 17:49:16 UTC] [CYCLE #2278 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.81 | Equity=$29.02 (DD=26.14%)
+[2026-11-20 18:01:16 UTC] [OPEN TRADE #225] Dolphins vs. Bills
+  Категория: Sports | Сторона: NO | Источник: https://www.nfl.com/scores
+  Оценка бота: 95.0% vs Рынок (Ask VWAP): 92.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.910, BestAsk=0.920, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=37.5%, Четверть(0.25x)=15.0% -> Применён=3.5% банка
+  Размер сделки: $1.00 USDC (1.09 shares @ $0.9200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.552 if P_est <= 70%
+  Причина: High market consensus NO (91.5%) within 48.0h of expiry
+
+[2026-11-20 18:01:16 UTC] [CYCLE #2279 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.81 | Equity=$29.01 (DD=26.17%)

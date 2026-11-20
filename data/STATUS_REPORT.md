@@ -1,39 +1,40 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-20 17:49:22 UTC`
+**Обновлено:** `2026-11-20 18:01:23 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$29.02 USDC`** (`-20.98$` / `-41.96%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$24.81` / `$4.22 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-20.98 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `26.14%` / `28.95%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$29.01 USDC`** (`-20.99$` / `-41.98%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$23.81` / `$5.20 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-20.99 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `26.17%` / `28.95%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `220` / `64.1%` | Brier Score: `0.1960` |
 
-## 📂 Открытые позиции (3 / 8)
+## 📂 Открытые позиции (4 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #222 | Will Kai Cenat finish his GTA VI marathon by November 2 | Other | **NO** | `0.780` | `0.760` | `82.5%` | `$2.33` | `$-0.06` | https://www.twitch.tv/kaicenat |
-| #223 | Israel x Iran ceasefire continues through November 22? | Geopolitics | **YES** | `0.920` | `0.900` | `94.0%` | `$1.00` | `$-0.02` | the totality of information av |
+| #222 | Will Kai Cenat finish his GTA VI marathon by November 2 | Other | **NO** | `0.780` | `0.760` | `82.0%` | `$2.33` | `$-0.06` | https://www.twitch.tv/kaicenat |
+| #223 | Israel x Iran ceasefire continues through November 22? | Geopolitics | **YES** | `0.920` | `0.900` | `93.0%` | `$1.00` | `$-0.02` | the totality of information av |
 | #224 | Will Kai Cenat finish his GTA VI marathon by November 2 | Other | **NO** | `0.900` | `0.870` | `93.0%` | `$1.00` | `$-0.03` | footage from Kai Cenat's offic |
+| #225 | Dolphins vs. Bills | Sports | **NO** | `0.920` | `0.910` | `95.0%` | `$1.00` | `$-0.01` | https://www.nfl.com/scores |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$59.10 USDC`** |
-| **Свободный кэш / В сделках** | `$46.39` / `$12.71 USDC` |
+| **Виртуальный баланс (Equity)** | **`$59.21 USDC`** |
+| **Свободный кэш / В сделках** | `$46.39` / `$12.82 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `10.44%` |
+| **Текущая просадка** | `10.27%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #230 | Oilers vs. Hurricanes | Weather | **YES** | `0.390` | `0.380` | `44.0%` | `$1.40` | `$-0.04` | https://www.nhl.com/scores |
-| #244 | S&P 500 (SPX) Up or Down on November 20? | Macro | **NO** | `0.910` | `0.976` | `98.5%` | `$3.50` | `$+0.25` | https://www.wsj.com/market-dat |
-| #246 | Will Bitcoin dip to $57,000 on November 20? | Crypto | **NO** | `0.826` | `0.747` | `86.8%` | `$3.53` | `$-0.34` | https://www.binance.com/en/tra |
-| #247 | Will the price of Bitcoin be above $58,000 on November  | Crypto | **YES** | `0.707` | `0.704` | `75.8%` | `$1.27` | `$-0.01` | https://www.binance.com/en/tra |
-| #248 | Will Bitcoin dip to $54,000 November 16-22? | Crypto | **NO** | `0.887` | `0.868` | `91.0%` | `$3.20` | `$-0.07` | https://www.binance.com/en/tra |
+| #244 | S&P 500 (SPX) Up or Down on November 20? | Macro | **NO** | `0.910` | `0.975` | `98.5%` | `$3.50` | `$+0.25` | https://www.wsj.com/market-dat |
+| #246 | Will Bitcoin dip to $57,000 on November 20? | Crypto | **NO** | `0.826` | `0.762` | `85.8%` | `$3.53` | `$-0.27` | https://www.binance.com/en/tra |
+| #247 | Will the price of Bitcoin be above $58,000 on November  | Crypto | **YES** | `0.707` | `0.730` | `73.6%` | `$1.27` | `$+0.04` | https://www.binance.com/en/tra |
+| #248 | Will Bitcoin dip to $54,000 November 16-22? | Crypto | **NO** | `0.887` | `0.870` | `90.4%` | `$3.20` | `$-0.06` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
@@ -47,6 +48,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Dolphins vs. Bills | Sports | NO | `95.0%` | `92.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #225 ($1.00 @ 0.9200) |
 | Will Kai Cenat finish his GTA VI marathon by Novem | Other | NO | `94.5%` | `90.0%` | `+4.5 п.п.` | `2.00%` | EXECUTED BUY #224 ($1.00 @ 0.9000) |
 | Israel x Iran ceasefire continues through November | Geopolitics | YES | `96.0%` | `92.0%` | `+4.0 п.п.` | `2.00%` | EXECUTED BUY #223 ($1.00 @ 0.9200) |
 | Will Elon Musk post 320-339 tweets from November 1 | Geopolitics | NO | `96.2%` | `92.1%` | `+4.2 п.п.` | `0.40%` | REJECTED: Contract price $0.921 outside sweet spot [$0.70, $0.92] |
@@ -64,4 +66,3 @@
 | Will Elon Musk post 400-419 tweets from November 1 | Geopolitics | NO | `95.8%` | `91.6%` | `+4.2 п.п.` | `0.90%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
 | Israel x Iran ceasefire continues through November | Geopolitics | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
 | Will Elon Musk post 400-419 tweets from November 1 | Geopolitics | NO | `96.7%` | `92.1%` | `+4.5 п.п.` | `1.60%` | REJECTED: Contract price $0.921 outside sweet spot [$0.70, $0.92] |
-| Will South Africa win? | Other | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `2.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
