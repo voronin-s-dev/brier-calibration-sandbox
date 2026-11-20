@@ -344,6 +344,7 @@ class WeatherOracle:
         "wellington": (-41.3272, 174.8053, "Pacific/Auckland", "celsius", "METAR NZWN (Wellington Intl)"),
         "shenzhen": (22.6393, 113.8107, "Asia/Shanghai", "celsius", "METAR ZGSZ (Shenzhen Bao'an)"),
         "lucknow": (26.7606, 80.8893, "Asia/Kolkata", "celsius", "METAR VILK (Lucknow Airport)"),
+        "warsaw": (52.1657, 20.9671, "Europe/Warsaw", "celsius", "METAR EPWA (Warsaw Chopin Airport)"),
     }
 
     MONTHS = {

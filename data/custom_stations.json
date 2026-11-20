@@ -89,5 +89,12 @@
     "Europe/Madrid",
     "celsius",
     "Auto-Meteo Madrid (ES)"
+  ],
+  "warsaw": [
+    52.22977,
+    21.01178,
+    "Europe/Warsaw",
+    "celsius",
+    "Auto-Meteo Warsaw (PL)"
   ]
 }

@@ -828,7 +828,7 @@ class GrokCharterPaperTrader:
         try:
             from auto_governor import AutoGovernor
             gov = AutoGovernor(self.db)
-            added_cities = gov.scan_and_fix_unmapped_weather_cities(candidates_to_evaluate)
+            added_cities = gov.scan_and_fix_unmapped_weather_cities(candidates_to_evaluate + shadow_candidates)
             if added_cities:
                 self.weather_oracle._load_custom_stations()
         except Exception:

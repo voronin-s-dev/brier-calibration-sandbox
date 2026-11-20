@@ -1452,6 +1452,15 @@ class TestRiskManagementV2(unittest.TestCase):
             self.assertEqual(opened, 1)
             self.assertEqual(len(db.get_open_shadow_positions()), 1)
 
+    def test_warsaw_station_registered_in_weather_oracle(self) -> None:
+        """Verify that Warsaw station is present in WeatherOracle.STATIONS."""
+        from oracles import WeatherOracle
+        wo = WeatherOracle()
+        self.assertIn("warsaw", wo.STATIONS)
+        station_info = wo.STATIONS["warsaw"]
+        self.assertEqual(station_info[2], "Europe/Warsaw")
+        self.assertEqual(station_info[3], "celsius")
+
 
 if __name__ == "__main__":
     unittest.main()
