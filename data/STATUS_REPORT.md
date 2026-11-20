@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-20 07:53:24 UTC`
+**Обновлено:** `2026-11-20 08:01:15 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -19,19 +19,19 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$61.81 USDC`** |
-| **Свободный кэш / В сделках** | `$48.51` / `$13.30 USDC` |
+| **Виртуальный баланс (Equity)** | **`$61.95 USDC`** |
+| **Свободный кэш / В сделках** | `$48.51` / `$13.44 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `6.34%` |
+| **Текущая просадка** | `6.12%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #192 | Will the price of Bitcoin be above $64,000 on November  | Crypto | **NO** | `0.850` | `0.930` | `97.5%` | `$3.68` | `$+0.35` | https://www.binance.com/en/tra |
+| #192 | Will the price of Bitcoin be above $64,000 on November  | Crypto | **NO** | `0.850` | `0.940` | `97.0%` | `$3.68` | `$+0.39` | https://www.binance.com/en/tra |
 | #193 | S&P 500 (SPX) Up or Down on November 20? | Macro | **YES** | `0.530` | `0.440` | `62.6%` | `$2.70` | `$-0.46` | https://www.wsj.com/market-dat |
-| #213 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.510` | `0.500` | `58.5%` | `$1.69` | `$-0.03` | https://www.binance.com/en/tra |
-| #214 | Will the highest temperature in London be 10°C or highe | Weather | **NO** | `0.310` | `0.290` | `41.3%` | `$2.49` | `$-0.16` | https://aviationweather.gov/ap |
-| #216 | Will Ethereum dip to $1,700 November 16-22? | Crypto | **YES** | `0.630` | `0.508` | `70.6%` | `$3.77` | `$-0.73` | https://www.binance.com/en/tra |
+| #213 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.510` | `0.510` | `54.4%` | `$1.69` | `$+0.00` | https://www.binance.com/en/tra |
+| #214 | Will the highest temperature in London be 10°C or highe | Weather | **NO** | `0.310` | `0.290` | `41.4%` | `$2.49` | `$-0.16` | https://aviationweather.gov/ap |
+| #216 | Will Ethereum dip to $1,700 November 16-22? | Crypto | **YES** | `0.630` | `0.520` | `65.0%` | `$3.77` | `$-0.66` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
@@ -45,6 +45,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Elon Musk post 320-339 tweets from November 1 | Geopolitics | NO | `96.2%` | `92.1%` | `+4.2 п.п.` | `0.40%` | REJECTED: Contract price $0.921 outside sweet spot [$0.70, $0.92] |
 | Will Kai Cenat finish his GTA VI marathon by Novem | Other | NO | `82.5%` | `78.0%` | `+4.5 п.п.` | `2.00%` | EXECUTED BUY #222 ($2.33 @ 0.7800) |
 | Israel x Iran ceasefire continues through November | Geopolitics | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `1.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
 | Will Elon Musk post 380-399 tweets from November 1 | Geopolitics | NO | `95.3%` | `90.8%` | `+4.5 п.п.` | `3.00%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
@@ -62,4 +63,3 @@
 | Will South Africa win? | Other | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `2.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
 | Will Elon Musk post 400-419 tweets from November 1 | Geopolitics | NO | `97.0%` | `92.7%` | `+4.3 п.п.` | `0.10%` | REJECTED: Contract price $0.927 outside sweet spot [$0.70, $0.92] |
 | Will South Africa win? | Other | YES | `98.0%` | `94.0%` | `+4.0 п.п.` | `2.00%` | REJECTED: Contract price $0.940 outside sweet spot [$0.70, $0.92] |
-| Will Elon Musk post 320-339 tweets from November 1 | Geopolitics | NO | `94.2%` | `89.6%` | `+4.5 п.п.` | `1.00%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
