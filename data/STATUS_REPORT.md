@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-20 17:40:14 UTC`
+**Обновлено:** `2026-11-20 17:49:22 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -14,26 +14,26 @@
 ## 📂 Открытые позиции (3 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #222 | Will Kai Cenat finish his GTA VI marathon by November 2 | Other | **NO** | `0.780` | `0.760` | `85.9%` | `$2.33` | `$-0.06` | https://www.twitch.tv/kaicenat |
+| #222 | Will Kai Cenat finish his GTA VI marathon by November 2 | Other | **NO** | `0.780` | `0.760` | `82.5%` | `$2.33` | `$-0.06` | https://www.twitch.tv/kaicenat |
 | #223 | Israel x Iran ceasefire continues through November 22? | Geopolitics | **YES** | `0.920` | `0.900` | `94.0%` | `$1.00` | `$-0.02` | the totality of information av |
 | #224 | Will Kai Cenat finish his GTA VI marathon by November 2 | Other | **NO** | `0.900` | `0.870` | `93.0%` | `$1.00` | `$-0.03` | footage from Kai Cenat's offic |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$59.07 USDC`** |
-| **Свободный кэш / В сделках** | `$46.39` / `$12.68 USDC` |
+| **Виртуальный баланс (Equity)** | **`$59.10 USDC`** |
+| **Свободный кэш / В сделках** | `$46.39` / `$12.71 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `10.48%` |
+| **Текущая просадка** | `10.44%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #230 | Oilers vs. Hurricanes | Weather | **YES** | `0.390` | `0.380` | `44.0%` | `$1.40` | `$-0.04` | https://www.nhl.com/scores |
-| #244 | S&P 500 (SPX) Up or Down on November 20? | Macro | **NO** | `0.910` | `0.951` | `98.5%` | `$3.50` | `$+0.16` | https://www.wsj.com/market-dat |
-| #246 | Will Bitcoin dip to $57,000 on November 20? | Crypto | **NO** | `0.826` | `0.746` | `86.5%` | `$3.53` | `$-0.34` | https://www.binance.com/en/tra |
-| #247 | Will the price of Bitcoin be above $58,000 on November  | Crypto | **YES** | `0.707` | `0.707` | `76.5%` | `$1.27` | `$+0.00` | https://www.binance.com/en/tra |
-| #248 | Will Bitcoin dip to $54,000 November 16-22? | Crypto | **NO** | `0.887` | `0.887` | `91.5%` | `$3.20` | `$+0.00` | https://www.binance.com/en/tra |
+| #244 | S&P 500 (SPX) Up or Down on November 20? | Macro | **NO** | `0.910` | `0.976` | `98.5%` | `$3.50` | `$+0.25` | https://www.wsj.com/market-dat |
+| #246 | Will Bitcoin dip to $57,000 on November 20? | Crypto | **NO** | `0.826` | `0.747` | `86.8%` | `$3.53` | `$-0.34` | https://www.binance.com/en/tra |
+| #247 | Will the price of Bitcoin be above $58,000 on November  | Crypto | **YES** | `0.707` | `0.704` | `75.8%` | `$1.27` | `$-0.01` | https://www.binance.com/en/tra |
+| #248 | Will Bitcoin dip to $54,000 November 16-22? | Crypto | **NO** | `0.887` | `0.868` | `91.0%` | `$3.20` | `$-0.07` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
