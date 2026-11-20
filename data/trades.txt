@@ -6294,3 +6294,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Weather | Shares: 3.59 @ 0.3900
   Bet: $1.40 USDC | P_est: 44.0% | Edge: +5.0 pp
 [2026-11-20 14:01:23 UTC] [CYCLE #2252 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=2) | Closed=0 | Cash=$25.81 | Equity=$29.05 (DD=26.06%)
+[SHADOW EXEC] #231 | Will Ethereum dip to $1,700 November 16-22? (YES)
+  Category: Crypto | Shares: 7.48 @ 0.5000
+  Bet: $3.74 USDC | P_est: 61.2% | Edge: +11.2 pp
+[2026-11-20 14:10:33 UTC] [CYCLE #2253 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.81 | Equity=$29.06 (DD=26.03%)
