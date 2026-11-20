@@ -1,5 +1,5 @@
 # 🧠 Реестр авто-доработок и полуавтоматических решений (Auto-Governor)
-**Обновлено:** `2026-11-20 18:40:16 UTC`
+**Обновлено:** `2026-11-20 18:49:25 UTC`
 
 ## ⚙️ Текущие активные параметры риск-менеджмента
 - **Категория (`active_category_filter`)**: `Sports,Geopolitics,Other`
@@ -9,9 +9,9 @@
 - **Порог досрочного выхода (`prob_shift_exit_pp`)**: `8.0 п.п.`
 
 ## 🧪 Результаты теневой песочницы (Shadow Sandbox)
-- **Crypto**: 206 сделок | PnL $+10.13 | Win Rate 61%
+- **Crypto**: 207 сделок | PnL $+8.84 | Win Rate 61%
 - **Geopolitics**: 8 сделок | PnL $+1.02 | Win Rate 62%
-- **Macro**: 7 сделок | PnL $+0.54 | Win Rate 57%
+- **Macro**: 8 сделок | PnL $+0.84 | Win Rate 62%
 - **Other**: 19 сделок | PnL $-1.30 | Win Rate 42%
 - **Weather**: 3 сделок | PnL $-1.10 | Win Rate 0%
 
