@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-20 08:31:11 UTC`
+**Обновлено:** `2026-11-20 08:40:28 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -27,11 +27,11 @@
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #192 | Will the price of Bitcoin be above $64,000 on November  | Crypto | **NO** | `0.850` | `0.940` | `98.5%` | `$3.68` | `$+0.39` | https://www.binance.com/en/tra |
+| #192 | Will the price of Bitcoin be above $64,000 on November  | Crypto | **NO** | `0.850` | `0.940` | `98.0%` | `$3.68` | `$+0.39` | https://www.binance.com/en/tra |
 | #193 | S&P 500 (SPX) Up or Down on November 20? | Macro | **YES** | `0.530` | `0.460` | `62.6%` | `$2.70` | `$-0.36` | https://www.wsj.com/market-dat |
-| #213 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.510` | `0.480` | `51.3%` | `$1.69` | `$-0.10` | https://www.binance.com/en/tra |
+| #213 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.510` | `0.480` | `50.5%` | `$1.69` | `$-0.10` | https://www.binance.com/en/tra |
 | #214 | Will the highest temperature in London be 10°C or highe | Weather | **NO** | `0.310` | `0.290` | `41.4%` | `$2.49` | `$-0.16` | https://aviationweather.gov/ap |
-| #217 | Will Bitcoin dip to $60,000 November 16-22? | Crypto | **YES** | `0.450` | `0.390` | `52.8%` | `$3.61` | `$-0.48` | https://www.binance.com/en/tra |
+| #217 | Will Bitcoin dip to $60,000 November 16-22? | Crypto | **YES** | `0.450` | `0.390` | `52.3%` | `$3.61` | `$-0.48` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
