@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-21 12:07:59 UTC`
+**Обновлено:** `2026-11-21 12:08:21 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -24,7 +24,7 @@
 | Показатель | Значение |
 | :--- | :--- |
 | **Виртуальный баланс (Equity)** | **`$55.91 USDC`** |
-| **Свободный кэш / В сделках** | `$44.86` / `$11.06 USDC` |
+| **Свободный кэш / В сделках** | `$44.86` / `$11.05 USDC` |
 | **Открытых позиций** | `5 / 5` |
 | **Текущая просадка** | `15.27%` |
 
@@ -32,10 +32,10 @@
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #230 | Oilers vs. Hurricanes | Weather | **YES** | `0.390` | `0.350` | `44.0%` | `$1.40` | `$-0.14` | https://www.nhl.com/scores |
-| #279 | Will the price of Bitcoin be above $58,000 on November  | Crypto | **NO** | `0.510` | `0.448` | `47.7%` | `$1.46` | `$-0.18` | https://www.binance.com/en/tra |
-| #280 | Will Bitcoin dip to $52,000 November 16-22? | Crypto | **NO** | `0.907` | `0.929` | `96.9%` | `$3.34` | `$+0.08` | https://www.binance.com/en/tra |
+| #279 | Will the price of Bitcoin be above $58,000 on November  | Crypto | **NO** | `0.510` | `0.447` | `47.8%` | `$1.46` | `$-0.18` | https://www.binance.com/en/tra |
+| #280 | Will Bitcoin dip to $52,000 November 16-22? | Crypto | **NO** | `0.907` | `0.929` | `97.0%` | `$3.34` | `$+0.08` | https://www.binance.com/en/tra |
 | #281 | Will the price of Bitcoin be above $56,000 on November  | Crypto | **YES** | `0.869` | `0.945` | `98.5%` | `$3.34` | `$+0.29` | https://www.binance.com/en/tra |
-| #283 | Will Ethereum dip to $1,500 November 16-22? | Crypto | **NO** | `0.796` | `0.827` | `87.6%` | `$1.41` | `$+0.05` | https://www.binance.com/en/tra |
+| #283 | Will Ethereum dip to $1,500 November 16-22? | Crypto | **NO** | `0.796` | `0.827` | `87.2%` | `$1.41` | `$+0.05` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
