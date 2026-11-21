@@ -6614,3 +6614,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $2.69 | Realized PnL: $+1.66 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +161.2% >= +12% (Bid VWAP: 0.5250 vs Entry: 0.2010)
 [2026-11-21 03:34:39 UTC] [CYCLE #2340 SUMMARY] Scanned=793 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.81 | Equity=$28.96 (DD=26.29%)
 [2026-11-21 03:43:47 UTC] [CYCLE #2341 SUMMARY] Scanned=772 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.81 | Equity=$28.96 (DD=26.29%)
+[SHADOW EXIT] #256 | Will the price of Bitcoin be above $56,000 on November 21? (YES)
+  Shares: 3.74 | Entry VWAP: 0.9030 -> Exit Bid VWAP: 0.7130
+  Proceeds: $2.67 | Realized PnL: $-0.71 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 16.4 pp (0.943 -> 0.778)
+[SHADOW EXIT] #264 | Will Bitcoin dip to $54,000 November 16-22? (NO)
+  Shares: 3.18 | Entry VWAP: 0.8520 -> Exit Bid VWAP: 0.6600
+  Proceeds: $2.10 | Realized PnL: $-0.61 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 17.8 pp (0.896 -> 0.718)
+[SHADOW EXEC] #266 | Will the price of Bitcoin be above $56,000 on November 21? (YES)
+  Category: Crypto | Shares: 2.07 @ 0.7210
+  Bet: $1.49 USDC | P_est: 75.4% | Edge: +3.3 pp
+[SHADOW EXEC] #267 | Will the price of Bitcoin be above $54,000 on November 24? (YES)
+  Category: Crypto | Shares: 2.71 @ 0.7830
+  Bet: $2.12 USDC | P_est: 82.2% | Edge: +3.9 pp
+[2026-11-21 03:44:04 UTC] [CYCLE #2342 SUMMARY] Scanned=791 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=2) | Closed=0 | Cash=$23.81 | Equity=$28.96 (DD=26.29%)
