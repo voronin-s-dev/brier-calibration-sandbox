@@ -6960,3 +6960,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-21 21:19:23 UTC] [CYCLE #2455 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$20.81 | Equity=$25.65 (DD=34.72%)
 [2026-11-21 21:30:59 UTC] [CYCLE #2456 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$20.81 | Equity=$25.61 (DD=34.83%)
 [2026-11-21 21:40:07 UTC] [CYCLE #2457 SUMMARY] Scanned=776 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$20.81 | Equity=$25.54 (DD=35.00%)
+[EXIT] #228 | Will Real Madrid CF vs. RC Celta de Vigo end in a draw? (NO)
+  Shares: 1.11 | Entry VWAP: 0.9000 -> Exit Bid VWAP: 0.5000
+  Proceeds: $0.56 | Realized PnL: $-0.44 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.500 (-44.4% from entry $0.900, P_est=55.0%)
+[2026-11-21 21:49:15 UTC] [OPEN TRADE #229] SMU vs. Notre Dame
+  Категория: Sports | Сторона: NO | Источник: https://www.ncaa.com/
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=33.3%, Четверть(0.25x)=13.3% -> Применён=3.9% банка
+  Размер сделки: $1.00 USDC (1.10 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: High market consensus NO (90.5%) within 2.7h of expiry
+
+[2026-11-21 21:49:15 UTC] [CYCLE #2458 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=1 | Cash=$20.36 | Equity=$25.37 (DD=35.44%)
