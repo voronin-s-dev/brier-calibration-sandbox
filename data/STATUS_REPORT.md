@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-21 21:49:22 UTC`
+**Обновлено:** `2026-11-21 22:01:14 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -14,28 +14,28 @@
 ## 📂 Открытые позиции (5 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #223 | Israel x Iran ceasefire continues through November 22? | Geopolitics | **YES** | `0.920` | `0.955` | `98.0%` | `$1.00` | `$+0.04` | the totality of information av |
+| #223 | Israel x Iran ceasefire continues through November 22? | Geopolitics | **YES** | `0.920` | `0.956` | `98.0%` | `$1.00` | `$+0.04` | the totality of information av |
 | #225 | Dolphins vs. Bills | Sports | **NO** | `0.920` | `0.910` | `95.0%` | `$1.00` | `$-0.01` | https://www.nfl.com/scores |
-| #226 | Pelicans vs. Spurs | Sports | **NO** | `0.910` | `0.910` | `96.0%` | `$1.00` | `$-0.00` | https://www.nba.com/ |
+| #226 | Pelicans vs. Spurs | Sports | **NO** | `0.910` | `0.910` | `95.0%` | `$1.00` | `$-0.00` | https://www.nba.com/ |
 | #227 | San Diego State vs. Boise State | Sports | **NO** | `0.910` | `0.900` | `94.0%` | `$1.00` | `$-0.01` | https://www.ncaa.com/ |
 | #229 | SMU vs. Notre Dame | Sports | **NO** | `0.910` | `0.900` | `94.0%` | `$1.00` | `$-0.01` | https://www.ncaa.com/ |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$49.26 USDC`** |
-| **Свободный кэш / В сделках** | `$36.80` / `$12.46 USDC` |
+| **Виртуальный баланс (Equity)** | **`$49.22 USDC`** |
+| **Свободный кэш / В сделках** | `$36.80` / `$12.43 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `25.35%` |
+| **Текущая просадка** | `25.40%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #288 | Will Ethereum dip to $1,500 November 16-22? | Crypto | **NO** | `0.906` | `0.946` | `98.4%` | `$3.31` | `$+0.15` | https://www.binance.com/en/tra |
+| #288 | Will Ethereum dip to $1,500 November 16-22? | Crypto | **NO** | `0.906` | `0.947` | `98.5%` | `$3.31` | `$+0.15` | https://www.binance.com/en/tra |
 | #290 | Will Anthropic close below its IPO price by November 23 | Macro | **NO** | `0.750` | `0.780` | `84.0%` | `$3.28` | `$+0.13` | https://www.nasdaq.com/market- |
-| #297 | Will India win? | Other | **YES** | `0.570` | `0.520` | `59.4%` | `$1.53` | `$-0.13` | https://www.espncricinfo.com/ |
+| #297 | Will India win? | Other | **YES** | `0.570` | `0.500` | `59.4%` | `$1.53` | `$-0.19` | https://www.espncricinfo.com/ |
 | #298 | Will Anthropic close below its IPO price by November 25 | Macro | **NO** | `0.540` | `0.540` | `60.0%` | `$2.66` | `$+0.00` | https://www.nasdaq.com/market- |
-| #299 | Will the price of Bitcoin be above $58,000 on November  | Crypto | **YES** | `0.752` | `0.826` | `83.2%` | `$1.40` | `$+0.14` | https://www.binance.com/en/tra |
+| #299 | Will the price of Bitcoin be above $58,000 on November  | Crypto | **YES** | `0.752` | `0.835` | `83.6%` | `$1.40` | `$+0.15` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
