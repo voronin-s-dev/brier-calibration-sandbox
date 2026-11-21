@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-21 15:01:13 UTC`
+**Обновлено:** `2026-11-21 15:10:19 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -8,32 +8,32 @@
 | **Текущий баланс (Equity)** | **`$25.84 USDC`** (`-24.16$` / `-48.33%`) | Cash + Mark-to-Market по CLOB Bid |
 | **Свободный кэш / В сделках** | `$22.81` / `$3.03 USDC` | До 8 открытых позиций, макс 8% банка |
 | **Цель окупаемости подписки** | `$-24.16 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `34.25%` / `34.28%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Просадка от пика (Текущая / Макс)** | `34.24%` / `34.28%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `222` / `63.5%` | Brier Score: `0.2280` |
 
 ## 📂 Открытые позиции (3 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #223 | Israel x Iran ceasefire continues through November 22? | Geopolitics | **YES** | `0.920` | `0.968` | `98.0%` | `$1.00` | `$+0.05` | the totality of information av |
+| #223 | Israel x Iran ceasefire continues through November 22? | Geopolitics | **YES** | `0.920` | `0.969` | `98.0%` | `$1.00` | `$+0.05` | the totality of information av |
 | #225 | Dolphins vs. Bills | Sports | **NO** | `0.920` | `0.910` | `95.0%` | `$1.00` | `$-0.01` | https://www.nfl.com/scores |
 | #226 | Pelicans vs. Spurs | Sports | **NO** | `0.910` | `0.900` | `94.0%` | `$1.00` | `$-0.01` | https://www.nba.com/ |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$49.88 USDC`** |
-| **Свободный кэш / В сделках** | `$38.81` / `$11.06 USDC` |
+| **Виртуальный баланс (Equity)** | **`$49.92 USDC`** |
+| **Свободный кэш / В сделках** | `$38.81` / `$11.11 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `24.41%` |
+| **Текущая просадка** | `24.34%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #230 | Oilers vs. Hurricanes | Weather | **YES** | `0.390` | `0.330` | `44.0%` | `$1.40` | `$-0.22` | https://www.nhl.com/scores |
-| #288 | Will Ethereum dip to $1,500 November 16-22? | Crypto | **NO** | `0.906` | `0.906` | `94.8%` | `$3.31` | `$+0.00` | https://www.binance.com/en/tra |
-| #290 | Will Anthropic close below its IPO price by November 23 | Macro | **NO** | `0.750` | `0.740` | `84.3%` | `$3.28` | `$-0.04` | https://www.nasdaq.com/market- |
-| #295 | Will Bitcoin reach $62,000 November 16-22? | Crypto | **YES** | `0.507` | `0.435` | `49.5%` | `$1.72` | `$-0.24` | https://www.binance.com/en/tra |
-| #296 | Will the price of Bitcoin be above $60,000 on November  | Crypto | **YES** | `0.637` | `0.616` | `66.0%` | `$1.92` | `$-0.06` | https://www.binance.com/en/tra |
+| #288 | Will Ethereum dip to $1,500 November 16-22? | Crypto | **NO** | `0.906` | `0.911` | `95.3%` | `$3.31` | `$+0.02` | https://www.binance.com/en/tra |
+| #290 | Will Anthropic close below its IPO price by November 23 | Macro | **NO** | `0.750` | `0.740` | `84.2%` | `$3.28` | `$-0.04` | https://www.nasdaq.com/market- |
+| #295 | Will Bitcoin reach $62,000 November 16-22? | Crypto | **YES** | `0.507` | `0.455` | `50.0%` | `$1.72` | `$-0.18` | https://www.binance.com/en/tra |
+| #296 | Will the price of Bitcoin be above $60,000 on November  | Crypto | **YES** | `0.637` | `0.603` | `66.9%` | `$1.92` | `$-0.10` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
