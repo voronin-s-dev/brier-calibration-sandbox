@@ -6913,3 +6913,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-21 16:30:57 UTC] [CYCLE #2423 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.81 | Equity=$25.83 (DD=34.26%)
 [2026-11-21 16:40:04 UTC] [CYCLE #2424 SUMMARY] Scanned=770 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.81 | Equity=$25.82 (DD=34.28%)
 [2026-11-21 16:49:11 UTC] [CYCLE #2425 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.81 | Equity=$25.83 (DD=34.27%)
+[SHADOW EXIT] #230 | Oilers vs. Hurricanes (YES)
+  Shares: 3.59 | Entry VWAP: 0.3900 -> Exit Bid VWAP: 0.3200
+  Proceeds: $1.15 | Realized PnL: $-0.25 USDC | Reason: TIME EXIT: 1.0h left to close (under 1.0h threshold, Bid VWAP: $0.320)
+[SHADOW EXEC] #299 | Will the price of Bitcoin be above $58,000 on November 23? (YES)
+  Category: Crypto | Shares: 1.86 @ 0.7520
+  Bet: $1.40 USDC | P_est: 78.0% | Edge: +2.8 pp
+[2026-11-21 17:01:15 UTC] [CYCLE #2426 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$21.81 | Equity=$25.83 (DD=34.27%)
