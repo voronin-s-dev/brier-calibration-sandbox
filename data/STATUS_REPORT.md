@@ -1,40 +1,40 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-21 02:01:14 UTC`
+**Обновлено:** `2026-11-21 02:10:20 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$28.92 USDC`** (`-21.08$` / `-42.16%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$23.81` / `$5.11 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-21.08 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `26.40%` / `28.95%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$28.95 USDC`** (`-21.05$` / `-42.10%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$23.81` / `$5.14 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-21.05 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `26.32%` / `28.95%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `220` / `64.1%` | Brier Score: `0.1960` |
 
 ## 📂 Открытые позиции (4 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #222 | Will Kai Cenat finish his GTA VI marathon by November 2 | Other | **NO** | `0.780` | `0.730` | `79.0%` | `$2.33` | `$-0.15` | https://www.twitch.tv/kaicenat |
-| #223 | Israel x Iran ceasefire continues through November 22? | Geopolitics | **YES** | `0.920` | `0.920` | `96.0%` | `$1.00` | `$+0.00` | the totality of information av |
+| #222 | Will Kai Cenat finish his GTA VI marathon by November 2 | Other | **NO** | `0.780` | `0.740` | `79.0%` | `$2.33` | `$-0.12` | https://www.twitch.tv/kaicenat |
+| #223 | Israel x Iran ceasefire continues through November 22? | Geopolitics | **YES** | `0.920` | `0.920` | `97.0%` | `$1.00` | `$+0.00` | the totality of information av |
 | #224 | Will Kai Cenat finish his GTA VI marathon by November 2 | Other | **NO** | `0.900` | `0.850` | `93.0%` | `$1.00` | `$-0.06` | footage from Kai Cenat's offic |
 | #225 | Dolphins vs. Bills | Sports | **NO** | `0.920` | `0.910` | `95.0%` | `$1.00` | `$-0.01` | https://www.nfl.com/scores |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$58.05 USDC`** |
-| **Свободный кэш / В сделках** | `$48.20` / `$9.85 USDC` |
+| **Виртуальный баланс (Equity)** | **`$58.00 USDC`** |
+| **Свободный кэш / В сделках** | `$48.20` / `$9.80 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `12.03%` |
+| **Текущая просадка** | `12.11%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #230 | Oilers vs. Hurricanes | Weather | **YES** | `0.390` | `0.380` | `44.0%` | `$1.40` | `$-0.04` | https://www.nhl.com/scores |
-| #256 | Will the price of Bitcoin be above $56,000 on November  | Crypto | **YES** | `0.903` | `0.972` | `98.5%` | `$3.38` | `$+0.26` | https://www.binance.com/en/tra |
-| #257 | Will the price of Bitcoin be above $60,000 on November  | Crypto | **NO** | `0.690` | `0.720` | `70.8%` | `$2.02` | `$+0.09` | https://www.binance.com/en/tra |
-| #258 | Will the price of Bitcoin be above $58,000 on November  | Crypto | **NO** | `0.327` | `0.306` | `35.3%` | `$1.79` | `$-0.11` | https://www.binance.com/en/tra |
-| #260 | Will the price of Ethereum be above $1,600 on November  | Crypto | **NO** | `0.216` | `0.216` | `28.2%` | `$1.06` | `$+0.00` | https://www.binance.com/en/tra |
+| #256 | Will the price of Bitcoin be above $56,000 on November  | Crypto | **YES** | `0.903` | `0.977` | `98.5%` | `$3.38` | `$+0.28` | https://www.binance.com/en/tra |
+| #257 | Will the price of Bitcoin be above $60,000 on November  | Crypto | **NO** | `0.690` | `0.720` | `70.7%` | `$2.02` | `$+0.09` | https://www.binance.com/en/tra |
+| #258 | Will the price of Bitcoin be above $58,000 on November  | Crypto | **NO** | `0.327` | `0.307` | `35.2%` | `$1.79` | `$-0.11` | https://www.binance.com/en/tra |
+| #260 | Will the price of Ethereum be above $1,600 on November  | Crypto | **NO** | `0.216` | `0.201` | `27.7%` | `$1.06` | `$-0.07` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
