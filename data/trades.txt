@@ -6716,3 +6716,25 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 6.59 @ 0.5100
   Bet: $3.36 USDC | P_est: 80.9% | Edge: +29.9 pp
 [2026-11-21 06:49:15 UTC] [CYCLE #2362 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$22.81 | Equity=$28.37 (DD=27.78%)
+[SHADOW EXIT] #269 | Will the price of Bitcoin be above $58,000 on November 23? (NO)
+  Shares: 2.06 | Entry VWAP: 0.6690 -> Exit Bid VWAP: 0.4410
+  Proceeds: $0.91 | Realized PnL: $-0.47 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 17.4 pp (0.701 -> 0.527)
+[SHADOW EXIT] #275 | Will the price of Bitcoin be above $58,000 on November 22? (NO)
+  Shares: 4.52 | Entry VWAP: 0.7470 -> Exit Bid VWAP: 0.5060
+  Proceeds: $2.29 | Realized PnL: $-1.09 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 27.5 pp (0.818 -> 0.543)
+[SHADOW EXIT] #277 | Will Bitcoin dip to $52,000 November 16-22? (NO)
+  Shares: 4.27 | Entry VWAP: 0.7910 -> Exit Bid VWAP: 0.9060
+  Proceeds: $3.87 | Realized PnL: $+0.49 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +14.5% >= +12% (Bid VWAP: 0.9060 vs Entry: 0.7910)
+[SHADOW EXIT] #278 | Will Bitcoin reach $59,000 on November 21? (NO)
+  Shares: 6.59 | Entry VWAP: 0.5100 -> Exit Bid VWAP: 0.4500
+  Proceeds: $2.96 | Realized PnL: $-0.40 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 32.5 pp (0.809 -> 0.484)
+[SHADOW EXEC] #279 | Will the price of Bitcoin be above $58,000 on November 22? (NO)
+  Category: Crypto | Shares: 2.86 @ 0.5100
+  Bet: $1.46 USDC | P_est: 54.3% | Edge: +3.3 pp
+[SHADOW EXEC] #280 | Will Bitcoin dip to $52,000 November 16-22? (NO)
+  Category: Crypto | Shares: 3.68 @ 0.9070
+  Bet: $3.34 USDC | P_est: 94.3% | Edge: +3.6 pp
+[SHADOW EXEC] #281 | Will the price of Bitcoin be above $56,000 on November 21? (YES)
+  Category: Crypto | Shares: 3.84 @ 0.8690
+  Bet: $3.34 USDC | P_est: 92.8% | Edge: +5.9 pp
+[2026-11-21 07:01:15 UTC] [CYCLE #2363 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=3) | Closed=0 | Cash=$22.81 | Equity=$28.40 (DD=27.73%)
