@@ -6923,3 +6923,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-21 17:10:20 UTC] [CYCLE #2427 SUMMARY] Scanned=778 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.81 | Equity=$25.82 (DD=34.27%)
 [2026-11-21 17:19:25 UTC] [CYCLE #2428 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.81 | Equity=$25.82 (DD=34.27%)
 [2026-11-21 17:30:59 UTC] [CYCLE #2429 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.81 | Equity=$25.82 (DD=34.27%)
+[2026-11-21 17:40:04 UTC] [OPEN TRADE #228] Will Real Madrid CF vs. RC Celta de Vigo end in a draw?
+  Категория: Sports | Сторона: NO | Источник: https://www.laliga.com/
+  Оценка бота: 96.5% vs Рынок (Ask VWAP): 90.0% (Перекос/Edge: +6.5 п.п.)
+  Стакан CLOB: BestBid=0.890, BestAsk=0.900, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=65.0%, Четверть(0.25x)=26.0% -> Применён=3.9% банка
+  Размер сделки: $1.00 USDC (1.11 shares @ $0.9000)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.540 if P_est <= 70%
+  Причина: Lopsided match no-draw consensus with 2.3h left
+
+[2026-11-21 17:40:04 UTC] [CYCLE #2430 SUMMARY] Scanned=777 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$20.81 | Equity=$25.81 (DD=34.30%)
