@@ -6883,3 +6883,25 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-21 15:01:09 UTC] [CYCLE #2414 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.81 | Equity=$25.84 (DD=34.25%)
 [2026-11-21 15:10:15 UTC] [CYCLE #2415 SUMMARY] Scanned=762 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.81 | Equity=$25.84 (DD=34.24%)
 [2026-11-21 15:19:20 UTC] [CYCLE #2416 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.81 | Equity=$25.84 (DD=34.24%)
+[SHADOW EXIT] #295 | Will Bitcoin reach $62,000 November 16-22? (YES)
+  Shares: 3.39 | Entry VWAP: 0.5070 -> Exit Bid VWAP: 0.3470
+  Proceeds: $1.18 | Realized PnL: $-0.54 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 17.0 pp (0.570 -> 0.400)
+[SHADOW EXIT] #296 | Will the price of Bitcoin be above $60,000 on November 21? (YES)
+  Shares: 3.01 | Entry VWAP: 0.6370 -> Exit Bid VWAP: 0.4140
+  Proceeds: $1.25 | Realized PnL: $-0.67 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 35.0% from entry (0.6370 -> 0.4140)
+[2026-11-21 15:30:59 UTC] [OPEN TRADE #227] San Diego State vs. Boise State
+  Категория: Sports | Сторона: NO | Источник: https://www.ncaa.com/
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=33.3%, Четверть(0.25x)=13.3% -> Применён=3.9% банка
+  Размер сделки: $1.00 USDC (1.10 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: High market consensus NO (90.5%) within 11.0h of expiry
+
+[SHADOW EXEC] #297 | Will India win? (YES)
+  Category: Other | Shares: 2.68 @ 0.5700
+  Bet: $1.53 USDC | P_est: 61.5% | Edge: +4.5 pp
+[SHADOW EXEC] #298 | Will Anthropic close below its IPO price by November 25, 2026? (NO)
+  Category: Macro | Shares: 4.93 @ 0.5400
+  Bet: $2.66 USDC | P_est: 63.6% | Edge: +9.6 pp
+[2026-11-21 15:30:59 UTC] [CYCLE #2417 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=2 | Opened=1 (Shadow=2) | Closed=0 | Cash=$21.81 | Equity=$25.82 (DD=34.28%)
