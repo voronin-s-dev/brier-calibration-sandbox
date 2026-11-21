@@ -6560,3 +6560,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-21 01:31:01 UTC] [CYCLE #2327 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.81 | Equity=$28.78 (DD=26.76%)
 [2026-11-21 01:40:08 UTC] [CYCLE #2328 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.81 | Equity=$28.90 (DD=26.45%)
 [2026-11-21 01:49:15 UTC] [CYCLE #2329 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.81 | Equity=$28.90 (DD=26.45%)
+[SHADOW EXIT] #259 | Will Bitcoin dip to $57,000 on November 20? (NO)
+  Shares: 3.79 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9870
+  Proceeds: $3.74 | Realized PnL: $+0.29 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.7%) secured early with +8.5% gain
+[SHADOW EXEC] #260 | Will the price of Ethereum be above $1,600 on November 21? (NO)
+  Category: Crypto | Shares: 4.91 @ 0.2160
+  Bet: $1.06 USDC | P_est: 28.2% | Edge: +6.6 pp
+[2026-11-21 02:01:09 UTC] [CYCLE #2330 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$23.81 | Equity=$28.92 (DD=26.40%)
