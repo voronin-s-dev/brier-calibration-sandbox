@@ -6690,3 +6690,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-21 05:40:03 UTC] [CYCLE #2355 SUMMARY] Scanned=788 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.81 | Equity=$28.42 (DD=27.67%)
 [2026-11-21 05:49:08 UTC] [CYCLE #2356 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.81 | Equity=$28.42 (DD=27.67%)
 [2026-11-21 06:01:15 UTC] [CYCLE #2357 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.81 | Equity=$28.41 (DD=27.70%)
+[2026-11-21 06:10:21 UTC] [OPEN TRADE #226] Pelicans vs. Spurs
+  Категория: Sports | Сторона: NO | Источник: https://www.nba.com/
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=33.3%, Четверть(0.25x)=13.3% -> Применён=3.5% банка
+  Размер сделки: $1.00 USDC (1.10 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: High market consensus NO (90.5%) within 18.8h of expiry
+
+[2026-11-21 06:10:21 UTC] [CYCLE #2358 SUMMARY] Scanned=775 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$22.81 | Equity=$28.41 (DD=27.70%)
