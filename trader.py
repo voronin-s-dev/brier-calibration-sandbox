@@ -108,6 +108,12 @@ def extract_event_key(question: str, category: str) -> str:
 
     # General multi-strike bracket normalization (collapse numeric ranges like 280-299, 10-15%, 50+ to <bracket>)
     cleaned_q = re.sub(r"\b\d+[\-–]\d+\+?\b|\b\d+\+\b", "<bracket>", q_low)
+
+    # For challenges, marathons, or ongoing events with progressive deadlines (e.g. Kai Cenat marathon by Nov 23 vs Nov 24):
+    if any(k in q_low for k in ("marathon", "finish", "complete", "stream", "reach")):
+        base_subject = re.sub(r"\b(by|before|on)\s+[a-z0-9\s,\-]+$", "", cleaned_q).strip()
+        return f"{category.lower()}:{base_subject[:40].strip()}"
+
     return f"{category.lower()}:{cleaned_q[:40].strip()}:{date_or_range}"
 
 
@@ -148,6 +154,7 @@ class GrokCharterPaperTrader:
         self.weather_oracle = WeatherOracle()
         self.news_oracle = NewsAndOrderbookOracle()
         self.fact_oracle = HighConvictionFactOracle()
+        self._allow_news_fallback = False
 
         if not self.trades_txt_path.exists():
             self._append_trades_log(
@@ -241,15 +248,34 @@ class GrokCharterPaperTrader:
             and (" post " in q or " posts " in q)
         )
 
+    @classmethod
+    def is_entertainment_or_meme_trap(cls, question: str) -> bool:
+        """
+        Detects streamer marathons, gaming challenges, celebrity gossip, and pop-culture/meme
+        markets that lack quantitative ground truth and suffer clickbait news sentiment noise.
+        """
+        q = question.lower()
+        entertainment_keywords = (
+            "kai cenat", "ishowspeed", "speed", "marathon", "gta vi", "gta 6", "gta",
+            "streamer", "streaming", "twitch", "youtube sub", "subscribers",
+            "mrbeast", "jensen huang", "affair", "dating", "divorce", "cheating",
+            "box office", "album", "billboard", "grammy", "oscar", "emmy", "met gala",
+            "gossip", "paparazzi", "celebrity", "tiktok",
+        )
+        return any(k in q for k in entertainment_keywords)
+
     def _evaluate_market_probability(
         self,
         market: MarketInfo,
         preloaded_book: Optional[Dict[str, List[Tuple[float, float]]]] = None,
+        allow_news_fallback: Optional[bool] = None,
     ) -> Tuple[Optional[EvaluationResult], Optional[Dict[str, List[Tuple[float, float]]]]]:
         """
         Runs the appropriate oracle for `market`.
         Returns (EvaluationResult, clob_yes_book).
         """
+        use_news = self._allow_news_fallback if allow_news_fallback is None else allow_news_fallback
+
         # 1. Try High-Conviction Fact Oracle first (Sports exact scores, ceasefires, macro consensus)
         res = self.fact_oracle.evaluate(market)
         if res is not None:
@@ -270,9 +296,10 @@ class GrokCharterPaperTrader:
             if res is not None:
                 return res, preloaded_book
 
-        # 4. Fallback for Macro, Geopolitics, Other: News Consensus & CLOB Imbalance (NEVER Sports or Esports!)
+        # 4. Fallback for Shadow Mode only: News Consensus & CLOB Imbalance (NEVER for live capital!)
         if (
-            market.category != "Sports"
+            use_news
+            and market.category != "Sports"
             and not is_esports_market(market)
             and market.clob_token_ids
         ):
@@ -358,6 +385,10 @@ class GrokCharterPaperTrader:
                 eval_res, _ = self._evaluate_market_probability(live_mkt)
                 if eval_res is not None:
                     latest_p = eval_res.p_yes if side == "YES" else eval_res.p_no
+                elif vwap_sell > 0 and vwap_sell < entry_vwap * 0.70:
+                    # If oracle returned None because market moved out of sweet spot / high-consensus range,
+                    # bound latest_p by market reality to prevent stubborn high-probability denial
+                    latest_p = min(latest_p, round(vwap_sell + 0.05, 4))
 
             # Update MTM in database
             if vwap_sell > 0:
@@ -415,9 +446,12 @@ class GrokCharterPaperTrader:
 
             if is_take_profit:
                 exit_triggered = True
-            # Exit Rule B: HARD STOP-LOSS (Protect capital only if price drops AND thesis deteriorated)
+            # Exit Rule B: HARD STOP-LOSS (Strict Capital Preservation)
+            # 1. Price collapsed by STOP_LOSS_PCT (40%) from entry -> unconditionally cut loss on CLOB
+            # 2. Or price dropped by >= 25% AND probability estimate deteriorated <= 75%
             elif vwap_sell > 0 and (
-                vwap_sell <= entry_vwap * (1.0 - self.STOP_LOSS_PCT) and latest_p <= 0.75
+                vwap_sell <= entry_vwap * (1.0 - self.STOP_LOSS_PCT)
+                or (vwap_sell <= entry_vwap * 0.75 and latest_p <= 0.75)
             ):
                 exit_triggered = True
                 loss_pct = (entry_vwap - vwap_sell) / entry_vwap * 100.0
@@ -532,7 +566,7 @@ class GrokCharterPaperTrader:
 
             latest_p = float(pos["latest_p_est"])
             if live_mkt:
-                eval_res, _ = self._evaluate_market_probability(live_mkt)
+                eval_res, _ = self._evaluate_market_probability(live_mkt, allow_news_fallback=True)
                 if eval_res is not None:
                     latest_p = eval_res.p_yes if side == "YES" else eval_res.p_no
 
@@ -624,7 +658,8 @@ class GrokCharterPaperTrader:
             if "ALL" in allowed_cats or m.category.upper() in allowed_cats:
                 liq_threshold = 400.0 if m.category == "Weather" else min_liq
                 if m.liquidity_usd >= liq_threshold and m.id not in open_real_market_ids:
-                    active_candidates.append(m)
+                    if not self.is_entertainment_or_meme_trap(m.question):
+                        active_candidates.append(m)
             else:
                 shadow_liq = 400.0 if m.category == "Weather" else 1500.0
                 if m.liquidity_usd >= shadow_liq and m.id not in open_shadow_market_ids:
@@ -679,6 +714,7 @@ class GrokCharterPaperTrader:
         max_slippage = float(self.db.get_portfolio().get("max_slippage_filter", 0.02))
 
         opened_count = 0
+        self._allow_news_fallback = True
         for mkt in shadow_markets:
             if len(open_shadow) + opened_count >= 5:
                 break
@@ -770,6 +806,7 @@ class GrokCharterPaperTrader:
             active_shadow_event_keys.add(event_key)
             shadow_cash -= ob_sim.bet_usdc
 
+        self._allow_news_fallback = False
         return opened_count
 
     def run_cycle(self, max_markets_to_scan: int = 500) -> Dict[str, Any]:
@@ -850,6 +887,8 @@ class GrokCharterPaperTrader:
         trades_opened = 0
 
         for mkt in candidates_to_evaluate:
+            if self.is_entertainment_or_meme_trap(mkt.question):
+                continue
             eval_res, preloaded_yes_book = self._evaluate_market_probability(mkt)
             if eval_res is None:
                 continue

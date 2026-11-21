@@ -32,8 +32,9 @@ TRADES_LOG_PATH = DATA_DIR / "trades.txt"
 
 class AutoGovernor:
     # Categories permanently excluded from automatic shadow-based unfreeze proposals
-    # (Crypto GBM lacks live options IV surface / adverse selection; Weather has airport METAR tail risk)
-    SHADOW_UNFREEZE_BLOCKLIST = {"CRYPTO", "WEATHER"}
+    # (Crypto GBM lacks live options IV surface; Weather has airport METAR tail risk;
+    # Other has unmodeled gossip/streamer marathons; Macro lacks institutional macro models)
+    SHADOW_UNFREEZE_BLOCKLIST = {"CRYPTO", "WEATHER", "OTHER", "MACRO"}
 
     def __init__(self, db: SimDatabase, report_path: Optional[Path] = None) -> None:
         self.db = db

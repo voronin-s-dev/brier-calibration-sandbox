@@ -1461,6 +1461,123 @@ class TestRiskManagementV2(unittest.TestCase):
         self.assertEqual(station_info[2], "Europe/Warsaw")
         self.assertEqual(station_info[3], "celsius")
 
+    def test_hard_stop_loss_triggers_regardless_of_high_initial_p_est(self) -> None:
+        """Verify that a 40%+ price drop triggers a HARD STOP-LOSS even if initial P_est was 95%."""
+        import gc
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            db_path = Path(tmp_dir) / "test_sim.db"
+            db = SimDatabase(db_path=db_path, initial_capital=50.0)
+            trades_log = Path(tmp_dir) / "trades.txt"
+            trader = GrokCharterPaperTrader(db=db, trades_txt_path=trades_log)
+
+            # Open a virtual position with entry 0.90, high conviction p_est 0.95
+            pos_id = db.open_position(
+                market_id="test_high_p_mkt",
+                question="Will High Conviction Event Win?",
+                category="Sports",
+                side="NO",
+                token_id="tok_456",
+                shares=1.11,
+                entry_vwap=0.90,
+                cost_usdc=1.00,
+                current_bid=0.90,
+                p_est=0.95,
+                entry_edge=0.05,
+                kelly_full_pct=0.50,
+                kelly_half_pct=0.20,
+                applied_size_pct=0.035,
+                roundtrip_slippage_pct=0.01,
+                official_source="Test Official",
+                exit_condition="Test Exit",
+                rationale="High market consensus NO",
+                end_date_iso="2026-11-25T12:00:00Z",
+            )
+
+            import trader as trader_mod
+            orig_sim = trader_mod.simulate_clob_sell_shares
+            orig_fetch = trader_mod.fetch_market_by_id
+            try:
+                # Price crashes to 0.50 (44% drop from entry 0.90, exceeding 40% STOP_LOSS_PCT)
+                trader_mod.simulate_clob_sell_shares = lambda tok, sh: (0.50, 0.555, 0.50)
+                # Oracle returns None because consensus has dissolved
+                trader_mod.fetch_market_by_id = lambda mid: None
+
+                closed = trader.monitor_and_manage_open_positions()
+                self.assertEqual(closed, 1)
+
+                closed_pos = db.get_all_positions()[0]
+                self.assertEqual(closed_pos["status"], "CLOSED")
+                self.assertIn("STOP-LOSS TRIGGERED", closed_pos["exit_reason"])
+                self.assertEqual(closed_pos["exit_vwap"], 0.50)
+            finally:
+                trader_mod.simulate_clob_sell_shares = orig_sim
+                trader_mod.fetch_market_by_id = orig_fetch
+                del db, trader
+                gc.collect()
+
+    def test_is_entertainment_or_meme_trap(self) -> None:
+        """Verify that streamer marathons and celebrity gossip are identified as traps."""
+        traps = [
+            "Will Kai Cenat finish his GTA VI marathon by November 23?",
+            "Will Kai Cenat finish his GTA VI marathon by November 24?",
+            "Will IShowSpeed reach 40 million subscribers in 2026?",
+            "Fourth Jensen Huang affair reported by November 20?",
+            "Will MrBeast launch a new channel by December?",
+        ]
+        for q in traps:
+            self.assertTrue(
+                GrokCharterPaperTrader.is_entertainment_or_meme_trap(q),
+                f"Expected trap detection for: {q}",
+            )
+
+        legit = [
+            "Pelicans vs. Spurs",
+            "Dolphins vs. Bills",
+            "Israel x Iran ceasefire continues through November 22?",
+            "US x Iran ceasefire continues through October 24?",
+        ]
+        for q in legit:
+            self.assertFalse(
+                GrokCharterPaperTrader.is_entertainment_or_meme_trap(q),
+                f"Expected clean legit pass for: {q}",
+            )
+
+    def test_marathon_deadline_event_key_deduplication(self) -> None:
+        """Verify that multi-deadline marathons/challenges produce identical event keys."""
+        k1 = extract_event_key("Will Kai Cenat finish his GTA VI marathon by November 23?", "Other")
+        k2 = extract_event_key("Will Kai Cenat finish his GTA VI marathon by November 24?", "Other")
+        self.assertEqual(k1, k2)
+
+    def test_live_evaluation_disallows_news_fallback(self) -> None:
+        """Verify that live probability evaluation disallows news oracle by default."""
+        from polymarket_api import MarketInfo
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            db = SimDatabase(db_path=Path(tmp_dir) / "test.db", initial_capital=50.0)
+            trader = GrokCharterPaperTrader(db=db, trades_txt_path=Path(tmp_dir) / "trades.txt")
+
+            mkt = MarketInfo(
+                id="other_mkt_1",
+                question="Will Random Entertainment Event Occur?",
+                slug="other-mkt-1",
+                description="",
+                resolution_source="https://example.com",
+                outcomes=["YES", "NO"],
+                order_min_size=1.0,
+                tick_size=0.01,
+                category="Other",
+                end_date_iso="2026-11-25T12:00:00Z",
+                hours_to_close=72.0,
+                gamma_prices=[0.50, 0.50],
+                volume_24h_usd=20000.0,
+                liquidity_usd=10000.0,
+                clob_token_ids=["tok_y", "tok_n"],
+                has_official_source=True,
+            )
+
+            # In live mode (default), unmodeled Other market must return None
+            eval_res, _ = trader._evaluate_market_probability(mkt)
+            self.assertIsNone(eval_res)
+
 
 if __name__ == "__main__":
     unittest.main()
