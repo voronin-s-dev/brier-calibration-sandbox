@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-21 15:49:20 UTC`
+**Обновлено:** `2026-11-21 16:01:14 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -22,17 +22,17 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$48.90 USDC`** |
-| **Свободный кэш / В сделках** | `$37.05` / `$11.85 USDC` |
+| **Виртуальный баланс (Equity)** | **`$48.91 USDC`** |
+| **Свободный кэш / В сделках** | `$37.05` / `$11.86 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `25.89%` |
+| **Текущая просадка** | `25.88%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #230 | Oilers vs. Hurricanes | Weather | **YES** | `0.390` | `0.320` | `44.0%` | `$1.40` | `$-0.25` | https://www.nhl.com/scores |
-| #288 | Will Ethereum dip to $1,500 November 16-22? | Crypto | **NO** | `0.906` | `0.912` | `95.3%` | `$3.31` | `$+0.02` | https://www.binance.com/en/tra |
-| #290 | Will Anthropic close below its IPO price by November 23 | Macro | **NO** | `0.750` | `0.740` | `83.3%` | `$3.28` | `$-0.04` | https://www.nasdaq.com/market- |
+| #288 | Will Ethereum dip to $1,500 November 16-22? | Crypto | **NO** | `0.906` | `0.914` | `95.3%` | `$3.31` | `$+0.03` | https://www.binance.com/en/tra |
+| #290 | Will Anthropic close below its IPO price by November 23 | Macro | **NO** | `0.750` | `0.740` | `83.8%` | `$3.28` | `$-0.04` | https://www.nasdaq.com/market- |
 | #297 | Will India win? | Other | **YES** | `0.570` | `0.550` | `61.5%` | `$1.53` | `$-0.05` | https://www.espncricinfo.com/ |
 | #298 | Will Anthropic close below its IPO price by November 25 | Macro | **NO** | `0.540` | `0.540` | `60.0%` | `$2.66` | `$+0.00` | https://www.nasdaq.com/market- |
 
