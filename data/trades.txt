@@ -6851,3 +6851,20 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 8.97 @ 0.3410
   Bet: $3.06 USDC | P_est: 71.2% | Edge: +37.1 pp
 [2026-11-21 13:49:10 UTC] [CYCLE #2407 SUMMARY] Scanned=793 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$22.81 | Equity=$25.83 (DD=34.26%)
+[RESOLVED] #222 | Will Kai Cenat finish his GTA VI marathon by November 24? (NO)
+  Entry VWAP: 0.7800 | Settlement: 0.00 | PnL: $-2.33 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $0.00/share
+[RESOLVED] #224 | Will Kai Cenat finish his GTA VI marathon by November 23? (NO)
+  Entry VWAP: 0.9000 | Settlement: 0.00 | PnL: $-1.00 USDC | Reason: MARKET RESOLVED on Polymarket: NO settled at $0.00/share
+[SHADOW EXIT] #292 | Will the price of Bitcoin be above $60,000 on November 22? (NO)
+  Shares: 4.97 | Entry VWAP: 0.3800 -> Exit Bid VWAP: 0.3600
+  Proceeds: $1.79 | Realized PnL: $-0.10 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 21.3 pp (0.602 -> 0.389)
+[SHADOW EXIT] #293 | Will the price of Bitcoin be above $60,000 on November 21? (NO)
+  Shares: 8.97 | Entry VWAP: 0.3410 -> Exit Bid VWAP: 0.2900
+  Proceeds: $2.60 | Realized PnL: $-0.46 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 49.4 pp (0.712 -> 0.218)
+[SHADOW EXEC] #294 | Will the price of Bitcoin be above $60,000 on November 21? (YES)
+  Category: Crypto | Shares: 4.28 @ 0.7100
+  Bet: $3.04 USDC | P_est: 76.6% | Edge: +5.6 pp
+[SHADOW EXEC] #295 | Will Bitcoin reach $62,000 November 16-22? (YES)
+  Category: Crypto | Shares: 3.39 @ 0.5070
+  Bet: $1.72 USDC | P_est: 57.0% | Edge: +6.3 pp
+[2026-11-21 14:01:08 UTC] [CYCLE #2408 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=1 | Opened=0 (Shadow=2) | Closed=2 | Cash=$22.81 | Equity=$25.83 (DD=34.26%)
