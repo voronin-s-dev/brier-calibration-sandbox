@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-22 11:19:27 UTC`
+**Обновлено:** `2026-11-22 11:30:59 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -22,17 +22,17 @@
 | Показатель | Значение |
 | :--- | :--- |
 | **Виртуальный баланс (Equity)** | **`$47.30 USDC`** |
-| **Свободный кэш / В сделках** | `$39.23` / `$8.07 USDC` |
+| **Свободный кэш / В сделках** | `$39.23` / `$8.08 USDC` |
 | **Открытых позиций** | `4 / 5` |
-| **Текущая просадка** | `28.32%` |
+| **Текущая просадка** | `28.31%` |
 
 ### Открытые позиции в песочнице (4 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #307 | Hurricanes vs. Rangers | Weather | **YES** | `0.600` | `0.590` | `65.0%` | `$1.66` | `$-0.03` | https://www.nhl.com/scores |
-| #310 | Will the price of Ethereum be above $1,700 on November  | Crypto | **NO** | `0.326` | `0.336` | `39.1%` | `$2.10` | `$+0.06` | https://www.binance.com/en/tra |
-| #311 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.678` | `0.686` | `72.0%` | `$1.16` | `$+0.01` | https://www.binance.com/en/tra |
-| #312 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.786` | `0.874` | `90.0%` | `$2.79` | `$+0.31` | https://www.binance.com/en/tra |
+| #310 | Will the price of Ethereum be above $1,700 on November  | Crypto | **NO** | `0.326` | `0.347` | `40.3%` | `$2.10` | `$+0.14` | https://www.binance.com/en/tra |
+| #311 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.678` | `0.677` | `70.3%` | `$1.16` | `$-0.00` | https://www.binance.com/en/tra |
+| #312 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.786` | `0.859` | `88.7%` | `$2.79` | `$+0.26` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
