@@ -7022,3 +7022,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-22 03:40:04 UTC] [CYCLE #2496 SUMMARY] Scanned=784 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.54 | Equity=$25.64 (DD=34.75%)
 [2026-11-22 03:49:12 UTC] [CYCLE #2497 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.54 | Equity=$25.62 (DD=34.80%)
 [2026-11-22 04:01:10 UTC] [CYCLE #2498 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.54 | Equity=$25.58 (DD=34.90%)
+[SHADOW EXEC] #300 | Will Bitcoin dip to $58,000 November 16-22? (YES)
+  Category: Crypto | Shares: 3.09 @ 0.4400
+  Bet: $1.36 USDC | P_est: 48.4% | Edge: +4.4 pp
+[2026-11-22 04:10:17 UTC] [CYCLE #2499 SUMMARY] Scanned=781 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$22.54 | Equity=$25.62 (DD=34.79%)
