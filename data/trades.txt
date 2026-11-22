@@ -7329,3 +7329,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: Heavy handicap spread (-3.5+) is historically improbable
 
 [2026-11-22 18:40:02 UTC] [CYCLE #2592 SUMMARY] Scanned=793 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$21.79 | Equity=$24.90 (DD=36.63%)
+[EXIT] #225 | Dolphins vs. Bills (NO)
+  Shares: 1.09 | Entry VWAP: 0.9200 -> Exit Bid VWAP: 0.9850
+  Proceeds: $1.07 | Realized PnL: $+0.07 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.5%) secured early with +7.1% gain
+[2026-11-22 18:49:07 UTC] [CYCLE #2593 SUMMARY] Scanned=790 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$22.86 | Equity=$24.96 (DD=36.47%)
