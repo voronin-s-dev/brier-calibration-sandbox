@@ -7051,3 +7051,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 3.31 | Entry VWAP: 0.5100 -> Exit Bid VWAP: 0.6400
   Proceeds: $2.12 | Realized PnL: $+0.43 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +25.5% >= +12% (Bid VWAP: 0.6400 vs Entry: 0.5100)
 [2026-11-22 05:19:24 UTC] [CYCLE #2506 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.54 | Equity=$25.56 (DD=34.94%)
+[EXIT] #223 | Israel x Iran ceasefire continues through November 22? (YES)
+  Shares: 1.09 | Entry VWAP: 0.9200 -> Exit Bid VWAP: 0.9860
+  Proceeds: $1.07 | Realized PnL: $+0.07 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.6%) secured early with +7.2% gain
+[SHADOW EXIT] #298 | Will Anthropic close below its IPO price by November 25, 2026? (NO)
+  Shares: 4.93 | Entry VWAP: 0.5400 -> Exit Bid VWAP: 0.6200
+  Proceeds: $3.05 | Realized PnL: $+0.39 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +14.8% >= +12% (Bid VWAP: 0.6200 vs Entry: 0.5400)
+[SHADOW EXEC] #302 | Will Bitcoin dip to $58,000 November 16-22? (YES)
+  Category: Crypto | Shares: 2.64 @ 0.5900
+  Bet: $1.56 USDC | P_est: 65.4% | Edge: +6.4 pp
+[SHADOW EXEC] #303 | Will the price of Bitcoin be above $60,000 on November 23? (NO)
+  Category: Crypto | Shares: 2.18 @ 0.6500
+  Bet: $1.42 USDC | P_est: 69.4% | Edge: +4.4 pp
+[2026-11-22 05:30:57 UTC] [CYCLE #2507 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=1 | Cash=$22.61 | Equity=$25.55 (DD=34.97%)
