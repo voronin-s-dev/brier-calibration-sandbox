@@ -7099,3 +7099,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 4.47 @ 0.4500
   Bet: $2.01 USDC | P_est: 57.7% | Edge: +12.7 pp
 [2026-11-22 08:19:21 UTC] [CYCLE #2527 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$22.61 | Equity=$24.60 (DD=37.39%)
+[SHADOW EXIT] #303 | Will the price of Bitcoin be above $60,000 on November 23? (NO)
+  Shares: 2.18 | Entry VWAP: 0.6500 -> Exit Bid VWAP: 0.5400
+  Proceeds: $1.18 | Realized PnL: $-0.24 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 12.7 pp (0.694 -> 0.568)
+[SHADOW EXIT] #305 | Will Bitcoin dip to $58,000 on November 22? (YES)
+  Shares: 4.47 | Entry VWAP: 0.4500 -> Exit Bid VWAP: 0.3300
+  Proceeds: $1.47 | Realized PnL: $-0.54 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 19.2 pp (0.577 -> 0.385)
+[SHADOW EXEC] #306 | Will Bitcoin dip to $58,000 November 16-22? (YES)
+  Category: Crypto | Shares: 3.30 @ 0.3300
+  Bet: $1.09 USDC | P_est: 38.0% | Edge: +5.0 pp
+[SHADOW EXEC] #307 | Hurricanes vs. Rangers (YES)
+  Category: Weather | Shares: 2.77 @ 0.6000
+  Bet: $1.66 USDC | P_est: 65.0% | Edge: +5.0 pp
+[2026-11-22 08:30:53 UTC] [CYCLE #2528 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=0 | Cash=$22.61 | Equity=$24.60 (DD=37.39%)

@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-22 08:19:27 UTC`
+**Обновлено:** `2026-11-22 08:31:01 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -20,24 +20,24 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$49.59 USDC`** |
-| **Свободный кэш / В сделках** | `$37.33` / `$12.26 USDC` |
+| **Виртуальный баланс (Equity)** | **`$48.99 USDC`** |
+| **Свободный кэш / В сделках** | `$37.23` / `$11.76 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `24.84%` |
+| **Текущая просадка** | `25.76%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #288 | Will Ethereum dip to $1,500 November 16-22? | Crypto | **NO** | `0.906` | `0.972` | `98.5%` | `$3.31` | `$+0.24` | https://www.binance.com/en/tra |
+| #288 | Will Ethereum dip to $1,500 November 16-22? | Crypto | **NO** | `0.906` | `0.977` | `98.5%` | `$3.31` | `$+0.26` | https://www.binance.com/en/tra |
 | #290 | Will Anthropic close below its IPO price by November 23 | Macro | **NO** | `0.750` | `0.810` | `84.0%` | `$3.28` | `$+0.26` | https://www.nasdaq.com/market- |
-| #303 | Will the price of Bitcoin be above $60,000 on November  | Crypto | **NO** | `0.650` | `0.600` | `67.2%` | `$1.42` | `$-0.11` | https://www.binance.com/en/tra |
-| #304 | Will the price of Bitcoin be above $56,000 on November  | Crypto | **YES** | `0.774` | `0.823` | `82.2%` | `$1.74` | `$+0.11` | https://www.binance.com/en/tra |
-| #305 | Will Bitcoin dip to $58,000 on November 22? | Crypto | **YES** | `0.450` | `0.450` | `57.7%` | `$2.01` | `$+0.00` | https://www.binance.com/en/tra |
+| #304 | Will the price of Bitcoin be above $56,000 on November  | Crypto | **YES** | `0.774` | `0.843` | `86.6%` | `$1.74` | `$+0.16` | https://www.binance.com/en/tra |
+| #306 | Will Bitcoin dip to $58,000 November 16-22? | Crypto | **YES** | `0.330` | `0.330` | `38.0%` | `$1.09` | `$+0.00` | https://www.binance.com/en/tra |
+| #307 | Hurricanes vs. Rangers | Weather | **YES** | `0.600` | `0.600` | `65.0%` | `$1.66` | `$+0.00` | https://www.nhl.com/scores |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
 | :--- | :--- | :--- | :--- |
-| **Crypto** | `259` | `-$0.17` | `57%` |
+| **Crypto** | `261` | `-$0.95` | `56%` |
 | **Geopolitics** | `8` | `+$1.02` | `62%` |
 | **Macro** | `9` | `+$1.24` | `67%` |
 | **Other** | `20` | `-$1.65` | `40%` |
