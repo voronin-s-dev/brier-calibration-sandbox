@@ -1,38 +1,39 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-22 10:19:21 UTC`
+**Обновлено:** `2026-11-22 10:31:00 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$24.60 USDC`** (`-25.40$` / `-50.80%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$22.61` / `$1.99 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-25.40 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `37.39%` / `37.42%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$24.59 USDC`** (`-25.41$` / `-50.82%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$21.61` / `$2.98 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-25.41 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `37.42%` / `37.42%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `227` / `63.4%` | Brier Score: `0.2280` |
 
-## 📂 Открытые позиции (2 / 8)
+## 📂 Открытые позиции (3 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #225 | Dolphins vs. Bills | Sports | **NO** | `0.920` | `0.910` | `95.0%` | `$1.00` | `$-0.01` | https://www.nfl.com/scores |
 | #230 | Spread: Manchester United FC (-1.5) | Sports | **NO** | `0.920` | `0.920` | `96.0%` | `$1.00` | `$+0.00` | https://www.premierleague.com/ |
+| #231 | Will FC Barcelona vs. Villarreal CF end in a draw? | Sports | **NO** | `0.900` | `0.890` | `96.5%` | `$1.00` | `$-0.01` | https://www.laliga.com/ |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$47.02 USDC`** |
-| **Свободный кэш / В сделках** | `$35.63` / `$11.39 USDC` |
+| **Виртуальный баланс (Equity)** | **`$47.26 USDC`** |
+| **Свободный кэш / В сделках** | `$35.63` / `$11.63 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `28.74%` |
+| **Текущая просадка** | `28.37%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #288 | Will Ethereum dip to $1,500 November 16-22? | Crypto | **NO** | `0.906` | `0.980` | `98.5%` | `$3.31` | `$+0.27` | https://www.binance.com/en/tra |
 | #307 | Hurricanes vs. Rangers | Weather | **YES** | `0.600` | `0.590` | `65.0%` | `$1.66` | `$-0.03` | https://www.nhl.com/scores |
-| #310 | Will the price of Ethereum be above $1,700 on November  | Crypto | **NO** | `0.326` | `0.315` | `38.0%` | `$2.10` | `$-0.07` | https://www.binance.com/en/tra |
-| #311 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.678` | `0.682` | `71.1%` | `$1.16` | `$+0.01` | https://www.binance.com/en/tra |
-| #312 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.786` | `0.841` | `88.3%` | `$2.79` | `$+0.20` | https://www.binance.com/en/tra |
+| #310 | Will the price of Ethereum be above $1,700 on November  | Crypto | **NO** | `0.326` | `0.343` | `39.9%` | `$2.10` | `$+0.11` | https://www.binance.com/en/tra |
+| #311 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.678` | `0.680` | `71.7%` | `$1.16` | `$+0.00` | https://www.binance.com/en/tra |
+| #312 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.786` | `0.859` | `89.1%` | `$2.79` | `$+0.26` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
@@ -46,6 +47,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will FC Barcelona vs. Villarreal CF end in a draw? | Sports | NO | `96.5%` | `90.0%` | `+6.5 п.п.` | `1.00%` | EXECUTED BUY #231 ($1.00 @ 0.9000) |
 | Spread: Manchester United FC (-1.5) | Sports | NO | `95.0%` | `92.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #230 ($1.00 @ 0.9200) |
 | SMU vs. Notre Dame | Sports | NO | `94.0%` | `91.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #229 ($1.00 @ 0.9100) |
 | UFC Fight Night: Brian Ortega vs. Dan Hooker (Ligh | Sports | NO | `95.0%` | `99.0%` | `-4.0 п.п.` | `1.00%` | REJECTED: Edge -4.0 pp < 2.5 pp threshold (P_est=95.0% vs AskVWAP=99.0%) |
@@ -63,4 +65,3 @@
 | Will Elon Musk post 380-399 tweets from November 1 | Geopolitics | NO | `95.3%` | `90.8%` | `+4.5 п.п.` | `3.00%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
 | Will Kai Cenat finish his GTA VI marathon by Novem | Other | NO | `87.7%` | `79.0%` | `+8.7 п.п.` | `2.00%` | EXECUTED BUY #221 ($2.31 @ 0.7900) |
 | Will Elon Musk post 340-359 tweets from November 1 | Geopolitics | NO | `93.8%` | `88.9%` | `+4.9 п.п.` | `1.80%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
-| Will Elon Musk post 400-419 tweets from November 1 | Geopolitics | NO | `97.1%` | `92.4%` | `+4.7 п.п.` | `1.30%` | REJECTED: Contract price $0.924 outside sweet spot [$0.70, $0.92] |

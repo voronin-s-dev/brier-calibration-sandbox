@@ -7153,3 +7153,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $2.79 USDC | P_est: 86.1% | Edge: +7.5 pp
 [2026-11-22 10:10:16 UTC] [CYCLE #2538 SUMMARY] Scanned=782 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$22.61 | Equity=$24.60 (DD=37.39%)
 [2026-11-22 10:19:19 UTC] [CYCLE #2539 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.61 | Equity=$24.60 (DD=37.39%)
+[2026-11-22 10:30:55 UTC] [OPEN TRADE #231] Will FC Barcelona vs. Villarreal CF end in a draw?
+  Категория: Sports | Сторона: NO | Источник: https://www.laliga.com/
+  Оценка бота: 96.5% vs Рынок (Ask VWAP): 90.0% (Перекос/Edge: +6.5 п.п.)
+  Стакан CLOB: BestBid=0.890, BestAsk=0.900, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=65.0%, Четверть(0.25x)=26.0% -> Применён=4.1% банка
+  Размер сделки: $1.00 USDC (1.11 shares @ $0.9000)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.540 if P_est <= 70%
+  Причина: Lopsided match no-draw consensus with 2.5h left
+
+[2026-11-22 10:30:55 UTC] [CYCLE #2540 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$21.61 | Equity=$24.59 (DD=37.42%)
