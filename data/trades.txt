@@ -7259,3 +7259,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $1.83 USDC | P_est: 58.7% | Edge: +4.8 pp
 [2026-11-22 14:49:11 UTC] [CYCLE #2566 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$20.61 | Equity=$24.62 (DD=37.35%)
 [2026-11-22 14:49:48 UTC] [CYCLE #2567 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$20.61 | Equity=$24.62 (DD=37.33%)
+[EXIT] #231 | Will FC Barcelona vs. Villarreal CF end in a draw? (NO)
+  Shares: 1.11 | Entry VWAP: 0.9000 -> Exit Bid VWAP: 0.9850
+  Proceeds: $1.09 | Realized PnL: $+0.09 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.5%) secured early with +9.4% gain
+[2026-11-22 14:58:54 UTC] [CYCLE #2568 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$21.71 | Equity=$24.68 (DD=37.18%)
