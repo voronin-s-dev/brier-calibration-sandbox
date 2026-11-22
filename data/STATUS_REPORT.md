@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-22 12:31:02 UTC`
+**Обновлено:** `2026-11-22 12:40:08 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -15,23 +15,23 @@
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #225 | Dolphins vs. Bills | Sports | **NO** | `0.920` | `0.910` | `95.0%` | `$1.00` | `$-0.01` | https://www.nfl.com/scores |
-| #230 | Spread: Manchester United FC (-1.5) | Sports | **NO** | `0.920` | `0.910` | `95.5%` | `$1.00` | `$-0.01` | https://www.premierleague.com/ |
+| #230 | Spread: Manchester United FC (-1.5) | Sports | **NO** | `0.920` | `0.910` | `95.0%` | `$1.00` | `$-0.01` | https://www.premierleague.com/ |
 | #231 | Will FC Barcelona vs. Villarreal CF end in a draw? | Sports | **NO** | `0.900` | `0.900` | `96.5%` | `$1.00` | `$-0.00` | https://www.laliga.com/ |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$49.43 USDC`** |
-| **Свободный кэш / В сделках** | `$44.11` / `$5.32 USDC` |
+| **Виртуальный баланс (Equity)** | **`$49.63 USDC`** |
+| **Свободный кэш / В сделках** | `$44.11` / `$5.52 USDC` |
 | **Открытых позиций** | `3 / 5` |
-| **Текущая просадка** | `25.09%` |
+| **Текущая просадка** | `24.79%` |
 
 ### Открытые позиции в песочнице (3 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #307 | Hurricanes vs. Rangers | Weather | **YES** | `0.600` | `0.590` | `65.0%` | `$1.66` | `$-0.03` | https://www.nhl.com/scores |
-| #311 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.678` | `0.712` | `75.2%` | `$1.16` | `$+0.06` | https://www.binance.com/en/tra |
-| #313 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.832` | `0.868` | `94.0%` | `$2.37` | `$+0.10` | https://www.binance.com/en/tra |
+| #311 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.678` | `0.752` | `75.6%` | `$1.16` | `$+0.13` | https://www.binance.com/en/tra |
+| #313 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.832` | `0.914` | `94.3%` | `$2.37` | `$+0.23` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
