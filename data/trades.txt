@@ -7305,3 +7305,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 3.29 @ 0.9020
   Bet: $2.97 USDC | P_est: 94.8% | Edge: +4.6 pp
 [2026-11-22 17:10:16 UTC] [CYCLE #2583 SUMMARY] Scanned=782 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=0 | Cash=$22.79 | Equity=$24.78 (DD=36.93%)
+[2026-11-22 17:19:21 UTC] [CYCLE #2584 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.79 | Equity=$24.78 (DD=36.93%)
