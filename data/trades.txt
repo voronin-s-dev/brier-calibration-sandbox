@@ -7078,3 +7078,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 1.10 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.0000
   Proceeds: $0.00 | Realized PnL: $-1.00 USDC | Reason: THESIS INVALIDATED (Prob Shift >= 12.0pp & -EV Hold): Estimate dropped from 94.0% to 1.5% (Bid VWAP: $0.000, Entry: $0.910)
 [2026-11-22 06:19:21 UTC] [CYCLE #2512 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$22.61 | Equity=$24.59 (DD=37.42%)
+[2026-11-22 06:29:01 UTC] [CYCLE #2513 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.61 | Equity=$24.59 (DD=37.42%)
