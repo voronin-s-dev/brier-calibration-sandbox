@@ -101,6 +101,14 @@ def classify_market_category(question: str, description: str) -> str:
     """Classifies market into Weather, Crypto, Macro, Geopolitics, Sports, or Other."""
     q_low = question.lower()
     text = f"{question} {description}".lower()
+
+    # Sports matches, leagues, spreads, and esports take priority over team-name collisions
+    # (e.g. Carolina Hurricanes, OKC Thunder, Tampa Bay Lightning, Miami Heat)
+    if re.search(r"\b(nba|nfl|nhl|mlb|ufc|fifa|uefa|atp|wta|f1)\b", text) or any(
+        k in q_low for k in [" vs.", " vs ", "win on 202", "spread:", "o/u ", "counter-strike", "league of legends", "valorant", "dota", "rainbow six"]
+    ):
+        return "Sports"
+
     if any(k in text for k in ["highest temperature", "lowest temperature", "degrees fahrenheit", "degrees celsius", "noaa", "weather.gov", "rainfall", "hurricane"]):
         return "Weather"
     if any(k in text for k in ["bitcoin", "btc/usdt", "ethereum", "eth/usdt", "solana", "sol/usdt", "xrp", "dogecoin", "binance 1 minute"]):
@@ -109,10 +117,6 @@ def classify_market_category(question: str, description: str) -> str:
         return "Macro"
     if any(k in q_low for k in ["ceasefire", "invade", "president", "senate", "house", "election", "prime minister", "ukraine", "israel", "iran", "yemen", "china", "trump", "elon musk", "hormuz"]):
         return "Geopolitics"
-    if re.search(r"\b(nba|nfl|nhl|mlb|ufc|fifa|uefa|atp|wta|f1)\b", text) or any(
-        k in q_low for k in [" vs.", " vs ", "win on 202", "spread:", "o/u ", "counter-strike", "league of legends", "valorant", "dota", "rainbow six"]
-    ):
-        return "Sports"
     return "Other"
 
 

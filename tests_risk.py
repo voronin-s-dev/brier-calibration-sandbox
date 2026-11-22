@@ -1578,6 +1578,34 @@ class TestRiskManagementV2(unittest.TestCase):
             eval_res, _ = trader._evaluate_market_probability(mkt)
             self.assertIsNone(eval_res)
 
+    def test_category_classification_hurricanes_vs_weather(self) -> None:
+        """Verify that sports teams named Hurricanes/Thunder/Lightning are classified as Sports, not Weather."""
+        from polymarket_api import classify_market_category
+
+        # NHL match involving Carolina Hurricanes
+        self.assertEqual(
+            classify_market_category("Hurricanes vs. Rangers", "https://www.nhl.com/scores"),
+            "Sports"
+        )
+        self.assertEqual(
+            classify_market_category("Canadiens vs. Hurricanes", "https://www.nhl.com/scores"),
+            "Sports"
+        )
+        self.assertEqual(
+            classify_market_category("Capitals vs. Hurricanes", "NHL Regular Season Match"),
+            "Sports"
+        )
+
+        # Actual Weather markets (storms or temperature)
+        self.assertEqual(
+            classify_market_category("Will Hurricane Rafael make landfall in Florida?", "NOAA NHC"),
+            "Weather"
+        )
+        self.assertEqual(
+            classify_market_category("Will the highest temperature in London be 10°C or higher on November 21?", "METAR"),
+            "Weather"
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
