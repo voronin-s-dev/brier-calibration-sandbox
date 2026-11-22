@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-22 19:19:26 UTC`
+**Обновлено:** `2026-11-22 19:30:55 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -22,15 +22,15 @@
 | **Виртуальный баланс (Equity)** | **`$49.54 USDC`** |
 | **Свободный кэш / В сделках** | `$38.16` / `$11.38 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `24.93%` |
+| **Текущая просадка** | `24.92%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #311 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.678` | `0.729` | `77.0%` | `$1.16` | `$+0.09` | https://www.binance.com/en/tra |
+| #311 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.678` | `0.734` | `77.1%` | `$1.16` | `$+0.10` | https://www.binance.com/en/tra |
 | #322 | Will Bitcoin dip to $58,000 on November 22? | Crypto | **NO** | `0.910` | `0.900` | `94.0%` | `$2.98` | `$-0.03` | https://www.binance.com/en/tra |
-| #324 | Will the price of Ethereum be above $1,700 on November  | Crypto | **NO** | `0.390` | `0.370` | `41.9%` | `$1.17` | `$-0.06` | https://www.binance.com/en/tra |
-| #326 | Will Ethereum reach $1,800 November 16-22? | Crypto | **NO** | `0.902` | `0.935` | `97.9%` | `$2.97` | `$+0.11` | https://www.binance.com/en/tra |
+| #324 | Will the price of Ethereum be above $1,700 on November  | Crypto | **NO** | `0.390` | `0.370` | `41.6%` | `$1.17` | `$-0.06` | https://www.binance.com/en/tra |
+| #326 | Will Ethereum reach $1,800 November 16-22? | Crypto | **NO** | `0.902` | `0.934` | `97.2%` | `$2.97` | `$+0.11` | https://www.binance.com/en/tra |
 | #327 | Will Bitcoin dip to $58,000 November 16-22? | Crypto | **NO** | `0.880` | `0.890` | `93.6%` | `$2.96` | `$+0.03` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
