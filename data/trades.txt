@@ -7004,3 +7004,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-22 02:10:20 UTC] [CYCLE #2487 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$20.36 | Equity=$25.53 (DD=35.02%)
 [2026-11-22 02:19:27 UTC] [CYCLE #2488 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$20.36 | Equity=$25.55 (DD=34.97%)
 [2026-11-22 02:30:54 UTC] [CYCLE #2489 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$20.36 | Equity=$25.56 (DD=34.94%)
+[EXIT] #226 | Pelicans vs. Spurs (NO)
+  Shares: 1.10 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9880
+  Proceeds: $1.09 | Realized PnL: $+0.09 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.8%) secured early with +8.6% gain
+[EXIT] #229 | SMU vs. Notre Dame (NO)
+  Shares: 1.10 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9950
+  Proceeds: $1.09 | Realized PnL: $+0.09 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.5%) secured early with +9.3% gain
+[2026-11-22 02:40:00 UTC] [CYCLE #2490 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=2 | Cash=$22.54 | Equity=$25.59 (DD=34.88%)
