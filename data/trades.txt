@@ -7319,3 +7319,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-22 18:10:14 UTC] [CYCLE #2589 SUMMARY] Scanned=780 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.79 | Equity=$24.82 (DD=36.82%)
 [2026-11-22 18:19:18 UTC] [CYCLE #2590 SUMMARY] Scanned=792 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.79 | Equity=$24.86 (DD=36.72%)
 [2026-11-22 18:30:55 UTC] [CYCLE #2591 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.79 | Equity=$24.88 (DD=36.68%)
+[2026-11-22 18:40:02 UTC] [OPEN TRADE #233] Spread: Steelers (-3.5)
+  Категория: Sports | Сторона: NO | Источник: https://www.nfl.com/scores
+  Оценка бота: 97.5% vs Рынок (Ask VWAP): 86.0% (Перекос/Edge: +11.5 п.п.)
+  Стакан CLOB: BestBid=0.850, BestAsk=0.860, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=82.1%, Четверть(0.25x)=32.9% -> Применён=4.0% банка
+  Размер сделки: $1.00 USDC (1.16 shares @ $0.8600)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.516 if P_est <= 70%
+  Причина: Heavy handicap spread (-3.5+) is historically improbable
+
+[2026-11-22 18:40:02 UTC] [CYCLE #2592 SUMMARY] Scanned=793 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=2 | Opened=1 (Shadow=0) | Closed=0 | Cash=$21.79 | Equity=$24.90 (DD=36.63%)
