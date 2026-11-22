@@ -7347,3 +7347,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-22 20:19:27 UTC] [CYCLE #2602 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.94 | Equity=$24.90 (DD=36.64%)
 [2026-11-22 20:30:57 UTC] [CYCLE #2603 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.94 | Equity=$25.01 (DD=36.34%)
 [2026-11-22 20:40:02 UTC] [CYCLE #2604 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.94 | Equity=$25.05 (DD=36.25%)
+[EXIT] #233 | Spread: Steelers (-3.5) (NO)
+  Shares: 1.16 | Entry VWAP: 0.8600 -> Exit Bid VWAP: 0.9760
+  Proceeds: $1.13 | Realized PnL: $+0.13 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +13.5% >= +12% (Bid VWAP: 0.9760 vs Entry: 0.8600)
+[2026-11-22 20:49:07 UTC] [CYCLE #2605 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
