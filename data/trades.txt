@@ -7298,3 +7298,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $1.09 | Realized PnL: $+0.09 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +8.6% gain
 [2026-11-22 16:49:06 UTC] [CYCLE #2581 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$22.79 | Equity=$24.78 (DD=36.93%)
 [2026-11-22 17:01:09 UTC] [CYCLE #2582 SUMMARY] Scanned=792 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.79 | Equity=$24.78 (DD=36.93%)
+[SHADOW EXEC] #325 | Will Bitcoin reach $62,000 November 16-22? (YES)
+  Category: Crypto | Shares: 3.69 @ 0.4880
+  Bet: $1.80 USDC | P_est: 55.3% | Edge: +6.5 pp
+[SHADOW EXEC] #326 | Will Ethereum reach $1,800 November 16-22? (NO)
+  Category: Crypto | Shares: 3.29 @ 0.9020
+  Bet: $2.97 USDC | P_est: 94.8% | Edge: +4.6 pp
+[2026-11-22 17:10:16 UTC] [CYCLE #2583 SUMMARY] Scanned=782 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=0 | Cash=$22.79 | Equity=$24.78 (DD=36.93%)
