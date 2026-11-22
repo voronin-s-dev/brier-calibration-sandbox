@@ -7182,3 +7182,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 2.85 @ 0.8320
   Bet: $2.37 USDC | P_est: 87.6% | Edge: +4.4 pp
 [2026-11-22 12:10:26 UTC] [CYCLE #2550 SUMMARY] Scanned=762 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$21.61 | Equity=$24.60 (DD=37.39%)
+[SHADOW EXIT] #310 | Will the price of Ethereum be above $1,700 on November 22? (NO)
+  Shares: 6.44 | Entry VWAP: 0.3260 -> Exit Bid VWAP: 0.1660
+  Proceeds: $1.07 | Realized PnL: $-1.03 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 49.1% from entry (0.3260 -> 0.1660)
+[SHADOW EXEC] #314 | Will Bitcoin reach $62,000 November 16-22? (NO)
+  Category: Crypto | Shares: 5.94 @ 0.3080
+  Bet: $1.83 USDC | P_est: 36.8% | Edge: +6.0 pp
+[SHADOW EXEC] #315 | Will the price of Ethereum be between $1,600 and $1,700 on November 22? (YES)
+  Category: Crypto | Shares: 9.42 @ 0.1900
+  Bet: $1.79 USDC | P_est: 36.3% | Edge: +17.3 pp
+[2026-11-22 12:19:32 UTC] [CYCLE #2551 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=0 | Cash=$21.61 | Equity=$24.59 (DD=37.42%)
