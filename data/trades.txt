@@ -7355,3 +7355,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-22 21:08:31 UTC] [CYCLE #2607 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
 [2026-11-22 21:17:35 UTC] [CYCLE #2608 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
 [2026-11-22 21:17:47 UTC] [CYCLE #2609 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
+[SHADOW EXIT] #324 | Will the price of Ethereum be above $1,700 on November 23? (NO)
+  Shares: 3.00 | Entry VWAP: 0.3900 -> Exit Bid VWAP: 0.2900
+  Proceeds: $0.87 | Realized PnL: $-0.30 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 8.0 pp (0.434 -> 0.354)
+[SHADOW EXEC] #328 | Will Anthropic close below its IPO price by November 25, 2026? (NO)
+  Category: Macro | Shares: 2.83 @ 0.6300
+  Bet: $1.78 USDC | P_est: 67.5% | Edge: +4.5 pp
+[2026-11-22 21:26:51 UTC] [CYCLE #2610 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
