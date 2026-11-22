@@ -7334,3 +7334,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $1.07 | Realized PnL: $+0.07 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.5%) secured early with +7.1% gain
 [2026-11-22 18:49:07 UTC] [CYCLE #2593 SUMMARY] Scanned=790 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=1 | Cash=$22.86 | Equity=$24.96 (DD=36.47%)
 [2026-11-22 19:01:11 UTC] [CYCLE #2594 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.86 | Equity=$24.93 (DD=36.55%)
+[EXIT] #232 | Cardinals vs. Chiefs (NO)
+  Shares: 1.09 | Entry VWAP: 0.9200 -> Exit Bid VWAP: 0.9930
+  Proceeds: $1.08 | Realized PnL: $+0.08 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.3%) secured early with +7.9% gain
+[2026-11-22 19:10:17 UTC] [CYCLE #2595 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=1 | Cash=$23.94 | Equity=$24.90 (DD=36.64%)
