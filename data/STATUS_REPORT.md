@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-22 07:05:39 UTC`
+**Обновлено:** `2026-11-22 07:05:52 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -30,9 +30,9 @@
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #288 | Will Ethereum dip to $1,500 November 16-22? | Crypto | **NO** | `0.906` | `0.947` | `98.2%` | `$3.31` | `$+0.15` | https://www.binance.com/en/tra |
 | #290 | Will Anthropic close below its IPO price by November 23 | Macro | **NO** | `0.750` | `0.810` | `84.0%` | `$3.28` | `$+0.26` | https://www.nasdaq.com/market- |
-| #302 | Will Bitcoin dip to $58,000 November 16-22? | Crypto | **YES** | `0.590` | `0.510` | `58.5%` | `$1.56` | `$-0.21` | https://www.binance.com/en/tra |
-| #303 | Will the price of Bitcoin be above $60,000 on November  | Crypto | **NO** | `0.650` | `0.630` | `67.2%` | `$1.42` | `$-0.04` | https://www.binance.com/en/tra |
-| #304 | Will the price of Bitcoin be above $56,000 on November  | Crypto | **YES** | `0.774` | `0.796` | `82.1%` | `$1.74` | `$+0.05` | https://www.binance.com/en/tra |
+| #302 | Will Bitcoin dip to $58,000 November 16-22? | Crypto | **YES** | `0.590` | `0.510` | `59.2%` | `$1.56` | `$-0.21` | https://www.binance.com/en/tra |
+| #303 | Will the price of Bitcoin be above $60,000 on November  | Crypto | **NO** | `0.650` | `0.630` | `67.8%` | `$1.42` | `$-0.04` | https://www.binance.com/en/tra |
+| #304 | Will the price of Bitcoin be above $56,000 on November  | Crypto | **YES** | `0.774` | `0.796` | `81.8%` | `$1.74` | `$+0.05` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
