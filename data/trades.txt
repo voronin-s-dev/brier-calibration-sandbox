@@ -7202,3 +7202,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-22 12:40:04 UTC] [CYCLE #2553 SUMMARY] Scanned=780 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.61 | Equity=$24.59 (DD=37.42%)
 [2026-11-22 12:49:10 UTC] [CYCLE #2554 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.61 | Equity=$24.59 (DD=37.42%)
 [2026-11-22 13:01:14 UTC] [CYCLE #2555 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.61 | Equity=$24.60 (DD=37.39%)
+[2026-11-22 13:10:20 UTC] [OPEN TRADE #232] Cardinals vs. Chiefs
+  Категория: Sports | Сторона: NO | Источник: https://www.nfl.com/scores
+  Оценка бота: 96.0% vs Рынок (Ask VWAP): 92.0% (Перекос/Edge: +4.0 п.п.)
+  Стакан CLOB: BestBid=0.910, BestAsk=0.920, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=50.0%, Четверть(0.25x)=20.0% -> Применён=4.1% банка
+  Размер сделки: $1.00 USDC (1.09 shares @ $0.9200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.552 if P_est <= 70%
+  Причина: High market consensus NO (92.5%) within 4.8h of expiry
+
+[SHADOW EXEC] #316 | Will Bitcoin reach $62,000 November 16-22? (YES)
+  Category: Crypto | Shares: 3.70 @ 0.4220
+  Bet: $1.56 USDC | P_est: 47.6% | Edge: +5.4 pp
+[2026-11-22 13:10:20 UTC] [CYCLE #2556 SUMMARY] Scanned=757 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=1 (Shadow=1) | Closed=0 | Cash=$20.61 | Equity=$24.49 (DD=37.67%)
