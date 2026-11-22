@@ -7074,3 +7074,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-22 05:49:07 UTC] [CYCLE #2509 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$22.61 | Equity=$25.54 (DD=34.99%)
 [2026-11-22 06:01:10 UTC] [CYCLE #2510 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.61 | Equity=$25.60 (DD=34.85%)
 [2026-11-22 06:10:16 UTC] [CYCLE #2511 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.61 | Equity=$24.59 (DD=37.42%)
+[EXIT] #227 | San Diego State vs. Boise State (NO)
+  Shares: 1.10 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.0000
+  Proceeds: $0.00 | Realized PnL: $-1.00 USDC | Reason: THESIS INVALIDATED (Prob Shift >= 12.0pp & -EV Hold): Estimate dropped from 94.0% to 1.5% (Bid VWAP: $0.000, Entry: $0.910)
+[2026-11-22 06:19:21 UTC] [CYCLE #2512 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$22.61 | Equity=$24.59 (DD=37.42%)
