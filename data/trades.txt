@@ -7027,3 +7027,19 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $1.36 USDC | P_est: 48.4% | Edge: +4.4 pp
 [2026-11-22 04:10:17 UTC] [CYCLE #2499 SUMMARY] Scanned=781 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$22.54 | Equity=$25.62 (DD=34.79%)
 [2026-11-22 04:19:22 UTC] [CYCLE #2500 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.54 | Equity=$25.62 (DD=34.79%)
+[SHADOW EXIT] #300 | Will Bitcoin dip to $58,000 November 16-22? (YES)
+  Shares: 3.09 | Entry VWAP: 0.4400 -> Exit Bid VWAP: 0.5000
+  Proceeds: $1.55 | Realized PnL: $+0.19 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +13.6% >= +12% (Bid VWAP: 0.5000 vs Entry: 0.4400)
+[2026-11-22 04:30:57 UTC] [OPEN TRADE #230] Spread: Manchester United FC (-1.5)
+  Категория: Sports | Сторона: NO | Источник: https://www.premierleague.com/
+  Оценка бота: 95.0% vs Рынок (Ask VWAP): 92.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.910, BestAsk=0.920, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=37.5%, Четверть(0.25x)=15.0% -> Применён=3.9% банка
+  Размер сделки: $1.00 USDC (1.09 shares @ $0.9200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.552 if P_est <= 70%
+  Причина: High market consensus NO (91.5%) within 12.0h of expiry
+
+[SHADOW EXEC] #301 | Will Bitcoin dip to $58,000 November 16-22? (YES)
+  Category: Crypto | Shares: 3.31 @ 0.5100
+  Bet: $1.69 USDC | P_est: 56.4% | Edge: +5.4 pp
+[2026-11-22 04:30:57 UTC] [CYCLE #2501 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=1 (Shadow=1) | Closed=0 | Cash=$21.54 | Equity=$25.58 (DD=34.89%)
