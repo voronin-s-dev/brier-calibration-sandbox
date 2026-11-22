@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-22 09:19:18 UTC`
+**Обновлено:** `2026-11-22 09:31:02 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -20,18 +20,18 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$48.79 USDC`** |
-| **Свободный кэш / В сделках** | `$37.23` / `$11.56 USDC` |
+| **Виртуальный баланс (Equity)** | **`$48.74 USDC`** |
+| **Свободный кэш / В сделках** | `$37.23` / `$11.51 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `26.06%` |
+| **Текущая просадка** | `26.14%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #288 | Will Ethereum dip to $1,500 November 16-22? | Crypto | **NO** | `0.906` | `0.978` | `98.5%` | `$3.31` | `$+0.26` | https://www.binance.com/en/tra |
+| #288 | Will Ethereum dip to $1,500 November 16-22? | Crypto | **NO** | `0.906` | `0.980` | `98.5%` | `$3.31` | `$+0.27` | https://www.binance.com/en/tra |
 | #290 | Will Anthropic close below its IPO price by November 23 | Macro | **NO** | `0.750` | `0.810` | `84.0%` | `$3.28` | `$+0.26` | https://www.nasdaq.com/market- |
-| #304 | Will the price of Bitcoin be above $56,000 on November  | Crypto | **YES** | `0.774` | `0.838` | `86.7%` | `$1.74` | `$+0.14` | https://www.binance.com/en/tra |
-| #306 | Will Bitcoin dip to $58,000 November 16-22? | Crypto | **YES** | `0.330` | `0.280` | `35.6%` | `$1.09` | `$-0.17` | https://www.binance.com/en/tra |
+| #304 | Will the price of Bitcoin be above $56,000 on November  | Crypto | **YES** | `0.774` | `0.856` | `87.7%` | `$1.74` | `$+0.18` | https://www.binance.com/en/tra |
+| #306 | Will Bitcoin dip to $58,000 November 16-22? | Crypto | **YES** | `0.330` | `0.250` | `31.8%` | `$1.09` | `$-0.26` | https://www.binance.com/en/tra |
 | #307 | Hurricanes vs. Rangers | Weather | **YES** | `0.600` | `0.590` | `65.0%` | `$1.66` | `$-0.03` | https://www.nhl.com/scores |
 
 ### Доходность по замороженным категориям (Песочница)
