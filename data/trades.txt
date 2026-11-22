@@ -7285,3 +7285,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-22 16:01:06 UTC] [CYCLE #2576 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.71 | Equity=$24.67 (DD=37.20%)
 [2026-11-22 16:10:12 UTC] [CYCLE #2577 SUMMARY] Scanned=782 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.71 | Equity=$24.67 (DD=37.20%)
 [2026-11-22 16:19:17 UTC] [CYCLE #2578 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.71 | Equity=$24.67 (DD=37.20%)
+[SHADOW EXIT] #307 | Hurricanes vs. Rangers (YES)
+  Shares: 2.77 | Entry VWAP: 0.6000 -> Exit Bid VWAP: 0.5900
+  Proceeds: $1.63 | Realized PnL: $-0.03 USDC | Reason: TIME EXIT: 1.0h left to close (under 1.0h threshold, Bid VWAP: $0.590)
+[SHADOW EXIT] #323 | Will Ethereum reach $1,800 November 16-22? (NO)
+  Shares: 3.26 | Entry VWAP: 0.9150 -> Exit Bid VWAP: 0.8920
+  Proceeds: $2.91 | Realized PnL: $-0.07 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 10.2 pp (0.943 -> 0.841)
+[2026-11-22 16:30:55 UTC] [CYCLE #2579 SUMMARY] Scanned=791 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$21.71 | Equity=$24.67 (DD=37.20%)
