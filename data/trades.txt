@@ -7065,3 +7065,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $1.42 USDC | P_est: 69.4% | Edge: +4.4 pp
 [2026-11-22 05:30:57 UTC] [CYCLE #2507 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=1 | Cash=$22.61 | Equity=$25.55 (DD=34.97%)
 [2026-11-22 05:40:03 UTC] [CYCLE #2508 SUMMARY] Scanned=783 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.61 | Equity=$25.64 (DD=34.75%)
+[SHADOW EXIT] #297 | Will India win? (YES)
+  Shares: 2.68 | Entry VWAP: 0.5700 -> Exit Bid VWAP: 0.4400
+  Proceeds: $1.18 | Realized PnL: $-0.35 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 10.0 pp (0.615 -> 0.515)
+[SHADOW EXEC] #304 | Will the price of Bitcoin be above $56,000 on November 25? (YES)
+  Category: Crypto | Shares: 2.25 @ 0.7740
+  Bet: $1.74 USDC | P_est: 80.1% | Edge: +2.7 pp
+[2026-11-22 05:49:07 UTC] [CYCLE #2509 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$22.61 | Equity=$25.54 (DD=34.99%)
