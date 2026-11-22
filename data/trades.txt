@@ -7112,3 +7112,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Weather | Shares: 2.77 @ 0.6000
   Bet: $1.66 USDC | P_est: 65.0% | Edge: +5.0 pp
 [2026-11-22 08:30:53 UTC] [CYCLE #2528 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=2) | Closed=0 | Cash=$22.61 | Equity=$24.60 (DD=37.39%)
+[2026-11-22 08:40:03 UTC] [CYCLE #2529 SUMMARY] Scanned=781 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.61 | Equity=$24.60 (DD=37.39%)
