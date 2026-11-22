@@ -7233,3 +7233,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-22 13:49:04 UTC] [CYCLE #2560 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$20.61 | Equity=$24.45 (DD=37.78%)
 [2026-11-22 14:01:07 UTC] [CYCLE #2561 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$20.61 | Equity=$24.46 (DD=37.76%)
 [2026-11-22 14:10:13 UTC] [CYCLE #2562 SUMMARY] Scanned=773 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$20.61 | Equity=$24.46 (DD=37.76%)
+[SHADOW EXEC] #319 | Will the price of Ethereum be above $1,700 on November 22? (NO)
+  Category: Crypto | Shares: 3.89 @ 0.3700
+  Bet: $1.44 USDC | P_est: 42.1% | Edge: +5.1 pp
+[2026-11-22 14:19:19 UTC] [CYCLE #2563 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$20.61 | Equity=$24.42 (DD=37.84%)
