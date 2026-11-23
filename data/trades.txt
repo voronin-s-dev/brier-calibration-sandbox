@@ -7459,3 +7459,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $1.65 USDC | P_est: 28.6% | Edge: +10.6 pp
 [2026-11-23 03:40:03 UTC] [CYCLE #2652 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=2) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
 [2026-11-23 03:49:09 UTC] [CYCLE #2653 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
+[SHADOW EXIT] #336 | Will the match end in a draw? (NO)
+  Shares: 9.17 | Entry VWAP: 0.1800 -> Exit Bid VWAP: 0.1100
+  Proceeds: $1.01 | Realized PnL: $-0.64 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 38.9% from entry (0.1800 -> 0.1100)
+[2026-11-23 04:01:14 UTC] [CYCLE #2654 SUMMARY] Scanned=791 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
