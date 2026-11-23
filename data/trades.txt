@@ -7407,3 +7407,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 3.39 @ 0.8870
   Bet: $3.01 USDC | P_est: 94.7% | Edge: +5.9 pp
 [2026-11-23 01:58:31 UTC] [CYCLE #2640 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=2) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
+[SHADOW EXIT] #328 | Will Anthropic close below its IPO price by November 25, 2026? (NO)
+  Shares: 2.83 | Entry VWAP: 0.6300 -> Exit Bid VWAP: 0.7100
+  Proceeds: $2.01 | Realized PnL: $+0.23 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +12.7% >= +12% (Bid VWAP: 0.7100 vs Entry: 0.6300)
+[2026-11-23 02:07:37 UTC] [CYCLE #2641 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
