@@ -7451,3 +7451,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 2.43 @ 0.6450
   Bet: $1.57 USDC | P_est: 67.8% | Edge: +3.2 pp
 [2026-11-23 03:30:56 UTC] [CYCLE #2651 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
+[SHADOW EXEC] #335 | Will the price of Ethereum be above $1,800 on November 23? (NO)
+  Category: Crypto | Shares: 3.38 @ 0.8690
+  Bet: $2.94 USDC | P_est: 90.8% | Edge: +3.9 pp
+[SHADOW EXEC] #336 | Will the match end in a draw? (NO)
+  Category: Other | Shares: 9.17 @ 0.1800
+  Bet: $1.65 USDC | P_est: 28.6% | Edge: +10.6 pp
+[2026-11-23 03:40:03 UTC] [CYCLE #2652 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=2) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
