@@ -7730,3 +7730,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-23 20:30:56 UTC] [CYCLE #2754 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
 [2026-11-23 20:40:01 UTC] [CYCLE #2755 SUMMARY] Scanned=779 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
 [2026-11-23 20:49:06 UTC] [CYCLE #2756 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
+[SHADOW EXIT] #346 | Will Anthropic close below its IPO price by November 23, 2026? (NO)
+  Shares: 3.18 | Entry VWAP: 0.9200 -> Exit Bid VWAP: 0.9990
+  Proceeds: $3.18 | Realized PnL: $+0.25 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +8.6% gain
+[2026-11-23 21:01:08 UTC] [CYCLE #2757 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
