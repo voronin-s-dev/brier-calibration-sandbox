@@ -7522,3 +7522,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-23 09:01:08 UTC] [CYCLE #2684 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
 [2026-11-23 09:10:14 UTC] [CYCLE #2685 SUMMARY] Scanned=790 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
 [2026-11-23 09:19:19 UTC] [CYCLE #2686 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
+[SHADOW EXIT] #337 | Will Anthropic close below its IPO price by November 25, 2026? (YES)
+  Shares: 5.61 | Entry VWAP: 0.3100 -> Exit Bid VWAP: 0.2600
+  Proceeds: $1.46 | Realized PnL: $-0.28 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 8.0 pp (0.405 -> 0.325)
+[SHADOW EXIT] #341 | Will the price of Bitcoin be above $62,000 on November 23? (NO)
+  Shares: 4.17 | Entry VWAP: 0.6690 -> Exit Bid VWAP: 0.5930
+  Proceeds: $2.47 | Realized PnL: $-0.32 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 9.5 pp (0.731 -> 0.636)
+[SHADOW EXEC] #343 | Will the price of Bitcoin be above $62,000 on November 23? (NO)
+  Category: Crypto | Shares: 2.55 @ 0.5970
+  Bet: $1.52 USDC | P_est: 63.7% | Edge: +4.0 pp
+[2026-11-23 09:30:55 UTC] [CYCLE #2687 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
