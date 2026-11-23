@@ -1638,6 +1638,73 @@ class TestRiskManagementV2(unittest.TestCase):
         k_draw = extract_event_key("Will FC Barcelona vs. Villarreal CF end in a draw?", "Sports")
         self.assertEqual(k_match, k_draw)
 
+    def test_extract_resolution_source_word_boundaries(self) -> None:
+        """Verify that substring collisions like 'conflicting' do not trigger false 'NFL' resolution sources."""
+        from polymarket_api import extract_resolution_source
+
+        desc_conflict = "Where multiple sources conflict regarding the occurrence, this market will remain open."
+        src, has_src = extract_resolution_source("", desc_conflict)
+        self.assertNotEqual(src, "Official NFL data feed")
+
+        desc_nfl = "Official NFL scores and statistics."
+        src2, has_src2 = extract_resolution_source("", desc_nfl)
+        self.assertEqual(src2, "Official NFL data feed")
+        self.assertTrue(has_src2)
+
+    def test_category_classification_laliga_exact_score_and_geopolitics(self) -> None:
+        """Verify that LALIGA, Exact Score, and key Geopolitical phrasing are correctly classified."""
+        from polymarket_api import classify_market_category, MarketInfo
+        from oracles import is_esports_market
+
+        self.assertEqual(
+            classify_market_category("Will Real Madrid win the 2026-27 LALIGA Championship?", "Official standings"),
+            "Sports"
+        )
+        self.assertEqual(
+            classify_market_category("Exact Score: Any Other Score?", "Match Result"),
+            "Sports"
+        )
+        self.assertEqual(
+            classify_market_category("Russia military action against an EU country by December 31, 2026?", "Consensus"),
+            "Geopolitics"
+        )
+        self.assertEqual(
+            classify_market_category("Xi Jinping out before 2027?", "News"),
+            "Geopolitics"
+        )
+        self.assertEqual(
+            classify_market_category("Netanyahu out by end of 2026?", "News"),
+            "Geopolitics"
+        )
+        self.assertEqual(
+            classify_market_category("Will Nicolás Maduro be the leader of Venezuela end of 2026?", "News"),
+            "Geopolitics"
+        )
+        self.assertEqual(
+            classify_market_category("Will FURIA Win the PGL Major Singapore 2026?", "Esports match"),
+            "Sports"
+        )
+
+        dummy_market = MarketInfo(
+            id="test-pgl",
+            question="Will FURIA Win the PGL Major Singapore 2026?",
+            slug="test-pgl",
+            description="",
+            resolution_source="Liquipedia",
+            has_official_source=True,
+            end_date_iso="",
+            hours_to_close=24.0,
+            liquidity_usd=10000.0,
+            volume_24h_usd=20000.0,
+            outcomes=["Yes", "No"],
+            gamma_prices=[0.9, 0.1],
+            clob_token_ids=["1", "2"],
+            order_min_size=1.0,
+            tick_size=0.01,
+            category="Sports",
+        )
+        self.assertTrue(is_esports_market(dummy_market))
+
 
 if __name__ == "__main__":
     unittest.main()

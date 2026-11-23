@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-23 11:35:11 UTC`
+**Обновлено:** `2026-11-23 11:54:06 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -17,18 +17,18 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$48.71 USDC`** |
-| **Свободный кэш / В сделках** | `$39.42` / `$9.29 USDC` |
+| **Виртуальный баланс (Equity)** | **`$48.74 USDC`** |
+| **Свободный кэш / В сделках** | `$39.42` / `$9.32 USDC` |
 | **Открытых позиций** | `4 / 5` |
-| **Текущая просадка** | `26.18%` |
+| **Текущая просадка** | `26.14%` |
 
 ### Открытые позиции в песочнице (4 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #335 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.869` | `0.963` | `98.5%` | `$2.94` | `$+0.32` | https://www.binance.com/en/tra |
-| #342 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.600` | `0.600` | `60.6%` | `$1.45` | `$+0.00` | https://www.binance.com/en/tra |
-| #345 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.687` | `0.691` | `71.8%` | `$1.64` | `$+0.01` | https://www.binance.com/en/tra |
-| #346 | Will Anthropic close below its IPO price by November 23 | Macro | **NO** | `0.920` | `0.920` | `95.5%` | `$2.93` | `$+0.00` | https://www.nasdaq.com/market- |
+| #335 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.869` | `0.965` | `98.5%` | `$2.94` | `$+0.32` | https://www.binance.com/en/tra |
+| #342 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.600` | `0.600` | `60.9%` | `$1.45` | `$+0.00` | https://www.binance.com/en/tra |
+| #345 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.687` | `0.700` | `73.2%` | `$1.64` | `$+0.03` | https://www.binance.com/en/tra |
+| #346 | Will Anthropic close below its IPO price by November 23 | Macro | **NO** | `0.920` | `0.920` | `96.0%` | `$2.93` | `$+0.00` | https://www.nasdaq.com/market- |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |

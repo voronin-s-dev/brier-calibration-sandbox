@@ -84,14 +84,15 @@ def extract_resolution_source(raw_source: str, description: str) -> Tuple[str, b
             if len(src) > 4:
                 return src[:220], True
 
-    # Check known official entities mentioned in description
+    # Check known official entities mentioned in description using word boundaries
+    # to avoid false substring matches (e.g. 'nfl' in 'conflicting', 'bls' in substrings)
     known_entities = [
         "Binance", "NOAA", "Weather Underground", "Associated Press", "Fox News",
         "NBC", "Official League", "FIFA", "UEFA", "NBA", "NFL", "NHL", "MLB",
         "Federal Reserve", "Bureau of Labor Statistics", "BLS", "CoinGecko", "CoinMarketCap",
     ]
     for ent in known_entities:
-        if ent.lower() in description.lower():
+        if re.search(rf"\b{re.escape(ent)}\b", description, flags=re.IGNORECASE):
             return f"Official {ent} data feed", True
 
     return "Unspecified", False
@@ -104,8 +105,8 @@ def classify_market_category(question: str, description: str) -> str:
 
     # Sports matches, leagues, spreads, and esports take priority over team-name collisions
     # (e.g. Carolina Hurricanes, OKC Thunder, Tampa Bay Lightning, Miami Heat)
-    if re.search(r"\b(nba|nfl|nhl|mlb|ufc|fifa|uefa|atp|wta|f1|premier league|champions league|la liga|serie a|bundesliga)\b", text) or any(
-        k in q_low for k in [" vs.", " vs ", "win on 202", "spread:", "o/u ", "end in a draw", "counter-strike", "league of legends", "valorant", "dota", "rainbow six"]
+    if re.search(r"\b(nba|nfl|nhl|mlb|ufc|fifa|uefa|atp|wta|f1|premier league|champions league|la liga|laliga|serie a|bundesliga)\b", text) or any(
+        k in q_low for k in [" vs.", " vs ", "win on 202", "spread:", "o/u ", "end in a draw", "exact score", "counter-strike", "league of legends", "valorant", "dota", "rainbow six", "pgl major"]
     ):
         return "Sports"
 
@@ -115,7 +116,7 @@ def classify_market_category(question: str, description: str) -> str:
         return "Crypto"
     if any(k in text for k in ["fed ", "interest rate", "fomc", "cpi", "inflation", "s&p 500", "nasdaq", "gdp", "recession", "tariff"]):
         return "Macro"
-    if any(k in q_low for k in ["ceasefire", "invade", "president", "senate", "house", "election", "prime minister", "ukraine", "israel", "iran", "yemen", "china", "trump", "elon musk", "hormuz"]):
+    if any(k in q_low for k in ["ceasefire", "invade", "president", "senate", "house", "election", "prime minister", "ukraine", "israel", "iran", "yemen", "china", "trump", "elon musk", "hormuz", "russia", "putin", "netanyahu", "xi jinping", "maduro", "venezuela", "sanctions", "nato", "military action", "secretary of defense", "secretary of state"]):
         return "Geopolitics"
     return "Other"
 

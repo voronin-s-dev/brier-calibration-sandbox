@@ -523,7 +523,7 @@ def is_esports_market(market: MarketInfo) -> bool:
         "counter-strike", "cs2", "cs:go", "csgo", "dota", "dota 2",
         "league of legends", "lol", "valorant", "overwatch", "starcraft",
         "rainbow six", "r6 siege", "blast rivals", "esl pro", "hltv",
-        "liquipedia", "vlr.gg",
+        "liquipedia", "vlr.gg", "pgl major", "pgl",
     ]
     return any(k in q or k in src for k in esports_keywords)
 
@@ -724,7 +724,7 @@ class HighConvictionFactOracle:
                     return EvaluationResult(
                         market_id=market.id,
                         question=market.question,
-                        category=market.category,
+                        category="Sports",
                         oracle_used="SportsExactScoreBaseRateOracle",
                         official_source=market.resolution_source or "Official Match Scoreboard",
                         p_yes=round(1.0 - p_no, 4),
