@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-23 00:30:58 UTC`
+**Обновлено:** `2026-11-23 00:40:04 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -17,24 +17,23 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$50.03 USDC`** |
-| **Свободный кэш / В сделках** | `$37.25` / `$12.78 USDC` |
-| **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `24.19%` |
+| **Виртуальный баланс (Equity)** | **`$50.16 USDC`** |
+| **Свободный кэш / В сделках** | `$40.50` / `$9.66 USDC` |
+| **Открытых позиций** | `4 / 5` |
+| **Текущая просадка** | `23.99%` |
 
-### Открытые позиции в песочнице (5 / 5)
+### Открытые позиции в песочнице (4 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #311 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.678` | `0.654` | `69.3%` | `$1.16` | `$-0.04` | https://www.binance.com/en/tra |
-| #322 | Will Bitcoin dip to $58,000 on November 22? | Crypto | **NO** | `0.910` | `0.979` | `98.5%` | `$2.98` | `$+0.23` | https://www.binance.com/en/tra |
-| #326 | Will Ethereum reach $1,800 November 16-22? | Crypto | **NO** | `0.902` | `0.983` | `98.5%` | `$2.97` | `$+0.27` | https://www.binance.com/en/tra |
-| #327 | Will Bitcoin dip to $58,000 November 16-22? | Crypto | **NO** | `0.880` | `0.979` | `98.5%` | `$2.96` | `$+0.33` | https://www.binance.com/en/tra |
-| #328 | Will Anthropic close below its IPO price by November 25 | Macro | **NO** | `0.630` | `0.680` | `71.7%` | `$1.78` | `$+0.14` | https://www.nasdaq.com/market- |
+| #311 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.678` | `0.705` | `69.2%` | `$1.16` | `$+0.05` | https://www.binance.com/en/tra |
+| #322 | Will Bitcoin dip to $58,000 on November 22? | Crypto | **NO** | `0.910` | `0.980` | `98.5%` | `$2.98` | `$+0.23` | https://www.binance.com/en/tra |
+| #327 | Will Bitcoin dip to $58,000 November 16-22? | Crypto | **NO** | `0.880` | `0.980` | `98.5%` | `$2.96` | `$+0.34` | https://www.binance.com/en/tra |
+| #328 | Will Anthropic close below its IPO price by November 25 | Macro | **NO** | `0.630` | `0.690` | `71.7%` | `$1.78` | `$+0.17` | https://www.nasdaq.com/market- |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
 | :--- | :--- | :--- | :--- |
-| **Crypto** | `280` | `-$0.61` | `56%` |
+| **Crypto** | `281` | `-$0.34` | `56%` |
 | **Geopolitics** | `8` | `+$1.02` | `62%` |
 | **Macro** | `10` | `+$1.72` | `70%` |
 | **Other** | `20` | `-$1.65` | `40%` |
@@ -43,6 +42,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Elon Musk post 260-279 tweets from November 1 | Geopolitics | NO | `98.0%` | `93.5%` | `+4.5 п.п.` | `0.20%` | REJECTED: Contract price $0.935 outside sweet spot [$0.70, $0.92] |
 | Spread: Steelers (-4.5) | Sports | NO | `97.5%` | `91.0%` | `+6.5 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (sports:steelers:nodate) |
 | Will Alexander Zverev win the 2026 Nitto ATP Final | Sports | NO | `94.0%` | `80.0%` | `+14.0 п.п.` | `13.90%` | REJECTED: Net EV edge +0.1 pp < 1.5 pp (Gross +14.0 pp - Slippage 13.90%) |
 | Will Carlos Alcaraz win the 2026 Nitto ATP Finals? | Sports | YES | `93.8%` | `79.9%` | `+13.9 п.п.` | `8.30%` | REJECTED: CLOB round-trip slippage 8.30% > 2.0% limit |
@@ -60,4 +60,3 @@
 | UFC Fight Night: Jared Cannonier vs. Ikram Alisker | Sports | NO | `98.5%` | `93.0%` | `+5.5 п.п.` | `2.00%` | REJECTED: Contract price $0.930 outside sweet spot [$0.70, $0.92] |
 | Will Real Madrid CF vs. RC Celta de Vigo end in a  | Sports | NO | `96.5%` | `90.0%` | `+6.5 п.п.` | `1.00%` | EXECUTED BUY #228 ($1.00 @ 0.9000) |
 | UFC Fight Night: Jake Matthews vs. Tahir Abdullaye | Sports | NO | `95.0%` | `100.0%` | `-5.0 п.п.` | `100.00%` | REJECTED: Edge -5.0 pp < 2.5 pp threshold (P_est=95.0% vs AskVWAP=100.0%) |
-| San Diego State vs. Boise State | Sports | NO | `94.0%` | `91.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #227 ($1.00 @ 0.9100) |
