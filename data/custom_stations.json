@@ -96,5 +96,12 @@
     "Europe/Warsaw",
     "celsius",
     "Auto-Meteo Warsaw (PL)"
+  ],
+  "helsinki": [
+    60.16952,
+    24.93545,
+    "Europe/Helsinki",
+    "celsius",
+    "Auto-Meteo Helsinki (FI)"
   ]
 }
