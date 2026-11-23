@@ -1461,6 +1461,20 @@ class TestRiskManagementV2(unittest.TestCase):
         self.assertEqual(station_info[2], "Europe/Warsaw")
         self.assertEqual(station_info[3], "celsius")
 
+    def test_helsinki_and_madrid_stations_registered_in_weather_oracle(self) -> None:
+        """Verify that Helsinki and Madrid stations are present in WeatherOracle.STATIONS."""
+        from oracles import WeatherOracle
+        wo = WeatherOracle()
+        self.assertIn("helsinki", wo.STATIONS)
+        hel_info = wo.STATIONS["helsinki"]
+        self.assertEqual(hel_info[2], "Europe/Helsinki")
+        self.assertEqual(hel_info[3], "celsius")
+
+        self.assertIn("madrid", wo.STATIONS)
+        mad_info = wo.STATIONS["madrid"]
+        self.assertEqual(mad_info[2], "Europe/Madrid")
+        self.assertEqual(mad_info[3], "celsius")
+
     def test_hard_stop_loss_triggers_regardless_of_high_initial_p_est(self) -> None:
         """Verify that a 40%+ price drop triggers a HARD STOP-LOSS even if initial P_est was 95%."""
         import gc
@@ -1605,6 +1619,24 @@ class TestRiskManagementV2(unittest.TestCase):
             classify_market_category("Will the highest temperature in London be 10°C or higher on November 21?", "METAR"),
             "Weather"
         )
+
+    def test_category_classification_match_draw(self) -> None:
+        """Verify that soccer draw questions are classified as Sports and deduplicated."""
+        from polymarket_api import classify_market_category
+        from trader import extract_event_key
+
+        self.assertEqual(
+            classify_market_category("Will the match end in a draw?", "Official match result"),
+            "Sports",
+        )
+        self.assertEqual(
+            classify_market_category("Will FC Barcelona vs. Villarreal CF end in a draw?", "La Liga match"),
+            "Sports",
+        )
+
+        k_match = extract_event_key("FC Barcelona vs. Villarreal CF", "Sports")
+        k_draw = extract_event_key("Will FC Barcelona vs. Villarreal CF end in a draw?", "Sports")
+        self.assertEqual(k_match, k_draw)
 
 
 if __name__ == "__main__":

@@ -104,8 +104,8 @@ def classify_market_category(question: str, description: str) -> str:
 
     # Sports matches, leagues, spreads, and esports take priority over team-name collisions
     # (e.g. Carolina Hurricanes, OKC Thunder, Tampa Bay Lightning, Miami Heat)
-    if re.search(r"\b(nba|nfl|nhl|mlb|ufc|fifa|uefa|atp|wta|f1)\b", text) or any(
-        k in q_low for k in [" vs.", " vs ", "win on 202", "spread:", "o/u ", "counter-strike", "league of legends", "valorant", "dota", "rainbow six"]
+    if re.search(r"\b(nba|nfl|nhl|mlb|ufc|fifa|uefa|atp|wta|f1|premier league|champions league|la liga|serie a|bundesliga)\b", text) or any(
+        k in q_low for k in [" vs.", " vs ", "win on 202", "spread:", "o/u ", "end in a draw", "counter-strike", "league of legends", "valorant", "dota", "rainbow six"]
     ):
         return "Sports"
 

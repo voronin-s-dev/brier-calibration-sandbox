@@ -345,6 +345,8 @@ class WeatherOracle:
         "shenzhen": (22.6393, 113.8107, "Asia/Shanghai", "celsius", "METAR ZGSZ (Shenzhen Bao'an)"),
         "lucknow": (26.7606, 80.8893, "Asia/Kolkata", "celsius", "METAR VILK (Lucknow Airport)"),
         "warsaw": (52.1657, 20.9671, "Europe/Warsaw", "celsius", "METAR EPWA (Warsaw Chopin Airport)"),
+        "madrid": (40.4719, -3.5626, "Europe/Madrid", "celsius", "METAR LEMD (Madrid-Barajas)"),
+        "helsinki": (60.3172, 24.9633, "Europe/Helsinki", "celsius", "METAR EFHK (Helsinki-Vantaa Airport)"),
     }
 
     MONTHS = {
@@ -364,8 +366,9 @@ class WeatherOracle:
             try:
                 raw = json.loads(custom_path.read_text(encoding="utf-8"))
                 for city_k, val in raw.items():
-                    if isinstance(val, list) and len(val) == 5:
-                        self.STATIONS[city_k.lower().strip()] = (
+                    norm_k = city_k.lower().strip()
+                    if norm_k not in self.STATIONS and isinstance(val, list) and len(val) == 5:
+                        self.STATIONS[norm_k] = (
                             float(val[0]), float(val[1]), str(val[2]), str(val[3]), str(val[4])
                         )
             except Exception:

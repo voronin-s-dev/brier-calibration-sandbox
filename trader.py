@@ -103,7 +103,7 @@ def extract_event_key(question: str, category: str) -> str:
     )
     if category == "Sports" or any(k in q_low for k in esports_keywords):
         cleaned = re.sub(r"^(spread:\s*|will\s+)", "", q_low)
-        cleaned = re.sub(r":\s*o/u.*$|\s+win\s+on.*$|\(\-[0-9\.]+\)", "", cleaned).strip()
+        cleaned = re.sub(r":\s*o/u.*$|\s+win\s+on.*$|\(\-[0-9\.]+\)|\s+end\s+in\s+a\s+draw\??", "", cleaned).strip()
         return f"sports:{cleaned[:35]}:{date_or_range}"
 
     # General multi-strike bracket normalization (collapse numeric ranges like 280-299, 10-15%, 50+ to <bracket>)
