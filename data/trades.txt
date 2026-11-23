@@ -7633,3 +7633,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $1.08 | Realized PnL: $-0.20 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 15.0 pp (0.451 -> 0.300)
 [2026-11-23 15:01:13 UTC] [CYCLE #2721 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
 [2026-11-23 15:10:17 UTC] [CYCLE #2722 SUMMARY] Scanned=790 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
+[SHADOW EXIT] #350 | Will the price of Bitcoin be above $62,000 on November 23? (YES)
+  Shares: 3.51 | Entry VWAP: 0.7730 -> Exit Bid VWAP: 0.8820
+  Proceeds: $3.09 | Realized PnL: $+0.38 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +14.1% >= +12% (Bid VWAP: 0.8820 vs Entry: 0.7730)
+[SHADOW EXEC] #354 | Will Ethereum reach $1,850 on November 23? (YES)
+  Category: Crypto | Shares: 6.67 @ 0.1710
+  Bet: $1.14 USDC | P_est: 24.6% | Edge: +7.5 pp
+[2026-11-23 15:19:22 UTC] [CYCLE #2723 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
