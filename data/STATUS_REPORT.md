@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-23 02:26:11 UTC`
+**Обновлено:** `2026-11-23 02:31:00 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -17,18 +17,18 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$50.51 USDC`** |
-| **Свободный кэш / В сделках** | `$41.73` / `$8.78 USDC` |
+| **Виртуальный баланс (Equity)** | **`$50.62 USDC`** |
+| **Свободный кэш / В сделках** | `$41.73` / `$8.89 USDC` |
 | **Открытых позиций** | `4 / 5` |
-| **Текущая просадка** | `23.45%` |
+| **Текущая просадка** | `23.29%` |
 
 ### Открытые позиции в песочнице (4 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #322 | Will Bitcoin dip to $58,000 on November 22? | Crypto | **NO** | `0.910` | `0.977` | `98.5%` | `$2.98` | `$+0.22` | https://www.binance.com/en/tra |
-| #329 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.764` | `0.779` | `80.8%` | `$1.27` | `$+0.02` | https://www.binance.com/en/tra |
-| #330 | Will Bitcoin reach $62,000 November 16-22? | Crypto | **NO** | `0.887` | `0.934` | `97.2%` | `$3.01` | `$+0.16` | https://www.binance.com/en/tra |
-| #331 | Will the price of Ethereum be above $1,700 on November  | Crypto | **NO** | `0.420` | `0.420` | `45.6%` | `$1.12` | `$+0.00` | https://www.binance.com/en/tra |
+| #329 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.764` | `0.783` | `82.8%` | `$1.27` | `$+0.03` | https://www.binance.com/en/tra |
+| #330 | Will Bitcoin reach $62,000 November 16-22? | Crypto | **NO** | `0.887` | `0.947` | `97.4%` | `$3.01` | `$+0.20` | https://www.binance.com/en/tra |
+| #331 | Will the price of Ethereum be above $1,700 on November  | Crypto | **NO** | `0.420` | `0.440` | `48.2%` | `$1.12` | `$+0.05` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
