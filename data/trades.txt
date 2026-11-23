@@ -7645,3 +7645,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 10.11 @ 0.1770
   Bet: $1.79 USDC | P_est: 31.0% | Edge: +13.3 pp
 [2026-11-23 15:40:02 UTC] [CYCLE #2725 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
+[SHADOW EXIT] #354 | Will Ethereum reach $1,850 on November 23? (YES)
+  Shares: 6.67 | Entry VWAP: 0.1710 -> Exit Bid VWAP: 0.0810
+  Proceeds: $0.54 | Realized PnL: $-0.60 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 52.6% from entry (0.1710 -> 0.0810)
+[SHADOW EXIT] #355 | Will Bitcoin reach $65,000 on November 23? (YES)
+  Shares: 10.11 | Entry VWAP: 0.1770 -> Exit Bid VWAP: 0.1000
+  Proceeds: $1.01 | Realized PnL: $-0.78 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 43.5% from entry (0.1770 -> 0.1000)
+[2026-11-23 15:49:06 UTC] [CYCLE #2726 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
