@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-23 08:01:15 UTC`
+**Обновлено:** `2026-11-23 08:10:20 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -17,19 +17,19 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$48.60 USDC`** |
-| **Свободный кэш / В сделках** | `$39.88` / `$8.72 USDC` |
+| **Виртуальный баланс (Equity)** | **`$48.59 USDC`** |
+| **Свободный кэш / В сделках** | `$39.88` / `$8.71 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `26.35%` |
+| **Текущая просадка** | `26.37%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #334 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.645` | `0.668` | `69.7%` | `$1.57` | `$+0.06` | https://www.binance.com/en/tra |
-| #335 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.869` | `0.940` | `98.5%` | `$2.94` | `$+0.24` | https://www.binance.com/en/tra |
+| #334 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.645` | `0.668` | `70.3%` | `$1.57` | `$+0.06` | https://www.binance.com/en/tra |
+| #335 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.869` | `0.942` | `98.5%` | `$2.94` | `$+0.25` | https://www.binance.com/en/tra |
 | #337 | Will Anthropic close below its IPO price by November 25 | Macro | **YES** | `0.310` | `0.290` | `35.0%` | `$1.74` | `$-0.11` | https://www.nasdaq.com/market- |
 | #338 | Will Anthropic close below its IPO price by November 27 | Macro | **YES** | `0.410` | `0.400` | `46.0%` | `$1.03` | `$-0.03` | https://www.nasdaq.com/market- |
-| #339 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.560` | `0.590` | `61.1%` | `$1.22` | `$+0.07` | https://www.binance.com/en/tra |
+| #339 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.560` | `0.580` | `61.0%` | `$1.22` | `$+0.04` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
