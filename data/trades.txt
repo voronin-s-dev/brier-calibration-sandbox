@@ -7411,3 +7411,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 2.83 | Entry VWAP: 0.6300 -> Exit Bid VWAP: 0.7100
   Proceeds: $2.01 | Realized PnL: $+0.23 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +12.7% >= +12% (Bid VWAP: 0.7100 vs Entry: 0.6300)
 [2026-11-23 02:07:37 UTC] [CYCLE #2641 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
+[SHADOW EXEC] #331 | Will the price of Ethereum be above $1,700 on November 23? (NO)
+  Category: Crypto | Shares: 2.67 @ 0.4200
+  Bet: $1.12 USDC | P_est: 44.9% | Edge: +2.9 pp
+[2026-11-23 02:07:52 UTC] [CYCLE #2642 SUMMARY] Scanned=781 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)

@@ -77,7 +77,7 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-11-23 02:07:41 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-11-23 02:07:57 UTC</div>
     </div>
   </div>
 
@@ -112,7 +112,7 @@
     <div class="card" style="border-left: 3px solid #8b5cf6;">
       <div class="metric-label">🧪 Shadow Sandbox (Песочница)</div>
       <div class="metric-val">$50.46 <span class="muted" style="font-size:15px">(Старт: $50)</span></div>
-      <div class="metric-sub">Кэш: $42.85 | В сделках: $7.61 | Открыто: 3/5</div>
+      <div class="metric-sub">Кэш: $41.73 | В сделках: $8.73 | Открыто: 4/5</div>
     </div>
   </div>
 
@@ -168,7 +168,7 @@
     </tbody>
   </table>
 
-  <h2>🧪 Открытые позиции в песочнице (3 / 5)</h2>
+  <h2>🧪 Открытые позиции в песочнице (4 / 5)</h2>
   <table>
     <thead>
       <tr>
@@ -201,7 +201,7 @@
             <td>1.66</td>
             <td>$0.7640</td>
             <td>$0.7750</td>
-            <td><strong>79.0%</strong> <small>(+2.6pp)</small></td>
+            <td><strong>80.2%</strong> <small>(+2.6pp)</small></td>
             <td>$1.27</td>
             <td class="pos">$+0.02</td>
             <td><small>Take-Profit (+12% or 98.5%+ bid), Stop-Loss (-35%), or Settlement</small></td>
@@ -215,9 +215,23 @@
             <td>3.39</td>
             <td>$0.8870</td>
             <td>$0.9190</td>
-            <td><strong>88.4%</strong> <small>(+5.9pp)</small></td>
+            <td><strong>94.9%</strong> <small>(+5.9pp)</small></td>
             <td>$3.01</td>
             <td class="pos">$+0.11</td>
+            <td><small>Take-Profit (+12% or 98.5%+ bid), Stop-Loss (-35%), or Settlement</small></td>
+        </tr>
+        
+        <tr>
+            <td>#331</td>
+            <td><strong>Will the price of Ethereum be above $1,700 on November 23?</strong><br><small class="muted">Terminal GBM model: ETHUSDT=$1,705.12 vs strike=$1,700 (+0.30%), vol_h=0.71%, tau=14.9h =&gt; P(S_T &gt; K)=53.3% -&gt; Calibrated(0.75x)=55.1%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td><span class="side-no">NO</span></td>
+            <td>2.67</td>
+            <td>$0.4200</td>
+            <td>$0.4200</td>
+            <td><strong>44.9%</strong> <small>(+2.9pp)</small></td>
+            <td>$1.12</td>
+            <td class="pos">$+0.00</td>
             <td><small>Take-Profit (+12% or 98.5%+ bid), Stop-Loss (-35%), or Settlement</small></td>
         </tr>
         
@@ -578,13 +592,7 @@
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">ened=0 (Shadow=0) | Closed=0 | Cash=$22.79 | Equity=$24.78 (DD=36.93%)
-[SHADOW EXEC] #325 | Will Bitcoin reach $62,000 November 16-22? (YES)
-  Category: Crypto | Shares: 3.69 @ 0.4880
-  Bet: $1.80 USDC | P_est: 55.3% | Edge: +6.5 pp
-[SHADOW EXEC] #326 | Will Ethereum reach $1,800 November 16-22? (NO)
-  Category: Crypto | Shares: 3.29 @ 0.9020
-  Bet: $2.97 USDC | P_est: 94.8% | Edge: +4.6 pp
+  <pre class="log-box">C | P_est: 94.8% | Edge: +4.6 pp
 [2026-11-22 17:10:16 UTC] [CYCLE #2583 SUMMARY] Scanned=782 | PassedFilter=50 | Evaluated=5 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=2) | Closed=0 | Cash=$22.79 | Equity=$24.78 (DD=36.93%)
 [2026-11-22 17:19:21 UTC] [CYCLE #2584 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.79 | Equity=$24.78 (DD=36.93%)
 [SHADOW EXIT] #325 | Will Bitcoin reach $62,000 November 16-22? (YES)
@@ -692,6 +700,10 @@
   Shares: 2.83 | Entry VWAP: 0.6300 -&gt; Exit Bid VWAP: 0.7100
   Proceeds: $2.01 | Realized PnL: $+0.23 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +12.7% &gt;= +12% (Bid VWAP: 0.7100 vs Entry: 0.6300)
 [2026-11-23 02:07:37 UTC] [CYCLE #2641 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=7 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
+[SHADOW EXEC] #331 | Will the price of Ethereum be above $1,700 on November 23? (NO)
+  Category: Crypto | Shares: 2.67 @ 0.4200
+  Bet: $1.12 USDC | P_est: 44.9% | Edge: +2.9 pp
+[2026-11-23 02:07:52 UTC] [CYCLE #2642 SUMMARY] Scanned=781 | PassedFilter=50 | Evaluated=7 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
 </pre>
 </body>
 </html>
