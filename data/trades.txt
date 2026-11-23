@@ -7682,3 +7682,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 2.67 @ 0.7300
   Bet: $1.95 USDC | P_est: 76.1% | Edge: +3.1 pp
 [2026-11-23 17:49:07 UTC] [CYCLE #2738 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
+[SHADOW EXEC] #360 | Will Bitcoin dip to $59,000 on November 23? (NO)
+  Category: Crypto | Shares: 2.86 @ 0.9000
+  Bet: $2.57 USDC | P_est: 94.5% | Edge: +4.5 pp
+[2026-11-23 18:01:08 UTC] [CYCLE #2739 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
