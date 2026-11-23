@@ -77,7 +77,7 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-11-23 17:01:16 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-11-23 17:10:21 UTC</div>
     </div>
   </div>
 
@@ -112,7 +112,7 @@
     <div class="card" style="border-left: 3px solid #8b5cf6;">
       <div class="metric-label">🧪 Shadow Sandbox (Песочница)</div>
       <div class="metric-val">$42.64 <span class="muted" style="font-size:15px">(Старт: $50)</span></div>
-      <div class="metric-sub">Кэш: $39.84 | В сделках: $2.80 | Открыто: 1/5</div>
+      <div class="metric-sub">Кэш: $37.54 | В сделках: $5.10 | Открыто: 2/5</div>
     </div>
   </div>
 
@@ -168,7 +168,7 @@
     </tbody>
   </table>
 
-  <h2>🧪 Открытые позиции в песочнице (1 / 5)</h2>
+  <h2>🧪 Открытые позиции в песочнице (2 / 5)</h2>
   <table>
     <thead>
       <tr>
@@ -190,6 +190,20 @@
             <td><strong>95.5%</strong> <small>(+3.0pp)</small></td>
             <td>$2.93</td>
             <td class="neg">$-0.13</td>
+            <td><small>Take-Profit (+12% or 98.5%+ bid), Stop-Loss (-35%), or Settlement</small></td>
+        </tr>
+        
+        <tr>
+            <td>#358</td>
+            <td><strong>Will the price of Bitcoin be above $60,000 on November 24?</strong><br><small class="muted">Terminal GBM model: BTCUSDT=$62,128.10 vs strike=$60,000 (+3.55%), vol_h=0.57%, tau=23.8h =&gt; P(S_T &gt; K)=86.6% -&gt; Calibrated(0.75x)=85.2%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td><span class="side-yes">YES</span></td>
+            <td>2.80</td>
+            <td>$0.8210</td>
+            <td>$0.8210</td>
+            <td><strong>85.2%</strong> <small>(+3.1pp)</small></td>
+            <td>$2.30</td>
+            <td class="pos">$+0.00</td>
             <td><small>Take-Profit (+12% or 98.5%+ bid), Stop-Loss (-35%), or Settlement</small></td>
         </tr>
         
@@ -550,11 +564,7 @@
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">ceeds: $1.74 | Realized PnL: $+0.22 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +14.7% &gt;= +12% (Bid VWAP: 0.6850 vs Entry: 0.5970)
-[SHADOW EXEC] #344 | Will Bitcoin reach $62,000 on November 23? (YES)
-  Category: Crypto | Shares: 3.56 @ 0.7500
-  Bet: $2.67 USDC | P_est: 82.4% | Edge: +7.4 pp
-[2026-11-23 09:49:09 UTC] [CYCLE #2689 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=6 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
+  <pre class="log-box">ssedFilter=50 | Evaluated=6 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
 [2026-11-23 09:49:21 UTC] [CYCLE #2690 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=6 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
 [SHADOW EXIT] #344 | Will Bitcoin reach $62,000 on November 23? (YES)
   Shares: 3.56 | Entry VWAP: 0.7500 -&gt; Exit Bid VWAP: 0.7400
@@ -683,6 +693,10 @@
   Proceeds: $2.31 | Realized PnL: $-0.27 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 15.6 pp (0.945 -&gt; 0.789)
 [2026-11-23 16:49:03 UTC] [CYCLE #2732 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=11 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
 [2026-11-23 17:01:13 UTC] [CYCLE #2733 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=7 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
+[SHADOW EXEC] #358 | Will the price of Bitcoin be above $60,000 on November 24? (YES)
+  Category: Crypto | Shares: 2.80 @ 0.8210
+  Bet: $2.30 USDC | P_est: 85.2% | Edge: +3.1 pp
+[2026-11-23 17:10:18 UTC] [CYCLE #2734 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=7 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
 </pre>
 </body>
 </html>
