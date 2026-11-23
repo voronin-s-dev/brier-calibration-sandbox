@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-23 12:19:27 UTC`
+**Обновлено:** `2026-11-23 12:30:56 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -17,18 +17,18 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$49.00 USDC`** |
-| **Свободный кэш / В сделках** | `$39.42` / `$9.58 USDC` |
+| **Виртуальный баланс (Equity)** | **`$48.78 USDC`** |
+| **Свободный кэш / В сделках** | `$39.42` / `$9.36 USDC` |
 | **Открытых позиций** | `4 / 5` |
-| **Текущая просадка** | `25.75%` |
+| **Текущая просадка** | `26.07%` |
 
 ### Открытые позиции в песочнице (4 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #335 | Will the price of Ethereum be above $1,800 on November  | Crypto | **NO** | `0.869` | `0.969` | `98.5%` | `$2.94` | `$+0.34` | https://www.binance.com/en/tra |
-| #342 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.600` | `0.640` | `64.1%` | `$1.45` | `$+0.10` | https://www.binance.com/en/tra |
-| #345 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.687` | `0.763` | `79.5%` | `$1.64` | `$+0.18` | https://www.binance.com/en/tra |
-| #346 | Will Anthropic close below its IPO price by November 23 | Macro | **NO** | `0.920` | `0.920` | `96.0%` | `$2.93` | `$+0.00` | https://www.nasdaq.com/market- |
+| #342 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.600` | `0.620` | `64.2%` | `$1.45` | `$+0.05` | https://www.binance.com/en/tra |
+| #345 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.687` | `0.734` | `79.7%` | `$1.64` | `$+0.11` | https://www.binance.com/en/tra |
+| #346 | Will Anthropic close below its IPO price by November 23 | Macro | **NO** | `0.920` | `0.890` | `94.0%` | `$2.93` | `$-0.10` | https://www.nasdaq.com/market- |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
