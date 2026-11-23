@@ -7719,3 +7719,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 3.67 | Entry VWAP: 0.3730 -> Exit Bid VWAP: 0.2330
   Proceeds: $0.86 | Realized PnL: $-0.51 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 37.5% from entry (0.3730 -> 0.2330)
 [2026-11-23 20:01:09 UTC] [CYCLE #2751 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
+[SHADOW EXEC] #364 | Will Bitcoin dip to $59,000 on November 23? (NO)
+  Category: Crypto | Shares: 2.81 @ 0.9030
+  Bet: $2.54 USDC | P_est: 94.3% | Edge: +4.0 pp
+[2026-11-23 20:10:17 UTC] [CYCLE #2752 SUMMARY] Scanned=793 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
