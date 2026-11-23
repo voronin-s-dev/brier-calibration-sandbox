@@ -7555,3 +7555,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-23 10:07:48 UTC] [CYCLE #2693 SUMMARY] Scanned=776 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
 [2026-11-23 10:16:53 UTC] [CYCLE #2694 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
 [2026-11-23 10:25:58 UTC] [CYCLE #2695 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
+[SHADOW EXEC] #346 | Will Anthropic close below its IPO price by November 23, 2026? (NO)
+  Category: Macro | Shares: 3.18 @ 0.9200
+  Bet: $2.93 USDC | P_est: 95.0% | Edge: +3.0 pp
+[2026-11-23 10:30:51 UTC] [CYCLE #2696 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.08 | Equity=$25.08 (DD=36.18%)
