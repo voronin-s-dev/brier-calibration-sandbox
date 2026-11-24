@@ -8144,3 +8144,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $2.11 USDC | P_est: 67.2% | Edge: +12.2 pp
 [2026-11-24 20:40:02 UTC] [CYCLE #2908 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$22.24 | Equity=$25.10 (DD=36.13%)
 [2026-11-24 20:49:09 UTC] [CYCLE #2909 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.24 | Equity=$25.19 (DD=35.88%)
+[SHADOW EXIT] #392 | Will Anthropic close below its IPO price by November 25, 2026? (YES)
+  Shares: 2.90 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9990
+  Proceeds: $2.90 | Realized PnL: $+0.26 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.9%) secured early with +9.8% gain
+[SHADOW EXIT] #401 | Will Bitcoin dip to $59,000 on November 24? (YES)
+  Shares: 3.84 | Entry VWAP: 0.5500 -> Exit Bid VWAP: 0.3600
+  Proceeds: $1.38 | Realized PnL: $-0.73 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 13.3 pp (0.672 -> 0.539)
+[SHADOW EXEC] #402 | Will Bitcoin dip to $59,000 on November 24? (YES)
+  Category: Crypto | Shares: 6.92 @ 0.3800
+  Bet: $2.63 USDC | P_est: 53.2% | Edge: +15.2 pp
+[2026-11-24 21:01:08 UTC] [CYCLE #2910 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$22.24 | Equity=$25.17 (DD=35.93%)
