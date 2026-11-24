@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-24 18:31:05 UTC`
+**Обновлено:** `2026-11-24 18:40:11 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -21,18 +21,18 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$42.01 USDC`** |
-| **Свободный кэш / В сделках** | `$33.49` / `$8.52 USDC` |
+| **Виртуальный баланс (Equity)** | **`$42.18 USDC`** |
+| **Свободный кэш / В сделках** | `$33.49` / `$8.69 USDC` |
 | **Открытых позиций** | `4 / 5` |
-| **Текущая просадка** | `36.33%` |
+| **Текущая просадка** | `36.08%` |
 
 ### Открытые позиции в песочнице (4 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #392 | Will Anthropic close below its IPO price by November 25 | Macro | **YES** | `0.910` | `0.886` | `97.0%` | `$2.64` | `$-0.07` | https://www.nasdaq.com/market- |
-| #393 | S&P 500 (SPX) Up or Down on November 24? | Macro | **NO** | `0.890` | `0.780` | `96.5%` | `$2.65` | `$-0.33` | https://www.wsj.com/market-dat |
+| #392 | Will Anthropic close below its IPO price by November 25 | Macro | **YES** | `0.910` | `0.926` | `97.0%` | `$2.64` | `$+0.05` | https://www.nasdaq.com/market- |
+| #393 | S&P 500 (SPX) Up or Down on November 24? | Macro | **NO** | `0.890` | `0.820` | `96.5%` | `$2.65` | `$-0.21` | https://www.wsj.com/market-dat |
 | #396 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.860` | `0.850` | `85.4%` | `$1.80` | `$-0.02` | https://www.binance.com/en/tra |
-| #399 | Will Bitcoin dip to $59,000 on November 24? | Crypto | **YES** | `0.350` | `0.270` | `42.7%` | `$2.40` | `$-0.55` | https://www.binance.com/en/tra |
+| #399 | Will Bitcoin dip to $59,000 on November 24? | Crypto | **YES** | `0.350` | `0.260` | `42.4%` | `$2.40` | `$-0.62` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
