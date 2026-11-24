@@ -8058,3 +8058,19 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Причина: High market consensus NO (91.5%) within 3.5h of expiry
 
 [2026-11-24 16:30:56 UTC] [CYCLE #2880 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=3 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.24 | Equity=$25.22 (DD=35.82%)
+[SHADOW EXIT] #390 | Will Bitcoin dip to $58,000 on November 24? (NO)
+  Shares: 2.85 | Entry VWAP: 0.7100 -> Exit Bid VWAP: 0.7000
+  Proceeds: $1.99 | Realized PnL: $-0.03 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 16.0 pp (0.816 -> 0.656)
+[2026-11-24 16:40:01 UTC] [OPEN TRADE #237] Will SSC Napoli win on 2026-11-24?
+  Категория: Sports | Сторона: NO | Источник: https://www.uefa.com/
+  Оценка бота: 94.0% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=33.3%, Четверть(0.25x)=13.3% -> Применён=4.0% банка
+  Размер сделки: $1.00 USDC (1.10 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: High market consensus NO (90.5%) within 3.3h of expiry
+
+[SHADOW EXEC] #394 | Will Bitcoin dip to $58,000 on November 24? (YES)
+  Category: Crypto | Shares: 3.50 @ 0.3000
+  Bet: $1.05 USDC | P_est: 34.4% | Edge: +4.4 pp
+[2026-11-24 16:40:01 UTC] [CYCLE #2881 SUMMARY] Scanned=772 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=3 | Opened=1 (Shadow=1) | Closed=0 | Cash=$22.24 | Equity=$25.21 (DD=35.85%)
