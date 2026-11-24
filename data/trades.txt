@@ -8162,3 +8162,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 1.10 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.6000
   Proceeds: $0.66 | Realized PnL: $-0.34 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.600 (-34.1% from entry $0.910, P_est=65.0%)
 [2026-11-24 21:19:22 UTC] [CYCLE #2912 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=2 | Cash=$23.98 | Equity=$25.03 (DD=36.29%)
+[EXIT] #236 | Will AEK win on 2026-11-24? (NO)
+  Shares: 1.09 | Entry VWAP: 0.9200 -> Exit Bid VWAP: 0.9860
+  Proceeds: $1.07 | Realized PnL: $+0.07 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.6%) secured early with +7.2% gain
+[SHADOW EXIT] #402 | Will Bitcoin dip to $59,000 on November 24? (YES)
+  Shares: 6.92 | Entry VWAP: 0.3800 -> Exit Bid VWAP: 0.2400
+  Proceeds: $1.66 | Realized PnL: $-0.97 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 36.8% from entry (0.3800 -> 0.2400)
+[SHADOW EXEC] #403 | Will Bitcoin dip to $59,000 on November 24? (YES)
+  Category: Crypto | Shares: 9.88 @ 0.2500
+  Bet: $2.47 USDC | P_est: 44.2% | Edge: +19.2 pp
+[SHADOW EXEC] #404 | Will Ethereum dip to $1,650 on November 24? (YES)
+  Category: Crypto | Shares: 8.61 @ 0.2800
+  Bet: $2.41 USDC | P_est: 46.1% | Edge: +18.1 pp
+[2026-11-24 21:30:54 UTC] [CYCLE #2913 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=1 | Opened=0 (Shadow=2) | Closed=1 | Cash=$25.05 | Equity=$25.05 (DD=36.24%)
