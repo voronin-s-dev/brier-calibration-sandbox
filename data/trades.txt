@@ -7866,3 +7866,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-24 08:10:26 UTC] [CYCLE #2830 SUMMARY] Scanned=788 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.24 | Equity=$25.23 (DD=35.79%)
 [2026-11-24 08:19:48 UTC] [CYCLE #2831 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.24 | Equity=$25.23 (DD=35.79%)
 [2026-11-24 08:30:59 UTC] [CYCLE #2832 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.24 | Equity=$25.23 (DD=35.79%)
+[SHADOW EXIT] #362 | Will the price of Bitcoin be above $64,000 on November 24? (NO)
+  Shares: 2.81 | Entry VWAP: 0.9130 -> Exit Bid VWAP: 0.9860
+  Proceeds: $2.78 | Realized PnL: $+0.21 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.6%) secured early with +8.0% gain
+[SHADOW EXEC] #372 | Will Bitcoin reach $61,000 on November 24? (YES)
+  Category: Crypto | Shares: 1.81 @ 0.6200
+  Bet: $1.12 USDC | P_est: 65.4% | Edge: +3.4 pp
+[2026-11-24 08:40:06 UTC] [CYCLE #2833 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=2 | Opened=0 (Shadow=1) | Closed=0 | Cash=$24.24 | Equity=$25.23 (DD=35.79%)
