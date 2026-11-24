@@ -7906,3 +7906,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 3.02 @ 0.5500
   Bet: $1.66 USDC | P_est: 62.0% | Edge: +7.0 pp
 [2026-11-24 09:10:17 UTC] [CYCLE #2836 SUMMARY] Scanned=793 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=2 | Opened=0 (Shadow=1) | Closed=0 | Cash=$24.24 | Equity=$25.23 (DD=35.79%)
+[SHADOW EXEC] #377 | SPY (SPY) Up or Down on November 24? (YES)
+  Category: Macro | Shares: 2.86 @ 0.4900
+  Bet: $1.40 USDC | P_est: 53.5% | Edge: +4.5 pp
+[2026-11-24 09:19:21 UTC] [CYCLE #2837 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=4 | Opened=0 (Shadow=1) | Closed=0 | Cash=$24.24 | Equity=$25.23 (DD=35.79%)
