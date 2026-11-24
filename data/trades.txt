@@ -7780,3 +7780,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $2.78 | Realized PnL: $+0.24 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.9%) secured early with +9.5% gain
 [2026-11-24 01:30:54 UTC] [CYCLE #2787 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.08 | Equity=$25.00 (DD=36.38%)
 [2026-11-24 01:39:59 UTC] [CYCLE #2788 SUMMARY] Scanned=776 | PassedFilter=50 | Evaluated=11 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.08 | Equity=$25.02 (DD=36.32%)
+[SHADOW EXIT] #365 | Will the price of Ethereum be above $1,700 on November 24? (NO)
+  Shares: 4.25 | Entry VWAP: 0.3390 -> Exit Bid VWAP: 0.3800
+  Proceeds: $1.61 | Realized PnL: $+0.17 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +12.1% >= +12% (Bid VWAP: 0.3800 vs Entry: 0.3390)
+[2026-11-24 01:49:14 UTC] [CYCLE #2789 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.08 | Equity=$24.95 (DD=36.50%)
