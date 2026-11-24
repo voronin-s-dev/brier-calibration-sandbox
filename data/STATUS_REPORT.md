@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-24 08:19:52 UTC`
+**Обновлено:** `2026-11-24 08:31:04 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -19,18 +19,18 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$43.78 USDC`** |
-| **Свободный кэш / В сделках** | `$36.34` / `$7.44 USDC` |
+| **Виртуальный баланс (Equity)** | **`$44.03 USDC`** |
+| **Свободный кэш / В сделках** | `$36.34` / `$7.69 USDC` |
 | **Открытых позиций** | `4 / 5` |
-| **Текущая просадка** | `33.65%` |
+| **Текущая просадка** | `33.27%` |
 
 ### Открытые позиции в песочнице (4 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #362 | Will the price of Bitcoin be above $64,000 on November  | Crypto | **NO** | `0.913` | `0.979` | `98.5%` | `$2.57` | `$+0.19` | https://www.binance.com/en/tra |
-| #368 | S&P 500 (SPX) Up or Down on November 24? | Macro | **NO** | `0.470` | `0.410` | `45.5%` | `$1.03` | `$-0.13` | https://www.wsj.com/market-dat |
-| #370 | Will Anthropic close below its IPO price by November 27 | Macro | **YES** | `0.560` | `0.550` | `64.0%` | `$2.64` | `$-0.05` | https://www.nasdaq.com/market- |
-| #371 | Will the price of Ethereum be above $1,700 on November  | Crypto | **NO** | `0.507` | `0.518` | `55.4%` | `$1.17` | `$+0.03` | https://www.binance.com/en/tra |
+| #362 | Will the price of Bitcoin be above $64,000 on November  | Crypto | **NO** | `0.913` | `0.981` | `98.5%` | `$2.57` | `$+0.19` | https://www.binance.com/en/tra |
+| #368 | S&P 500 (SPX) Up or Down on November 24? | Macro | **NO** | `0.470` | `0.480` | `45.5%` | `$1.03` | `$+0.02` | https://www.wsj.com/market-dat |
+| #370 | Will Anthropic close below its IPO price by November 27 | Macro | **YES** | `0.560` | `0.550` | `63.2%` | `$2.64` | `$-0.05` | https://www.nasdaq.com/market- |
+| #371 | Will the price of Ethereum be above $1,700 on November  | Crypto | **NO** | `0.507` | `0.558` | `59.3%` | `$1.17` | `$+0.12` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
