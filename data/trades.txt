@@ -8045,3 +8045,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 1.86 | Entry VWAP: 0.7700 -> Exit Bid VWAP: 0.8800
   Proceeds: $1.63 | Realized PnL: $+0.20 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +14.3% >= +12% (Bid VWAP: 0.8800 vs Entry: 0.7700)
 [2026-11-24 16:19:36 UTC] [CYCLE #2879 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=12 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.24 | Equity=$25.23 (DD=35.79%)
+[SHADOW EXIT] #391 | Will the price of Bitcoin be above $58,000 on November 26? (YES)
+  Shares: 1.68 | Entry VWAP: 0.7280 -> Exit Bid VWAP: 0.7180
+  Proceeds: $1.20 | Realized PnL: $-0.02 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 8.3 pp (0.792 -> 0.709)
+[2026-11-24 16:30:56 UTC] [OPEN TRADE #236] Will AEK win on 2026-11-24?
+  Категория: Sports | Сторона: NO | Источник: https://www.uefa.com/
+  Оценка бота: 95.0% vs Рынок (Ask VWAP): 92.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.910, BestAsk=0.920, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=37.5%, Четверть(0.25x)=15.0% -> Применён=4.0% банка
+  Размер сделки: $1.00 USDC (1.09 shares @ $0.9200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.552 if P_est <= 70%
+  Причина: High market consensus NO (91.5%) within 3.5h of expiry
+
+[2026-11-24 16:30:56 UTC] [CYCLE #2880 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=13 | Edges(>=8pp)=3 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.24 | Equity=$25.22 (DD=35.82%)
