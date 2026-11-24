@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-24 14:49:29 UTC`
+**Обновлено:** `2026-11-24 15:01:13 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -19,16 +19,16 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$44.90 USDC`** |
-| **Свободный кэш / В сделках** | `$41.17` / `$3.73 USDC` |
+| **Виртуальный баланс (Equity)** | **`$45.05 USDC`** |
+| **Свободный кэш / В сделках** | `$41.17` / `$3.88 USDC` |
 | **Открытых позиций** | `2 / 5` |
-| **Текущая просадка** | `31.96%` |
+| **Текущая просадка** | `31.73%` |
 
 ### Открытые позиции в песочнице (2 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #385 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.770` | `0.780` | `78.0%` | `$1.43` | `$+0.02` | https://www.binance.com/en/tra |
-| #389 | Will the price of Bitcoin be above $60,000 on November  | Crypto | **YES** | `0.714` | `0.653` | `76.6%` | `$2.49` | `$-0.21` | https://www.binance.com/en/tra |
+| #385 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.770` | `0.760` | `79.6%` | `$1.43` | `$-0.02` | https://www.binance.com/en/tra |
+| #389 | Will the price of Bitcoin be above $60,000 on November  | Crypto | **YES** | `0.714` | `0.707` | `72.0%` | `$2.49` | `$-0.02` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
@@ -42,6 +42,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Elon Musk post <40 tweets from November 23 to | Geopolitics | NO | `93.5%` | `89.1%` | `+4.5 п.п.` | `0.10%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
 | Will Elon Musk post <40 tweets from November 23 to | Geopolitics | NO | `94.5%` | `90.1%` | `+4.3 п.п.` | `1.50%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
 | Will ŠK Slovan Bratislava win on 2026-11-24? | Sports | NO | `95.0%` | `92.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #235 ($1.00 @ 0.9200) |
 | Spread: Commanders (-3.5) | Sports | NO | `97.5%` | `86.0%` | `+11.5 п.п.` | `1.00%` | EXECUTED BUY #234 ($1.00 @ 0.8600) |
@@ -59,4 +60,3 @@
 | Spread: Titans (-3.5) | Sports | NO | `97.5%` | `85.0%` | `+12.5 п.п.` | `1.00%` | REJECTED: Category cap reached (4/4 in Sports) |
 | Cardinals vs. Chiefs | Sports | NO | `96.0%` | `92.0%` | `+4.0 п.п.` | `1.00%` | EXECUTED BUY #232 ($1.00 @ 0.9200) |
 | Will FC Barcelona vs. Villarreal CF end in a draw? | Sports | NO | `96.5%` | `90.0%` | `+6.5 п.п.` | `1.00%` | EXECUTED BUY #231 ($1.00 @ 0.9000) |
-| Spread: Manchester United FC (-1.5) | Sports | NO | `95.0%` | `92.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #230 ($1.00 @ 0.9200) |
