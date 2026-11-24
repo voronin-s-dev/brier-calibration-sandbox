@@ -103,5 +103,12 @@
     "Europe/Helsinki",
     "celsius",
     "Auto-Meteo Helsinki (FI)"
+  ],
+  "milan": [
+    45.46427,
+    9.18951,
+    "Europe/Rome",
+    "celsius",
+    "Auto-Meteo Milan (IT)"
   ]
 }

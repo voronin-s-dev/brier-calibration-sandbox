@@ -1,5 +1,5 @@
 # 🧠 Реестр авто-доработок и полуавтоматических решений (Auto-Governor)
-**Обновлено:** `2026-11-24 14:01:17 UTC`
+**Обновлено:** `2026-11-24 14:10:31 UTC`
 
 ## ⚙️ Текущие активные параметры риск-менеджмента
 - **Категория (`active_category_filter`)**: `Sports,Geopolitics`
@@ -25,7 +25,9 @@
 - **Предлагаемое изменение**: `{"active_category_filter": "ALL"}`
 - **Как применить**: скажи в чате Antigravity *«Одобри предложение #34»* или выполни `python run_sim.py --approve 34`
 
-## 🛠️ История применённых авто-фиксов и одобренных правок (25)
+## 🛠️ История применённых авто-фиксов и одобренных правок (26)
+- **#39 [AUTO_FIX / APPLIED] Авто-добавление метеостанции: Milan** (`2026-11-24T14:10:22`)
+  - Обнаружен активный погодный рынок Polymarket («Will the highest temperature in Milan be 7°C on November 25?»), для которого город 'Milan' отсутствовал в словаре WeatherOracle. Координаты (45.4643, 9.1895), таймзона (Europe/Rome) и шкала (celsius) автоматически получены через Open-Meteo Geocoding и добавлены в data/custom_stations.json.
 - **#38 [AUTO_FIX / APPLIED] Авто-добавление метеостанции: Helsinki** (`2026-11-23T04:49:07`)
   - Обнаружен активный погодный рынок Polymarket («Will the highest temperature in Helsinki be 2°C on November 24?»), для которого город 'Helsinki' отсутствовал в словаре WeatherOracle. Координаты (60.1695, 24.9354), таймзона (Europe/Helsinki) и шкала (celsius) автоматически получены через Open-Meteo Geocoding и добавлены в data/custom_stations.json.
 - **#37 [MANUAL / APPLIED] Карантин категории Other и вывод оракула News/CLOB из боевого контура** (`2026-11-21T14:27:57`)
