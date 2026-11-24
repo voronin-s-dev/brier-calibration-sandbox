@@ -7920,3 +7920,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $2.97 | Realized PnL: $+0.33 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +12.5% >= +12% (Bid VWAP: 0.6300 vs Entry: 0.5600)
 [2026-11-24 09:49:06 UTC] [CYCLE #2840 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.24 | Equity=$25.23 (DD=35.79%)
 [2026-11-24 10:01:09 UTC] [CYCLE #2841 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.24 | Equity=$25.23 (DD=35.79%)
+[SHADOW EXEC] #378 | Will the price of Ethereum be above $1,700 on November 24? (NO)
+  Category: Crypto | Shares: 1.62 @ 0.6400
+  Bet: $1.04 USDC | P_est: 68.4% | Edge: +4.4 pp
+[SHADOW EXEC] #379 | SPY (SPY) Up or Down on November 24? (YES)
+  Category: Macro | Shares: 4.05 @ 0.4400
+  Bet: $1.78 USDC | P_est: 48.5% | Edge: +4.5 pp
+[2026-11-24 10:10:13 UTC] [CYCLE #2842 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=2) | Closed=0 | Cash=$24.24 | Equity=$25.23 (DD=35.79%)

@@ -77,7 +77,7 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-11-24 10:01:11 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-11-24 10:10:16 UTC</div>
     </div>
   </div>
 
@@ -111,8 +111,8 @@
     </div>
     <div class="card" style="border-left: 3px solid #8b5cf6;">
       <div class="metric-label">🧪 Shadow Sandbox (Песочница)</div>
-      <div class="metric-val">$45.66 <span class="muted" style="font-size:15px">(Старт: $50)</span></div>
-      <div class="metric-sub">Кэш: $44.03 | В сделках: $1.63 | Открыто: 1/5</div>
+      <div class="metric-val">$45.72 <span class="muted" style="font-size:15px">(Старт: $50)</span></div>
+      <div class="metric-sub">Кэш: $41.21 | В сделках: $4.51 | Открыто: 3/5</div>
     </div>
   </div>
 
@@ -168,7 +168,7 @@
     </tbody>
   </table>
 
-  <h2>🧪 Открытые позиции в песочнице (1 / 5)</h2>
+  <h2>🧪 Открытые позиции в песочнице (3 / 5)</h2>
   <table>
     <thead>
       <tr>
@@ -186,10 +186,38 @@
             <td><span class="side-yes">YES</span></td>
             <td>3.02</td>
             <td>$0.5500</td>
-            <td>$0.5400</td>
-            <td><strong>58.4%</strong> <small>(+7.0pp)</small></td>
+            <td>$0.5600</td>
+            <td><strong>58.5%</strong> <small>(+7.0pp)</small></td>
             <td>$1.66</td>
-            <td class="neg">$-0.03</td>
+            <td class="pos">$+0.03</td>
+            <td><small>Take-Profit (+12% or 98.5%+ bid), Stop-Loss (-35%), or Settlement</small></td>
+        </tr>
+        
+        <tr>
+            <td>#378</td>
+            <td><strong>Will the price of Ethereum be above $1,700 on November 24?</strong><br><small class="muted">Terminal GBM model: ETHUSDT=$1,681.94 vs strike=$1,700 (-1.06%), vol_h=0.73%, tau=6.8h =&gt; P(S_T &gt; K)=30.6% -&gt; Calibrated(0.75x)=31.6%</small></td>
+            <td><span class="badge cat-crypto">Crypto</span></td>
+            <td><span class="side-no">NO</span></td>
+            <td>1.62</td>
+            <td>$0.6400</td>
+            <td>$0.6400</td>
+            <td><strong>68.4%</strong> <small>(+4.4pp)</small></td>
+            <td>$1.04</td>
+            <td class="pos">$+0.00</td>
+            <td><small>Take-Profit (+12% or 98.5%+ bid), Stop-Loss (-35%), or Settlement</small></td>
+        </tr>
+        
+        <tr>
+            <td>#379</td>
+            <td><strong>SPY (SPY) Up or Down on November 24?</strong><br><small class="muted">News sentiment=+1.00 (12 articles; top: &#x27;U.S. Tracked Alice Huang’s Contacts With China Spy Agency During Nvidia Affair - The New York Times&#x27;)</small></td>
+            <td><span class="badge cat-macro">Macro</span></td>
+            <td><span class="side-yes">YES</span></td>
+            <td>4.05</td>
+            <td>$0.4400</td>
+            <td>$0.4400</td>
+            <td><strong>48.5%</strong> <small>(+4.5pp)</small></td>
+            <td>$1.78</td>
+            <td class="pos">$+0.00</td>
             <td><small>Take-Profit (+12% or 98.5%+ bid), Stop-Loss (-35%), or Settlement</small></td>
         </tr>
         
@@ -564,12 +592,7 @@
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box">DD=36.24%)
-[2026-11-24 02:49:04 UTC] [CYCLE #2795 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=8 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.08 | Equity=$25.05 (DD=36.24%)
-[2026-11-24 03:01:14 UTC] [CYCLE #2796 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=7 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.08 | Equity=$25.02 (DD=36.32%)
-[SHADOW EXEC] #366 | Will the price of Bitcoin be above $58,000 on November 25? (YES)
-  Category: Crypto | Shares: 2.19 @ 0.7550
-  Bet: $1.65 USDC | P_est: 80.1% | Edge: +4.6 pp
+  <pre class="log-box">1.65 USDC | P_est: 80.1% | Edge: +4.6 pp
 [2026-11-24 03:10:20 UTC] [CYCLE #2797 SUMMARY] Scanned=783 | PassedFilter=50 | Evaluated=8 | Edges(&gt;=8pp)=2 | Opened=0 (Shadow=1) | Closed=0 | Cash=$24.08 | Equity=$25.02 (DD=36.32%)
 [SHADOW EXEC] #367 | Will the price of Bitcoin be above $58,000 on November 26? (YES)
   Category: Crypto | Shares: 2.16 @ 0.7120
@@ -696,6 +719,13 @@
   Proceeds: $2.97 | Realized PnL: $+0.33 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +12.5% &gt;= +12% (Bid VWAP: 0.6300 vs Entry: 0.5600)
 [2026-11-24 09:49:06 UTC] [CYCLE #2840 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.24 | Equity=$25.23 (DD=35.79%)
 [2026-11-24 10:01:09 UTC] [CYCLE #2841 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.24 | Equity=$25.23 (DD=35.79%)
+[SHADOW EXEC] #378 | Will the price of Ethereum be above $1,700 on November 24? (NO)
+  Category: Crypto | Shares: 1.62 @ 0.6400
+  Bet: $1.04 USDC | P_est: 68.4% | Edge: +4.4 pp
+[SHADOW EXEC] #379 | SPY (SPY) Up or Down on November 24? (YES)
+  Category: Macro | Shares: 4.05 @ 0.4400
+  Bet: $1.78 USDC | P_est: 48.5% | Edge: +4.5 pp
+[2026-11-24 10:10:13 UTC] [CYCLE #2842 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=6 | Edges(&gt;=8pp)=1 | Opened=0 (Shadow=2) | Closed=0 | Cash=$24.24 | Equity=$25.23 (DD=35.79%)
 </pre>
 </body>
 </html>
