@@ -7883,3 +7883,19 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 2.67 @ 0.4000
   Bet: $1.07 USDC | P_est: 47.2% | Edge: +7.2 pp
 [2026-11-24 08:49:13 UTC] [CYCLE #2834 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=2 | Opened=0 (Shadow=2) | Closed=0 | Cash=$24.24 | Equity=$25.23 (DD=35.79%)
+[SHADOW EXIT] #368 | S&P 500 (SPX) Up or Down on November 24? (NO)
+  Shares: 2.19 | Entry VWAP: 0.4700 -> Exit Bid VWAP: 0.5500
+  Proceeds: $1.21 | Realized PnL: $+0.18 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +17.0% >= +12% (Bid VWAP: 0.5500 vs Entry: 0.4700)
+[SHADOW EXIT] #371 | Will the price of Ethereum be above $1,700 on November 24? (NO)
+  Shares: 2.31 | Entry VWAP: 0.5070 -> Exit Bid VWAP: 0.6050
+  Proceeds: $1.40 | Realized PnL: $+0.23 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +19.3% >= +12% (Bid VWAP: 0.6050 vs Entry: 0.5070)
+[SHADOW EXIT] #373 | Will the price of Bitcoin be above $60,000 on November 24? (NO)
+  Shares: 3.54 | Entry VWAP: 0.3500 -> Exit Bid VWAP: 0.4590
+  Proceeds: $1.63 | Realized PnL: $+0.39 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +31.1% >= +12% (Bid VWAP: 0.4590 vs Entry: 0.3500)
+[SHADOW EXIT] #374 | Will the price of Bitcoin be above $60,000 on November 25? (NO)
+  Shares: 2.67 | Entry VWAP: 0.4000 -> Exit Bid VWAP: 0.4600
+  Proceeds: $1.23 | Realized PnL: $+0.16 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +15.0% >= +12% (Bid VWAP: 0.4600 vs Entry: 0.4000)
+[SHADOW EXEC] #375 | Will Bitcoin dip to $58,000 on November 24? (YES)
+  Category: Crypto | Shares: 5.17 @ 0.2400
+  Bet: $1.24 USDC | P_est: 29.2% | Edge: +5.2 pp
+[2026-11-24 09:01:12 UTC] [CYCLE #2835 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=2 | Opened=0 (Shadow=1) | Closed=0 | Cash=$24.24 | Equity=$25.23 (DD=35.79%)
