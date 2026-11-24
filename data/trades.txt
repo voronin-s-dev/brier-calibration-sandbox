@@ -8155,3 +8155,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $2.63 USDC | P_est: 53.2% | Edge: +15.2 pp
 [2026-11-24 21:01:08 UTC] [CYCLE #2910 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$22.24 | Equity=$25.17 (DD=35.93%)
 [2026-11-24 21:10:17 UTC] [CYCLE #2911 SUMMARY] Scanned=784 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.24 | Equity=$25.19 (DD=35.88%)
+[EXIT] #235 | Will ŠK Slovan Bratislava win on 2026-11-24? (NO)
+  Shares: 1.09 | Entry VWAP: 0.9200 -> Exit Bid VWAP: 0.9940
+  Proceeds: $1.08 | Realized PnL: $+0.08 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.4%) secured early with +8.0% gain
+[EXIT] #237 | Will SSC Napoli win on 2026-11-24? (NO)
+  Shares: 1.10 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.6000
+  Proceeds: $0.66 | Realized PnL: $-0.34 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.600 (-34.1% from entry $0.910, P_est=65.0%)
+[2026-11-24 21:19:22 UTC] [CYCLE #2912 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=2 | Cash=$23.98 | Equity=$25.03 (DD=36.29%)
