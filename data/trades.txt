@@ -7951,3 +7951,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-24 11:19:22 UTC] [CYCLE #2849 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=3 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.24 | Equity=$25.23 (DD=35.79%)
 [2026-11-24 11:31:07 UTC] [CYCLE #2850 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=7 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.24 | Equity=$25.23 (DD=35.79%)
 [2026-11-24 11:40:12 UTC] [CYCLE #2851 SUMMARY] Scanned=787 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.24 | Equity=$25.23 (DD=35.79%)
+[SHADOW EXIT] #381 | Will the price of Bitcoin be between $58,000 and $60,000 on November 24? (YES)
+  Shares: 2.51 | Entry VWAP: 0.5090 -> Exit Bid VWAP: 0.3210
+  Proceeds: $0.81 | Realized PnL: $-0.47 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 36.9% from entry (0.5090 -> 0.3210)
+[SHADOW EXEC] #382 | Will the price of Bitcoin be above $60,000 on November 24? (NO)
+  Category: Crypto | Shares: 2.96 @ 0.3880
+  Bet: $1.15 USDC | P_est: 57.1% | Edge: +18.3 pp
+[2026-11-24 11:49:17 UTC] [CYCLE #2852 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=3 | Opened=0 (Shadow=1) | Closed=0 | Cash=$24.24 | Equity=$25.23 (DD=35.79%)
