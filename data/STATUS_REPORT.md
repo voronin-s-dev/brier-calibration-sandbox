@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-24 17:19:41 UTC`
+**Обновлено:** `2026-11-24 17:27:57 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -21,23 +21,23 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$43.64 USDC`** |
-| **Свободный кэш / В сделках** | `$34.07` / `$9.56 USDC` |
+| **Виртуальный баланс (Equity)** | **`$43.00 USDC`** |
+| **Свободный кэш / В сделках** | `$34.89` / `$8.11 USDC` |
 | **Открытых позиций** | `4 / 5` |
-| **Текущая просадка** | `33.87%` |
+| **Текущая просадка** | `34.84%` |
 
 ### Открытые позиции в песочнице (4 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #392 | Will Anthropic close below its IPO price by November 25 | Macro | **YES** | `0.910` | `0.917` | `96.1%` | `$2.64` | `$+0.02` | https://www.nasdaq.com/market- |
-| #393 | S&P 500 (SPX) Up or Down on November 24? | Macro | **NO** | `0.890` | `0.820` | `96.5%` | `$2.65` | `$-0.21` | https://www.wsj.com/market-dat |
-| #396 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.860` | `0.880` | `90.8%` | `$1.80` | `$+0.04` | https://www.binance.com/en/tra |
-| #397 | Will Bitcoin dip to $59,000 on November 24? | Crypto | **YES** | `0.550` | `0.550` | `75.3%` | `$2.62` | `$+0.00` | https://www.binance.com/en/tra |
+| #392 | Will Anthropic close below its IPO price by November 25 | Macro | **YES** | `0.910` | `0.880` | `94.2%` | `$2.64` | `$-0.09` | https://www.nasdaq.com/market- |
+| #393 | S&P 500 (SPX) Up or Down on November 24? | Macro | **NO** | `0.890` | `0.760` | `96.5%` | `$2.65` | `$-0.39` | https://www.wsj.com/market-dat |
+| #396 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.860` | `0.870` | `88.4%` | `$1.80` | `$+0.02` | https://www.binance.com/en/tra |
+| #398 | Will Bitcoin dip to $59,000 on November 24? | Crypto | **YES** | `0.500` | `0.500` | `61.6%` | `$1.47` | `$+0.00` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
 | :--- | :--- | :--- | :--- |
-| **Crypto** | `341` | `-$5.01` | `55%` |
+| **Crypto** | `342` | `-$5.34` | `54%` |
 | **Geopolitics** | `8` | `+$1.02` | `62%` |
 | **Macro** | `18` | `+$1.44` | `61%` |
 | **Other** | `21` | `-$2.29` | `38%` |
