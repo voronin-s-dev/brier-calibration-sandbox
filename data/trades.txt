@@ -8129,3 +8129,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $2.40 USDC | P_est: 53.1% | Edge: +7.1 pp
 [2026-11-24 19:40:09 UTC] [CYCLE #2902 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$22.24 | Equity=$25.21 (DD=35.85%)
 [2026-11-24 19:49:16 UTC] [CYCLE #2903 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.24 | Equity=$25.19 (DD=35.88%)
+[SHADOW EXIT] #393 | S&P 500 (SPX) Up or Down on November 24? (NO)
+  Shares: 2.98 | Entry VWAP: 0.8900 -> Exit Bid VWAP: 0.9840
+  Proceeds: $2.93 | Realized PnL: $+0.28 USDC | Reason: TIME EXIT: 1.0h left to close (under 1.0h threshold, Bid VWAP: $0.984)
+[2026-11-24 20:01:06 UTC] [CYCLE #2904 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.24 | Equity=$25.16 (DD=35.96%)
