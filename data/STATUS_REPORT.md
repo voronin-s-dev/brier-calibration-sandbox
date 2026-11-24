@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-24 07:10:15 UTC`
+**Обновлено:** `2026-11-24 07:19:19 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -19,17 +19,17 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$43.60 USDC`** |
-| **Свободный кэш / В сделках** | `$37.51` / `$6.10 USDC` |
+| **Виртуальный баланс (Equity)** | **`$43.69 USDC`** |
+| **Свободный кэш / В сделках** | `$37.51` / `$6.18 USDC` |
 | **Открытых позиций** | `3 / 5` |
-| **Текущая просадка** | `33.92%` |
+| **Текущая просадка** | `33.79%` |
 
 ### Открытые позиции в песочнице (3 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #362 | Will the price of Bitcoin be above $64,000 on November  | Crypto | **NO** | `0.913` | `0.981` | `98.5%` | `$2.57` | `$+0.19` | https://www.binance.com/en/tra |
-| #368 | S&P 500 (SPX) Up or Down on November 24? | Macro | **NO** | `0.470` | `0.360` | `45.5%` | `$1.03` | `$-0.24` | https://www.wsj.com/market-dat |
-| #370 | Will Anthropic close below its IPO price by November 27 | Macro | **YES** | `0.560` | `0.540` | `62.5%` | `$2.64` | `$-0.09` | https://www.nasdaq.com/market- |
+| #362 | Will the price of Bitcoin be above $64,000 on November  | Crypto | **NO** | `0.913` | `0.971` | `98.5%` | `$2.57` | `$+0.16` | https://www.binance.com/en/tra |
+| #368 | S&P 500 (SPX) Up or Down on November 24? | Macro | **NO** | `0.470` | `0.390` | `45.5%` | `$1.03` | `$-0.18` | https://www.wsj.com/market-dat |
+| #370 | Will Anthropic close below its IPO price by November 27 | Macro | **YES** | `0.560` | `0.550` | `64.0%` | `$2.64` | `$-0.05` | https://www.nasdaq.com/market- |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
@@ -43,6 +43,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Elon Musk post <40 tweets from November 23 to | Geopolitics | NO | `94.5%` | `90.1%` | `+4.3 п.п.` | `1.50%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
 | Will ŠK Slovan Bratislava win on 2026-11-24? | Sports | NO | `95.0%` | `92.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #235 ($1.00 @ 0.9200) |
 | Spread: Commanders (-3.5) | Sports | NO | `97.5%` | `86.0%` | `+11.5 п.п.` | `1.00%` | EXECUTED BUY #234 ($1.00 @ 0.8600) |
 | Will Elon Musk post 260-279 tweets from November 1 | Geopolitics | NO | `95.2%` | `91.1%` | `+4.1 п.п.` | `0.10%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
@@ -60,4 +61,3 @@
 | Cardinals vs. Chiefs | Sports | NO | `96.0%` | `92.0%` | `+4.0 п.п.` | `1.00%` | EXECUTED BUY #232 ($1.00 @ 0.9200) |
 | Will FC Barcelona vs. Villarreal CF end in a draw? | Sports | NO | `96.5%` | `90.0%` | `+6.5 п.п.` | `1.00%` | EXECUTED BUY #231 ($1.00 @ 0.9000) |
 | Spread: Manchester United FC (-1.5) | Sports | NO | `95.0%` | `92.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #230 ($1.00 @ 0.9200) |
-| SMU vs. Notre Dame | Sports | NO | `94.0%` | `91.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #229 ($1.00 @ 0.9100) |
