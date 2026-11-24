@@ -7810,3 +7810,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 1.94 @ 0.5300
   Bet: $1.03 USDC | P_est: 57.6% | Edge: +4.6 pp
 [2026-11-24 03:39:58 UTC] [CYCLE #2800 SUMMARY] Scanned=780 | PassedFilter=50 | Evaluated=8 | Edges(>=8pp)=2 | Opened=0 (Shadow=1) | Closed=0 | Cash=$24.08 | Equity=$25.00 (DD=36.38%)
+[SHADOW EXEC] #370 | Will Anthropic close below its IPO price by November 27, 2026? (YES)
+  Category: Macro | Shares: 4.71 @ 0.5600
+  Bet: $2.64 USDC | P_est: 65.1% | Edge: +9.1 pp
+[2026-11-24 03:49:02 UTC] [CYCLE #2801 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=3 | Opened=0 (Shadow=1) | Closed=0 | Cash=$24.08 | Equity=$25.10 (DD=36.12%)
