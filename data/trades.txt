@@ -8086,3 +8086,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 2.09 @ 0.8600
   Bet: $1.80 USDC | P_est: 91.3% | Edge: +5.3 pp
 [2026-11-24 17:10:29 UTC] [CYCLE #2884 SUMMARY] Scanned=792 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=2 | Opened=0 (Shadow=2) | Closed=0 | Cash=$22.24 | Equity=$25.19 (DD=35.88%)
+[SHADOW EXIT] #395 | Will Bitcoin dip to $58,000 on November 24? (YES)
+  Shares: 9.69 | Entry VWAP: 0.1600 -> Exit Bid VWAP: 0.2000
+  Proceeds: $1.94 | Realized PnL: $+0.39 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +25.0% >= +12% (Bid VWAP: 0.2000 vs Entry: 0.1600)
+[SHADOW EXEC] #397 | Will Bitcoin dip to $59,000 on November 24? (YES)
+  Category: Crypto | Shares: 4.76 @ 0.5500
+  Bet: $2.62 USDC | P_est: 75.3% | Edge: +20.3 pp
+[2026-11-24 17:19:36 UTC] [CYCLE #2885 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=2 | Opened=0 (Shadow=1) | Closed=0 | Cash=$22.24 | Equity=$25.19 (DD=35.88%)
