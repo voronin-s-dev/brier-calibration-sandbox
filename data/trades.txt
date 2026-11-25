@@ -8285,3 +8285,28 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 2.82 @ 0.9100
   Bet: $2.57 USDC | P_est: 94.4% | Edge: +3.4 pp
 [2026-11-25 04:49:06 UTC] [CYCLE #2960 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.05 | Equity=$25.05 (DD=36.24%)
+[2026-11-25 05:01:04 UTC] [OPEN TRADE #238] Exact Score: Sabah FK 0 - 3 FC Barcelona?
+  Категория: Sports | Сторона: NO | Источник: official match information from UEFA Champions League (https://www.uefa
+  Оценка бота: 98.5% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +7.5 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=83.3%, Четверть(0.25x)=33.3% -> Применён=4.0% банка
+  Размер сделки: $1.00 USDC (1.10 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: Base Rate: Improbable exact score 0-3 (< 1.5% frequency)
+
+[2026-11-25 05:01:04 UTC] [OPEN TRADE #239] Exact Score: Sabah FK 0 - 4 FC Barcelona?
+  Категория: Sports | Сторона: NO | Источник: official match information from UEFA Champions League (https://www.uefa
+  Оценка бота: 98.5% vs Рынок (Ask VWAP): 91.0% (Перекос/Edge: +7.5 п.п.)
+  Стакан CLOB: BestBid=0.900, BestAsk=0.910, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=83.3%, Четверть(0.25x)=33.3% -> Применён=4.0% банка
+  Размер сделки: $1.00 USDC (1.10 shares @ $0.9100)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.546 if P_est <= 70%
+  Причина: Base Rate: Improbable exact score 0-4 (< 1.5% frequency)
+
+[SHADOW EXEC] #415 | Will Bitcoin dip to $58,000 November 23-29? (YES)
+  Category: Crypto | Shares: 3.54 @ 0.7000
+  Bet: $2.48 USDC | P_est: 79.2% | Edge: +9.3 pp
+[SHADOW EXEC] #416 | Will Ethereum dip to $1,600 November 23-29? (YES)
+  Category: Crypto | Shares: 4.37 @ 0.5900
+  Bet: $2.58 USDC | P_est: 69.9% | Edge: +10.9 pp
+[2026-11-25 05:01:04 UTC] [CYCLE #2961 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=3 | Opened=2 (Shadow=2) | Closed=0 | Cash=$23.05 | Equity=$25.03 (DD=36.30%)
