@@ -8273,3 +8273,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-25 03:30:55 UTC] [CYCLE #2952 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.05 | Equity=$25.05 (DD=36.24%)
 [2026-11-25 03:39:59 UTC] [CYCLE #2953 SUMMARY] Scanned=795 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.05 | Equity=$25.05 (DD=36.24%)
 [2026-11-25 03:49:02 UTC] [CYCLE #2954 SUMMARY] Scanned=790 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.05 | Equity=$25.05 (DD=36.24%)
+[SHADOW EXIT] #410 | Will a turkey audibly gobble during the Thanksgiving Turkey Pardon on November 24? (YES)
+  Shares: 2.77 | Entry VWAP: 0.9180 -> Exit Bid VWAP: 0.9510
+  Proceeds: $2.63 | Realized PnL: $+0.09 USDC | Reason: TIME EXIT: 1.0h left to close (under 1.0h threshold, Bid VWAP: $0.951)
+[2026-11-25 04:01:09 UTC] [CYCLE #2955 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.05 | Equity=$25.05 (DD=36.24%)
