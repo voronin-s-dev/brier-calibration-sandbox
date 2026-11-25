@@ -8593,3 +8593,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $2.10 USDC | P_est: 66.1% | Edge: +7.2 pp
 [2026-11-25 20:37:52 UTC] [CYCLE #3060 SUMMARY] Scanned=786 | PassedFilter=50 | Evaluated=1 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=1 | Cash=$24.57 | Equity=$24.57 (DD=37.46%)
 [2026-11-25 20:46:57 UTC] [CYCLE #3061 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.57 | Equity=$24.57 (DD=37.46%)
+[SHADOW EXIT] #443 | Will Ethereum reach $1,700 on November 25? (YES)
+  Shares: 3.56 | Entry VWAP: 0.5900 -> Exit Bid VWAP: 0.7000
+  Proceeds: $2.49 | Realized PnL: $+0.39 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +18.6% >= +12% (Bid VWAP: 0.7000 vs Entry: 0.5900)
+[SHADOW EXEC] #444 | Will Bitcoin reach $61,000 on November 25? (YES)
+  Category: Crypto | Shares: 3.11 @ 0.3500
+  Bet: $1.09 USDC | P_est: 38.6% | Edge: +3.6 pp
+[2026-11-25 20:56:00 UTC] [CYCLE #3062 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$24.57 | Equity=$24.57 (DD=37.46%)
