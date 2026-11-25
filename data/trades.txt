@@ -8557,3 +8557,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Proceeds: $0.89 | Realized PnL: $-0.51 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 36.1% from entry (0.2270 -> 0.1450)
 [2026-11-25 18:30:57 UTC] [CYCLE #3045 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.05 | Equity=$24.82 (DD=36.83%)
 [2026-11-25 18:40:03 UTC] [CYCLE #3046 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.05 | Equity=$24.84 (DD=36.78%)
+[2026-11-25 18:49:09 UTC] [CYCLE #3047 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.05 | Equity=$24.79 (DD=36.92%)
