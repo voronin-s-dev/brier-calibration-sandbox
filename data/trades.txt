@@ -8472,3 +8472,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 4.63 @ 0.3000
   Bet: $1.39 USDC | P_est: 38.7% | Edge: +8.7 pp
 [2026-11-25 15:31:02 UTC] [CYCLE #3027 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$23.05 | Equity=$25.02 (DD=36.33%)
+[SHADOW EXEC] #433 | Will the price of Bitcoin be above $58,000 on November 27? (NO)
+  Category: Crypto | Shares: 2.32 @ 0.4400
+  Bet: $1.02 USDC | P_est: 49.2% | Edge: +5.2 pp
+[2026-11-25 15:40:06 UTC] [CYCLE #3028 SUMMARY] Scanned=786 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$23.05 | Equity=$25.02 (DD=36.33%)
