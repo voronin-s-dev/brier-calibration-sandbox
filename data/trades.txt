@@ -8540,3 +8540,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 7.04 @ 0.2700
   Bet: $1.90 USDC | P_est: 33.2% | Edge: +6.2 pp
 [2026-11-25 17:49:15 UTC] [CYCLE #3041 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=2 | Opened=0 (Shadow=3) | Closed=0 | Cash=$22.05 | Equity=$25.00 (DD=36.38%)
+[SHADOW EXIT] #436 | Will Ethereum dip to $1,500 November 23-29? (YES)
+  Shares: 9.50 | Entry VWAP: 0.1926 -> Exit Bid VWAP: 0.1500
+  Proceeds: $1.43 | Realized PnL: $-0.41 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 9.1 pp (0.338 -> 0.247)
+[SHADOW EXIT] #440 | Will Bitcoin reach $60,000 on November 25? (NO)
+  Shares: 7.04 | Entry VWAP: 0.2700 -> Exit Bid VWAP: 0.2462
+  Proceeds: $1.73 | Realized PnL: $-0.17 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 11.2 pp (0.332 -> 0.220)
+[SHADOW EXEC] #441 | Will Bitcoin reach $61,000 on November 25? (YES)
+  Category: Crypto | Shares: 6.17 @ 0.2270
+  Bet: $1.40 USDC | P_est: 34.2% | Edge: +11.5 pp
+[2026-11-25 18:01:15 UTC] [CYCLE #3042 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$22.05 | Equity=$24.95 (DD=36.50%)
