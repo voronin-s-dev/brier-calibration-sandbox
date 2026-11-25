@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-25 01:50:29 UTC`
+**Обновлено:** `2026-11-25 01:59:50 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -17,17 +17,18 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$42.68 USDC`** |
-| **Свободный кэш / В сделках** | `$35.67` / `$7.01 USDC` |
-| **Открытых позиций** | `3 / 5` |
-| **Текущая просадка** | `35.33%` |
+| **Виртуальный баланс (Equity)** | **`$42.77 USDC`** |
+| **Свободный кэш / В сделках** | `$33.10` / `$9.67 USDC` |
+| **Открытых позиций** | `4 / 5` |
+| **Текущая просадка** | `35.19%` |
 
-### Открытые позиции в песочнице (3 / 5)
+### Открытые позиции в песочнице (4 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #396 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.860` | `0.930` | `96.5%` | `$1.80` | `$+0.15` | https://www.binance.com/en/tra |
-| #409 | Will Bitcoin dip to $58,000 on November 24? | Crypto | **NO** | `0.910` | `0.890` | `94.5%` | `$2.51` | `$-0.06` | https://www.binance.com/en/tra |
-| #410 | Will a turkey audibly gobble during the Thanksgiving Tu | Other | **YES** | `0.918` | `0.943` | `96.6%` | `$2.54` | `$+0.07` | https://www.forth.news/lists/w |
+| #396 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.860` | `0.930` | `97.0%` | `$1.80` | `$+0.15` | https://www.binance.com/en/tra |
+| #409 | Will Bitcoin dip to $58,000 on November 24? | Crypto | **NO** | `0.910` | `0.920` | `94.0%` | `$2.51` | `$+0.03` | https://www.binance.com/en/tra |
+| #410 | Will a turkey audibly gobble during the Thanksgiving Tu | Other | **YES** | `0.918` | `0.946` | `98.5%` | `$2.54` | `$+0.08` | https://www.forth.news/lists/w |
+| #412 | Will Ethereum dip to $1,650 on November 24? | Crypto | **YES** | `0.680` | `0.680` | `78.7%` | `$2.57` | `$+0.00` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
