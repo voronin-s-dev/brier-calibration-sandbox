@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-25 20:19:18 UTC`
+**Обновлено:** `2026-11-25 20:19:31 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -28,8 +28,8 @@
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #434 | Will the price of Bitcoin be above $56,000 on November  | Crypto | **YES** | `0.908` | `0.978` | `98.5%` | `$2.66` | `$+0.21` | https://www.binance.com/en/tra |
-| #438 | Will Bitcoin reach $64,000 November 23-29? | Crypto | **YES** | `0.230` | `0.230` | `36.5%` | `$1.24` | `$+0.00` | https://www.binance.com/en/tra |
-| #442 | Will Bitcoin reach $61,000 on November 25? | Crypto | **YES** | `0.247` | `0.232` | `37.3%` | `$2.53` | `$-0.15` | https://www.binance.com/en/tra |
+| #438 | Will Bitcoin reach $64,000 November 23-29? | Crypto | **YES** | `0.230` | `0.230` | `37.8%` | `$1.24` | `$+0.00` | https://www.binance.com/en/tra |
+| #442 | Will Bitcoin reach $61,000 on November 25? | Crypto | **YES** | `0.247` | `0.232` | `41.9%` | `$2.53` | `$-0.15` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
