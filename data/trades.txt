@@ -8281,3 +8281,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-25 04:20:14 UTC] [CYCLE #2957 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.05 | Equity=$25.05 (DD=36.24%)
 [2026-11-25 04:30:56 UTC] [CYCLE #2958 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.05 | Equity=$25.05 (DD=36.24%)
 [2026-11-25 04:40:01 UTC] [CYCLE #2959 SUMMARY] Scanned=789 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.05 | Equity=$25.05 (DD=36.24%)
+[SHADOW EXEC] #414 | Will the price of Bitcoin be above $56,000 on November 26? (YES)
+  Category: Crypto | Shares: 2.82 @ 0.9100
+  Bet: $2.57 USDC | P_est: 94.4% | Edge: +3.4 pp
+[2026-11-25 04:49:06 UTC] [CYCLE #2960 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.05 | Equity=$25.05 (DD=36.24%)
