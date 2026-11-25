@@ -8331,3 +8331,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $1.09 USDC | P_est: 36.2% | Edge: +8.2 pp
 [2026-11-25 07:19:18 UTC] [CYCLE #2975 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$23.05 | Equity=$25.03 (DD=36.30%)
 [2026-11-25 07:30:56 UTC] [CYCLE #2976 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.05 | Equity=$25.03 (DD=36.30%)
+[SHADOW EXIT] #416 | Will Ethereum dip to $1,600 November 23-29? (YES)
+  Shares: 4.37 | Entry VWAP: 0.5900 -> Exit Bid VWAP: 0.7000
+  Proceeds: $3.06 | Realized PnL: $+0.48 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +18.6% >= +12% (Bid VWAP: 0.7000 vs Entry: 0.5900)
+[SHADOW EXEC] #418 | Will Ethereum dip to $1,500 November 23-29? (YES)
+  Category: Crypto | Shares: 3.89 @ 0.2800
+  Bet: $1.09 USDC | P_est: 33.9% | Edge: +5.9 pp
+[2026-11-25 07:40:02 UTC] [CYCLE #2977 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$23.05 | Equity=$25.03 (DD=36.30%)
