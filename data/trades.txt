@@ -8527,3 +8527,16 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 6.04 | Entry VWAP: 0.2800 -> Exit Bid VWAP: 0.2500
   Proceeds: $1.51 | Realized PnL: $-0.18 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 9.4 pp (0.412 -> 0.318)
 [2026-11-25 17:40:08 UTC] [CYCLE #3040 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.05 | Equity=$25.02 (DD=36.33%)
+[SHADOW EXIT] #435 | Will Bitcoin dip to $54,000 November 23-29? (YES)
+  Shares: 6.26 | Entry VWAP: 0.1790 -> Exit Bid VWAP: 0.1530
+  Proceeds: $0.96 | Realized PnL: $-0.16 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 8.1 pp (0.313 -> 0.232)
+[SHADOW EXEC] #438 | Will Bitcoin reach $64,000 November 23-29? (YES)
+  Category: Crypto | Shares: 5.39 @ 0.2300
+  Bet: $1.24 USDC | P_est: 31.4% | Edge: +8.4 pp
+[SHADOW EXEC] #439 | Will the price of Bitcoin be above $58,000 on November 27? (NO)
+  Category: Crypto | Shares: 3.88 @ 0.2600
+  Bet: $1.01 USDC | P_est: 30.7% | Edge: +4.7 pp
+[SHADOW EXEC] #440 | Will Bitcoin reach $60,000 on November 25? (NO)
+  Category: Crypto | Shares: 7.04 @ 0.2700
+  Bet: $1.90 USDC | P_est: 33.2% | Edge: +6.2 pp
+[2026-11-25 17:49:15 UTC] [CYCLE #3041 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=2 | Opened=0 (Shadow=3) | Closed=0 | Cash=$22.05 | Equity=$25.00 (DD=36.38%)
