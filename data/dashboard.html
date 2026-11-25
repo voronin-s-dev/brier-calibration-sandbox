@@ -77,7 +77,7 @@
       <div class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;padding:6px 12px;font-size:13px;">
         STATUS: ACTIVE DEMO ACCOUNT
       </div>
-      <div class="metric-sub">Обновлено: 2026-11-25 23:40:03 UTC</div>
+      <div class="metric-sub">Обновлено: 2026-11-25 23:49:06 UTC</div>
     </div>
   </div>
 
@@ -111,8 +111,8 @@
     </div>
     <div class="card" style="border-left: 3px solid #8b5cf6;">
       <div class="metric-label">🧪 Shadow Sandbox (Песочница)</div>
-      <div class="metric-val">$39.72 <span class="muted" style="font-size:15px">(Старт: $50)</span></div>
-      <div class="metric-sub">Кэш: $33.47 | В сделках: $6.25 | Открыто: 3/5</div>
+      <div class="metric-val">$39.78 <span class="muted" style="font-size:15px">(Старт: $50)</span></div>
+      <div class="metric-sub">Кэш: $34.87 | В сделках: $4.90 | Открыто: 2/5</div>
     </div>
   </div>
 
@@ -127,9 +127,9 @@
       
         <tr>
             <td><span class="badge cat-crypto">Crypto</span></td>
-            <td>390</td>
-            <td class="neg">$-9.64</td>
-            <td>53% (207/390)</td>
+            <td>391</td>
+            <td class="neg">$-9.48</td>
+            <td>53% (208/391)</td>
             <td>⏳ Накапливает статистику</td>
         </tr>
         
@@ -168,7 +168,7 @@
     </tbody>
   </table>
 
-  <h2>🧪 Открытые позиции в песочнице (3 / 5)</h2>
+  <h2>🧪 Открытые позиции в песочнице (2 / 5)</h2>
   <table>
     <thead>
       <tr>
@@ -190,20 +190,6 @@
             <td><strong>98.5%</strong> <small>(+3.2pp)</small></td>
             <td>$2.66</td>
             <td class="pos">$+0.22</td>
-            <td><small>Take-Profit (+12% or 98.5%+ bid), Stop-Loss (-35%), or Settlement</small></td>
-        </tr>
-        
-        <tr>
-            <td>#438</td>
-            <td><strong>Will Bitcoin reach $64,000 November 23-29?</strong><br><small class="muted">First-passage reach model: BTCUSDT=$59,219.00 -&gt; barrier=$64,000 (+8.07%), vol_h=0.59%, tau=107.2h =&gt; P(touch)=34.4% -&gt; Calibrated(0.75x)=31.4%</small></td>
-            <td><span class="badge cat-crypto">Crypto</span></td>
-            <td><span class="side-yes">YES</span></td>
-            <td>5.39</td>
-            <td>$0.2300</td>
-            <td>$0.2500</td>
-            <td><strong>38.8%</strong> <small>(+8.4pp)</small></td>
-            <td>$1.24</td>
-            <td class="pos">$+0.11</td>
             <td><small>Take-Profit (+12% or 98.5%+ bid), Stop-Loss (-35%), or Settlement</small></td>
         </tr>
         
@@ -578,12 +564,7 @@
   </table>
 
   <h2>📜 Лог сделок и циклов (trades.txt)</h2>
-  <pre class="log-box"> EXIT] #432 | Will Ethereum dip to $1,500 November 23-29? (YES)
-  Shares: 4.63 | Entry VWAP: 0.3000 -&gt; Exit Bid VWAP: 0.1900
-  Proceeds: $0.88 | Realized PnL: $-0.51 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 36.7% from entry (0.3000 -&gt; 0.1900)
-[SHADOW EXIT] #433 | Will the price of Bitcoin be above $58,000 on November 27? (NO)
-  Shares: 2.32 | Entry VWAP: 0.4400 -&gt; Exit Bid VWAP: 0.3000
-  Proceeds: $0.70 | Realized PnL: $-0.32 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 8.0 pp (0.492 -&gt; 0.411)
+  <pre class="log-box"> PROBABILITY SHIFT: Model confidence dropped by 8.0 pp (0.492 -&gt; 0.411)
 [SHADOW EXEC] #435 | Will Bitcoin dip to $54,000 November 23-29? (YES)
   Category: Crypto | Shares: 6.26 @ 0.1790
   Bet: $1.12 USDC | P_est: 31.3% | Edge: +13.4 pp
@@ -717,6 +698,10 @@
 [2026-11-25 23:19:26 UTC] [CYCLE #3077 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.57 | Equity=$24.57 (DD=37.46%)
 [2026-11-25 23:30:57 UTC] [CYCLE #3078 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=3 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.57 | Equity=$24.57 (DD=37.46%)
 [2026-11-25 23:40:01 UTC] [CYCLE #3079 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=1 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.57 | Equity=$24.57 (DD=37.46%)
+[SHADOW EXIT] #438 | Will Bitcoin reach $64,000 November 23-29? (YES)
+  Shares: 5.39 | Entry VWAP: 0.2300 -&gt; Exit Bid VWAP: 0.2600
+  Proceeds: $1.40 | Realized PnL: $+0.16 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +13.0% &gt;= +12% (Bid VWAP: 0.2600 vs Entry: 0.2300)
+[2026-11-25 23:49:04 UTC] [CYCLE #3080 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=1 | Edges(&gt;=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.57 | Equity=$24.57 (DD=37.46%)
 </pre>
 </body>
 </html>
