@@ -8355,3 +8355,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $1.01 USDC | P_est: 37.5% | Edge: +6.5 pp
 [2026-11-25 08:19:16 UTC] [CYCLE #2981 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$23.05 | Equity=$25.03 (DD=36.30%)
 [2026-11-25 08:30:57 UTC] [CYCLE #2982 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.05 | Equity=$25.03 (DD=36.30%)
+[SHADOW EXIT] #420 | Will Bitcoin dip to $57,000 on November 25? (YES)
+  Shares: 3.26 | Entry VWAP: 0.3100 -> Exit Bid VWAP: 0.2400
+  Proceeds: $0.78 | Realized PnL: $-0.23 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 9.0 pp (0.374 -> 0.285)
+[SHADOW EXEC] #421 | Will the price of Bitcoin be above $60,000 on November 25? (NO)
+  Category: Crypto | Shares: 3.47 @ 0.7200
+  Bet: $2.50 USDC | P_est: 76.6% | Edge: +4.6 pp
+[2026-11-25 08:40:12 UTC] [CYCLE #2983 SUMMARY] Scanned=787 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$23.05 | Equity=$25.03 (DD=36.30%)
