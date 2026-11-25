@@ -1,38 +1,39 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-25 15:40:07 UTC`
+**Обновлено:** `2026-11-25 15:49:11 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$25.02 USDC`** (`-24.98$` / `-49.97%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$23.05` / `$1.97 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-24.98 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `36.33%` / `37.84%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$25.01 USDC`** (`-24.99$` / `-49.99%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$22.05` / `$2.96 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-24.99 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `36.36%` / `37.84%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `236` / `64.4%` | Brier Score: `0.2280` |
 
-## 📂 Открытые позиции (2 / 8)
+## 📂 Открытые позиции (3 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #238 | Exact Score: Sabah FK 0 - 3 FC Barcelona? | Sports | **NO** | `0.910` | `0.900` | `98.5%` | `$1.00` | `$-0.01` | official match information fro |
 | #239 | Exact Score: Sabah FK 0 - 4 FC Barcelona? | Sports | **NO** | `0.910` | `0.890` | `98.5%` | `$1.00` | `$-0.02` | official match information fro |
+| #240 | Exact Score: FC Internazionale Milano 3 - 1 VfB Stuttga | Sports | **NO** | `0.920` | `0.910` | `98.5%` | `$1.00` | `$-0.01` | official match information fro |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$44.37 USDC`** |
-| **Свободный кэш / В сделках** | `$35.79` / `$8.58 USDC` |
+| **Виртуальный баланс (Equity)** | **`$44.31 USDC`** |
+| **Свободный кэш / В сделках** | `$35.79` / `$8.52 USDC` |
 | **Открытых позиций** | `5 / 5` |
-| **Текущая просадка** | `32.76%` |
+| **Текущая просадка** | `32.85%` |
 
 ### Открытые позиции в песочнице (5 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #426 | Will Bitcoin dip to $54,000 on November 25? | Crypto | **NO** | `0.908` | `0.939` | `98.4%` | `$2.61` | `$+0.09` | https://www.binance.com/en/tra |
-| #430 | Will the price of Bitcoin be above $56,000 on November  | Crypto | **YES** | `0.797` | `0.858` | `84.9%` | `$2.64` | `$+0.20` | https://www.binance.com/en/tra |
-| #431 | Will Bitcoin dip to $56,000 November 23-29? | Crypto | **YES** | `0.610` | `0.520` | `62.9%` | `$1.01` | `$-0.15` | https://www.binance.com/en/tra |
-| #432 | Will Ethereum dip to $1,500 November 23-29? | Crypto | **YES** | `0.300` | `0.250` | `37.6%` | `$1.39` | `$-0.23` | https://www.binance.com/en/tra |
-| #433 | Will the price of Bitcoin be above $58,000 on November  | Crypto | **NO** | `0.440` | `0.440` | `49.2%` | `$1.02` | `$+0.00` | https://www.binance.com/en/tra |
+| #426 | Will Bitcoin dip to $54,000 on November 25? | Crypto | **NO** | `0.908` | `0.935` | `97.9%` | `$2.61` | `$+0.08` | https://www.binance.com/en/tra |
+| #430 | Will the price of Bitcoin be above $56,000 on November  | Crypto | **YES** | `0.797` | `0.841` | `84.6%` | `$2.64` | `$+0.15` | https://www.binance.com/en/tra |
+| #431 | Will Bitcoin dip to $56,000 November 23-29? | Crypto | **YES** | `0.610` | `0.540` | `64.4%` | `$1.01` | `$-0.12` | https://www.binance.com/en/tra |
+| #432 | Will Ethereum dip to $1,500 November 23-29? | Crypto | **YES** | `0.300` | `0.240` | `38.1%` | `$1.39` | `$-0.28` | https://www.binance.com/en/tra |
+| #433 | Will the price of Bitcoin be above $58,000 on November  | Crypto | **NO** | `0.440` | `0.450` | `49.9%` | `$1.02` | `$+0.02` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
@@ -46,6 +47,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Exact Score: FC Internazionale Milano 3 - 1 VfB St | Sports | NO | `98.5%` | `92.0%` | `+6.5 п.п.` | `1.00%` | EXECUTED BUY #240 ($1.00 @ 0.9200) |
 | Exact Score: Sabah FK 0 - 4 FC Barcelona? | Sports | NO | `98.5%` | `91.0%` | `+7.5 п.п.` | `1.00%` | EXECUTED BUY #239 ($1.00 @ 0.9100) |
 | Exact Score: Sabah FK 0 - 3 FC Barcelona? | Sports | NO | `98.5%` | `91.0%` | `+7.5 п.п.` | `1.00%` | EXECUTED BUY #238 ($1.00 @ 0.9100) |
 | Will Elon Musk post <40 tweets from November 23 to | Geopolitics | NO | `96.2%` | `91.9%` | `+4.2 п.п.` | `0.50%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
@@ -62,5 +64,4 @@
 | Will Alexander Zverev win the 2026 Nitto ATP Final | Sports | NO | `94.0%` | `80.0%` | `+14.0 п.п.` | `13.90%` | REJECTED: Net EV edge +0.1 pp < 1.5 pp (Gross +14.0 pp - Slippage 13.90%) |
 | Will Carlos Alcaraz win the 2026 Nitto ATP Finals? | Sports | YES | `93.8%` | `79.9%` | `+13.9 п.п.` | `8.30%` | REJECTED: CLOB round-trip slippage 8.30% > 2.0% limit |
 | Spread: Steelers (-4.5) | Sports | NO | `97.5%` | `89.0%` | `+8.5 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (sports:steelers:nodate) |
-| Spread: Steelers (-4.5) | Sports | NO | `97.5%` | `93.0%` | `+4.5 п.п.` | `2.00%` | REJECTED: Contract price $0.930 outside sweet spot [$0.70, $0.92] |
 | Spread: Steelers (-4.5) | Sports | NO | `97.5%` | `93.0%` | `+4.5 п.п.` | `2.00%` | REJECTED: Contract price $0.930 outside sweet spot [$0.70, $0.92] |

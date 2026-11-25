@@ -8476,3 +8476,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 2.32 @ 0.4400
   Bet: $1.02 USDC | P_est: 49.2% | Edge: +5.2 pp
 [2026-11-25 15:40:06 UTC] [CYCLE #3028 SUMMARY] Scanned=786 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$23.05 | Equity=$25.02 (DD=36.33%)
+[2026-11-25 15:49:09 UTC] [OPEN TRADE #240] Exact Score: FC Internazionale Milano 3 - 1 VfB Stuttgart?
+  Категория: Sports | Сторона: NO | Источник: official match information from UEFA Champions League (https://www.uefa
+  Оценка бота: 98.5% vs Рынок (Ask VWAP): 92.0% (Перекос/Edge: +6.5 п.п.)
+  Стакан CLOB: BestBid=0.910, BestAsk=0.920, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=81.2%, Четверть(0.25x)=32.5% -> Применён=4.0% банка
+  Размер сделки: $1.00 USDC (1.09 shares @ $0.9200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.552 if P_est <= 70%
+  Причина: Base Rate: Improbable exact score 3-1 (< 1.5% frequency)
+
+[2026-11-25 15:49:09 UTC] [CYCLE #3029 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$22.05 | Equity=$25.01 (DD=36.36%)
