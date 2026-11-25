@@ -1,5 +1,5 @@
 # 🧠 Реестр авто-доработок и полуавтоматических решений (Auto-Governor)
-**Обновлено:** `2026-11-25 02:49:00 UTC`
+**Обновлено:** `2026-11-25 03:01:26 UTC`
 
 ## ⚙️ Текущие активные параметры риск-менеджмента
 - **Категория (`active_category_filter`)**: `Sports,Geopolitics`
@@ -25,7 +25,9 @@
 - **Предлагаемое изменение**: `{"active_category_filter": "ALL"}`
 - **Как применить**: скажи в чате Antigravity *«Одобри предложение #34»* или выполни `python run_sim.py --approve 34`
 
-## 🛠️ История применённых авто-фиксов и одобренных правок (26)
+## 🛠️ История применённых авто-фиксов и одобренных правок (27)
+- **#40 [AUTO_FIX / APPLIED] Авто-добавление метеостанции: Moscow** (`2026-11-25T03:01:07`)
+  - Обнаружен активный погодный рынок Polymarket («Will the highest temperature in Moscow be -2°C on November 25?»), для которого город 'Moscow' отсутствовал в словаре WeatherOracle. Координаты (55.7520, 37.6178), таймзона (Europe/Moscow) и шкала (celsius) автоматически получены через Open-Meteo Geocoding и добавлены в data/custom_stations.json.
 - **#39 [AUTO_FIX / APPLIED] Авто-добавление метеостанции: Milan** (`2026-11-24T14:10:22`)
   - Обнаружен активный погодный рынок Polymarket («Will the highest temperature in Milan be 7°C on November 25?»), для которого город 'Milan' отсутствовал в словаре WeatherOracle. Координаты (45.4643, 9.1895), таймзона (Europe/Rome) и шкала (celsius) автоматически получены через Open-Meteo Geocoding и добавлены в data/custom_stations.json.
 - **#38 [AUTO_FIX / APPLIED] Авто-добавление метеостанции: Helsinki** (`2026-11-23T04:49:07`)

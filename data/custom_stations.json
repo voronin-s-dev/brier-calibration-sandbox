@@ -110,5 +110,12 @@
     "Europe/Rome",
     "celsius",
     "Auto-Meteo Milan (IT)"
+  ],
+  "moscow": [
+    55.75204,
+    37.61781,
+    "Europe/Moscow",
+    "celsius",
+    "Auto-Meteo Moscow (RU)"
   ]
 }
