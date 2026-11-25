@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-25 18:49:13 UTC`
+**Обновлено:** `2026-11-25 19:01:27 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -14,24 +14,24 @@
 ## 📂 Открытые позиции (3 / 8)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #238 | Exact Score: Sabah FK 0 - 3 FC Barcelona? | Sports | **NO** | `0.910` | `0.800` | `98.5%` | `$1.00` | `$-0.12` | official match information fro |
-| #239 | Exact Score: Sabah FK 0 - 4 FC Barcelona? | Sports | **NO** | `0.910` | `0.790` | `98.5%` | `$1.00` | `$-0.13` | official match information fro |
+| #238 | Exact Score: Sabah FK 0 - 3 FC Barcelona? | Sports | **NO** | `0.910` | `0.860` | `98.5%` | `$1.00` | `$-0.05` | official match information fro |
+| #239 | Exact Score: Sabah FK 0 - 4 FC Barcelona? | Sports | **NO** | `0.910` | `0.730` | `98.5%` | `$1.00` | `$-0.20` | official match information fro |
 | #240 | Exact Score: FC Internazionale Milano 3 - 1 VfB Stuttga | Sports | **NO** | `0.920` | `0.910` | `98.5%` | `$1.00` | `$-0.01` | official match information fro |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$42.26 USDC`** |
-| **Свободный кэш / В сделках** | `$37.48` / `$4.79 USDC` |
+| **Виртуальный баланс (Equity)** | **`$42.30 USDC`** |
+| **Свободный кэш / В сделках** | `$37.48` / `$4.83 USDC` |
 | **Открытых позиций** | `3 / 5` |
-| **Текущая просадка** | `35.95%` |
+| **Текущая просадка** | `35.90%` |
 
 ### Открытые позиции в песочнице (3 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | #434 | Will the price of Bitcoin be above $56,000 on November  | Crypto | **YES** | `0.908` | `0.969` | `98.5%` | `$2.66` | `$+0.18` | https://www.binance.com/en/tra |
-| #438 | Will Bitcoin reach $64,000 November 23-29? | Crypto | **YES** | `0.230` | `0.210` | `33.5%` | `$1.24` | `$-0.11` | https://www.binance.com/en/tra |
-| #439 | Will the price of Bitcoin be above $58,000 on November  | Crypto | **NO** | `0.260` | `0.210` | `27.0%` | `$1.01` | `$-0.19` | https://www.binance.com/en/tra |
+| #438 | Will Bitcoin reach $64,000 November 23-29? | Crypto | **YES** | `0.230` | `0.210` | `34.5%` | `$1.24` | `$-0.11` | https://www.binance.com/en/tra |
+| #439 | Will the price of Bitcoin be above $58,000 on November  | Crypto | **NO** | `0.260` | `0.220` | `25.9%` | `$1.01` | `$-0.16` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
