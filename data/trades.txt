@@ -8439,3 +8439,22 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Bet: $1.15 USDC | P_est: 49.1% | Edge: +4.1 pp
 [2026-11-25 14:19:44 UTC] [CYCLE #3020 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=2) | Closed=0 | Cash=$23.05 | Equity=$25.02 (DD=36.33%)
 [2026-11-25 14:31:02 UTC] [CYCLE #3021 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.05 | Equity=$25.02 (DD=36.33%)
+[SHADOW EXIT] #418 | Will Ethereum dip to $1,500 November 23-29? (YES)
+  Shares: 3.89 | Entry VWAP: 0.2800 -> Exit Bid VWAP: 0.3400
+  Proceeds: $1.32 | Realized PnL: $+0.23 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +21.4% >= +12% (Bid VWAP: 0.3400 vs Entry: 0.2800)
+[SHADOW EXIT] #425 | Will Bitcoin dip to $56,000 November 23-29? (YES)
+  Shares: 2.49 | Entry VWAP: 0.5100 -> Exit Bid VWAP: 0.5900
+  Proceeds: $1.47 | Realized PnL: $+0.20 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +15.7% >= +12% (Bid VWAP: 0.5900 vs Entry: 0.5100)
+[SHADOW EXIT] #427 | Will the price of Bitcoin be above $58,000 on November 26? (NO)
+  Shares: 2.47 | Entry VWAP: 0.4420 -> Exit Bid VWAP: 0.5320
+  Proceeds: $1.31 | Realized PnL: $+0.22 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +20.4% >= +12% (Bid VWAP: 0.5320 vs Entry: 0.4420)
+[SHADOW EXEC] #429 | Will the price of Ethereum be above $1,600 on November 25? (YES)
+  Category: Crypto | Shares: 3.30 @ 0.8010
+  Bet: $2.64 USDC | P_est: 89.5% | Edge: +9.4 pp
+[SHADOW EXEC] #430 | Will the price of Bitcoin be above $56,000 on November 26? (YES)
+  Category: Crypto | Shares: 3.31 @ 0.7970
+  Bet: $2.64 USDC | P_est: 84.8% | Edge: +5.1 pp
+[SHADOW EXEC] #431 | Will Bitcoin dip to $56,000 November 23-29? (YES)
+  Category: Crypto | Shares: 1.66 @ 0.6100
+  Bet: $1.01 USDC | P_est: 63.7% | Edge: +2.7 pp
+[2026-11-25 14:40:08 UTC] [CYCLE #3022 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=3) | Closed=0 | Cash=$23.05 | Equity=$25.02 (DD=36.33%)
