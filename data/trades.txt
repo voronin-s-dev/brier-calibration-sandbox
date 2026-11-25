@@ -8345,3 +8345,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Category: Crypto | Shares: 2.10 @ 0.8000
   Bet: $1.68 USDC | P_est: 82.7% | Edge: +2.7 pp
 [2026-11-25 07:49:08 UTC] [CYCLE #2978 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=0 | Cash=$23.05 | Equity=$25.03 (DD=36.30%)
+[SHADOW EXIT] #417 | Will Bitcoin reach $61,000 on November 25? (YES)
+  Shares: 3.89 | Entry VWAP: 0.2800 -> Exit Bid VWAP: 0.2200
+  Proceeds: $0.86 | Realized PnL: $-0.23 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 8.9 pp (0.362 -> 0.273)
+[2026-11-25 08:01:07 UTC] [CYCLE #2979 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=6 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.05 | Equity=$25.03 (DD=36.30%)
