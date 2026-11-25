@@ -8634,3 +8634,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 7.05 | Entry VWAP: 0.2810 -> Exit Bid VWAP: 0.2000
   Proceeds: $1.41 | Realized PnL: $-0.57 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 8.9 pp (0.412 -> 0.323)
 [2026-11-25 23:01:18 UTC] [CYCLE #3075 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.57 | Equity=$24.57 (DD=37.46%)
+[SHADOW EXIT] #447 | Will Ethereum reach $1,700 on November 25? (YES)
+  Shares: 3.74 | Entry VWAP: 0.5800 -> Exit Bid VWAP: 0.5600
+  Proceeds: $2.10 | Realized PnL: $-0.07 USDC | Reason: PROBABILITY SHIFT: Model confidence dropped by 8.1 pp (0.658 -> 0.577)
+[2026-11-25 23:10:22 UTC] [CYCLE #3076 SUMMARY] Scanned=791 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.57 | Equity=$24.57 (DD=37.46%)
