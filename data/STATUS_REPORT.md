@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-25 18:01:26 UTC`
+**Обновлено:** `2026-11-25 18:10:31 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -21,18 +21,18 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$42.86 USDC`** |
-| **Свободный кэш / В сделках** | `$36.58` / `$6.28 USDC` |
+| **Виртуальный баланс (Equity)** | **`$42.99 USDC`** |
+| **Свободный кэш / В сделках** | `$36.58` / `$6.41 USDC` |
 | **Открытых позиций** | `4 / 5` |
-| **Текущая просадка** | `35.04%` |
+| **Текущая просадка** | `34.85%` |
 
 ### Открытые позиции в песочнице (4 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #434 | Will the price of Bitcoin be above $56,000 on November  | Crypto | **YES** | `0.908` | `0.962` | `98.5%` | `$2.66` | `$+0.16` | https://www.binance.com/en/tra |
-| #438 | Will Bitcoin reach $64,000 November 23-29? | Crypto | **YES** | `0.230` | `0.210` | `34.2%` | `$1.24` | `$-0.11` | https://www.binance.com/en/tra |
-| #439 | Will the price of Bitcoin be above $58,000 on November  | Crypto | **NO** | `0.260` | `0.240` | `27.5%` | `$1.01` | `$-0.08` | https://www.binance.com/en/tra |
-| #441 | Will Bitcoin reach $61,000 on November 25? | Crypto | **YES** | `0.227` | `0.227` | `34.2%` | `$1.40` | `$+0.00` | https://www.binance.com/en/tra |
+| #434 | Will the price of Bitcoin be above $56,000 on November  | Crypto | **YES** | `0.908` | `0.969` | `98.5%` | `$2.66` | `$+0.18` | https://www.binance.com/en/tra |
+| #438 | Will Bitcoin reach $64,000 November 23-29? | Crypto | **YES** | `0.230` | `0.230` | `34.4%` | `$1.24` | `$+0.00` | https://www.binance.com/en/tra |
+| #439 | Will the price of Bitcoin be above $58,000 on November  | Crypto | **NO** | `0.260` | `0.215` | `27.2%` | `$1.01` | `$-0.18` | https://www.binance.com/en/tra |
+| #441 | Will Bitcoin reach $61,000 on November 25? | Crypto | **YES** | `0.227` | `0.243` | `33.6%` | `$1.40` | `$+0.10` | https://www.binance.com/en/tra |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
