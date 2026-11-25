@@ -1,5 +1,5 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-25 01:19:23 UTC`
+**Обновлено:** `2026-11-25 01:31:14 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
@@ -17,17 +17,17 @@
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
 | :--- | :--- |
-| **Виртуальный баланс (Equity)** | **`$42.41 USDC`** |
-| **Свободный кэш / В сделках** | `$35.41` / `$7.00 USDC` |
+| **Виртуальный баланс (Equity)** | **`$42.40 USDC`** |
+| **Свободный кэш / В сделках** | `$35.41` / `$6.99 USDC` |
 | **Открытых позиций** | `3 / 5` |
-| **Текущая просадка** | `35.73%` |
+| **Текущая просадка** | `35.75%` |
 
 ### Открытые позиции в песочнице (3 / 5)
 | # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| #396 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.860` | `0.920` | `95.0%` | `$1.80` | `$+0.13` | https://www.binance.com/en/tra |
-| #409 | Will Bitcoin dip to $58,000 on November 24? | Crypto | **NO** | `0.910` | `0.920` | `97.5%` | `$2.51` | `$+0.03` | https://www.binance.com/en/tra |
-| #410 | Will a turkey audibly gobble during the Thanksgiving Tu | Other | **YES** | `0.918` | `0.916` | `94.5%` | `$2.54` | `$-0.01` | https://www.forth.news/lists/w |
+| #396 | Will the price of Bitcoin be above $62,000 on November  | Crypto | **NO** | `0.860` | `0.920` | `95.5%` | `$1.80` | `$+0.13` | https://www.binance.com/en/tra |
+| #409 | Will Bitcoin dip to $58,000 on November 24? | Crypto | **NO** | `0.910` | `0.920` | `96.0%` | `$2.51` | `$+0.03` | https://www.binance.com/en/tra |
+| #410 | Will a turkey audibly gobble during the Thanksgiving Tu | Other | **YES** | `0.918` | `0.912` | `95.5%` | `$2.54` | `$-0.02` | https://www.forth.news/lists/w |
 
 ### Доходность по замороженным категориям (Песочница)
 | Категория | Сделок | PnL | Win Rate |
