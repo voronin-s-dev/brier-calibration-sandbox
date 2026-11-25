@@ -8559,3 +8559,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-25 18:40:03 UTC] [CYCLE #3046 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.05 | Equity=$24.84 (DD=36.78%)
 [2026-11-25 18:49:09 UTC] [CYCLE #3047 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.05 | Equity=$24.79 (DD=36.92%)
 [2026-11-25 19:01:24 UTC] [CYCLE #3048 SUMMARY] Scanned=797 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$22.05 | Equity=$24.79 (DD=36.92%)
+[EXIT] #238 | Exact Score: Sabah FK 0 - 3 FC Barcelona? (NO)
+  Shares: 1.10 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9900
+  Proceeds: $1.09 | Realized PnL: $+0.09 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.0%) secured early with +8.8% gain
+[EXIT] #239 | Exact Score: Sabah FK 0 - 4 FC Barcelona? (NO)
+  Shares: 1.10 | Entry VWAP: 0.9100 -> Exit Bid VWAP: 0.9900
+  Proceeds: $1.09 | Realized PnL: $+0.09 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.0%) secured early with +8.8% gain
+[2026-11-25 19:10:29 UTC] [CYCLE #3049 SUMMARY] Scanned=782 | PassedFilter=50 | Evaluated=5 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=2 | Cash=$24.23 | Equity=$25.21 (DD=35.83%)
