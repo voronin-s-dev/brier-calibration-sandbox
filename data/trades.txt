@@ -8582,3 +8582,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-25 20:19:27 UTC] [CYCLE #3057 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.23 | Equity=$25.24 (DD=35.77%)
 [2026-11-25 20:28:33 UTC] [CYCLE #3058 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.23 | Equity=$25.24 (DD=35.77%)
 [2026-11-25 20:37:39 UTC] [CYCLE #3059 SUMMARY] Scanned=791 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.23 | Equity=$25.25 (DD=35.74%)
+[EXIT] #240 | Exact Score: FC Internazionale Milano 3 - 1 VfB Stuttgart? (NO)
+  Shares: 1.09 | Entry VWAP: 0.9200 -> Exit Bid VWAP: 0.3200
+  Proceeds: $0.35 | Realized PnL: $-0.65 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped to $0.320 (-65.2% from entry $0.920, P_est=98.5%)
+[SHADOW EXIT] #442 | Will Bitcoin reach $61,000 on November 25? (YES)
+  Shares: 10.24 | Entry VWAP: 0.2470 -> Exit Bid VWAP: 0.1580
+  Proceeds: $1.62 | Realized PnL: $-0.91 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 36.0% from entry (0.2470 -> 0.1580)
+[SHADOW EXEC] #443 | Will Ethereum reach $1,700 on November 25? (YES)
+  Category: Crypto | Shares: 3.56 @ 0.5900
+  Bet: $2.10 USDC | P_est: 66.1% | Edge: +7.2 pp
+[2026-11-25 20:37:52 UTC] [CYCLE #3060 SUMMARY] Scanned=786 | PassedFilter=50 | Evaluated=1 | Edges(>=8pp)=1 | Opened=0 (Shadow=1) | Closed=1 | Cash=$24.57 | Equity=$24.57 (DD=37.46%)
