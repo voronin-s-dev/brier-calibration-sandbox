@@ -8226,3 +8226,10 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-25 00:39:59 UTC] [CYCLE #2932 SUMMARY] Scanned=790 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.05 | Equity=$25.05 (DD=36.24%)
 [2026-11-25 00:49:03 UTC] [CYCLE #2933 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=1 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.05 | Equity=$25.05 (DD=36.24%)
 [2026-11-25 01:01:13 UTC] [CYCLE #2934 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=0) | Closed=0 | Cash=$25.05 | Equity=$25.05 (DD=36.24%)
+[SHADOW EXIT] #408 | Will Ethereum dip to $1,650 on November 24? (YES)
+  Shares: 7.68 | Entry VWAP: 0.3100 -> Exit Bid VWAP: 0.4100
+  Proceeds: $3.15 | Realized PnL: $+0.77 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +32.3% >= +12% (Bid VWAP: 0.4100 vs Entry: 0.3100)
+[SHADOW EXEC] #410 | Will a turkey audibly gobble during the Thanksgiving Turkey Pardon on November 24? (YES)
+  Category: Other | Shares: 2.77 @ 0.9180
+  Bet: $2.54 USDC | P_est: 94.5% | Edge: +2.6 pp
+[2026-11-25 01:10:17 UTC] [CYCLE #2935 SUMMARY] Scanned=790 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=2 | Opened=0 (Shadow=1) | Closed=0 | Cash=$25.05 | Equity=$25.05 (DD=36.24%)
