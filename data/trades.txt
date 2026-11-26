@@ -8645,3 +8645,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 5.39 | Entry VWAP: 0.2300 -> Exit Bid VWAP: 0.2600
   Proceeds: $1.40 | Realized PnL: $+0.16 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +13.0% >= +12% (Bid VWAP: 0.2600 vs Entry: 0.2300)
 [2026-11-25 23:49:04 UTC] [CYCLE #3080 SUMMARY] Scanned=796 | PassedFilter=50 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.57 | Equity=$24.57 (DD=37.46%)
+[SHADOW EXIT] #434 | Will the price of Bitcoin be above $56,000 on November 26? (YES)
+  Shares: 2.93 | Entry VWAP: 0.9080 -> Exit Bid VWAP: 0.9860
+  Proceeds: $2.89 | Realized PnL: $+0.23 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (98.6%) secured early with +8.6% gain
+[2026-11-26 00:01:10 UTC] [CYCLE #3081 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.57 | Equity=$24.57 (DD=37.46%)
