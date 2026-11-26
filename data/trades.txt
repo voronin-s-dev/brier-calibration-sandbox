@@ -8786,3 +8786,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-26 19:30:55 UTC] [CYCLE #3204 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.57 | Equity=$24.48 (DD=37.71%)
 [2026-11-26 19:39:58 UTC] [CYCLE #3205 SUMMARY] Scanned=739 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.57 | Equity=$24.51 (DD=37.62%)
 [2026-11-26 19:49:00 UTC] [CYCLE #3206 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.57 | Equity=$24.53 (DD=37.57%)
+[EXIT] #241 | Will MH Hapoel Be'er Sheva win on 2026-11-26? (NO)
+  Shares: 1.09 | Entry VWAP: 0.9200 -> Exit Bid VWAP: 0.9910
+  Proceeds: $1.08 | Realized PnL: $+0.08 USDC | Reason: TAKE PROFIT (98.5%+ Bid Reached): Live CLOB Bid VWAP (99.1%) secured early with +7.7% gain
+[2026-11-26 20:01:10 UTC] [CYCLE #3207 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$24.65 | Equity=$24.65 (DD=37.26%)
