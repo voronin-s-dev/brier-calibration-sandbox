@@ -8714,3 +8714,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-26 09:31:00 UTC] [CYCLE #3141 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.57 | Equity=$24.57 (DD=37.46%)
 [2026-11-26 09:40:02 UTC] [CYCLE #3142 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=3 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.57 | Equity=$24.57 (DD=37.46%)
 [2026-11-26 09:49:05 UTC] [CYCLE #3143 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.57 | Equity=$24.57 (DD=37.46%)
+[2026-11-26 10:01:13 UTC] [OPEN TRADE #241] Will MH Hapoel Be'er Sheva win on 2026-11-26?
+  Категория: Sports | Сторона: NO | Источник: https://www.uefa.com/
+  Оценка бота: 95.0% vs Рынок (Ask VWAP): 92.0% (Перекос/Edge: +3.0 п.п.)
+  Стакан CLOB: BestBid=0.910, BestAsk=0.920, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=37.5%, Четверть(0.25x)=15.0% -> Применён=4.1% банка
+  Размер сделки: $1.00 USDC (1.09 shares @ $0.9200)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.552 if P_est <= 70%
+  Причина: High market consensus NO (91.5%) within 7.7h of expiry
+
+[2026-11-26 10:01:13 UTC] [CYCLE #3144 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=4 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.57 | Equity=$24.56 (DD=37.48%)
