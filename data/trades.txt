@@ -8654,3 +8654,4 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
   Shares: 5.48 | Entry VWAP: 0.4400 -> Exit Bid VWAP: 0.2800
   Proceeds: $1.53 | Realized PnL: $-0.88 USDC | Reason: STOP-LOSS TRIGGERED: Price dropped by 36.4% from entry (0.4400 -> 0.2800)
 [2026-11-26 00:19:16 UTC] [CYCLE #3083 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=1 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.57 | Equity=$24.57 (DD=37.46%)
+[2026-11-26 00:31:06 UTC] [CYCLE #3084 SUMMARY] Scanned=798 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.57 | Equity=$24.57 (DD=37.46%)
