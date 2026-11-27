@@ -8935,3 +8935,13 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-27 18:10:16 UTC] [CYCLE #3350 SUMMARY] Scanned=794 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.65 | Equity=$24.65 (DD=37.26%)
 [2026-11-27 18:19:19 UTC] [CYCLE #3351 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.65 | Equity=$24.65 (DD=37.26%)
 [2026-11-27 18:31:01 UTC] [CYCLE #3352 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=9 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$24.65 | Equity=$24.65 (DD=37.26%)
+[2026-11-27 18:40:05 UTC] [OPEN TRADE #242] Warriors vs. Trail Blazers
+  Категория: Sports | Сторона: NO | Источник: ESPN/DraftKings
+  Оценка бота: 77.2% vs Рынок (Ask VWAP): 74.0% (Перекос/Edge: +3.2 п.п.)
+  Стакан CLOB: BestBid=0.730, BestAsk=0.740, Проскальзывание входа/выхода=1.00% (<= 3.0%)
+  Келли: Полный=12.4%, Четверть(0.25x)=5.0% -> Применён=5.0% банка
+  Размер сделки: $1.22 USDC (1.65 shares @ $0.7400)
+  Условие выхода: Hold to binary resolution ($1.00 payout), or early Take Profit (+12% net gain or Bid VWAP >= 0.985), or Stop-Loss <= 0.444 if P_est <= 70%
+  Причина: ESPN/DraftKings de-vigged Warriors 22.8% vs Trail Blazers 77.2%
+
+[2026-11-27 18:40:05 UTC] [CYCLE #3353 SUMMARY] Scanned=771 | PassedFilter=50 | Evaluated=10 | Edges(>=8pp)=1 | Opened=1 (Shadow=0) | Closed=0 | Cash=$23.43 | Equity=$24.63 (DD=37.30%)
