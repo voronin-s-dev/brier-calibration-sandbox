@@ -102,8 +102,10 @@ def extract_event_key(question: str, category: str) -> str:
         "rainbow six", "r6 siege", "blast rivals", "esl pro", "hltv",
     )
     if category == "Sports" or any(k in q_low for k in esports_keywords):
-        cleaned = re.sub(r"^(spread:\s*|will\s+)", "", q_low)
-        cleaned = re.sub(r":\s*o/u.*$|\s+win\s+on.*$|\(\-[0-9\.]+\)|\s+end\s+in\s+a\s+draw\??", "", cleaned).strip()
+        cleaned = re.sub(r"^(spread:\s*|exact score:\s*|will\s+)", "", q_low)
+        cleaned = re.sub(r":\s*o/u.*$|\s+win\s+on.*$|\(\-[0-9\.]+\)|\s+end\s+in\s+a\s+draw\??", "", cleaned)
+        cleaned = re.sub(r"\b\d+\s*-\s*\d+\??", "", cleaned)
+        cleaned = re.sub(r"\s+", " ", cleaned).strip()
         return f"sports:{cleaned[:35]}:{date_or_range}"
 
     # General multi-strike bracket normalization (collapse numeric ranges like 280-299, 10-15%, 50+ to <bracket>)
@@ -444,13 +446,14 @@ class GrokCharterPaperTrader:
                     f"(Bid VWAP: {vwap_sell:.4f} vs Entry: {entry_vwap:.4f})"
                 )
 
+            # Exit Rule B: HARD STOP-LOSS (Payoff-Aware Capital Preservation)
+            # High-priced contracts (>= 0.85) have small upside (+8-15%), so cap stop-loss at -25%
+            # instead of letting them bleed -40%..-65%.
+            effective_stop_pct = 0.25 if entry_vwap >= 0.85 else self.STOP_LOSS_PCT
             if is_take_profit:
                 exit_triggered = True
-            # Exit Rule B: HARD STOP-LOSS (Strict Capital Preservation)
-            # 1. Price collapsed by STOP_LOSS_PCT (40%) from entry -> unconditionally cut loss on CLOB
-            # 2. Or price dropped by >= 25% AND probability estimate deteriorated <= 75%
             elif vwap_sell > 0 and (
-                vwap_sell <= entry_vwap * (1.0 - self.STOP_LOSS_PCT)
+                vwap_sell <= entry_vwap * (1.0 - effective_stop_pct)
                 or (vwap_sell <= entry_vwap * 0.75 and latest_p <= 0.75)
             ):
                 exit_triggered = True
@@ -861,15 +864,16 @@ class GrokCharterPaperTrader:
             min_liq=min_liq,
         )
 
-        # Auto-Governor Tier 3 Hotfix: discover and geocode any new Polymarket weather cities on the fly
-        try:
-            from auto_governor import AutoGovernor
-            gov = AutoGovernor(self.db)
-            added_cities = gov.scan_and_fix_unmapped_weather_cities(candidates_to_evaluate + shadow_candidates)
-            if added_cities:
-                self.weather_oracle._load_custom_stations()
-        except Exception:
-            pass
+        # Auto-Governor Tier 3 Hotfix: only scan/geocode weather cities if Weather is active
+        if "ALL" in allowed_cats or "WEATHER" in allowed_cats:
+            try:
+                from auto_governor import AutoGovernor
+                gov = AutoGovernor(self.db)
+                added_cities = gov.scan_and_fix_unmapped_weather_cities(candidates_to_evaluate + shadow_candidates)
+                if added_cities:
+                    self.weather_oracle._load_custom_stations()
+            except Exception:
+                pass
 
         # Record cycle placeholder to get cycle_id
         cycle_id = self.db.record_scan_cycle(
@@ -891,6 +895,9 @@ class GrokCharterPaperTrader:
                 continue
             eval_res, preloaded_yes_book = self._evaluate_market_probability(mkt)
             if eval_res is None:
+                continue
+            # Never trade live capital on generic MatureMarketConsensusOracle (+3.5% markup without external odds)
+            if eval_res.oracle_used == "MatureMarketConsensusOracle":
                 continue
 
             evaluated_count += 1

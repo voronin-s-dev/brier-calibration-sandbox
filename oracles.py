@@ -714,12 +714,13 @@ class HighConvictionFactOracle:
 
         p_yes_mkt, p_no_mkt = market.gamma_prices[0], market.gamma_prices[1]
 
-        # 1. Sports: Improbable exact scores
+        # 1. Sports: Improbable exact scores (strictly 5+ total goals or 4+ by one side;
+        #    3-1 / 3-0 occur too frequently in mismatch matches like Inter/Barcelona)
         if "exact score" in q_lower:
             score_m = re.search(r"(\d+)\s*-\s*(\d+)", q_lower)
             if score_m:
                 g1, g2 = int(score_m.group(1)), int(score_m.group(2))
-                if (g1 + g2 >= 4) or (g1 >= 3 or g2 >= 3):
+                if (g1 + g2 >= 5) or (g1 >= 4 or g2 >= 4):
                     p_no = 0.985
                     return EvaluationResult(
                         market_id=market.id,
@@ -736,9 +737,18 @@ class HighConvictionFactOracle:
         # 2. Sports: Heavy underdog / draw
         if market.category == "Sports":
             if "spread:" in q_lower and ("-3.5" in q_lower or "-4.5" in q_lower):
-                # Severe handicap is only improbable in low-scoring sports (soccer/hockey where p_no >= 0.85).
-                # In high-scoring sports (NBA/NFL), a -3.5 or -4.5 point spread is an even-money market (p ~ 0.50).
-                if p_no_mkt >= 0.85:
+                # Severe handicap (-3.5 / -4.5) is only improbable in low-scoring sports (soccer/hockey).
+                # In NFL/NBA/NCAAF/NCAAB, -3.5/-4.5 points is a single score (field goal / 2-pointer), never 97.5% improbable.
+                high_scoring_cues = (
+                    "nfl", "nba", "mlb", "ncaa", "steelers", "commanders", "chiefs", "bills",
+                    "dolphins", "eagles", "cowboys", "ravens", "49ers", "packers", "lions",
+                    "rockets", "lakers", "celtics", "warriors", "spurs", "pelicans", "cardinals",
+                    "jets", "giants", "patriots", "bears", "broncos", "raiders", "seahawks",
+                    "rams", "texans", "colts", "jaguars", "titans", "bengals", "browns",
+                    "falcons", "panthers", "saints", "buccaneers", "vikings", "chargers",
+                )
+                is_high_scoring = any(re.search(rf"\b{re.escape(k)}\b", q_lower) for k in high_scoring_cues)
+                if not is_high_scoring and p_no_mkt >= 0.85:
                     p_no = 0.975
                     return EvaluationResult(
                         market_id=market.id,

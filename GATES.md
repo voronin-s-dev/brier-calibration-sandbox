@@ -15,3 +15,7 @@
 ## Gate 4: Knowledge Graph Synchronization
 - Command: `graphify update .`
 - Expected: Exit code 0, graphify knowledge graph updated without error.
+
+## Gate 5: Holdout Scenario Isolation (Judge Gate)
+- Command: `pytest .specs/holdout_scenarios/`
+- Expected: Exit code 0, all holdout scenarios pass without weakening assertions.

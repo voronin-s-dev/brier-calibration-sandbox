@@ -1705,6 +1705,111 @@ class TestRiskManagementV2(unittest.TestCase):
         )
         self.assertTrue(is_esports_market(dummy_market))
 
+    def test_nfl_spread_rejected_by_heavy_handicap_oracle(self) -> None:
+        """Verify that NFL/NBA -3.5/-4.5 spreads are NOT treated as soccer goal blowouts."""
+        from oracles import HighConvictionFactOracle
+        from polymarket_api import MarketInfo
+        oracle = HighConvictionFactOracle()
+        m_nfl = MarketInfo(
+            id="nfl_spread_1",
+            question="Spread: Steelers (-3.5)",
+            slug="nfl-spread-1",
+            description="",
+            resolution_source="NFL",
+            has_official_source=True,
+            end_date_iso="2026-11-28T18:00:00Z",
+            hours_to_close=12.0,
+            liquidity_usd=20000.0,
+            volume_24h_usd=30000.0,
+            outcomes=["Yes", "No"],
+            gamma_prices=[0.14, 0.86],
+            clob_token_ids=["1", "2"],
+            order_min_size=1.0,
+            tick_size=0.01,
+            category="Sports",
+        )
+        self.assertIsNone(oracle.evaluate(m_nfl))
+
+    def test_exact_score_oracle_requires_5_goals_or_4_by_one_side(self) -> None:
+        """Verify that 3-1 exact score is NOT blindly shorted at 98.5%, while 4-1 is."""
+        from oracles import HighConvictionFactOracle
+        from polymarket_api import MarketInfo
+        oracle = HighConvictionFactOracle()
+        def _mk(q):
+            return MarketInfo(
+                id="es_1", question=q, slug="es-1", description="", resolution_source="UEFA",
+                has_official_source=True, end_date_iso="2026-11-28T18:00:00Z", hours_to_close=12.0,
+                liquidity_usd=20000.0, volume_24h_usd=30000.0, outcomes=["Yes", "No"],
+                gamma_prices=[0.12, 0.88], clob_token_ids=["1", "2"], order_min_size=1.0, tick_size=0.01,
+                category="Sports",
+            )
+        self.assertIsNone(oracle.evaluate(_mk("Exact Score: FC Internazionale Milano 3 - 1 VfB Stuttgart?")))
+        res_4_1 = oracle.evaluate(_mk("Exact Score: FC Internazionale Milano 4 - 1 VfB Stuttgart?"))
+        self.assertIsNotNone(res_4_1)
+        self.assertEqual(res_4_1.oracle_used, "SportsExactScoreBaseRateOracle")
+
+    def test_exact_score_event_key_deduplication(self) -> None:
+        """Verify that multiple exact scorelines on the same match share one event key."""
+        k1 = extract_event_key("Exact Score: Sabah FK 0 - 3 FC Barcelona?", "Sports")
+        k2 = extract_event_key("Exact Score: Sabah FK 0 - 4 FC Barcelona?", "Sports")
+        self.assertEqual(k1, k2)
+
+    def test_payoff_aware_stop_loss_at_25pct_for_high_price_entries(self) -> None:
+        """Verify that entries >= $0.85 trigger stop-loss at -25% instead of waiting for -40%."""
+        import gc
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            db = SimDatabase(db_path=Path(tmp_dir) / "test_sim.db", initial_capital=50.0)
+            trader = GrokCharterPaperTrader(db=db, trades_txt_path=Path(tmp_dir) / "trades.txt")
+            db.open_position(
+                market_id="high_p_sl", question="Test Match", category="Sports", side="NO",
+                token_id="tok_sl", shares=1.10, entry_vwap=0.91, cost_usdc=1.00, current_bid=0.91,
+                p_est=0.96, entry_edge=0.05, kelly_full_pct=0.50, kelly_half_pct=0.20,
+                applied_size_pct=0.03, roundtrip_slippage_pct=0.01, official_source="Official",
+                exit_condition="Test", rationale="Test", end_date_iso="2026-11-30T12:00:00Z",
+            )
+            import trader as trader_mod
+            orig_sim = trader_mod.simulate_clob_sell_shares
+            orig_fetch = trader_mod.fetch_market_by_id
+            try:
+                # 0.67 is -26.4% from 0.91 (would NOT hit 40% stop, MUST hit 25% payoff-aware stop)
+                trader_mod.simulate_clob_sell_shares = lambda tok, sh: (0.67, 0.737, 0.67)
+                trader_mod.fetch_market_by_id = lambda mid: None
+                closed = trader.monitor_and_manage_open_positions()
+                self.assertEqual(closed, 1)
+                self.assertIn("STOP-LOSS TRIGGERED", db.get_all_positions()[0]["exit_reason"])
+            finally:
+                trader_mod.simulate_clob_sell_shares = orig_sim
+                trader_mod.fetch_market_by_id = orig_fetch
+                del db, trader
+                gc.collect()
+
+    def test_run_cycle_skips_mature_consensus_in_live_trading(self) -> None:
+        """Verify that MatureMarketConsensusOracle (+3.5% markup) is blocked from live execution."""
+        from unittest.mock import patch
+        from polymarket_api import MarketInfo, OrderBookSimulation
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            db = SimDatabase(db_path=Path(tmp_dir) / "test_live.db", initial_capital=50.0)
+            trader = GrokCharterPaperTrader(db=db, trades_txt_path=Path(tmp_dir) / "trades.txt")
+            m_consensus = MarketInfo(
+                id="m_cons_1", question="Pelicans vs. Spurs", slug="m-cons-1", description="",
+                resolution_source="https://nba.com", has_official_source=True,
+                end_date_iso="2026-11-28T18:00:00Z", hours_to_close=12.0,
+                liquidity_usd=20000.0, volume_24h_usd=30000.0, outcomes=["Yes", "No"],
+                gamma_prices=[0.09, 0.91], clob_token_ids=["t_y", "t_n"],
+                order_min_size=1.0, tick_size=0.01, category="Sports", closed=False,
+            )
+            ob_sim = OrderBookSimulation(
+                token_id="t_n", side_label="NO", best_bid=0.90, best_ask=0.91, midpoint=0.905,
+                spread_pct=0.011, bet_usdc=1.00, shares_filled=1.0989, vwap_buy_price=0.91,
+                vwap_sell_price=0.90, entry_slippage_pct=0.005, exit_slippage_pct=0.005,
+                roundtrip_slippage_pct=0.01, sufficient_depth=True, passes_slippage_limit=True,
+            )
+            with patch("trader.fetch_active_markets", return_value=[m_consensus]), \
+                 patch("trader.simulate_clob_buy_and_exit_check", return_value=ob_sim):
+                res = trader.run_cycle(max_markets_to_scan=10)
+            self.assertEqual(res["trades_opened"], 0)
+            self.assertEqual(len(db.get_open_positions()), 0)
+
 
 if __name__ == "__main__":
     unittest.main()
