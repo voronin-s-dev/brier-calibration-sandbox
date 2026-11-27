@@ -1891,6 +1891,69 @@ class TestRiskManagementV2(unittest.TestCase):
         self.assertIsNone(oracle.evaluate(m_knicks))
         self.assertIsNone(oracle.evaluate(m_cfb))
 
+    def test_sports_odds_oracle_devigged_nba_and_soccer(self) -> None:
+        """Verify SportsOddsOracle parses and de-vigs 2-way NBA and 3-way Soccer odds and skips in-play."""
+        from unittest.mock import patch
+        from polymarket_api import MarketInfo
+        from oracles import SportsOddsOracle
+
+        oracle = SportsOddsOracle()
+        fake_espn = [
+            {
+                "league": "nba", "provider": "ESPN/DraftKings", "date_iso": "2026-11-28T00:00Z",
+                "home_aliases": ["New York Knicks", "Knicks", "NY"],
+                "away_aliases": ["Miami Heat", "Heat", "MIA"],
+                "p_home": 0.61, "p_away": 0.39, "p_draw": 0.0, "vig": 0.042,
+            },
+            {
+                "league": "epl", "provider": "ESPN/DraftKings", "date_iso": "2026-11-27T20:00Z",
+                "home_aliases": ["Nottingham Forest"],
+                "away_aliases": ["Chelsea"],
+                "p_home": 0.40, "p_away": 0.32, "p_draw": 0.28, "vig": 0.055,
+            },
+        ]
+        m_nba = MarketInfo(
+            id="nba_1", question="Heat vs. Knicks", slug="heat-knicks", description="",
+            resolution_source="NBA", has_official_source=True, end_date_iso="2026-11-28T00:00:00Z",
+            hours_to_close=10.0, liquidity_usd=50000.0, volume_24h_usd=80000.0,
+            outcomes=["Heat", "Knicks"], gamma_prices=[0.35, 0.65], clob_token_ids=["1", "2"],
+            order_min_size=1.0, tick_size=0.01, category="Sports",
+        )
+        m_epl_win = MarketInfo(
+            id="epl_1", question="Will Chelsea FC win on 2026-11-27?", slug="chelsea-win", description="",
+            resolution_source="EPL", has_official_source=True, end_date_iso="2026-11-27T20:00:00Z",
+            hours_to_close=6.0, liquidity_usd=50000.0, volume_24h_usd=80000.0,
+            outcomes=["Yes", "No"], gamma_prices=[0.28, 0.72], clob_token_ids=["1", "2"],
+            order_min_size=1.0, tick_size=0.01, category="Sports",
+        )
+        m_epl_draw = MarketInfo(
+            id="epl_2", question="Will Chelsea FC vs. Nottingham Forest end in a draw?", slug="chelsea-draw", description="",
+            resolution_source="EPL", has_official_source=True, end_date_iso="2026-11-27T20:00:00Z",
+            hours_to_close=6.0, liquidity_usd=50000.0, volume_24h_usd=80000.0,
+            outcomes=["Yes", "No"], gamma_prices=[0.25, 0.75], clob_token_ids=["1", "2"],
+            order_min_size=1.0, tick_size=0.01, category="Sports",
+        )
+
+        with patch.object(oracle, "_fetch_odds_api_games", return_value=[]), \
+             patch.object(oracle, "_fetch_espn_games", return_value=fake_espn):
+            res_nba = oracle.evaluate(m_nba)
+            self.assertIsNotNone(res_nba)
+            self.assertEqual(res_nba.oracle_used, "SportsBookmakerOddsOracle")
+            self.assertAlmostEqual(res_nba.p_yes, 0.39, places=4)
+            self.assertAlmostEqual(res_nba.p_no, 0.61, places=4)
+
+            res_win = oracle.evaluate(m_epl_win)
+            self.assertIsNotNone(res_win)
+            self.assertAlmostEqual(res_win.p_yes, 0.32, places=4)
+
+            res_draw = oracle.evaluate(m_epl_draw)
+            self.assertIsNotNone(res_draw)
+            self.assertAlmostEqual(res_draw.p_yes, 0.28, places=4)
+
+        # Verify in-play events (state != 'pre') are rejected by _parse_espn_event
+        inplay_ev = {"date": "2026-11-28T00:00Z", "competitions": [{"status": {"type": {"state": "in"}}, "odds": [{"moneyline": {"home": {"close": {"odds": "-150"}}, "away": {"close": {"odds": "+130"}}}}]}]}
+        self.assertIsNone(SportsOddsOracle._parse_espn_event("nba", inplay_ev))
+
 
 if __name__ == "__main__":
     unittest.main()

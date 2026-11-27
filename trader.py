@@ -16,6 +16,7 @@ from oracles import (
     EvaluationResult,
     HighConvictionFactOracle,
     NewsAndOrderbookOracle,
+    SportsOddsOracle,
     WeatherOracle,
     is_esports_market,
 )
@@ -156,6 +157,7 @@ class GrokCharterPaperTrader:
         self.weather_oracle = WeatherOracle()
         self.news_oracle = NewsAndOrderbookOracle()
         self.fact_oracle = HighConvictionFactOracle()
+        self.sports_odds_oracle = SportsOddsOracle()
         self._allow_news_fallback = False
 
         if not self.trades_txt_path.exists():
@@ -278,7 +280,13 @@ class GrokCharterPaperTrader:
         """
         use_news = self._allow_news_fallback if allow_news_fallback is None else allow_news_fallback
 
-        # 1. Try High-Conviction Fact Oracle first (Sports exact scores, ceasefires, macro consensus)
+        # 0. Try live external Sports Bookmaker Odds Oracle (de-vigged Pinnacle/Betfair/ESPN DraftKings)
+        if market.category == "Sports" and not is_esports_market(market):
+            res = self.sports_odds_oracle.evaluate(market)
+            if res is not None:
+                return res, preloaded_book
+
+        # 1. Try High-Conviction Fact Oracle (Sports exact scores, ceasefires, macro consensus)
         res = self.fact_oracle.evaluate(market)
         if res is not None:
             return res, preloaded_book
@@ -965,8 +973,9 @@ class GrokCharterPaperTrader:
             # Real actionable edge is against the actual CLOB Ask VWAP price (not mid or stale Gamma price!)
             real_edge = p_est - ob_sim.vwap_buy_price
             net_edge = real_edge - ob_sim.roundtrip_slippage_pct
+            min_net_req = 0.020 if eval_res.oracle_used == "SportsBookmakerOddsOracle" else self.MIN_NET_EDGE_PP
 
-            if real_edge >= self.MIN_EDGE_PP and net_edge >= self.MIN_NET_EDGE_PP:
+            if real_edge >= self.MIN_EDGE_PP and net_edge >= min_net_req:
                 edges_found += 1
 
             event_key = extract_event_key(mkt.question, mkt.category)
@@ -979,9 +988,9 @@ class GrokCharterPaperTrader:
             decision = ""
             if real_edge < self.MIN_EDGE_PP:
                 decision = f"REJECTED: Edge {real_edge*100:+.1f} pp < {self.MIN_EDGE_PP*100:.1f} pp threshold (P_est={p_est*100:.1f}% vs AskVWAP={ob_sim.vwap_buy_price*100:.1f}%)"
-            elif net_edge < self.MIN_NET_EDGE_PP:
+            elif net_edge < min_net_req:
                 decision = (
-                    f"REJECTED: Net EV edge {net_edge*100:+.1f} pp < {self.MIN_NET_EDGE_PP*100:.1f} pp "
+                    f"REJECTED: Net EV edge {net_edge*100:+.1f} pp < {min_net_req*100:.1f} pp "
                     f"(Gross {real_edge*100:+.1f} pp - Slippage {ob_sim.roundtrip_slippage_pct*100:.2f}%)"
                 )
             elif p_est < self.MIN_ESTIMATED_PROB:

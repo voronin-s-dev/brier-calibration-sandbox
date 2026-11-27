@@ -8,7 +8,10 @@ Quantitative & Real-Time Data Oracles for Polymarket Probability Estimation:
 """
 
 import math
+import os
 import re
+import time
+import unicodedata
 import urllib.parse
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field
@@ -893,4 +896,326 @@ class HighConvictionFactOracle:
                     rationale=rationale_text,
                 )
 
+        return None
+
+
+class SportsOddsOracle:
+    """
+    External Bookmaker Odds Oracle for Sports (2-way Moneylines, 3-way Soccer Match Winners, Draws).
+    1. If THE_ODDS_API_KEY env var is set, queries sharp Pinnacle/Betfair lines (cached 30 min).
+    2. Otherwise uses the free public ESPN Scoreboard API (DraftKings lines, cached 10 min).
+    Removes bookmaker vig (additive normalization) and only evaluates pre-game events (`state == 'pre'`).
+    """
+
+    ESPN_ENDPOINTS: Tuple[Tuple[str, str], ...] = (
+        ("nba", "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard"),
+        ("nfl", "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"),
+        ("nhl", "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard"),
+        ("ncaab", "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard"),
+        ("ncaaf", "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard"),
+        ("epl", "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard"),
+        ("laliga", "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard"),
+        ("bundesliga", "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard"),
+        ("seriea", "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard"),
+        ("ligue1", "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard"),
+        ("eredivisie", "https://site.api.espn.com/apis/site/v2/sports/soccer/ned.1/scoreboard"),
+        ("ucl", "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard"),
+    )
+    ODDS_API_SPORTS: Tuple[str, ...] = (
+        "basketball_nba", "americanfootball_nfl", "icehockey_nhl",
+        "soccer_epl", "soccer_spain_la_liga", "soccer_germany_bundesliga",
+        "soccer_italy_serie_a", "soccer_france_ligue_one", "soccer_uefa_champs_league",
+    )
+
+    def __init__(self, cache_ttl_sec: int = 600) -> None:
+        self.cache_ttl_sec = cache_ttl_sec
+        self._espn_cache: Tuple[float, List[Dict[str, Any]]] = (0.0, [])
+        self._odds_api_cache: Tuple[float, List[Dict[str, Any]]] = (0.0, [])
+
+    @staticmethod
+    def american_to_prob(odds_val: Any) -> Optional[float]:
+        """Converts American odds (e.g. -174, '+204') to raw implied probability."""
+        try:
+            s = str(odds_val).strip().upper()
+            if s in ("", "NONE", "NULL", "EVEN"):
+                return 0.5 if s == "EVEN" else None
+            o = float(s.replace("+", ""))
+            if o == 0:
+                return None
+            return (-o) / (-o + 100.0) if o < 0 else 100.0 / (o + 100.0)
+        except Exception:
+            return None
+
+    @staticmethod
+    def _norm_team(name: str) -> str:
+        """Normalizes team names for cross-platform matching (Polymarket <-> ESPN/OddsAPI)."""
+        s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode("ascii").lower()
+        s = re.sub(r"[^a-z0-9\s]", " ", s)
+        s = re.sub(r"\b(fc|cf|sc|ac|afc|rc|cd|ud|ssc|sk|fk|sv|tsv|vfb|as|ss|sl|ca|club)\b", " ", s)
+        return re.sub(r"\s+", " ", s).strip()
+
+    @classmethod
+    def _team_matches(cls, query_team: str, candidate_names: List[str]) -> bool:
+        """True if `query_team` clearly identifies any of `candidate_names`."""
+        q_norm = cls._norm_team(query_team)
+        if not q_norm or len(q_norm) < 2:
+            return False
+        q_tokens = set(q_norm.split())
+        for cand in candidate_names:
+            c_norm = cls._norm_team(cand)
+            if not c_norm:
+                continue
+            if q_norm == c_norm:
+                return True
+            c_tokens = set(c_norm.split())
+            if q_tokens.issubset(c_tokens) or c_tokens.issubset(q_tokens):
+                # Avoid matching single generic 2-char abbreviations unless exact
+                if len(q_tokens) == 1 and len(q_norm) <= 3 and q_norm != c_norm:
+                    continue
+                return True
+        return False
+
+    @staticmethod
+    def _parse_espn_event(league: str, ev: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+        comps = ev.get("competitions") or []
+        if not comps:
+            return None
+        comp = comps[0]
+        if comp.get("status", {}).get("type", {}).get("state") != "pre":
+            return None
+        odds_list = comp.get("odds") or []
+        if not odds_list:
+            return None
+        o = odds_list[0]
+
+        ml = o.get("moneyline") or {}
+        h_str = (
+            (ml.get("home") or {}).get("close", {}).get("odds")
+            or (ml.get("home") or {}).get("current", {}).get("odds")
+            or (o.get("homeTeamOdds") or {}).get("moneyLine")
+        )
+        a_str = (
+            (ml.get("away") or {}).get("close", {}).get("odds")
+            or (ml.get("away") or {}).get("current", {}).get("odds")
+            or (o.get("awayTeamOdds") or {}).get("moneyLine")
+        )
+        d_str = (
+            (ml.get("draw") or {}).get("close", {}).get("odds")
+            or (o.get("drawOdds") or {}).get("moneyLine")
+        )
+
+        ph_raw = SportsOddsOracle.american_to_prob(h_str)
+        pa_raw = SportsOddsOracle.american_to_prob(a_str)
+        if ph_raw is None or pa_raw is None:
+            return None
+        pd_raw = SportsOddsOracle.american_to_prob(d_str) if d_str is not None else 0.0
+        if pd_raw is None:
+            pd_raw = 0.0
+
+        total_raw = ph_raw + pa_raw + pd_raw
+        if total_raw <= 0:
+            return None
+
+        home_aliases: List[str] = []
+        away_aliases: List[str] = []
+        for side_key, target_list in (("homeTeamOdds", home_aliases), ("awayTeamOdds", away_aliases)):
+            t = (o.get(side_key) or {}).get("team") or {}
+            for k in ("displayName", "shortDisplayName", "name", "abbreviation"):
+                if t.get(k):
+                    target_list.append(str(t[k]))
+        for c_team in comp.get("competitors") or []:
+            t = c_team.get("team") or {}
+            target_list = home_aliases if c_team.get("homeAway") == "home" else away_aliases
+            for k in ("displayName", "shortDisplayName", "name", "abbreviation"):
+                if t.get(k):
+                    target_list.append(str(t[k]))
+
+        if not home_aliases or not away_aliases:
+            return None
+
+        provider_name = (o.get("provider") or {}).get("displayName") or "DraftKings"
+        return {
+            "league": league,
+            "provider": f"ESPN/{provider_name}",
+            "date_iso": str(ev.get("date") or ""),
+            "home_aliases": home_aliases,
+            "away_aliases": away_aliases,
+            "p_home": ph_raw / total_raw,
+            "p_away": pa_raw / total_raw,
+            "p_draw": pd_raw / total_raw,
+            "vig": total_raw - 1.0,
+        }
+
+    def _fetch_espn_games(self) -> List[Dict[str, Any]]:
+        now = time.time()
+        if self._espn_cache[1] and (now - self._espn_cache[0]) < self.cache_ttl_sec:
+            return self._espn_cache[1]
+        games: List[Dict[str, Any]] = []
+        for league, url in self.ESPN_ENDPOINTS:
+            try:
+                data = fetch_standard_url(url, timeout=6.0, as_json=True)
+                for ev in (data or {}).get("events", []):
+                    parsed = self._parse_espn_event(league, ev)
+                    if parsed is not None:
+                        games.append(parsed)
+            except Exception:
+                continue
+        self._espn_cache = (now, games)
+        return games
+
+    def _fetch_odds_api_games(self) -> List[Dict[str, Any]]:
+        api_key = os.getenv("THE_ODDS_API_KEY", "").strip()
+        if not api_key:
+            return []
+        now = time.time()
+        # Cache 30 min to conserve 500 req/month free quota
+        if self._odds_api_cache[1] and (now - self._odds_api_cache[0]) < 1800:
+            return self._odds_api_cache[1]
+        games: List[Dict[str, Any]] = []
+        for sport_key in self.ODDS_API_SPORTS:
+            url = (
+                f"https://api.the-odds-api.com/v4/sports/{sport_key}/odds/"
+                f"?apiKey={urllib.parse.quote(api_key)}&regions=eu,us&markets=h2h"
+                f"&bookmakers=pinnacle,betfair_ex_eu,draftkings&oddsFormat=decimal"
+            )
+            try:
+                events = fetch_standard_url(url, timeout=7.0, as_json=True)
+                if not isinstance(events, list):
+                    continue
+                for ev in events:
+                    home = str(ev.get("home_team") or "")
+                    away = str(ev.get("away_team") or "")
+                    bms = ev.get("bookmakers") or []
+                    if not (home and away and bms):
+                        continue
+                    # Prefer Pinnacle -> Betfair -> first available
+                    bm = next((b for b in bms if b.get("key") == "pinnacle"), None) or next(
+                        (b for b in bms if "betfair" in str(b.get("key"))), bms[0]
+                    )
+                    mkt_h2h = next((m for m in bm.get("markets", []) if m.get("key") == "h2h"), None)
+                    if not mkt_h2h:
+                        continue
+                    probs: Dict[str, float] = {}
+                    for out in mkt_h2h.get("outcomes", []):
+                        price = float(out.get("price") or 0.0)
+                        if price > 1.0:
+                            probs[str(out.get("name") or "")] = 1.0 / price
+                    tot = sum(probs.values())
+                    if tot <= 0 or home not in probs or away not in probs:
+                        continue
+                    p_draw = probs.get("Draw", 0.0) / tot
+                    games.append({
+                        "league": sport_key,
+                        "provider": f"TheOddsAPI/{bm.get('title', 'Sharp')}",
+                        "date_iso": str(ev.get("commence_time") or ""),
+                        "home_aliases": [home],
+                        "away_aliases": [away],
+                        "p_home": probs[home] / tot,
+                        "p_away": probs[away] / tot,
+                        "p_draw": p_draw,
+                        "vig": tot - 1.0,
+                    })
+            except Exception:
+                continue
+        self._odds_api_cache = (now, games)
+        return games
+
+    @staticmethod
+    def _date_compatible(market: MarketInfo, event_date_iso: str) -> bool:
+        if not market.end_date_iso or not event_date_iso:
+            return True
+        try:
+            m_dt = datetime.fromisoformat(market.end_date_iso.replace("Z", "+00:00"))
+            e_dt = datetime.fromisoformat(event_date_iso.replace("Z", "+00:00"))
+            return abs((m_dt - e_dt).total_seconds()) <= 36 * 3600
+        except Exception:
+            return True
+
+    def evaluate(self, market: MarketInfo) -> Optional[EvaluationResult]:
+        """Evaluates Polymarket Sports moneyline, match winner, and draw markets vs live bookmaker odds."""
+        if market.category != "Sports" or is_esports_market(market):
+            return None
+        q = market.question.strip()
+        q_low = q.lower()
+        if any(skip in q_low for skip in ("spread:", "exact score", "o/u ", "over/under", "handicap", "map ")):
+            return None
+
+        games = self._fetch_odds_api_games() or self._fetch_espn_games()
+        if not games:
+            return None
+
+        # Pattern 1: "Will <Team A> vs. <Team B> end in a draw?"
+        draw_m = re.match(r"^will\s+(.+?)\s+vs\.?\s+(.+?)\s+end\s+in\s+a\s+draw\??$", q, flags=re.IGNORECASE)
+        if draw_m:
+            t1, t2 = draw_m.group(1).strip(), draw_m.group(2).strip()
+            for g in games:
+                if g["p_draw"] <= 0 or not self._date_compatible(market, g["date_iso"]):
+                    continue
+                if (self._team_matches(t1, g["home_aliases"]) and self._team_matches(t2, g["away_aliases"])) or (
+                    self._team_matches(t1, g["away_aliases"]) and self._team_matches(t2, g["home_aliases"])
+                ):
+                    p_yes = round(min(max(g["p_draw"], 0.02), 0.98), 4)
+                    return EvaluationResult(
+                        market_id=market.id, question=market.question, category="Sports",
+                        oracle_used="SportsBookmakerOddsOracle", official_source=g["provider"],
+                        p_yes=p_yes, p_no=round(1.0 - p_yes, 4), confidence=0.88,
+                        rationale=f"{g['provider']} de-vigged draw prob {p_yes*100:.1f}% (vig {g['vig']*100:.1f}%)",
+                        supporting_data={"provider": g["provider"], "league": g["league"]},
+                    )
+            return None
+
+        # Pattern 2: "Will <Team> win on YYYY-MM-DD?"
+        win_m = re.match(r"^will\s+(.+?)\s+win(?:\s+on\s+\d{4}-\d{2}-\d{2})?\??$", q, flags=re.IGNORECASE)
+        if win_m:
+            team_q = win_m.group(1).strip()
+            for g in games:
+                if not self._date_compatible(market, g["date_iso"]):
+                    continue
+                if self._team_matches(team_q, g["home_aliases"]):
+                    p_yes = round(min(max(g["p_home"], 0.02), 0.98), 4)
+                    return EvaluationResult(
+                        market_id=market.id, question=market.question, category="Sports",
+                        oracle_used="SportsBookmakerOddsOracle", official_source=g["provider"],
+                        p_yes=p_yes, p_no=round(1.0 - p_yes, 4), confidence=0.88,
+                        rationale=f"{g['provider']} de-vigged {team_q} win {p_yes*100:.1f}% (vig {g['vig']*100:.1f}%)",
+                        supporting_data={"provider": g["provider"], "league": g["league"]},
+                    )
+                if self._team_matches(team_q, g["away_aliases"]):
+                    p_yes = round(min(max(g["p_away"], 0.02), 0.98), 4)
+                    return EvaluationResult(
+                        market_id=market.id, question=market.question, category="Sports",
+                        oracle_used="SportsBookmakerOddsOracle", official_source=g["provider"],
+                        p_yes=p_yes, p_no=round(1.0 - p_yes, 4), confidence=0.88,
+                        rationale=f"{g['provider']} de-vigged {team_q} win {p_yes*100:.1f}% (vig {g['vig']*100:.1f}%)",
+                        supporting_data={"provider": g["provider"], "league": g["league"]},
+                    )
+            return None
+
+        # Pattern 3: "<Team A> vs. <Team B>" (2-way moneyline; YES = Team A, NO = Team B)
+        vs_m = re.match(r"^(.+?)\s+vs\.?\s+(.+?)$", q, flags=re.IGNORECASE)
+        if vs_m and ":" not in q:
+            t1, t2 = vs_m.group(1).strip(), vs_m.group(2).strip()
+            for g in games:
+                if g["p_draw"] > 0.05 or not self._date_compatible(market, g["date_iso"]):
+                    continue
+                if self._team_matches(t1, g["away_aliases"]) and self._team_matches(t2, g["home_aliases"]):
+                    p_yes = round(min(max(g["p_away"], 0.02), 0.98), 4)
+                    p_no = round(1.0 - p_yes, 4)
+                    return EvaluationResult(
+                        market_id=market.id, question=market.question, category="Sports",
+                        oracle_used="SportsBookmakerOddsOracle", official_source=g["provider"],
+                        p_yes=p_yes, p_no=p_no, confidence=0.89,
+                        rationale=f"{g['provider']} de-vigged {t1} {p_yes*100:.1f}% vs {t2} {p_no*100:.1f}%",
+                        supporting_data={"provider": g["provider"], "league": g["league"]},
+                    )
+                if self._team_matches(t1, g["home_aliases"]) and self._team_matches(t2, g["away_aliases"]):
+                    p_yes = round(min(max(g["p_home"], 0.02), 0.98), 4)
+                    p_no = round(1.0 - p_yes, 4)
+                    return EvaluationResult(
+                        market_id=market.id, question=market.question, category="Sports",
+                        oracle_used="SportsBookmakerOddsOracle", official_source=g["provider"],
+                        p_yes=p_yes, p_no=p_no, confidence=0.89,
+                        rationale=f"{g['provider']} de-vigged {t1} {p_yes*100:.1f}% vs {t2} {p_no*100:.1f}%",
+                        supporting_data={"provider": g["provider"], "league": g["league"]},
+                    )
         return None
