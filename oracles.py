@@ -268,13 +268,25 @@ class CryptoOracle:
                     f"({(target - s0)/s0*100:+.2f}%), vol_h={sigma_h*100:.2f}%, tau={tau:.1f}h => P(touch)={p_yes*100:.1f}%"
                 )
 
-        # Case 3: "above $X" or "over $X"
-        elif "above" in q_lower or "over" in q_lower or "higher than" in q_lower:
+        # Case 3: "above $X", "over $X", "higher than $X", "greater than $X", "more than $X"
+        elif any(k in q_lower for k in ("above", "over", "higher than", "greater than", "more than")):
             d2 = (math.log(s0 / target) - 0.5 * (sigma_total ** 2)) / sigma_total
             p_yes = min(max(norm_cdf(d2), 0.005), 0.995)
             mode_desc = (
                 f"Terminal GBM model: {symbol}=${s0:,.2f} vs strike=${target:,.0f} "
                 f"({(s0 - target)/target*100:+.2f}%), vol_h={sigma_h*100:.2f}%, tau={tau:.1f}h => P(S_T > K)={p_yes*100:.1f}%"
+            )
+
+        # Case 3b: "below $X", "less than $X", "lower than $X", "under $X"
+        elif (
+            any(k in q_lower for k in ("below", "less than", "lower than"))
+            or re.search(r"\bunder\b", q_lower)
+        ):
+            d2 = (math.log(s0 / target) - 0.5 * (sigma_total ** 2)) / sigma_total
+            p_yes = min(max(1.0 - norm_cdf(d2), 0.005), 0.995)
+            mode_desc = (
+                f"Terminal GBM model: {symbol}=${s0:,.2f} vs strike=${target:,.0f} "
+                f"({(s0 - target)/target*100:+.2f}%), vol_h={sigma_h*100:.2f}%, tau={tau:.1f}h => P(S_T < K)={p_yes*100:.1f}%"
             )
 
         # Case 4: "between $X and $Y"
@@ -356,6 +368,7 @@ class WeatherOracle:
 
     def __init__(self) -> None:
         self._cache: Dict[str, Dict[str, float]] = {}
+        self._min_cache: Dict[str, Dict[str, float]] = {}
         self._load_custom_stations()
 
     def _load_custom_stations(self) -> None:
@@ -374,28 +387,33 @@ class WeatherOracle:
             except Exception:
                 pass
 
-    def _get_daily_max_forecasts(self, city_key: str) -> Optional[Dict[str, float]]:
-        if city_key in self._cache:
-            return self._cache[city_key]
+    def _get_daily_max_forecasts(self, city_key: str, want_min: bool = False) -> Optional[Dict[str, float]]:
+        target_cache = self._min_cache if want_min else self._cache
+        if city_key in target_cache:
+            return target_cache[city_key]
         lat, lon, tz, unit, _ = self.STATIONS[city_key]
         url = (
             f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}"
-            f"&daily=temperature_2m_max&temperature_unit={unit}"
+            f"&daily=temperature_2m_max,temperature_2m_min&temperature_unit={unit}"
             f"&timezone={urllib.parse.quote(tz)}&forecast_days=7&past_days=1"
         )
         try:
             data = fetch_standard_url(url, timeout=8.0)
-            times = data.get("daily", {}).get("time", [])
-            temps = data.get("daily", {}).get("temperature_2m_max", [])
-            mapping = {str(t): float(v) for t, v in zip(times, temps) if v is not None}
-            self._cache[city_key] = mapping
-            return mapping
+            daily = data.get("daily", {})
+            times = daily.get("time", [])
+            temps_max = daily.get("temperature_2m_max", [])
+            temps_min = daily.get("temperature_2m_min", [])
+            self._cache[city_key] = {str(t): float(v) for t, v in zip(times, temps_max) if v is not None}
+            if temps_min:
+                self._min_cache[city_key] = {str(t): float(v) for t, v in zip(times, temps_min) if v is not None}
+            return self._min_cache.get(city_key) if want_min else self._cache[city_key]
         except Exception:
             return None
 
     def evaluate(self, market: MarketInfo) -> Optional[EvaluationResult]:
         q_lower = market.question.lower()
-        if "highest temperature" not in q_lower:
+        is_lowest = "lowest temperature" in q_lower
+        if "highest temperature" not in q_lower and not is_lowest:
             return None
 
         matched_city = None
@@ -427,7 +445,7 @@ class WeatherOracle:
                 year_num += 1
         target_date_str = f"{year_num:04d}-{month_num:02d}-{day_num:02d}"
 
-        forecasts = self._get_daily_max_forecasts(matched_city)
+        forecasts = self._get_daily_max_forecasts(matched_city, want_min=is_lowest)
         if not forecasts or target_date_str not in forecasts:
             return None
 
@@ -483,8 +501,9 @@ class WeatherOracle:
         p_raw = min(max(p_raw, 0.01), 0.99)
         mkt_prior = market.gamma_prices[0] if market.gamma_prices else 0.5
         p_yes = calibrate_probability(p_raw, mkt_prior, oracle_weight=0.80)
+        temp_label = "Min" if is_lowest else "Max"
         rationale = (
-            f"Station {station_name} ({target_date_str}): Model Max={forecast_max:.1f}{unit_sym} "
+            f"Station {station_name} ({target_date_str}): Model {temp_label}={forecast_max:.1f}{unit_sym} "
             f"(±{sd:.1f}{unit_sym}), Target={bracket_str} => RawP={p_raw*100:.1f}%, Calibrated(0.80x)={p_yes*100:.1f}%"
         )
 
@@ -739,15 +758,27 @@ class HighConvictionFactOracle:
             if "spread:" in q_lower and ("-3.5" in q_lower or "-4.5" in q_lower):
                 # Severe handicap (-3.5 / -4.5) is only improbable in low-scoring sports (soccer/hockey).
                 # In NFL/NBA/NCAAF/NCAAB, -3.5/-4.5 points is a single score (field goal / 2-pointer), never 97.5% improbable.
-                high_scoring_cues = (
-                    "nfl", "nba", "mlb", "ncaa", "steelers", "commanders", "chiefs", "bills",
-                    "dolphins", "eagles", "cowboys", "ravens", "49ers", "packers", "lions",
-                    "rockets", "lakers", "celtics", "warriors", "spurs", "pelicans", "cardinals",
-                    "jets", "giants", "patriots", "bears", "broncos", "raiders", "seahawks",
-                    "rams", "texans", "colts", "jaguars", "titans", "bengals", "browns",
-                    "falcons", "panthers", "saints", "buccaneers", "vikings", "chargers",
+                league_cues = (
+                    "nfl", "nba", "wnba", "mlb", "ncaa", "ncaaf", "ncaab",
+                    "cfb", "cbb", "college football", "college basketball",
                 )
-                is_high_scoring = any(re.search(rf"\b{re.escape(k)}\b", q_lower) for k in high_scoring_cues)
+                high_scoring_team_cues = (
+                    "steelers", "commanders", "chiefs", "bills", "dolphins", "eagles", "cowboys",
+                    "ravens", "49ers", "packers", "lions", "cardinals", "jets", "giants",
+                    "patriots", "bears", "broncos", "raiders", "seahawks", "rams", "texans",
+                    "colts", "jaguars", "titans", "bengals", "browns", "falcons", "panthers",
+                    "saints", "buccaneers", "vikings", "chargers",
+                    "hawks", "celtics", "nets", "hornets", "bulls", "cavaliers", "mavericks",
+                    "nuggets", "pistons", "warriors", "rockets", "pacers", "clippers", "lakers",
+                    "grizzlies", "heat", "bucks", "timberwolves", "pelicans", "knicks", "thunder",
+                    "magic", "76ers", "sixers", "suns", "trail blazers", "blazers", "kings",
+                    "spurs", "raptors", "jazz", "wizards",
+                )
+                spread_context = f"{q_lower} {(market.slug or '').lower()} {(market.description or '').lower()}"
+                is_high_scoring = (
+                    any(re.search(rf"\b{re.escape(k)}\b", spread_context) for k in league_cues)
+                    or any(re.search(rf"\b{re.escape(k)}\b", q_lower) for k in high_scoring_team_cues)
+                )
                 if not is_high_scoring and p_no_mkt >= 0.85:
                     p_no = 0.975
                     return EvaluationResult(

@@ -1810,6 +1810,87 @@ class TestRiskManagementV2(unittest.TestCase):
             self.assertEqual(res["trades_opened"], 0)
             self.assertEqual(len(db.get_open_positions()), 0)
 
+    def test_crypto_oracle_parses_greater_than_and_less_than(self) -> None:
+        """Verify CryptoOracle handles 'greater than' and 'less than'/'below' terminal phrasings."""
+        from unittest.mock import patch
+        from polymarket_api import MarketInfo
+        from oracles import CryptoOracle
+
+        oracle = CryptoOracle()
+        fake_stats = {
+            "source": "Kraken", "current_price": 67000.0, "hourly_vol": 0.006,
+            "annual_vol": 0.56, "today_high": 67500.0, "today_low": 66000.0,
+            "month_high": 70000.0, "month_low": 60000.0, "high_24h": 67500.0, "low_24h": 66000.0,
+        }
+        m_gt = MarketInfo(
+            id="m_btc_gt", question="Will the price of Bitcoin be greater than $68,000 on November 27?",
+            slug="btc-gt-68k", description="", resolution_source="Binance", has_official_source=True,
+            end_date_iso="2026-11-27T23:59:59Z", hours_to_close=6.0, liquidity_usd=35000.0,
+            volume_24h_usd=50000.0, outcomes=["Yes", "No"], gamma_prices=[0.30, 0.70],
+            clob_token_ids=["y", "n"], order_min_size=1.0, tick_size=0.01, category="Crypto",
+        )
+        m_lt = MarketInfo(
+            id="m_btc_lt", question="Will the price of Bitcoin be less than $68,000 on November 27?",
+            slug="btc-lt-68k", description="", resolution_source="Binance", has_official_source=True,
+            end_date_iso="2026-11-27T23:59:59Z", hours_to_close=6.0, liquidity_usd=35000.0,
+            volume_24h_usd=50000.0, outcomes=["Yes", "No"], gamma_prices=[0.70, 0.30],
+            clob_token_ids=["y", "n"], order_min_size=1.0, tick_size=0.01, category="Crypto",
+        )
+        with patch.object(oracle, "_get_symbol_stats", return_value=fake_stats):
+            res_gt = oracle.evaluate(m_gt)
+            res_lt = oracle.evaluate(m_lt)
+        self.assertIsNotNone(res_gt)
+        self.assertIsNotNone(res_lt)
+        self.assertLess(res_gt.p_yes, 0.5)
+        self.assertGreater(res_lt.p_yes, 0.5)
+        self.assertAlmostEqual(res_gt.p_yes + res_lt.p_yes, 1.0, places=2)
+
+    def test_weather_oracle_parses_lowest_temperature(self) -> None:
+        """Verify WeatherOracle supports 'lowest temperature' using daily min forecast cache."""
+        from oracles import WeatherOracle
+        from polymarket_api import MarketInfo
+
+        oracle = WeatherOracle()
+        oracle._min_cache["seoul"] = {"2026-11-27": 3.0}
+        mkt = MarketInfo(
+            id="m_low_temp", question="Will the lowest temperature in Seoul (Incheon) be 9°C on November 27?",
+            slug="seoul-low-temp", description="", resolution_source="METAR RKSI",
+            has_official_source=True, end_date_iso="2026-11-27T23:59:59Z", hours_to_close=8.0,
+            liquidity_usd=10000.0, volume_24h_usd=20000.0, outcomes=["Yes", "No"],
+            gamma_prices=[0.05, 0.95], clob_token_ids=["y", "n"],
+            order_min_size=1.0, tick_size=0.01, category="Weather",
+        )
+        res = oracle.evaluate(mkt)
+        self.assertIsNotNone(res)
+        self.assertIn("Model Min=3.0°C", res.rationale)
+        self.assertGreater(res.p_no, 0.90)
+
+    def test_nba_and_cfb_spreads_blocked_via_team_and_slug_context(self) -> None:
+        """Verify NBA/CFB -3.5/-4.5 spreads (e.g. Knicks, Iowa) are guarded even at >= 0.85 NO."""
+        from oracles import HighConvictionFactOracle
+        from polymarket_api import MarketInfo
+
+        oracle = HighConvictionFactOracle()
+        m_knicks = MarketInfo(
+            id="nba_knicks", question="Spread: Knicks (-3.5)",
+            slug="nba-mia-nyk-2026-11-27-spread-home-3pt5", description="",
+            resolution_source="NBA", has_official_source=True, end_date_iso="2026-11-28T00:00:00Z",
+            hours_to_close=6.0, liquidity_usd=20000.0, volume_24h_usd=30000.0,
+            outcomes=["Yes", "No"], gamma_prices=[0.14, 0.86], clob_token_ids=["1", "2"],
+            order_min_size=1.0, tick_size=0.01, category="Sports",
+        )
+        m_cfb = MarketInfo(
+            id="cfb_iowa", question="Spread: Iowa (-4.5)",
+            slug="cfb-nebr-iowa-2026-11-27-spread-home-4pt5",
+            description="In the upcoming college football game between Nebraska and Iowa",
+            resolution_source="NCAA", has_official_source=True, end_date_iso="2026-11-28T00:00:00Z",
+            hours_to_close=6.0, liquidity_usd=20000.0, volume_24h_usd=30000.0,
+            outcomes=["Yes", "No"], gamma_prices=[0.12, 0.88], clob_token_ids=["1", "2"],
+            order_min_size=1.0, tick_size=0.01, category="Sports",
+        )
+        self.assertIsNone(oracle.evaluate(m_knicks))
+        self.assertIsNone(oracle.evaluate(m_cfb))
+
 
 if __name__ == "__main__":
     unittest.main()

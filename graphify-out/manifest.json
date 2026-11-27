@@ -30,9 +30,9 @@
     "semantic_hash": ""
   },
   "oracles.py": {
-    "mtime": 1795741143.3143013,
-    "seen": 1795741216.1513717,
-    "ast_hash": "5f9f7d5d6ae5ab2fabe20854f72acd8e",
+    "mtime": 1795777773.2533073,
+    "seen": 1795777799.0948825,
+    "ast_hash": "b0054b49a6064b79cc1a8c177c1a027c",
     "semantic_hash": ""
   },
   "polymarket_api.py": {
@@ -54,9 +54,9 @@
     "semantic_hash": ""
   },
   "tests_risk.py": {
-    "mtime": 1795741194.3358867,
-    "seen": 1795741216.1513944,
-    "ast_hash": "34aa34eae58f3537e05129a6138a03ad",
+    "mtime": 1795777774.501686,
+    "seen": 1795777799.0949175,
+    "ast_hash": "4c6e3df1d4c4e6025852bc36e8241e52",
     "semantic_hash": ""
   },
   "trader.py": {
@@ -84,32 +84,32 @@
     "semantic_hash": ""
   },
   "data/GOVERNANCE_REPORT.md": {
-    "mtime": 1795740899.5704167,
-    "seen": 1795741216.1514518,
-    "ast_hash": "4edbb4b2fc83b26a2a597de106a087de",
+    "mtime": 1795777594.322768,
+    "seen": 1795777799.094972,
+    "ast_hash": "ced4205749526de5c7c2def66a322846",
     "semantic_hash": ""
   },
   "data/STATUS_REPORT.md": {
-    "mtime": 1795740899.5709465,
-    "seen": 1795741216.1514564,
-    "ast_hash": "212321307fa372b5648b929c27c78963",
+    "mtime": 1795777593.4358006,
+    "seen": 1795777799.0949755,
+    "ast_hash": "b9d47ec8063d29715a4bb48520460dde",
     "semantic_hash": ""
   },
   "data/dashboard.html": {
-    "mtime": 1795740899.5730693,
-    "seen": 1795741216.151461,
-    "ast_hash": "3eb3c6c1293bb1a6d6c194676c4f407b",
+    "mtime": 1795777593.4376996,
+    "seen": 1795777799.0949786,
+    "ast_hash": "6eaffaec215820ab61a08c58a8733c2c",
     "semantic_hash": ""
   },
   "data/trades.txt": {
-    "mtime": 1795740899.5964274,
-    "seen": 1795741216.1514642,
-    "ast_hash": "3faaab2313b377aaa588df65cc72eeb3",
+    "mtime": 1795777586.8607147,
+    "seen": 1795777799.094982,
+    "ast_hash": "d187de654865bbfc438faa115aabc47e",
     "semantic_hash": ""
   },
   "data/last_digest.json": {
-    "mtime": 1795741214.2583132,
-    "seen": 1795741216.15136,
+    "mtime": 1795777779.8087475,
+    "seen": 1795777799.0948632,
     "ast_hash": "12042c79a48ac6bbb9f9d93d2aa60960",
     "semantic_hash": ""
   },
@@ -168,8 +168,8 @@
     "semantic_hash": ""
   },
   ".agents/rules/agentic-market-sim.md": {
-    "mtime": 1795740743.3184967,
-    "seen": 1795740773.2912412,
+    "mtime": 1795777587.0646358,
+    "seen": 1795777799.0949535,
     "ast_hash": "cd1352c1776ebffbf6209a4eab173519",
     "semantic_hash": ""
   },
@@ -192,9 +192,9 @@
     "semantic_hash": ""
   },
   "data/notified_alerts_cache.json": {
-    "mtime": 1795740899.5749319,
-    "seen": 1795741216.1513627,
-    "ast_hash": "f7452c4009fc80b9cfbbda7272fcd484",
+    "mtime": 1795777586.838382,
+    "seen": 1795777799.0948675,
+    "ast_hash": "e088d00802d3d8eb1b47022b13f7f811",
     "semantic_hash": ""
   },
   ".agents/aar/runs/2026-11-10-duplicate-telegram-approval-alerts-aar.md": {
