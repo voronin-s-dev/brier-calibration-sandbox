@@ -7,6 +7,7 @@ Quantitative & Real-Time Data Oracles for Polymarket Probability Estimation:
 3. NewsSentimentOracle: Live Google News RSS + CLOB Orderbook Microstructure Imbalance analyzer.
 """
 
+import json
 import math
 import os
 import re
@@ -16,6 +17,7 @@ import urllib.parse
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 from http_tls import fetch_standard_url
@@ -927,10 +929,13 @@ class SportsOddsOracle:
         "soccer_italy_serie_a", "soccer_france_ligue_one", "soccer_uefa_champs_league",
     )
 
-    def __init__(self, cache_ttl_sec: int = 600) -> None:
+    def __init__(self, cache_ttl_sec: int = 600, odds_api_cache_path: Optional[Path] = None) -> None:
         self.cache_ttl_sec = cache_ttl_sec
         self._espn_cache: Tuple[float, List[Dict[str, Any]]] = (0.0, [])
         self._odds_api_cache: Tuple[float, List[Dict[str, Any]]] = (0.0, [])
+        self._odds_api_cache_path = odds_api_cache_path or (
+            Path(__file__).resolve().parent / "data" / "odds_api_cache.json"
+        )
 
     @staticmethod
     def american_to_prob(odds_val: Any) -> Optional[float]:
@@ -1068,21 +1073,38 @@ class SportsOddsOracle:
         if not api_key:
             return []
         now = time.time()
-        # Cache 30 min to conserve 500 req/month free quota
-        if self._odds_api_cache[1] and (now - self._odds_api_cache[0]) < 1800:
+        ttl_sec = 7200  # 2h disk+memory TTL -> ~12 calls/day (~360/mo, within 500/mo free tier)
+        if self._odds_api_cache[1] and (now - self._odds_api_cache[0]) < ttl_sec:
             return self._odds_api_cache[1]
-        games: List[Dict[str, Any]] = []
-        for sport_key in self.ODDS_API_SPORTS:
-            url = (
-                f"https://api.the-odds-api.com/v4/sports/{sport_key}/odds/"
-                f"?apiKey={urllib.parse.quote(api_key)}&regions=eu,us&markets=h2h"
-                f"&bookmakers=pinnacle,betfair_ex_eu,draftkings&oddsFormat=decimal"
-            )
+        if self._odds_api_cache_path.exists():
             try:
-                events = fetch_standard_url(url, timeout=7.0, as_json=True)
-                if not isinstance(events, list):
-                    continue
+                cached = json.loads(self._odds_api_cache_path.read_text(encoding="utf-8"))
+                if (now - float(cached.get("fetched_at", 0.0))) < ttl_sec and isinstance(cached.get("games"), list):
+                    self._odds_api_cache = (float(cached["fetched_at"]), cached["games"])
+                    return cached["games"]
+            except Exception:
+                pass
+
+        # Single /upcoming/odds call across all sports (1 credit total instead of 1 per league)
+        url = (
+            "https://api.the-odds-api.com/v4/sports/upcoming/odds/"
+            f"?apiKey={urllib.parse.quote(api_key)}&regions=eu&markets=h2h"
+            "&bookmakers=pinnacle,betfair_ex_eu&oddsFormat=decimal"
+        )
+        games: List[Dict[str, Any]] = []
+        now_dt = datetime.now(timezone.utc)
+        try:
+            events = fetch_standard_url(url, timeout=8.0, as_json=True)
+            if isinstance(events, list):
                 for ev in events:
+                    commence_str = str(ev.get("commence_time") or "")
+                    if commence_str:
+                        try:
+                            commence_dt = datetime.fromisoformat(commence_str.replace("Z", "+00:00"))
+                            if commence_dt <= now_dt:
+                                continue  # Strictly pre-game only
+                        except Exception:
+                            pass
                     home = str(ev.get("home_team") or "")
                     away = str(ev.get("away_team") or "")
                     bms = ev.get("bookmakers") or []
@@ -1105,9 +1127,9 @@ class SportsOddsOracle:
                         continue
                     p_draw = probs.get("Draw", 0.0) / tot
                     games.append({
-                        "league": sport_key,
+                        "league": str(ev.get("sport_key") or "upcoming"),
                         "provider": f"TheOddsAPI/{bm.get('title', 'Sharp')}",
-                        "date_iso": str(ev.get("commence_time") or ""),
+                        "date_iso": commence_str,
                         "home_aliases": [home],
                         "away_aliases": [away],
                         "p_home": probs[home] / tot,
@@ -1115,9 +1137,19 @@ class SportsOddsOracle:
                         "p_draw": p_draw,
                         "vig": tot - 1.0,
                     })
+        except Exception:
+            pass
+
+        if games:
+            self._odds_api_cache = (now, games)
+            try:
+                self._odds_api_cache_path.parent.mkdir(parents=True, exist_ok=True)
+                self._odds_api_cache_path.write_text(
+                    json.dumps({"fetched_at": now, "games": games}, ensure_ascii=False),
+                    encoding="utf-8",
+                )
             except Exception:
-                continue
-        self._odds_api_cache = (now, games)
+                pass
         return games
 
     @staticmethod
@@ -1140,7 +1172,7 @@ class SportsOddsOracle:
         if any(skip in q_low for skip in ("spread:", "exact score", "o/u ", "over/under", "handicap", "map ")):
             return None
 
-        games = self._fetch_odds_api_games() or self._fetch_espn_games()
+        games = self._fetch_odds_api_games() + self._fetch_espn_games()
         if not games:
             return None
 

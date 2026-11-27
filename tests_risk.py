@@ -1954,6 +1954,61 @@ class TestRiskManagementV2(unittest.TestCase):
         inplay_ev = {"date": "2026-11-28T00:00Z", "competitions": [{"status": {"type": {"state": "in"}}, "odds": [{"moneyline": {"home": {"close": {"odds": "-150"}}, "away": {"close": {"odds": "+130"}}}}]}]}
         self.assertIsNone(SportsOddsOracle._parse_espn_event("nba", inplay_ev))
 
+    def test_odds_api_pinnacle_priority_pregame_guard_and_disk_cache(self) -> None:
+        """Verify TheOddsAPI skips started games, prefers Pinnacle, and reuses 2h disk cache."""
+        import os
+        from datetime import datetime, timedelta, timezone
+        from unittest.mock import patch
+        from oracles import SportsOddsOracle
+
+        future_iso = (datetime.now(timezone.utc) + timedelta(hours=6)).strftime("%Y-%m-%dT%H:%M:%SZ")
+        past_iso = (datetime.now(timezone.utc) - timedelta(hours=1)).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+        fake_payload = [
+            {
+                "sport_key": "basketball_nba",
+                "commence_time": past_iso,
+                "home_team": "Boston Celtics",
+                "away_team": "Atlanta Hawks",
+                "bookmakers": [
+                    {"key": "pinnacle", "title": "Pinnacle", "markets": [{"key": "h2h", "outcomes": [
+                        {"name": "Boston Celtics", "price": 1.30}, {"name": "Atlanta Hawks", "price": 3.80}
+                    ]}]},
+                ],
+            },
+            {
+                "sport_key": "basketball_nba",
+                "commence_time": future_iso,
+                "home_team": "New York Knicks",
+                "away_team": "Miami Heat",
+                "bookmakers": [
+                    {"key": "betfair_ex_eu", "title": "Betfair", "markets": [{"key": "h2h", "outcomes": [
+                        {"name": "New York Knicks", "price": 1.70}, {"name": "Miami Heat", "price": 2.30}
+                    ]}]},
+                    {"key": "pinnacle", "title": "Pinnacle", "markets": [{"key": "h2h", "outcomes": [
+                        {"name": "New York Knicks", "price": 1.60}, {"name": "Miami Heat", "price": 2.50}
+                    ]}]},
+                ],
+            },
+        ]
+
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp_dir:
+            cache_file = Path(tmp_dir) / "odds_cache.json"
+            oracle = SportsOddsOracle(odds_api_cache_path=cache_file)
+            with patch.dict(os.environ, {"THE_ODDS_API_KEY": "test_key_123"}), \
+                 patch("oracles.fetch_standard_url", return_value=fake_payload) as mock_fetch:
+                games = oracle._fetch_odds_api_games()
+                self.assertEqual(mock_fetch.call_count, 1)
+                self.assertEqual(len(games), 1)  # Past game filtered out
+                self.assertEqual(games[0]["provider"], "TheOddsAPI/Pinnacle")
+                self.assertTrue(cache_file.exists())
+
+                # New oracle instance should hit disk cache without making an HTTP call
+                oracle2 = SportsOddsOracle(odds_api_cache_path=cache_file)
+                games2 = oracle2._fetch_odds_api_games()
+                self.assertEqual(mock_fetch.call_count, 1)
+                self.assertEqual(len(games2), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

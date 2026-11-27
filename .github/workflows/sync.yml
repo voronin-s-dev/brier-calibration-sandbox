@@ -50,6 +50,7 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           ALLOWED_CHAT_ID: ${{ secrets.ALLOWED_CHAT_ID }}
+          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
           INPUT_CYCLES: ${{ github.event.inputs.cycles }}
           PAYLOAD_CYCLES: ${{ github.event.client_payload.cycles }}
           INPUT_INTERVAL: ${{ github.event.inputs.interval }}

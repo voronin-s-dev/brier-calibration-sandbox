@@ -30,9 +30,9 @@
     "semantic_hash": ""
   },
   "oracles.py": {
-    "mtime": 1795781894.1190653,
-    "seen": 1795781945.707122,
-    "ast_hash": "d4caafe69e7ed863e9ee888898223d17",
+    "mtime": 1795788600.3780704,
+    "seen": 1795788640.5357983,
+    "ast_hash": "e468d32cc06fe8333222ee834505c9bf",
     "semantic_hash": ""
   },
   "polymarket_api.py": {
@@ -54,14 +54,14 @@
     "semantic_hash": ""
   },
   "tests_risk.py": {
-    "mtime": 1795781920.4756026,
-    "seen": 1795781945.70715,
-    "ast_hash": "f3cc20072cc5c446f5d1481f30e6afac",
+    "mtime": 1795788613.2117035,
+    "seen": 1795788640.535815,
+    "ast_hash": "a088e88fea4b4c8cafddc7d279e6d4a7",
     "semantic_hash": ""
   },
   "trader.py": {
-    "mtime": 1795781899.7361863,
-    "seen": 1795781945.7071528,
+    "mtime": 1795782009.2123036,
+    "seen": 1795788640.5358164,
     "ast_hash": "a58ee4e4184b8868d8f763c475880c85",
     "semantic_hash": ""
   },
@@ -72,9 +72,9 @@
     "semantic_hash": "3df0f5621a625f50e12eaddbb4bb7edb"
   },
   ".github/workflows/sync.yml": {
-    "mtime": 1794332932.8411477,
-    "seen": 1794334397.8334577,
-    "ast_hash": "280b0ef65ed00c33669f165670db7e0c",
+    "mtime": 1795788595.0902052,
+    "seen": 1795788640.5358472,
+    "ast_hash": "2d0af4afe9a93e35f8cad3de4864a198",
     "semantic_hash": ""
   },
   "README.md": {
@@ -84,32 +84,32 @@
     "semantic_hash": ""
   },
   "data/GOVERNANCE_REPORT.md": {
-    "mtime": 1795781590.2090473,
-    "seen": 1795781945.7071996,
-    "ast_hash": "4dd735ea934928bab6b05c100573e0b5",
+    "mtime": 1795782009.0892599,
+    "seen": 1795788640.535857,
+    "ast_hash": "9fa3d3091a6f5192a644f7c62caeda62",
     "semantic_hash": ""
   },
   "data/STATUS_REPORT.md": {
-    "mtime": 1795781590.2106543,
-    "seen": 1795781945.7072027,
-    "ast_hash": "78152b691c3e8ac1706c4d6b8baa771a",
+    "mtime": 1795782009.0907688,
+    "seen": 1795788640.5358598,
+    "ast_hash": "decca9270e3fe036e9e855c96ac73a65",
     "semantic_hash": ""
   },
   "data/dashboard.html": {
-    "mtime": 1795781590.2122169,
-    "seen": 1795781945.707205,
-    "ast_hash": "f707c22042a1d4f3324a5eedaec87c2c",
+    "mtime": 1795782009.0926037,
+    "seen": 1795788640.535862,
+    "ast_hash": "84ea37846a9ef754ca251da6d5d59057",
     "semantic_hash": ""
   },
   "data/trades.txt": {
-    "mtime": 1795781590.2351916,
-    "seen": 1795781945.707208,
-    "ast_hash": "2a9629ec5bb2a37cbd35233dc9343370",
+    "mtime": 1795782009.1161003,
+    "seen": 1795788640.5358653,
+    "ast_hash": "f47ff05ba01758b2f68bcbe9e9c9db90",
     "semantic_hash": ""
   },
   "data/last_digest.json": {
-    "mtime": 1795781930.157643,
-    "seen": 1795781945.7071047,
+    "mtime": 1795788637.1473558,
+    "seen": 1795788640.5357878,
     "ast_hash": "12042c79a48ac6bbb9f9d93d2aa60960",
     "semantic_hash": ""
   },
@@ -168,8 +168,8 @@
     "semantic_hash": ""
   },
   ".agents/rules/agentic-market-sim.md": {
-    "mtime": 1795779070.7577882,
-    "seen": 1795781945.7071826,
+    "mtime": 1795782009.5904195,
+    "seen": 1795788640.5358448,
     "ast_hash": "cd1352c1776ebffbf6209a4eab173519",
     "semantic_hash": ""
   },
