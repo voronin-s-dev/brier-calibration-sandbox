@@ -8996,3 +8996,7 @@ Max Open Positions: 5 | Kill-Switch: 40% Drawdown from Peak
 [2026-11-28 02:19:17 UTC] [CYCLE #3402 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.43 | Equity=$24.65 (DD=37.26%)
 [2026-11-28 02:30:57 UTC] [CYCLE #3403 SUMMARY] Scanned=800 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.43 | Equity=$24.65 (DD=37.26%)
 [2026-11-28 02:40:02 UTC] [CYCLE #3404 SUMMARY] Scanned=793 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=0 | Cash=$23.43 | Equity=$24.65 (DD=37.26%)
+[EXIT] #242 | Warriors vs. Trail Blazers (NO)
+  Shares: 1.65 | Entry VWAP: 0.7400 -> Exit Bid VWAP: 0.8400
+  Proceeds: $1.38 | Realized PnL: $+0.16 USDC | Reason: TAKE-PROFIT TRIGGERED: Net return +13.5% >= +12% (Bid VWAP: 0.8400 vs Entry: 0.7400)
+[2026-11-28 02:49:05 UTC] [CYCLE #3405 SUMMARY] Scanned=799 | PassedFilter=50 | Evaluated=2 | Edges(>=8pp)=0 | Opened=0 (Shadow=0) | Closed=1 | Cash=$24.82 | Equity=$24.82 (DD=36.84%)
