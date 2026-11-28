@@ -1,18 +1,20 @@
 # 📊 Отчёт симулятора Polymarket (Устав Grok Bot — Демо-счёт)
-**Обновлено:** `2026-11-28 04:10:13 UTC`
+**Обновлено:** `2026-11-28 04:19:16 UTC`
 
 ## 💰 Состояние виртуального портфеля
 | Показатель | Значение | Правило устава |
 | :--- | :--- | :--- |
 | **Стартовый капитал** | `$50.00 USDC` | Не добавлять деньги |
-| **Текущий баланс (Equity)** | **`$24.82 USDC`** (`-25.18$` / `-50.37%`) | Cash + Mark-to-Market по CLOB Bid |
-| **Свободный кэш / В сделках** | `$24.82` / `$0.00 USDC` | До 8 открытых позиций, макс 8% банка |
-| **Цель окупаемости подписки** | `$-25.18 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
-| **Просадка от пика (Текущая / Макс)** | `36.84%` / `37.90%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
+| **Текущий баланс (Equity)** | **`$24.80 USDC`** (`-25.20$` / `-50.39%`) | Cash + Mark-to-Market по CLOB Bid |
+| **Свободный кэш / В сделках** | `$23.82` / `$0.99 USDC` | До 8 открытых позиций, макс 8% банка |
+| **Цель окупаемости подписки** | `$-25.20 / $60.00` (`0.0%`) | Цель: +$60.00 в месяц |
+| **Просадка от пика (Текущая / Макс)** | `36.87%` / `37.90%` (Пик: `$39.29`) | Стоп-кран при просадке 40% |
 | **Закрытых сделок / Win Rate** | `241` / `64.7%` | Brier Score: `0.2280` |
 
-## 📂 Открытые позиции (0 / 8)
-*Нет активных позиций.*
+## 📂 Открытые позиции (1 / 8)
+| # | Рынок | Кат. | Исход | Вход (Ask VWAP) | Текущий Bid | Оценка бота | Размер ($) | Нереализ. PnL | Источник |
+| :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| #243 | Will Real Madrid CF vs. Deportivo Alavés end in a draw? | Sports | **NO** | `0.920` | `0.910` | `96.5%` | `$1.00` | `$-0.01` | https://www.laliga.com/ |
 
 ## 🧪 Теневая песочница (Shadow Sandbox)
 | Показатель | Значение |
@@ -34,6 +36,7 @@
 ## 🔍 Последние проверенные кандидаты и фильтр стакана CLOB
 | Рынок | Кат. | Сторона | Оценка бота | Цена Ask | Перекос (Edge) | Проскальзывание CLOB | Решение |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Will Real Madrid CF vs. Deportivo Alavés end in a  | Sports | NO | `96.5%` | `92.0%` | `+4.5 п.п.` | `1.00%` | EXECUTED BUY #243 ($1.00 @ 0.9200) |
 | Warriors vs. Trail Blazers | Sports | NO | `77.2%` | `74.0%` | `+3.2 п.п.` | `1.00%` | EXECUTED BUY #242 ($1.22 @ 0.7400) |
 | Will MH Hapoel Be'er Sheva win on 2026-11-26? | Sports | NO | `95.0%` | `92.0%` | `+3.0 п.п.` | `1.00%` | EXECUTED BUY #241 ($1.00 @ 0.9200) |
 | Will Elon Musk post 300-319 tweets from November 2 | Geopolitics | NO | `95.0%` | `88.0%` | `+7.0 п.п.` | `1.00%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
@@ -51,4 +54,3 @@
 | Will Elon Musk post 340-359 tweets from November 1 | Geopolitics | NO | `95.5%` | `89.4%` | `+6.1 п.п.` | `1.00%` | REJECTED: Social Mention Count Guard: Tweet/post count bracket markets prohibited (burst variance trap) |
 | Will Elon Musk post 260-279 tweets from November 1 | Geopolitics | NO | `98.0%` | `93.5%` | `+4.5 п.п.` | `0.20%` | REJECTED: Contract price $0.935 outside sweet spot [$0.70, $0.92] |
 | Spread: Steelers (-4.5) | Sports | NO | `97.5%` | `91.0%` | `+6.5 п.п.` | `1.00%` | REJECTED: Duplicate underlying event (sports:steelers:nodate) |
-| Will Alexander Zverev win the 2026 Nitto ATP Final | Sports | NO | `94.0%` | `80.0%` | `+14.0 п.п.` | `13.90%` | REJECTED: Net EV edge +0.1 pp < 1.5 pp (Gross +14.0 pp - Slippage 13.90%) |
